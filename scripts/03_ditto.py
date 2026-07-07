@@ -100,7 +100,7 @@ def loudnorm_audio(
         f":measured_I={m['input_i']}:measured_LRA={m['input_lra']}"
         f":measured_tp={m['input_tp']}:measured_thresh={m['input_thresh']}"
         f":linear=true:print_format=summary",
-        "-ar", "24000", "-ac", "1", "-sample_fmt", "s16", str(dst),
+        "-ac", "1", "-sample_fmt", "s16", str(dst),
     ]
     try:
         subprocess.run(cmd2, check=True, capture_output=True, text=True, timeout=60, env=env)
