@@ -11,6 +11,7 @@ Output: runs/<run_id>/04_eval/{condition}/{i}/syncnet.json + eval_meta.json
 
 import argparse
 import json
+import os
 import re
 import subprocess
 import time
@@ -65,12 +66,15 @@ def find_videos(ditto_dir: Path, conditions: list[str]) -> dict[str, dict[int, P
 def run_syncnet(
     syncnet_dir: Path,
     syncnet_python: str,
+    syncnet_bin: str,
     video_path: Path,
     tmp_dir: Path,
     reference: str,
     model_path: Path,
 ) -> str:
     """Run demo_syncnet.py and return stdout."""
+    env = os.environ.copy()
+    env["PATH"] = f"{syncnet_bin}:{env.get('PATH', '')}"
     cmd = [
         syncnet_python,
         str(syncnet_dir / "demo_syncnet.py"),
@@ -79,7 +83,7 @@ def run_syncnet(
         "--reference", reference,
         "--initial_model", str(model_path),
     ]
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=120, env=env)
     return result.stdout + result.stderr
 
 
@@ -100,6 +104,7 @@ def main() -> None:
     syncnet_dir = repo / cfg["paths"]["syncnet_repo"]
     syn_env = Path(cfg["paths"]["envs_dir"]) / "syncnet"
     syncnet_python = str(syn_env / "bin" / "python")
+    syncnet_bin = str(syn_env / "bin")
     syncnet_model = syncnet_dir / "data" / "syncnet_v2.model"
 
     videos = find_videos(ditto_dir, conditions)
@@ -121,7 +126,7 @@ def main() -> None:
             print(f"[eval] {cond}:{sid} ...")
             for attempt in range(2):
                 try:
-                    stdout = run_syncnet(syncnet_dir, syncnet_python, vpath, tmp_dir, reference, syncnet_model)
+                    stdout = run_syncnet(syncnet_dir, syncnet_python, syncnet_bin, vpath, tmp_dir, reference, syncnet_model)
                     parsed = parse_syncnet_output(stdout)
                     if parsed:
                         parsed["sample_id"] = sid
