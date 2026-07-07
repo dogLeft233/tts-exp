@@ -91,7 +91,7 @@ def run_syncnet_pipeline(
         "--data_dir", str(data_dir),
     ]
     try:
-        subprocess.run(cmd1, check=True, capture_output=True, text=True, timeout=180, env=env)
+        subprocess.run(cmd1, check=True, capture_output=True, text=True, timeout=180, env=env, cwd=str(syncnet_dir))
     except subprocess.CalledProcessError as e:
         return None, f"run_pipeline failed: {e.stderr[-300:]}"
 
@@ -105,7 +105,7 @@ def run_syncnet_pipeline(
         "--initial_model", str(model_path),
     ]
     try:
-        result = subprocess.run(cmd2, check=True, capture_output=True, text=True, timeout=120, env=env)
+        result = subprocess.run(cmd2, check=True, capture_output=True, text=True, timeout=120, env=env, cwd=str(syncnet_dir))
         return result.stdout + result.stderr, ""
     except subprocess.CalledProcessError as e:
         return None, f"run_syncnet failed: {e.stderr[-300:]}"
