@@ -42,15 +42,24 @@ asr:
   retry: 1
   temperature: 0
 
-# 02_tts (Q17: ICL 默认模式)
+# 02_tts (Q17: 抽象 provider;默认走云端 VC 大模型)
 tts:
-  model_id: "Qwen/Qwen3-TTS-12Hz-0.6B-Base"
+  provider: "dashscope_vc"  # one of: dashscope_vc, faster_qwen3
   language: "Chinese"
-  clone_mode: "icl"          # x_vector_only=False (upstream default)
-  x_vector_only: false
-  append_silence: true       # faster-qwen3-tts 默认行为,避免 ICL 起音伪影
   seed: 42
   retry: 1
+  # Local fallback serving legacy Qwen3-TTS-0.6B-Base ICL
+  faster_qwen3:
+    model_id: "Qwen/Qwen3-TTS-12Hz-0.6B-Base"
+    clone_mode: "icl"          # x_vector_only=False (upstream default)
+    x_vector_only: false
+    append_silence: true       # faster-qwen3-tts 默认行为,避免 ICL 起音伪影
+  # DashScope cloud qwen3-tts-vc-2026-01-22 (cloud voice clone, larger model)
+  dashscope_vc:
+    api_key_env: "DASHSCOPE_API_KEY"
+    target_model: "qwen3-tts-vc-2026-01-22"
+    voice_prefix: "ttsexp"
+    base_url: "https://dashscope.aliyuncs.com/api/v1"   # 北京地域默认
 
 # 03_ditto (Q4/Q31/Q33: TRT online 主用,PyTorch 自动回退)
 ditto:

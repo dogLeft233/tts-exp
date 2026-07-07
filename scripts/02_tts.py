@@ -1,48 +1,59 @@
 #!/usr/bin/env python3
-"""02_tts.py - Self-clone TTS via faster-qwen3-tts ICL mode (issue #3).
+"""02_tts.py - Self-clone TTS via pluggable provider (issue #3).
 
 For each sample i (1..10):
   text      = ASR(wav_i)        ← from 01_transcript/transcript.json
   ref_audio = data/data/audio/i.wav   ← the natural audio itself
   ref_text  = ASR(wav_i)        ← same as text (self-clone)
   language  = "Chinese"
-  seed      = 42
 
-Uses FasterQwen3TTS.generate_voice_clone with default ICL (x_vector_only=False).
+Backend is selected via cfg["tts"]["provider"]:
+  - "faster_qwen3"  → local Qwen3-TTS-0.6B-Base ICL mode (former default)
+  - "dashscope_vc"  → DashScope cloud qwen3-tts-vc-2026-01-22 (register+synthesize)
+
+See scripts/tts/ for the provider implementations.
+
 Output: runs/<run_id>/02_tts/{1..10}.wav + tts_meta.json
 """
 
 import argparse
 import json
+import os
 import time
 from pathlib import Path
 
 import numpy as np
-import torch
 import soundfile as sf
+import torch
+import yaml
 
-FASTER_QWEN3_TTS_MODEL = "Qwen/Qwen3-TTS-12Hz-0.6B-Base"
-LANGUAGE = "Chinese"
-SEED = 42
 
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
 
 
+def load_config(repo: Path) -> dict:
+    cfg_path = repo / "scripts" / "config.yaml"
+    return yaml.safe_load(cfg_path.read_text()) if cfg_path.exists() else {}
+
+
 def load_transcripts(run_dir: Path, sample_ids: list[int]) -> dict[int, str]:
-    """Load transcripts from 01_asr step for this run."""
     tjson = run_dir / "01_transcript" / "transcript.json"
     if tjson.exists():
         data = json.loads(tjson.read_text())
         return {r["sample_id"]: r["text"] for r in data.get("results", {}).values()}
-    # Fallback: read individual .txt files
     texts: dict[int, str] = {}
     for i in sample_ids:
         txt = run_dir / "01_transcript" / f"{i}.txt"
         if txt.exists():
             texts[i] = txt.read_text().strip()
     return texts
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
 
 
 def main() -> None:
@@ -56,30 +67,61 @@ def main() -> None:
     out_dir = run_dir / "02_tts"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    sample_ids = [1] if args.smoke else list(range(1, 11))
+    cfg = load_config(repo)
+    tts_cfg = cfg.get("tts", {})
+    seed = int(tts_cfg.get("seed", 42))
+    language = tts_cfg.get("language", "Chinese")
+    retries = int(tts_cfg.get("retry", 1))
 
-    # Load transcripts from 01_asr
+    sample_ids = [1] if args.smoke else list(range(1, 11))
     transcripts = load_transcripts(run_dir, sample_ids)
     if not transcripts:
         print("[tts] ERROR: no transcripts found. Run 01_asr.py first.")
         raise SystemExit(1)
     print(f"[tts] loaded {len(transcripts)} transcripts")
 
-    # Set seed for reproducibility
-    torch.manual_seed(SEED)
-    np.random.seed(SEED)
+    # Set global seed (torch.cuda / numpy). Providers may read torch RNG state.
+    torch.manual_seed(seed)
+    np.random.seed(seed)
 
-    # Load model (auto-downloads weights on first run via HF_ENDPOINT)
-    print(f"[tts] loading model {FASTER_QWEN3_TTS_MODEL} ...")
-    from faster_qwen3_tts import FasterQwen3TTS
-
-    model = FasterQwen3TTS.from_pretrained(FASTER_QWEN3_TTS_MODEL)
-    print("[tts] model loaded")
+    # Build provider via factory
+    from tts import get_tts_provider
+    provider = get_tts_provider(
+        tts_cfg,
+        run_id=args.run_id,
+        repo_root=repo,
+        env=dict(os.environ),
+    )
+    provider_name = provider.name
+    print(f"[tts] provider: {provider_name}")
 
     audio_dir = repo / "data" / "data" / "audio"
     results: dict[int, dict] = {}
     failed: list[dict] = []
     t0 = time.monotonic()
+
+    # Voice registration hint: DashScope VC takes sample_id for caching; others ignore it.
+    def _call_provider(text: str, ref_audio: Path, i: int):
+        # FasterQwen3 respects ref_text; DashScope VC ignores it.
+        kwargs = {}
+        # DashScope provider supports sample_id for cache lookup via __init__-mandated signature
+        sig_extra = {"sample_id": i}
+        try:
+            return provider.generate_voice_clone(
+                text=text,
+                ref_audio_path=ref_audio,
+                ref_text=text,  # self-clone: ref_text == target text
+                language=language,
+                **sig_extra,
+            )
+        except TypeError:
+            # Provider doesn't accept sample_id — drop it
+            return provider.generate_voice_clone(
+                text=text,
+                ref_audio_path=ref_audio,
+                ref_text=text,
+                language=language,
+            )
 
     for i in sample_ids:
         text = transcripts.get(i, "")
@@ -87,47 +129,45 @@ def main() -> None:
             failed.append({"sample_id": i, "error": "no transcript"})
             continue
 
-        ref_audio_path = str(audio_dir / f"{i}.wav")
-        ref_text = text  # self-clone: ref_text == target text
-
+        ref_audio_path = audio_dir / f"{i}.wav"
         print(f"[tts] generating sample {i} ...")
         last_err = None
-        for attempt in range(2):  # 1 retry per plan (retry=1 → 2 total attempts)
+        success = False
+        for attempt in range(retries + 1):
             try:
                 if attempt > 0:
                     time.sleep(1)
-                audio_list, sr = model.generate_voice_clone(
-                    text=text,
-                    language=LANGUAGE,
-                    ref_audio=ref_audio_path,
-                    ref_text=ref_text,
-                )
-                # audio_list is list[np.ndarray]; sr is sample rate
-                audio = audio_list[0] if isinstance(audio_list, list) else audio_list
+                result = _call_provider(text, ref_audio_path, i)
                 out_path = out_dir / f"{i}.wav"
-                sf.write(str(out_path), audio, int(sr), subtype="PCM_16")
-                dur = len(audio) / sr
+                # Save PCM_16 mono — force mono to keep shape (N,)
+                audio = result.audio
+                if audio.ndim > 1:
+                    audio = audio.mean(axis=tuple(range(1, audio.ndim)))
+                # Save at the provider's native rate; downstream resamp step normalizes.
+                sf.write(str(out_path), audio, int(result.sample_rate), subtype="PCM_16")
                 results[i] = {
                     "sample_id": i,
-                    "duration_s": round(dur, 2),
-                    "sample_rate": int(sr),
+                    "duration_s": result.duration_s,
+                    "sample_rate": int(result.sample_rate),
                     "text": text,
+                    "backend": result.backend_meta.get("backend", provider_name),
+                    "model": result.backend_meta.get("model") or result.backend_meta.get("model_id"),
+                    "voice_id": result.backend_meta.get("voice_id"),
                 }
-                print(f"  -> {out_path} ({dur:.1f}s @ {sr}Hz)")
+                print(f"  -> {out_path} ({result.duration_s:.1f}s @ {result.sample_rate}Hz)")
+                success = True
                 break
             except Exception as e:
                 last_err = str(e)
-        else:
+        if not success:
             failed.append({"sample_id": i, "error": last_err})
             print(f"  -> FAILED: {last_err}")
 
     elapsed = time.monotonic() - t0
     meta = {
-        "model": FASTER_QWEN3_TTS_MODEL,
-        "language": LANGUAGE,
-        "clone_mode": "icl",
-        "x_vector_only": False,
-        "seed": SEED,
+        "provider": provider_name,
+        "language": language,
+        "seed": seed,
         "time_s": round(elapsed, 1),
         "samples_total": len(sample_ids),
         "samples_ok": len(results),

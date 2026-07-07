@@ -152,6 +152,7 @@ def generate_report(
     conditions: list[str],
     out_dir: Path,
     mode_used: str = "unknown",
+    tts_desc: str = "Qwen3-TTS",
 ) -> dict:
     """Generate report.md and return stats dict."""
     stats_c = {}
@@ -203,7 +204,7 @@ def generate_report(
         "",
         "## Method",
         "",
-        "- **TTS model**: Qwen3-TTS-12Hz-0.6B-Base via faster-qwen3-tts, ICL voice clone",
+        f"- **TTS model**: {tts_desc}",
         "- **TFG model**: Ditto (antgroup/ditto-talkinghead)",
         "- **Evaluation**: SyncNet (syncnet_v2.model), Sync-C (confidence) and Sync-D (min distance)",
         "- **Samples**: 10 paired audio-image pairs from AISHELL-1 + HDTF",
@@ -295,7 +296,21 @@ def main() -> None:
     if ditto_meta.exists():
         mode_used = json.loads(ditto_meta.read_text()).get("mode_used", "unknown")
 
-    stats = generate_report(summary_rows, conditions, out_dir, mode_used)
+    # Read TTS backend info for method section
+    tts_meta_path = run_dir / "02_tts" / "tts_meta.json"
+    tts_desc = "Qwen3-TTS (provider unknown)"
+    if tts_meta_path.exists():
+        tm = json.loads(tts_meta_path.read_text())
+        prov = tm.get("provider", "unknown")
+        results = tm.get("results", {})
+        if results:
+            first = next(iter(results.values()))
+            model = first.get("model") or first.get("backend") or prov
+            tts_desc = f"{model} via {prov}"
+        else:
+            tts_desc = prov
+
+    stats = generate_report(summary_rows, conditions, out_dir, mode_used, tts_desc)
     generate_figures(summary_rows, out_dir)
 
     # Dump full stats json for downstream
