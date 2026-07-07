@@ -63,28 +63,52 @@ def find_videos(ditto_dir: Path, conditions: list[str]) -> dict[str, dict[int, P
     return videos
 
 
-def run_syncnet(
+def run_syncnet_pipeline(
     syncnet_dir: Path,
     syncnet_python: str,
     syncnet_bin: str,
     video_path: Path,
-    tmp_dir: Path,
+    data_dir: Path,
     reference: str,
     model_path: Path,
-) -> str:
-    """Run demo_syncnet.py and return stdout."""
+) -> tuple[str | None, str]:
+    """Run full SyncNet pipeline: detect+crop faces, then evaluate.
+
+    Step 1: run_pipeline.py — detects and crops face tracks
+    Step 2: run_syncnet.py — computes sync scores on cropped video
+
+    Returns (stdout from run_syncnet, stderr), or (None, error_msg) on failure.
+    """
     env = os.environ.copy()
     env["PATH"] = f"{syncnet_bin}:{env.get('PATH', '')}"
-    cmd = [
+
+    # Step 1: face detection + cropping
+    cmd1 = [
         syncnet_python,
-        str(syncnet_dir / "demo_syncnet.py"),
+        str(syncnet_dir / "run_pipeline.py"),
         "--videofile", str(video_path),
-        "--tmp_dir", str(tmp_dir),
         "--reference", reference,
+        "--data_dir", str(data_dir),
+    ]
+    try:
+        subprocess.run(cmd1, check=True, capture_output=True, text=True, timeout=180, env=env)
+    except subprocess.CalledProcessError as e:
+        return None, f"run_pipeline failed: {e.stderr[-300:]}"
+
+    # Step 2: sync evaluation
+    cmd2 = [
+        syncnet_python,
+        str(syncnet_dir / "run_syncnet.py"),
+        "--videofile", str(video_path),
+        "--reference", reference,
+        "--data_dir", str(data_dir),
         "--initial_model", str(model_path),
     ]
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=120, env=env)
-    return result.stdout + result.stderr
+    try:
+        result = subprocess.run(cmd2, check=True, capture_output=True, text=True, timeout=120, env=env)
+        return result.stdout + result.stderr, ""
+    except subprocess.CalledProcessError as e:
+        return None, f"run_syncnet failed: {e.stderr[-300:]}"
 
 
 def main() -> None:
@@ -119,14 +143,23 @@ def main() -> None:
         for sid, vpath in sorted(sample_videos.items()):
             sample_dir = cond_out / str(sid)
             sample_dir.mkdir(exist_ok=True)
-            tmp_dir = sample_dir / "tmp"
-            tmp_dir.mkdir(exist_ok=True)
+            data_dir = sample_dir / "syncnet_data"
+            data_dir.mkdir(exist_ok=True)
             reference = f"{cond}_{sid}"
 
             print(f"[eval] {cond}:{sid} ...")
             for attempt in range(2):
                 try:
-                    stdout = run_syncnet(syncnet_dir, syncnet_python, syncnet_bin, vpath, tmp_dir, reference, syncnet_model)
+                    stdout, stderr = run_syncnet_pipeline(
+                        syncnet_dir, syncnet_python, syncnet_bin,
+                        vpath, data_dir, reference, syncnet_model,
+                    )
+                    if stdout is None:
+                        if attempt == 1:
+                            failed.append({"condition": cond, "sample_id": sid, "error": stderr})
+                        else:
+                            time.sleep(1)
+                        continue
                     parsed = parse_syncnet_output(stdout)
                     if parsed:
                         parsed["sample_id"] = sid
