@@ -19,9 +19,20 @@ export RUN_ID
 REPO_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$REPO_DIR"
 
+# Ensure python from ditto env is available (steps 00-03,05 run here;
+# 04 switches to syncnet env via subprocess internally).
+DITTO_PYTHON="${AUTODL_TMP:-/root/autodl-tmp}/envs/ditto/bin/python"
+if [ ! -x "$DITTO_PYTHON" ]; then
+  DITTO_PYTHON="python3"
+fi
+# Also need LD_LIBRARY_PATH for tensorrt (cuDNN 8) — export if present
+if [ -d "/root/autodl-tmp/envs/ditto/opt/cudnn8/lib" ]; then
+  export LD_LIBRARY_PATH="/root/autodl-tmp/envs/ditto/opt/cudnn8/lib:${LD_LIBRARY_PATH:-}"
+fi
+
 RUN_DIR="$REPO_DIR/runs/$RUN_ID"
 mkdir -p "$RUN_DIR"
-echo "[run_all] RUN_ID=$RUN_ID"
+echo "[run_all] RUN_ID=$RUN_ID python=$DITTO_PYTHON"
 echo "[run_all] RUN_DIR=$RUN_DIR"
 echo "[run_all] smoke=$SMOKE_FLAG"
 
@@ -35,7 +46,7 @@ FAILS=()
 for step in "${STEPS[@]}"; do
   echo ""
   echo "===== $step$SMOKE_FLAG ====="
-  if python "scripts/$step" --run_id "$RUN_ID" $SMOKE_FLAG; then
+    if $DITTO_PYTHON "scripts/$step" --run_id "$RUN_ID" $SMOKE_FLAG; then
     echo "[ok] $step"
   else
     rc=$?
