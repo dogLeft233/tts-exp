@@ -29,6 +29,8 @@ fi
 if [ -d "/root/autodl-tmp/envs/ditto/opt/cudnn8/lib" ]; then
   export LD_LIBRARY_PATH="/root/autodl-tmp/envs/ditto/opt/cudnn8/lib:${LD_LIBRARY_PATH:-}"
 fi
+# HF mirror for Qwen3-TTS model download (huggingface.co is blocked in China)
+export HF_ENDPOINT="${HF_ENDPOINT:-https://hf-mirror.com}"
 
 RUN_DIR="$REPO_DIR/runs/$RUN_ID"
 mkdir -p "$RUN_DIR"
