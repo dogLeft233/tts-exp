@@ -126,9 +126,13 @@ export LD_LIBRARY_PATH="$CUDNN8_DIR/lib:${LD_LIBRARY_PATH:-}"
 # Per antgroup/ditto-talkinghead README:
 #   git lfs install
 #   git clone https://huggingface.co/digital-avatar/ditto-talkinghead checkpoints
-# Here we use the hf-mirror for China network.
+# `hf download` lays out files directly under the --local-dir root, so
+# $CHECKPOINTS_DIR/ditto-talkinghead/{ditto_cfg,ditto_onnx,ditto_pytorch,ditto_trt_Ampere_Plus}
+# To match README's flat `./checkpoints/<sub>` convention (and config.yaml paths),
+# we symlink each subdir to $CHECKPOINTS_DIR/<sub>.
 # ------------------------------------------------------------
-DITTO_CKPT_SENTINEL="$CHECKPOINTS_DIR/ditto_trt_Ampere_Plus/decoder_fp16.engine"
+DITTO_REPO_DIR="$CHECKPOINTS_DIR/ditto-talkinghead"
+DITTO_CKPT_SENTINEL="$DITTO_REPO_DIR/ditto_trt_Ampere_Plus/decoder_fp16.engine"
 if [ -f "$DITTO_CKPT_SENTINEL" ]; then
   echo "[skip] ditto checkpoints present"
 else
@@ -142,20 +146,26 @@ else
   if command -v hf >/dev/null 2>&1; then
     hf download digital-avatar/ditto-talkinghead \
       --repo-type model \
-      --local-dir "$CHECKPOINTS_DIR/ditto-talkinghead" || \
+      --local-dir "$DITTO_REPO_DIR" || \
       echo "[warn] hf download failed - retry with: source /etc/network_turbo && rerun"
   else
     huggingface-cli download digital-avatar/ditto-talkinghead \
       --repo-type model \
-      --local-dir "$CHECKPOINTS_DIR/ditto-talkinghead" || \
+      --local-dir "$DITTO_REPO_DIR" || \
       echo "[warn] huggingface-cli download failed - retry with: source /etc/network_turbo && rerun"
   fi
-  # README layout: <repo>/checkpoints/{ditto_cfg,ditto_onnx,ditto_trt_Ampere_Plus,ditto_pytorch}
-  # Flatten so that inference.py can find ./checkpoints/ditto_trt_Ampere_Plus at $CHECKPOINTS_DIR
-  if [ -d "$CHECKPOINTS_DIR/ditto-talkinghead/checkpoints" ]; then
-    cp -a "$CHECKPOINTS_DIR/ditto-talkinghead/checkpoints/." "$CHECKPOINTS_DIR/"
-  fi
 fi
+
+# Flatten layout via symlinks: $CHECKPOINTS_DIR/<sub> -> ditto-talkinghead/<sub>
+# Space-efficient; matches README convention & config.yaml paths.
+for sub_dir in "$DITTO_REPO_DIR"/*/; do
+  name="$(basename "$sub_dir")"
+  [ "$name" = ".cache" ] && continue
+  if [ ! -e "$CHECKPOINTS_DIR/$name" ]; then
+    ln -s "ditto-talkinghead/$name" "$CHECKPOINTS_DIR/$name"
+    echo "[symlink] $CHECKPOINTS_DIR/$name -> ditto-talkinghead/$name"
+  fi
+done
 
 conda deactivate
 
