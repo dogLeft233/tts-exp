@@ -83,7 +83,7 @@ def run_ditto(
         if not script.exists():
             continue
         cmd = [
-            str(script),
+            "python", str(script),
             "--data_root", data_root,
             "--cfg_pkl", cfg_pkl,
             "--audio_path", str(audio_path),
