@@ -146,11 +146,14 @@ else
   if command -v hf >/dev/null 2>&1; then
     hf download digital-avatar/ditto-talkinghead \
       --repo-type model \
+      --exclude ".DS_Store" \
       --local-dir "$DITTO_REPO_DIR" || \
       echo "[warn] hf download failed - retry with: source /etc/network_turbo && rerun"
   else
     huggingface-cli download digital-avatar/ditto-talkinghead \
       --repo-type model \
+      --include "ditto_cfg/*" --include "ditto_onnx/*" \
+      --include "ditto_pytorch/*" --include "ditto_trt_Ampere_Plus/*" \
       --local-dir "$DITTO_REPO_DIR" || \
       echo "[warn] huggingface-cli download failed - retry with: source /etc/network_turbo && rerun"
   fi
@@ -192,13 +195,15 @@ if [ -f "$SYNCNET_MODEL_SENTINEL" ]; then
   echo "[skip] syncnet_v2.model present"
 else
   echo "[syncnet] running download_model.sh"
-  conda activate "$SYNCNET_ENV"
-  # Disable `set -u` for the model download: the MKL activate hook in the
+  # Disable `set -u` around conda activate: the MKL activation hook in the
   # syncnet env references unbound MKL_INTERFACE_LAYER, which is harmless
-  # but kills the shell under `set -u`.
-  ( cd "$THIRD_PARTY/syncnet_python" && bash -c 'set +u; sh download_model.sh' ) \
+  # but kills the parent shell under `set -u`. Restore afterwards.
+  set +u
+  conda activate "$SYNCNET_ENV"
+  ( cd "$THIRD_PARTY/syncnet_python" && bash download_model.sh ) \
     || echo "[warn] download_model.sh failed - check network / proxy"
   conda deactivate
+  set -u
 fi
 
 # ------------------------------------------------------------
