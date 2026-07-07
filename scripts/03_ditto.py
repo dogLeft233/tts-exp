@@ -158,6 +158,9 @@ def main() -> None:
                 feed_audio = audio_src
 
             out_video = cond_dir / f"{i}.mp4"
+            if out_video.exists():
+                results[f"{cond}:{i}"] = "ok-cached"
+                continue
             print(f"[ditto] {cond}:{i} ...")
 
             ok = run_ditto(repo, args.run_id, cfg, feed_audio, img_path, out_video, mode)
