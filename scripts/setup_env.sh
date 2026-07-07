@@ -71,8 +71,16 @@ conda clean -a -y > /dev/null 2>&1 || true
 
 # ------------------------------------------------------------
 # Extras per ditto.md (NOT in ditto's environment.yaml)
+# ditto.md prescribes (NVIDIA index needed for tensorrt-libs):
+#   python -m pip install tensorrt==8.6.1 tensorrt-bindings==8.6.1
+#   python -m pip install tensorrt-libs==8.6.1 --extra-index-url https://pypi.nvidia.com
+# The aliyun pip mirror doesn't carry tensorrt, so explicit install here.
 # ------------------------------------------------------------
-echo "[pip] installing onnxruntime-gpu mediapipe einops (per ditto.md)"
+echo "[pip] tensorrt==8.6.1 + bindings + libs (per ditto.md)"
+pip install tensorrt==8.6.1 tensorrt-bindings==8.6.1 --extra-index-url https://pypi.nvidia.com
+pip install tensorrt-libs==8.6.1 --extra-index-url https://pypi.nvidia.com
+
+echo "[pip] onnxruntime-gpu mediapipe einops (per ditto.md)"
 pip install onnxruntime-gpu mediapipe einops
 
 # ------------------------------------------------------------
