@@ -19,3 +19,13 @@ Thumbs.db
 # Temp
 tmp/*
 !tmp/.gitkeep
+
+# Experiment runs (per-run artifacts)
+runs/
+
+# Third-party clones (Ditto, SyncNet)
+third_party/
+
+# Large engine/plan files (in case of accidental local download)
+*.engine
+*.plan

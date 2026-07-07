@@ -1,0 +1,101 @@
+# ============================================================
+# tts-tfg 提升实验复现 - 全局配置(单一真相源)
+# Issue #1; 选定参考 plan grill session
+# 修改本文件后,run_all.sh 会在 runs/<run_id>/ 内做快照供复现
+# ============================================================
+
+# Random seeds (Q22 of plan: 全固定)
+seeds:
+  tts: 42
+  ditto: 42
+  asr_temperature: 0
+
+# Paths (relative to repo root unless absolute)
+paths:
+  repo_root: "."
+  audio_dir: "data/data/audio"
+  image_dir: "data/data/image"
+  runs_dir: "runs"
+  third_party: "third_party"
+  # Absolute paths on SeetaCloud (per Q13/Q24)
+  autodl_tmp: "/root/autodl-tmp"
+  envs_dir: "/root/autodl-tmp/envs"
+  checkpoints_dir: "/root/autodl-tmp/checkpoints"
+  ditto_repo: "third_party/ditto-talkinghead"
+  syncnet_repo: "third_party/syncnet_python"
+
+# AISHELL-1 / HDTF sample subset (Q20: keep 10)
+samples:
+  count: 10
+  ids: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  smoke_id: 1            # 1.wav is 4.96s, moderate length
+
+# 00_datacheck (Q10: 只读体检; Q21: 阈值报警但不阻断)
+datacheck:
+  min_duration_s: 4.0   # SyncNet 不稳定阈值
+
+# 01_asr (Q14: Qwen ASR Flash via DashScope API)
+asr:
+  provider: "dashscope"
+  model: "qwen-asr-flash"   # 验证字段名:实施时与 DashScope 文档对齐
+  api_key_env: "DASHSCOPE_API_KEY"
+  retry: 1
+  temperature: 0
+
+# 02_tts (Q17: ICL 默认模式)
+tts:
+  model_id: "Qwen/Qwen3-TTS-12Hz-0.6B-Base"
+  language: "Chinese"
+  clone_mode: "icl"          # x_vector_only=False (upstream default)
+  x_vector_only: false
+  append_silence: true       # faster-qwen3-tts 默认行为,避免 ICL 起音伪影
+  seed: 42
+  retry: 1
+
+# 03_ditto (Q4/Q31/Q33: TRT online 主用,PyTorch 自动回退)
+ditto:
+  trt_online:
+    data_root: "/root/autodl-tmp/checkpoints/ditto_trt_Ampere_Plus"
+    cfg_pkl: "/root/autodl-tmp/checkpoints/ditto_cfg/v0.4_hubert_cfg_trt_online.pkl"
+  pytorch_fallback:
+    data_root: "/root/autodl-tmp/checkpoints/ditto_pytorch"
+    cfg_pkl: "/root/autodl-tmp/checkpoints/ditto_cfg/v0.4_hubert_cfg_pytorch.pkl"
+  seed: 42
+  retry: 1
+  ifps: 25                    # Ditto 默认输出 25fps (Q10)
+  # Q26: 2x2 design = 2 conditions x 2 resampling branches
+  conditions:
+    - natural_raw
+    - natural_resamp
+    - tts_raw
+    - tts_resamp
+  # resamp 目标格式 (UNI 16kHz 单声道 16-bit, 见 Q26)
+  resamp:
+    sr: 16000
+    mono: true
+    sample_width: 2              # 16-bit
+
+# 04_eval (Q8: 标准 SyncNet 协议)
+eval:
+  syncnet_repo: "third_party/syncnet_python"
+  syncnet_model: "data/syncnet_v2.model"
+  batch_size: 20
+  vshift: 15
+  retry: 1
+  # 字段映射 (verified against SyncNetInstance.py:154-159)
+  field_map:
+    sync_c: "Confidence"        # 越高越好
+    sync_d: "Min dist"          # 越低越好
+    av_offset: "AV offset"      # 辅助参考
+
+# 05_report (Q23: Markdown + figures; Q9: 以方向为准)
+report:
+  figures:
+    paired_bar: true
+    scatter: true
+    bland_altman: true
+  stats:
+    alpha: 0.05
+    judge_by_direction: true    # mean 同向即视为复现成立
+    report_effect_size: true    # Cohen's d 同时报告
+    report_pvalue: true         # p 值仅参考(n=10 检验力低)
