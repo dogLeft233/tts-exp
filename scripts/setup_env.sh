@@ -66,6 +66,9 @@ fi
 
 conda activate "$DITTO_ENV"
 
+# Free system disk: remove conda cache after env create (idempotent env skips this on reruns)
+conda clean -a -y > /dev/null 2>&1 || true
+
 # ------------------------------------------------------------
 # Extras per ditto.md (NOT in ditto's environment.yaml)
 # ------------------------------------------------------------
@@ -78,6 +81,11 @@ pip install onnxruntime-gpu mediapipe einops
 # ------------------------------------------------------------
 echo "[pip] installing faster-qwen3-tts"
 pip install faster-qwen3-tts
+
+# Pin huggingface_hub to the range faster-qwen3-tts/transformers expect.
+# A prior `pip install -U "huggingface_hub[cli]"` may have dragged it to v1.x
+# (breaking faster-qwen3-tts). Force the compatible range.
+pip install --quiet "huggingface_hub[cli]>=0.36,<1.0"
 
 # Convenience deps for orchestrating scripts
 pip install --quiet python-dotenv pyyaml requests
@@ -125,11 +133,23 @@ if [ -f "$DITTO_CKPT_SENTINEL" ]; then
   echo "[skip] ditto checkpoints present"
 else
   echo "[hf] downloading digital-avatar/ditto-talkinghead via $HF_ENDPOINT"
-  pip install --quiet -U "huggingface_hub[cli]"
-  huggingface-cli download digital-avatar/ditto-talkinghead \
-    --repo-type model \
-    --local-dir "$CHECKPOINTS_DIR/ditto-talkinghead" || \
-    echo "[warn] hf download failed - retry with: source /etc/network_turbo && rerun"
+  # faster-qwen3-tts and transformers pin huggingface_hub<1.0; install cli extras
+  # in that compatible range to avoid breaking them.
+  if ! command -v hf >/dev/null 2>&1; then
+    pip install --quiet "huggingface_hub[cli]>=0.36,<1.0"
+  fi
+  # hf CLI supersedes the deprecated `huggingface-cli` (>=0.30).
+  if command -v hf >/dev/null 2>&1; then
+    hf download digital-avatar/ditto-talkinghead \
+      --repo-type model \
+      --local-dir "$CHECKPOINTS_DIR/ditto-talkinghead" || \
+      echo "[warn] hf download failed - retry with: source /etc/network_turbo && rerun"
+  else
+    huggingface-cli download digital-avatar/ditto-talkinghead \
+      --repo-type model \
+      --local-dir "$CHECKPOINTS_DIR/ditto-talkinghead" || \
+      echo "[warn] huggingface-cli download failed - retry with: source /etc/network_turbo && rerun"
+  fi
   # README layout: <repo>/checkpoints/{ditto_cfg,ditto_onnx,ditto_trt_Ampere_Plus,ditto_pytorch}
   # Flatten so that inference.py can find ./checkpoints/ditto_trt_Ampere_Plus at $CHECKPOINTS_DIR
   if [ -d "$CHECKPOINTS_DIR/ditto-talkinghead/checkpoints" ]; then
@@ -163,7 +183,10 @@ if [ -f "$SYNCNET_MODEL_SENTINEL" ]; then
 else
   echo "[syncnet] running download_model.sh"
   conda activate "$SYNCNET_ENV"
-  ( cd "$THIRD_PARTY/syncnet_python" && sh download_model.sh ) \
+  # Disable `set -u` for the model download: the MKL activate hook in the
+  # syncnet env references unbound MKL_INTERFACE_LAYER, which is harmless
+  # but kills the shell under `set -u`.
+  ( cd "$THIRD_PARTY/syncnet_python" && bash -c 'set +u; sh download_model.sh' ) \
     || echo "[warn] download_model.sh failed - check network / proxy"
   conda deactivate
 fi
