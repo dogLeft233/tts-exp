@@ -147,6 +147,13 @@ def generate_figures(summary_rows: list[dict], out_dir: Path) -> None:
     plt.close(fig)
 
 
+def _fmt(v, fmt_spec=".3f"):
+    """Format optional numeric value; return '?' on None/str."""
+    if v is None or isinstance(v, str):
+        return "?"
+    return format(v, fmt_spec)
+
+
 def generate_report(
     summary_rows: list[dict],
     conditions: list[str],
@@ -236,8 +243,8 @@ def generate_report(
         "",
         "### Paired analysis (natural_resamp vs tts_resamp)",
         "",
-        f"- Sync-C paired n={paired_c.get('n', 0)}, p={paired_c.get('p_value', '?'):.4f}, Cohen's d={paired_c.get('cohens_d', '?'):.3f}",
-        f"- Sync-D paired n={paired_d.get('n', 0)}, p={paired_d.get('p_value', '?'):.4f}, Cohen's d={paired_d.get('cohens_d', '?'):.3f}",
+        f"- Sync-C paired n={paired_c.get('n', 0)}, p={_fmt(paired_c.get('p_value'), '.4f')}, Cohen's d={_fmt(paired_c.get('cohens_d'), '.3f')}",
+        f"- Sync-D paired n={paired_d.get('n', 0)}, p={_fmt(paired_d.get('p_value'), '.4f')}, Cohen's d={_fmt(paired_d.get('cohens_d'), '.3f')}",
         "",
         "## Replication Judgement",
         "",
