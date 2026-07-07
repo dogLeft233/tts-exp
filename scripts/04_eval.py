@@ -68,6 +68,7 @@ def run_syncnet(
     video_path: Path,
     tmp_dir: Path,
     reference: str,
+    model_path: Path,
 ) -> str:
     """Run demo_syncnet.py and return stdout."""
     cmd = [
@@ -76,6 +77,7 @@ def run_syncnet(
         "--videofile", str(video_path),
         "--tmp_dir", str(tmp_dir),
         "--reference", reference,
+        "--initial_model", str(model_path),
     ]
     result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
     return result.stdout + result.stderr
@@ -98,6 +100,7 @@ def main() -> None:
     syncnet_dir = repo / cfg["paths"]["syncnet_repo"]
     syn_env = Path(cfg["paths"]["envs_dir"]) / "syncnet"
     syncnet_python = str(syn_env / "bin" / "python")
+    syncnet_model = syncnet_dir / "data" / "syncnet_v2.model"
 
     videos = find_videos(ditto_dir, conditions)
     print(f"[eval] found videos in {len(videos)} conditions: {list(videos.keys())}")
@@ -118,7 +121,7 @@ def main() -> None:
             print(f"[eval] {cond}:{sid} ...")
             for attempt in range(2):
                 try:
-                    stdout = run_syncnet(syncnet_dir, syncnet_python, vpath, tmp_dir, reference)
+                    stdout = run_syncnet(syncnet_dir, syncnet_python, vpath, tmp_dir, reference, syncnet_model)
                     parsed = parse_syncnet_output(stdout)
                     if parsed:
                         parsed["sample_id"] = sid
