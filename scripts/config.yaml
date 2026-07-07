@@ -37,7 +37,7 @@ datacheck:
 # 01_asr (Q14: Qwen ASR Flash via DashScope API)
 asr:
   provider: "dashscope"
-  model: "qwen-asr-flash"   # 验证字段名:实施时与 DashScope 文档对齐
+  model: "qwen3-asr-flash"  # Verified: DashScope multimodal-generation endpoint
   api_key_env: "DASHSCOPE_API_KEY"
   retry: 1
   temperature: 0
