@@ -16,6 +16,7 @@ Output: runs/<run_id>/03_ditto/{condition}/{i}.mp4 + ditto_meta.json
 
 import argparse
 import json
+import os
 import shlex
 import subprocess
 import time
@@ -33,17 +34,17 @@ def load_config(repo: Path) -> dict:
     return yaml.safe_load(cfg_path.read_text()) if cfg_path.exists() else {}
 
 
-def resample_16k(src: Path, dst: Path) -> bool:
+def resample_16k(src: Path, dst: Path, ditto_bin: str = "") -> bool:
     """ffmpeg resample to 16kHz mono 16-bit. Returns True on success."""
     dst.parent.mkdir(parents=True, exist_ok=True)
-    cmd = [
-        "ffmpeg", "-y", "-v", "error",
-        "-i", str(src),
-        "-ar", "16000", "-ac", "1", "-sample_fmt", "s16",
-        str(dst),
-    ]
+    env = None
+    ffmpeg = "ffmpeg"
+    if ditto_bin:
+        ffmpeg = str(Path(ditto_bin) / "ffmpeg")
+        env = {"PATH": f"{ditto_bin}:{os.environ.get('PATH', '')}"}
+    cmd = [ffmpeg, "-y", "-v", "error", "-i", str(src), "-ar", "16000", "-ac", "1", "-sample_fmt", "s16", str(dst)]
     try:
-        subprocess.run(cmd, check=True, capture_output=True, timeout=30)
+        subprocess.run(cmd, check=True, capture_output=True, timeout=30, env=env)
         return True
     except Exception:
         return False
@@ -68,8 +69,7 @@ def run_ditto(
         cfg_pkl = cfg["ditto"]["pytorch_fallback"]["cfg_pkl"]
 
     # Ensure ffmpeg from the ditto conda env is in PATH for audio muxing
-    import os as _os
-    env = _os.environ.copy()
+    env = os.environ.copy()
     ditto_bin = str(Path(cfg["paths"]["envs_dir"]) / "ditto" / "bin")
     env["PATH"] = ditto_bin + ":" + env.get("PATH", "")
     if "LD_LIBRARY_PATH" not in env:
@@ -115,6 +115,7 @@ def main() -> None:
     out_base.mkdir(parents=True, exist_ok=True)
 
     cfg = load_config(repo)
+    ditto_bin = str(Path(cfg["paths"]["envs_dir"]) / "ditto" / "bin")
     sample_ids = [1] if args.smoke else list(range(1, 11))
     conditions = cfg.get("ditto", {}).get("conditions", ["natural_raw", "natural_resamp", "tts_raw", "tts_resamp"])
 
@@ -149,7 +150,7 @@ def main() -> None:
             # Resample if needed
             if cond.endswith("_resamp"):
                 tmp_audio = cond_dir / f"{i}_16k.wav"
-                if not resample_16k(audio_src, tmp_audio):
+                if not resample_16k(audio_src, tmp_audio, ditto_bin):
                     failed.append({"condition": cond, "sample_id": i, "error": "resample failed"})
                     continue
                 feed_audio = tmp_audio
