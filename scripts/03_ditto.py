@@ -72,7 +72,7 @@ def loudnorm_audio(
 
     def _measure(inpath):
         cmd = [
-            ff, "-y", "-v", "error", "-nostats",
+            ff, "-y", "-v", "info", "-nostats",
             "-i", str(inpath),
             "-af", f"loudnorm=I={target_lufs}:LRA=11:tp=-1.5:print_format=json",
             "-f", "null", "-",
