@@ -83,6 +83,10 @@ pip install tensorrt-libs==8.6.1 --extra-index-url https://pypi.nvidia.com
 echo "[pip] onnxruntime-gpu mediapipe einops (per ditto.md)"
 pip install onnxruntime-gpu mediapipe einops
 
+# Ditto inference deps (from antgroup/ditto-talkinghead README pip section,
+# not fully captured by environment.yaml via aliyun mirror)
+pip install --quiet filetype imageio opencv-python-headless scikit-image cython cuda-python==12.6.2.post1 imageio-ffmpeg colored polygraphy
+
 # ------------------------------------------------------------
 # faster-qwen3-tts (PyTorch 2.5.1 already in ditto env satisfies requirement)
 # Per https://github.com/andimarafioti/faster-qwen3-tts README: pip install faster-qwen3-tts

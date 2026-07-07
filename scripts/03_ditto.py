@@ -67,8 +67,17 @@ def run_ditto(
         data_root = cfg["ditto"]["pytorch_fallback"]["data_root"]
         cfg_pkl = cfg["ditto"]["pytorch_fallback"]["cfg_pkl"]
 
+    # Ensure ffmpeg from the ditto conda env is in PATH for audio muxing
+    import os as _os
+    env = _os.environ.copy()
+    ditto_bin = str(Path(cfg["paths"]["envs_dir"]) / "ditto" / "bin")
+    env["PATH"] = ditto_bin + ":" + env.get("PATH", "")
+    if "LD_LIBRARY_PATH" not in env:
+        libdir = str(Path(cfg["paths"]["envs_dir"]) / "ditto" / "opt" / "cudnn8" / "lib")
+        if Path(libdir).is_dir():
+            env["LD_LIBRARY_PATH"] = libdir
+
     ditto_dir = repo / cfg["paths"]["third_party"] / "ditto-talkinghead"
-    # Try inference_online.py first (ditto.md), then inference.py (README)
     for script_name in ("inference.py", "inference_online.py"):
         script = ditto_dir / script_name
         if not script.exists():
@@ -85,11 +94,10 @@ def run_ditto(
             try:
                 if attempt > 0:
                     time.sleep(1)
-                subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=300)
+                subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=300, env=env)
                 return True
             except subprocess.CalledProcessError as e:
                 if "libcudnn" in (e.stderr or "") or "Could not load" in (e.stderr or ""):
-                    # TRT engine load failed — try PyTorch fallback later
                     return False
         return False
     return False
