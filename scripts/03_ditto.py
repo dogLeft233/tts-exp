@@ -2,10 +2,11 @@
 """03_ditto.py - Ditto talking-head inference for 4-condition experiment (issue #4).
 
 Each sample i (1..10) × 4 conditions = 40 videos:
-  natural_raw    → natural wav fed directly to Ditto
-  natural_resamp → natural wav resampled to 16k via ffmpeg before Ditto
-  tts_raw        → TTS wav fed directly to Ditto
-  tts_resamp     → TTS wav resampled to 16k via ffmpeg before Ditto
+  All arms: EBU R128 two-pass loudness normalisation to -24 LUFS before Ditto.
+  natural_raw    → loudnorm natural wav → Ditto
+  natural_resamp → loudnorm natural wav → resample 16k → Ditto
+  tts_raw        → loudnorm TTS wav → Ditto
+  tts_resamp     → loudnorm TTS wav → resample 16k → Ditto
 
 Image: data/data/image/{i}.png (same for all 4 conditions).
 Uses ditto-talkinghead/inference.py via subprocess.
@@ -34,20 +35,78 @@ def load_config(repo: Path) -> dict:
     return yaml.safe_load(cfg_path.read_text()) if cfg_path.exists() else {}
 
 
+def _ffmpeg_bin(ditto_bin: str) -> str:
+    return str(Path(ditto_bin) / "ffmpeg") if ditto_bin else "ffmpeg"
+
+
 def resample_16k(src: Path, dst: Path, ditto_bin: str = "") -> bool:
     """ffmpeg resample to 16kHz mono 16-bit. Returns True on success."""
     dst.parent.mkdir(parents=True, exist_ok=True)
-    env = None
-    ffmpeg = "ffmpeg"
-    if ditto_bin:
-        ffmpeg = str(Path(ditto_bin) / "ffmpeg")
-        env = {"PATH": f"{ditto_bin}:{os.environ.get('PATH', '')}"}
+    ffmpeg = _ffmpeg_bin(ditto_bin)
     cmd = [ffmpeg, "-y", "-v", "error", "-i", str(src), "-ar", "16000", "-ac", "1", "-sample_fmt", "s16", str(dst)]
     try:
-        subprocess.run(cmd, check=True, capture_output=True, timeout=30, env=env)
+        subprocess.run(cmd, check=True, capture_output=True, timeout=30)
         return True
     except Exception:
         return False
+
+
+def loudnorm_audio(
+    src: Path,
+    dst: Path,
+    ditto_bin: str = "",
+    target_lufs: float = -24.0,
+) -> dict | None:
+    """EBU R128 two-pass loudness normalisation via ffmpeg loudnorm.
+
+    Pass 1 measures integrated loudness / LRA / true-peak.
+    Pass 2 applies linear normalisation with measured values, limiting
+    write-out to ``dst`` as 24kHz mono s16 (matching Ditto native).
+    Returns measurement dict on success, None on failure.
+    """
+    dst.parent.mkdir(parents=True, exist_ok=True)
+    ff = _ffmpeg_bin(ditto_bin)
+    env = os.environ.copy()
+    if ditto_bin:
+        env["PATH"] = f"{ditto_bin}:{env.get('PATH', '')}"
+
+    def _measure(inpath):
+        cmd = [
+            ff, "-y", "-v", "error", "-nostats",
+            "-i", str(inpath),
+            "-af", f"loudnorm=I={target_lufs}:LRA=11:tp=-1.5:print_format=json",
+            "-f", "null", "-",
+        ]
+        try:
+            out = subprocess.check_output(cmd, stderr=subprocess.STDOUT, text=True, timeout=30, env=env)
+            idx = out.rfind("{")
+            if idx >= 0:
+                return json.loads(out[idx:].rstrip("\x00"))
+        except subprocess.CalledProcessError:
+            pass
+        return None
+
+    # pass 1 — measure
+    m = _measure(src)
+    if not m:
+        return None
+
+    # pass 2 — apply linear gain with measured refs
+    cmd2 = [
+        ff, "-y", "-v", "error",
+        "-i", str(src),
+        "-af",
+        f"loudnorm=I={target_lufs}:LRA=11:tp=-1.5"
+        f":measured_I={m['input_i']}:measured_LRA={m['input_lra']}"
+        f":measured_tp={m['input_tp']}:measured_thresh={m['input_thresh']}"
+        f":linear=true:print_format=summary",
+        "-ar", "24000", "-ac", "1", "-sample_fmt", "s16", str(dst),
+    ]
+    try:
+        subprocess.run(cmd2, check=True, capture_output=True, text=True, timeout=60, env=env)
+        return m
+    except subprocess.CalledProcessError:
+        return None
 
 
 def run_ditto(
@@ -118,6 +177,7 @@ def main() -> None:
     ditto_bin = str(Path(cfg["paths"]["envs_dir"]) / "ditto" / "bin")
     sample_ids = [1] if args.smoke else list(range(1, 11))
     conditions = cfg.get("ditto", {}).get("conditions", ["natural_raw", "natural_resamp", "tts_raw", "tts_resamp"])
+    do_loudnorm = cfg.get("ditto", {}).get("loudnorm", True)
 
     audio_dir = repo / "data" / "data" / "audio"
     tts_dir = run_dir / "02_tts"
@@ -147,15 +207,25 @@ def main() -> None:
                     failed.append({"condition": cond, "sample_id": i, "error": "tts audio missing"})
                     continue
 
-            # Resample if needed
-            if cond.endswith("_resamp"):
-                tmp_audio = cond_dir / f"{i}_16k.wav"
-                if not resample_16k(audio_src, tmp_audio, ditto_bin):
-                    failed.append({"condition": cond, "sample_id": i, "error": "resample failed"})
-                    continue
-                feed_audio = tmp_audio
+            # Step A: EBU R128 loudness normalise (both arms) → -24 LUFS
+            if do_loudnorm:
+                feed_audio = cond_dir / f"{i}_loud.wav"
+                if not feed_audio.exists():
+                    lm = loudnorm_audio(audio_src, feed_audio, ditto_bin)
+                    if lm is None:
+                        failed.append({"condition": cond, "sample_id": i, "error": "loudnorm failed"})
+                        continue
             else:
                 feed_audio = audio_src
+
+            # Step B: resample 16k for resamp arm
+            if cond.endswith("_resamp"):
+                tmp_audio = cond_dir / f"{i}_loud_16k.wav"
+                if not tmp_audio.exists():
+                    if not resample_16k(feed_audio, tmp_audio, ditto_bin):
+                        failed.append({"condition": cond, "sample_id": i, "error": "resample failed"})
+                        continue
+                feed_audio = tmp_audio
 
             out_video = cond_dir / f"{i}.mp4"
             if out_video.exists():
