@@ -22,13 +22,19 @@ from __future__ import annotations
 from pathlib import Path
 
 from .base import TTSProvider
-from .faster_qwen3 import FasterQwen3TTSProvider
 from .dashscope_vc import DashScopeQwen3VCProvider
+from .f5_tts import F5TTSProvider
+from .faster_qwen3 import FasterQwen3TTSProvider
+from .fish_audio import FishAudioProvider
+from .siliconflow import SiliconFlowProvider
 
 
 _REGISTRY: dict[str, type[TTSProvider]] = {
     "faster_qwen3": FasterQwen3TTSProvider,
     "dashscope_vc": DashScopeQwen3VCProvider,
+    "fish_audio": FishAudioProvider,
+    "f5_tts": F5TTSProvider,
+    "siliconflow": SiliconFlowProvider,
 }
 
 

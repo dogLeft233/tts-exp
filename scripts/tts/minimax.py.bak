@@ -1,0 +1,243 @@
+"""MiniMax Speech-02 provider (cloud API).
+
+Three-step protocol:
+  1. POST /v1/files/upload (multipart) → file_id
+  2. POST /v1/voice_clone → voice_id (temporary, kept alive by usage)
+  3. POST /v1/t2a_v2 → audio bytes (wav, 24kHz)
+
+Voice IDs are cached per (sample_id, audio_sha256) in voice_registry.json.
+"""
+
+from __future__ import annotations
+
+import hashlib
+import io
+import json
+import time
+from pathlib import Path
+from typing import Any
+
+import numpy as np
+import requests
+
+from .base import TTSProvider, TTSResult
+
+
+class MiniMaxProvider(TTSProvider):
+    name = "minimax"
+
+    BASE_URL = "https://api.minimax.chat"
+    DEFAULT_TTS_MODEL = "speech-02-turbo"
+
+    def __init__(
+        self,
+        cfg: dict[str, Any],
+        env: dict[str, str] | None = None,
+        run_id: str = "",
+        repo_root: Path | None = None,
+    ) -> None:
+        super().__init__(cfg, env)
+        self.sub = cfg.get("minimax", {})
+        env_map = env or {}
+        self.api_key = env_map.get(
+            self.sub.get("api_key_env", "MINIMAX_API_KEY"), ""
+        )
+        if not self.api_key:
+            raise RuntimeError(
+                "MiniMaxProvider: missing MINIMAX_API_KEY env var"
+            )
+        self.tts_model = self.sub.get("tts_model", self.DEFAULT_TTS_MODEL)
+        self.voice_prefix = self.sub.get("voice_prefix", "ttsexp_mm")
+        self.sample_rate = self.sub.get("sample_rate", 24000)
+        self.noise_reduction = self.sub.get("noise_reduction", False)
+        self.need_volume_normalization = self.sub.get(
+            "need_volume_normalization", False
+        )
+        self._init_registry(repo_root, run_id)
+
+    def _headers(self, content_type: str | None = None) -> dict:
+        h = {"Authorization": f"Bearer {self.api_key}"}
+        if content_type:
+            h["Content-Type"] = content_type
+        return h
+
+    # -------- registry cache -------------------------------------------
+
+    def _init_registry(self, repo_root: Path | None, run_id: str) -> None:
+        repo = repo_root or Path(__file__).resolve().parents[2]
+        self.registry_path = (
+            repo / "runs" / run_id / "02_tts" / "voice_registry_minimax.json"
+        )
+        self.registry_path.parent.mkdir(parents=True, exist_ok=True)
+        self._registry: dict[str, dict] = {}
+        if self.registry_path.exists():
+            try:
+                self._registry = json.loads(self.registry_path.read_text())
+            except json.JSONDecodeError:
+                self._registry = {}
+
+    def _save_registry(self) -> None:
+        self.registry_path.write_text(json.dumps(self._registry, indent=2))
+
+    @staticmethod
+    def _audio_sha(ref_audio_path: Path) -> str:
+        h = hashlib.sha256()
+        with open(ref_audio_path, "rb") as f:
+            for chunk in iter(lambda: f.read(8192), b""):
+                h.update(chunk)
+        return h.hexdigest()[:16]
+
+    # -------- step 1: upload audio ------------------------------------
+
+    def _upload_audio(self, ref_audio_path: Path) -> str:
+        """POST /v1/files/upload (multipart/form-data) → file_id."""
+        url = f"{self.BASE_URL}/v1/files/upload"
+        with open(ref_audio_path, "rb") as f:
+            files = {"file": (ref_audio_path.name, f)}
+            data = {"purpose": "voice_clone"}
+            last_err = None
+            for attempt in range(3):
+                try:
+                    r = requests.post(
+                        url,
+                        data=data,
+                        files=files,
+                        headers=self._headers(),
+                        timeout=60,
+                    )
+                    if r.status_code == 200:
+                        return r.json()["file"]["file_id"]
+                    last_err = f"HTTP {r.status_code}: {r.text[:300]}"
+                except requests.RequestException as e:
+                    last_err = str(e)
+                time.sleep(1.5 * (attempt + 1))
+        raise RuntimeError(f"MiniMax upload failed: {last_err}")
+
+    # -------- step 2: voice clone --------------------------------------
+
+    def _clone_voice(self, file_id: str, voice_id: str) -> str:
+        """POST /v1/voice_clone → voice_id (confirmed)."""
+        url = f"{self.BASE_URL}/v1/voice_clone"
+        payload = {
+            "file_id": file_id,
+            "voice_id": voice_id,
+            "text": "这是一个预览。",
+            "model": self.tts_model,
+            "noise_reduction": self.noise_reduction,
+            "need_volume_normalization": self.need_volume_normalization,
+        }
+        last_err = None
+        for attempt in range(3):
+            try:
+                r = requests.post(
+                    url,
+                    json=payload,
+                    headers=self._headers("application/json"),
+                    timeout=60,
+                )
+                if r.status_code == 200:
+                    return voice_id
+                last_err = f"HTTP {r.status_code}: {r.text[:300]}"
+            except requests.RequestException as e:
+                last_err = str(e)
+            time.sleep(1.5 * (attempt + 1))
+        raise RuntimeError(f"MiniMax voice clone failed: {last_err}")
+
+    # -------- step 3: synthesize ---------------------------------------
+
+    def _synthesize(self, text: str, voice_id: str) -> tuple[np.ndarray, int]:
+        """POST /v1/t2a_v2 → (audio_np, sample_rate)."""
+        url = f"{self.BASE_URL}/v1/t2a_v2"
+        payload = {
+            "model": self.tts_model,
+            "text": text,
+            "stream": False,
+            "voice_setting": {
+                "voice_id": voice_id,
+                "speed": 1.0,
+                "vol": 1.0,
+                "pitch": 0,
+            },
+            "audio_setting": {
+                "sample_rate": self.sample_rate,
+                "bitrate": 128000,
+                "format": "wav",
+                "channel": 1,
+            },
+        }
+        headers = self._headers("application/json")
+        last_err = None
+        for attempt in range(3):
+            try:
+                r = requests.post(
+                    url, json=payload, headers=headers, timeout=120
+                )
+                if r.status_code == 200:
+                    return self._decode_response(r.json())
+                last_err = f"HTTP {r.status_code}: {r.text[:300]}"
+            except requests.RequestException as e:
+                last_err = str(e)
+            time.sleep(1.5 * (attempt + 1))
+        raise RuntimeError(f"MiniMax TTS failed: {last_err}")
+
+    def _decode_response(self, body: dict) -> tuple[np.ndarray, int]:
+        # Audio may be inline (base64) or via URL per MiniMax docs
+        data = body.get("data", {})
+        audio_bytes = None
+        if data.get("audio"):
+            import base64
+            audio_bytes = base64.b64decode(data["audio"])
+        elif data.get("audio_url"):
+            r = requests.get(data["audio_url"], timeout=60)
+            r.raise_for_status()
+            audio_bytes = r.content
+        else:
+            raise RuntimeError(f"No audio in response: {json.dumps(body)[:300]}")
+        import soundfile as sf
+        audio, sr = sf.read(io.BytesIO(audio_bytes), dtype="float32")
+        if audio.ndim > 1:
+            audio = audio.mean(axis=1)
+        return audio, int(sr)
+
+    # -------- public API -----------------------------------------------
+
+    def get_voice_id(self, sample_id: int, ref_audio_path: Path) -> str:
+        sha = self._audio_sha(ref_audio_path)
+        cached = self._registry.get(str(sample_id))
+        if cached and cached.get("audio_sha") == sha:
+            return cached["voice_id"]
+        voice_name = f"{self.voice_prefix}_{sample_id}"
+        file_id = self._upload_audio(ref_audio_path)
+        voice_id = self._clone_voice(file_id, voice_name)
+        self._registry[str(sample_id)] = {
+            "audio_sha": sha,
+            "voice_id": voice_id,
+            "file_id": file_id,
+            "ts": int(time.time()),
+        }
+        self._save_registry()
+        return voice_id
+
+    def generate_voice_clone(
+        self,
+        text: str,
+        ref_audio_path: Path,
+        ref_text: str,
+        language: str = "Chinese",
+        sample_id: int | None = None,
+    ) -> TTSResult:
+        if sample_id is None:
+            sample_id = abs(hash(str(ref_audio_path))) % (10**8)
+        voice_id = self.get_voice_id(sample_id, ref_audio_path)
+        audio, sr = self._synthesize(text, voice_id)
+        return TTSResult(
+            audio=audio,
+            sample_rate=sr,
+            duration_s=round(len(audio) / sr, 3),
+            backend_meta={
+                "backend": self.name,
+                "model": self.tts_model,
+                "voice_id": voice_id,
+                "sample_rate": self.sample_rate,
+            },
+        )
