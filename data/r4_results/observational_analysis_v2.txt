@@ -1,0 +1,235 @@
+================================================================================
+1. CORRELATION: Features vs SyncD (primary) & SyncC (secondary)
+================================================================================
+
+Feature                    r_Spear(SyncD)          p     r_Pear(SyncD)   r_Spear(SyncC)
+----------------------------------------------------------------------------------------
+mfcc_3_std                        -0.3363     0.0000 ***           -0.3332          +0.2090
+mfcc_10_mean                      -0.2628     0.0000 ***           -0.2290          +0.1934
+mfcc_11_mean                      -0.2298     0.0000 ***           -0.2144          -0.2189
+mfcc_7_std                        -0.2007     0.0000 ***           -0.2108          -0.0755
+f0_range                          -0.1924     0.0000 ***           -0.1616          -0.2004
+mfcc_4_std                        -0.1889     0.0001 ***           -0.1957          +0.1584
+rms                               +0.1857     0.0001 ***           +0.1242          +0.0861
+onset_std                         +0.1845     0.0001 ***           +0.1947          -0.1321
+mfcc_12_mean                      -0.1733     0.0002 ***           -0.1671          -0.1981
+f0_std                            -0.1660     0.0004 ***           -0.1373          -0.2666
+mfcc_13_mean                      -0.1540     0.0011 **           -0.1133          -0.2176
+lufs                              +0.1515     0.0013 **           +0.0929          -0.0060
+mfcc_6_mean                       -0.1511     0.0014 **           -0.1260          -0.0055
+energy_env_smoothness             +0.1397     0.0031 **           +0.1058          +0.0493
+mfcc_8_mean                       -0.1363     0.0039 **           -0.1628          -0.1526
+mfcc_1_std                        -0.1280     0.0067 **           -0.1346          -0.2427
+mfcc_3_mean                       +0.1268     0.0073 **           +0.1641          -0.1197
+mfcc_2_std                        +0.1259     0.0077 **           +0.1429          +0.0812
+mfcc_1_mean                       +0.1227     0.0094 **           +0.0862          +0.1774
+zcr_mean                          -0.1217     0.0100 *           -0.1200          +0.0657
+mfcc_9_std                        -0.1204     0.0108 *           -0.1002          -0.3009
+energy_env_std                    +0.1139     0.0160 *           +0.0951          -0.0109
+spec_bandwidth_std                +0.1121     0.0178 *           +0.1104          +0.0681
+spec_centroid_std                 +0.1099     0.0201 *           +0.0947          -0.3902
+spec_rolloff                      -0.1029     0.0297 *           -0.1100          -0.0780
+spec_flatness_std                 +0.1006     0.0335 *           +0.0443          -0.0714
+spec_centroid                     -0.0951     0.0446 *           -0.0884          -0.1118
+peak                              +0.0947     0.0453 *           +0.0762          +0.0038
+mfcc_7_mean                       -0.0944     0.0461 *           -0.1141          -0.1977
+spec_flux                         +0.0939     0.0472 *           +0.0668          +0.1179
+mfcc_12_std                       -0.0827     0.0806           -0.0122          -0.1082
+mfcc_10_std                       +0.0822     0.0828           +0.0321          -0.0064
+duration                          -0.0768     0.1048           -0.1409          -0.1978
+spec_flatness                     +0.0762     0.1077           +0.0611          -0.1048
+f3                                +0.0646     0.1730           +0.0568          -0.0687
+hf_ratio                          -0.0546     0.2491           -0.0459          -0.2827
+mfcc_13_std                       -0.0514     0.2784           -0.0437          -0.2070
+mfcc_2_mean                       +0.0475     0.3168           +0.0439          +0.3107
+mfcc_5_mean                       +0.0460     0.3324           +0.0988          -0.2550
+mfcc_8_std                        -0.0413     0.3838           -0.0825          -0.2277
+f1                                -0.0329     0.4883           -0.1086          +0.0176
+silence_ratio                     -0.0316     0.5058           -0.0106          +0.1080
+mfcc_9_mean                       -0.0310     0.5131           -0.0534          -0.1868
+spec_bandwidth                    -0.0309     0.5143           -0.0584          -0.2326
+mfcc_5_std                        -0.0303     0.5223           -0.0416          -0.0554
+f0_mean                           +0.0238     0.6164           +0.0137          -0.1265
+f2                                -0.0234     0.6223           -0.0422          -0.0694
+zcr_std                           -0.0231     0.6259           -0.0382          -0.2120
+mfcc_11_std                       +0.0226     0.6337           +0.0081          -0.2265
+mfcc_4_mean                       +0.0046     0.9222           +0.0025          +0.0260
+onset_mean                        +0.0017     0.9713           +0.0263          +0.3486
+mfcc_6_std                        +0.0003     0.9957           -0.0147          -0.1993
+
+### Top-10 SyncD predictors (Spearman) ###
+  1. mfcc_3_std               r=-0.3363 p=0.0000
+  2. mfcc_10_mean             r=-0.2628 p=0.0000
+  3. mfcc_11_mean             r=-0.2298 p=0.0000
+  4. mfcc_7_std               r=-0.2007 p=0.0000
+  5. f0_range                 r=-0.1924 p=0.0000
+  6. mfcc_4_std               r=-0.1889 p=0.0001
+  7. rms                      r=+0.1857 p=0.0001
+  8. onset_std                r=+0.1845 p=0.0001
+  9. mfcc_12_mean             r=-0.1733 p=0.0002
+  10. f0_std                   r=-0.1660 p=0.0004
+
+### Top-10 SyncC predictors (Spearman) ###
+  1. spec_centroid_std        r=-0.3902
+  2. onset_mean               r=+0.3486
+  3. mfcc_2_mean              r=+0.3107
+  4. mfcc_9_std               r=-0.3009
+  5. hf_ratio                 r=-0.2827
+  6. f0_std                   r=-0.2666
+  7. mfcc_5_mean              r=-0.2550
+  8. mfcc_1_std               r=-0.2427
+  9. spec_bandwidth           r=-0.2326
+  10. mfcc_8_std               r=-0.2277
+
+Generating correlation heatmap...
+  Saved: figures/obs_v2_corr_heatmap.png
+
+================================================================================
+2. LASSO REGRESSION: Feature selection for SyncD
+================================================================================
+  Best alpha: 0.003967
+  R² (training): 0.6028
+  Non-zero features: 43
+
+  Feature                      LASSO coef
+  ----------------------------------------
+  mfcc_2_mean                   -0.335350  (↓ better SyncD)
+  spec_flatness_std             +0.308644  (↑ worse SyncD)
+  onset_std                     +0.301779  (↑ worse SyncD)
+  spec_rolloff                  -0.297974  (↓ better SyncD)
+  mfcc_5_mean                   +0.286570  (↑ worse SyncD)
+  mfcc_7_std                    -0.274693  (↓ better SyncD)
+  mfcc_4_std                    -0.264790  (↓ better SyncD)
+  mfcc_2_std                    +0.223913  (↑ worse SyncD)
+  mfcc_6_std                    +0.214141  (↑ worse SyncD)
+  spec_bandwidth_std            -0.209043  (↓ better SyncD)
+  mfcc_13_mean                  -0.193611  (↓ better SyncD)
+  f0_mean                       +0.189627  (↑ worse SyncD)
+  zcr_mean                      -0.176553  (↓ better SyncD)
+  duration                      -0.156436  (↓ better SyncD)
+  mfcc_8_mean                   +0.150467  (↑ worse SyncD)
+
+================================================================================
+3. RANDOM FOREST: Feature Importance for SyncD
+================================================================================
+  RF R² (training): 0.9417
+
+  Feature                      Importance
+  ----------------------------------------
+  mfcc_3_std                     0.101557
+  mfcc_4_std                     0.072897
+  mfcc_11_mean                   0.052358
+  onset_std                      0.049708
+  spec_rolloff                   0.038873
+  zcr_mean                       0.034753
+  mfcc_2_mean                    0.034416
+  mfcc_10_mean                   0.033198
+  spec_centroid_std              0.027477
+  mfcc_6_mean                    0.025611
+  mfcc_6_std                     0.024277
+  onset_mean                     0.023042
+  mfcc_13_mean                   0.022875
+  mfcc_3_mean                    0.022601
+  spec_bandwidth                 0.021835
+
+================================================================================
+4. SCATTER PLOTS: Top features vs SyncD & SyncC
+================================================================================
+  Saved: figures/obs_v2_scatter_top4.png
+
+================================================================================
+5. PCA: Feature space colored by SyncD quantile
+================================================================================
+  PCA variance: PC1=0.258 PC2=0.183
+  Saved: figures/obs_v2_pca.png
+  PC1 top loadings:
+    mfcc_13_std                 +0.2472
+    mfcc_2_mean                 -0.2416
+    f0_std                      +0.2403
+    f0_range                    +0.2297
+    mfcc_12_std                 +0.2286
+  PC2 top loadings:
+    energy_env_smoothness       +0.2651
+    spec_flux                   +0.2644
+    rms                         +0.2573
+    mfcc_1_mean                 +0.2573
+    energy_env_std              +0.2556
+
+================================================================================
+6. PARTIAL CORRELATION: Within-provider only
+================================================================================
+
+  Within-provider Spearman r with SyncD:
+  Feature                        f5_tts f5_tts_loudn    higgs_tts higgs_loudno indextts2_ba      gsv_tts chattts_orig qwen3_loudno     Mean
+  ----------------------------------------------------------------------------------------------------------------------------------------
+  mfcc_3_std                    -0.3352      -0.4780      -0.2143      -0.3022      -0.3466      -0.1758      -0.9286      -0.7637  -0.4431
+  mfcc_10_mean                  +0.1044      +0.0330      -0.2527      +0.0110      -0.0798      -0.3077      -0.2143      -0.4121  -0.1398
+  mfcc_11_mean                  -0.2912      -0.3407      +0.1978      +0.0659      +0.1155      -0.4890      -0.2857      -0.3132  -0.1676
+  mfcc_7_std                    +0.2033      +0.0110      +0.0879      -0.1648      -0.2971      -0.4176      -0.7500      -0.1813  -0.1886
+  f0_range                      +0.0165      -0.1868      -0.1209      +0.0989      -0.3499      -0.0909      -0.3929      +0.2912  -0.0918
+  mfcc_4_std                    -0.1758      -0.0549      -0.0385      -0.0495      -0.0963      -0.0714      -0.7143      +0.3077  -0.1116
+  rms                           -0.2967      +0.1319      -0.2253      +0.2527      +0.2393      +0.2857      +0.0357      +0.5604  +0.1230
+  onset_std                     +0.3407      +0.3791      +0.6154      +0.6648      +0.6465      +0.4725      +0.0357      +0.8077  +0.4953
+  mfcc_12_mean                  -0.0934      -0.2582      -0.1264      -0.3297      -0.0578      -0.3187      -0.2143      -0.2912  -0.2112
+  f0_std                        -0.2418      -0.3846      -0.1593      +0.0330      -0.3136      -0.1293      -0.1786      +0.0824  -0.1615
+
+================================================================================
+7. LOUDNESS EFFECT: LUFS-normalized vs Original within same model
+================================================================================
+
+  Model                Orig SyncD LUFS SyncD        Δ Orig SyncC LUFS SyncC   Orig LUFS  LUFS LUFS
+  -------------------- ---------- ---------- -------- ---------- ---------- ---------- ----------
+  F5-TTS                    7.711      7.545   -0.166       7.190      7.749       -34.7      -23.6  SyncD BETTER, SyncC BETTER
+  Higgs TTS 3               8.044      7.764   -0.280       6.444      7.313       -38.8      -23.8  SyncD BETTER, SyncC BETTER
+  ChatTTS                   8.161      8.112   -0.049       6.968      6.876       -17.0      -22.8  SyncD BETTER, SyncC worse
+  IndexTTS2                 7.719      7.955   +0.236       6.729      6.531       -37.7      -23.0  SyncD worse, SyncC worse
+  GSV-TTS                   7.919      7.958   +0.039       6.362      6.591       -41.9      -23.0  SyncD worse, SyncC BETTER
+  Fish S2 Pro               7.648      8.538   +0.890       7.571      5.812       -15.5      -23.0  SyncD worse, SyncC worse
+
+================================================================================
+8. PROVIDER FEATURE PROFILES (top models only)
+================================================================================
+
+  Provider                   SyncD   SyncC mfcc_3_std mfcc_10_me mfcc_11_me mfcc_7_std
+  ------------------------ ------- ------- ---------- ---------- ---------- ----------
+  f5_tts                     7.711   7.190     39.147      8.615    -12.943     14.672
+  f5_tts_loudnorm            7.545   7.749     39.143      8.627    -12.950     14.674
+  fish_audio                 7.648   7.571     35.011     -0.588    -18.139     13.585
+  dashscope_vc               7.857   7.182     39.005      1.532    -17.152     14.652
+  qwen3_loudnorm             7.799   7.347     39.004      1.545    -17.165     14.653
+  higgs_tts                  8.044   6.444     33.242      5.956     -8.038     12.884
+  higgs_loudnorm             7.764   7.313     33.241      5.961     -8.043     12.881
+  indextts2_baseline         7.719   6.729     36.486      7.615     -9.625     15.998
+  gsv_tts                    7.919   6.362     44.085      6.199    -13.845     15.394
+  chattts_original           8.161   6.968     38.935     -2.741    -10.040     16.754
+  faster_qwen3               7.536   6.686     30.479      6.460     -6.837     12.896
+  siliconflow                7.511   6.601     36.863      6.907    -10.264     14.919
+
+Generating pairwise plot for top features...
+  Saved: figures/obs_v2_pairplot.png
+
+================================================================================
+10. SUMMARY
+================================================================================
+
+Dataset: 447 scored rows, 52 features, 447 clean rows
+
+Top SyncD predictors (lower SyncD = better lip sync):
+  1. mfcc_3_std               Spearman r=-0.3363 (negative (good))
+  2. mfcc_10_mean             Spearman r=-0.2628 (negative (good))
+  3. mfcc_11_mean             Spearman r=-0.2298 (negative (good))
+  4. mfcc_7_std               Spearman r=-0.2007 (negative (good))
+  5. f0_range                 Spearman r=-0.1924 (negative (good))
+
+Top SyncC predictors (higher SyncC = better confidence):
+  1. spec_centroid_std        Spearman r=-0.3902 (negative (bad))
+  2. onset_mean               Spearman r=+0.3486 (positive (good))
+  3. mfcc_2_mean              Spearman r=+0.3107 (positive (good))
+  4. mfcc_9_std               Spearman r=-0.3009 (negative (bad))
+  5. hf_ratio                 Spearman r=-0.2827 (negative (bad))
+
+LASSO selected 43 non-zero features for SyncD prediction
+Random Forest top-3 importance:
+  mfcc_3_std                 0.1016
+  mfcc_4_std                 0.0729
+  mfcc_11_mean               0.0524

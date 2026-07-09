@@ -26,6 +26,7 @@ from .dashscope_vc import DashScopeQwen3VCProvider
 from .f5_tts import F5TTSProvider
 from .faster_qwen3 import FasterQwen3TTSProvider
 from .fish_audio import FishAudioProvider
+from .higgs_tts import HiggsTTSProvider
 from .siliconflow import SiliconFlowProvider
 
 
@@ -34,6 +35,7 @@ _REGISTRY: dict[str, type[TTSProvider]] = {
     "dashscope_vc": DashScopeQwen3VCProvider,
     "fish_audio": FishAudioProvider,
     "f5_tts": F5TTSProvider,
+    "higgs_tts": HiggsTTSProvider,
     "siliconflow": SiliconFlowProvider,
 }
 

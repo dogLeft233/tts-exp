@@ -1,0 +1,6 @@
+# R1: DashScope cloud voice clone (qwen3-tts-vc-2026-01-22, no loudnorm)
+tts:
+  provider: dashscope_vc
+  dashscope_vc:
+    target_model: qwen3-tts-vc-2026-01-22
+    voice_prefix: ttsexp_vc

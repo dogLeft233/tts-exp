@@ -1,0 +1,8 @@
+# R1: DashScope cloud CosyVoice3.5-Plus (cosyvoice-v3.5-plus, no loudnorm)
+# WARNING: qwen-voice-enrollment may not accept cosyvoice-v3.5-plus as target_model.
+# If voice registration fails, fall back to voice design API (qwen3-tts-vd-2026-01-26).
+tts:
+  provider: dashscope_vc
+  dashscope_vc:
+    target_model: cosyvoice-v3.5-plus
+    voice_prefix: ttsexp_cv3

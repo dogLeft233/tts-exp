@@ -1,0 +1,10 @@
+# R1: SiliconFlow CosyVoice2-0.5B (cloud, OpenAI-compatible API)
+# Needs SILICONFLOW_API_KEY env var.
+tts:
+  provider: siliconflow
+  siliconflow:
+    api_key_env: SILICONFLOW_API_KEY
+    model: FunAudioLLM/CosyVoice2-0.5B
+    response_format: wav
+    speed: 1.0
+    gain: 0.0

@@ -51,6 +51,15 @@ def load_transcripts(run_dir: Path, sample_ids: list[int]) -> dict[int, str]:
     return texts
 
 
+def _deep_merge(base: dict, override: dict) -> None:
+    """Merge override dict into base dict recursively in place."""
+    for key, val in override.items():
+        if key in base and isinstance(base[key], dict) and isinstance(val, dict):
+            _deep_merge(base[key], val)
+        else:
+            base[key] = val
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -60,6 +69,12 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Self-clone TTS generation")
     ap.add_argument("--run_id", required=True)
     ap.add_argument("--smoke", action="store_true")
+    ap.add_argument(
+        "--config",
+        default="",
+        help="Optional config override (path relative to repo root, e.g. scripts/configs/r1_dashscope_flash.yaml). "
+             "Merged on top of default scripts/config.yaml.",
+    )
     args = ap.parse_args()
 
     repo = Path(__file__).resolve().parent.parent
@@ -68,12 +83,22 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     cfg = load_config(repo)
+    if args.config:
+        override_path = repo / args.config
+        if not override_path.exists():
+            print(f"[tts] ERROR: override config not found: {override_path}")
+            raise SystemExit(1)
+        override = yaml.safe_load(override_path.read_text()) or {}
+        _deep_merge(cfg, override)
+        print(f"[tts] loaded config override: {args.config}")
+
     tts_cfg = cfg.get("tts", {})
     seed = int(tts_cfg.get("seed", 42))
     language = tts_cfg.get("language", "Chinese")
     retries = int(tts_cfg.get("retry", 1))
 
-    sample_ids = [1] if args.smoke else list(range(1, 11))
+    from utils import detect_sample_ids
+    sample_ids = detect_sample_ids(repo, args.smoke)
     transcripts = load_transcripts(run_dir, sample_ids)
     if not transcripts:
         print("[tts] ERROR: no transcripts found. Run 01_asr.py first.")

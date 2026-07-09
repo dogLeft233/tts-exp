@@ -136,29 +136,32 @@ def run_ditto(
         if Path(libdir).is_dir():
             env["LD_LIBRARY_PATH"] = libdir
 
+    # ditto-talkinghead has a single `inference.py` entrypoint; the cfg_pkl
+# (v0.4_hubert_cfg_trt_online.pkl vs v0.4_hubert_cfg_trt.pkl) selects online
+# vs offline streaming internally. ditto.md names `inference_online.py` but the
+# file does not exist in this checked-out ditto version, so we always use
+# inference.py and pass the cfg_pkl through (verified manually).
     ditto_dir = repo / cfg["paths"]["third_party"] / "ditto-talkinghead"
-    for script_name in ("inference.py", "inference_online.py"):
-        script = ditto_dir / script_name
-        if not script.exists():
-            continue
-        cmd = [
-            "python", str(script),
-            "--data_root", data_root,
-            "--cfg_pkl", cfg_pkl,
-            "--audio_path", str(audio_path),
-            "--source_path", str(source_path),
-            "--output_path", str(output_path),
-        ]
-        for attempt in range(retries + 1):
-            try:
-                if attempt > 0:
-                    time.sleep(1)
-                subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=300, env=env)
-                return True
-            except subprocess.CalledProcessError as e:
-                if "libcudnn" in (e.stderr or "") or "Could not load" in (e.stderr or ""):
-                    return False
+    script = ditto_dir / "inference.py"
+    if not script.exists():
         return False
+    cmd = [
+        "python", str(script),
+        "--data_root", data_root,
+        "--cfg_pkl", cfg_pkl,
+        "--audio_path", str(audio_path),
+        "--source_path", str(source_path),
+        "--output_path", str(output_path),
+    ]
+    for attempt in range(retries + 1):
+        try:
+            if attempt > 0:
+                time.sleep(1)
+            subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=300, env=env)
+            return True
+        except subprocess.CalledProcessError as e:
+            if "libcudnn" in (e.stderr or "") or "Could not load" in (e.stderr or ""):
+                return False
     return False
 
 
@@ -175,7 +178,8 @@ def main() -> None:
 
     cfg = load_config(repo)
     ditto_bin = str(Path(cfg["paths"]["envs_dir"]) / "ditto" / "bin")
-    sample_ids = [1] if args.smoke else list(range(1, 11))
+    from utils import detect_sample_ids
+    sample_ids = detect_sample_ids(repo, args.smoke)
     conditions = cfg.get("ditto", {}).get("conditions", ["natural_raw", "natural_resamp", "tts_raw", "tts_resamp"])
     do_loudnorm = cfg.get("ditto", {}).get("loudnorm", True)
 

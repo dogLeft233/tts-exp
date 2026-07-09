@@ -84,11 +84,19 @@ def generate_figures(summary_rows: list[dict], out_dir: Path) -> None:
     fig_dir = out_dir / "figures"
     fig_dir.mkdir(exist_ok=True)
 
-    # Extract data for resamp (primary comparison)
-    n_resamp_c = [r["natural_resamp_c"] for r in summary_rows if r["natural_resamp_c"] is not None and r["tts_resamp_c"] is not None]
-    t_resamp_c = [r["tts_resamp_c"] for r in summary_rows if r["natural_resamp_c"] is not None and r["tts_resamp_c"] is not None]
-    n_resamp_d = [r["natural_resamp_d"] for r in summary_rows if r["natural_resamp_d"] is not None and r["tts_resamp_d"] is not None]
-    t_resamp_d = [r["tts_resamp_d"] for r in summary_rows if r["natural_resamp_d"] is not None and r["tts_resamp_d"] is not None]
+    # Pick primary arm: prefer resamp if it has data, else fall back to raw
+    has_resamp = any(r["natural_resamp_c"] is not None and r["tts_resamp_c"] is not None for r in summary_rows)
+    arm = "resamp" if has_resamp else "raw"
+    n_key_c = f"natural_{arm}_c"
+    t_key_c = f"tts_{arm}_c"
+    n_key_d = f"natural_{arm}_d"
+    t_key_d = f"tts_{arm}_d"
+
+    # Extract data for the chosen arm (primary comparison)
+    n_resamp_c = [r[n_key_c] for r in summary_rows if r[n_key_c] is not None and r[t_key_c] is not None]
+    t_resamp_c = [r[t_key_c] for r in summary_rows if r[n_key_c] is not None and r[t_key_c] is not None]
+    n_resamp_d = [r[n_key_d] for r in summary_rows if r[n_key_d] is not None and r[t_key_d] is not None]
+    t_resamp_d = [r[t_key_d] for r in summary_rows if r[n_key_d] is not None and r[t_key_d] is not None]
 
     if not n_resamp_c:
         return
@@ -182,20 +190,27 @@ def generate_report(
                 "max": max(d_vals),
             }
 
-    # Paired stats for resamp (primary comparison)
-    n_c = [r["natural_resamp_c"] for r in summary_rows if r["natural_resamp_c"] is not None and r["tts_resamp_c"] is not None]
-    t_c = [r["tts_resamp_c"] for r in summary_rows if r["natural_resamp_c"] is not None and r["tts_resamp_c"] is not None]
-    n_d = [r["natural_resamp_d"] for r in summary_rows if r["natural_resamp_d"] is not None and r["tts_resamp_d"] is not None]
-    t_d = [r["tts_resamp_d"] for r in summary_rows if r["natural_resamp_d"] is not None and r["tts_resamp_d"] is not None]
+    # Pick primary comparison arm: prefer resamp if it has data, else fall back to raw
+    has_resamp = any(r["natural_resamp_c"] is not None and r["tts_resamp_c"] is not None for r in summary_rows)
+    primary_arm = "resamp" if has_resamp else "raw"
+    nat_c_key, tts_c_key = f"natural_{primary_arm}_c", f"tts_{primary_arm}_c"
+    nat_d_key, tts_d_key = f"natural_{primary_arm}_d", f"tts_{primary_arm}_d"
+    nat_cond, tts_cond = f"natural_{primary_arm}", f"tts_{primary_arm}"
+
+    # Paired stats for primary arm
+    n_c = [r[nat_c_key] for r in summary_rows if r[nat_c_key] is not None and r[tts_c_key] is not None]
+    t_c = [r[tts_c_key] for r in summary_rows if r[nat_c_key] is not None and r[tts_c_key] is not None]
+    n_d = [r[nat_d_key] for r in summary_rows if r[nat_d_key] is not None and r[tts_d_key] is not None]
+    t_d = [r[tts_d_key] for r in summary_rows if r[nat_d_key] is not None and r[tts_d_key] is not None]
 
     paired_c = paired_stats(n_c, t_c) if len(n_c) >= 2 else {"n": len(n_c)}
     paired_d = paired_stats(n_d, t_d) if len(n_d) >= 2 else {"n": len(n_d)}
 
     # Direction check
-    mean_nat_c = stats_c.get("natural_resamp", {}).get("mean", 0)
-    mean_tts_c = stats_c.get("tts_resamp", {}).get("mean", 0)
-    mean_nat_d = stats_d.get("natural_resamp", {}).get("mean", 0)
-    mean_tts_d = stats_d.get("tts_resamp", {}).get("mean", 0)
+    mean_nat_c = stats_c.get(nat_cond, {}).get("mean", 0)
+    mean_tts_c = stats_c.get(tts_cond, {}).get("mean", 0)
+    mean_nat_d = stats_d.get(nat_cond, {}).get("mean", 0)
+    mean_tts_d = stats_d.get(tts_cond, {}).get("mean", 0)
 
     # TTS better = Sync-C higher AND Sync-D lower
     sync_c_better = mean_tts_c > mean_nat_c
@@ -241,7 +256,7 @@ def generate_report(
 
     report_lines.extend([
         "",
-        "### Paired analysis (natural_resamp vs tts_resamp)",
+        f"### Paired analysis (natural_{primary_arm} vs tts_{primary_arm})",
         "",
         f"- Sync-C paired n={paired_c.get('n', 0)}, p={_fmt(paired_c.get('p_value'), '.4f')}, Cohen's d={_fmt(paired_c.get('cohens_d'), '.3f')}",
         f"- Sync-D paired n={paired_d.get('n', 0)}, p={_fmt(paired_d.get('p_value'), '.4f')}, Cohen's d={_fmt(paired_d.get('cohens_d'), '.3f')}",
@@ -281,8 +296,11 @@ def main() -> None:
     out_dir = run_dir / "05_report"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    conditions = ["natural_raw", "natural_resamp", "tts_raw", "tts_resamp"]
+    conditions = ["natural_raw", "tts_raw", "natural_resamp", "tts_resamp"]
     rows = find_syncnet_results(eval_dir)
+    # Limit to conditions that actually have data so empty arms don't pollute the table
+    present_conds = {r["condition"] for r in rows}
+    conditions = [c for c in conditions if c in present_conds]
     print(f"[report] {len(rows)} syncnet results found")
 
     if not rows:

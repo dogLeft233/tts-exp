@@ -29,3 +29,17 @@ third_party/
 # Large engine/plan files (in case of accidental local download)
 *.engine
 *.plan
+
+# Agent artifacts
+HANDOFF.md
+
+# Experiment tracking
+*.csv
+!data/*_results/*.csv
+
+# Intermediate TTS outputs (per-model audio)
+data/gsv-tts/
+data/data/audio/r2_audio/
+
+# Scratch notes
+data/data/audio/trans.md

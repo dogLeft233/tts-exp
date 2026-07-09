@@ -83,7 +83,8 @@ def main() -> None:
     out_dir = repo / "runs" / args.run_id / "00_datacheck"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    sample_ids = [1] if args.smoke else list(range(1, 11))
+    from utils import detect_sample_ids
+    sample_ids = detect_sample_ids(repo, args.smoke)
 
     audio_results = check_audio(repo / "data" / "data" / "audio", sample_ids)
     image_results = check_images(repo / "data" / "data" / "image", sample_ids)

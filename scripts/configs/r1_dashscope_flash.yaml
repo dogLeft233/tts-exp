@@ -1,0 +1,7 @@
+# R1: DashScope cloud Qwen3-TTS-Flash (qwen3-tts-flash 1.7B, no loudnorm)
+# Voice enrollment uses qwen-voice-enrollment with target_model=qwen3-tts-flash
+tts:
+  provider: dashscope_vc
+  dashscope_vc:
+    target_model: qwen3-tts-flash
+    voice_prefix: ttsexp_flash

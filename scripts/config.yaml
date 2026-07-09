@@ -42,9 +42,9 @@ asr:
   retry: 1
   temperature: 0
 
-# 02_tts (Q17: 抽象 provider;默认走云端 VC 大模型)
+# 02_tts (Q17: 抽象 provider;严格按 docs/tts-tfg提升实验.md 用本地 0.6B Base ICL)
 tts:
-  provider: "dashscope_vc"  # one of: dashscope_vc, faster_qwen3
+  provider: "faster_qwen3"  # one of: dashscope_vc, faster_qwen3
   language: "Chinese"
   seed: 42
   retry: 1
@@ -61,9 +61,9 @@ tts:
     voice_prefix: "ttsexp"
     base_url: "https://dashscope.aliyuncs.com/api/v1"   # 北京地域默认
 
-# 03_ditto (Q4/Q31/Q33: TRT online 主用,PyTorch 自动回退)
+# 03_ditto (严格按 docs/ditto.md: trt-online cfg_pkl, 不做 loudnorm, 只 raw 双臂)
 ditto:
-  loudnorm: true              # EBU R128: normalise audio to -24 LUFS before Ditto
+  loudnorm: false             # docs 未提及响度归一化 → 关闭
   trt_online:
     data_root: "/root/autodl-tmp/checkpoints/ditto_trt_Ampere_Plus"
     cfg_pkl: "/root/autodl-tmp/checkpoints/ditto_cfg/v0.4_hubert_cfg_trt.pkl"
@@ -73,12 +73,10 @@ ditto:
   seed: 42
   retry: 1
   ifps: 25                    # Ditto 默认输出 25fps (Q10)
-  # Q26: 2x2 design = 2 conditions x 2 resampling branches
+  # 严格对齐 docs: 仅 raw 双臂 (无 resamp 对照)
   conditions:
     - natural_raw
-    - natural_resamp
     - tts_raw
-    - tts_resamp
   # resamp 目标格式 (UNI 16kHz 单声道 16-bit, 见 Q26)
   resamp:
     sr: 16000

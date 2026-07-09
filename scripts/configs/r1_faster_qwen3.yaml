@@ -1,0 +1,7 @@
+# R1 baseline: local faster_qwen3 0.6B (strict replication, no loudnorm)
+tts:
+  provider: faster_qwen3
+  faster_qwen3:
+    clone_mode: icl
+    x_vector_only: false
+    append_silence: true

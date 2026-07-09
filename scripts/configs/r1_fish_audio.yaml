@@ -1,0 +1,13 @@
+# R1: Fish Audio S2 Pro (cloud, no loudnorm)
+# Needs FISH_AUDIO_API_KEY env var. Register at https://fish.audio
+tts:
+  provider: fish_audio
+  fish_audio:
+    api_key_env: FISH_AUDIO_API_KEY
+    tts_model: s2-pro
+    voice_prefix: ttsexp_fish
+    visibility: private
+    format: wav
+    sample_rate: 24000
+    latency: normal
+    normalize_loudness: false

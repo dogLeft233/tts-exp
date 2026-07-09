@@ -115,7 +115,8 @@ def main() -> None:
         )
         raise SystemExit(1)
 
-    sample_ids = [1] if args.smoke else list(range(1, 11))
+    from utils import detect_sample_ids
+    sample_ids = detect_sample_ids(repo, args.smoke)
     audio_dir = repo / "data" / "data" / "audio"
 
     results: dict[int, dict] = {}

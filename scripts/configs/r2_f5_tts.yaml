@@ -1,0 +1,9 @@
+# R2: F5-TTS local (non-autoregressive flow-matching)
+# Requires: pip install f5-tts (code MIT; model weights CC-BY-NC)
+tts:
+  provider: f5_tts
+  f5_tts:
+    model_name: F5TTS_Base
+    nfe_step: 32
+    cfg_strength: 2.0
+    device: cuda
