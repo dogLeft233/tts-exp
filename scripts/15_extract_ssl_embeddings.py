@@ -226,6 +226,13 @@ def extract_frame_embeddings(
     )
 
     embedding_dim = _get_embedding_dim(model.config)
+    valid_layers = [l for l in layers if l < model.config.num_hidden_layers]
+    if len(valid_layers) != len(layers):
+        logger.warning(
+            "Requested layers %s exceed model depth (%d); using subset %s",
+            layers, model.config.num_hidden_layers, valid_layers,
+        )
+        layers = valid_layers
     emb = np.zeros((len(layers), n_frames, embedding_dim), dtype=np.float32)
     for i, layer_idx in enumerate(layers):
         emb[i] = hidden_states[layer_idx + 1].squeeze(0).cpu().numpy()
