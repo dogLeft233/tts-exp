@@ -71,7 +71,7 @@ logger = logging.getLogger(__name__)
 
 MODEL_REGISTRY: dict[str, str] = {
     "hubert": "facebook/hubert-base-ls960",
-    "xlsr": "facebook/wav2vec2-xlsr-53-56k",
+    "xlsr": "facebook/wav2vec2-large-xlsr-53",
 }
 """Known SSL model names and their HuggingFace identifiers."""
 
@@ -153,7 +153,8 @@ def load_model(
     from transformers import AutoModel  # heavy import, deferred
 
     model = AutoModel.from_pretrained(
-        model_name, output_hidden_states=True, trust_remote_code=False
+        model_name, output_hidden_states=True, trust_remote_code=False,
+        use_safetensors=True, local_files_only=True,
     )
     model.eval()
     model.to(device)
