@@ -840,6 +840,7 @@ def process_all(
 
     results: list[dict] = []
     all_comparisons: list[dict] = []
+    per_sample_deltas: dict[str, dict[str, float]] = {}
 
     conditions = ["natural", "faster_qwen3", "f5_tts"]
     variants = ["raw", "gain_matched"]
@@ -851,6 +852,30 @@ def process_all(
                 per_sample = _compute_metrics_per_sample(entries, model, layer, level)
                 comparisons = _compare_natural_vs_tts(per_sample, model, layer, level)
                 all_comparisons.extend(comparisons)
+
+                # --- Save per-sample deltas for step 17 ---
+                for variant in variants:
+                    nat_key = ("natural", variant)
+                    for tts_cond in ["faster_qwen3", "f5_tts"]:
+                        tts_key = (tts_cond, variant)
+                        if nat_key not in per_sample or tts_key not in per_sample:
+                            continue
+                        nat_data = per_sample[nat_key]
+                        tts_data = per_sample[tts_key]
+                        common_samples = set(nat_data.keys()) & set(tts_data.keys())
+                        for sid in common_samples:
+                            for metric_name in nat_data[sid]:
+                                if metric_name not in tts_data[sid]:
+                                    continue
+                                nv = nat_data[sid][metric_name]
+                                tv = tts_data[sid][metric_name]
+                                if nv is None or tv is None:
+                                    continue
+                                if isinstance(nv, (int, float)) and isinstance(tv, (int, float)):
+                                    key = f"{model}_{layer}_{level}_{variant}_{metric_name}"
+                                    if key not in per_sample_deltas:
+                                        per_sample_deltas[key] = {}
+                                    per_sample_deltas[key][str(sid)] = float(tv) - float(nv)
 
                 # --- Pooled metrics for reporting ---
                 for condition in conditions:
@@ -907,6 +932,7 @@ def process_all(
         },
         "results": results,
         "comparisons": all_comparisons,
+        "per_sample": per_sample_deltas,
     }
 
     output_path = output_dir / "separability_metrics.json"
