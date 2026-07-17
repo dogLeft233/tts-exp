@@ -965,10 +965,23 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def _parse_comma_list(raw: str) -> list[str]:
     items: list[str] = []
-    for x in raw.split(","):
-        x = x.strip()
-        if x:
-            items.append(x)
+    buf: list[str] = []
+    paren_depth = 0
+    for ch in raw:
+        if ch == "," and paren_depth == 0:
+            x = "".join(buf).strip()
+            if x:
+                items.append(x)
+            buf = []
+        else:
+            if ch == "(":
+                paren_depth += 1
+            elif ch == ")":
+                paren_depth -= 1
+            buf.append(ch)
+    x = "".join(buf).strip()
+    if x:
+        items.append(x)
     return items
 
 
