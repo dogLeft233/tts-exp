@@ -575,6 +575,8 @@ def _gather_layer_data(
             logger.warning("Failed to load %s: %s", npy_path, exc)
             continue
 
+        if layer_idx >= emb_all.shape[0]:
+            continue  # model has fewer layers than requested
         layer_emb = emb_all[layer_idx]
         pooled, label_map = _pool_frames_for_layer(layer_emb, frame_stride, target_sr, tokens)
 
@@ -682,6 +684,8 @@ def _compute_metrics_per_sample(
             emb_all = np.load(npy_path)
         except (OSError, ValueError):
             continue
+        if layer_idx >= emb_all.shape[0]:
+            continue  # model has fewer layers than requested
         layer_emb = emb_all[layer_idx]
         pooled, label_map = _pool_frames_for_layer(layer_emb, frame_stride, target_sr, tokens)
         if pooled.shape[0] == 0 or level not in label_map:
