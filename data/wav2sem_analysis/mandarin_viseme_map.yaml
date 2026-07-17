@@ -1,0 +1,77 @@
+# Mandarin viseme classification map for Wav2Sem-style feature analysis
+# Maps pinyin initials and finals to viseme categories based on lip shape
+
+viseme_categories:
+  bilabial: "Both lips involved (b, p, m)"
+  labiodental: "Lower lip + upper teeth (f)"
+  rounded_vowel: "Rounded lips (u, o, ü-based finals)"
+  open_vowel: "Open jaw (a-based finals)"
+  front_vowel: "Front/spread lips (i, e-based finals)"
+  nonlabial_consonant: "No lip involvement (all other initials)"
+  silence: "Silence or pause"
+
+initial_to_viseme:
+  b: bilabial
+  p: bilabial
+  m: bilabial
+  f: labiodental
+  d: nonlabial_consonant
+  t: nonlabial_consonant
+  n: nonlabial_consonant
+  l: nonlabial_consonant
+  g: nonlabial_consonant
+  k: nonlabial_consonant
+  h: nonlabial_consonant
+  j: nonlabial_consonant
+  q: nonlabial_consonant
+  x: nonlabial_consonant
+  zh: nonlabial_consonant
+  ch: nonlabial_consonant
+  sh: nonlabial_consonant
+  r: nonlabial_consonant
+  z: nonlabial_consonant
+  c: nonlabial_consonant
+  s: nonlabial_consonant
+  y: nonlabial_consonant
+  w: nonlabial_consonant
+  "\u2205": nonlabial_consonant
+
+final_to_viseme:
+  a: open_vowel
+  o: rounded_vowel
+  e: front_vowel
+  i: front_vowel
+  u: rounded_vowel
+  "\u00fc": rounded_vowel
+  ai: open_vowel
+  ei: front_vowel
+  ao: open_vowel
+  ou: rounded_vowel
+  an: open_vowel
+  en: front_vowel
+  ang: open_vowel
+  eng: front_vowel
+  ong: rounded_vowel
+  er: front_vowel
+  ia: open_vowel
+  ie: front_vowel
+  iao: open_vowel
+  iu: open_vowel
+  ian: open_vowel
+  in: front_vowel
+  iang: open_vowel
+  ing: front_vowel
+  iong: rounded_vowel
+  ua: rounded_vowel
+  uo: rounded_vowel
+  uai: rounded_vowel
+  ui: rounded_vowel
+  uan: rounded_vowel
+  un: rounded_vowel
+  uang: rounded_vowel
+  ueng: rounded_vowel
+  "\u00fce": rounded_vowel
+  "\u00fcan": rounded_vowel
+  "\u00fcn": rounded_vowel
+  "-i": front_vowel
+  "-e": front_vowel
