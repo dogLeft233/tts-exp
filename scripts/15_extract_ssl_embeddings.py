@@ -154,7 +154,7 @@ def load_model(
 
     model = AutoModel.from_pretrained(
         model_name, output_hidden_states=True, trust_remote_code=False,
-        use_safetensors=True, local_files_only=True,
+        local_files_only=True,
     )
     model.eval()
     model.to(device)
