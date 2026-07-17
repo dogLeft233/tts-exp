@@ -455,7 +455,9 @@ def build_manifest(
                 except FileNotFoundError:
                     logger.warning("MFA binary not found; skipping alignment for sample %d", sample_id)
             elif not mfa_ok:
-                logger.debug("MFA not available; skipping alignment for sample %d", sample_id)
+                logger.debug(
+                    "MFA not available; using uniform segmentation for sample %d", sample_id,
+                )
 
             for variant in variants:
                 entry: dict = {
@@ -466,6 +468,24 @@ def build_manifest(
                     "duration_s": duration_s,
                     "tokens": [],
                 }
+
+                if not mfa_ok and pinyin_tokens and duration_s > 0:
+                    n = len(pinyin_tokens)
+                    segment_s = duration_s / n
+                    for i, (char, init, fin, tone) in enumerate(pinyin_tokens):
+                        start = round(i * segment_s, 6)
+                        end = round((i + 1) * segment_s, 6)
+                        viseme = pinyin_to_viseme(init, fin)
+                        entry["tokens"].append({
+                            "token": char,
+                            "initial": init,
+                            "final": fin,
+                            "tone": tone,
+                            "viseme": viseme,
+                            "start_s": start,
+                            "end_s": end,
+                            "confidence": 1.0,
+                        })
 
                 if ctm_path is not None and ctm_path.exists() and pinyin_tokens:
                     ctm_tokens, stats = parse_ctm_file(ctm_path)

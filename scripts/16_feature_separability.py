@@ -837,7 +837,7 @@ def process_all(
     results: list[dict] = []
     all_comparisons: list[dict] = []
 
-    conditions = ["natural", "faster_qwen3", "tts"]
+    conditions = ["natural", "faster_qwen3", "f5_tts"]
     variants = ["raw", "gain_matched"]
 
     for model in models:
