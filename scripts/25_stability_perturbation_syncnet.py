@@ -87,8 +87,53 @@ compute_energy_env_std = _s20.compute_energy_env_std
 # ---------------------------------------------------------------------------
 
 
-def stability_loss(h_l11, frame_times_np, boundary_idx_np):  # noqa: ANN001
-    raise NotImplementedError
+def stability_loss(h_l11, frame_times_np: np.ndarray, boundary_idx_np: np.ndarray):
+    """Differentiable `segment_stability` cost matching script 16's metric.
+
+    Parameters
+    ----------
+    h_l11 : torch.Tensor, shape (1, T, D) — hidden states at HuBERT layer 11
+    frame_times_np : np.ndarray, shape (T,) — frame centre times in seconds
+                      (only used for shape consistency; indices follow order)
+    boundary_idx_np : np.ndarray, shape (B,) — frame *indices* that are
+                       token-boundary frames (the "before" frame of each
+                       boundary). Pairs (i, i+1) where i is in this set are
+                       excluded from the within-segment average, mirroring
+                       script 16.
+
+    Returns
+    -------
+    loss : torch.Tensor scalar
+        Mean (1 - cos_sim) over within-segment consecutive frame pairs.
+    """
+    import torch
+
+    if h_l11.dim() != 3 or h_l11.shape[0] != 1:
+        raise ValueError(
+            f"expected h_l11 of shape (1, T, D), got {tuple(h_l11.shape)}"
+        )
+    T = h_l11.shape[1]
+    if T < 2:
+        raise ValueError("need >= 2 frames to compute stability")
+
+    h = h_l11.squeeze(0)
+    norm = h.norm(dim=1, keepdim=True).clamp_min(1e-10)
+    h_norm = h / norm
+
+    cos_sim = (h_norm[:-1] * h_norm[1:]).sum(dim=1)
+    cost_pair = 1.0 - cos_sim
+
+    if boundary_idx_np.size > 0:
+        before_set = set(int(i) for i in boundary_idx_np)
+        mask_vals = [0.0 if i in before_set else 1.0 for i in range(T - 1)]
+        mask = torch.tensor(mask_vals, dtype=h.dtype, device=h.device)
+    else:
+        mask = torch.ones(T - 1, dtype=h.dtype, device=h.device)
+
+    masked = cost_pair * mask
+    if float(mask.sum().item()) < 1.0:
+        return torch.zeros((), dtype=h.dtype, device=h.device)
+    return masked.sum() / mask.sum()
 
 
 def apply_uniform_fallback_boundaries(audio_duration_s: float) -> np.ndarray:
