@@ -385,8 +385,54 @@ def pgd_perturb(
     return perturbed.cpu().numpy().astype(np.float32)
 
 
-def _build_interventions(args) -> list[Intervention]:
-    raise NotImplementedError
+def _build_interventions(args: argparse.Namespace) -> list[Intervention]:
+    """Construct the 3 intervention cells defined by the spec."""
+    cells: list[Intervention] = []
+    manifest_path = args.manifest
+    cells.append(Intervention(
+        name="stability_adj_tts",
+        source="tts",
+        baseline_cond="tts_raw",
+        transform_description=(
+            "PGD raises HuBERT-L11 segment_stability cost on TTS (destabilize)"
+        ),
+        expected_sync_direction="decrease",
+        transform=pgd_stability_transform(
+            direction="raise_cost",
+            eps=args.eps, alpha=args.alpha, K=args.pgd_steps,
+            device=args.device, repo=args.repo, manifest_path=manifest_path,
+            condition="tts",
+        ),
+    ))
+    cells.append(Intervention(
+        name="stability_adj_nat",
+        source="natural",
+        baseline_cond="natural_raw",
+        transform_description=(
+            "PGD lowers HuBERT-L11 segment_stability cost on natural (stabilize)"
+        ),
+        expected_sync_direction="increase",
+        transform=pgd_stability_transform(
+            direction="lower_cost",
+            eps=args.eps, alpha=args.alpha, K=args.pgd_steps,
+            device=args.device, repo=args.repo, manifest_path=manifest_path,
+            condition="natural",
+        ),
+    ))
+    eps_capture = args.eps
+    def _random_noise(y_tts, _y_nat, sr, sid, eps=eps_capture):
+        return random_sign_noise_transform(y_tts, None, sr, sid, eps=eps)
+    cells.append(Intervention(
+        name="random_noise_tts",
+        source="tts",
+        baseline_cond="tts_raw",
+        transform_description=(
+            f"Random ±eps uniform noise on TTS (eps={eps_capture}, control)"
+        ),
+        expected_sync_direction="decrease",
+        transform=_random_noise,
+    ))
+    return cells
 
 
 def post_hoc_verify(y_pre, y_post, sr, sid, condition, repo, manifest_path=None):

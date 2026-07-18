@@ -7,6 +7,7 @@ the intervention registry. GPU/HuBERT-forward paths are mocked where needed.
 
 from __future__ import annotations
 
+import argparse
 import importlib.util
 import json
 import sys
@@ -374,3 +375,62 @@ def test_pgd_stability_transform_creates_callable_with_signature_intervention_ex
         assert delta <= 0.005 + 1e-6
     finally:
         _S25._ensure_hubert_model = orig_loader
+
+
+# ---------------------------------------------------------------------------
+# _build_interventions
+# ---------------------------------------------------------------------------
+
+
+def test_build_interventions_returns_three_cells(monkeypatch):
+    sentinel = object()
+    monkeypatch.setattr(
+        _S25, "pgd_stability_transform",
+        lambda **kw: sentinel,
+    )
+    ns = argparse.Namespace(
+        eps=0.005, alpha=0.001, pgd_steps=50, pgd_restarts=1,
+        device="cpu", repo=_REPO,
+        manifest=None,
+    )
+    cells = _S25._build_interventions(ns)
+    assert len(cells) == 3
+    names = [c.name for c in cells]
+    assert names == [
+        "stability_adj_tts",
+        "stability_adj_nat",
+        "random_noise_tts",
+    ]
+    assert all(hasattr(c, "transform") for c in cells)
+    assert cells[0].source == "tts"
+    assert cells[0].baseline_cond == "tts_raw"
+    assert cells[1].source == "natural"
+    assert cells[1].baseline_cond == "natural_raw"
+    assert cells[2].source == "tts"
+    assert cells[2].baseline_cond == "tts_raw"
+
+
+def test_build_interventions_random_noise_uses_tts_source(monkeypatch):
+    monkeypatch.setattr(
+        _S25, "pgd_stability_transform",
+        lambda **kw: (lambda y_t, y_n, sr, sid: y_t * 2),
+    )
+    ns = argparse.Namespace(
+        eps=0.005, alpha=0.001, pgd_steps=50, pgd_restarts=1,
+        device="cpu", repo=_REPO,
+        manifest=None,
+    )
+    cells = _S25._build_interventions(ns)
+    sentinel_stubs = {"called": 0}
+
+    def fake(y_src, _y_other, _sr, _sid, eps=0.005):
+        sentinel_stubs["called"] += 1
+        return y_src + 0.001
+
+    monkeypatch.setattr(_S25, "random_sign_noise_transform", fake)
+    y_t = np.array([1.0, -1.0, 0.5], dtype=np.float32)
+    y_n = np.array([-1.0, 1.0, -0.5], dtype=np.float32)
+    out = cells[2].transform(y_t, y_n, 16000, 5)
+    assert sentinel_stubs["called"] == 1
+    assert out.shape == y_t.shape
+    np.testing.assert_allclose(out, y_t + 0.001, atol=1e-6)
