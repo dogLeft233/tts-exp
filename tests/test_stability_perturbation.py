@@ -198,3 +198,30 @@ def test_load_token_boundaries_returns_empty_when_no_duration_for_fallback(tmp_p
     )
     assert isinstance(out, np.ndarray)
     assert out.size == 0
+
+
+# ---------------------------------------------------------------------------
+# random_sign_noise_transform
+# ---------------------------------------------------------------------------
+
+
+def test_random_sign_noise_clamps_within_eps():
+    rng = np.random.default_rng(42)
+    y = rng.uniform(-1.0, 1.0, 16000).astype(np.float32)
+    y_pulse = _S25.random_sign_noise_transform(y, None, 16000, 1, eps=0.005)
+    delta = y_pulse - y
+    assert np.abs(delta).max() <= 0.005 + 1e-8
+
+
+def test_random_sign_noise_output_is_bounded_waveform():
+    y = np.ones(8000, dtype=np.float32)
+    y_pulse = _S25.random_sign_noise_transform(y, None, 16000, 1, eps=0.005)
+    assert y_pulse.min() >= -1.0 - 1e-8
+    assert y_pulse.max() <= 1.0 + 1e-8
+
+
+def test_random_sign_noise_different_seed_each_call_gives_different_delta():
+    y = np.zeros(4096, dtype=np.float32)
+    a = _S25.random_sign_noise_transform(y, None, 16000, 1, eps=0.005)
+    b = _S25.random_sign_noise_transform(y, None, 16000, 2, eps=0.005)
+    assert not np.allclose(a, b)

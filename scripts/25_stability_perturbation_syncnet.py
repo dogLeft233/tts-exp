@@ -205,8 +205,39 @@ def load_token_boundaries(
     return apply_uniform_fallback_boundaries(audio_duration_s)
 
 
-def random_sign_noise_transform(y_src, _y_other, _sr, _sid, eps: float = 0.005):
-    raise NotImplementedError
+def random_sign_noise_transform(
+    y_src: np.ndarray,
+    _y_other: np.ndarray | None,
+    sr: int,
+    sid: int,
+    eps: float = 0.005,
+) -> np.ndarray:
+    """Random ±eps sign-pattern noise, scaled by uniform magnitude in [0, eps].
+
+    Matches the L_inf budget of the PGD transforms. Returns float32 in
+    ``[-1, 1]``. The control intervention's purpose is to provide a
+    tighter baseline than script 23's identity control: shared ε budget,
+    non-targeted direction.
+
+    Parameters
+    ----------
+    y_src : np.ndarray, shape (n_samples,)
+        Source audio waveform (float32, in [-1, 1]).
+    sid : int
+        Sample id used to seed the RNG (deterministic per sample).
+    eps : float
+        L_inf bound on the perturbation.
+
+    Returns
+    -------
+    np.ndarray, same shape/dtype as y_src
+    """
+    rng = np.random.default_rng(int(sid) * 12345 + 17)
+    sign = rng.integers(0, 2, size=y_src.shape, dtype=np.int32) * 2 - 1  # ±1
+    magnitude = rng.uniform(0.0, eps, size=y_src.shape).astype(np.float32)
+    delta = (sign * magnitude).astype(np.float32)
+    out = (y_src.astype(np.float32) + delta).clip(-1.0, 1.0)
+    return out
 
 
 def pgd_stability_transform(direction: str, eps: float = 0.005, alpha: float = 0.001,
