@@ -49,6 +49,30 @@ def test_cosine_similarity_simple():
     assert abs(sim2 - 0.0) < 1e-6
 
 
+def test_flag_degenerate_sigma_zero_and_empty_l1_thresholds():
+    """flag_degenerate with all-identical ||Fs|| (σ=0) falls back to L1-only detection."""
+    spec.loader.exec_module(mod)
+    # All entries have identical ||Fs|| → σ=0 → only the l1<0.5 check fires
+    entries = [
+        {
+            "sample_id": i,
+            "condition": "natural" if i % 2 == 0 else "tts",
+            "Fs_cls": [0.5] * 768,
+            "fs_cls_norm": 14.0,  # arbitrary; identical across entries
+            "fs_empty_l1": 0.2 if i == 0 else 5.0,  # only sample 0 has small L1 → degenerate
+            "is_degenerate": False,
+        }
+        for i in range(4)
+    ]
+    result = mod.flag_degenerate(entries)
+    assert result[0]["is_degenerate"] is True, "small fs_empty_l1 must trigger degeneracy"
+    assert result[1]["is_degenerate"] is False
+    assert result[2]["is_degenerate"] is False
+    assert result[3]["is_degenerate"] is False
+    # Verify the others are not affected by norm-based detection (σ=0 → no threshold)
+    assert all(not r["is_degenerate"] for r in result[1:])
+
+
 if __name__ == "__main__":
     import pytest
     sys.exit(pytest.main([__file__, "-v"]))

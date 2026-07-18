@@ -82,7 +82,12 @@ def load_bert_model(
 
 def encode_text(text: str, model, tokenizer, device: str = "cpu", max_length: int = 128):
     """Encode a text into a BERT forward pass; returns (outputs, inputs)."""
-    import torch
+    try:
+        import torch
+    except ImportError as e:
+        raise ImportError(
+            f"torch is required for encode_text; install with: pip install torch — {e}"
+        )
     inputs = tokenizer(text, return_tensors="pt", truncation=True, max_length=max_length)
     inputs = {k: v.to(device) for k, v in inputs.items()}
     with torch.no_grad():
@@ -148,7 +153,7 @@ def process_sample(
 
 
 def compute_nt_similarity(entries: list[dict]) -> list[dict]:
-    """For each sample_id, compute natural↔TTS Fs similarity."""
+    """For each sample_id, compute natural↔TTS Fs similarity (cls and mean)."""
     by_sid: dict[int, dict[str, dict]] = {}
     for e in entries:
         by_sid.setdefault(e["sample_id"], {})[e["condition"]] = e
@@ -167,6 +172,7 @@ def compute_nt_similarity(entries: list[dict]) -> list[dict]:
             "cosine_cls_nt": cosine_similarity(Fs_nat_cls, Fs_tts_cls),
             "cosine_mean_nt": cosine_similarity(Fs_nat_mean, Fs_tts_mean),
             "l1_cls_nt": l1_distance(Fs_nat_cls, Fs_tts_cls),
+            "l1_mean_nt": l1_distance(Fs_nat_mean, Fs_tts_mean),
         })
     return out
 
