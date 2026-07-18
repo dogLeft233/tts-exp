@@ -119,8 +119,9 @@ failure, unrecoverable):
 ### `stability_loss(h_l11, frame_times, seg_boundaries_idx)`
 
 Cosine-change cost over consecutive within-segment frame pairs, matching
-`compute_boundary_and_stability` in `scripts/16_feature_separability.py:388`
-exactly so Phase 1 and Phase 2 metrics are commensurable.
+the `segment_stability` half of `boundary_sharpness` in
+`scripts/16_feature_separability.py:369` (`def boundary_sharpness`) exactly
+so Phase 1 and Phase 2 metrics are commensurable.
 
 ```
 emb_norm           = h_l11 / ||h_l11||_2  (per-frame)
