@@ -137,7 +137,6 @@ def test_uniform_fallback_boundaries_produces_50ms_segments():
 
 
 def test_load_token_boundaries_happy_path(tmp_path):
-    import json as _json
 
     manifest = {
         "samples": [
@@ -161,7 +160,7 @@ def test_load_token_boundaries_happy_path(tmp_path):
         ]
     }
     p = tmp_path / "alignment.json"
-    p.write_text(_json.dumps(manifest))
+    p.write_text(json.dumps(manifest))
     repo = tmp_path
 
     b_tts = _S25.load_token_boundaries(1, "tts", repo, manifest_path=p)
@@ -171,7 +170,6 @@ def test_load_token_boundaries_happy_path(tmp_path):
 
 
 def test_load_token_boundaries_falls_back_when_sample_missing(tmp_path):
-    import json as _json
 
     manifest = {"samples": [
         {"sample_id": 1, "condition": "tts", "tokens": [
@@ -179,10 +177,24 @@ def test_load_token_boundaries_falls_back_when_sample_missing(tmp_path):
         ]}
     ]}
     p = tmp_path / "alignment.json"
-    p.write_text(_json.dumps(manifest))
+    p.write_text(json.dumps(manifest))
 
     boundaries = _S25.load_token_boundaries(
         2, "tts", tmp_path, manifest_path=p, audio_duration_s=1.0,
     )
     assert len(boundaries) > 0
     assert boundaries[0] == pytest.approx(0.05, abs=1e-6)
+
+
+def test_load_token_boundaries_returns_empty_when_no_duration_for_fallback(tmp_path):
+    """If a sample is missing from the manifest AND no audio_duration_s is
+    provided, return an empty array so downstream code skips stability loss
+    over zero within-segment pairs."""
+    manifest = {"samples": []}
+    p = tmp_path / "alignment.json"
+    p.write_text(json.dumps(manifest))
+    out = _S25.load_token_boundaries(
+        2, "tts", tmp_path, manifest_path=p, audio_duration_s=None,
+    )
+    assert isinstance(out, np.ndarray)
+    assert out.size == 0

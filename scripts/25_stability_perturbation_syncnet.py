@@ -182,7 +182,6 @@ def load_token_boundaries(
     repo: Path,
     manifest_path: Path | None = None,
     audio_duration_s: float | None = None,
-    sr: int = TARGET_SR,
 ) -> np.ndarray:
     """Return per-token boundary end-times (seconds) for (sample, condition).
 
@@ -191,8 +190,9 @@ def load_token_boundaries(
 
     If no entry exists for this (sample_id, condition), returns uniform 50 ms
     segment boundaries — requires `audio_duration_s` to be provided in seconds
-    (caller computes from the loaded audio waveform). Raises a clear error if
-    fallback would be triggered but `audio_duration_s` is None.
+    (caller computes from the loaded audio waveform). Returns an empty array if
+    `audio_duration_s` is None — downstream code must handle zero
+    within-segment pairs gracefully.
     """
     if manifest_path is None:
         manifest_path = repo / "data" / "wav2sem_analysis" / "manifest" / "alignment.json"
