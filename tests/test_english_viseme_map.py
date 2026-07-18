@@ -1,6 +1,4 @@
-import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 import yaml
 
 VISEME_MAP_PATH = Path(__file__).resolve().parent.parent / "data" / "data" / "english_viseme_map.yaml"
@@ -55,10 +53,12 @@ def test_thirteen_viseme_classes():
 def test_silence_labels_listed():
     with open(VISEME_MAP_PATH) as f:
         data = yaml.safe_load(f)
-    assert "h#" in data["silence_labels"]
-    assert "sil" in data["silence_labels"]
+    silence_labels = data["silence_labels"]
+    for required in ["h#", "sil", "sp", "spn", ""]:
+        assert required in silence_labels, f"missing silence label: {required!r}"
 
 
 if __name__ == "__main__":
     import pytest
+    import sys
     sys.exit(pytest.main([__file__, "-v"]))
