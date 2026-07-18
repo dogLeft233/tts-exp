@@ -1,0 +1,64 @@
+paths:
+  audio_dir: data/data/audio_en
+  tts_audio_dir: data/data/audio_en_qwen3_tts
+  image_dir: data/data/image
+  natural_manifest: data/data/audio_en/manifest.json
+  tts_manifest: data/data/audio_en_qwen3_tts/manifest.json
+  analysis_dir: data/english_wav2sem_analysis
+  envs_dir: /root/autodl-tmp/envs
+  checkpoints_dir: /root/autodl-tmp/checkpoints
+  ditto_repo: third_party/ditto-talkinghead
+  syncnet_repo: third_party/syncnet_python
+
+samples:
+  count: 13
+  ids: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+  smoke_id: 1
+
+experiment:
+  name: english_wav2sem
+  seeds: [42, 43, 44]
+  primary_seed: 42
+  canonical_sample_rate: 16000
+  canonical_channels: 1
+  canonical_subtype: PCM_16
+  baseline_conditions: [natural, tts]
+  primary_metrics: [sync_c, sync_d]
+  require_complete_pairs: true
+
+ditto:
+  loudnorm: false
+  conditions: [natural, tts]
+  input_stage: 00_pairs
+  trt_online:
+    data_root: /root/autodl-tmp/checkpoints/ditto_trt_Ampere_Plus
+    cfg_pkl: /root/autodl-tmp/checkpoints/ditto_cfg/v0.4_hubert_cfg_trt.pkl
+  pytorch_fallback:
+    data_root: /root/autodl-tmp/checkpoints/ditto_pytorch
+    cfg_pkl: /root/autodl-tmp/checkpoints/ditto_cfg/v0.4_hubert_cfg_pytorch.pkl
+  retry: 1
+  ifps: 25
+
+eval:
+  syncnet_repo: third_party/syncnet_python
+  syncnet_model: data/syncnet_v2.model
+  retry: 1
+  require_complete_pairs: true
+
+wav2sem:
+  ssl_models: [hubert, xlsr]
+  layers: [0, 6, 11, 12]
+  target_bert: bert-base-uncased
+  alignment_source: librispeech_phn           # new; use LibriSpeech native .phn files
+  viseme_system: preston_blair_13             # new; 13-class Preston Blair viseme set
+  oracle_fs_input: transcript_text            # new; one of: transcript_text, transcript_asr
+  oracle_fs_pooling: [cls, mean]               # new; Fs candidates: CLS + mean-pooled tokens
+  fd_fc_layers: 2                             # new; FC depth for Fd_random tier
+  fd_fc_init: orthogonal                       # new; one of: orthogonal, identity, zero
+  fd_random_seed: 42                          # new; seed for FC orthogonal init reproducibility
+  fdr_alpha: 0.05
+  permutation_n: 10000                        # new; permutation-test iterations
+  official_repository: wslh852/Wav2Sem
+  official_commit: null
+  alignment_backend: mfa                       # legacy; ignored when alignment_source: librispeech_phn
+  fallback_alignment_backend: torchaudio_ctc
