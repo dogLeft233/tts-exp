@@ -136,13 +136,73 @@ def stability_loss(h_l11, frame_times_np: np.ndarray, boundary_idx_np: np.ndarra
     return masked.sum() / mask.sum()
 
 
+FALLBACK_SEGMENT_SEC: float = 0.05
+
+
 def apply_uniform_fallback_boundaries(audio_duration_s: float) -> np.ndarray:
-    raise NotImplementedError
+    """Return uniform-50ms segment-end-times under audio_duration_s.
+
+    Matches script 16's uniform-segmentation fallback (50 ms uniform segments
+    used when MFA phoneme alignments are unavailable for a sample).
+    """
+    if audio_duration_s <= 0.0:
+        return np.empty(0, dtype=np.float64)
+    end = float(np.floor(audio_duration_s / FALLBACK_SEGMENT_SEC)) * FALLBACK_SEGMENT_SEC
+    if end <= 0.0:
+        return np.empty(0, dtype=np.float64)
+    return np.arange(
+        FALLBACK_SEGMENT_SEC, end + FALLBACK_SEGMENT_SEC, FALLBACK_SEGMENT_SEC, dtype=np.float64,
+    )
 
 
-def load_token_boundaries(sample_id: int, condition: str, repo: Path,
-                          manifest_path: Path | None = None) -> np.ndarray:
-    raise NotImplementedError
+def _load_manifest_samples(manifest_path: Path) -> dict[tuple[int, str], list[float]]:
+    """Return {(sample_id, condition): [end_s, end_s, ...]} from manifest JSON."""
+    if not manifest_path or not manifest_path.exists():
+        return {}
+    data = json.loads(manifest_path.read_text())
+    samples = data.get("samples") if isinstance(data, dict) else data
+    if not isinstance(samples, list):
+        return {}
+    out: dict[tuple[int, str], list[float]] = {}
+    for entry in samples:
+        sid = entry.get("sample_id")
+        cond = entry.get("condition")
+        tokens = entry.get("tokens", [])
+        if sid is None or cond is None or not tokens:
+            continue
+        ends = [float(t["end_s"]) for t in tokens if "end_s" in t]
+        if len(ends) >= 2:
+            out[(int(sid), str(cond))] = ends[:-1]
+    return out
+
+
+def load_token_boundaries(
+    sample_id: int,
+    condition: str,
+    repo: Path,
+    manifest_path: Path | None = None,
+    audio_duration_s: float | None = None,
+    sr: int = TARGET_SR,
+) -> np.ndarray:
+    """Return per-token boundary end-times (seconds) for (sample, condition).
+
+    Looks up `manifest_path` if provided; otherwise falls back to
+    `repo / "data" / "wav2sem_analysis" / "manifest" / "alignment.json"`.
+
+    If no entry exists for this (sample_id, condition), returns uniform 50 ms
+    segment boundaries — requires `audio_duration_s` to be provided in seconds
+    (caller computes from the loaded audio waveform). Raises a clear error if
+    fallback would be triggered but `audio_duration_s` is None.
+    """
+    if manifest_path is None:
+        manifest_path = repo / "data" / "wav2sem_analysis" / "manifest" / "alignment.json"
+    table = _load_manifest_samples(manifest_path)
+    key = (int(sample_id), str(condition))
+    if key in table:
+        return np.asarray(table[key], dtype=np.float64)
+    if audio_duration_s is None:
+        return np.empty(0, dtype=np.float64)
+    return apply_uniform_fallback_boundaries(audio_duration_s)
 
 
 def random_sign_noise_transform(y_src, _y_other, _sr, _sid, eps: float = 0.005):

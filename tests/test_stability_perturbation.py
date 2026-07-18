@@ -121,3 +121,68 @@ def test_stability_loss_is_differentiable():
     loss.backward()
     assert h.grad is not None
     assert h.grad.shape == h.shape
+
+
+# ---------------------------------------------------------------------------
+# Token boundary loading
+# ---------------------------------------------------------------------------
+
+
+def test_uniform_fallback_boundaries_produces_50ms_segments():
+    boundaries = _S25.apply_uniform_fallback_boundaries(4.35)
+    assert boundaries[0] == pytest.approx(0.05, abs=1e-6)
+    assert boundaries[-1] == pytest.approx(4.30, abs=1e-6)
+    assert boundaries[1] - boundaries[0] == pytest.approx(0.05, abs=1e-6)
+    assert (boundaries < 4.35).all()
+
+
+def test_load_token_boundaries_happy_path(tmp_path):
+    import json as _json
+
+    manifest = {
+        "samples": [
+            {
+                "sample_id": 1,
+                "condition": "tts",
+                "tokens": [
+                    {"start_s": 0.0, "end_s": 0.20},
+                    {"start_s": 0.20, "end_s": 0.45},
+                    {"start_s": 0.45, "end_s": 0.70},
+                ],
+            },
+            {
+                "sample_id": 1,
+                "condition": "natural",
+                "tokens": [
+                    {"start_s": 0.0, "end_s": 0.30},
+                    {"start_s": 0.30, "end_s": 0.60},
+                ],
+            },
+        ]
+    }
+    p = tmp_path / "alignment.json"
+    p.write_text(_json.dumps(manifest))
+    repo = tmp_path
+
+    b_tts = _S25.load_token_boundaries(1, "tts", repo, manifest_path=p)
+    b_nat = _S25.load_token_boundaries(1, "natural", repo, manifest_path=p)
+    assert list(b_tts) == pytest.approx([0.20, 0.45], abs=1e-6)
+    assert list(b_nat) == pytest.approx([0.30], abs=1e-6)
+
+
+def test_load_token_boundaries_falls_back_when_sample_missing(tmp_path):
+    import json as _json
+
+    manifest = {"samples": [
+        {"sample_id": 1, "condition": "tts", "tokens": [
+            {"start_s": 0.0, "end_s": 0.30},
+        ]}
+    ]}
+    p = tmp_path / "alignment.json"
+    p.write_text(_json.dumps(manifest))
+
+    boundaries = _S25.load_token_boundaries(
+        2, "tts", tmp_path, manifest_path=p, audio_duration_s=1.0,
+    )
+    assert len(boundaries) > 0
+    assert boundaries[0] == pytest.approx(0.05, abs=1e-6)
