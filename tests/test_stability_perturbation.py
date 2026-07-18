@@ -526,3 +526,142 @@ def test_post_hoc_verify_flags_wrong_direction_when_metric_moves_opposite():
     assert out["expected_direction"] == "raise_cost"
     assert out["achieved_direction"] == "lower_cost"  # moved opposite
     assert out["achieved_aligns_with_expected"] is False
+
+
+# ---------------------------------------------------------------------------
+# main — dry-run smoke
+# ---------------------------------------------------------------------------
+
+
+def test_main_dry_run_does_not_invoke_ditto_or_syncnet(monkeypatch, tmp_path):
+    """A --dry-run invocation must exit cleanly; only the headers and plan
+    should be printed. The Ditto/SyncNet/HuBERT modules should remain uncalled.
+    """
+    monkeypatch.setattr(_S25, "_ensure_hubert_model",
+                        lambda device: pytest.fail("PGD should not run on dry-run"))
+    # Stub run_intervention_pipeline so it returns a fake result instead of
+    # actually calling Ditto. It records the call so we can assert post-hoc
+    # verification was performed.
+    call_log: list[dict] = []
+    def fake_pipeline(intervention, sid, y_tts, y_nat, sr, img_path,
+                      audio_out_dir, video_out_dir, eval_out_dir, repo, cfg,
+                      run_id, skip_audio, skip_video, skip_syncnet, dry_run):
+        call_log.append({
+            "intervention": intervention.name, "sid": sid, "dry_run": dry_run,
+        })
+        # Return a minimal per-sample record on dry-run.
+        return {"sync_c": 0.0, "sync_d": 0.0}, "DRY_RUN"
+    monkeypatch.setattr(_S25, "run_intervention_pipeline", fake_pipeline)
+    monkeypatch.setattr(_S25, "_REPO", tmp_path)
+    # Make a fake run dir so the run-id lookup passes.
+    repo = tmp_path
+    run_id = "fake_run_xyz"
+    run_dir = repo / "runs" / run_id
+    (run_dir / "02_tts").mkdir(parents=True)
+    (run_dir / "04_eval" / "tts_raw" / "1").mkdir(parents=True)
+    (run_dir / "04_eval" / "natural_raw" / "1").mkdir(parents=True)
+    (run_dir / "04_eval" / "tts_raw" / "1" / "syncnet.json").write_text(
+        json.dumps({"sync_c": 6.0, "sync_d": -1.0, "av_offset": 0})
+    )
+    (run_dir / "04_eval" / "natural_raw" / "1" / "syncnet.json").write_text(
+        json.dumps({"sync_c": 5.0, "sync_d": -1.0, "av_offset": 0})
+    )
+    # Need samples 1 audio file:
+    audio_dir = repo / "data" / "data" / "audio"
+    audio_dir.mkdir(parents=True)
+    import soundfile as sf
+    sr = 16000
+    for sid in [1]:
+        y = (np.random.default_rng(sid).uniform(-0.3, 0.3, sr * 2)).astype(np.float32)
+        sf.write(audio_dir / f"{sid}.wav", y, sr)
+        sf.write(run_dir / "02_tts" / f"{sid}.wav", y, sr)
+    img_dir = repo / "data" / "data" / "image"
+    img_dir.mkdir(parents=True)
+    (img_dir / "1.png").write_bytes(b"\x89PNG\r\n\x1a\nfake")
+
+    monkeypatch.setattr(_S25, "STUDY_SAMPLES", [1])
+
+    import sys as _sys
+    _sys.argv = [
+        "25_stability_perturbation_syncnet.py",
+        "--run-id", run_id,
+        "--samples", "1",
+        "--dry-run",
+        "--output-dir", str(tmp_path / "out"),
+        "--device", "cpu",
+    ]
+    _S25.main()
+
+    assert all(c["dry_run"] for c in call_log), "dry-run must propagate flag"
+
+
+def test_main_writes_summary_json_when_not_dry_run(monkeypatch, tmp_path):
+    """For a non-dry-run run with stubbed pipeline, the summary JSON should
+    exist at the expected path."""
+    import json
+
+    def fake_pipeline(intervention, sid, y_tts, y_nat, sr, img_path,
+                      audio_out_dir, video_out_dir, eval_out_dir, repo, cfg,
+                      run_id, skip_audio, skip_video, skip_syncnet, dry_run):
+        # Pretend perturbed.
+        return {"sync_c": 5.3, "sync_d": -3.0, "av_offset": 0}, "CACHED"
+    monkeypatch.setattr(_S25, "run_intervention_pipeline", fake_pipeline)
+    monkeypatch.setattr(_S25, "_REPO", tmp_path)
+
+    monkeypatch.setattr(_S25, "_ensure_hubert_model",
+                        lambda device: {"model": None, "frame_stride": 320,
+                                         "embedding_dim": 4, "num_layers": 13})
+
+    def fake_extract(model, audio, sr, layers, device="cpu"):
+        return np.zeros((1, 50, 4), dtype=np.float32), np.arange(50, dtype=np.float32) * 0.02
+    monkeypatch.setattr(_S25, "extract_frame_embeddings", fake_extract)
+    monkeypatch.setattr(_S25, "boundary_sharpness", lambda ft, h, b: (0.0, 0.15))
+
+    repo = tmp_path
+    run_id = "fake_run_xyz"
+    run_dir = repo / "runs" / run_id
+    (run_dir / "02_tts").mkdir(parents=True)
+    (run_dir / "04_eval" / "tts_raw" / "1").mkdir(parents=True)
+    (run_dir / "04_eval" / "natural_raw" / "1").mkdir(parents=True)
+    (run_dir / "04_eval" / "tts_raw" / "1" / "syncnet.json").write_text(
+        json.dumps({"sync_c": 6.0, "sync_d": -1.0, "av_offset": 0})
+    )
+    (run_dir / "04_eval" / "natural_raw" / "1" / "syncnet.json").write_text(
+        json.dumps({"sync_c": 5.0, "sync_d": -1.0, "av_offset": 0})
+    )
+    audio_dir = repo / "data" / "data" / "audio"
+    audio_dir.mkdir(parents=True)
+    import soundfile as sf
+    for sid in [1]:
+        y = (np.random.default_rng(sid).uniform(-0.3, 0.3, 16000 * 2)).astype(np.float32)
+        sf.write(audio_dir / f"{sid}.wav", y, 16000)
+        sf.write(run_dir / "02_tts" / f"{sid}.wav", y, 16000)
+    img_dir = repo / "data" / "data" / "image"
+    img_dir.mkdir(parents=True)
+    (img_dir / "1.png").write_bytes(b"\x89PNG\r\n\x1a\nfake")
+
+    monkeypatch.setattr(_S25, "STUDY_SAMPLES", [1])
+
+    out_dir = tmp_path / "out"
+    import sys as _sys
+    _sys.argv = [
+        "25_stability_perturbation_syncnet.py",
+        "--run-id", run_id,
+        "--samples", "1",
+        "--output-dir", str(out_dir),
+        "--device", "cpu",
+        "--pgd-steps", "3",
+    ]
+    # Need a manifest stub — point --manifest at a nonexistent file so
+    # load_token_boundaries returns empty (and post_hoc falls back).
+    _sys.argv += ["--manifest", str(tmp_path / "nonexistent.json")]
+
+    _S25.main()
+
+    out_path = out_dir / "stability_intervention.json"
+    assert out_path.exists()
+    data = json.loads(out_path.read_text())
+    assert "interventions" in data
+    assert len(data["interventions"]) == 3
+    for name in ("stability_adj_tts", "stability_adj_nat", "random_noise_tts"):
+        assert name in data["interventions"]
