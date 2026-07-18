@@ -736,3 +736,7 @@ def main() -> None:
                 f"{iv_name:<22} n={s['n_samples']:>2}  "
                 f"ΔSync-C={s['mean_delta_c']:+.4f}  ΔSync-D={s['mean_delta_d']:+.4f}"
             )
+
+
+if __name__ == "__main__":
+    main()
