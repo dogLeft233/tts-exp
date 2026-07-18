@@ -240,13 +240,149 @@ def random_sign_noise_transform(
     return out
 
 
-def pgd_stability_transform(direction: str, eps: float = 0.005, alpha: float = 0.001,
-                            K: int = 50, device: str = "cuda"):
-    raise NotImplementedError
+_HUBERT_CACHE: dict[str, object] = {}
 
 
-def pgd_perturb(y, model, frame_stride, dt_boundaries, eps, alpha, K, device, direction):
-    raise NotImplementedError
+def _ensure_hubert_model(device: str = "cuda"):
+    """Return a cached HuBERT base model with output_hidden_states=True.
+
+    The model is loaded once per process and reused across the per-sample
+    PGD loop. Weights are frozen (eval mode, requires_grad=False on all
+    parameters) — only the *input waveform* is a parameter.
+    """
+    if device in _HUBERT_CACHE:
+        return _HUBERT_CACHE[device]
+    import torch  # noqa: F401  (delayed import keeps CPU-only tests importing torch lazily)
+
+    model_name = "facebook/hubert-base-ls960"
+    model, embedding_dim, frame_stride, num_layers = load_model(
+        model_name,
+        device=device,
+    )
+    model.eval()
+    for p in model.parameters():
+        p.requires_grad_(False)
+    _HUBERT_CACHE[device] = {
+        "model": model,
+        "frame_stride": int(frame_stride),
+        "embedding_dim": int(embedding_dim),
+        "num_layers": int(num_layers),
+    }
+    return _HUBERT_CACHE[device]
+
+
+def pgd_stability_transform(
+    direction: str,
+    eps: float = 0.005,
+    alpha: float = 0.001,
+    K: int = 50,
+    device: str = "cuda",
+    repo: Path | None = None,
+    manifest_path: Path | None = None,
+    condition: str = "tts",
+    sr: int = TARGET_SR,
+):
+    """Return an Intervention-compatible transform closure.
+
+    The Intervention contract from script 22 is:
+        transform(y_tts, y_nat, sr, sid) -> np.ndarray (mono waveform)
+
+    Which waveform goes in depends on the Intervention's `.source` field
+    ("tts" -> y_tts; "natural" -> y_nat). The dispatch happens inside
+    `run_intervention_pipeline`; this closure is called with whichever source
+    was selected, paired with the *unused* counterpart (passed as `y_other`).
+    """
+    if repo is None:
+        repo = _REPO
+    if manifest_path is None:
+        manifest_path = repo / "data" / "wav2sem_analysis" / "manifest" / "alignment.json"
+    if condition not in ("tts", "natural"):
+        raise ValueError(f"condition must be tts|natural, got {condition!r}")
+
+    def _impl(y_tts, y_nat, sr_arg, sid):
+        if sr_arg != TARGET_SR:
+            raise ValueError(
+                f"PGD transform requires sr={TARGET_SR}; got sr={sr_arg}"
+            )
+        if condition == "tts":
+            y_src = y_tts
+        else:
+            y_src = y_nat
+
+        cache = _ensure_hubert_model(device)
+        model = cache["model"]
+        frame_stride = cache["frame_stride"]
+        audio_duration_s = float(y_src.shape[0]) / float(TARGET_SR)
+        boundaries = load_token_boundaries(
+            sid, condition, repo, manifest_path=manifest_path,
+            audio_duration_s=audio_duration_s,
+        )
+        return pgd_perturb(
+            y_src, model, frame_stride, boundaries,
+            eps=eps, alpha=alpha, K=K, device=device, direction=direction,
+        )
+
+    return _impl
+
+
+def pgd_perturb(
+    y: np.ndarray,
+    model,
+    frame_stride: int,
+    dt_boundaries: np.ndarray,
+    eps: float,
+    alpha: float,
+    K: int,
+    device: str,
+    direction: str,
+) -> np.ndarray:
+    """Apply PGD to perturb raw waveform `y` toward a stability target.
+
+    direction: "raise_cost" -> ascend L (less stable);
+               "lower_cost" -> descend L (more stable).
+    """
+    import torch
+
+    if direction not in ("raise_cost", "lower_cost"):
+        raise ValueError(f"direction must be raise_cost|lower_cost, got {direction!r}")
+    # We always *descend* on (direction_factor * L). raise_cost wants ascent
+    # on L -> descend on -L -> direction_factor = -1.
+    # lower_cost wants descent on L -> direction_factor = +1.
+    direction_factor = -1.0 if direction == "raise_cost" else +1.0
+
+    y_t = torch.from_numpy(np.ascontiguousarray(y)).float().to(device)
+    delta = torch.zeros_like(y_t, requires_grad=True)
+
+    with torch.no_grad():
+        probe = model(y_t.unsqueeze(0), output_hidden_states=True)
+        n_frames = probe.hidden_states[0].shape[1]
+    frame_times = np.arange(n_frames, dtype=np.float32) * (
+        float(frame_stride) / float(TARGET_SR)
+    )
+
+    if dt_boundaries.size > 0:
+        before_idx = np.searchsorted(frame_times, dt_boundaries.astype(np.float32)) - 1
+        before_idx = before_idx[(before_idx >= 0) & (before_idx < n_frames - 1)]
+        boundary_idx_np = before_idx.astype(np.int64)
+    else:
+        boundary_idx_np = np.empty(0, dtype=np.int64)
+
+    for _ in range(K):
+        x_adv = (y_t + delta).clamp(-1.0, 1.0)
+        outputs = model(x_adv.unsqueeze(0), output_hidden_states=True)
+        h_l11 = outputs.hidden_states[12]
+        L = stability_loss(h_l11, frame_times, boundary_idx_np)
+        loss = direction_factor * L
+        loss.backward()
+        with torch.no_grad():
+            grad_sign = torch.sign(delta.grad)
+            delta -= alpha * grad_sign
+            delta.clamp_(-eps, eps)
+        delta.grad = None
+
+    with torch.no_grad():
+        perturbed = (y_t + delta).clamp(-1.0, 1.0).squeeze()
+    return perturbed.cpu().numpy().astype(np.float32)
 
 
 def _build_interventions(args) -> list[Intervention]:

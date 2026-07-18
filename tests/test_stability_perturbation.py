@@ -225,3 +225,152 @@ def test_random_sign_noise_different_seed_each_call_gives_different_delta():
     a = _S25.random_sign_noise_transform(y, None, 16000, 1, eps=0.005)
     b = _S25.random_sign_noise_transform(y, None, 16000, 2, eps=0.005)
     assert not np.allclose(a, b)
+
+
+# ---------------------------------------------------------------------------
+# pgd_perturb + pgd_stability_transform
+# ---------------------------------------------------------------------------
+
+
+class _StubHuBERT:
+    """Tiny differentiable stand-in for HuBERT: produces (1, T, D)
+    hidden states from a single linear transform of the raw waveform.
+
+    For tests only — never used in production paths.
+    """
+
+    def __init__(self, T_out: int = 8, D: int = 4, seed: int = 0):
+        import torch
+
+        self.T_out = T_out
+        self.D = D
+        g = torch.Generator().manual_seed(seed)
+        self.weight = torch.randn(D, 1, generator=g) * 0.1
+        self.bias = torch.randn(D, generator=g) * 0.05
+        self.config = self._StubConfig()
+
+    class _StubConfig:
+        conv_stride = [5, 2, 2, 2, 2, 2, 2]
+        num_hidden_layers = 13
+
+    def __call__(self, waveform, output_hidden_states=True):
+        import torch
+
+        n = waveform.shape[-1]
+        step = max(1, n // self.T_out)
+        frames = waveform[..., :step * self.T_out].reshape(1, self.T_out, step)
+        frames_mean = frames.mean(dim=2, keepdim=False).unsqueeze(-1)
+        h_l12 = frames_mean @ self.weight.t() + self.bias
+        zeros_layer = torch.zeros_like(h_l12)
+        hidden_states = tuple(zeros_layer for _ in range(12)) + (h_l12,)
+        out = MagicMock()
+        out.hidden_states = hidden_states
+        return out
+
+
+def _random_source(n: int = 8000) -> np.ndarray:
+    rng = np.random.default_rng(0)
+    return (rng.uniform(-0.5, 0.5, n) * 0.5).astype(np.float32)
+
+
+def test_pgd_perturb_delta_is_bounded_by_eps():
+    import torch
+
+    model = _StubHuBERT()
+    y = _random_source(8000)
+    dt_boundaries = np.array([0.02, 0.04, 0.06], dtype=np.float32)
+    out = _S25.pgd_perturb(
+        y, model, 640, dt_boundaries,
+        eps=0.005, alpha=0.001, K=20, device="cpu", direction="raise_cost",
+    )
+    delta = out.astype(np.float64) - y.astype(np.float64)
+    assert np.abs(delta).max() <= 0.005 + 1e-6
+
+
+def test_pgd_perturb_output_is_clamped_to_valid_waveform():
+    model = _StubHuBERT()
+    y = np.ones(8000, dtype=np.float32)
+    dt_boundaries = np.array([0.02, 0.04, 0.06], dtype=np.float32)
+    out = _S25.pgd_perturb(
+        y, model, 640, dt_boundaries,
+        eps=0.005, alpha=0.001, K=20, device="cpu", direction="raise_cost",
+    )
+    assert out.min() >= -1.0 - 1e-6
+    assert out.max() <= 1.0 + 1e-6
+
+
+def test_pgd_perturb_does_not_change_input_when_eps_is_zero():
+    model = _StubHuBERT()
+    y = _random_source(8000)
+    dt_boundaries = np.array([0.02, 0.04, 0.06], dtype=np.float32)
+    out = _S25.pgd_perturb(
+        y, model, 640, dt_boundaries,
+        eps=0.0, alpha=0.0, K=20, device="cpu", direction="raise_cost",
+    )
+    assert np.allclose(out, y, atol=1e-6)
+
+
+def test_pgd_perturb_moves_metric_in_expected_direction():
+    """For the stub model, raise_cost should *raise* the loss value."""
+    import torch
+
+    model = _StubHuBERT()
+    y = _random_source(8000)
+    dt_boundaries = np.array([0.02, 0.04, 0.06], dtype=np.float32)
+    frame_stride = 640
+    def compute_loss(audio_np):
+        with torch.no_grad():
+            x = torch.from_numpy(audio_np).float().unsqueeze(0)
+            out = model(x)
+            h_l11 = out.hidden_states[12]
+            n_frames = h_l11.shape[1]
+            ft = np.arange(n_frames, dtype=np.float32) * (
+                frame_stride / _S25.TARGET_SR
+            )
+            bi = np.searchsorted(ft, dt_boundaries) - 1
+            bi = bi[(bi >= 0) & (bi < n_frames - 1)]
+            bi = bi.astype(np.int64)
+            return float(_S25.stability_loss(h_l11, ft, bi))
+
+    loss_pre = compute_loss(y)
+
+    out_raise = _S25.pgd_perturb(
+        y, model, frame_stride, dt_boundaries,
+        eps=0.05, alpha=0.001, K=31, device="cpu", direction="raise_cost",
+    )
+    loss_post_raise = compute_loss(out_raise)
+    assert loss_post_raise > loss_pre, "raise_cost should increase stability_loss"
+
+    out_lower = _S25.pgd_perturb(
+        y, model, frame_stride, dt_boundaries,
+        eps=0.05, alpha=0.001, K=31, device="cpu", direction="lower_cost",
+    )
+    loss_post_lower = compute_loss(out_lower)
+    assert loss_post_lower < loss_pre, "lower_cost should decrease stability_loss"
+
+
+def test_pgd_stability_transform_creates_callable_with_signature_intervention_expects():
+    """The Intervention.run_intervention_pipeline calls transform(y_tts, y_nat, sr, sid).
+    The returned closure must accept this signature and return a numpy array.
+    """
+    impl = _S25.pgd_stability_transform(
+        direction="raise_cost", eps=0.005, alpha=0.001, K=5, device="cpu",
+    )
+    orig_loader = _S25._ensure_hubert_model
+    _S25._ensure_hubert_model = lambda device: {
+        "model": _StubHuBERT(),
+        "frame_stride": 640,
+        "embedding_dim": 4,
+        "num_layers": 13,
+    }
+    try:
+        y_tts = _random_source(4000)
+        y_nat = _random_source(4000)
+        out = impl(y_tts, y_nat, 16000, 1)
+        assert isinstance(out, np.ndarray)
+        assert out.dtype == np.float32
+        assert out.shape == y_tts.shape
+        delta = np.abs(out.astype(np.float64) - y_tts.astype(np.float64)).max()
+        assert delta <= 0.005 + 1e-6
+    finally:
+        _S25._ensure_hubert_model = orig_loader
