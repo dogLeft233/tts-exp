@@ -128,6 +128,15 @@ VALIDATION_TTS: str = "f5_tts"
 OUTPUT_BASE: Path = Path(__file__).resolve().parent.parent / "data" / "wav2sem_analysis"
 """Root output directory for all analysis artefacts."""
 
+OUTPUT_BASE_EN: Path = Path(__file__).resolve().parent.parent / "data" / "wav2sem_analysis_en"
+"""Root output directory for all English (LibriSpeech) analysis artefacts."""
+
+ENGLISH_STUDY_SAMPLES: list[int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+"""English study set: 13 LibriSpeech test-clean samples (no exclusions)."""
+
+ENGLISH_SILENCE_LABELS: tuple[str, ...] = ("h#", "sil", "sp", "spn", "")
+"""LibriSpeech .phn silence / pause markers to exclude from viseme metrics."""
+
 TARGET_SR: int = 16000
 """Target sample rate for all audio processing."""
 
