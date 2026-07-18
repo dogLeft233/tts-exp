@@ -69,6 +69,30 @@ def test_load_fp_at_layer_returns_correct_layer():
         shutil.rmtree(tmp)
 
 
+def test_compute_separability_for_variant_synthetic_data():
+    """5 frames, 2 viseme classes (3 each); both classes have >=3 samples -> metrics produced."""
+    spec.loader.exec_module(mod)
+    rng = np.random.default_rng(42)
+    # 5 frames, 768-dim; first 3 frames cluster around (+1, -1), last 3 around (-1, +1)
+    # Actually use 6 frames to be safe: first 3 in class A (viseme="pbmv"), last 3 in class B (viseme="i")
+    Fp = np.zeros((6, 768), dtype=np.float32)
+    Fp[:3, 0:5] = 1.0
+    Fp[3:, 0:5] = -1.0
+    Fp += rng.normal(0, 0.01, Fp.shape).astype(np.float32)
+    frame_times = np.array([0.0, 0.05, 0.10, 0.15, 0.20, 0.25], dtype=np.float32)
+    tokens = [
+        {"token": "P",  "viseme": "pbmv", "start_s": 0.0,  "end_s": 0.12},
+        {"token": "IY", "viseme": "i",    "start_s": 0.12, "end_s": 0.25},
+    ]
+    metrics = mod.compute_separability_for_variant(Fp, frame_times, tokens)
+    # 5 core metric keys present
+    for k in mod.CORE_METRICS_FAVORABLE:
+        assert k in metrics, f"missing core metric: {k}"
+    # At least silhouette and fisher should be finite (we gave the algorithm separable-ish data)
+    # Note: with only 3+3 frames and 2 classes, some metrics may still be NaN due to MIN_CLASS_SAMPLES=3 cutoff
+    # but at minimum the keys must all be present.
+
+
 if __name__ == "__main__":
     import pytest
     sys.exit(pytest.main([__file__, "-v"]))

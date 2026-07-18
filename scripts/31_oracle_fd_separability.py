@@ -27,11 +27,14 @@ from __future__ import annotations
 import argparse
 import importlib.util
 import json
+import logging
 import sys
 from collections import Counter
 from pathlib import Path
 
 import numpy as np
+
+logger = logging.getLogger(__name__)
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from tfg_feature_common import ENGLISH_STUDY_SAMPLES, OUTPUT_BASE_EN, TARGET_SR
@@ -221,12 +224,10 @@ def compute_separability_for_variant(
     out: dict = {}
 
     if len(set(vis_v.tolist())) >= 2 and len(vis_v) >= 5:
-        # Use the 5 core metric functions defined in script 16.
+        # Three simple metrics: (embedding, labels) signature
         for metric_name, func_name in [
             ("intra_class_dist", "intra_class_variance"),
-            ("silhouette", "silhouette_score"),
-            ("boundary_sharpness", "boundary_sharpness"),
-            ("segment_stability", "segment_stability"),
+            ("silhouette", "_silhouette_cosine"),
             ("fisher", "fisher_ratio"),
         ]:
             func = getattr(_sep, func_name, None)
@@ -234,9 +235,27 @@ def compute_separability_for_variant(
                 out[metric_name] = float("nan")
                 continue
             try:
-                out[metric_name] = float(func(X_v, vis_v)) if func_name not in ("boundary_sharpness", "segment_stability") else float(func(X_v, vis_v, frame_times_v))
-            except Exception:
+                out[metric_name] = float(func(X_v, vis_v))
+            except Exception as e:
+                logger.debug("metric %s failed: %s", metric_name, e, exc_info=True)
                 out[metric_name] = float("nan")
+
+        # boundary_sharpness returns (boundary_change, segment_stability) tuple.
+        # It takes (frame_times, frame_embeddings, token_boundaries).
+        # token_boundaries = list of end_s for each non-silence token boundary.
+        try:
+            boundaries = sorted(set(
+                float(tok["end_s"])
+                for tok in tokens
+                if tok.get("viseme") != "sil" and "end_s" in tok
+            ))
+            bs_change, ss_within = _sep.boundary_sharpness(frame_times_v, X_v, boundaries)
+            out["boundary_sharpness"] = float(bs_change)
+            out["segment_stability"] = float(ss_within)
+        except Exception as e:
+            logger.debug("boundary/segment metrics failed: %s", e, exc_info=True)
+            out["boundary_sharpness"] = float("nan")
+            out["segment_stability"] = float("nan")
     else:
         for k in CORE_METRICS_FAVORABLE:
             out[k] = float("nan")
@@ -269,13 +288,23 @@ def process_sample(
             f"oracle Fs missing for sample_id={sample_id} condition={condition}"
         )
     if fs_entry.get("is_degenerate"):
-        return {
+        degenerate_result = {
             "sample_id": sample_id,
             "condition": condition,
             "skipped": "Fs_degenerate",
-            "fp_metrics": {}, "fd_zero_metrics": {}, "fd_random_metrics": {},
-            "gain_zero_vs_fp": {}, "gain_random_vs_fp": {}, "gain_random_vs_zero": {},
+            "fp_layer": fp_layer,
+            "T_frames": 0,
+            "fs_norm": 0.0,
+            "fp_metrics": {k: float("nan") for k in CORE_METRICS_FAVORABLE},
+            "fd_zero_metrics": {k: float("nan") for k in CORE_METRICS_FAVORABLE},
+            "fd_random_metrics": {k: float("nan") for k in CORE_METRICS_FAVORABLE},
         }
+        # Flat gain keys per spec
+        for k in CORE_METRICS_FAVORABLE:
+            degenerate_result[f"gain_zero_vs_fp_{k}"] = 0.0
+            degenerate_result[f"gain_random_vs_fp_{k}"] = 0.0
+            degenerate_result[f"gain_random_vs_zero_{k}"] = 0.0
+        return degenerate_result
     Fs = np.asarray(fs_entry["Fs_cls"], dtype=np.float32)
 
     # Pull alignment tokens
