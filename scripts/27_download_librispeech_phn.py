@@ -19,7 +19,6 @@ Dependencies
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import shutil
 import subprocess
@@ -36,7 +35,7 @@ from tfg_feature_common import ENGLISH_STUDY_SAMPLES, OUTPUT_BASE_EN
 
 OPENSLR_URL = "https://www.openslr.org/resources/12/test-clean.tar.gz"
 EXPECTED_TAR_SIZE_BYTES = 346_752_519  # OpenSLR-12 test-clean, ~330 MB
-SHA256_CHECKSUM_HOST = "https://www.openslr.org/resources/12/test-clean.tar.gz.sha256"
+
 
 DEFAULT_DOWNLOAD_DIR = Path("/root/autodl-tmp/downloads")
 DEFAULT_OUTPUT_DIR = OUTPUT_BASE_EN / "manifest" / "librispeech_phn"
@@ -67,22 +66,6 @@ def download_test_clean(dest_tar: Path, url: str = OPENSLR_URL) -> bool:
     print(f"[27] downloading {url}")
     subprocess.run(cmd, check=True)
     return dest_tar.exists()
-
-
-def verify_sha256(path: Path, expected_sha256: str | None = None) -> bool:
-    """Compute SHA256 of file. If expected passed, assert equality."""
-    h = hashlib.sha256()
-    with path.open("rb") as f:
-        for chunk in iter(lambda: f.read(1024 * 1024), b""):
-            h.update(chunk)
-    actual = h.hexdigest()
-    if expected_sha256 is None:
-        print(f"[27] {path.name} sha256 = {actual}")
-        return True
-    if actual != expected_sha256:
-        print(f"[27] SHA256 mismatch: expected {expected_sha256}, got {actual}")
-        return False
-    return True
 
 
 # ---------------------------------------------------------------------------
@@ -201,7 +184,13 @@ def verify_metadata(
 
     Returns (ok, failed), each list of per-sample dicts.
     """
-    import soundfile as sf
+    try:
+        import soundfile as sf
+    except ImportError:
+        raise ImportError(
+            "soundfile is required for metadata verification; "
+            "install with: pip install soundfile"
+        )
 
     audio_records = {
         int(r["sample_id"]): r
