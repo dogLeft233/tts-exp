@@ -1,0 +1,84 @@
+# ARPABET → Preston Blair 13 visemes
+# Preston Blair visemes are the standard animator's 13-class visual phoneme
+# classification (Preston Blair, "Animation: Learn to Animate Cartoons Step by
+# Step"). UH is committed to class "o" (lax back vowel groups with open round),
+# following the design decision in Section 6.2 of the spec.
+
+arpabet_to_viseme:
+  # /pbmv/ — lips together
+  P: pbmv
+  B: pbmv
+  M: pbmv
+
+  # /fv/ — lower lip to upper teeth
+  F: fv
+  V: fv
+
+  # /th/ — tongue between teeth
+  TH: th
+  DH: th
+
+  # /cdsz/ — tongue tip to alveolar ridge (also N, L)
+  T: cdsz
+  D: cdsz
+  S: cdsz
+  Z: cdsz
+  N: cdsz
+  L: cdsz
+
+  # /kg/ — back of tongue to soft palate
+  K: kg
+  G: kg
+  NG: kg
+
+  # /chjsh/ — blade to post-alveolar
+  CH: chjsh
+  JH: chjsh
+  SH: chjsh
+  ZH: chjsh
+
+  # /e/ — relaxed open mouth
+  EH: e
+  AE: e
+  AH: e
+
+  # /o/ — open round
+  AA: o
+  AO: o
+  OW: o
+  UH: o
+  OY: o
+
+  # /i/ — wide stretch
+  IY: i
+  IH: i
+
+  # /u/ — small round
+  UW: u
+  W: u
+
+  # /r/ — slightly cupped
+  R: r
+  ER: r
+  AXR: r
+
+  # /ai/ — wide open to close (offglide)
+  AY: ai
+  EY: ai
+
+  # /aw/ — round to wide
+  AW: aw
+
+  # /y/ not in Preston Blair 13; assigned to /i/ viseme (tongue forward,
+  # lips spread — visually indistinguishable from /i/)
+  Y: i
+
+  # /hh/ glottal — no visible mouth shape. Assigned to neutral 'e' as default.
+  HH: e
+
+silence_labels:
+  - h#
+  - sil
+  - sp
+  - spn
+  - ""
