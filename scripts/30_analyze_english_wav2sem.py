@@ -430,7 +430,6 @@ def analyze_fd_gain(fd_payload: list) -> dict:
 def analyze_tfg_correlation(
     separability_values: np.ndarray,
     sync_c_deltas: np.ndarray,
-    syncnet_results_path: Path,
 ) -> dict:
     """30E — Spearman ρ between per-sample separability and ΔSync-C."""
     if len(separability_values) < 3 or len(sync_c_deltas) < 3:
@@ -568,7 +567,6 @@ def main() -> int:
             analyze_tfg_correlation(
                 separability_values=sep_vals,
                 sync_c_deltas=sync_c_deltas,
-                syncnet_results_path=Path("runs/") / f"{args.run_prefix}_gate1.json",
             ) if len(sync_c_deltas) > 0 else {"h3_verdict": "INSUFFICIENT_DATA"}
         )
 

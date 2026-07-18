@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import importlib.util
-import json
 from pathlib import Path
 
 import numpy as np
@@ -86,11 +85,9 @@ def test_analyze_tfg_correlation_returns_spearman():
     assert hasattr(_mod, "analyze_tfg_correlation"), "analyze_tfg_correlation not implemented"
     separability_values = np.array([0.30, 0.31, 0.32, 0.33])
     sync_c_deltas = np.array([+0.5, +0.4, +0.6, +0.3])
-    syncnet_path = Path("/dev/null")
     summary = _mod.analyze_tfg_correlation(
         separability_values=separability_values,
         sync_c_deltas=sync_c_deltas,
-        syncnet_results_path=syncnet_path,
     )
     assert "h3_verdict" in summary
     assert "spearman_rho" in summary
@@ -114,3 +111,49 @@ def test_render_full_report_present():
     assert "English Wav2Sem Analysis Report" in md
     assert "H3" in md
     output_path.unlink()
+
+
+def test_analyze_oracle_fs_returns_expected_fields():
+    assert hasattr(_mod, "analyze_oracle_fs"), "analyze_oracle_fs not implemented"
+    payload = {
+        "entries": [
+            {"sample_id": 1, "condition": "natural", "Fs_cls": [0.5] * 768,
+             "is_degenerate": False},
+            {"sample_id": 1, "condition": "tts", "Fs_cls": [0.5] * 768,
+             "is_degenerate": False},
+        ],
+        "nt_similarity": [
+            {"sample_id": 1, "cosine_cls_nt": 0.95, "cosine_mean_nt": 0.93,
+             "l1_cls_nt": 0.5, "l1_mean_nt": 0.6},
+        ],
+    }
+    summary = _mod.analyze_oracle_fs(payload)
+    assert summary["n_pairs"] == 1
+    assert "mean_cosine_cls_nt" in summary
+    assert "n_degenerate" in summary
+    summary_empty = _mod.analyze_oracle_fs({"entries": [], "nt_similarity": []})
+    assert summary_empty.get("n_pairs", 0) == 0
+
+
+def test_analyze_fd_gain_m3_artifact_detection():
+    """When Fd_random gain is positive but Fd_zero is flat, M3_FC_ARTIFACT should be flagged."""
+    payload = []
+    for sid in range(1, 6):
+        nat_fp = {"silhouette": 0.05, "intra_class_dist": 0.80,
+                   "boundary_sharpness": 0.30, "segment_stability": 0.31, "fisher": 1.10}
+        fd_zero = dict(nat_fp)
+        fd_random = {"silhouette": 0.10, "intra_class_dist": 0.70,
+                      "boundary_sharpness": 0.40, "segment_stability": 0.36,
+                      "fisher": 1.20}
+        payload.append({
+            "sample_id": sid, "condition": "natural",
+            "fp_metrics": nat_fp, "fd_zero_metrics": fd_zero, "fd_random_metrics": fd_random,
+        })
+        payload.append({
+            "sample_id": sid, "condition": "tts",
+            "fp_metrics": nat_fp, "fd_zero_metrics": fd_zero, "fd_random_metrics": fd_random,
+        })
+    summary = _mod.analyze_fd_gain(payload)
+    assert summary["h2_verdict"] == "M3_FC_ARTIFACT", (
+        f"expected M3_FC_ARTIFACT, got {summary['h2_verdict']}; fc_artifact={summary['fc_artifact_suspected']}"
+    )
