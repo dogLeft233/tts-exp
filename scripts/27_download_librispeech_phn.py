@@ -27,7 +27,7 @@ import tarfile
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from tfg_feature_common import ENGLISH_STUDY_SAMPLES, OUTPUT_BASE_EN
+from tfg_feature_common import ENGLISH_SILENCE_LABELS, ENGLISH_STUDY_SAMPLES, OUTPUT_BASE_EN
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -42,8 +42,12 @@ DEFAULT_OUTPUT_DIR = OUTPUT_BASE_EN / "manifest" / "librispeech_phn"
 
 AUDIO_MANIFEST_REL = "data/data/audio_en/manifest.json"
 
-SILENCE_TOKENS: tuple[str, ...] = ("h#", "sil", "sp", "spn", "")
-"""LibriSpeech .phn silence / pause labels."""
+# Re-export the canonical silence label set from tfg_feature_common as
+# SILENCE_TOKENS, so downstream code importing this module still has the
+# attribute (preserving the Task 3 test contract) but the value follows a
+# single source of truth.
+SILENCE_TOKENS: tuple[str, ...] = ENGLISH_SILENCE_LABELS
+"""LibriSpeech .phn silence / pause labels (alias of ENGLISH_SILENCE_LABELS)."""
 
 
 # ---------------------------------------------------------------------------

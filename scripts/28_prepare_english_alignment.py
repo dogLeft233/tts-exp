@@ -88,18 +88,28 @@ def arpabet_to_viseme(arpabet: str) -> str:
 # ---------------------------------------------------------------------------
 
 
-def parse_phn_file(phn_path: Path, sample_rate: int = 16000) -> list[dict]:
-    """Parse a LibriSpeech .phn file: <start> <end> <phone> lines.
+_script27_mod: object | None = None
 
-    Imports parse_phn_file from script 27 via importlib to avoid code
-    duplication (script 27's filename starts with a digit so direct import
-    by name is not possible).
+
+def _get_script27():
+    """Lazily import and cache script 27's module to avoid re-execution."""
+    global _script27_mod
+    if _script27_mod is None:
+        script27 = Path(__file__).resolve().parent / "27_download_librispeech_phn.py"
+        spec = importlib.util.spec_from_file_location("librispeech_phn", script27)
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        _script27_mod = mod
+    return _script27_mod
+
+
+def parse_phn_file(phn_path: Path, sample_rate: int = 16000) -> list[dict]:
+    """Parse a LibriSpeech .phn file by delegating to script 27.
+
+    The delegation is cached via ``_get_script27`` so repeated calls do not
+    re-execute script 27's module body (and thus do not pollute ``sys.path``).
     """
-    script27 = Path(__file__).resolve().parent / "27_download_librispeech_phn.py"
-    spec = importlib.util.spec_from_file_location("librispeech_phn", script27)
-    mod = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(mod)
-    return mod.parse_phn_file(phn_path, sample_rate=sample_rate)
+    return _get_script27().parse_phn_file(phn_path, sample_rate=sample_rate)
 
 
 # ---------------------------------------------------------------------------
