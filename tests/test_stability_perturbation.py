@@ -434,3 +434,95 @@ def test_build_interventions_random_noise_uses_tts_source(monkeypatch):
     assert sentinel_stubs["called"] == 1
     assert out.shape == y_t.shape
     np.testing.assert_allclose(out, y_t + 0.001, atol=1e-6)
+
+
+# ---------------------------------------------------------------------------
+# post_hoc_verify
+# ---------------------------------------------------------------------------
+
+
+def test_post_hoc_verify_fields_present():
+    """post_hoc_verify should return a dict with the expected fields, even
+    on near-trivial input."""
+    rng = np.random.default_rng(0)
+    sr = _S25.TARGET_SR
+    y_pre = (rng.uniform(-0.3, 0.3, 16000 * 2) * 0.5).astype(np.float32)
+    y_post = (y_pre + rng.uniform(-0.005, 0.005, y_pre.shape)).astype(np.float32)
+    # Monkey-patch extract_frame_embeddings + boundary_sharpness so we don't
+    # need the real HuBERT model.
+    import torch
+
+    fake_h = torch.zeros((1, 50, 4), dtype=torch.float32)
+    fake_times = np.arange(50, dtype=np.float32) * 0.02
+    monkey_extract = lambda model, audio, sample_rate, layers, device="cpu": (
+        fake_h.numpy(), fake_times
+    )
+    monkey_bs = (
+        lambda frame_times, frame_emb, token_boundaries: (0.0, 0.1)
+    )
+    orig_extract = _S25.extract_frame_embeddings
+    orig_bs = _S25.boundary_sharpness
+    orig_load_model = _S25._ensure_hubert_model
+    _S25.extract_frame_embeddings = monkey_extract
+    _S25.boundary_sharpness = monkey_bs
+    _S25._ensure_hubert_model = lambda device: {
+        "model": object(), "frame_stride": 320,
+        "embedding_dim": 4, "num_layers": 13,
+    }
+    try:
+        out = _S25.post_hoc_verify(
+            y_pre, y_post, sr, sid=1, condition="tts",
+            repo=_REPO, manifest_path=None,
+        )
+    finally:
+        _S25.extract_frame_embeddings = orig_extract
+        _S25.boundary_sharpness = orig_bs
+        _S25._ensure_hubert_model = orig_load_model
+    # Required fields.
+    for k in [
+        "stability_metric_pre", "stability_metric_post", "stability_metric_delta",
+        "expected_direction", "achieved_direction",
+        "lufs_pre", "lufs_post", "delta_lufs",
+        "tilt_pre", "tilt_post", "delta_tilt",
+        "dyn_pre", "dyn_post", "delta_dyn",
+    ]:
+        assert k in out, f"missing field {k!r}"
+
+
+def test_post_hoc_verify_flags_wrong_direction_when_metric_moves_opposite():
+    """If stability metric moves opposite the expected_direction, the
+    `achieved_direction` should be flagged as 'unexpected'."""
+    y_pre = np.zeros(16000, dtype=np.float32)
+    y_post = np.zeros(16000, dtype=np.float32)
+    # Stub: stability metric pre=0.5, post=0.4 -> delta=-0.1.
+    call_state = {"i": 0}
+    def fake_bs(frame_times, frame_emb, token_boundaries):
+        call_state["i"] += 1
+        return (0.0, 0.5 if call_state["i"] % 2 == 1 else 0.4)
+    import torch
+
+    fake_h = torch.zeros((1, 10, 4), dtype=torch.float32)
+    fake_times = np.arange(10, dtype=np.float32) * 0.02
+    _S25.extract_frame_embeddings = (
+        lambda model, audio, sample_rate, layers, device="cpu": (fake_h.numpy(), fake_times)
+    )
+    orig_bs = _S25.boundary_sharpness
+    orig_model = _S25._ensure_hubert_model
+    _S25.boundary_sharpness = fake_bs
+    _S25._ensure_hubert_model = lambda device: {
+        "model": object(), "frame_stride": 320, "embedding_dim": 4, "num_layers": 13,
+    }
+    try:
+        out = _S25.post_hoc_verify(
+            y_pre, y_post, 16000, sid=1, condition="tts",
+            repo=_REPO, manifest_path=None,
+            expected_direction="raise_cost",
+        )
+    finally:
+        _S25.boundary_sharpness = orig_bs
+        _S25._ensure_hubert_model = orig_model
+    # delta = post - pre = 0.4 - 0.5 = -0.1, direction = "lower"
+    assert out["stability_metric_delta"] == pytest.approx(-0.1, abs=1e-3)
+    assert out["expected_direction"] == "raise_cost"
+    assert out["achieved_direction"] == "lower_cost"  # moved opposite
+    assert out["achieved_aligns_with_expected"] is False

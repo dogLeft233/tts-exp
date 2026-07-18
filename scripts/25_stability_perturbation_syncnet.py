@@ -435,8 +435,89 @@ def _build_interventions(args: argparse.Namespace) -> list[Intervention]:
     return cells
 
 
-def post_hoc_verify(y_pre, y_post, sr, sid, condition, repo, manifest_path=None):
-    raise NotImplementedError
+def post_hoc_verify(
+    y_pre: np.ndarray,
+    y_post: np.ndarray,
+    sr: int,
+    sid: int,
+    condition: str,
+    repo: Path,
+    manifest_path: Path | None = None,
+    expected_direction: str | None = None,
+    device: str = "cuda",
+):
+    """Recompute stability and acoustic features on pre/post waveforms.
+
+    Returns dict with:
+      - stability_metric_pre  / post  / delta
+      - expected_direction          (one of raise_cost|lower_cost|None)
+      - achieved_direction          (raise_cost|lower_cost|unchanged)
+      - achieved_aligns_with_expected (bool|None)
+      - lufs_pre/post/delta_lufs, tilt_pre/post/delta_tilt,
+        dyn_pre/post/delta_dyn
+    """
+    if sr != TARGET_SR:
+        raise ValueError(f"expected sr={TARGET_SR}; got sr={sr}")
+
+    cache = _ensure_hubert_model(device)
+    model = cache["model"]
+    frame_stride = cache["frame_stride"]
+    layers = [11]
+
+    def _compute_stability(y_audio):
+        h, frame_times = extract_frame_embeddings(
+            model, y_audio, TARGET_SR, layers, device=device,
+        )
+        h_l11 = h[0]
+        duration_s = float(y_audio.shape[0]) / float(TARGET_SR)
+        boundaries = load_token_boundaries(
+            sid, condition, repo, manifest_path=manifest_path,
+            audio_duration_s=duration_s,
+        )
+        _bs, ss = boundary_sharpness(frame_times, h_l11, list(boundaries))
+        return float(ss)
+
+    ss_pre = _compute_stability(y_pre)
+    ss_post = _compute_stability(y_post)
+    delta = ss_post - ss_pre
+
+    def _classify_dir(d: float) -> str:
+        if abs(d) < 1e-7:
+            return "unchanged"
+        return "raise_cost" if d > 0 else "lower_cost"
+
+    achieved_direction = _classify_dir(delta)
+    if expected_direction is None:
+        aligns = None
+    elif achieved_direction == "unchanged":
+        aligns = None
+    else:
+        aligns = (achieved_direction == expected_direction)
+
+    lufs_pre = float(compute_lufs(y_pre, sr))
+    lufs_post = float(compute_lufs(y_post, sr))
+    tilt_pre = float(compute_spectral_tilt(y_pre, sr))
+    tilt_post = float(compute_spectral_tilt(y_post, sr))
+    dyn_pre = float(compute_energy_env_std(y_pre, sr))
+    dyn_post = float(compute_energy_env_std(y_post, sr))
+
+    return {
+        "stability_metric_pre": ss_pre,
+        "stability_metric_post": ss_post,
+        "stability_metric_delta": float(delta),
+        "expected_direction": expected_direction,
+        "achieved_direction": achieved_direction,
+        "achieved_aligns_with_expected": aligns,
+        "lufs_pre": lufs_pre,
+        "lufs_post": lufs_post,
+        "delta_lufs": lufs_post - lufs_pre,
+        "tilt_pre": tilt_pre,
+        "tilt_post": tilt_post,
+        "delta_tilt": tilt_post - tilt_pre,
+        "dyn_pre": dyn_pre,
+        "dyn_post": dyn_post,
+        "delta_dyn": dyn_post - dyn_pre,
+    }
 
 
 def main() -> None:
