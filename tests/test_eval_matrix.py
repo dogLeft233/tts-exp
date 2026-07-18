@@ -5,6 +5,7 @@ from __future__ import annotations
 import importlib.util
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import patch
 
 import pytest
@@ -19,6 +20,7 @@ _spec.loader.exec_module(_gxe_matrix)
 gxe_key = _gxe_matrix.gxe_key
 decompose = _gxe_matrix.decompose
 classify_sample = _gxe_matrix.classify_sample
+complete_matrix_samples = _gxe_matrix.complete_matrix_samples
 build_ffmpeg_command = _gxe_matrix.build_ffmpeg_command
 condition_for_axis = _gxe_matrix.condition_for_axis
 
@@ -41,6 +43,18 @@ class TestGxeMatrixStructure:
         for v in cells.values():
             assert "sync_c" in v
             assert "sync_d" in v
+
+    def test_complete_matrix_samples_excludes_partial_cells(self):
+        results = {
+            "1": {
+                "G_natural_E_natural": {},
+                "G_natural_E_tts": {},
+                "G_tts_E_natural": {},
+                "G_tts_E_tts": {},
+            },
+            "9": {"G_natural_E_natural": {}, "G_natural_E_tts": {}},
+        }
+        assert complete_matrix_samples(results) == ["1"]
 
 
 class TestDecompositionMath:
@@ -158,6 +172,41 @@ class TestFfmpegCommandBuilding:
         shortest_idx = cmd.index("-shortest")
         assert shortest_idx > 0
         assert cmd[-1] == str(Path("out.mp4"))
+
+    def test_ffmpeg_time_aligns_audio_to_video_duration(self):
+        """Cross-cell audio must be time-aligned to the generator video."""
+        cmd = build_ffmpeg_command(
+            Path("video.mp4"),
+            Path("audio.wav"),
+            Path("out.mp4"),
+            video_duration=5.0,
+            audio_duration=5.5,
+        )
+        assert "-af" in cmd
+        assert any("atempo=1.1" in arg for arg in cmd)
+        assert "-t" in cmd
+        assert "5.000000" in cmd
+
+
+class TestSyncnetPipeline:
+    def test_pipeline_overwrites_cached_face_tracks(self):
+        """A forced matrix rerun must replace SyncNet's cached face tracks."""
+        with patch.object(
+            _gxe_matrix.subprocess,
+            "run",
+            side_effect=[None, SimpleNamespace(stdout="", stderr="")],
+        ) as run:
+            _gxe_matrix.run_syncnet_pipeline(
+                Path("syncnet"),
+                "python",
+                "bin",
+                Path("video.mp4"),
+                Path("data"),
+                "reference",
+                Path("model"),
+            )
+
+        assert "--overwrite" in run.call_args_list[0].args[0]
 
 
 class TestGxeKey:

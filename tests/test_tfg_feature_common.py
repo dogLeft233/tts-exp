@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-import shutil
 import sys
 from pathlib import Path
 
@@ -11,11 +10,12 @@ import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
+import tfg_feature_common
+
 from tfg_feature_common import (
     AudioItem,
     EmbeddingRecord,
     TokenSpan,
-    OUTPUT_BASE,
     STUDY_SAMPLES,
     PILOT_SAMPLES,
     PRIMARY_TTS,
@@ -225,9 +225,9 @@ def test_fdr_bh_monotonic_on_sorted_input():
 # ============================================================================
 
 
-def test_ensure_output_dirs_creates_all():
-    if OUTPUT_BASE.exists():
-        shutil.rmtree(OUTPUT_BASE)
+def test_ensure_output_dirs_creates_all(tmp_path, monkeypatch):
+    test_output_base = tmp_path / "wav2sem_analysis"
+    monkeypatch.setattr(tfg_feature_common, "OUTPUT_BASE", test_output_base)
 
     dirs = ensure_output_dirs()
 
@@ -240,6 +240,4 @@ def test_ensure_output_dirs_creates_all():
         assert p.is_dir()
     assert isinstance(dirs["base"], Path)
     assert dirs["base"].exists()
-    assert dirs["base"] == OUTPUT_BASE.resolve()
-
-    shutil.rmtree(OUTPUT_BASE)
+    assert dirs["base"] == test_output_base.resolve()

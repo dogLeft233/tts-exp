@@ -117,6 +117,24 @@ MECHANISM_CANDIDATES = [
 # ---------------------------------------------------------------------------
 
 
+def mechanism_name(mechanism: dict) -> str:
+    """Return a stable name across Phase 1 candidate schemas."""
+    return (
+        mechanism.get("name")
+        or mechanism.get("mechanism")
+        or mechanism.get("metric")
+        or "unknown"
+    )
+
+
+def aggregate_per_sample_deltas(deltas: dict[str, dict[int, float]]) -> dict[str, float]:
+    """Compute model-level mean deltas from per-sample SyncNet results."""
+    return {
+        "delta_c": float(np.nanmean(list(deltas.get("sync_c", {}).values()))),
+        "delta_d": float(np.nanmean(list(deltas.get("sync_d", {}).values()))),
+    }
+
+
 def load_eval_meta(meta_path: Path) -> dict[str, list[dict]]:
     """Parse eval_meta.json into {condition: [{sample_id, sync_c, sync_d, ...}, ...]}."""
     data = json.loads(meta_path.read_text())
@@ -193,6 +211,7 @@ def load_ditto_data(ditto_dir: Path) -> dict:
         eval_meta = load_eval_meta(meta_path)
         result["per_sample_deltas"] = load_per_sample_deltas(eval_meta, _STUDY_SAMPLES)
         result["has_per_sample"] = True
+        result["aggregate"] = aggregate_per_sample_deltas(result["per_sample_deltas"])
     else:
         # Fallback to known aggregate
         ditto_agg = KNOWN_AGGREGATE.get("ditto")
@@ -265,6 +284,7 @@ def load_other_tfg_data(runs_dir: Path,
             eval_meta = load_eval_meta(meta_path)
             entry["per_sample_deltas"] = load_per_sample_deltas(eval_meta, _STUDY_SAMPLES)
             entry["has_per_sample"] = True
+            entry["aggregate"] = aggregate_per_sample_deltas(entry["per_sample_deltas"])
             entry["source"] = str(meta_path)
         elif name in KNOWN_AGGREGATE:
             entry["aggregate"] = compute_aggregate_deltas(KNOWN_AGGREGATE[name])
@@ -384,7 +404,7 @@ def build_mechanism_results(
     ditto_ps = ditto_data.get("per_sample_deltas")
 
     for mech in ditto_data["mechanisms"]:
-        name = mech.get("name", "unknown")
+        name = mechanism_name(mech)
         ditto_sign = derive_ditto_sign_by_mechanism(
             name, ditto_ps, ditto_agg, ditto_data.get("interventions")
         )
@@ -417,8 +437,8 @@ def build_mechanism_results(
 
         results.append({
             "name": name,
-            "description": mech.get("description", ""),
-            "phase1_evidence": mech.get("phase1_evidence", ""),
+            "description": mech.get("description", mech.get("evidence", "")),
+            "phase1_evidence": mech.get("phase1_evidence", mech.get("evidence", "")),
             "phase2_evidence": mech.get("phase2_evidence", ""),
             "ditto_direction": "positive" if ditto_sign > 0 else ("negative" if ditto_sign < 0 else "neutral"),
             "consistency": consistency,

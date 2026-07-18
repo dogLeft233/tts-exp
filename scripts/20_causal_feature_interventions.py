@@ -48,19 +48,40 @@ from tfg_feature_common import (
 
 #: Sample-to-audio-path mapping (natural audio from the AISHELL-1 evaluation run)
 _RUN_BASE = _REPO / "runs" / "aishell1_ldn_20260707T070936Z"
-_NAT_AUDIO_DIR = _RUN_BASE / "02_audio_natural"
-_TTS_AUDIO_DIR = _RUN_BASE / "02_audio_tts"
+_NAT_AUDIO_DIR = _REPO / "data" / "data" / "audio"
+_TTS_AUDIO_DIR = _REPO / "runs" / "r2_faster_qwen3_20260707T145233Z" / "02_tts"
 
 # Fallback audio dirs if the primary path doesn't exist
 _FALLBACK_NAT = _REPO / "runs" / "r5_f5_tts" / "02_tts"
 _FALLBACK_TTS = _FALLBACK_NAT
 
 
-def _resolve_audio_dirs() -> tuple[Path, Path]:
-    """Resolve natural and TTS audio directories, falling back if needed."""
-    nat_dir = _NAT_AUDIO_DIR if _NAT_AUDIO_DIR.exists() else _FALLBACK_NAT
-    tts_dir = _TTS_AUDIO_DIR if _TTS_AUDIO_DIR.exists() else _FALLBACK_TTS
-    return nat_dir, tts_dir
+def _resolve_audio_dirs(input_dir: Path | None = None) -> tuple[Path, Path]:
+    """Resolve real natural/TTS audio directories.
+
+    ``--input-dir`` follows the documented ``natural/`` and ``tts/`` layout.
+    Without an override, use the repository's AISHELL natural audio and the
+    matching Faster-Qwen3 run output.
+    """
+    if input_dir is not None:
+        candidates = [
+            (input_dir / "natural", input_dir / "tts"),
+            (input_dir / "natural_raw", input_dir / "tts_raw"),
+        ]
+    else:
+        candidates = [
+            (_NAT_AUDIO_DIR, _TTS_AUDIO_DIR),
+            (_FALLBACK_NAT, _FALLBACK_TTS),
+        ]
+
+    for nat_dir, tts_dir in candidates:
+        if nat_dir.is_dir() and tts_dir.is_dir():
+            if any(nat_dir.glob("*.wav")) and any(tts_dir.glob("*.wav")):
+                return nat_dir, tts_dir
+
+    # Preserve the existing synthetic-smoke fallback, but return the first
+    # candidate so the caller's warning identifies the attempted paths.
+    return candidates[0]
 
 
 # ---------------------------------------------------------------------------
@@ -145,11 +166,12 @@ def apply_spectral_tilt_match(
     spec = np.fft.rfft(y_src)
     freqs = np.fft.rfftfreq(n, 1.0 / sr)
 
-    # Build gain curve: linear-in-dB change proportional to log frequency
-    log_f = np.log2(np.maximum(freqs, 1.0))
-    ref_log = np.log2(1000.0)
+    # The measured tilt is d(log10(magnitude)) / d(log10(frequency)).
+    # Convert that amplitude-ratio slope to dB before applying the filter.
+    log_f = np.log10(np.maximum(freqs, 1.0))
+    ref_log = np.log10(1000.0)
     with np.errstate(divide="ignore", invalid="ignore"):
-        gain_db = delta_slope * (log_f - ref_log)
+        gain_db = 20.0 * delta_slope * (log_f - ref_log)
     gain_db = np.where(np.isfinite(gain_db), gain_db, 0.0)
     gain_db[0] = 0.0  # DC unchanged
     gain_linear = 10.0 ** (gain_db / 20.0)
@@ -650,7 +672,8 @@ def main() -> None:
         print(f"SMOKE MODE: using synthetic test tones for {len(sample_ids)} samples")
         all_results = run_smoke(sample_ids)
     else:
-        nat_dir, tts_dir = _resolve_audio_dirs()
+        nat_dir, tts_dir = _resolve_audio_dirs(args.input_dir)
+        print(f"Audio inputs: natural={nat_dir}, tts={tts_dir}")
         natural, tts, loaded = load_sample_pairs(sample_ids, nat_dir, tts_dir)
 
         if "LUFS" in intervention_types:

@@ -1,6 +1,6 @@
 # TTS Enhancement of TFG Lip Sync: Mechanism Analysis
 
-*Last updated: 2026-07-17*
+*Last updated: 2026-07-18*
 
 ## Summary
 
@@ -10,11 +10,35 @@ videos. We set out to identify the acoustic mechanisms driving this TTS advantag
 determine whether the effect reflects genuine visual-motor quality improvement or a
 SyncNet scoring artifact.
 
-**Findings**: TTS audio produces a robust SyncNet advantage (ΔC ≈ +1.25, ΔD ≈ −0.77
-for Ditto) driven primarily by higher loudness (LUFS). This effect is consistent
-across multiple TFG architectures (Ditto, Wav2Lip, MuseTalk, V-Express, JoyVASA),
-while LatentSync — which shows near-zero TTS effect — serves as a negative control
-confirming the mechanism is not a universal SyncNet artifact.
+**Findings**: TTS audio produces a robust diagonal SyncNet advantage for Ditto
+(ΔC = +1.246, ΔD = −0.766; n=9 paired samples). The Phase 2 dose-response
+experiment — eight audio interventions applied to TTS and natural sources and
+fed back through Ditto + SyncNet — initially suggested that all TTS-source
+perturbations drop Sync-C by ≈ −1.0 to −1.2, hinting at common-mode
+degradation. **An identity control experiment then showed that this entire
+magnitude is produced by Ditto run-to-run non-determinism alone**: re-running
+the same TTS audio through the pipeline *without any modification* produces
+ΔSync-C = −1.161 ± 0.469 (n=9). After per-sample subtraction of the identity
+baseline, none of the four TTS-source acoustic interventions (LUFS, spectral
+tilt, dynamic compression, dynamic expansion) shows a feature-specific
+residual significantly different from zero (paired t-test: t=−0.38/+1.40/+0.03/−0.97,
+all p > 0.20, n=9). The +1.25 Sync-C diagonal advantage cannot be decomposed
+into any single isolable acoustic contribution.
+
+Two causal candidates survive Phase 2:
+
+- **Generator × Evaluator co-adaptation** (G×E interaction = +7.29, vs
+  −3.25 generator + −2.80 scorer main effects): the diagonal advantage
+  lives in the joint coupling of Faster-Qwen3 audio + Ditto generator +
+  SyncNet evaluator, not in any single acoustic attribute. This finding
+  does not depend on re-rendered audio and is not affected by the identity
+  control.
+- **HuBERT `segment_stability` at layer 11** (Phase 1 observational:
+  FDR p=0.024, d=1.045): the strongest SSL-representation-side candidate.
+  Phase 2's identity-corrected dose-response ruled out all acoustic
+  features; an SSL-side causal intervention is the natural next test.
+
+LatentSync remains a near-zero cross-model control.
 
 ---
 
@@ -31,51 +55,69 @@ to natural speech across all evaluated conditions.
 | tts_raw | 6.91 | 7.19 |
 | Δ (TTS − natural) | **+1.25** | **−0.77** |
 
-Data: 12 paired AISHELL-1 samples, Ditto TFG model, SyncNet v2 evaluation.
-Sample 9 excluded after SyncNet parse failure.
+Data: 9 paired AISHELL-1 samples from the strict Ditto run, SyncNet v2
+evaluation. The broader Phase 1 audio/embedding set contains 12 samples;
+sample 9 has no valid paired Ditto TTS score in the strict run.
 
 ### 2. Acoustic
 
 Acoustic feature analysis reveals systematic differences between TTS and natural
 speech:
 
-- **LUFS**: TTS is consistently louder (−11.3 LUFS vs −15.7 LUFS for natural), a
-  difference of ~4.4 dB
-- **Spectral tilt**: TTS shows slightly different long-term spectral balance
-  compared to natural speech
-- **Dynamic range**: TTS energy envelope has different variation patterns
+- **LUFS**: Faster-Qwen3 TTS averages −39.15 LUFS versus −39.31 LUFS for
+  natural speech (Δ ≈ +0.17 LUFS), which is not a meaningful loudness gap
+- **Spectral tilt**: TTS averages −1.22 versus −0.98 for natural speech
+- **Dynamic range**: TTS energy-envelope standard deviation is 0.00619 versus
+  0.00578 for natural speech
 
-These acoustic differences are candidate drivers of the SyncNet score gap.
+These features remain intervention targets, but the primary data does not
+justify treating LUFS as the established driver.
 
-### 3. Encoding (Wav2Sem-style)
+### 3. Encoding (Wav2Sem-style) — COMPLETED
 
 HuBERT/XLS-R embedding analysis examines whether TTS affects speech encoder
-representations differently than natural speech, using separability metrics
-for consonant classes (initials), vowel classes (finals), and viseme categories.
+representations differently than natural speech. Phase 1 pipeline completed on
+RTX 4080 (26325 server):
 
-**Status**: Phase 1 analysis (`scripts/16_feature_separability.py`) produces
-separability and boundary sharpness metrics. As of this report, per-sample
-feature deltas needed for Spearman correlations with SyncNet scores are pending.
-Run `scripts/16_feature_separability.py` with per-sample output to populate
-this layer.
+**Pipeline executed**:
+- `14_prepare_mandarin_alignment.py`: 72 manifest entries (12 samples × 3 conditions × 2 variants), uniform-segmented pinyin tokens as MFA fallback
+- `15_extract_ssl_embeddings.py`: 144 NPY+JSON files (HuBERT + XLS-R), GPU-accelerated (~7s total)
+- `16_feature_separability.py`: 18 per-condition results + 24 comparisons (HuBERT, viseme level only; XLS-R skipped due to time constraints)
+- `17_link_features_to_tfg.py`: 120 univariate tests across 5 TFG models
+- `18_render_wav2sem_report.py`: 203-line report + 5 figures
+
+**Key finding**: TTS significantly improves **segment stability** at HuBERT
+layer 11 (FDR p=0.024, Cohen's d=-1.045). TTS produces more temporally
+consistent viseme embeddings within each phoneme segment. This effect is
+most pronounced at deep layers (11 vs 0/6), suggesting it affects
+higher-level phonetic representations, not just raw acoustics.
+
+**SyncNet correlation**: Per-sample feature deltas could not be correlated
+with per-sample SyncNet deltas (all Spearman rho = NaN). The separability
+metrics are population-level statistics computed across all tokens for a
+given condition. Per-sample variance within identical viseme label sets is
+too small to produce meaningful rank correlations with SyncNet. Future work
+should use per-sample embedding distances (e.g., L2 between natural/TTS
+frame embeddings) rather than population-level separability metrics.
+
+**Full report**: `data/wav2sem_analysis/report.md` (203 lines + 5 figures)
 
 ### 4. Causal
 
 Controlled audio interventions (`scripts/20_causal_feature_interventions.py`)
-test whether specific acoustic features causally mediate the SyncNet score
-difference:
+were completed as feature-transformation verification on the 12-sample Phase 1
+audio set:
 
-| Intervention | Target | Pilot result | Samples |
+| Intervention family | Target | Pilot verification | Full-study verification |
 |---|---|---|---|
-| LUFS matching (TTS→natural) | Loudness | PASS (5/5 verified) | 5 |
-| LUFS matching (natural→TTS) | Loudness | PASS (5/5 verified) | 5 |
-| Spectral-tilt matching | Spectral balance | PASS (5/5 verified) | 5 |
-| Dynamic compression | Energy envelope | PASS (5/5 verified) | 5 |
-| Dynamic expansion | Energy envelope | PASS (5/5 verified) | 5 |
+| LUFS matching (both directions) | Loudness | 4/5 | 5/12 per direction |
+| Spectral-tilt matching (both directions) | Spectral balance | 5/5 | 12/12 per direction |
+| Dynamic compression/expansion | Energy envelope | 5/5 | 12/12 per direction |
 
-**All pilot interventions successfully modify the target acoustic feature.**
-The critical next step is to re-evaluate TFG videos with modified audio to
-isolate the causal effect on SyncNet scores (Phase 2 evaluation, pending).
+The transformations successfully modify their target features. LUFS matching
+is inconsistent at the per-sample level because the primary TTS/natural LUFS
+gap is small. These runs do **not** yet re-evaluate TFG videos with the
+modified audio, so downstream causal effects on SyncNet remain pending.
 
 ### 5. G×E Separation
 
@@ -88,61 +130,75 @@ the TTS advantage into:
   (G_natural E_tts − G_natural E_natural)
 - **Interaction**: The synergy between TTS generation and TTS audio for scoring
 
-**Status**: G×E matrix evaluation pending. Off-diagonal cells require SyncNet
-re-evaluation on GPU (20398 server). Partial data exists at
-`runs/aishell1_strict_20260707T081223Z/04_eval/gxe_matrix/G_tts_E_natural/`.
+**Status**: Completed on the 26325 RTX 4080 server with duration-aligned
+off-diagonal audio. Nine complete 2×2 matrices are available; sample 9 lacks
+both TTS-generated cells. Results are in
+`runs/aishell1_strict_20260707T081223Z/04_eval/gxe_matrix.json`.
+
+| Metric | G_nat/E_nat | G_nat/E_tts | G_tts/E_nat | G_tts/E_tts |
+|---|---:|---:|---:|---:|
+| Sync-C | 5.574 | 2.776 | 2.327 | 6.819 |
+| Sync-D | 8.317 | 11.429 | 11.501 | 7.550 |
+
+Complete-case decomposition (n=9):
+
+- Sync-C: total +1.246, generator −3.247, scorer −2.798, interaction +7.290
+- Sync-D: total −0.766, generator +3.184, scorer +3.113, interaction −7.063
+
+The large interaction and low off-diagonal scores indicate that TTS and
+natural audio are not interchangeable evaluator tracks even after global
+duration alignment. This is evidence against a simple independent scorer-bias
+explanation, not proof that SyncNet has no acoustic sensitivity.
 
 ### 6. Cross-TFG
 
 Cross-model validation (`scripts/21_validate_causal_results.py`) tests whether
 mechanisms identified in Ditto generalise to other TFG architectures:
 
-| Model | Δ Sync-C | Δ Sync-D | Source |
-|---|---|---|---|
-| Ditto | +1.246 | −0.767 | Per-sample eval_meta.json |
-| Wav2Lip | +1.529 | −1.386 | TFG_DEPLOY_SUMMARY.md |
-| MuseTalk 1.5 | +0.537 | −0.153 | TFG_DEPLOY_SUMMARY.md |
-| V-Express | +0.531 | −0.582 | TFG_DEPLOY_SUMMARY.md |
-| JoyVASA | +0.269 | +0.138 | TFG_DEPLOY_SUMMARY.md |
-| LatentSync | −0.072 | −0.126 | TFG_DEPLOY_SUMMARY.md |
+| Model | n | Δ Sync-C | Δ Sync-D | Source |
+|---|---:|---:|---:|---|
+| Ditto | 9 | +1.246 | −0.766 | `cross_tfg_validation.json` |
+| Wav2Lip | 12 | +1.515 | −1.395 | `tfg_wav2lip/04_eval/eval_meta.json` |
+| MuseTalk 1.5 | 12 | +0.572 | −0.169 | `tfg_musetalk/04_eval/eval_meta.json` |
+| JoyVASA | 12 | +0.329 | +0.144 | `tfg_joyvasa/04_eval/eval_meta.json` |
+| LatentSync | 12 | −0.063 | −0.121 | `tfg_latentsync/04_eval/eval_meta.json` |
 
-**Key observation**: LatentSync shows near-zero TTS effect, making it an ideal
-negative control. If a claimed mechanism truly explains the TTS advantage, it
-should NOT predict a strong effect for LatentSync.
+**Key observation**: three comparison models show positive Sync-C deltas, while
+LatentSync remains near zero. This supports an architecture-dependent TTS
+response, but does not identify which acoustic or representation mechanism
+causes it.
 
-**Cross-TFG per-sample data is pending.** Run TFG inference and SyncNet
-evaluation on all models to complete this layer.
+**Status**: Per-sample SyncNet data is now available for all four comparison
+models. Mechanism-specific cross-TFG validation remains incomplete because
+the SSL feature metrics were only computed for Ditto.
 
 ---
 
 ## Key Findings
 
-### Primary driver: TTS loudness → SyncNet score
+### Loudness is not established as the primary driver
 
-TTS audio is consistently 4–5 LUFS louder than natural speech. This aligns with
-SyncNet's known sensitivity to signal amplitude — louder audio produces more
-reliable feature extraction from the visual stream, inflating Sync-C and
-reducing Sync-D. The LUFS matching intervention successfully normalises loudness
-(verified on all 5 pilot samples); re-running SyncNet on LUFS-matched videos
-will quantify the causal contribution.
+In the Faster-Qwen3 Phase 1 dataset, TTS and natural audio differ by only about
+0.17 LUFS. Bidirectional LUFS matching verified the transformation on only 5/12
+study pairs. The earlier 4.4-LUFS observation came from a different audio
+condition and should not be used to explain this experiment's TTS advantage.
 
-### Secondary driver: Spectral characteristics
+### Representation stability
 
-Spectral tilt matching is verified on pilot samples. The effect size and
-direction relative to SyncNet scores need evaluation with matched-video
-SyncNet re-runs.
+HuBERT layer 11 segment stability is the only Phase 1 metric surviving FDR
+correction (q=0.024, d=−1.045). This is currently the strongest mechanism
+candidate, although its downstream SyncNet mediation has not been established.
 
-### Tertiary: Dynamic range
+### Spectral and dynamic characteristics
 
-TTS energy envelope characteristics differ from natural speech. Dynamic
-compression and expansion interventions are verified on pilot samples.
-The magnitude of SyncNet impact is pending evaluation.
+Spectral-tilt and dynamic-range transformations are reproducible on all 12
+audio pairs. Their effect on TFG generation and SyncNet scores remains pending.
 
 ### LatentSync as negative control
 
-LatentSync shows near-zero aggregate ΔC (−0.07) and ΔD (−0.13). This
-indicates that the TTS advantage is not a universal SyncNet artifact —
-it depends on specific model architecture and audio processing characteristics.
+LatentSync shows near-zero aggregate ΔC (−0.063) and ΔD (−0.121). This
+indicates that the TTS advantage is not a uniform cross-model effect — it
+depends on specific model architecture and audio processing characteristics.
 LatentSync's diffusion-based approach may apply internal normalisation
 that attenuates loudness effects.
 
@@ -151,12 +207,16 @@ that attenuates loudness effects.
 ## Candidate Mechanisms Table
 
 | Mechanism | Evidence Strength | Generator or Scorer | Cross-TFG | Actionable |
-|---|---|---|---|---|
-| LUFS/loudness | **Strong** — both observational and causal | Both (louder audio aids face generation + SyncNet sensitivity) | Consistent across 4/5 models; LatentSync neutral | Yes — gain normalisation |
-| Spectral tilt | **Moderate** — pilot intervention verified; SyncNet impact pending | Primarily scorer | Pending per-sample data | Yes — spectral matching |
-| Dynamic range | **Moderate** — pilot intervention verified; SyncNet impact pending | Primarily scorer | Pending per-sample data | Yes — dynamic compression |
-| Prosody boundary sharpness | **Weak** — Phase 1 separability data needed | Primarily generator | Pending | Conditional on Phase 1 |
-| Formant clarity | **Weak** — Phase 1 formant analysis needed | Primarily generator | Pending | Conditional on Phase 1 |
+|---|---|---|---|---|---|
+| LUFS/loudness | **Rejected (Phase 2 identity-corrected)** — raw drop −1.20 explained by pipeline noise; per-sample residual vs identity = −0.037 ± 0.296 (t=−0.38, p=0.72, n=9) | N/A | Architecture-dependent | No |
+| Spectral tilt | **Rejected as isolable mechanism (Phase 2 identity-corrected)** — raw drop −0.99 explained by pipeline noise; residual vs identity = +0.173 ± 0.371 (t=+1.40, p=0.20, n=9). The +0.17 mean is intriguing but below the pipeline noise floor and not statistically distinguishable from zero at this sample size. | N/A | Architecture-dependent | Conditional — bounded tilt shifts at larger n or smaller noise floor |
+| Dynamic range (compress) | **Rejected (Phase 2 identity-corrected)** — residual = +0.004 ± 0.338 (t=+0.03, p=0.97). | N/A | Untested | No |
+| Dynamic range (expand) | **Rejected (Phase 2 identity-corrected)** — residual = −0.071 ± 0.219 (t=−0.97, p=0.36). | N/A | Untested | No |
+| **Generator × Evaluator co-adaptation** | **Supported (Phase 2 G×E)** — G×E interaction = +7.29 (vs −3.25 generator + −2.80 scorer main effects). This finding is computed on the strict run's original diagonal scores and is not affected by Ditto non-determinism. The +1.25 Sync-C diagonal advantage lives in the joint Faster-Qwen3 × Ditto × SyncNet coupling. | **Both** (joint state) | Architecture-dependent (LatentSync neutral cross-model) | Yes — preserve generator/scorer coupling |
+| **HuBERT `segment_stability` (layer 11)** | **Strong (Phase 1 observational)** — FDR p=0.024, d=1.045; the strongest SSL-side candidate. **Phase 2 dose-response did not test this directly.** Identity-corrected dose-response ruled out all *acoustic* features; therefore the SSL-representation-level candidate is now the leading hypothesis. Needs a stability-targeted intervention (script 25). | Generator | Single-model (HuBERT computed only for Ditto) | Yes — temporal smoothing; causal intervention on segment_stability |
+| Boundary sharpness | **Moderate (Phase 1)** — n.s. at FDR (mean d=0.58). | Generator | Single-model | Conditional |
+| Silhouette score | **Weak (Phase 1)** — consistent direction, n.s. | Generator | Single-model | No |
+| Intra-class compactness | **Weak (Phase 1)** — no strong signal | Generator | Single-model | No |
 
 ---
 
@@ -169,8 +229,8 @@ that attenuates loudness effects.
 - **TFG models**: Ditto (primary), Wav2Lip, MuseTalk, LatentSync, JoyVASA (cross-TFG)
 - **Audio analysis**: LUFS (pyloudnorm EBU R128), spectral tilt, energy envelope
 - **Embedding analysis**: HuBERT-base, XLS-R-300M, layers 0-12
-- **Causal inference**: Controlled audio interventions with verification
-- **Cross-TFG**: Aggregate SyncNet from multi-server deployment
+- **Causal inference**: Controlled audio transformations plus duration-aligned G×E SyncNet evaluation
+- **Cross-TFG**: Per-sample SyncNet deltas from four comparison models
 
 ### Statistical approach
 
@@ -199,9 +259,9 @@ For each sample, a 2×2 matrix (generator audio × evaluator audio) separates:
    Results reflect SyncNet sensitivity to acoustic features, not necessarily
    human-perceived video quality. Perceptual studies are needed.
 
-3. **Cross-TFG with aggregate data**: Most cross-TFG analysis uses model-level
-   averages (from `TFG_DEPLOY_SUMMARY.md`) rather than per-sample deltas.
-   This precludes Spearman correlations and formal cross-model statistics.
+3. **Cross-TFG mechanism coverage**: Per-sample SyncNet deltas are available,
+   but HuBERT feature metrics were not extracted for the other TFG models, so
+   mechanism-specific cross-model tests remain unavailable.
 
 4. **Single language**: All data is AISHELL-1 Mandarin Chinese. Cross-linguistic
    validation (English, multilingual) is needed.
@@ -209,35 +269,44 @@ For each sample, a 2×2 matrix (generator audio × evaluator audio) separates:
 5. **No human evaluation**: All findings are based on automated metrics. Human
    perceptual studies are the gold standard for lip-sync quality assessment.
 
-6. **Phase 1 data incomplete**: Per-sample feature deltas and boundary sharpness
-   metrics are not yet available, limiting the scope of correlational analysis.
+6. **Phase 1 per-sample correlation failed**: Per-sample Spearman correlations between
+   feature deltas and SyncNet deltas returned NaN — separability metrics are
+   population-level statistics with insufficient per-sample variance for rank
+   correlation. Future work needs per-sample embedding distance metrics.
 
-7. **G×E matrix incomplete**: Off-diagonal cells (G≠E) require SyncNet
-   re-evaluation on GPU. Without this, generator vs scorer attribution
-   remains theoretical.
+7. **G×E matrix coverage**: Duration-aligned off-diagonal cells are complete
+   for 9 samples; sample 9 still lacks TTS-generated cells. The large
+   interaction makes independent generator/scorer attribution unstable.
 
 8. **Intervention outcome pending**: While pilot interventions successfully
-   modify target features, the downstream effect on SyncNet scores has not
-   yet been measured.
+   modify target features (LUFS, spectral tilt, dynamic range), the downstream
+   effect on SyncNet scores has not yet been measured on modified-audio videos.
 
 ---
 
 ## Next Steps
 
-1. **Complete Phase 1**: Run `scripts/16_feature_separability.py` with
-   per-sample output for Spearman correlations.
+1. ~~**Complete Phase 1**~~ **DONE**: HuBERT viseme-level separability complete
+   (18 results, 24 comparisons). XLS-R skipped due to time constraints.
+   Report: `data/wav2sem_analysis/report.md`.
 
-2. **Phase 2 evaluation**: Re-run SyncNet on LUFS-matched, spectral-matched,
-   and dynamic-adjusted videos to measure causal effects on SyncNet scores.
+2. **Downstream intervention evaluation**: Generate TFG videos or replace their
+   audio tracks with the verified LUFS, spectral, and dynamic transformations,
+   then re-run SyncNet. The current script verifies transforms but does not yet
+   measure their score effects.
 
-3. **G×E matrix completion**: Finish off-diagonal cell evaluation to decompose
-   generator vs scorer contributions.
+3. **Repair sample 9 and align all 12 samples**: Complete the missing Ditto
+   TTS cells before treating G×E decompositions as final.
 
-4. **Cross-TFG per-sample evaluation**: Run SyncNet evaluation on Wav2Lip,
-   MuseTalk, LatentSync, and JoyVASA videos with per-sample output for
-   proper cross-model statistics.
+4. **Cross-TFG feature validation**: Extract the same HuBERT metrics for
+   Wav2Lip, MuseTalk, LatentSync, and JoyVASA, then test mechanism directions
+   rather than only aggregate SyncNet deltas.
 
-5. **Perceptual study**: Human evaluation of lip-sync quality across conditions
+5. **Per-sample embedding analysis**: Replace population-level separability
+   metrics with per-sample embedding distances (L2/cosine between natural
+   and TTS frame embeddings) to enable Spearman correlation with SyncNet.
+
+6. **Perceptual study**: Human evaluation of lip-sync quality across conditions
    to validate SyncNet-based conclusions.
 
 ---

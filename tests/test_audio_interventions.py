@@ -40,6 +40,7 @@ verify_intervention = _ci.verify_intervention
 measure = _ci.measure
 evaluate_pilot = _ci.evaluate_pilot
 InterventionResult = _ci.InterventionResult
+resolve_audio_dirs = _ci._resolve_audio_dirs
 
 
 # ---------------------------------------------------------------------------
@@ -169,6 +170,19 @@ class TestSpectralTiltMatching:
         dist_after = abs(tilt_after - tilt_target)
         assert dist_after < dist_before, (
             f"dist_before={dist_before:.3f} dist_after={dist_after:.3f}"
+        )
+
+    def test_reaches_target_tilt_magnitude(self):
+        """Matching must apply the requested tilt, not merely move directionally."""
+        source = _make_pinkish_noise(duration_s=2.0)
+        before = compute_spectral_tilt(source, SR)
+        target = before + 0.5
+
+        transformed = apply_spectral_tilt_match(source, SR, target)
+        after = compute_spectral_tilt(transformed, SR)
+
+        assert abs(after - target) < 0.05, (
+            f"after tilt ({after:.3f}) should reach target ({target:.3f})"
         )
 
 
@@ -423,6 +437,30 @@ class TestRunSmoke:
 
 
 # ---------------------------------------------------------------------------
+# Audio directory resolution
+# ---------------------------------------------------------------------------
+
+
+class TestAudioDirectoryResolution:
+    def test_default_tts_dir_is_phase1_faster_qwen3_run(self):
+        """Default interventions must use the TTS source used by Phase 1."""
+        assert _ci._TTS_AUDIO_DIR == (
+            _REPO / "runs" / "r2_faster_qwen3_20260707T145233Z" / "02_tts"
+        )
+
+    def test_input_dir_resolves_natural_and_tts_subdirectories(self, tmp_path):
+        """The CLI input root must select real natural/tts audio directories."""
+        natural_dir = tmp_path / "natural"
+        tts_dir = tmp_path / "tts"
+        natural_dir.mkdir()
+        tts_dir.mkdir()
+        (natural_dir / "1.wav").touch()
+        (tts_dir / "1.wav").touch()
+
+        assert resolve_audio_dirs(tmp_path) == (natural_dir, tts_dir)
+
+
+# ---------------------------------------------------------------------------
 # __main__ smoke via CLI
 # ---------------------------------------------------------------------------
 
@@ -439,12 +477,14 @@ class TestCLI:
 
     def test_smoke_pilot_runs(self):
         import subprocess
-        proc = subprocess.run(
-            [sys.executable, str(_SCRIPT_PATH), "--pilot", "--verify-only", "--smoke"],
-            capture_output=True, text=True, timeout=120,
-        )
-        assert proc.returncode == 0
-        assert "intervention_results.json" in proc.stdout
+        with tempfile.TemporaryDirectory() as td:
+            proc = subprocess.run(
+                [sys.executable, str(_SCRIPT_PATH), "--pilot", "--verify-only", "--smoke",
+                 "--output-dir", td],
+                capture_output=True, text=True, timeout=120,
+            )
+            assert proc.returncode == 0
+            assert "intervention_results.json" in proc.stdout
 
     def test_smoke_output_file(self):
         import subprocess

@@ -114,6 +114,7 @@ def run_syncnet_pipeline(
         "--videofile", str(video_path),
         "--reference", reference,
         "--data_dir", str(data_dir),
+        "--overwrite",
     ]
     try:
         subprocess.run(cmd1, check=True, capture_output=True, text=True, timeout=180, env=env, cwd=str(syncnet_dir))
@@ -135,8 +136,33 @@ def run_syncnet_pipeline(
         return None, f"run_syncnet failed: {e.stderr[-300:]}"
 
 
-def build_ffmpeg_command(video_path: Path, audio_path: Path, output_path: Path) -> list[str]:
-    return [
+def probe_duration(media_path: Path, ffprobe_path: str = "ffprobe") -> float:
+    """Return a media duration in seconds using ffprobe."""
+    result = subprocess.run(
+        [
+            ffprobe_path,
+            "-v", "error",
+            "-show_entries", "format=duration",
+            "-of", "default=noprint_wrappers=1:nokey=1",
+            str(media_path),
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+        timeout=30,
+    )
+    return float(result.stdout.strip())
+
+
+def build_ffmpeg_command(
+    video_path: Path,
+    audio_path: Path,
+    output_path: Path,
+    video_duration: float | None = None,
+    audio_duration: float | None = None,
+) -> list[str]:
+    """Build an audio-replacement command with optional timeline alignment."""
+    command = [
         "ffmpeg", "-y",
         "-i", str(video_path),
         "-i", str(audio_path),
@@ -145,8 +171,18 @@ def build_ffmpeg_command(video_path: Path, audio_path: Path, output_path: Path) 
         "-map", "0:v:0",
         "-map", "1:a:0",
         "-shortest",
-        str(output_path),
     ]
+    if video_duration is not None and audio_duration is not None:
+        if video_duration <= 0 or audio_duration <= 0:
+            raise ValueError("media durations must be positive")
+        tempo = audio_duration / video_duration
+        if not 0.5 <= tempo <= 2.0:
+            raise ValueError(
+                f"audio/video duration ratio {tempo:.3f} is outside ffmpeg atempo range"
+            )
+        command.extend(["-af", f"atempo={tempo:.6f}", "-t", f"{video_duration:.6f}"])
+    command.append(str(output_path))
+    return command
 
 
 def gxe_key(generator: str, evaluator: str) -> str:
@@ -187,6 +223,20 @@ def classify_sample(gen_effect: dict, scorer_effect: dict) -> str:
     return "mixed"
 
 
+def complete_matrix_samples(samples_results: dict[str, dict]) -> list[str]:
+    """Return sample IDs with all four generator/evaluator cells present."""
+    required = {
+        "G_natural_E_natural",
+        "G_natural_E_tts",
+        "G_tts_E_natural",
+        "G_tts_E_tts",
+    }
+    return sorted(
+        [sid for sid, cells in samples_results.items() if required.issubset(cells)],
+        key=lambda sid: int(sid),
+    )
+
+
 def print_decomposition(samples_results: dict[str, dict]) -> None:
     gc_keys = ["sync_c", "sync_d"]
     nat_nat = {k: [] for k in gc_keys}
@@ -194,7 +244,14 @@ def print_decomposition(samples_results: dict[str, dict]) -> None:
     tts_nat = {k: [] for k in gc_keys}
     nat_tts = {k: [] for k in gc_keys}
 
-    for sid, cells in sorted(samples_results.items()):
+    complete_ids = complete_matrix_samples(samples_results)
+    partial_count = len(samples_results) - len(complete_ids)
+    print(f"\nComplete matrix samples: {len(complete_ids)}")
+    if partial_count:
+        print(f"Partial matrix samples excluded from decomposition: {partial_count}")
+
+    for sid in complete_ids:
+        cells = samples_results[sid]
         for cell_key, vals in cells.items():
             if cell_key == "G_natural_E_natural":
                 for k in gc_keys:
@@ -232,7 +289,8 @@ def print_decomposition(samples_results: dict[str, dict]) -> None:
     print("  If Scorer effect > 0: SyncNet itself prefers TTS audio characteristics (e.g., loudness)")
 
     print("\n=== Per-Sample Classification ===")
-    for sid, cells in sorted(samples_results.items()):
+    for sid in complete_ids:
+        cells = samples_results[sid]
         nat_nat_vals = cells.get("G_natural_E_natural", {})
         tts_nat_vals = cells.get("G_tts_E_natural", {})
         nat_tts_vals = cells.get("G_natural_E_tts", {})
@@ -306,6 +364,10 @@ def main() -> None:
     ffmpeg_path = shutil.which("ffmpeg")
     if not ffmpeg_path:
         print("ERROR: ffmpeg not found in PATH")
+        return
+    ffprobe_path = shutil.which("ffprobe")
+    if not ffprobe_path:
+        print("ERROR: ffprobe not found in PATH")
         return
 
     gxe_generated_dir = ditto_dir / "gxe_matrix"
@@ -385,7 +447,20 @@ def main() -> None:
                     except (json.JSONDecodeError, KeyError):
                         pass
 
-                ffmpeg_cmd = build_ffmpeg_command(video_path, eval_audio_path, gxe_video)
+                try:
+                    video_duration = probe_duration(video_path, ffprobe_path)
+                    audio_duration = probe_duration(eval_audio_path, ffprobe_path)
+                    ffmpeg_cmd = build_ffmpeg_command(
+                        video_path,
+                        eval_audio_path,
+                        gxe_video,
+                        video_duration=video_duration,
+                        audio_duration=audio_duration,
+                    )
+                except (subprocess.SubprocessError, ValueError) as exc:
+                    failed.append({"sample_id": sid, "cell": cell_key, "error": str(exc)})
+                    print(f"[gxe] sample {sid} {cell_key}: duration probe FAILED")
+                    continue
 
                 if args.dry_run:
                     print(f"[gxe] sample {sid} {cell_key}: WOULD run {shlex.join(ffmpeg_cmd)}")
@@ -447,6 +522,7 @@ def main() -> None:
         "samples": sample_ids,
         "matrix_axes": matrix_axes,
         "results": results_by_sample,
+        "complete_matrix_samples": complete_matrix_samples(results_by_sample),
         "failed": failed,
     }
 
