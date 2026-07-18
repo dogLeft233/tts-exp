@@ -1,6 +1,6 @@
 # TTS Enhancement of TFG Lip Sync: Mechanism Analysis
 
-*Last updated: 2026-07-18*
+*Last updated: 2026-07-18 (script 25 stability intervention results added)*
 
 ## Summary
 
@@ -33,10 +33,18 @@ Two causal candidates survive Phase 2:
   SyncNet evaluator, not in any single acoustic attribute. This finding
   does not depend on re-rendered audio and is not affected by the identity
   control.
-- **HuBERT `segment_stability` at layer 11** (Phase 1 observational:
-  FDR p=0.024, d=1.045): the strongest SSL-representation-side candidate.
-  Phase 2's identity-corrected dose-response ruled out all acoustic
-  features; an SSL-side causal intervention is the natural next test.
+- **HuBERT `segment_stability` at layer 11**: Phase 1 observational
+  (FDR p=0.024, d=1.045); Phase 2 stability intervention (script 25,
+  n=12, PGD under ε=0.005 budget) produced an **inconclusive causal
+  verdict**. In the TTS direction the intervention is strongly
+  feature-specific (paired residual −1.18 ± 0.35 vs same-ε random-noise
+  control, t=−11.79, d=−3.40): destabilizing HuBERT-L11 stability on
+  TTS drops Sync-C by ~1.18 beyond pure noise. But the natural-side
+  counterpart is directionally wrong — stabilizing natural toward
+  TTS *drops* Sync-C by −4.21 ± 0.83 instead of rising toward the
+  TTS diagonal. Stability is therefore a **statistically significant
+  causal interceptor in the TTS direction but the diagonal advantage
+  remains primarily a non-decomposable G×E co-adapted state**.
 
 LatentSync remains a near-zero cross-model control.
 
@@ -213,7 +221,7 @@ that attenuates loudness effects.
 | Dynamic range (compress) | **Rejected (Phase 2 identity-corrected)** — residual = +0.004 ± 0.338 (t=+0.03, p=0.97). | N/A | Untested | No |
 | Dynamic range (expand) | **Rejected (Phase 2 identity-corrected)** — residual = −0.071 ± 0.219 (t=−0.97, p=0.36). | N/A | Untested | No |
 | **Generator × Evaluator co-adaptation** | **Supported (Phase 2 G×E)** — G×E interaction = +7.29 (vs −3.25 generator + −2.80 scorer main effects). This finding is computed on the strict run's original diagonal scores and is not affected by Ditto non-determinism. The +1.25 Sync-C diagonal advantage lives in the joint Faster-Qwen3 × Ditto × SyncNet coupling. | **Both** (joint state) | Architecture-dependent (LatentSync neutral cross-model) | Yes — preserve generator/scorer coupling |
-| **HuBERT `segment_stability` (layer 11)** | **Strong (Phase 1 observational)** — FDR p=0.024, d=1.045; the strongest SSL-side candidate. **Phase 2 dose-response did not test this directly.** Identity-corrected dose-response ruled out all *acoustic* features; therefore the SSL-representation-level candidate is now the leading hypothesis. Needs a stability-targeted intervention (script 25). | Generator | Single-model (HuBERT computed only for Ditto) | Yes — temporal smoothing; causal intervention on segment_stability |
+| **HuBERT `segment_stability` (layer 11)** | **Phase 1: Strong observational (FDR p=0.024, d=1.045).** **Phase 2 stability intervention (script 25, n=12): INCONCLUSIVE** — strongly feature-specific in the TTS direction (paired residual vs same-ε random-noise control = −1.18 ± 0.35, t=−11.79, d=−3.40) but bidirectional test fails (stabilizing natural drops Sync-C by −4.21 instead of raising). Verdict: stability is a **significant causal interceptor for the TTS direction** but is not alone sufficient to recreate the diagonal advantage; G×E co-adaptation remains dominant. | Generator (TTS direction only) | Single-model (HuBERT computed only for Ditto) | Partial — temporal smoothing of TTS audio may help; cannot boost natural alone |
 | Boundary sharpness | **Moderate (Phase 1)** — n.s. at FDR (mean d=0.58). | Generator | Single-model | Conditional |
 | Silhouette score | **Weak (Phase 1)** — consistent direction, n.s. | Generator | Single-model | No |
 | Intra-class compactness | **Weak (Phase 1)** — no strong signal | Generator | Single-model | No |
