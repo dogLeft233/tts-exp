@@ -1,115 +1,278 @@
 #!/usr/bin/env python3
-"""Build English Wav2Sem alignment manifest from LibriSpeech .phn files.
+"""Build English Wav2Sem alignment manifest from MFA TextGrid alignment.
 
-Reads .phn files extracted by script 27, maps ARPABET phones to Preston Blair
-13 visemes (plus a 'sil' class for silence tokens), and writes a manifest
-compatible with script 15 (SSL embeddings) and script 16 (separability).
+Runs MFA forced alignment (or reads pre-existing TextGrids), parses the
+phone tier, maps IPA phones to Preston Blair 13 visemes, and writes a
+manifest compatible with scripts 15 (SSL embeddings) and 16 (separability).
 
-Each manifest entry mirrors the Chinese manifest schema so downstream scripts
-can consume both languages uniformly:
+Each manifest entry matches the Chinese manifest schema:
 
     {
       "sample_id": 1,
-      "condition": "natural",        # or "tts"
+      "condition": "natural",
       "variant": "raw",
       "filepath": "data/data/audio_en/1.wav",
       "duration_s": 5.765,
+      "text": "...",
       "tokens": [
-        {"token": "h#", "viseme": "sil", "start_s": 0.0, "end_s": 0.29, "confidence": 1.0},
-        {"token": "k",  "viseme": "kg",  "start_s": 0.29, "end_s": 0.62, "confidence": 1.0},
+        {"token": "w", "viseme": "cdsz", "start_s": 0.0,
+         "end_s": 0.12, "confidence": 1.0},
         ...
       ]
     }
 
 Usage
 -----
-    python scripts/28_prepare_english_alignment.py [--samples IDS] [--smoke] [--output-dir DIR]
+    python scripts/28_prepare_english_alignment.py [--samples IDS] [--smoke]
+        [--mfa-dir DIR] [--output-dir DIR] [--run-mfa] [--mfa-env NAME]
 """
 
 from __future__ import annotations
 
 import argparse
-import importlib.util
 import json
+import re
+import subprocess
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from tfg_feature_common import (
-    ENGLISH_STUDY_SAMPLES,
-    ENGLISH_SILENCE_LABELS,
-    OUTPUT_BASE_EN,
-)
+from tfg_feature_common import ENGLISH_STUDY_SAMPLES, OUTPUT_BASE_EN
 
 try:
     import yaml
 except ImportError:
-    yaml = None  # type: ignore[assignment]
+    yaml = None
 
-VISEME_MAP_PATH = Path(__file__).resolve().parent.parent / "data" / "data" / "english_viseme_map.yaml"
-PHN_DIR = OUTPUT_BASE_EN / "manifest" / "librispeech_phn"
 AUDIO_DIR_REL = Path("data/data/audio_en")
 TTS_DIR_REL = Path("data/data/audio_en_qwen3_tts")
 AUDIO_MANIFEST_REL = Path("data/data/audio_en/manifest.json")
 TTS_MANIFEST_REL = Path("data/data/audio_en_qwen3_tts/manifest.json")
+VISEME_MAP_PATH = (
+    Path(__file__).resolve().parent.parent / "data" / "data" / "english_viseme_map.yaml"
+)
 
+DEFAULT_MFA_DIR = OUTPUT_BASE_EN / "mfa_textgrid"
 OUTPUT_MANIFEST_REL = OUTPUT_BASE_EN / "manifest" / "alignment.json"
 
+SILENCE_LABELS = frozenset({"", "sp", "sil", "SIL", "SPN", "spn", "<sil>", "<unk>"})
+
+MFA_MFA_ENV = "mfa"
+MFA_DICT = "english_mfa"
+MFA_ACOUSTIC = "english_mfa"
+
+
 # ---------------------------------------------------------------------------
-# Viseme map
+# IPA → Preston Blair 13 viseme mapping
 # ---------------------------------------------------------------------------
+# MFA's english_mfa model outputs a mix of IPA and X-SAMPA-like symbols
+# (e.g. "aj" = /aɪ/, "ej" = /eɪ/, "ow" = /oʊ/, "aw" = /aʊ/). We strip
+# diacritics (dental ◌̪, palatalization ʲ, length ː, aspiration ʰ) before
+# lookup. See data/data/english_viseme_map.yaml for ARPABET → viseme defs.
+
+BASE_IPA_TO_VISEME: dict[str, str] = {
+    # Silence
+    "": "sil",
+    "sp": "sil",
+    "sil": "sil",
+    # /pbmv/ — lips together
+    "p": "pbmv",
+    "b": "pbmv",
+    "m": "pbmv",
+    # /fv/ — lower lip to upper teeth
+    "f": "fv",
+    "v": "fv",
+    # /th/ — tongue between teeth
+    "θ": "th",
+    "ð": "th",
+    # /cdsz/ — tongue tip to alveolar ridge
+    "t": "cdsz",
+    "d": "cdsz",
+    "s": "cdsz",
+    "z": "cdsz",
+    "n": "cdsz",
+    "l": "cdsz",
+    "ɫ": "cdsz",
+    "ɾ": "cdsz",
+    # /kg/ — back of tongue to soft palate
+    "k": "kg",
+    "g": "kg",
+    "ɡ": "kg",
+    "ɟ": "kg",
+    "c": "kg",
+    "ŋ": "kg",
+    "ɲ": "kg",
+    "x": "kg",
+    # /chjsh/ — blade to post-alveolar
+    "ʃ": "chjsh",
+    "ʒ": "chjsh",
+    "tʃ": "chjsh",
+    "dʒ": "chjsh",
+    # /e/ — relaxed open mouth
+    "ɛ": "e",
+    "æ": "e",
+    "ʌ": "e",
+    "ə": "e",
+    "ɐ": "e",
+    "a": "e",  # also /ä/ in some conventions
+    "ɜ": "e",
+    # /o/ — open round (also back vowels)
+    "ɑ": "o",
+    "ɒ": "o",
+    "ɔ": "o",
+    "o": "o",
+    "ʊ": "o",
+    # /i/ — wide stretch
+    "i": "i",
+    "ɪ": "i",
+    "e": "i",
+    # /u/ — small round
+    "u": "u",
+    "ʉ": "u",
+    "w": "u",
+    # /r/ — slightly cupped
+    "ɹ": "r",
+    "ɚ": "r",
+    "ɝ": "r",
+    # Diphthongs — offglide viseme per spec
+    "aɪ": "ai",
+    "eɪ": "ai",
+    "aʊ": "aw",
+    "oʊ": "o",
+    "ɔɪ": "o",
+    # Glottal / no visible shape → neutral
+    "h": "e",
+    "ɦ": "e",
+    "ʔ": "e",
+    "ç": "e",
+    # Palatal glide
+    "j": "i",
+    "ʎ": "i",
+}
+
+# X-SAMPA / non-IPA variants MFA sometimes outputs
+XSAMPA_TO_VISEME: dict[str, str] = {
+    "aj": "ai",
+    "ej": "ai",
+    "aw": "aw",
+    "ow": "o",
+    "oj": "o",
+    "ɔj": "o",
+    "Ij": "i",
+    "əw": "o",
+    "əu": "o",
+}
+
+# Syllabic consonant markers (strip before lookup)
+_DIACRITIC_RE = re.compile(r"[̪̺̻̼̟̠̬̪ʰʲːˑ̩ʷˠˤ̃]")
 
 
-_viseme_map_cache: dict | None = None
+def _normalize_phone(raw: str) -> str:
+    """Strip diacritics and length marks to get the base phone symbol."""
+    s = _DIACRITIC_RE.sub("", raw.strip())
+    return s
 
 
-def load_viseme_map(path: Path = VISEME_MAP_PATH) -> dict:
-    global _viseme_map_cache
-    if _viseme_map_cache is not None:
-        return _viseme_map_cache
-    if yaml is None:
-        raise ImportError("PyYAML required")
-    with open(path, "r", encoding="utf-8") as f:
-        _viseme_map_cache = yaml.safe_load(f)
-    return _viseme_map_cache
-
-
-def arpabet_to_viseme(arpabet: str) -> str:
-    """Map ARPABET phone to viseme; silence tokens → 'sil'; unmapped → 'other'."""
-    if arpabet in ENGLISH_SILENCE_LABELS:
+def ipa_to_viseme(phone: str) -> str:
+    """Map an MFA IPA phone to a Preston Blair viseme class."""
+    raw = phone.strip()
+    if not raw or raw in SILENCE_LABELS:
         return "sil"
-    vm = load_viseme_map()
-    mapping = vm["arpabet_to_viseme"]
-    return mapping.get(arpabet, "other")
+    n = _normalize_phone(raw)
+    # Check base IPA table first
+    v = BASE_IPA_TO_VISEME.get(n)
+    if v is not None:
+        return v
+    # Check X-SAMPA variants
+    v = XSAMPA_TO_VISEME.get(n)
+    if v is not None:
+        return v
+    # Fallback: check without stress or diacritics
+    simpler = re.sub(r"[ˈˌ]", "", n)
+    if simpler != n:
+        v = BASE_IPA_TO_VISEME.get(simpler)
+        if v is not None:
+            return v
+        v = XSAMPA_TO_VISEME.get(simpler)
+        if v is not None:
+            return v
+    return "other"
 
 
 # ---------------------------------------------------------------------------
-# .phn parsing (reuses 27)
+# TextGrid parser
+# ---------------------------------------------------------------------------
+# MFA TextGrid format:
+#   intervals [N]:
+#       xmin = 0.54
+#       xmax = 0.66
+#       text = "w"
+#
+# We extract the "phones" tier and return a list of token dicts.
+
+TEXTGRID_INTERVAL_RE = re.compile(
+    r"intervals\s*\[\s*\d+\s*\]\s*:\s*"
+    r"xmin\s*=\s*([\d.eE+-]+)\s*"
+    r"xmax\s*=\s*([\d.eE+-]+)\s*"
+    r'text\s*=\s*"([^"]*)"',
+    re.DOTALL,
+)
+
+
+def parse_textgrid(textgrid_path: Path) -> list[dict]:
+    """Parse the phones tier from an MFA TextGrid."""
+    raw = textgrid_path.read_text(encoding="utf-8")
+
+    phones_section = raw.split('name = "phones"')[1]
+    phones_section = phones_section.split("name =")[0]
+
+    tokens: list[dict] = []
+    for m in TEXTGRID_INTERVAL_RE.finditer(phones_section):
+        start_s = float(m.group(1))
+        end_s = float(m.group(2))
+        phone = m.group(3)
+        viseme = ipa_to_viseme(phone)
+        tokens.append({
+            "token": phone,
+            "viseme": viseme,
+            "start_s": round(start_s, 6),
+            "end_s": round(end_s, 6),
+            "duration_s": round(end_s - start_s, 6),
+            "confidence": 1.0,
+        })
+    return tokens
+
+
+# ---------------------------------------------------------------------------
+# MFA runner
 # ---------------------------------------------------------------------------
 
 
-_script27_mod: object | None = None
-
-
-def _get_script27():
-    """Lazily import and cache script 27's module to avoid re-execution."""
-    global _script27_mod
-    if _script27_mod is None:
-        script27 = Path(__file__).resolve().parent / "27_download_librispeech_phn.py"
-        spec = importlib.util.spec_from_file_location("librispeech_phn", script27)
-        mod = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(mod)
-        _script27_mod = mod
-    return _script27_mod
-
-
-def parse_phn_file(phn_path: Path, sample_rate: int = 16000) -> list[dict]:
-    """Parse a LibriSpeech .phn file by delegating to script 27.
-
-    The delegation is cached via ``_get_script27`` so repeated calls do not
-    re-execute script 27's module body (and thus do not pollute ``sys.path``).
-    """
-    return _get_script27().parse_phn_file(phn_path, sample_rate=sample_rate)
+def run_mfa_alignment(
+    input_dir: Path,
+    output_dir: Path,
+    dictionary: str = MFA_DICT,
+    acoustic: str = MFA_ACOUSTIC,
+    conda_env: str = MFA_MFA_ENV,
+    conda_root: str = "/root/miniconda3",
+) -> None:
+    """Run MFA alignment via subprocess."""
+    conda_sh = Path(conda_root) / "etc" / "profile.d" / "conda.sh"
+    cmd = (
+        f"source {conda_sh} && "
+        f"conda activate {conda_env} && "
+        f"mfa align --clean --overwrite "
+        f"{input_dir} {dictionary} {acoustic} {output_dir}"
+    )
+    result = subprocess.run(
+        ["bash", "-c", cmd],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0:
+        raise RuntimeError(
+            f"MFA alignment failed (exit {result.returncode}):\n"
+            f"{result.stderr[:2000]}"
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -117,68 +280,91 @@ def parse_phn_file(phn_path: Path, sample_rate: int = 16000) -> list[dict]:
 # ---------------------------------------------------------------------------
 
 
-def find_phn_for_sample(
-    sample_id: int,
-    audio_manifest_records: dict[int, dict],
-    phn_dir: Path,
-) -> Path | None:
-    rec = audio_manifest_records.get(sample_id)
-    if rec is None:
-        return None
-    uid = rec["librispeech_id"]
-    phn_path = phn_dir / f"{uid}.phn"
-    return phn_path if phn_path.exists() else None
+def _build_alignment_input(
+    sample_ids: list[int], repo_root: Path, align_dir: Path,
+) -> None:
+    """Prepare .wav + .lab files for MFA alignment (natural only)."""
+    audio_manifest = json.loads((repo_root / AUDIO_MANIFEST_REL).read_text())
+    records = {int(r["sample_id"]): r for r in audio_manifest}
+    align_dir.mkdir(parents=True, exist_ok=True)
+    for sid in sample_ids:
+        rec = records.get(sid)
+        if rec is None:
+            continue
+        wav = repo_root / AUDIO_DIR_REL / f"{sid}.wav"
+        if not wav.exists():
+            continue
+        dst_wav = align_dir / f"{sid}.wav"
+        if not dst_wav.exists():
+            dst_wav.symlink_to(wav.resolve())
+        lab = align_dir / f"{sid}.lab"
+        lab.write_text(rec["text"].strip() + "\n")
+
+
+def _load_manifest_records(repo_root: Path) -> tuple[dict, dict]:
+    """Load natural and TTS manifests; handle both list and dict formats."""
+    audio_manifest_raw = json.loads(
+        (repo_root / AUDIO_MANIFEST_REL).read_text()
+    )
+    tts_manifest_raw = json.loads(
+        (repo_root / TTS_MANIFEST_REL).read_text()
+    )
+
+    if isinstance(audio_manifest_raw, list):
+        audio_records = {int(r["sample_id"]): r for r in audio_manifest_raw}
+    else:
+        audio_records = {int(r["sample_id"]): r for r in audio_manifest_raw.get("results", [])}
+
+    if isinstance(tts_manifest_raw, list):
+        tts_records = {int(r["sample_id"]): r for r in tts_manifest_raw}
+    else:
+        tts_records = {int(r["sample_id"]): r for r in tts_manifest_raw.get("results", [])}
+
+    return audio_records, tts_records
 
 
 def build_english_manifest(
     sample_ids: list[int],
     repo_root: Path,
-    phn_dir: Path = PHN_DIR,
+    mfa_dir: Path = DEFAULT_MFA_DIR,
     output_path: Path = OUTPUT_MANIFEST_REL,
+    run_mfa: bool = False,
+    conda_env: str = MFA_MFA_ENV,
 ) -> dict:
-    audio_manifest_path = repo_root / AUDIO_MANIFEST_REL
-    tts_manifest_path = repo_root / TTS_MANIFEST_REL
+    """Build alignment manifest from MFA TextGrids."""
+    audio_records, tts_records = _load_manifest_records(repo_root)
 
-    audio_records = {
-        int(r["sample_id"]): r
-        for r in json.loads(audio_manifest_path.read_text())
-    }
-    tts_records = {
-        int(r["sample_id"]): r
-        for r in json.loads(tts_manifest_path.read_text())
-    }
-
-    audio_dir = repo_root / AUDIO_DIR_REL
-    tts_dir = repo_root / TTS_DIR_REL
+    if run_mfa:
+        align_in = output_path.parent / "_mfa_input"
+        _build_alignment_input(sample_ids, repo_root, align_in)
+        print(f"[28] running MFA alignment on {len(sample_ids)} files ...")
+        run_mfa_alignment(align_in, mfa_dir, conda_env=conda_env)
 
     manifest: list[dict] = []
     failures: list[dict] = []
-    conditions = ["natural", "tts"]
 
     for sid in sorted(sample_ids):
-        rec = audio_records.get(sid)
-        if rec is None:
-            failures.append({"sample_id": sid, "error": "missing in audio manifest"})
-            continue
-        phn_path = find_phn_for_sample(sid, audio_records, phn_dir)
-        if phn_path is None:
-            failures.append({"sample_id": sid, "error": "missing .phn"})
-            continue
-        phn_tokens = parse_phn_file(phn_path)
-        if not phn_tokens:
-            failures.append({"sample_id": sid, "error": "empty .phn"})
+        textgrid_path = mfa_dir / f"{sid}.TextGrid"
+        if not textgrid_path.exists():
+            failures.append({"sample_id": sid, "error": f"MFA TextGrid not found: {textgrid_path}"})
             continue
 
+        tokens = parse_textgrid(textgrid_path)
+        if not tokens:
+            failures.append({"sample_id": sid, "error": "empty TextGrid"})
+            continue
+
+        duration_s = tokens[-1]["end_s"]
+        rec = audio_records.get(sid, {})
         text = rec.get("text", "").strip()
-        duration_s = float(rec.get("duration_s", phn_tokens[-1]["end_s"]))
 
-        for condition in conditions:
-            if condition == "natural":
-                audio_path = audio_dir / f"{sid}.wav"
-            else:
-                audio_path = tts_dir / f"{sid}.wav"
+        for condition, rel_dir in [("natural", AUDIO_DIR_REL), ("tts", TTS_DIR_REL)]:
+            audio_path = repo_root / rel_dir / f"{sid}.wav"
             if not audio_path.exists():
-                failures.append({"sample_id": sid, "condition": condition, "error": "audio missing"})
+                failures.append({
+                    "sample_id": sid, "condition": condition,
+                    "error": "audio missing",
+                })
                 continue
 
             entry: dict = {
@@ -188,19 +374,10 @@ def build_english_manifest(
                 "filepath": str(audio_path.relative_to(repo_root)),
                 "duration_s": duration_s,
                 "text": text,
-                "librispeech_id": rec["librispeech_id"],
-                "tokens": [
-                    {
-                        "token": t["token"],
-                        "viseme": arpabet_to_viseme(t["token"]),
-                        "start_s": round(t["start_s"], 6),
-                        "end_s": round(t["end_s"], 6),
-                        "duration_s": round(t["duration_s"], 6),
-                        "confidence": 1.0,
-                    }
-                    for t in phn_tokens
-                ],
+                "tokens": tokens,
             }
+            if "librispeech_id" in rec:
+                entry["librispeech_id"] = rec["librispeech_id"]
             manifest.append(entry)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -222,22 +399,40 @@ def build_english_manifest(
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "--samples", type=str, default=",".join(str(s) for s in ENGLISH_STUDY_SAMPLES),
+        "--samples", type=str,
+        default=",".join(str(s) for s in ENGLISH_STUDY_SAMPLES),
     )
     parser.add_argument("--smoke", action="store_true")
     parser.add_argument(
-        "--output-dir", type=str, default=str(OUTPUT_BASE_EN / "manifest"),
+        "--mfa-dir", type=str, default=str(DEFAULT_MFA_DIR),
     )
+    parser.add_argument(
+        "--output-dir", type=str, default=str(OUTPUT_MANIFEST_REL.parent),
+    )
+    parser.add_argument("--run-mfa", action="store_true")
+    parser.add_argument("--mfa-env", type=str, default=MFA_MFA_ENV)
     args = parser.parse_args()
 
-    sample_ids = [1] if args.smoke else [int(x) for x in args.samples.split(",") if x.strip()]
+    sample_ids = [1] if args.smoke else [
+        int(x) for x in args.samples.split(",") if x.strip()
+    ]
     repo_root = Path(__file__).resolve().parent.parent
+    mfa_dir = Path(args.mfa_dir)
+    if not mfa_dir.is_absolute():
+        mfa_dir = (repo_root / mfa_dir).resolve()
     output_path = Path(args.output_dir) / "alignment.json"
 
-    summary = build_english_manifest(sample_ids, repo_root, output_path=output_path)
+    summary = build_english_manifest(
+        sample_ids, repo_root,
+        mfa_dir=mfa_dir,
+        output_path=output_path,
+        run_mfa=args.run_mfa,
+        conda_env=args.mfa_env,
+    )
+
     print(f"[28] wrote {summary['entries_written']} entries; {len(summary['failures'])} failures")
     for f in summary["failures"]:
-        print(f"  {f}")
+        print(f"  FAIL sample {f.get('sample_id', '?')} {f.get('condition', ''):8s} {f.get('error', '')}")
     return 0 if not summary["failures"] else 1
 
 

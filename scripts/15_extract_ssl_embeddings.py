@@ -347,6 +347,8 @@ def _load_manifest(manifest_path: Path) -> list[dict]:
         return data
     if isinstance(data, dict) and "entries" in data:
         return data["entries"]
+    if isinstance(data, dict) and "manifest" in data:
+        return data["manifest"]
     logger.warning("Unexpected manifest format; expected a list of entries")
     return []
 
