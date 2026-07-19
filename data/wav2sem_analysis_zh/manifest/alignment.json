@@ -1,0 +1,5500 @@
+{
+  "manifest": [
+    {
+      "sample_id": 1,
+      "condition": "natural",
+      "variant": "raw",
+      "filepath": "data/data/audio/1.wav",
+      "duration_s": 5.764,
+      "text": "但因为聚集了过多公共资源",
+      "tokens": [
+        {
+          "token": "t",
+          "viseme": "cdsz",
+          "start_s": 0.88,
+          "end_s": 0.91,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥˩",
+          "viseme": "ai",
+          "start_s": 0.91,
+          "end_s": 1.1,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.1,
+          "end_s": 1.21,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 1.21,
+          "end_s": 1.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.49,
+          "end_s": 1.52,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 1.52,
+          "end_s": 1.55,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˥˩",
+          "viseme": "e",
+          "start_s": 1.55,
+          "end_s": 1.58,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 1.58,
+          "end_s": 1.72,
+          "confidence": 1.0
+        },
+        {
+          "token": "y˥˩",
+          "viseme": "u",
+          "start_s": 1.72,
+          "end_s": 1.83,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 1.83,
+          "end_s": 2.05,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˧˥",
+          "viseme": "i",
+          "start_s": 2.05,
+          "end_s": 2.11,
+          "confidence": 1.0
+        },
+        {
+          "token": "l",
+          "viseme": "cdsz",
+          "start_s": 2.11,
+          "end_s": 2.22,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə",
+          "viseme": "e",
+          "start_s": 2.22,
+          "end_s": 2.34,
+          "confidence": 1.0
+        },
+        {
+          "token": "k",
+          "viseme": "kg",
+          "start_s": 2.34,
+          "end_s": 2.42,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 2.42,
+          "end_s": 2.51,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 2.51,
+          "end_s": 2.57,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʷ",
+          "viseme": "cdsz",
+          "start_s": 2.89,
+          "end_s": 2.94,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˧˥",
+          "viseme": "o",
+          "start_s": 2.94,
+          "end_s": 4.41,
+          "confidence": 1.0
+        },
+        {
+          "token": "kʷ",
+          "viseme": "kg",
+          "start_s": 4.44,
+          "end_s": 4.47,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 4.47,
+          "end_s": 4.5,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 4.5,
+          "end_s": 4.54,
+          "confidence": 1.0
+        },
+        {
+          "token": "kʷ",
+          "viseme": "kg",
+          "start_s": 4.54,
+          "end_s": 4.68,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥˩",
+          "viseme": "u",
+          "start_s": 4.68,
+          "end_s": 4.78,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 4.78,
+          "end_s": 4.82,
+          "confidence": 1.0
+        },
+        {
+          "token": "ts",
+          "viseme": "cdsz",
+          "start_s": 4.82,
+          "end_s": 4.95,
+          "confidence": 1.0
+        },
+        {
+          "token": "z̩˥",
+          "viseme": "cdsz",
+          "start_s": 4.95,
+          "end_s": 5.01,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɥ",
+          "viseme": "u",
+          "start_s": 5.01,
+          "end_s": 5.14,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˧˥",
+          "viseme": "e",
+          "start_s": 5.14,
+          "end_s": 5.18,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 5.18,
+          "end_s": 5.36,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 1,
+      "condition": "tts",
+      "variant": "raw",
+      "filepath": "runs/r2_dashscope_vc_20260707T143930Z/02_tts/1.wav",
+      "duration_s": 5.04,
+      "text": "但因为聚集了过多公共资源",
+      "tokens": [
+        {
+          "token": "t",
+          "viseme": "cdsz",
+          "start_s": 0.88,
+          "end_s": 0.91,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥˩",
+          "viseme": "ai",
+          "start_s": 0.91,
+          "end_s": 1.1,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.1,
+          "end_s": 1.21,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 1.21,
+          "end_s": 1.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.49,
+          "end_s": 1.52,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 1.52,
+          "end_s": 1.55,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˥˩",
+          "viseme": "e",
+          "start_s": 1.55,
+          "end_s": 1.58,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 1.58,
+          "end_s": 1.72,
+          "confidence": 1.0
+        },
+        {
+          "token": "y˥˩",
+          "viseme": "u",
+          "start_s": 1.72,
+          "end_s": 1.83,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 1.83,
+          "end_s": 2.05,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˧˥",
+          "viseme": "i",
+          "start_s": 2.05,
+          "end_s": 2.11,
+          "confidence": 1.0
+        },
+        {
+          "token": "l",
+          "viseme": "cdsz",
+          "start_s": 2.11,
+          "end_s": 2.22,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə",
+          "viseme": "e",
+          "start_s": 2.22,
+          "end_s": 2.34,
+          "confidence": 1.0
+        },
+        {
+          "token": "k",
+          "viseme": "kg",
+          "start_s": 2.34,
+          "end_s": 2.42,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 2.42,
+          "end_s": 2.51,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 2.51,
+          "end_s": 2.57,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʷ",
+          "viseme": "cdsz",
+          "start_s": 2.89,
+          "end_s": 2.94,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˧˥",
+          "viseme": "o",
+          "start_s": 2.94,
+          "end_s": 4.41,
+          "confidence": 1.0
+        },
+        {
+          "token": "kʷ",
+          "viseme": "kg",
+          "start_s": 4.44,
+          "end_s": 4.47,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 4.47,
+          "end_s": 4.5,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 4.5,
+          "end_s": 4.54,
+          "confidence": 1.0
+        },
+        {
+          "token": "kʷ",
+          "viseme": "kg",
+          "start_s": 4.54,
+          "end_s": 4.68,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥˩",
+          "viseme": "u",
+          "start_s": 4.68,
+          "end_s": 4.78,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 4.78,
+          "end_s": 4.82,
+          "confidence": 1.0
+        },
+        {
+          "token": "ts",
+          "viseme": "cdsz",
+          "start_s": 4.82,
+          "end_s": 4.95,
+          "confidence": 1.0
+        },
+        {
+          "token": "z̩˥",
+          "viseme": "cdsz",
+          "start_s": 4.95,
+          "end_s": 5.01,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɥ",
+          "viseme": "u",
+          "start_s": 5.01,
+          "end_s": 5.14,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˧˥",
+          "viseme": "e",
+          "start_s": 5.14,
+          "end_s": 5.18,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 5.18,
+          "end_s": 5.36,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 2,
+      "condition": "natural",
+      "variant": "raw",
+      "filepath": "data/data/audio/2.wav",
+      "duration_s": 5.583,
+      "text": "甚至出现交易几乎停滞的情况",
+      "tokens": [
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.64,
+          "end_s": 1.73,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə˥˩",
+          "viseme": "e",
+          "start_s": 1.73,
+          "end_s": 1.78,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.78,
+          "end_s": 1.81,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 1.81,
+          "end_s": 1.87,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 1.87,
+          "end_s": 1.9,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.9,
+          "end_s": 2.03,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 2.03,
+          "end_s": 2.06,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 2.06,
+          "end_s": 2.15,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 2.15,
+          "end_s": 2.27,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 2.27,
+          "end_s": 2.3,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 2.3,
+          "end_s": 2.45,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˥",
+          "viseme": "aw",
+          "start_s": 2.45,
+          "end_s": 2.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 2.49,
+          "end_s": 2.55,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 2.55,
+          "end_s": 2.58,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 2.58,
+          "end_s": 2.61,
+          "confidence": 1.0
+        },
+        {
+          "token": "xʷ",
+          "viseme": "kg",
+          "start_s": 2.61,
+          "end_s": 2.64,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 2.64,
+          "end_s": 2.67,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 3.12,
+          "end_s": 3.16,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˧˥",
+          "viseme": "i",
+          "start_s": 3.16,
+          "end_s": 3.19,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 3.19,
+          "end_s": 3.32,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 3.32,
+          "end_s": 3.39,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 3.39,
+          "end_s": 3.52,
+          "confidence": 1.0
+        },
+        {
+          "token": "t",
+          "viseme": "cdsz",
+          "start_s": 3.55,
+          "end_s": 3.82,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə",
+          "viseme": "e",
+          "start_s": 3.82,
+          "end_s": 3.99,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕʰ",
+          "viseme": "chjsh",
+          "start_s": 3.99,
+          "end_s": 4.07,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˧˥",
+          "viseme": "i",
+          "start_s": 4.07,
+          "end_s": 4.13,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 4.13,
+          "end_s": 4.73,
+          "confidence": 1.0
+        },
+        {
+          "token": "kʰ",
+          "viseme": "kg",
+          "start_s": 4.73,
+          "end_s": 4.76,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 4.76,
+          "end_s": 4.83,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥˩",
+          "viseme": "ai",
+          "start_s": 4.83,
+          "end_s": 4.89,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 4.89,
+          "end_s": 5.15,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 2,
+      "condition": "tts",
+      "variant": "raw",
+      "filepath": "runs/r2_dashscope_vc_20260707T143930Z/02_tts/2.wav",
+      "duration_s": 4.8,
+      "text": "甚至出现交易几乎停滞的情况",
+      "tokens": [
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.64,
+          "end_s": 1.73,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə˥˩",
+          "viseme": "e",
+          "start_s": 1.73,
+          "end_s": 1.78,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.78,
+          "end_s": 1.81,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 1.81,
+          "end_s": 1.87,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 1.87,
+          "end_s": 1.9,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.9,
+          "end_s": 2.03,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 2.03,
+          "end_s": 2.06,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 2.06,
+          "end_s": 2.15,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 2.15,
+          "end_s": 2.27,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 2.27,
+          "end_s": 2.3,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 2.3,
+          "end_s": 2.45,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˥",
+          "viseme": "aw",
+          "start_s": 2.45,
+          "end_s": 2.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 2.49,
+          "end_s": 2.55,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 2.55,
+          "end_s": 2.58,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 2.58,
+          "end_s": 2.61,
+          "confidence": 1.0
+        },
+        {
+          "token": "xʷ",
+          "viseme": "kg",
+          "start_s": 2.61,
+          "end_s": 2.64,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 2.64,
+          "end_s": 2.67,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 3.12,
+          "end_s": 3.16,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˧˥",
+          "viseme": "i",
+          "start_s": 3.16,
+          "end_s": 3.19,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 3.19,
+          "end_s": 3.32,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 3.32,
+          "end_s": 3.39,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 3.39,
+          "end_s": 3.52,
+          "confidence": 1.0
+        },
+        {
+          "token": "t",
+          "viseme": "cdsz",
+          "start_s": 3.55,
+          "end_s": 3.82,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə",
+          "viseme": "e",
+          "start_s": 3.82,
+          "end_s": 3.99,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕʰ",
+          "viseme": "chjsh",
+          "start_s": 3.99,
+          "end_s": 4.07,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˧˥",
+          "viseme": "i",
+          "start_s": 4.07,
+          "end_s": 4.13,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 4.13,
+          "end_s": 4.73,
+          "confidence": 1.0
+        },
+        {
+          "token": "kʰ",
+          "viseme": "kg",
+          "start_s": 4.73,
+          "end_s": 4.76,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 4.76,
+          "end_s": 4.83,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥˩",
+          "viseme": "ai",
+          "start_s": 4.83,
+          "end_s": 4.89,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 4.89,
+          "end_s": 5.15,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 3,
+      "condition": "natural",
+      "variant": "raw",
+      "filepath": "data/data/audio/3.wav",
+      "duration_s": 5.237,
+      "text": "一线城市土地供应量减少",
+      "tokens": [
+        {
+          "token": "i˧˥",
+          "viseme": "i",
+          "start_s": 1.22,
+          "end_s": 1.38,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 1.38,
+          "end_s": 1.5,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 1.5,
+          "end_s": 1.63,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.63,
+          "end_s": 1.67,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.67,
+          "end_s": 1.76,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˧˥",
+          "viseme": "o",
+          "start_s": 1.76,
+          "end_s": 1.83,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.83,
+          "end_s": 1.87,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.87,
+          "end_s": 1.97,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 1.97,
+          "end_s": 2.13,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʷ",
+          "viseme": "cdsz",
+          "start_s": 2.13,
+          "end_s": 2.39,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˨˩˦",
+          "viseme": "u",
+          "start_s": 2.39,
+          "end_s": 2.43,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 2.43,
+          "end_s": 2.54,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 2.54,
+          "end_s": 2.57,
+          "confidence": 1.0
+        },
+        {
+          "token": "kʷ",
+          "viseme": "kg",
+          "start_s": 2.57,
+          "end_s": 2.6,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 2.6,
+          "end_s": 2.63,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.63,
+          "end_s": 2.66,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 2.66,
+          "end_s": 2.69,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.69,
+          "end_s": 2.72,
+          "confidence": 1.0
+        },
+        {
+          "token": "l",
+          "viseme": "cdsz",
+          "start_s": 2.72,
+          "end_s": 2.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 2.75,
+          "end_s": 2.81,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥˩",
+          "viseme": "ai",
+          "start_s": 2.81,
+          "end_s": 2.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.84,
+          "end_s": 2.89,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 2.89,
+          "end_s": 2.99,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˨˩˦",
+          "viseme": "e",
+          "start_s": 2.99,
+          "end_s": 3.09,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 3.09,
+          "end_s": 3.4,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 3.4,
+          "end_s": 3.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˨˩˦",
+          "viseme": "aw",
+          "start_s": 3.49,
+          "end_s": 3.65,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 3,
+      "condition": "tts",
+      "variant": "raw",
+      "filepath": "runs/r2_dashscope_vc_20260707T143930Z/02_tts/3.wav",
+      "duration_s": 4.32,
+      "text": "一线城市土地供应量减少",
+      "tokens": [
+        {
+          "token": "i˧˥",
+          "viseme": "i",
+          "start_s": 1.22,
+          "end_s": 1.38,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 1.38,
+          "end_s": 1.5,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 1.5,
+          "end_s": 1.63,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.63,
+          "end_s": 1.67,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.67,
+          "end_s": 1.76,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˧˥",
+          "viseme": "o",
+          "start_s": 1.76,
+          "end_s": 1.83,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.83,
+          "end_s": 1.87,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.87,
+          "end_s": 1.97,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 1.97,
+          "end_s": 2.13,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʷ",
+          "viseme": "cdsz",
+          "start_s": 2.13,
+          "end_s": 2.39,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˨˩˦",
+          "viseme": "u",
+          "start_s": 2.39,
+          "end_s": 2.43,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 2.43,
+          "end_s": 2.54,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 2.54,
+          "end_s": 2.57,
+          "confidence": 1.0
+        },
+        {
+          "token": "kʷ",
+          "viseme": "kg",
+          "start_s": 2.57,
+          "end_s": 2.6,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 2.6,
+          "end_s": 2.63,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.63,
+          "end_s": 2.66,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 2.66,
+          "end_s": 2.69,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.69,
+          "end_s": 2.72,
+          "confidence": 1.0
+        },
+        {
+          "token": "l",
+          "viseme": "cdsz",
+          "start_s": 2.72,
+          "end_s": 2.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 2.75,
+          "end_s": 2.81,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥˩",
+          "viseme": "ai",
+          "start_s": 2.81,
+          "end_s": 2.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.84,
+          "end_s": 2.89,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 2.89,
+          "end_s": 2.99,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˨˩˦",
+          "viseme": "e",
+          "start_s": 2.99,
+          "end_s": 3.09,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 3.09,
+          "end_s": 3.4,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 3.4,
+          "end_s": 3.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˨˩˦",
+          "viseme": "aw",
+          "start_s": 3.49,
+          "end_s": 3.65,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 4,
+      "condition": "natural",
+      "variant": "raw",
+      "filepath": "data/data/audio/4.wav",
+      "duration_s": 6.126,
+      "text": "中原地产首席分析师张大伟说",
+      "tokens": [
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 0.49,
+          "end_s": 0.54,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 0.54,
+          "end_s": 0.6,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 0.6,
+          "end_s": 0.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɥ",
+          "viseme": "u",
+          "start_s": 0.75,
+          "end_s": 0.78,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˧˥",
+          "viseme": "e",
+          "start_s": 0.78,
+          "end_s": 0.97,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 0.97,
+          "end_s": 1.03,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 1.03,
+          "end_s": 1.07,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 1.07,
+          "end_s": 1.1,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.1,
+          "end_s": 1.13,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˨˩˦",
+          "viseme": "ai",
+          "start_s": 1.13,
+          "end_s": 1.17,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.17,
+          "end_s": 1.21,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.21,
+          "end_s": 1.24,
+          "confidence": 1.0
+        },
+        {
+          "token": "ow˨˩˦",
+          "viseme": "o",
+          "start_s": 1.24,
+          "end_s": 1.27,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 1.27,
+          "end_s": 1.36,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˧˥",
+          "viseme": "i",
+          "start_s": 1.36,
+          "end_s": 1.39,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 5.36,
+          "end_s": 5.5,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 5.5,
+          "end_s": 5.55,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˥˩",
+          "viseme": "e",
+          "start_s": 5.55,
+          "end_s": 5.74,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 4,
+      "condition": "tts",
+      "variant": "raw",
+      "filepath": "runs/r2_dashscope_vc_20260707T143930Z/02_tts/4.wav",
+      "duration_s": 5.36,
+      "text": "中原地产首席分析师张大伟说",
+      "tokens": [
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 0.49,
+          "end_s": 0.54,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 0.54,
+          "end_s": 0.6,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 0.6,
+          "end_s": 0.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɥ",
+          "viseme": "u",
+          "start_s": 0.75,
+          "end_s": 0.78,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˧˥",
+          "viseme": "e",
+          "start_s": 0.78,
+          "end_s": 0.97,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 0.97,
+          "end_s": 1.03,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 1.03,
+          "end_s": 1.07,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 1.07,
+          "end_s": 1.1,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.1,
+          "end_s": 1.13,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˨˩˦",
+          "viseme": "ai",
+          "start_s": 1.13,
+          "end_s": 1.17,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.17,
+          "end_s": 1.21,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.21,
+          "end_s": 1.24,
+          "confidence": 1.0
+        },
+        {
+          "token": "ow˨˩˦",
+          "viseme": "o",
+          "start_s": 1.24,
+          "end_s": 1.27,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 1.27,
+          "end_s": 1.36,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˧˥",
+          "viseme": "i",
+          "start_s": 1.36,
+          "end_s": 1.39,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 5.36,
+          "end_s": 5.5,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 5.5,
+          "end_s": 5.55,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˥˩",
+          "viseme": "e",
+          "start_s": 5.55,
+          "end_s": 5.74,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 5,
+      "condition": "natural",
+      "variant": "raw",
+      "filepath": "data/data/audio/5.wav",
+      "duration_s": 5.868,
+      "text": "标杆房企必然调整市场战略",
+      "tokens": [
+        {
+          "token": "p",
+          "viseme": "pbmv",
+          "start_s": 0.81,
+          "end_s": 0.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 0.84,
+          "end_s": 0.9,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˥",
+          "viseme": "aw",
+          "start_s": 0.9,
+          "end_s": 0.93,
+          "confidence": 1.0
+        },
+        {
+          "token": "k",
+          "viseme": "kg",
+          "start_s": 0.93,
+          "end_s": 0.96,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 0.96,
+          "end_s": 1.0,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.0,
+          "end_s": 1.04,
+          "confidence": 1.0
+        },
+        {
+          "token": "f",
+          "viseme": "fv",
+          "start_s": 1.04,
+          "end_s": 1.13,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˧˥",
+          "viseme": "ai",
+          "start_s": 1.13,
+          "end_s": 1.25,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.25,
+          "end_s": 1.32,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕʰ",
+          "viseme": "chjsh",
+          "start_s": 1.32,
+          "end_s": 1.35,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˨˩˦",
+          "viseme": "i",
+          "start_s": 1.35,
+          "end_s": 1.47,
+          "confidence": 1.0
+        },
+        {
+          "token": "pʲ",
+          "viseme": "pbmv",
+          "start_s": 1.47,
+          "end_s": 1.51,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 1.51,
+          "end_s": 1.54,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ",
+          "viseme": "chjsh",
+          "start_s": 1.54,
+          "end_s": 1.57,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˧˥",
+          "viseme": "ai",
+          "start_s": 1.57,
+          "end_s": 1.63,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.63,
+          "end_s": 1.73,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʰ",
+          "viseme": "cdsz",
+          "start_s": 1.96,
+          "end_s": 1.99,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 1.99,
+          "end_s": 2.11,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˧˥",
+          "viseme": "aw",
+          "start_s": 2.11,
+          "end_s": 2.18,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 2.18,
+          "end_s": 2.3,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˨˩˦",
+          "viseme": "o",
+          "start_s": 2.3,
+          "end_s": 2.33,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.33,
+          "end_s": 2.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 2.49,
+          "end_s": 2.56,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 2.56,
+          "end_s": 2.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 2.75,
+          "end_s": 2.88,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˨˩˦",
+          "viseme": "ai",
+          "start_s": 2.88,
+          "end_s": 2.91,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.91,
+          "end_s": 2.94,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 3.51,
+          "end_s": 3.56,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥˩",
+          "viseme": "ai",
+          "start_s": 3.56,
+          "end_s": 3.63,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 3.63,
+          "end_s": 3.77,
+          "confidence": 1.0
+        },
+        {
+          "token": "l",
+          "viseme": "cdsz",
+          "start_s": 3.77,
+          "end_s": 3.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɥ",
+          "viseme": "u",
+          "start_s": 3.84,
+          "end_s": 3.87,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 3.87,
+          "end_s": 3.97,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 5,
+      "condition": "tts",
+      "variant": "raw",
+      "filepath": "runs/r2_dashscope_vc_20260707T143930Z/02_tts/5.wav",
+      "duration_s": 5.12,
+      "text": "标杆房企必然调整市场战略",
+      "tokens": [
+        {
+          "token": "p",
+          "viseme": "pbmv",
+          "start_s": 0.81,
+          "end_s": 0.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 0.84,
+          "end_s": 0.9,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˥",
+          "viseme": "aw",
+          "start_s": 0.9,
+          "end_s": 0.93,
+          "confidence": 1.0
+        },
+        {
+          "token": "k",
+          "viseme": "kg",
+          "start_s": 0.93,
+          "end_s": 0.96,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 0.96,
+          "end_s": 1.0,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.0,
+          "end_s": 1.04,
+          "confidence": 1.0
+        },
+        {
+          "token": "f",
+          "viseme": "fv",
+          "start_s": 1.04,
+          "end_s": 1.13,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˧˥",
+          "viseme": "ai",
+          "start_s": 1.13,
+          "end_s": 1.25,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.25,
+          "end_s": 1.32,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕʰ",
+          "viseme": "chjsh",
+          "start_s": 1.32,
+          "end_s": 1.35,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˨˩˦",
+          "viseme": "i",
+          "start_s": 1.35,
+          "end_s": 1.47,
+          "confidence": 1.0
+        },
+        {
+          "token": "pʲ",
+          "viseme": "pbmv",
+          "start_s": 1.47,
+          "end_s": 1.51,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 1.51,
+          "end_s": 1.54,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ",
+          "viseme": "chjsh",
+          "start_s": 1.54,
+          "end_s": 1.57,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˧˥",
+          "viseme": "ai",
+          "start_s": 1.57,
+          "end_s": 1.63,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.63,
+          "end_s": 1.73,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʰ",
+          "viseme": "cdsz",
+          "start_s": 1.96,
+          "end_s": 1.99,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 1.99,
+          "end_s": 2.11,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˧˥",
+          "viseme": "aw",
+          "start_s": 2.11,
+          "end_s": 2.18,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 2.18,
+          "end_s": 2.3,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˨˩˦",
+          "viseme": "o",
+          "start_s": 2.3,
+          "end_s": 2.33,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.33,
+          "end_s": 2.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 2.49,
+          "end_s": 2.56,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 2.56,
+          "end_s": 2.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 2.75,
+          "end_s": 2.88,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˨˩˦",
+          "viseme": "ai",
+          "start_s": 2.88,
+          "end_s": 2.91,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.91,
+          "end_s": 2.94,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 3.51,
+          "end_s": 3.56,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥˩",
+          "viseme": "ai",
+          "start_s": 3.56,
+          "end_s": 3.63,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 3.63,
+          "end_s": 3.77,
+          "confidence": 1.0
+        },
+        {
+          "token": "l",
+          "viseme": "cdsz",
+          "start_s": 3.77,
+          "end_s": 3.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɥ",
+          "viseme": "u",
+          "start_s": 3.84,
+          "end_s": 3.87,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 3.87,
+          "end_s": 3.97,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 6,
+      "condition": "natural",
+      "variant": "raw",
+      "filepath": "data/data/audio/6.wav",
+      "duration_s": 6.389,
+      "text": "开发边界将作为城市发展的刚性约定",
+      "tokens": [
+        {
+          "token": "kʰ",
+          "viseme": "kg",
+          "start_s": 1.35,
+          "end_s": 1.46,
+          "confidence": 1.0
+        },
+        {
+          "token": "aj˥",
+          "viseme": "ai",
+          "start_s": 1.46,
+          "end_s": 1.62,
+          "confidence": 1.0
+        },
+        {
+          "token": "f",
+          "viseme": "fv",
+          "start_s": 1.62,
+          "end_s": 1.65,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 1.65,
+          "end_s": 1.68,
+          "confidence": 1.0
+        },
+        {
+          "token": "p",
+          "viseme": "pbmv",
+          "start_s": 1.68,
+          "end_s": 1.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 1.84,
+          "end_s": 1.87,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥",
+          "viseme": "e",
+          "start_s": 1.87,
+          "end_s": 1.93,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.93,
+          "end_s": 1.96,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 1.96,
+          "end_s": 1.99,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 1.99,
+          "end_s": 2.08,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 2.15,
+          "end_s": 2.22,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 2.22,
+          "end_s": 2.27,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.27,
+          "end_s": 2.38,
+          "confidence": 1.0
+        },
+        {
+          "token": "ts",
+          "viseme": "cdsz",
+          "start_s": 2.38,
+          "end_s": 2.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 2.49,
+          "end_s": 2.53,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 2.53,
+          "end_s": 2.7,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 2.7,
+          "end_s": 2.79,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˧˥",
+          "viseme": "e",
+          "start_s": 2.79,
+          "end_s": 3.05,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 3.12,
+          "end_s": 3.15,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˧˥",
+          "viseme": "o",
+          "start_s": 3.15,
+          "end_s": 3.19,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 3.19,
+          "end_s": 3.43,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 3.43,
+          "end_s": 3.52,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 3.52,
+          "end_s": 3.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "f",
+          "viseme": "fv",
+          "start_s": 3.96,
+          "end_s": 4.01,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 4.01,
+          "end_s": 4.12,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 4.12,
+          "end_s": 4.16,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˨˩˦",
+          "viseme": "ai",
+          "start_s": 4.16,
+          "end_s": 4.38,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 4.38,
+          "end_s": 4.44,
+          "confidence": 1.0
+        },
+        {
+          "token": "t",
+          "viseme": "cdsz",
+          "start_s": 4.44,
+          "end_s": 4.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə",
+          "viseme": "e",
+          "start_s": 4.49,
+          "end_s": 4.72,
+          "confidence": 1.0
+        },
+        {
+          "token": "k",
+          "viseme": "kg",
+          "start_s": 4.95,
+          "end_s": 4.98,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 4.98,
+          "end_s": 5.01,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 5.01,
+          "end_s": 5.12,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 5.12,
+          "end_s": 5.24,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 5.24,
+          "end_s": 5.27,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 5.27,
+          "end_s": 5.3,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɥ",
+          "viseme": "u",
+          "start_s": 5.3,
+          "end_s": 5.33,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥",
+          "viseme": "e",
+          "start_s": 5.33,
+          "end_s": 5.37,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 5.37,
+          "end_s": 5.43,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 5.43,
+          "end_s": 5.46,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 5.46,
+          "end_s": 5.59,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 6,
+      "condition": "tts",
+      "variant": "raw",
+      "filepath": "runs/r2_dashscope_vc_20260707T143930Z/02_tts/6.wav",
+      "duration_s": 5.36,
+      "text": "开发边界将作为城市发展的刚性约定",
+      "tokens": [
+        {
+          "token": "kʰ",
+          "viseme": "kg",
+          "start_s": 1.35,
+          "end_s": 1.46,
+          "confidence": 1.0
+        },
+        {
+          "token": "aj˥",
+          "viseme": "ai",
+          "start_s": 1.46,
+          "end_s": 1.62,
+          "confidence": 1.0
+        },
+        {
+          "token": "f",
+          "viseme": "fv",
+          "start_s": 1.62,
+          "end_s": 1.65,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 1.65,
+          "end_s": 1.68,
+          "confidence": 1.0
+        },
+        {
+          "token": "p",
+          "viseme": "pbmv",
+          "start_s": 1.68,
+          "end_s": 1.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 1.84,
+          "end_s": 1.87,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥",
+          "viseme": "e",
+          "start_s": 1.87,
+          "end_s": 1.93,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.93,
+          "end_s": 1.96,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 1.96,
+          "end_s": 1.99,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 1.99,
+          "end_s": 2.08,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 2.15,
+          "end_s": 2.22,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 2.22,
+          "end_s": 2.27,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.27,
+          "end_s": 2.38,
+          "confidence": 1.0
+        },
+        {
+          "token": "ts",
+          "viseme": "cdsz",
+          "start_s": 2.38,
+          "end_s": 2.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 2.49,
+          "end_s": 2.53,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 2.53,
+          "end_s": 2.7,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 2.7,
+          "end_s": 2.79,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˧˥",
+          "viseme": "e",
+          "start_s": 2.79,
+          "end_s": 3.05,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 3.12,
+          "end_s": 3.15,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˧˥",
+          "viseme": "o",
+          "start_s": 3.15,
+          "end_s": 3.19,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 3.19,
+          "end_s": 3.43,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 3.43,
+          "end_s": 3.52,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 3.52,
+          "end_s": 3.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "f",
+          "viseme": "fv",
+          "start_s": 3.96,
+          "end_s": 4.01,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 4.01,
+          "end_s": 4.12,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 4.12,
+          "end_s": 4.16,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˨˩˦",
+          "viseme": "ai",
+          "start_s": 4.16,
+          "end_s": 4.38,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 4.38,
+          "end_s": 4.44,
+          "confidence": 1.0
+        },
+        {
+          "token": "t",
+          "viseme": "cdsz",
+          "start_s": 4.44,
+          "end_s": 4.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə",
+          "viseme": "e",
+          "start_s": 4.49,
+          "end_s": 4.72,
+          "confidence": 1.0
+        },
+        {
+          "token": "k",
+          "viseme": "kg",
+          "start_s": 4.95,
+          "end_s": 4.98,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 4.98,
+          "end_s": 5.01,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 5.01,
+          "end_s": 5.12,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 5.12,
+          "end_s": 5.24,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 5.24,
+          "end_s": 5.27,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 5.27,
+          "end_s": 5.3,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɥ",
+          "viseme": "u",
+          "start_s": 5.3,
+          "end_s": 5.33,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥",
+          "viseme": "e",
+          "start_s": 5.33,
+          "end_s": 5.37,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 5.37,
+          "end_s": 5.43,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 5.43,
+          "end_s": 5.46,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 5.46,
+          "end_s": 5.59,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 7,
+      "condition": "natural",
+      "variant": "raw",
+      "filepath": "data/data/audio/7.wav",
+      "duration_s": 5.704,
+      "text": "一二线城市虽然也处于调整中",
+      "tokens": [
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 0.81,
+          "end_s": 0.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 0.84,
+          "end_s": 0.95,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 0.95,
+          "end_s": 1.07,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 1.07,
+          "end_s": 1.21,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.21,
+          "end_s": 1.3,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.3,
+          "end_s": 1.34,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˧˥",
+          "viseme": "o",
+          "start_s": 1.34,
+          "end_s": 1.48,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.48,
+          "end_s": 1.55,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.55,
+          "end_s": 1.58,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 1.58,
+          "end_s": 1.61,
+          "confidence": 1.0
+        },
+        {
+          "token": "s",
+          "viseme": "cdsz",
+          "start_s": 1.61,
+          "end_s": 1.64,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 1.64,
+          "end_s": 1.67,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˧˥",
+          "viseme": "e",
+          "start_s": 1.67,
+          "end_s": 1.7,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ",
+          "viseme": "chjsh",
+          "start_s": 1.7,
+          "end_s": 1.73,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˧˥",
+          "viseme": "ai",
+          "start_s": 1.73,
+          "end_s": 1.83,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.83,
+          "end_s": 2.05,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 2.05,
+          "end_s": 2.12,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˨˩˦",
+          "viseme": "e",
+          "start_s": 2.12,
+          "end_s": 2.2,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 2.2,
+          "end_s": 2.32,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˨˩˦",
+          "viseme": "u",
+          "start_s": 2.32,
+          "end_s": 2.35,
+          "confidence": 1.0
+        },
+        {
+          "token": "y˧˥",
+          "viseme": "u",
+          "start_s": 2.35,
+          "end_s": 2.44,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʰ",
+          "viseme": "cdsz",
+          "start_s": 2.44,
+          "end_s": 2.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 2.49,
+          "end_s": 2.52,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˧˥",
+          "viseme": "aw",
+          "start_s": 2.52,
+          "end_s": 2.63,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 2.63,
+          "end_s": 2.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˨˩˦",
+          "viseme": "o",
+          "start_s": 2.75,
+          "end_s": 2.92,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.92,
+          "end_s": 3.18,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 3.18,
+          "end_s": 3.45,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 3.45,
+          "end_s": 3.54,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 3.54,
+          "end_s": 3.62,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 7,
+      "condition": "tts",
+      "variant": "raw",
+      "filepath": "runs/r2_dashscope_vc_20260707T143930Z/02_tts/7.wav",
+      "duration_s": 4.64,
+      "text": "一二线城市虽然也处于调整中",
+      "tokens": [
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 0.81,
+          "end_s": 0.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 0.84,
+          "end_s": 0.95,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 0.95,
+          "end_s": 1.07,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 1.07,
+          "end_s": 1.21,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.21,
+          "end_s": 1.3,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.3,
+          "end_s": 1.34,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˧˥",
+          "viseme": "o",
+          "start_s": 1.34,
+          "end_s": 1.48,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.48,
+          "end_s": 1.55,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.55,
+          "end_s": 1.58,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 1.58,
+          "end_s": 1.61,
+          "confidence": 1.0
+        },
+        {
+          "token": "s",
+          "viseme": "cdsz",
+          "start_s": 1.61,
+          "end_s": 1.64,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 1.64,
+          "end_s": 1.67,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˧˥",
+          "viseme": "e",
+          "start_s": 1.67,
+          "end_s": 1.7,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ",
+          "viseme": "chjsh",
+          "start_s": 1.7,
+          "end_s": 1.73,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˧˥",
+          "viseme": "ai",
+          "start_s": 1.73,
+          "end_s": 1.83,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.83,
+          "end_s": 2.05,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 2.05,
+          "end_s": 2.12,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˨˩˦",
+          "viseme": "e",
+          "start_s": 2.12,
+          "end_s": 2.2,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 2.2,
+          "end_s": 2.32,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˨˩˦",
+          "viseme": "u",
+          "start_s": 2.32,
+          "end_s": 2.35,
+          "confidence": 1.0
+        },
+        {
+          "token": "y˧˥",
+          "viseme": "u",
+          "start_s": 2.35,
+          "end_s": 2.44,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʰ",
+          "viseme": "cdsz",
+          "start_s": 2.44,
+          "end_s": 2.49,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 2.49,
+          "end_s": 2.52,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˧˥",
+          "viseme": "aw",
+          "start_s": 2.52,
+          "end_s": 2.63,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 2.63,
+          "end_s": 2.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˨˩˦",
+          "viseme": "o",
+          "start_s": 2.75,
+          "end_s": 2.92,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.92,
+          "end_s": 3.18,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 3.18,
+          "end_s": 3.45,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 3.45,
+          "end_s": 3.54,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 3.54,
+          "end_s": 3.62,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 8,
+      "condition": "natural",
+      "variant": "raw",
+      "filepath": "data/data/audio/8.wav",
+      "duration_s": 6.0,
+      "text": "也助推了土地市场的火爆",
+      "tokens": [
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 0.63,
+          "end_s": 0.66,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˨˩˦",
+          "viseme": "e",
+          "start_s": 0.66,
+          "end_s": 0.73,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 0.73,
+          "end_s": 0.82,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥˩",
+          "viseme": "u",
+          "start_s": 0.82,
+          "end_s": 0.88,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʰ",
+          "viseme": "cdsz",
+          "start_s": 0.88,
+          "end_s": 0.91,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 0.91,
+          "end_s": 0.95,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˥",
+          "viseme": "e",
+          "start_s": 0.95,
+          "end_s": 0.98,
+          "confidence": 1.0
+        },
+        {
+          "token": "l",
+          "viseme": "cdsz",
+          "start_s": 0.98,
+          "end_s": 1.01,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə",
+          "viseme": "e",
+          "start_s": 1.01,
+          "end_s": 1.04,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʷ",
+          "viseme": "cdsz",
+          "start_s": 1.04,
+          "end_s": 1.07,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˨˩˦",
+          "viseme": "u",
+          "start_s": 1.07,
+          "end_s": 1.1,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 1.1,
+          "end_s": 1.13,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 1.13,
+          "end_s": 1.24,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.24,
+          "end_s": 1.28,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 1.28,
+          "end_s": 1.31,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.31,
+          "end_s": 1.36,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˧˥",
+          "viseme": "ai",
+          "start_s": 1.36,
+          "end_s": 1.43,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.43,
+          "end_s": 1.56,
+          "confidence": 1.0
+        },
+        {
+          "token": "t",
+          "viseme": "cdsz",
+          "start_s": 1.56,
+          "end_s": 1.61,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə",
+          "viseme": "e",
+          "start_s": 1.61,
+          "end_s": 1.66,
+          "confidence": 1.0
+        },
+        {
+          "token": "xʷ",
+          "viseme": "kg",
+          "start_s": 1.66,
+          "end_s": 1.69,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˨˩˦",
+          "viseme": "o",
+          "start_s": 1.69,
+          "end_s": 1.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "p",
+          "viseme": "pbmv",
+          "start_s": 1.75,
+          "end_s": 1.9,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˥˩",
+          "viseme": "aw",
+          "start_s": 1.9,
+          "end_s": 2.33,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 8,
+      "condition": "tts",
+      "variant": "raw",
+      "filepath": "runs/r2_dashscope_vc_20260707T143930Z/02_tts/8.wav",
+      "duration_s": 5.36,
+      "text": "也助推了土地市场的火爆",
+      "tokens": [
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 0.63,
+          "end_s": 0.66,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˨˩˦",
+          "viseme": "e",
+          "start_s": 0.66,
+          "end_s": 0.73,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 0.73,
+          "end_s": 0.82,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥˩",
+          "viseme": "u",
+          "start_s": 0.82,
+          "end_s": 0.88,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʰ",
+          "viseme": "cdsz",
+          "start_s": 0.88,
+          "end_s": 0.91,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 0.91,
+          "end_s": 0.95,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˥",
+          "viseme": "e",
+          "start_s": 0.95,
+          "end_s": 0.98,
+          "confidence": 1.0
+        },
+        {
+          "token": "l",
+          "viseme": "cdsz",
+          "start_s": 0.98,
+          "end_s": 1.01,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə",
+          "viseme": "e",
+          "start_s": 1.01,
+          "end_s": 1.04,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʷ",
+          "viseme": "cdsz",
+          "start_s": 1.04,
+          "end_s": 1.07,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˨˩˦",
+          "viseme": "u",
+          "start_s": 1.07,
+          "end_s": 1.1,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 1.1,
+          "end_s": 1.13,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 1.13,
+          "end_s": 1.24,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.24,
+          "end_s": 1.28,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 1.28,
+          "end_s": 1.31,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.31,
+          "end_s": 1.36,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˧˥",
+          "viseme": "ai",
+          "start_s": 1.36,
+          "end_s": 1.43,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.43,
+          "end_s": 1.56,
+          "confidence": 1.0
+        },
+        {
+          "token": "t",
+          "viseme": "cdsz",
+          "start_s": 1.56,
+          "end_s": 1.61,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə",
+          "viseme": "e",
+          "start_s": 1.61,
+          "end_s": 1.66,
+          "confidence": 1.0
+        },
+        {
+          "token": "xʷ",
+          "viseme": "kg",
+          "start_s": 1.66,
+          "end_s": 1.69,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˨˩˦",
+          "viseme": "o",
+          "start_s": 1.69,
+          "end_s": 1.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "p",
+          "viseme": "pbmv",
+          "start_s": 1.75,
+          "end_s": 1.9,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˥˩",
+          "viseme": "aw",
+          "start_s": 1.9,
+          "end_s": 2.33,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 9,
+      "condition": "natural",
+      "variant": "raw",
+      "filepath": "data/data/audio/9.wav",
+      "duration_s": 5.498,
+      "text": "为了规避三四线城市明显过剩的市场风险",
+      "tokens": [
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 0.47,
+          "end_s": 0.51,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˥˩",
+          "viseme": "e",
+          "start_s": 0.51,
+          "end_s": 0.54,
+          "confidence": 1.0
+        },
+        {
+          "token": "l",
+          "viseme": "cdsz",
+          "start_s": 0.54,
+          "end_s": 0.57,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə˩",
+          "viseme": "e",
+          "start_s": 0.57,
+          "end_s": 0.74,
+          "confidence": 1.0
+        },
+        {
+          "token": "k",
+          "viseme": "kg",
+          "start_s": 0.74,
+          "end_s": 0.8,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 0.8,
+          "end_s": 0.86,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˥",
+          "viseme": "e",
+          "start_s": 0.86,
+          "end_s": 0.97,
+          "confidence": 1.0
+        },
+        {
+          "token": "pʲ",
+          "viseme": "pbmv",
+          "start_s": 0.97,
+          "end_s": 1.0,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 1.0,
+          "end_s": 1.03,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.06,
+          "end_s": 1.1,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˧˥",
+          "viseme": "o",
+          "start_s": 1.1,
+          "end_s": 1.17,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.17,
+          "end_s": 1.24,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.24,
+          "end_s": 1.27,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 1.27,
+          "end_s": 1.3,
+          "confidence": 1.0
+        },
+        {
+          "token": "mʲ",
+          "viseme": "pbmv",
+          "start_s": 1.3,
+          "end_s": 1.33,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˧˥",
+          "viseme": "i",
+          "start_s": 1.33,
+          "end_s": 1.39,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.39,
+          "end_s": 1.53,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 1.53,
+          "end_s": 1.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˨˩˦",
+          "viseme": "e",
+          "start_s": 1.59,
+          "end_s": 1.7,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.7,
+          "end_s": 1.73,
+          "confidence": 1.0
+        },
+        {
+          "token": "k",
+          "viseme": "kg",
+          "start_s": 1.73,
+          "end_s": 1.76,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 1.76,
+          "end_s": 1.77,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 1.77,
+          "end_s": 1.8,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.8,
+          "end_s": 1.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 1.84,
+          "end_s": 1.89,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.89,
+          "end_s": 1.92,
+          "confidence": 1.0
+        },
+        {
+          "token": "t",
+          "viseme": "cdsz",
+          "start_s": 1.92,
+          "end_s": 1.95,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə",
+          "viseme": "e",
+          "start_s": 1.95,
+          "end_s": 2.17,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 2.17,
+          "end_s": 2.2,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 2.2,
+          "end_s": 2.23,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 2.23,
+          "end_s": 2.28,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˧˥",
+          "viseme": "ai",
+          "start_s": 2.28,
+          "end_s": 2.44,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.44,
+          "end_s": 2.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "f",
+          "viseme": "fv",
+          "start_s": 2.59,
+          "end_s": 2.64,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥",
+          "viseme": "o",
+          "start_s": 2.64,
+          "end_s": 2.67,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.67,
+          "end_s": 2.9,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 2.9,
+          "end_s": 3.32,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˨˩˦",
+          "viseme": "e",
+          "start_s": 3.32,
+          "end_s": 3.5,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 3.5,
+          "end_s": 3.61,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 9,
+      "condition": "tts",
+      "variant": "raw",
+      "filepath": "runs/r2_dashscope_vc_20260707T143930Z/02_tts/9.wav",
+      "duration_s": 4.4,
+      "text": "为了规避三四线城市明显过剩的市场风险",
+      "tokens": [
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 0.47,
+          "end_s": 0.51,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˥˩",
+          "viseme": "e",
+          "start_s": 0.51,
+          "end_s": 0.54,
+          "confidence": 1.0
+        },
+        {
+          "token": "l",
+          "viseme": "cdsz",
+          "start_s": 0.54,
+          "end_s": 0.57,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə˩",
+          "viseme": "e",
+          "start_s": 0.57,
+          "end_s": 0.74,
+          "confidence": 1.0
+        },
+        {
+          "token": "k",
+          "viseme": "kg",
+          "start_s": 0.74,
+          "end_s": 0.8,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 0.8,
+          "end_s": 0.86,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˥",
+          "viseme": "e",
+          "start_s": 0.86,
+          "end_s": 0.97,
+          "confidence": 1.0
+        },
+        {
+          "token": "pʲ",
+          "viseme": "pbmv",
+          "start_s": 0.97,
+          "end_s": 1.0,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 1.0,
+          "end_s": 1.03,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.06,
+          "end_s": 1.1,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˧˥",
+          "viseme": "o",
+          "start_s": 1.1,
+          "end_s": 1.17,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.17,
+          "end_s": 1.24,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.24,
+          "end_s": 1.27,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 1.27,
+          "end_s": 1.3,
+          "confidence": 1.0
+        },
+        {
+          "token": "mʲ",
+          "viseme": "pbmv",
+          "start_s": 1.3,
+          "end_s": 1.33,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˧˥",
+          "viseme": "i",
+          "start_s": 1.33,
+          "end_s": 1.39,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.39,
+          "end_s": 1.53,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 1.53,
+          "end_s": 1.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˨˩˦",
+          "viseme": "e",
+          "start_s": 1.59,
+          "end_s": 1.7,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.7,
+          "end_s": 1.73,
+          "confidence": 1.0
+        },
+        {
+          "token": "k",
+          "viseme": "kg",
+          "start_s": 1.73,
+          "end_s": 1.76,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 1.76,
+          "end_s": 1.77,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 1.77,
+          "end_s": 1.8,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 1.8,
+          "end_s": 1.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 1.84,
+          "end_s": 1.89,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.89,
+          "end_s": 1.92,
+          "confidence": 1.0
+        },
+        {
+          "token": "t",
+          "viseme": "cdsz",
+          "start_s": 1.92,
+          "end_s": 1.95,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə",
+          "viseme": "e",
+          "start_s": 1.95,
+          "end_s": 2.17,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 2.17,
+          "end_s": 2.2,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 2.2,
+          "end_s": 2.23,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 2.23,
+          "end_s": 2.28,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˧˥",
+          "viseme": "ai",
+          "start_s": 2.28,
+          "end_s": 2.44,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.44,
+          "end_s": 2.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "f",
+          "viseme": "fv",
+          "start_s": 2.59,
+          "end_s": 2.64,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥",
+          "viseme": "o",
+          "start_s": 2.64,
+          "end_s": 2.67,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.67,
+          "end_s": 2.9,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 2.9,
+          "end_s": 3.32,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˨˩˦",
+          "viseme": "e",
+          "start_s": 3.32,
+          "end_s": 3.5,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 3.5,
+          "end_s": 3.61,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 10,
+      "condition": "natural",
+      "variant": "raw",
+      "filepath": "data/data/audio/10.wav",
+      "duration_s": 5.804,
+      "text": "北京仅新增住宅土地供应十宗",
+      "tokens": [
+        {
+          "token": "p",
+          "viseme": "pbmv",
+          "start_s": 1.67,
+          "end_s": 1.7,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˨˩˦",
+          "viseme": "e",
+          "start_s": 1.7,
+          "end_s": 1.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 1.75,
+          "end_s": 1.85,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 1.85,
+          "end_s": 1.94,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.94,
+          "end_s": 2.04,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 2.04,
+          "end_s": 2.19,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˨˩˦",
+          "viseme": "i",
+          "start_s": 2.19,
+          "end_s": 2.24,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 2.24,
+          "end_s": 2.36,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 2.36,
+          "end_s": 2.47,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 2.47,
+          "end_s": 2.53,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 2.53,
+          "end_s": 2.67,
+          "confidence": 1.0
+        },
+        {
+          "token": "ts",
+          "viseme": "cdsz",
+          "start_s": 2.67,
+          "end_s": 2.72,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥",
+          "viseme": "o",
+          "start_s": 2.72,
+          "end_s": 2.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.75,
+          "end_s": 2.78,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 3.12,
+          "end_s": 3.15,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥˩",
+          "viseme": "u",
+          "start_s": 3.15,
+          "end_s": 3.18,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 3.18,
+          "end_s": 3.22,
+          "confidence": 1.0
+        },
+        {
+          "token": "aj˧˥",
+          "viseme": "ai",
+          "start_s": 3.22,
+          "end_s": 3.53,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʷ",
+          "viseme": "cdsz",
+          "start_s": 3.53,
+          "end_s": 3.56,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˨˩˦",
+          "viseme": "u",
+          "start_s": 3.56,
+          "end_s": 3.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 3.59,
+          "end_s": 3.7,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 3.7,
+          "end_s": 3.77,
+          "confidence": 1.0
+        },
+        {
+          "token": "kʷ",
+          "viseme": "kg",
+          "start_s": 3.77,
+          "end_s": 3.86,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 3.86,
+          "end_s": 3.89,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 3.89,
+          "end_s": 4.02,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 4.02,
+          "end_s": 4.05,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 4.05,
+          "end_s": 4.08,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 10,
+      "condition": "tts",
+      "variant": "raw",
+      "filepath": "runs/r2_dashscope_vc_20260707T143930Z/02_tts/10.wav",
+      "duration_s": 5.6,
+      "text": "北京仅新增住宅土地供应十宗",
+      "tokens": [
+        {
+          "token": "p",
+          "viseme": "pbmv",
+          "start_s": 1.67,
+          "end_s": 1.7,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˨˩˦",
+          "viseme": "e",
+          "start_s": 1.7,
+          "end_s": 1.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 1.75,
+          "end_s": 1.85,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 1.85,
+          "end_s": 1.94,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.94,
+          "end_s": 2.04,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 2.04,
+          "end_s": 2.19,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˨˩˦",
+          "viseme": "i",
+          "start_s": 2.19,
+          "end_s": 2.24,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 2.24,
+          "end_s": 2.36,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 2.36,
+          "end_s": 2.47,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 2.47,
+          "end_s": 2.53,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 2.53,
+          "end_s": 2.67,
+          "confidence": 1.0
+        },
+        {
+          "token": "ts",
+          "viseme": "cdsz",
+          "start_s": 2.67,
+          "end_s": 2.72,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥",
+          "viseme": "o",
+          "start_s": 2.72,
+          "end_s": 2.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.75,
+          "end_s": 2.78,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 3.12,
+          "end_s": 3.15,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥˩",
+          "viseme": "u",
+          "start_s": 3.15,
+          "end_s": 3.18,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 3.18,
+          "end_s": 3.22,
+          "confidence": 1.0
+        },
+        {
+          "token": "aj˧˥",
+          "viseme": "ai",
+          "start_s": 3.22,
+          "end_s": 3.53,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʷ",
+          "viseme": "cdsz",
+          "start_s": 3.53,
+          "end_s": 3.56,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˨˩˦",
+          "viseme": "u",
+          "start_s": 3.56,
+          "end_s": 3.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 3.59,
+          "end_s": 3.7,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 3.7,
+          "end_s": 3.77,
+          "confidence": 1.0
+        },
+        {
+          "token": "kʷ",
+          "viseme": "kg",
+          "start_s": 3.77,
+          "end_s": 3.86,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥",
+          "viseme": "u",
+          "start_s": 3.86,
+          "end_s": 3.89,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 3.89,
+          "end_s": 4.02,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 4.02,
+          "end_s": 4.05,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 4.05,
+          "end_s": 4.08,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 11,
+      "condition": "natural",
+      "variant": "raw",
+      "filepath": "data/data/audio/11.wav",
+      "duration_s": 7.925,
+      "text": "不得超越界限盲目扩张",
+      "tokens": [
+        {
+          "token": "pʷ",
+          "viseme": "pbmv",
+          "start_s": 0.42,
+          "end_s": 0.47,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥˩",
+          "viseme": "u",
+          "start_s": 0.47,
+          "end_s": 0.88,
+          "confidence": 1.0
+        },
+        {
+          "token": "t",
+          "viseme": "cdsz",
+          "start_s": 0.88,
+          "end_s": 0.92,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə˩",
+          "viseme": "e",
+          "start_s": 0.92,
+          "end_s": 1.09,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.09,
+          "end_s": 1.19,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˥",
+          "viseme": "aw",
+          "start_s": 1.19,
+          "end_s": 1.61,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɥ",
+          "viseme": "u",
+          "start_s": 1.61,
+          "end_s": 1.67,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 1.67,
+          "end_s": 1.86,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 2.36,
+          "end_s": 2.39,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 2.39,
+          "end_s": 2.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 2.59,
+          "end_s": 2.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 2.75,
+          "end_s": 2.94,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 2.94,
+          "end_s": 3.18,
+          "confidence": 1.0
+        },
+        {
+          "token": "m",
+          "viseme": "pbmv",
+          "start_s": 6.16,
+          "end_s": 6.2,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˧˥",
+          "viseme": "ai",
+          "start_s": 6.2,
+          "end_s": 6.27,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 6.27,
+          "end_s": 6.41,
+          "confidence": 1.0
+        },
+        {
+          "token": "m",
+          "viseme": "pbmv",
+          "start_s": 6.41,
+          "end_s": 6.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥˩",
+          "viseme": "u",
+          "start_s": 6.59,
+          "end_s": 6.62,
+          "confidence": 1.0
+        },
+        {
+          "token": "kʰ",
+          "viseme": "kg",
+          "start_s": 6.74,
+          "end_s": 6.77,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 6.77,
+          "end_s": 6.8,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 6.8,
+          "end_s": 6.94,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 6.94,
+          "end_s": 6.97,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 6.97,
+          "end_s": 7.11,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 7.11,
+          "end_s": 7.14,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 11,
+      "condition": "tts",
+      "variant": "raw",
+      "filepath": "runs/r2_dashscope_vc_20260707T143930Z/02_tts/11.wav",
+      "duration_s": 6.8,
+      "text": "不得超越界限盲目扩张",
+      "tokens": [
+        {
+          "token": "pʷ",
+          "viseme": "pbmv",
+          "start_s": 0.42,
+          "end_s": 0.47,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥˩",
+          "viseme": "u",
+          "start_s": 0.47,
+          "end_s": 0.88,
+          "confidence": 1.0
+        },
+        {
+          "token": "t",
+          "viseme": "cdsz",
+          "start_s": 0.88,
+          "end_s": 0.92,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə˩",
+          "viseme": "e",
+          "start_s": 0.92,
+          "end_s": 1.09,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.09,
+          "end_s": 1.19,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˥",
+          "viseme": "aw",
+          "start_s": 1.19,
+          "end_s": 1.61,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɥ",
+          "viseme": "u",
+          "start_s": 1.61,
+          "end_s": 1.67,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 1.67,
+          "end_s": 1.86,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 2.36,
+          "end_s": 2.39,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 2.39,
+          "end_s": 2.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 2.59,
+          "end_s": 2.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 2.75,
+          "end_s": 2.94,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 2.94,
+          "end_s": 3.18,
+          "confidence": 1.0
+        },
+        {
+          "token": "m",
+          "viseme": "pbmv",
+          "start_s": 6.16,
+          "end_s": 6.2,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˧˥",
+          "viseme": "ai",
+          "start_s": 6.2,
+          "end_s": 6.27,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 6.27,
+          "end_s": 6.41,
+          "confidence": 1.0
+        },
+        {
+          "token": "m",
+          "viseme": "pbmv",
+          "start_s": 6.41,
+          "end_s": 6.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥˩",
+          "viseme": "u",
+          "start_s": 6.59,
+          "end_s": 6.62,
+          "confidence": 1.0
+        },
+        {
+          "token": "kʰ",
+          "viseme": "kg",
+          "start_s": 6.74,
+          "end_s": 6.77,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 6.77,
+          "end_s": 6.8,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 6.8,
+          "end_s": 6.94,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 6.94,
+          "end_s": 6.97,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 6.97,
+          "end_s": 7.11,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 7.11,
+          "end_s": 7.14,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 12,
+      "condition": "natural",
+      "variant": "raw",
+      "filepath": "data/data/audio/12.wav",
+      "duration_s": 8.068,
+      "text": "因此土地储备至关重要",
+      "tokens": [
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 0.52,
+          "end_s": 0.7,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 0.7,
+          "end_s": 1.03,
+          "confidence": 1.0
+        },
+        {
+          "token": "tsʰ",
+          "viseme": "cdsz",
+          "start_s": 1.03,
+          "end_s": 1.06,
+          "confidence": 1.0
+        },
+        {
+          "token": "z̩˨˩˦",
+          "viseme": "cdsz",
+          "start_s": 1.06,
+          "end_s": 1.09,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʷ",
+          "viseme": "cdsz",
+          "start_s": 1.2,
+          "end_s": 1.23,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˨˩˦",
+          "viseme": "u",
+          "start_s": 1.23,
+          "end_s": 1.26,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 1.26,
+          "end_s": 1.34,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 1.34,
+          "end_s": 1.46,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.46,
+          "end_s": 1.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˨˩˦",
+          "viseme": "u",
+          "start_s": 1.59,
+          "end_s": 1.62,
+          "confidence": 1.0
+        },
+        {
+          "token": "p",
+          "viseme": "pbmv",
+          "start_s": 1.62,
+          "end_s": 1.65,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˥˩",
+          "viseme": "e",
+          "start_s": 1.65,
+          "end_s": 1.94,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 1.94,
+          "end_s": 2.25,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 2.25,
+          "end_s": 2.65,
+          "confidence": 1.0
+        },
+        {
+          "token": "k",
+          "viseme": "kg",
+          "start_s": 2.65,
+          "end_s": 2.71,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 2.71,
+          "end_s": 2.76,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 2.76,
+          "end_s": 2.82,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 2.82,
+          "end_s": 2.9,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 2.9,
+          "end_s": 3.02,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥˩",
+          "viseme": "u",
+          "start_s": 3.02,
+          "end_s": 3.05,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 3.05,
+          "end_s": 3.23,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 3.23,
+          "end_s": 3.38,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˥˩",
+          "viseme": "aw",
+          "start_s": 3.38,
+          "end_s": 3.51,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 12,
+      "condition": "tts",
+      "variant": "raw",
+      "filepath": "runs/r2_dashscope_vc_20260707T143930Z/02_tts/12.wav",
+      "duration_s": 6.96,
+      "text": "因此土地储备至关重要",
+      "tokens": [
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 0.52,
+          "end_s": 0.7,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 0.7,
+          "end_s": 1.03,
+          "confidence": 1.0
+        },
+        {
+          "token": "tsʰ",
+          "viseme": "cdsz",
+          "start_s": 1.03,
+          "end_s": 1.06,
+          "confidence": 1.0
+        },
+        {
+          "token": "z̩˨˩˦",
+          "viseme": "cdsz",
+          "start_s": 1.06,
+          "end_s": 1.09,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʷ",
+          "viseme": "cdsz",
+          "start_s": 1.2,
+          "end_s": 1.23,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˨˩˦",
+          "viseme": "u",
+          "start_s": 1.23,
+          "end_s": 1.26,
+          "confidence": 1.0
+        },
+        {
+          "token": "tʲ",
+          "viseme": "cdsz",
+          "start_s": 1.26,
+          "end_s": 1.34,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 1.34,
+          "end_s": 1.46,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂʰ",
+          "viseme": "chjsh",
+          "start_s": 1.46,
+          "end_s": 1.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˨˩˦",
+          "viseme": "u",
+          "start_s": 1.59,
+          "end_s": 1.62,
+          "confidence": 1.0
+        },
+        {
+          "token": "p",
+          "viseme": "pbmv",
+          "start_s": 1.62,
+          "end_s": 1.65,
+          "confidence": 1.0
+        },
+        {
+          "token": "ej˥˩",
+          "viseme": "e",
+          "start_s": 1.65,
+          "end_s": 1.94,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 1.94,
+          "end_s": 2.25,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 2.25,
+          "end_s": 2.65,
+          "confidence": 1.0
+        },
+        {
+          "token": "k",
+          "viseme": "kg",
+          "start_s": 2.65,
+          "end_s": 2.71,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 2.71,
+          "end_s": 2.76,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 2.76,
+          "end_s": 2.82,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 2.82,
+          "end_s": 2.9,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʈʂ",
+          "viseme": "chjsh",
+          "start_s": 2.9,
+          "end_s": 3.02,
+          "confidence": 1.0
+        },
+        {
+          "token": "u˥˩",
+          "viseme": "u",
+          "start_s": 3.02,
+          "end_s": 3.05,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 3.05,
+          "end_s": 3.23,
+          "confidence": 1.0
+        },
+        {
+          "token": "j",
+          "viseme": "i",
+          "start_s": 3.23,
+          "end_s": 3.38,
+          "confidence": 1.0
+        },
+        {
+          "token": "aw˥˩",
+          "viseme": "aw",
+          "start_s": 3.38,
+          "end_s": 3.51,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 13,
+      "condition": "natural",
+      "variant": "raw",
+      "filepath": "data/data/audio/13.wav",
+      "duration_s": 7.12,
+      "text": "再加上近期一二线楼市升温",
+      "tokens": [
+        {
+          "token": "ts",
+          "viseme": "cdsz",
+          "start_s": 0.39,
+          "end_s": 0.56,
+          "confidence": 1.0
+        },
+        {
+          "token": "aj˥˩",
+          "viseme": "ai",
+          "start_s": 0.56,
+          "end_s": 0.74,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 0.74,
+          "end_s": 0.91,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 0.91,
+          "end_s": 0.96,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 0.96,
+          "end_s": 1.05,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥˩",
+          "viseme": "ai",
+          "start_s": 1.05,
+          "end_s": 1.19,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.19,
+          "end_s": 1.42,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 1.42,
+          "end_s": 1.47,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 1.47,
+          "end_s": 1.5,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.5,
+          "end_s": 1.66,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕʰ",
+          "viseme": "chjsh",
+          "start_s": 1.66,
+          "end_s": 1.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 1.75,
+          "end_s": 1.78,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 1.78,
+          "end_s": 1.81,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 1.81,
+          "end_s": 1.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɻ",
+          "viseme": "chjsh",
+          "start_s": 1.84,
+          "end_s": 1.87,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 1.87,
+          "end_s": 1.92,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 1.92,
+          "end_s": 1.95,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.95,
+          "end_s": 1.98,
+          "confidence": 1.0
+        },
+        {
+          "token": "l",
+          "viseme": "cdsz",
+          "start_s": 2.2,
+          "end_s": 2.26,
+          "confidence": 1.0
+        },
+        {
+          "token": "ow˧˥",
+          "viseme": "o",
+          "start_s": 2.26,
+          "end_s": 2.47,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 2.47,
+          "end_s": 2.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 2.59,
+          "end_s": 2.71,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 2.71,
+          "end_s": 2.81,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥",
+          "viseme": "o",
+          "start_s": 2.81,
+          "end_s": 2.87,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.87,
+          "end_s": 2.99,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 2.99,
+          "end_s": 3.04,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə˥",
+          "viseme": "e",
+          "start_s": 3.04,
+          "end_s": 3.07,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 3.07,
+          "end_s": 3.1,
+          "confidence": 1.0
+        }
+      ]
+    },
+    {
+      "sample_id": 13,
+      "condition": "tts",
+      "variant": "raw",
+      "filepath": "runs/r2_dashscope_vc_20260707T143930Z/02_tts/13.wav",
+      "duration_s": 5.84,
+      "text": "再加上近期一二线楼市升温",
+      "tokens": [
+        {
+          "token": "ts",
+          "viseme": "cdsz",
+          "start_s": 0.39,
+          "end_s": 0.56,
+          "confidence": 1.0
+        },
+        {
+          "token": "aj˥˩",
+          "viseme": "ai",
+          "start_s": 0.56,
+          "end_s": 0.74,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 0.74,
+          "end_s": 0.91,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥",
+          "viseme": "ai",
+          "start_s": 0.91,
+          "end_s": 0.96,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 0.96,
+          "end_s": 1.05,
+          "confidence": 1.0
+        },
+        {
+          "token": "a˥˩",
+          "viseme": "ai",
+          "start_s": 1.05,
+          "end_s": 1.19,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 1.19,
+          "end_s": 1.42,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕ",
+          "viseme": "chjsh",
+          "start_s": 1.42,
+          "end_s": 1.47,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥˩",
+          "viseme": "i",
+          "start_s": 1.47,
+          "end_s": 1.5,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.5,
+          "end_s": 1.66,
+          "confidence": 1.0
+        },
+        {
+          "token": "tɕʰ",
+          "viseme": "chjsh",
+          "start_s": 1.66,
+          "end_s": 1.75,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 1.75,
+          "end_s": 1.78,
+          "confidence": 1.0
+        },
+        {
+          "token": "i˥",
+          "viseme": "i",
+          "start_s": 1.78,
+          "end_s": 1.81,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥˩",
+          "viseme": "o",
+          "start_s": 1.81,
+          "end_s": 1.84,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɻ",
+          "viseme": "chjsh",
+          "start_s": 1.84,
+          "end_s": 1.87,
+          "confidence": 1.0
+        },
+        {
+          "token": "ɕ",
+          "viseme": "chjsh",
+          "start_s": 1.87,
+          "end_s": 1.92,
+          "confidence": 1.0
+        },
+        {
+          "token": "e˥˩",
+          "viseme": "e",
+          "start_s": 1.92,
+          "end_s": 1.95,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 1.95,
+          "end_s": 1.98,
+          "confidence": 1.0
+        },
+        {
+          "token": "l",
+          "viseme": "cdsz",
+          "start_s": 2.2,
+          "end_s": 2.26,
+          "confidence": 1.0
+        },
+        {
+          "token": "ow˧˥",
+          "viseme": "o",
+          "start_s": 2.26,
+          "end_s": 2.47,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 2.47,
+          "end_s": 2.59,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʐ̩˥˩",
+          "viseme": "chjsh",
+          "start_s": 2.59,
+          "end_s": 2.71,
+          "confidence": 1.0
+        },
+        {
+          "token": "ʂ",
+          "viseme": "chjsh",
+          "start_s": 2.71,
+          "end_s": 2.81,
+          "confidence": 1.0
+        },
+        {
+          "token": "o˥",
+          "viseme": "o",
+          "start_s": 2.81,
+          "end_s": 2.87,
+          "confidence": 1.0
+        },
+        {
+          "token": "ŋ",
+          "viseme": "kg",
+          "start_s": 2.87,
+          "end_s": 2.99,
+          "confidence": 1.0
+        },
+        {
+          "token": "w",
+          "viseme": "u",
+          "start_s": 2.99,
+          "end_s": 3.04,
+          "confidence": 1.0
+        },
+        {
+          "token": "ə˥",
+          "viseme": "e",
+          "start_s": 3.04,
+          "end_s": 3.07,
+          "confidence": 1.0
+        },
+        {
+          "token": "n",
+          "viseme": "cdsz",
+          "start_s": 3.07,
+          "end_s": 3.1,
+          "confidence": 1.0
+        }
+      ]
+    }
+  ]
+}

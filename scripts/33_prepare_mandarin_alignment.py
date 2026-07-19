@@ -49,7 +49,7 @@ IPA_TO_VISEME: dict[str, str] = {
     # /chjsh/ — palatal/retroflex
     "tɕ": "chjsh", "tɕʰ": "chjsh", "ɕ": "chjsh",
     "ʂ": "chjsh", "ʈʂ": "chjsh", "ʈʂʰ": "chjsh",
-    "ɻ": "chjsh",
+    "ɻ": "chjsh", "ʐ": "chjsh",
     # /e/ — mid front lax
     "e": "e", "ej": "e", "ə": "e",
     # /o/ — mid back rounded
@@ -99,7 +99,18 @@ def parse_textgrid(path: Path) -> list[dict]:
     """Parse MFA TextGrid phone tier → list of {token, viseme, start_s, end_s}."""
     content = path.read_text(encoding="utf-8")
     tokens: list[dict] = []
-    blocks = content.split("intervals [")
+
+    # Find phone tier boundaries
+    import re as _re
+    phone_start = content.index('name = "phones"')
+    # Find next tier start (end of phones tier)
+    try:
+        next_item = content.index('item [', phone_start + 1)
+    except ValueError:
+        next_item = len(content)
+    phone_section = content[phone_start:next_item]
+
+    blocks = phone_section.split("intervals [")
     for block in blocks[1:]:
         m = LOG_REX.search(block)
         if not m:
@@ -126,7 +137,19 @@ def build_manifest(
     output_dir: Path,
 ) -> list[dict]:
     """Build manifest entries for natural and TTS conditions."""
-    import wave
+    import csv, wave
+
+    # Load texts from AISHELL-1 CSV
+    texts: dict[int, str] = {}
+    csv_path = Path(__file__).resolve().parent.parent / "data" / "test.csv"
+    with open(csv_path) as f:
+        reader = csv.reader(f)
+        next(reader)
+        for i, row in enumerate(reader, 1):
+            if i <= 13:
+                texts[i] = row[1].replace(" ", "")
+            else:
+                break
 
     entries: list[dict] = []
     for sid in sample_ids:
@@ -160,7 +183,7 @@ def build_manifest(
                 "variant": "raw",
                 "filepath": str(wav_path),
                 "duration_s": round(duration_s, 3),
-                "text": "",
+                "text": texts.get(sid, ""),
                 "tokens": tokens,
             })
 

@@ -1,0 +1,492 @@
+{
+  "meta": {
+    "models": [
+      "hubert"
+    ],
+    "layers": [
+      0,
+      6,
+      11
+    ],
+    "levels": [
+      "viseme"
+    ],
+    "num_embedding_files": 52
+  },
+  "results": [
+    {
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "condition": "natural",
+      "variant": "raw",
+      "intra_class_dist": 0.7602139603007924,
+      "inter_class_dist": 0.28687313199043274,
+      "fisher_ratio": 2.4101011408212094,
+      "silhouette": -0.06712431460618973,
+      "probe_accuracy": 0.33001333664865845,
+      "probe_f1_macro": 0.21501196654148153,
+      "probe_f1_weighted": 0.31315438760646713,
+      "confusable_pairs": [
+        {
+          "class_a": "kg",
+          "class_b": "o",
+          "centroid_distance": 0.11044716835021973
+        },
+        {
+          "class_a": "o",
+          "class_b": "u",
+          "centroid_distance": 0.11864364147186279
+        },
+        {
+          "class_a": "i",
+          "class_b": "u",
+          "centroid_distance": 0.12278735637664795
+        },
+        {
+          "class_a": "ai",
+          "class_b": "aw",
+          "centroid_distance": 0.12936317920684814
+        },
+        {
+          "class_a": "kg",
+          "class_b": "u",
+          "centroid_distance": 0.13274359703063965
+        }
+      ],
+      "boundary_sharpness": 0.37863301838864466,
+      "segment_stability": 0.31404757499587327
+    },
+    {
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "condition": "natural",
+      "variant": "raw",
+      "intra_class_dist": 0.8218543312766335,
+      "inter_class_dist": 0.3281016945838928,
+      "fisher_ratio": 1.4949230579593566,
+      "silhouette": -0.04561576247215271,
+      "probe_accuracy": 0.29284028147384006,
+      "probe_f1_macro": 0.19058872034394914,
+      "probe_f1_weighted": 0.27261516391669566,
+      "confusable_pairs": [
+        {
+          "class_a": "cdsz",
+          "class_b": "chjsh",
+          "centroid_distance": 0.15135174989700317
+        },
+        {
+          "class_a": "kg",
+          "class_b": "u",
+          "centroid_distance": 0.15277647972106934
+        },
+        {
+          "class_a": "kg",
+          "class_b": "o",
+          "centroid_distance": 0.15514087677001953
+        },
+        {
+          "class_a": "i",
+          "class_b": "u",
+          "centroid_distance": 0.15797317028045654
+        },
+        {
+          "class_a": "cdsz",
+          "class_b": "u",
+          "centroid_distance": 0.15911865234375
+        }
+      ],
+      "boundary_sharpness": 0.18211342889791388,
+      "segment_stability": 0.16998462681402066
+    },
+    {
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "condition": "natural",
+      "variant": "raw",
+      "intra_class_dist": 0.7815207676454023,
+      "inter_class_dist": 0.3028428554534912,
+      "fisher_ratio": 1.6836967333501167,
+      "silhouette": -0.06142035871744156,
+      "probe_accuracy": 0.32356534444104235,
+      "probe_f1_macro": 0.21502064736879137,
+      "probe_f1_weighted": 0.29747956233705,
+      "confusable_pairs": [
+        {
+          "class_a": "cdsz",
+          "class_b": "chjsh",
+          "centroid_distance": 0.13371354341506958
+        },
+        {
+          "class_a": "kg",
+          "class_b": "o",
+          "centroid_distance": 0.1380954384803772
+        },
+        {
+          "class_a": "i",
+          "class_b": "u",
+          "centroid_distance": 0.14201951026916504
+        },
+        {
+          "class_a": "cdsz",
+          "class_b": "u",
+          "centroid_distance": 0.14935100078582764
+        },
+        {
+          "class_a": "kg",
+          "class_b": "u",
+          "centroid_distance": 0.1547945737838745
+        }
+      ],
+      "boundary_sharpness": 0.1787189766574055,
+      "segment_stability": 0.14596081141543968
+    }
+  ],
+  "comparisons": [
+    {
+      "metric": "intra_class_dist",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.7715735863198291,
+      "tts_mean": 0.8218662558785289,
+      "delta": -0.05029266955869975,
+      "p_perm": 0.0005,
+      "ci_95": [
+        -0.06729046777764083,
+        -0.03340291175268072
+      ],
+      "cohens_d": -1.5823163575125847,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0030000000000000005,
+      "significant_fdr": true
+    },
+    {
+      "metric": "inter_class_dist",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.530397905753209,
+      "tts_mean": 0.5360542214833773,
+      "delta": -0.005656315730168269,
+      "p_perm": 0.734,
+      "ci_95": [
+        -0.03689828325922672,
+        0.024272695928811962
+      ],
+      "cohens_d": -0.09511385374884745,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.786,
+      "significant_fdr": false
+    },
+    {
+      "metric": "fisher_ratio",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 1.9740119590100134,
+      "tts_mean": 2.104202424217324,
+      "delta": -0.13019046520731073,
+      "p_perm": 0.7845,
+      "ci_95": [
+        -0.7023904026194991,
+        0.2877239134422392
+      ],
+      "cohens_d": -0.1349428615867841,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.786,
+      "significant_fdr": false
+    },
+    {
+      "metric": "silhouette",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": -0.16952873021364212,
+      "tts_mean": -0.19916610992871797,
+      "delta": 0.029637379715075858,
+      "p_perm": 0.044,
+      "ci_95": [
+        0.006732675590767319,
+        0.052923980355262745
+      ],
+      "cohens_d": 0.6481288925516081,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.09899999999999999,
+      "significant_fdr": false
+    },
+    {
+      "metric": "boundary_sharpness",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.37863301838864466,
+      "tts_mean": 0.31703696752746846,
+      "delta": 0.06159605086117613,
+      "p_perm": 0.0005,
+      "ci_95": [
+        0.03948868637616341,
+        0.08245981326554722
+      ],
+      "cohens_d": 1.5027042180469288,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0030000000000000005,
+      "significant_fdr": true
+    },
+    {
+      "metric": "segment_stability",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.3140475749958733,
+      "tts_mean": 0.3050239721284303,
+      "delta": 0.009023602867442982,
+      "p_perm": 0.0675,
+      "ci_95": [
+        1.2169364979463173e-05,
+        0.017080837261249086
+      ],
+      "cohens_d": 0.5543514860588747,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.135,
+      "significant_fdr": false
+    },
+    {
+      "metric": "intra_class_dist",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.8092032619994202,
+      "tts_mean": 0.8241583942329929,
+      "delta": -0.014955132233572529,
+      "p_perm": 0.1135,
+      "ci_95": [
+        -0.030900613040741775,
+        0.0026782301573198626
+      ],
+      "cohens_d": -0.46691468661672086,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.18299999999999997,
+      "significant_fdr": false
+    },
+    {
+      "metric": "inter_class_dist",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.5434175798526177,
+      "tts_mean": 0.5184599848893973,
+      "delta": 0.02495759496322045,
+      "p_perm": 0.0185,
+      "ci_95": [
+        0.0056387925950380485,
+        0.04159064900416593
+      ],
+      "cohens_d": 0.751316349540327,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.08324999999999999,
+      "significant_fdr": false
+    },
+    {
+      "metric": "fisher_ratio",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 1.718338925981851,
+      "tts_mean": 2.0357078565162343,
+      "delta": -0.317368930534383,
+      "p_perm": 0.2045,
+      "ci_95": [
+        -0.8693323750095615,
+        0.04057317334682802
+      ],
+      "cohens_d": -0.34205717494281057,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.28315384615384614,
+      "significant_fdr": false
+    },
+    {
+      "metric": "silhouette",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": -0.1728750983109841,
+      "tts_mean": -0.19169689256411332,
+      "delta": 0.018821794253129225,
+      "p_perm": 0.044,
+      "ci_95": [
+        0.003675066822996507,
+        0.03493565349624707
+      ],
+      "cohens_d": 0.6283306144041443,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.09899999999999999,
+      "significant_fdr": false
+    },
+    {
+      "metric": "boundary_sharpness",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.18211342889791385,
+      "tts_mean": 0.17886380115666417,
+      "delta": 0.0032496277412497224,
+      "p_perm": 0.6805,
+      "ci_95": [
+        -0.01192852430721056,
+        0.0177807664869193
+      ],
+      "cohens_d": 0.11555952875929214,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.786,
+      "significant_fdr": false
+    },
+    {
+      "metric": "segment_stability",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.16998462681402066,
+      "tts_mean": 0.17438942622203696,
+      "delta": -0.004404799408016317,
+      "p_perm": 0.122,
+      "ci_95": [
+        -0.009455406251284921,
+        0.0005587044025405959
+      ],
+      "cohens_d": -0.4637528126350684,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.18299999999999997,
+      "significant_fdr": false
+    },
+    {
+      "metric": "intra_class_dist",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.7796934525171916,
+      "tts_mean": 0.8014145567521944,
+      "delta": -0.02172110423500285,
+      "p_perm": 0.0785,
+      "ci_95": [
+        -0.04282232539366671,
+        0.0012437346602206432
+      ],
+      "cohens_d": -0.5185799178199664,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.1413,
+      "significant_fdr": false
+    },
+    {
+      "metric": "inter_class_dist",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.5095523504110483,
+      "tts_mean": 0.47670767398980946,
+      "delta": 0.032844676421238825,
+      "p_perm": 0.028,
+      "ci_95": [
+        0.007763192917291946,
+        0.054671540970985706
+      ],
+      "cohens_d": 0.7258674826740127,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.09899999999999999,
+      "significant_fdr": false
+    },
+    {
+      "metric": "fisher_ratio",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 1.7402236063510654,
+      "tts_mean": 2.061898171110974,
+      "delta": -0.32167456475990824,
+      "p_perm": 0.5055,
+      "ci_95": [
+        -1.053470715754463,
+        0.15086322000504235
+      ],
+      "cohens_d": -0.2622042965638398,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.6499285714285713,
+      "significant_fdr": false
+    },
+    {
+      "metric": "silhouette",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": -0.1838306079690273,
+      "tts_mean": -0.21392606084163374,
+      "delta": 0.030095452872606423,
+      "p_perm": 0.0375,
+      "ci_95": [
+        0.007368601084901745,
+        0.05399674144215308
+      ],
+      "cohens_d": 0.6760369597206166,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.09899999999999999,
+      "significant_fdr": false
+    },
+    {
+      "metric": "boundary_sharpness",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.1787189766574055,
+      "tts_mean": 0.17664953016098403,
+      "delta": 0.0020694464964214664,
+      "p_perm": 0.786,
+      "ci_95": [
+        -0.01241283961800746,
+        0.016692659524622913
+      ],
+      "cohens_d": 0.0745631869900522,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.786,
+      "significant_fdr": false
+    },
+    {
+      "metric": "segment_stability",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.14596081141543968,
+      "tts_mean": 0.16340115633809613,
+      "delta": -0.017440344922656444,
+      "p_perm": 0.0005,
+      "ci_95": [
+        -0.022586523459833894,
+        -0.012247190150399209
+      ],
+      "cohens_d": -1.733439847007925,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0030000000000000005,
+      "significant_fdr": true
+    }
+  ],
+  "per_sample": {}
+}
