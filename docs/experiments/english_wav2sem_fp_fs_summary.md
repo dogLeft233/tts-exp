@@ -226,54 +226,55 @@ Fd_random = FC_正交投影(Fp + Fs_broadcast)      # 学习的 768→768 投影
 
 ## 4. 中英文对比分析
 
-| | 中文 | 英文 |
-|---|---|---|
-| ΔSync-C（TTS 优势） | **+0.205** * | +0.160 (ns) |
-| 效应量（dz） | 0.79 | 0.31 |
-| p 值 | 0.025 | 0.571 |
-| 视位可分离性（L11 自然） | inter=0.124 | inter=**0.554** |
-| 视位可分离性（L11 TTS） | inter=**0.185**（+49%） | inter=0.379（−32%） |
-| Fisher 比（L11 自然 vs TTS） | 自然 < TTS | **自然 > TTS** |
-| Fs 通道饱和 | 未测 | 已饱和（无差异） |
-| Fd 融合增益 | 未测 | 自然 >> TTS |
+> **⚠️ 2026-07-19 修订**: 原中文数据使用均匀切片（pypinyin 等分）估算音素边界，严重低估了自然语音的视位可分离性（inter_class 被低估至 0.12）。现已用 MFA 精确对齐（v3.4.1, `mandarin_mfa` 模型）重新分析，Natural inter_class 修正为 0.51。以下对比以此为准。
 
-**关键洞见**: 中英文不对称由**语音特征的天花板效应**驱动：
-- 英文自然语音已达到近最优的视位可分离性（inter_class = 0.55）
-- 中文自然语音的可分离性较差（inter_class = 0.12）
-- TTS 提升了中文（inter 达到 0.18），但降低了英文（inter 降至 0.38）
-- Fs 通道不产生额外贡献——两种语言均已饱和
+| | 中文（MFA） | 英文 |
+|---|---|---|
+| 对齐方式 | MFA mandarin | MFA english |
+| Natural inter_class_dist（L11） | 0.510 | 0.554 |
+| TTS inter_class_dist（L11） | 0.477 | 0.379 |
+| TTS 对可分离性的改变 | −6%（d=+0.73, p_fdr=0.099） | −32%（d=+4.08, p_fdr<0.001） |
+| 方向 | Natural > TTS（不显著） | Natural > TTS（显著） |
+| segment_stability L11 nat→tts | 0.146→0.163（恶化, d=−1.73*） | 0.166→0.171（不显著） |
+| Fs 通道 | 已饱和（文字相同→BERT 相同） | 已饱和（无差异） |
+
+**关键洞见（修订版）**:
+
+1. **方向一致**: MFA 对齐后，中英文都是**自然语音 > TTS**，不存在"中文特殊"的 TTS 改善
+2. **差异大小不同**: 英文退化更大（d=4.08 vs d=0.73），因为英文自然基线更高（0.55 vs 0.51）
+3. **旧结论是均匀切片的伪影**: 均匀切片假设音素等长→自然语音的 heteroscedastic 时长分布被"抹平"→不同音素帧互相污染→inter_class 被低估。TTS 的参数化生成恰好更接近等时分布，所以在旧方法下被高估
+4. **Fs 通道不产生额外贡献**——两种语言均已饱和；TTS 的退化完全通过 **Fp 通道**运作
 
 ---
 
 ## 5. 理论含义
 
-### 5.1 主要发现
+### 5.1 主要发现（2026-07-19 修订）
 
-**TTS 仅在自然语音音素发音不清晰时才能改善唇形同步。** 关键量不是语义通道 Fs，而是语音通道 Fp——具体而言，是 HuBERT 中高层中声学信号对音素类别的区分度。
+**TTS 在所有测试语言上都降低（而非提升）视位可分离性。** 此前报告的中文"TTS 改善现象"已被证明是均匀切片对齐误差的伪影。经 MFA 精确对齐后，关键量——HuBERT 中高层中声学信号对音素类别的区分度——在中英文上都是 Natural > TTS。差异仅在于退化程度：英文退化更大（d=4.08, p<0.001），中文退化较小（d=0.73, p_fdr=0.099）。
 
-### 5.2 机制模型
+### 5.2 机制模型（修订版）
 
 ```
-TTS 增益大小
+TTS 对视位可分离性的影响
     ↑
-    │ 大（dz=0.79）━━ 中文
+    │ 小退化（d=0.73, ns）━━ 中文
     │ ┌──────────────────────────┐
-    │ │ inter: 0.12 → 0.18 (+49%)│  ← TTS 澄清了含混的音素
+    │ │ inter: 0.51 → 0.48 (−6%) │  ← TTS 小幅度退化
     │ └──────────────────────────┘
     │                    ●
-    │                    天花板效应
     │              ┌──────────────────────────┐
-    │ 小/无（dz=0.31）│ inter: 0.55 → 0.38 (−32%)│  ← TTS 模糊了本已清晰的音素
+    │ 大退化（d=4.08, sig）│ inter: 0.55 → 0.38 (−32%)│  ← TTS 显著退化
     │              └──────────────────────────┘
     └──────────────────→ 自然语音 inter_class_dist
-        差 ← 语音可分离性 → 好
+         0.51(中文)          0.55(英文)
 ```
 
-当自然语音已具备高语音可分离性时（英文，inter ≈ 0.55），TTS 无法提供帮助——其参数化平滑反而**模糊**了语音对比。当自然语音的可分离性较差时（中文，inter ≈ 0.12），TTS 更一致的发音**澄清**了音素边界。
+TTS 的参数化生成在两种语言上都**模糊**了音素对比，但退化程度与自然语音基线相关：基线越高，TTS 的"参数化损失"越明显。不存在 TTS 改善的场景——此前中文的"改善"来自均匀切片对自然语音基线的人为低估。
 
 ### 5.3 饱和假说
 
-Wav2Sem 的 Fs 通道对两种语言均已饱和：Wav2Bert 预训练编码器从自然和 TTS 音频中同等有效地提取 BERT 级别的语义。TTS 优势完全运作于 **Fp 通道**——即编码每个音素发音清晰度（或不清晰度）的逐帧语音残差。
+Wav2Sem 的 Fs 通道对两种语言均已饱和。TTS 的退化完全运作于 **Fp 通道**——即编码每个音素发音清晰度的逐帧语音残差。语义信息（Fs）在自然和 TTS 音频中质量相同。
 
 ---
 
@@ -284,35 +285,33 @@ Wav2Sem 的 Fs 通道对两种语言均已饱和：Wav2Bert 预训练编码器�
 ```
 data/
 ├── english_wav2sem_analysis/
-│   ├── english_wav2sem_gate1_gate1.json      # 第一关逐种子结果
-│   ├── seed_42/                               # Ditto SyncNet 逐样本分数
-│   ├── seed_43/
-│   └── seed_44/
+│   └── ...（Ditto SyncNet Gate 1 结果）
 ├── wav2sem_analysis/
-│   └── metrics/separability_metrics.json      # 中文可分离性（参考基准）
+│   └── metrics/separability_metrics.json      # 中文可分离性（旧·均匀切片，仅供参考）
 ├── wav2sem_analysis_en/
-│   ├── manifest/alignment.json                # MFA 对齐清单
-│   ├── mfa_textgrid/*.TextGrid                # 13 个 TextGrid 文件
-│   ├── metrics/
-│   │   ├── separability_metrics.json          # HuBERT + XLS-R 可分离性
-│   │   ├── oracle_fs.json                     # BERT CLS 甲骨文 Fs
-│   │   ├── wav2sem_fs.json                    # Wav2Sem 推断 Fs
-│   │   └── oracle_fd_separability.json        # Fd 三档分析
-│   └── embeddings/                             # 52 个 .npy（26 HuBERT + 26 XLS-R）
-├── data/audio_en/                             # 13 个自然音频 WAV
-└── data/audio_en_qwen3_tts/                   # 13 个 TTS 音频 WAV
+│   └── ...（英文 HuBERT + XLS-R + oracle Fs + Fd）
+├── wav2sem_analysis_zh/                        # 🆕 中文 MFA 对齐结果
+│   ├── manifest/alignment.json                # MFA 对齐清单（26 条目）
+│   ├── embeddings/                             # HuBERT/XLS-R 嵌入（52 文件）
+│   └── metrics/
+│       ├── separability_metrics.json          # HuBERT L0/L6/L11 可分离性 + 配对比较
+│       └── oracle_fs.json                     # BERT-base-chinese oracle Fs（26 条目）
+├── data/audio/                                 # 13 个自然中文 WAV
+└── runs/r2_dashscope_vc_*/02_tts/             # 13 个 TTS 中文 WAV（Qwen3-TTS-VC）
 ```
 
 ### 新增/修改的关键脚本
 
 | 脚本 | 功能 |
 |---|---|
-| `28_prepare_english_alignment.py` | MFA TextGrid→IPA→视位清单（完整重写） |
-| `15_extract_ssl_embeddings.py` | 新增 `manifest` 键支持 |
-| `29_oracle_fs_bert.py` | BERT CLS 甲骨文 Fs 提取 |
+| `28_prepare_english_alignment.py` | 英文 MFA TextGrid→IPA→视位清单 |
+| `33_prepare_mandarin_alignment.py` | 🆕 中文 MFA TextGrid→IPA→视位清单 |
+| `15_extract_ssl_embeddings.py` | HuBERT/XLS-R 嵌入提取（通用，支持中英文 manifest） |
+| `16_feature_separability.py` | 视位可分离性指标（通用） |
+| `29_oracle_fs_bert.py` | Oracle Fs = BERT CLS（支持 bert-base-uncased / bert-base-chinese） |
 | `32_wav2sem_infer_fs.py` | Wav2Sem 预训练权重推断 |
 | `31_oracle_fd_separability.py` | Fd 三档融合分析 |
-| `26_prepare_english_pairs.py` | 英文配对清单（新） |
+| `26_prepare_english_pairs.py` | 英文配对清单 |
 
 ### 最近 10 次 commit
 
