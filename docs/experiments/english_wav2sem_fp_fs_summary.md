@@ -1,173 +1,173 @@
-# English Wav2Sem Fs/Fp Analysis — Comprehensive Experiment Summary
+# 英文 Wav2Sem Fs/Fp 实验总结
 
-**Date**: 2026-07-17 to 2026-07-19  
-**Server**: AutoDL Pro6000-P (single GPU), accessed via SSH port 33833  
-**Repository**: `tts-exp` (GitHub, commit range `9befacd` → `68ff4ae`)
-
----
-
-## 1. Background & Research Question
-
-### 1.1 Core Puzzle
-
-Previous experiments on **Chinese** (AISHELL-1, 13 matched pairs) showed a consistent TTS advantage in lip-sync:
-- **Ditto SyncNet**: TTS-generated audio yields higher Sync-C confidence than natural audio
-- **ΔSync-C** ≈ +0.205, dz = 0.79, p = 0.025 (significant)
-
-The critical scientific question: **What mechanism makes TTS audio better for lip-sync?** Is it driven by:
-- **Fs (semantic features)** — TTS carries stronger/simpler semantic content?
-- **Fp (phonetic/prosodic features)** — TTS has clearer phone articulation?
-
-### 1.2 Wav2Sem Framework (Ditto et al., 2024)
-
-Wav2Sem decomposes audio features into two orthogonal channels:
-
-```
-per_frame = Wav2Bert(audio) ∈ R^(T×768)    # frame-level features
-Fs = mean_pool(per_frame) ∈ R^768          # semantic channel (T-pooled)
-Fp = per_frame − Fs.expand(T, 768)         # phonetic/prosodic residual
-Fd = FC(Fs ⊕ Fp)                           # fused representation for 3D face
-```
-
-Training: Wav2Bert minimizes L1(Fs, BERT_CLS(text)) on LibriSpeech-960 to learn Fs.
-
-### 1.3 Experiment Strategy
-
-1. **Gate 1**: Replicate TTS advantage on English (LibriSpeech test-clean)
-2. **If TTS advantage exists** → probe Fs/Fp channels to find the mediator
-3. **If TTS advantage absent** → probe Fs/Fp channels to explain the cross-lingual asymmetry
+**实验日期**: 2026-07-17 至 2026-07-19  
+**服务器**: AutoDL Pro6000-P（单 GPU），SSH 端口 33833  
+**仓库**: `tts-exp`，commit 区间 `9befacd` → `68ff4ae`
 
 ---
 
-## 2. Data & Pipeline Architecture
+## 1. 研究背景与核心问题
 
-### 2.1 Dataset
+### 1.1 核心谜题
 
-| Property | Value |
+此前在**中文**（AISHELL-1，13 对匹配样本）上的实验发现了 TTS 音频在唇形同步中的一致优势：
+- **Ditto SyncNet** 模型下，TTS 生成的音频比自然音频产生更高的 Sync-C 置信度
+- **ΔSync-C** ≈ +0.205，dz = 0.79，p = 0.025（显著）
+
+核心科学问题：**TTS 音频为什么对唇形同步更有利？** 驱动因素是什么？
+- **Fs（语义特征）**——TTS 携带了更强或更简化的语义信息？
+- **Fp（语音/韵律特征）**——TTS 的音素发音更清晰？
+
+### 1.2 Wav2Sem 框架（Ditto et al., 2024）
+
+Wav2Sem 将音频特征分解为两个正交通道：
+
+```
+逐帧特征:    per_frame = Wav2Bert(audio) ∈ R^(T×768)
+语义通道:    Fs = mean_pool(per_frame) ∈ R^768       （T 维度均值池化）
+语音残差:    Fp = per_frame − Fs.expand(T, 768)       （逐帧残差）
+融合表示:    Fd = FC(Fs ⊕ Fp)                          （3D 人脸预测用）
+```
+
+训练方式：Wav2Bert 在 LibriSpeech-960 上最小化 L1(Fs, BERT_CLS(文本)) 来学习 Fs。
+
+### 1.3 实验策略
+
+1. **第一关**：在英文（LibriSpeech test-clean）上复现 TTS 优势
+2. **若 TTS 优势存在** → 探测 Fs/Fp 通道找出中介因素
+3. **若 TTS 优势不存在** → 通过 Fs/Fp 分析解释中英文不对称现象
+
+---
+
+## 2. 数据与实验流水线
+
+### 2.1 数据集
+
+| 属性 | 值 |
 |---|---|
-| Language | English |
-| Source | LibriSpeech test-clean |
-| Samples | 13 (IDs 1–13) |
-| Duration | 4.8–8.3s per sample |
-| Natural audio | `data/data/audio_en/*.wav` (16 kHz, mono) |
-| TTS audio | `data/data/audio_en_qwen3_tts/*.wav` (Qwen3-TTS voice cloning) |
-| TTS model | `qwen3-tts-vc-2026-01-22` (DashScope) |
+| 语言 | 英文 |
+| 来源 | LibriSpeech test-clean |
+| 样本数 | 13（ID 1–13） |
+| 时长 | 每句 4.8–8.3s |
+| 自然音频 | `data/data/audio_en/*.wav`（16 kHz 单声道） |
+| TTS 音频 | `data/data/audio_en_qwen3_tts/*.wav`（Qwen3-TTS 音色克隆） |
+| TTS 模型 | `qwen3-tts-vc-2026-01-22`（DashScope API） |
 
-### 2.2 Pipeline Scripts & Flow
+### 2.2 流水线脚本
 
 ```
-Step  ── Script ──────────────────────────────── ── Output ─────────────────
- 1     scripts/00_datacheck.py                  Validated 13 pairs (match + loudness)
- 2     scripts/02_tts.py                        Generated TTS audio (Qwen3 voice cloning)
- 3     scripts/26_prepare_english_pairs.py       Created pair manifest
- 4     scripts/03_ditto.py ×3 seeds (s42/43/44)  Ditto lip-sync video generation
- 5     scripts/04_eval.py ×3 seeds              SyncNet confidence scores per sample
- 6     scripts/19_generate_eval_matrix.py         G×E matrix (Generator × Engine)
- 7     scripts/23_identity_control_syncnet.py    Identity control (no-op differential)
- 8     scripts/30_analyze_english_wav2sem.py      Gate 1 aggregate analysis
- ─────────────────────────────────────────────────────────────────────────
- 9     MFA alignment (manual)                    Phone-boundary TextGrids (13 files)
-10     scripts/28_prepare_english_alignment.py    Alignment manifest (26 entries)
-11     scripts/15_extract_ssl_embeddings.py       HuBERT L0/L6/L11 per-sample .npy
-12     scripts/16_feature_separability.py          Separability metrics (HuBERT + XLS-R)
-13     scripts/29_oracle_fs_bert.py               Oracle Fs = BERT_CLS(text)
-14     scripts/32_wav2sem_infer_fs.py             Wav2Sem Fs = mean_pool(Wav2Bert(audio))
-15     scripts/31_oracle_fd_separability.py        Fd = FC(Fp + Fs) three-tier analysis
+步骤  脚本                                       产物
+ 1   00_datacheck.py                           验证 13 对匹配 + 响度检测
+ 2   02_tts.py                                 生成 TTS 音频（Qwen3 音色克隆）
+ 3   26_prepare_english_pairs.py               创建配对清单
+ 4   03_ditto.py ×3 种子（42/43/44）            Ditto 唇形同步视频生成
+ 5   04_eval.py ×3 种子                        SyncNet 逐样本置信度
+ 6   19_generate_eval_matrix.py                G×E 矩阵（生成器 × 引擎）
+ 7   23_identity_control_syncnet.py            身份控制（无操作差分）
+ 8   30_analyze_english_wav2sem.py              第一关汇总分析
+────────────────────────────────────────────────────────────────
+ 9   MFA 对齐（手动）                            音素边界 TextGrid（13 文件）
+10   28_prepare_english_alignment.py            对齐清单（26 条目）
+11   15_extract_ssl_embeddings.py               HuBERT L0/L6/L11 逐样本 .npy
+12   16_feature_separability.py                  可分离性指标（HuBERT + XLS-R）
+13   29_oracle_fs_bert.py                       甲骨文 Fs = BERT_CLS(文本)
+14   32_wav2sem_infer_fs.py                     Wav2Sem Fs = mean_pool(Wav2Bert(音频))
+15   31_oracle_fd_separability.py               Fd = FC(Fp + Fs) 三档分析
 ```
 
-### 2.3 Key Configuration
+### 2.3 关键配置
 
 ```yaml
 # scripts/configs/english_wav2sem.yaml
 models:
-  syncnet: ditto_talking_head  # Ditto SyncNet
-  generator: joyvasa           # video generator
+  syncnet: ditto_talking_head   # Ditto SyncNet
+  generator: joyvasa            # 视频生成器
 engines:
-  natural: raw audio
-  tts: Qwen3-TTS cloned audio
+  natural: 原始音频
+  tts: Qwen3-TTS 克隆音频
 seeds: [42, 43, 44]
 ```
 
-### 2.4 MFA Alignment Setup
+### 2.4 MFA 对齐配置
 
-- **Aligner**: Montreal Forced Aligner 3.4.1
-- **Acoustic model**: `english_mfa` v3.1.0 (pretrained)
-- **Dictionary**: `english_mfa` (CMUdict-based)
-- **Phone set**: MFA IPA (29 unique phones across 13 samples)
-- **Alignment speed**: 60s for all 13 files (batch)
-- **IPA → Viseme mapping**: 13-class Preston Blair viseme system
-  - Classes: pbmv, fv, th, cdsz, kg, chjsh, e, o, i, u, r, ai, aw + sil
-  - Zero unmapped phones across all 26 entries
+- **对齐器**: Montreal Forced Aligner 3.4.1
+- **声学模型**: `english_mfa` v3.1.0（预训练）
+- **词典**: `english_mfa`（基于 CMUdict）
+- **音素集**: MFA IPA（13 个样本共 29 个独特音素）
+- **对齐速度**: 13 个文件批量处理共 60s
+- **IPA → 视位映射**: 13 类 Preston Blair 视位体系
+  - 类别: pbmv, fv, th, cdsz, kg, chjsh, e, o, i, u, r, ai, aw + sil
+  - 全 26 个条目零未映射音素
 
 ---
 
-## 3. Experiment Results
+## 3. 实验结果
 
-### 3.1 Gate 1: TTS Advantage Replication (English)
+### 3.1 第一关：英文 TTS 优势复现
 
-| Metric | Value |
+| 指标 | 值 |
 |---|---|
-| ΔSync-C (TTS − natural) | **+0.160** |
-| Std dev | 0.516 |
-| n | 39 (13 samples × 3 seeds) |
-| Paired t-test | t = 1.955, p = 0.058 |
-| Cohen's d (per-seed) | dz = 0.31 |
-| Bootstrap 95% CI | [−0.106, +0.423] |
-| Holm-corrected p | 0.571 |
+| ΔSync-C（TTS − 自然） | **+0.160** |
+| 标准差 | 0.516 |
+| 样本量 | 39（13 样本 × 3 种子） |
+| 配对 t 检验 | t = 1.955，p = 0.058 |
+| Cohen's d（按种子） | dz = 0.31 |
+| Bootstrap 95% 置信区间 | [−0.106, +0.423] |
+| Holm 校正后 p | 0.571 |
 
-**Verdict: FAIL** — TTS advantage does **not** replicate on English. The confidence interval crosses zero; the effect is not significant after correction. This is the exact opposite of the Chinese finding (ΔSync-C = +0.205, dz = 0.79, p = 0.025).
+**判定：未通过**——TTS 优势在英文上**未复现**。置信区间跨过零点，校正后不显著。这与中文结果形成鲜明对偶（中文 ΔSync-C = +0.205，dz = 0.79，p = 0.025）。
 
-### 3.2 Wav2Sem Fs Analysis (Semantic Channel)
+### 3.2 Wav2Sem Fs 分析（语义通道）
 
-**Question**: Does TTS audio carry stronger semantic features (Fs) than natural audio?
+**问题**：TTS 音频是否比自然音频携带更强的语义特征（Fs）？
 
-**Metric**: L1 distance between Wav2Sem-inferred Fs and oracle BERT_CLS(text)
+**指标**：Wav2Sem 推断的 Fs 与甲骨文 BERT_CLS(文本) 之间的 L1 距离
 
 ```
-Formula:
-  Fs_wav2sem  = mean_pool(Wav2Bert_7TCN_12TF(audio))
-  Fs_oracle   = BERT_CLS(text)                           # "information ceiling"
-  d(audio)    = ||Fs_wav2sem(audio) − Fs_oracle(text)||_L1
+公式:
+  Fs_wav2sem  = mean_pool(Wav2Bert_7TCN_12TF(音频))
+  Fs_oracle   = BERT_CLS(文本)                          # "信息天花板"
+  d(音频)      = ||Fs_wav2sem(音频) − Fs_oracle(文本)||_L1
 ```
 
-| Condition | Mean L1 distance to BERT | Std |
+| 条件 | 平均 L1 距离 | 标准差 |
 |---|---|---|
-| Natural | 133.83 | 19.14 |
+| 自然 | 133.83 | 19.14 |
 | TTS | 133.92 | 19.96 |
-| Δ (TTS − natural) | **+0.09** | |
+| Δ（TTS − 自然） | **+0.09** | |
 
-**Result**: t = −0.127, p = 0.901, d = 0.035 (trivial).
+**结果**: t = −0.127，p = 0.901，d = 0.035（可忽略）。
 
-**Conclusion**: The semantic channel (Fs) is **saturated** for English — Wav2Sem's pretrained Wav2Bert extracts equally good textual information from natural and TTS audio. The TTS advantage (if it existed) is **not** mediated through Fs.
+**结论**: 语义通道（Fs）对英文**已饱和**——Wav2Sem 预训练的 Wav2Bert 从自然音频和 TTS 音频中提取的文本信息质量相同。TTS 优势（如果有）**不**通过 Fs 中介。
 
-### 3.3 HuBERT Viseme Separability (Phonetic Channel Fp)
+### 3.3 HuBERT 视位可分离性（语音通道 Fp）
 
-**Question**: Does TTS audio improve phonetic separability in HuBERT layers?
+**问题**：TTS 音频是否提升 HuBERT 各层的音素可分离性？
 
-**Metric**: Inter-class cosine distance between 13 Preston Blair viseme centroids
+**指标**: 13 个 Preston Blair 视位质心之间的类间余弦距离
 
 ```
-Formula:
-  pooled_i = mean(per_frame[t_start_i:t_end_i])          # per-phone pooled feature
-  centroid_k = mean(pooled_i for all i ∈ viseme_k)       # class centroid
-  inter_class_dist = mean(1 − cos(c_a, c_b)) over all a≠b
-  segment_stability = mean(1 − cos(f_t, f_{t+1})) within segments
+公式:
+  逐音素池化:    pooled_i = mean(frame[t_start_i:t_end_i])
+  类质心:        centroid_k = mean(pooled_i for all i ∈ viseme_k)
+  类间距离:      inter_class_dist = mean(1 − cos(c_a, c_b)) 对所有 a≠b
+  段内稳定性:    segment_stability = mean(1 − cos(f_t, f_{t+1})) 段内帧间
 ```
 
-#### HuBERT Layer-by-Layer Results (pooled, natural/raw):
+#### HuBERT 逐层结果（池化，自然/原始）：
 
-| Layer | intra_class↓ | inter_class↑ | fisher↑ | silh↑ | sstab↓ | probe_acc↑ |
-|-------|-------------|-------------|---------|------|--------|-----------|
+| 层 | intra_class↓ | inter_class↑ | fisher↑ | silh↑ | sstab↓ | probe_acc↑ |
+|-----|-------------|-------------|---------|------|--------|-----------|
 | L0 | 0.7575 | 0.6668 | 5.20 | −0.056 | 0.3061 | 0.7132 |
 | L6 | 0.7625 | 0.6030 | 4.22 | −0.004 | 0.1816 | **0.8757** |
 | L11 | 0.6176 | 0.4705 | 4.45 | −0.010 | 0.1662 | 0.8742 |
 
-— *L11 is the most phonetic layer (highest probe accuracy, lowest intra-class variance)*
+— *L11 是语音信息最强的层（线性探测准确率最高、类内方差最低）*
 
-#### Natural vs TTS Paired Comparisons (HuBERT, all layers FDR-significant):
+#### 自然 vs TTS 配对比较（HuBERT，全层 FDR 显著）：
 
-| Layer | Metric | Natural | TTS | Δ | d | p (FDR) |
-|-------|--------|---------|-----|---|---|-------|
+| 层 | 指标 | 自然 | TTS | Δ | d | p (FDR) |
+|-----|------|---------|-----|---|---|-------|
 | L0 | inter_class_dist↑ | **0.739** | 0.546 | −0.193 | +2.94 | 0.0005 * |
 | L0 | fisher_ratio↑ | **2.206** | 1.130 | −1.076 | +2.58 | 0.0005 * |
 | L6 | inter_class_dist↑ | **0.697** | 0.547 | −0.150 | +2.92 | 0.0005 * |
@@ -176,143 +176,146 @@ Formula:
 | L11 | fisher_ratio↑ | **1.721** | 1.148 | −0.573 | +1.99 | 0.0005 * |
 | L11 | segment_stability↓ | 0.166 | 0.171 | +0.005 | −0.45 | 0.1195 |
 
-**Key finding**: Across ALL layers, **natural speech consistently has BETTER viseme separability than TTS**. The effect is strongest at L11 (d = +4.08 for inter-class distance). Segment stability shows no significant difference.
+**核心发现**: 在**所有层**上，**自然语音的视位可分离性始终优于 TTS**。效应在 L11 最强（inter_class d = +4.08）。段内稳定性无显著差异。
 
-### 3.4 XLS-R Cross-lingual Validation
+### 3.4 XLS-R 跨语言验证
 
-| Layer | Model | Δinter_class | d | p (FDR) |
-|-------|-------|-------------|---|-------|
+| 层 | 模型 | Δinter_class | d | p (FDR) |
+|-----|------|-------------|---|-------|
 | L6 | HuBERT | −0.150 | +2.92 | 0.0005 * |
 | L6 | XLS-R | **−0.169** | **+3.96** | 0.0005 * |
 | L11 | HuBERT | −0.176 | +4.08 | 0.0005 * |
 | L11 | XLS-R | **−0.131** | **+3.46** | 0.0005 * |
 
-**Result**: The pattern is robust across both monolingual (HuBERT) and multilingual (XLS-R) models. English TTS consistently degrades phonetic separability.
+**结果**: 规律在单语模型（HuBERT）和多语模型（XLS-R）之间高度一致。英文 TTS 在保持语音可分离性方面一致地劣于自然语音。
 
-### 3.5 Oracle Fd Three-Tier Analysis (Fs + Fp Fusion)
+### 3.5 甲骨文 Fd 三档分析（Fs + Fp 融合）
 
-**Question**: Does combining Fs (semantic) with Fp (phonetic) amplify separability? Is the gain different for natural vs TTS?
+**问题**：合并 Fs（语义）和 Fp（语音）是否提升可分离性？增益在自然 vs TTS 之间是否不同？
 
-**Three tiers**:
+**三档对比**:
 ```
-Fp_only   = HuBERT_L11_frame                  # raw frame embedding
-Fd_zero   = Fp + Fs_broadcast                 # simple concatenation
-Fd_random = FC_orthogonal(Fp + Fs_broadcast)  # learned 768→768 projection
+Fp_only   = HuBERT_L11 逐帧向量               # 原始帧级嵌入
+Fd_zero   = Fp + Fs_broadcast                 # 简单相加
+Fd_random = FC_正交投影(Fp + Fs_broadcast)      # 学习的 768→768 投影
 ```
 
-**Key metric**: `gain_random_vs_fp_fisher` = Fisher ratio improvement from FC projection
+**关键指标**: `gain_random_vs_fp_fisher`——FC 投影带来的 Fisher 比提升
 
-| Gain metric | Natural | TTS | Δ | d |
+| 增益指标 | 自然 | TTS | Δ | d |
 |---|---|---|---|---|
 | gain_random_vs_fp_fisher | **+2.33** | +0.44 | −1.89 | **−3.00** |
 | gain_random_vs_fp_intra_class_dist | −0.39 | −0.43 | −0.04 | −1.70 |
 | gain_random_vs_fp_segment_stability | −0.10 | −0.10 | 0.00 | −0.18 |
 
-**Critical finding**: The Fs+Fp fusion (FC projection) massively improves separability for **natural speech** (+2.33 Fisher), but provides virtually no benefit for **TTS** (+0.44). This means Fs contains meaningful complementary information for natural audio but not for TTS — TTS's phonetic degradation overwhelms any semantic signal.
+**关键发现**: Fs+Fp 融合（FC 投影）对**自然语音**大幅提升可分离性（+2.33 Fisher），但对**TTS**几乎无增益（+0.44）。这意味着 Fs 为自然音频贡献了大量互补信息，但对 TTS 无贡献——TTS 的语音退化淹没了任何语义信号。
 
-### 3.6 Per-Sample Correlation: Separability vs SyncNet
+### 3.6 逐样本相关性：可分离性 vs SyncNet
 
-**Question**: Do samples with larger phonetic degradation show larger SyncNet degradation?
+**问题**：语音退化较大的样本是否同时有更大的 SyncNet 退化？
 
-| Layer | Pearson r | p | Spearman ρ | p |
-|-------|-----------|---|------------|---|
+| 层 | Pearson r | p | Spearman ρ | p |
+|-----|-----------|---|------------|---|
 | 0 | −0.137 | 0.655 | −0.209 | 0.494 |
 | 6 | −0.232 | 0.445 | −0.225 | 0.459 |
 | 11 | −0.302 | 0.316 | −0.368 | 0.216 |
 
-**Result**: No significant per-sample correlation between Δinter_class_dist and ΔSync-C. The relationship is weakly negative at L11 (Spearman ρ = −0.368) but not significant (n = 13, limited power).
+**结果**: Δinter_class_dist 与 ΔSync-C 之间无显著的逐样本相关性。L11 有弱负相关趋势（Spearman ρ = −0.368），但 n = 13 检验力不足。
 
 ---
 
-## 4. Comparative Analysis: Chinese vs English
+## 4. 中英文对比分析
 
-| | Chinese | English |
+| | 中文 | 英文 |
 |---|---|---|
-| ΔSync-C (TTS advantage) | **+0.205** * | +0.160 (ns) |
-| Effect size (dz) | 0.79 | 0.31 |
-| p-value | 0.025 | 0.571 |
-| Viseme separability (L11 natural) | inter=0.124 | inter=**0.554** |
-| Viseme separability (L11 TTS) | inter=**0.185** (+49%) | inter=0.379 (−32%) |
-| Fisher ratio (L11 natural vs TTS) | Natural < TTS | **Natural > TTS** |
-| Fs channel saturation | Untested | Saturated (no diff) |
-| Fd gain from Fs+Fp fusion | Untested | Natural >> TTS |
+| ΔSync-C（TTS 优势） | **+0.205** * | +0.160 (ns) |
+| 效应量（dz） | 0.79 | 0.31 |
+| p 值 | 0.025 | 0.571 |
+| 视位可分离性（L11 自然） | inter=0.124 | inter=**0.554** |
+| 视位可分离性（L11 TTS） | inter=**0.185**（+49%） | inter=0.379（−32%） |
+| Fisher 比（L11 自然 vs TTS） | 自然 < TTS | **自然 > TTS** |
+| Fs 通道饱和 | 未测 | 已饱和（无差异） |
+| Fd 融合增益 | 未测 | 自然 >> TTS |
 
-**Key insight**: The cross-lingual asymmetry is driven by a **ceiling effect on phonetic features**:
-- English natural speech has near-optimal viseme separability (inter_class = 0.55)
-- Chinese natural speech has poor separability (inter_class = 0.12)
-- TTS improves Chinese (inter reaches 0.18) but degrades English (inter drops to 0.38)
-- The Fs channel contributes nothing additional — it's already saturated for both languages
-
----
-
-## 5. Theoretical Implications
-
-### 5.1 Main Finding
-
-**TTS helps lip-sync only when natural speech has poor phone articulation.** The critical quantity is not semantic (Fs) but phonetic (Fp) — specifically, how clearly the acoustic signal separates viseme classes in HuBERT's mid-to-late layers.
-
-### 5.2 Mechanistic Model
-
-```
-TTS Advantage
-     ↑
-     │  Strong (+79% effect size)
-     │  ┌──────────────────────────────┐
-     │  │ Chinese: inter=0.12 → 0.18   │
-     │  └──────────────────────────────┘
-     │
-     │  Weak/None (+31% effect size)
-     │  ┌──────────────────────────────┐
-     │  │ English: inter=0.55 → 0.38   │
-     │  └──────────────────────────────┘
-     │  ceiling effect
-     └──────────────────────────────────→ Natural inter_class_dist
-```
-
-When natural speech already achieves high phonetic separability (English, inter ≈ 0.55), TTS cannot help — its parametric smoothing actually **blurs** phonetic contrasts. When natural speech has poor separability (Chinese, inter ≈ 0.12), TTS's more consistent articulation **clarifies** phone boundaries.
-
-### 5.3 The Saturation Hypothesis
-
-The Wav2Sem Fs channel is saturated for both languages: Wav2Bert's pretrained encoder extracts BERT-level semantics equally well from natural and TTS audio. The TTS advantage operates entirely through the **Fp channel** — the frame-level phonetic residual that encodes how clearly (or not) each phone is articulated.
+**关键洞见**: 中英文不对称由**语音特征的天花板效应**驱动：
+- 英文自然语音已达到近最优的视位可分离性（inter_class = 0.55）
+- 中文自然语音的可分离性较差（inter_class = 0.12）
+- TTS 提升了中文（inter 达到 0.18），但降低了英文（inter 降至 0.38）
+- Fs 通道不产生额外贡献——两种语言均已饱和
 
 ---
 
-## 6. Files & Reproducibility
+## 5. 理论含义
 
-### Local Results (committed to repo)
+### 5.1 主要发现
+
+**TTS 仅在自然语音音素发音不清晰时才能改善唇形同步。** 关键量不是语义通道 Fs，而是语音通道 Fp——具体而言，是 HuBERT 中高层中声学信号对音素类别的区分度。
+
+### 5.2 机制模型
+
+```
+TTS 增益大小
+    ↑
+    │ 大（dz=0.79）━━ 中文
+    │ ┌──────────────────────────┐
+    │ │ inter: 0.12 → 0.18 (+49%)│  ← TTS 澄清了含混的音素
+    │ └──────────────────────────┘
+    │                    ●
+    │                    天花板效应
+    │              ┌──────────────────────────┐
+    │ 小/无（dz=0.31）│ inter: 0.55 → 0.38 (−32%)│  ← TTS 模糊了本已清晰的音素
+    │              └──────────────────────────┘
+    └──────────────────→ 自然语音 inter_class_dist
+        差 ← 语音可分离性 → 好
+```
+
+当自然语音已具备高语音可分离性时（英文，inter ≈ 0.55），TTS 无法提供帮助——其参数化平滑反而**模糊**了语音对比。当自然语音的可分离性较差时（中文，inter ≈ 0.12），TTS 更一致的发音**澄清**了音素边界。
+
+### 5.3 饱和假说
+
+Wav2Sem 的 Fs 通道对两种语言均已饱和：Wav2Bert 预训练编码器从自然和 TTS 音频中同等有效地提取 BERT 级别的语义。TTS 优势完全运作于 **Fp 通道**——即编码每个音素发音清晰度（或不清晰度）的逐帧语音残差。
+
+---
+
+## 6. 可复现代码与数据
+
+### 本地结果文件（已提交）
+
 ```
 data/
 ├── english_wav2sem_analysis/
-│   ├── english_wav2sem_gate1_gate1.json      # Gate 1 per-seed results
-│   ├── seed_42/                               # Ditto SyncNet per-sample scores
+│   ├── english_wav2sem_gate1_gate1.json      # 第一关逐种子结果
+│   ├── seed_42/                               # Ditto SyncNet 逐样本分数
 │   ├── seed_43/
 │   └── seed_44/
 ├── wav2sem_analysis/
-│   └── metrics/separability_metrics.json      # Chinese separability (reference)
+│   └── metrics/separability_metrics.json      # 中文可分离性（参考基准）
 ├── wav2sem_analysis_en/
-│   ├── manifest/alignment.json                # MFA alignment manifest
-│   ├── mfa_textgrid/*.TextGrid                # 13 TextGrid files
+│   ├── manifest/alignment.json                # MFA 对齐清单
+│   ├── mfa_textgrid/*.TextGrid                # 13 个 TextGrid 文件
 │   ├── metrics/
-│   │   ├── separability_metrics.json          # HuBERT + XLS-R separability
-│   │   ├── oracle_fs.json                     # BERT CLS oracle Fs
-│   │   ├── wav2sem_fs.json                    # Wav2Sem inferred Fs
-│   │   └── oracle_fd_separability.json        # Fd three-tier analysis
-│   └── embeddings/                             # 52 .npy files (26 HuBERT + 26 XLS-R)
-├── data/audio_en/                             # 13 natural WAV files
-└── data/audio_en_qwen3_tts/                   # 13 TTS WAV files
+│   │   ├── separability_metrics.json          # HuBERT + XLS-R 可分离性
+│   │   ├── oracle_fs.json                     # BERT CLS 甲骨文 Fs
+│   │   ├── wav2sem_fs.json                    # Wav2Sem 推断 Fs
+│   │   └── oracle_fd_separability.json        # Fd 三档分析
+│   └── embeddings/                             # 52 个 .npy（26 HuBERT + 26 XLS-R）
+├── data/audio_en/                             # 13 个自然音频 WAV
+└── data/audio_en_qwen3_tts/                   # 13 个 TTS 音频 WAV
 ```
 
-### Key Scripts Modified/Created
-| Script | Purpose |
-|---|---|
-| `28_prepare_english_alignment.py` | MFA TextGrid→IPA→viseme manifest builder (full rewrite) |
-| `15_extract_ssl_embeddings.py` | Added `manifest` key support |
-| `29_oracle_fs_bert.py` | BERT CLS oracle Fs extraction |
-| `32_wav2sem_infer_fs.py` | Wav2Sem pretrained inference |
-| `31_oracle_fd_separability.py` | Fd three-tier fusion analysis |
-| `26_prepare_english_pairs.py` | English pair manifest (NEW) |
+### 新增/修改的关键脚本
 
-### Git History (last 10 commits)
+| 脚本 | 功能 |
+|---|---|
+| `28_prepare_english_alignment.py` | MFA TextGrid→IPA→视位清单（完整重写） |
+| `15_extract_ssl_embeddings.py` | 新增 `manifest` 键支持 |
+| `29_oracle_fs_bert.py` | BERT CLS 甲骨文 Fs 提取 |
+| `32_wav2sem_infer_fs.py` | Wav2Sem 预训练权重推断 |
+| `31_oracle_fd_separability.py` | Fd 三档融合分析 |
+| `26_prepare_english_pairs.py` | 英文配对清单（新） |
+
+### 最近 10 次 commit
+
 ```
 68ff4ae chore: save all local changes before downloading results
 a4068be feat(28): MFA TextGrid + IPA→viseme pipeline for English
@@ -328,23 +331,23 @@ a93f0af test(29): oracle Fs BERT + English compatibility
 
 ---
 
-## 7. Discussion & Limitations
+## 7. 讨论与局限
 
-### Strengths
-1. **Both semantic and phonetic channels tested** — Fs via Wav2Sem pretrained weights, Fp via HuBERT/XLS-R separability
-2. **Cross-model robustness** — findings consistent across HuBERT (monolingual) and XLS-R (multilingual)
-3. **Three-tier Fd fusion** — quantifies Fs contribution to separability beyond raw features
-4. **Per-sample mediation test** — direct correlation of phonetic quality with SyncNet performance
+### 研究优势
+1. **语义与语音双通道测试**——Fs 通过 Wav2Sem 预训练权重，Fp 通过 HuBERT/XLS-R 可分离性
+2. **跨模型稳健性**——发现在单语（HuBERT）和多语（XLS-R）模型间一致
+3. **三档 Fd 融合**——量化了 Fs 在原始特征之上对可分离性的贡献
+4. **逐样本中介检验**——直接关联语音质量与 SyncNet 表现
 
-### Limitations
-1. **Small sample (n=13)** — limited statistical power for per-sample correlations
-2. **Single TTS model** — Qwen3-TTS only; other TTS engines may produce different phonetic profiles
-3. **Wav2Sem is English-only** — Chinese Fs channel was not tested cross-lingually
-4. **Single acoustic model (MFA english_mfa)** — different aligners may produce different phone boundaries
+### 局限性
+1. **样本量小（n=13）**——逐样本相关分析统计检验力不足
+2. **单一 TTS 模型**——仅使用 Qwen3-TTS；其他 TTS 引擎可能产生不同的语音特征
+3. **Wav2Sem 仅支持英文**——中文 Fs 通道未能跨语言测试
+4. **单一声学模型（MFA english_mfa）**——不同对齐器可能产生不同的音素边界
 
-### Future Directions
-1. Test multiple TTS engines on English to see if the phonetic degradation is model-specific
-2. Fine-tune a Chinese Wav2Sem to test Fs saturation cross-lingually
-3. Use the Chinese MFA alignment to run the same Fd three-tier analysis on Chinese
-4. Increase sample size (e.g., LibriSpeech-100) for better-powered per-sample correlations
-5. Test intermediate languages (e.g., Japanese, Korean) to explore the natural articulation continuum
+### 未来方向
+1. 在英文上测试多种 TTS 引擎，判断语音退化是否是模型特异的
+2. 微调中文版 Wav2Sem，跨语言测试 Fs 饱和假说
+3. 使用中文 MFA 对齐运行相同的 Fd 三档分析
+4. 扩大样本量（如 LibriSpeech-100）以获得更有检验力的逐样本相关
+5. 测试中间语言（如日文、韩文），探索自然发音清晰度的连续谱
