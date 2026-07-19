@@ -1,0 +1,259 @@
+{
+  "config_override": "scripts/configs/english_wav2sem.yaml",
+  "conditions": [
+    "natural",
+    "tts"
+  ],
+  "expected_sample_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "successful_by_condition": {
+    "natural": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "tts": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ]
+  },
+  "complete_case_ids": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "incomplete_ids": [],
+  "complete": true,
+  "samples_total": 26,
+  "samples_ok": 26,
+  "samples_failed": 0,
+  "results": {
+    "natural:1": {
+      "sample_id": 1,
+      "condition": "natural",
+      "sync_c": 6.038,
+      "sync_d": 8.736,
+      "av_offset": 1
+    },
+    "natural:2": {
+      "sample_id": 2,
+      "condition": "natural",
+      "sync_c": 6.894,
+      "sync_d": 8.105,
+      "av_offset": 0
+    },
+    "natural:3": {
+      "sample_id": 3,
+      "condition": "natural",
+      "sync_c": 7.261,
+      "sync_d": 7.368,
+      "av_offset": 0
+    },
+    "natural:4": {
+      "sample_id": 4,
+      "condition": "natural",
+      "sync_c": 4.512,
+      "sync_d": 10.962,
+      "av_offset": 1
+    },
+    "natural:5": {
+      "sample_id": 5,
+      "condition": "natural",
+      "sync_c": 7.275,
+      "sync_d": 7.43,
+      "av_offset": 1
+    },
+    "natural:6": {
+      "sample_id": 6,
+      "condition": "natural",
+      "sync_c": 7.551,
+      "sync_d": 7.452,
+      "av_offset": 1
+    },
+    "natural:7": {
+      "sample_id": 7,
+      "condition": "natural",
+      "sync_c": 7.574,
+      "sync_d": 7.36,
+      "av_offset": 1
+    },
+    "natural:8": {
+      "sample_id": 8,
+      "condition": "natural",
+      "sync_c": 5.338,
+      "sync_d": 9.178,
+      "av_offset": 0
+    },
+    "natural:9": {
+      "sample_id": 9,
+      "condition": "natural",
+      "sync_c": 7.316,
+      "sync_d": 7.735,
+      "av_offset": 1
+    },
+    "natural:10": {
+      "sample_id": 10,
+      "condition": "natural",
+      "sync_c": 7.464,
+      "sync_d": 7.761,
+      "av_offset": 1
+    },
+    "natural:11": {
+      "sample_id": 11,
+      "condition": "natural",
+      "sync_c": 6.487,
+      "sync_d": 8.07,
+      "av_offset": 1
+    },
+    "natural:12": {
+      "sample_id": 12,
+      "condition": "natural",
+      "sync_c": 5.651,
+      "sync_d": 8.105,
+      "av_offset": 1
+    },
+    "natural:13": {
+      "sample_id": 13,
+      "condition": "natural",
+      "sync_c": 6.689,
+      "sync_d": 7.964,
+      "av_offset": 0
+    },
+    "tts:1": {
+      "sample_id": 1,
+      "condition": "tts",
+      "sync_c": 6.329,
+      "sync_d": 8.308,
+      "av_offset": 1
+    },
+    "tts:2": {
+      "sample_id": 2,
+      "condition": "tts",
+      "sync_c": 7.542,
+      "sync_d": 7.621,
+      "av_offset": 0
+    },
+    "tts:3": {
+      "sample_id": 3,
+      "condition": "tts",
+      "sync_c": 6.903,
+      "sync_d": 7.558,
+      "av_offset": 0
+    },
+    "tts:4": {
+      "sample_id": 4,
+      "condition": "tts",
+      "sync_c": 4.757,
+      "sync_d": 10.454,
+      "av_offset": 1
+    },
+    "tts:5": {
+      "sample_id": 5,
+      "condition": "tts",
+      "sync_c": 8.114,
+      "sync_d": 7.214,
+      "av_offset": 1
+    },
+    "tts:6": {
+      "sample_id": 6,
+      "condition": "tts",
+      "sync_c": 6.685,
+      "sync_d": 8.27,
+      "av_offset": 0
+    },
+    "tts:7": {
+      "sample_id": 7,
+      "condition": "tts",
+      "sync_c": 7.365,
+      "sync_d": 7.607,
+      "av_offset": 1
+    },
+    "tts:8": {
+      "sample_id": 8,
+      "condition": "tts",
+      "sync_c": 6.471,
+      "sync_d": 8.127,
+      "av_offset": 0
+    },
+    "tts:9": {
+      "sample_id": 9,
+      "condition": "tts",
+      "sync_c": 7.577,
+      "sync_d": 7.795,
+      "av_offset": 1
+    },
+    "tts:10": {
+      "sample_id": 10,
+      "condition": "tts",
+      "sync_c": 7.286,
+      "sync_d": 7.972,
+      "av_offset": 1
+    },
+    "tts:11": {
+      "sample_id": 11,
+      "condition": "tts",
+      "sync_c": 6.918,
+      "sync_d": 7.679,
+      "av_offset": 0
+    },
+    "tts:12": {
+      "sample_id": 12,
+      "condition": "tts",
+      "sync_c": 5.421,
+      "sync_d": 8.564,
+      "av_offset": 1
+    },
+    "tts:13": {
+      "sample_id": 13,
+      "condition": "tts",
+      "sync_c": 6.63,
+      "sync_d": 7.737,
+      "av_offset": 1
+    }
+  },
+  "failed": []
+}

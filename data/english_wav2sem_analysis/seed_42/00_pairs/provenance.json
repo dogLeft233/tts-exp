@@ -1,0 +1,13 @@
+{
+  "run_id": "english_wav2sem_gate1_s42",
+  "natural_manifest": "data/data/audio_en/manifest.json",
+  "natural_manifest_sha256": "341dced1431809e113208dc521655697515df2f20f3f55820a60872c7b1c3c61",
+  "tts_manifest": "data/data/audio_en_qwen3_tts/manifest.json",
+  "tts_manifest_sha256": "19c9686cda3a802f730deac38ed1acb9a3c284030ee636c8fe740f3914ae536a",
+  "canonicalization": {
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "codec": "pcm_s16le",
+    "loudness_normalization": false
+  }
+}

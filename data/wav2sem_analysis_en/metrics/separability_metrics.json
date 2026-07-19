@@ -1,0 +1,650 @@
+{
+  "meta": {
+    "models": [
+      "xlsr"
+    ],
+    "layers": [
+      0,
+      6,
+      11,
+      12
+    ],
+    "levels": [
+      "viseme"
+    ],
+    "num_embedding_files": 52
+  },
+  "results": [
+    {
+      "model": "xlsr",
+      "layer": 0,
+      "level": "viseme",
+      "condition": "natural",
+      "variant": "raw",
+      "intra_class_dist": 0.29271623262992275,
+      "inter_class_dist": 0.1709691882133484,
+      "fisher_ratio": 7.923372699747412,
+      "silhouette": -0.14790061116218567,
+      "probe_accuracy": 0.6409824280207097,
+      "probe_f1_macro": 0.45339980468194785,
+      "probe_f1_weighted": 0.6292775645742087,
+      "confusable_pairs": [
+        {
+          "class_a": "cdsz",
+          "class_b": "kg",
+          "centroid_distance": 0.02362346649169922
+        },
+        {
+          "class_a": "cdsz",
+          "class_b": "fv",
+          "centroid_distance": 0.025936484336853027
+        },
+        {
+          "class_a": "kg",
+          "class_b": "pbmv",
+          "centroid_distance": 0.027059197425842285
+        },
+        {
+          "class_a": "fv",
+          "class_b": "kg",
+          "centroid_distance": 0.029779374599456787
+        },
+        {
+          "class_a": "ai",
+          "class_b": "i",
+          "centroid_distance": 0.03942304849624634
+        }
+      ],
+      "boundary_sharpness": 0.18506546300231183,
+      "segment_stability": 0.13758580739703818
+    },
+    {
+      "model": "xlsr",
+      "layer": 6,
+      "level": "viseme",
+      "condition": "natural",
+      "variant": "raw",
+      "intra_class_dist": 0.45074430337319005,
+      "inter_class_dist": 0.2736803889274597,
+      "fisher_ratio": 5.949047739006588,
+      "silhouette": -0.07565644383430481,
+      "probe_accuracy": 0.815629856917116,
+      "probe_f1_macro": 0.6590028457052011,
+      "probe_f1_weighted": 0.8069795439898011,
+      "confusable_pairs": [
+        {
+          "class_a": "ai",
+          "class_b": "i",
+          "centroid_distance": 0.07499819993972778
+        },
+        {
+          "class_a": "kg",
+          "class_b": "pbmv",
+          "centroid_distance": 0.09209001064300537
+        },
+        {
+          "class_a": "cdsz",
+          "class_b": "kg",
+          "centroid_distance": 0.09265762567520142
+        },
+        {
+          "class_a": "cdsz",
+          "class_b": "fv",
+          "centroid_distance": 0.09547221660614014
+        },
+        {
+          "class_a": "e",
+          "class_b": "i",
+          "centroid_distance": 0.1070907711982727
+        }
+      ],
+      "boundary_sharpness": 0.25799707896908297,
+      "segment_stability": 0.22994776303388847
+    },
+    {
+      "model": "xlsr",
+      "layer": 11,
+      "level": "viseme",
+      "condition": "natural",
+      "variant": "raw",
+      "intra_class_dist": 0.42070647386404186,
+      "inter_class_dist": 0.19845686852931976,
+      "fisher_ratio": 4.54127699038626,
+      "silhouette": -0.06621292233467102,
+      "probe_accuracy": 0.8145400035814998,
+      "probe_f1_macro": 0.6752408907881783,
+      "probe_f1_weighted": 0.8060007599082267,
+      "confusable_pairs": [
+        {
+          "class_a": "cdsz",
+          "class_b": "fv",
+          "centroid_distance": 0.054017841815948486
+        },
+        {
+          "class_a": "cdsz",
+          "class_b": "kg",
+          "centroid_distance": 0.05425184965133667
+        },
+        {
+          "class_a": "kg",
+          "class_b": "pbmv",
+          "centroid_distance": 0.054652392864227295
+        },
+        {
+          "class_a": "cdsz",
+          "class_b": "pbmv",
+          "centroid_distance": 0.06406110525131226
+        },
+        {
+          "class_a": "fv",
+          "class_b": "pbmv",
+          "centroid_distance": 0.06738179922103882
+        }
+      ],
+      "boundary_sharpness": 0.22876934809510552,
+      "segment_stability": 0.21426766637914427
+    },
+    {
+      "model": "xlsr",
+      "layer": 12,
+      "level": "viseme",
+      "condition": "natural",
+      "variant": "raw",
+      "intra_class_dist": 0.41054665583830613,
+      "inter_class_dist": 0.18974371254444122,
+      "fisher_ratio": 4.478473886816797,
+      "silhouette": -0.06594374030828476,
+      "probe_accuracy": 0.8152989273211366,
+      "probe_f1_macro": 0.6590651034318229,
+      "probe_f1_weighted": 0.8062456497224643,
+      "confusable_pairs": [
+        {
+          "class_a": "kg",
+          "class_b": "pbmv",
+          "centroid_distance": 0.05315297842025757
+        },
+        {
+          "class_a": "cdsz",
+          "class_b": "kg",
+          "centroid_distance": 0.05326956510543823
+        },
+        {
+          "class_a": "cdsz",
+          "class_b": "fv",
+          "centroid_distance": 0.05414557456970215
+        },
+        {
+          "class_a": "cdsz",
+          "class_b": "pbmv",
+          "centroid_distance": 0.06290757656097412
+        },
+        {
+          "class_a": "fv",
+          "class_b": "pbmv",
+          "centroid_distance": 0.06610280275344849
+        }
+      ],
+      "boundary_sharpness": 0.22142703706194844,
+      "segment_stability": 0.20752085561974556
+    }
+  ],
+  "comparisons": [
+    {
+      "metric": "intra_class_dist",
+      "model": "xlsr",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.2529922077439098,
+      "tts_mean": 0.34336521876327725,
+      "delta": -0.09037301101936744,
+      "p_perm": 0.0005,
+      "ci_95": [
+        -0.11104073893353887,
+        -0.07156637452812288
+      ],
+      "cohens_d": -2.38008889245032,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "inter_class_dist",
+      "model": "xlsr",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.22853177671249097,
+      "tts_mean": 0.09266794874117924,
+      "delta": 0.13586382797131172,
+      "p_perm": 0.0005,
+      "ci_95": [
+        0.11702755544907772,
+        0.15574310065175478
+      ],
+      "cohens_d": 3.6446455884985434,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "fisher_ratio",
+      "model": "xlsr",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 2.967409417990997,
+      "tts_mean": 1.1577265123665785,
+      "delta": 1.809682905624418,
+      "p_perm": 0.0005,
+      "ci_95": [
+        1.4643805291208172,
+        2.2431499338394647
+      ],
+      "cohens_d": 2.355984820246758,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "silhouette",
+      "model": "xlsr",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": -0.1422159611605681,
+      "tts_mean": -0.324608367223006,
+      "delta": 0.18239240606243795,
+      "p_perm": 0.0005,
+      "ci_95": [
+        0.14914075033739208,
+        0.22006801933479986
+      ],
+      "cohens_d": 2.677492848319999,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "boundary_sharpness",
+      "model": "xlsr",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.18506546300231186,
+      "tts_mean": 0.15249503594228736,
+      "delta": 0.032570427060024484,
+      "p_perm": 0.0005,
+      "ci_95": [
+        0.025745918021184113,
+        0.03984488231126177
+      ],
+      "cohens_d": 2.4696301613483977,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "segment_stability",
+      "model": "xlsr",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.1375858073970382,
+      "tts_mean": 0.13994766291289606,
+      "delta": -0.0023618555158578555,
+      "p_perm": 0.442,
+      "ci_95": [
+        -0.007864447162636769,
+        0.003431398860182252
+      ],
+      "cohens_d": -0.21463748921034276,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.5583157894736842,
+      "significant_fdr": false
+    },
+    {
+      "metric": "intra_class_dist",
+      "model": "xlsr",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.42940412563282054,
+      "tts_mean": 0.5418490385234137,
+      "delta": -0.11244491289059319,
+      "p_perm": 0.0005,
+      "ci_95": [
+        -0.1348375848302065,
+        -0.0916634977938464
+      ],
+      "cohens_d": -2.7016530219887427,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "inter_class_dist",
+      "model": "xlsr",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.35661602249512303,
+      "tts_mean": 0.18786530941724777,
+      "delta": 0.1687507130778753,
+      "p_perm": 0.0005,
+      "ci_95": [
+        0.14629615863355305,
+        0.1909462228703957
+      ],
+      "cohens_d": 3.9574758118796733,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "fisher_ratio",
+      "model": "xlsr",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 2.0724571160011447,
+      "tts_mean": 1.149935623804832,
+      "delta": 0.9225214921963131,
+      "p_perm": 0.0005,
+      "ci_95": [
+        0.773526498499054,
+        1.0864165660435496
+      ],
+      "cohens_d": 2.9699181083542356,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "silhouette",
+      "model": "xlsr",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": -0.0760464051989122,
+      "tts_mean": -0.23233548666422182,
+      "delta": 0.15628908146530962,
+      "p_perm": 0.0005,
+      "ci_95": [
+        0.13271889856998595,
+        0.18023549982865983
+      ],
+      "cohens_d": 3.4725776392513623,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "boundary_sharpness",
+      "model": "xlsr",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.257997078969083,
+      "tts_mean": 0.24417982164666288,
+      "delta": 0.013817257322420144,
+      "p_perm": 0.008,
+      "ci_95": [
+        0.006062465808998557,
+        0.020685497473206138
+      ],
+      "cohens_d": 0.9849910847239289,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.010666666666666666,
+      "significant_fdr": true
+    },
+    {
+      "metric": "segment_stability",
+      "model": "xlsr",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.2299477630338884,
+      "tts_mean": 0.230709072109899,
+      "delta": -0.0007613090760105489,
+      "p_perm": 0.8825,
+      "ci_95": [
+        -0.011245946170413666,
+        0.009960998280758797
+      ],
+      "cohens_d": -0.03669075511731949,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.8825,
+      "significant_fdr": false
+    },
+    {
+      "metric": "intra_class_dist",
+      "model": "xlsr",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.40468011484669025,
+      "tts_mean": 0.4762784474252999,
+      "delta": -0.07159833257860972,
+      "p_perm": 0.0005,
+      "ci_95": [
+        -0.09428687039772968,
+        -0.049998033291186066
+      ],
+      "cohens_d": -1.6954711252616874,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "inter_class_dist",
+      "model": "xlsr",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.28153022206746614,
+      "tts_mean": 0.1506544959086638,
+      "delta": 0.13087572615880233,
+      "p_perm": 0.0005,
+      "ci_95": [
+        0.11122140338501105,
+        0.1510197093280462
+      ],
+      "cohens_d": 3.4638204470781235,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "fisher_ratio",
+      "model": "xlsr",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 1.816378184586687,
+      "tts_mean": 1.1739099898875425,
+      "delta": 0.6424681946991448,
+      "p_perm": 0.0005,
+      "ci_95": [
+        0.5135764296861794,
+        0.7784313276720954
+      ],
+      "cohens_d": 2.5406431399695024,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "silhouette",
+      "model": "xlsr",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": -0.09464144592101757,
+      "tts_mean": -0.23640637271679366,
+      "delta": 0.14176492679577607,
+      "p_perm": 0.0005,
+      "ci_95": [
+        0.1100129118636967,
+        0.17563015279861596
+      ],
+      "cohens_d": 2.250081479225614,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "boundary_sharpness",
+      "model": "xlsr",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.22876934809510555,
+      "tts_mean": 0.22970255480133708,
+      "delta": -0.0009332067062315652,
+      "p_perm": 0.8755,
+      "ci_95": [
+        -0.011880501083944318,
+        0.009421404636871172
+      ],
+      "cohens_d": -0.04521494050189052,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.8825,
+      "significant_fdr": false
+    },
+    {
+      "metric": "segment_stability",
+      "model": "xlsr",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.21426766637914424,
+      "tts_mean": 0.21709813013869989,
+      "delta": -0.002830463759555633,
+      "p_perm": 0.6565,
+      "ci_95": [
+        -0.014258669386823398,
+        0.00823526252085489
+      ],
+      "cohens_d": -0.12691019994452618,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.7878000000000001,
+      "significant_fdr": false
+    },
+    {
+      "metric": "intra_class_dist",
+      "model": "xlsr",
+      "layer": 12,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.397004864909328,
+      "tts_mean": 0.4626333560699072,
+      "delta": -0.06562849116057921,
+      "p_perm": 0.0005,
+      "ci_95": [
+        -0.08686512420073342,
+        -0.04609499685186552
+      ],
+      "cohens_d": -1.6952644187772536,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "inter_class_dist",
+      "model": "xlsr",
+      "layer": 12,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.2731527021298042,
+      "tts_mean": 0.14384527791004914,
+      "delta": 0.12930742421975502,
+      "p_perm": 0.0005,
+      "ci_95": [
+        0.11096249546569127,
+        0.14781331123354344
+      ],
+      "cohens_d": 3.6856116303832986,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "fisher_ratio",
+      "model": "xlsr",
+      "layer": 12,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 1.807827168166288,
+      "tts_mean": 1.182461417345491,
+      "delta": 0.6253657508207972,
+      "p_perm": 0.0005,
+      "ci_95": [
+        0.4980316577685287,
+        0.7573455197294249
+      ],
+      "cohens_d": 2.534651274143573,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "silhouette",
+      "model": "xlsr",
+      "layer": 12,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": -0.09473073582809705,
+      "tts_mean": -0.23312537028239325,
+      "delta": 0.13839463445429617,
+      "p_perm": 0.0005,
+      "ci_95": [
+        0.10658959751554693,
+        0.17211379008546757
+      ],
+      "cohens_d": 2.2069684985154407,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.0007058823529411765,
+      "significant_fdr": true
+    },
+    {
+      "metric": "boundary_sharpness",
+      "model": "xlsr",
+      "layer": 12,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.22142703706194844,
+      "tts_mean": 0.22028273785394634,
+      "delta": 0.001144299208002118,
+      "p_perm": 0.8355,
+      "ci_95": [
+        -0.009666099445436194,
+        0.011132899291337223
+      ],
+      "cohens_d": 0.056519474446102495,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.8825,
+      "significant_fdr": false
+    },
+    {
+      "metric": "segment_stability",
+      "model": "xlsr",
+      "layer": 12,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.20752085561974556,
+      "tts_mean": 0.20940820255932777,
+      "delta": -0.0018873469395821528,
+      "p_perm": 0.756,
+      "ci_95": [
+        -0.012920566233158376,
+        0.008847478425683848
+      ],
+      "cohens_d": -0.08809314528379703,
+      "n_pairs": 13,
+      "fdr_corrected_p": 0.8639999999999999,
+      "significant_fdr": false
+    }
+  ],
+  "per_sample": {}
+}

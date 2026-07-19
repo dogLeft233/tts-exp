@@ -137,6 +137,12 @@ ENGLISH_STUDY_SAMPLES: list[int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 ENGLISH_SILENCE_LABELS: tuple[str, ...] = ("h#", "sil", "sp", "spn", "")
 """LibriSpeech .phn silence / pause markers to exclude from viseme metrics."""
 
+OUTPUT_BASE_ZH: Path = Path(__file__).resolve().parent.parent / "data" / "wav2sem_analysis_zh"
+"""Root output directory for Chinese (AISHELL-1) analysis artefacts with MFA alignment."""
+
+CHINESE_STUDY_SAMPLES: list[int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+"""Chinese study set: 13 AISHELL-1 samples (no exclusions in this pass)."""
+
 TARGET_SR: int = 16000
 """Target sample rate for all audio processing."""
 

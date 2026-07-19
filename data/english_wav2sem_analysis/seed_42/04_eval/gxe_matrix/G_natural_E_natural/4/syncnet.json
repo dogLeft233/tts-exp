@@ -1,0 +1,11 @@
+{
+  "sync_c": 4.389,
+  "sync_d": 11.175,
+  "av_offset": 1,
+  "sample_id": 4,
+  "cell": "G_natural_E_natural",
+  "video_duration_s": 6.189,
+  "audio_duration_s": 6.125,
+  "tempo_ratio": 1.0,
+  "uniform_remux": true
+}

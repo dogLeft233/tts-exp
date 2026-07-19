@@ -1,0 +1,11 @@
+{
+  "sync_c": 7.533,
+  "sync_d": 7.787,
+  "av_offset": 1,
+  "sample_id": 9,
+  "cell": "G_tts_E_tts",
+  "video_duration_s": 6.784,
+  "audio_duration_s": 6.72,
+  "tempo_ratio": 1.0,
+  "uniform_remux": true
+}
