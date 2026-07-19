@@ -33,15 +33,14 @@ from pathlib import Path
 import yaml
 
 from tfg_feature_common import STUDY_SAMPLES
+from utils import load_config, resolve_repo_path
 
 RE_CONFIDENCE = re.compile(r"Confidence:\s+([\d.]+)")
 RE_MIN_DIST = re.compile(r"Min dist:\s+([\d.]+)")
 RE_AV_OFFSET = re.compile(r"AV offset:\s+(\d+)")
 
 
-def load_config(repo: Path) -> dict:
-    cfg_path = repo / "scripts" / "config.yaml"
-    return yaml.safe_load(cfg_path.read_text()) if cfg_path.exists() else {}
+# ---------------------------------------------------------------------------
 
 
 def parse_syncnet_output(stdout: str) -> dict | None:
@@ -160,6 +159,7 @@ def build_ffmpeg_command(
     output_path: Path,
     video_duration: float | None = None,
     audio_duration: float | None = None,
+    align_duration: bool = True,
 ) -> list[str]:
     """Build an audio-replacement command with optional timeline alignment."""
     command = [
@@ -172,7 +172,7 @@ def build_ffmpeg_command(
         "-map", "1:a:0",
         "-shortest",
     ]
-    if video_duration is not None and audio_duration is not None:
+    if align_duration and video_duration is not None and audio_duration is not None:
         if video_duration <= 0 or audio_duration <= 0:
             raise ValueError("media durations must be positive")
         tempo = audio_duration / video_duration
@@ -309,6 +309,11 @@ def main() -> None:
     ap = argparse.ArgumentParser(
         description="GxE audio matrix — separate TFG generation effects from SyncNet scorer biases"
     )
+    ap.add_argument("--config", default="")
+    ap.add_argument(
+        "--reuse-diagonal", action="store_true",
+        help="Reuse original diagonal scores instead of fair remux/re-evaluation",
+    )
     ap.add_argument("--run-id", required=True, help="Run identifier (e.g., aishell1_strict_20260707T081223Z)")
     ap.add_argument("--samples", default=",".join(str(s) for s in STUDY_SAMPLES),
                     help="Comma-separated sample IDs (default: STUDY_SAMPLES)")
@@ -324,7 +329,7 @@ def main() -> None:
         print(f"ERROR: run directory not found: {run_dir}")
         return
 
-    cfg = load_config(repo)
+    cfg = load_config(repo, args.config or None)
     conditions = cfg.get("ditto", {}).get("conditions", ["natural_raw", "tts_raw"])
     syncnet_dir = repo / cfg["paths"]["syncnet_repo"]
     syn_env = Path(cfg["paths"]["envs_dir"]) / "syncnet"
@@ -349,8 +354,19 @@ def main() -> None:
     videos = find_existing_videos(ditto_dir, axis_conditions)
     existing_results = find_existing_results(eval_base, axis_conditions)
 
-    audio_base = repo / "data" / "data" / "audio"
-    tts_audio_dir = run_dir / "02_tts"
+    input_stage = cfg.get("ditto", {}).get("input_stage")
+    if input_stage:
+        audio_base = run_dir / input_stage / "natural"
+        tts_audio_dir = run_dir / input_stage / "tts"
+    else:
+        audio_base = resolve_repo_path(
+            repo, cfg.get("paths", {}).get("audio_dir", "data/data/audio")
+        )
+        configured_tts = cfg.get("paths", {}).get("tts_audio_dir")
+        tts_audio_dir = (
+            resolve_repo_path(repo, configured_tts)
+            if configured_tts else run_dir / "02_tts"
+        )
 
     audio_sources = {}
     for ax, cond in axis_names.items():
@@ -399,7 +415,7 @@ def main() -> None:
                 ref_video_cond = gen_cond
                 eval_cond_name = gen_cond if is_diagonal else f"G_{gen_axis}_E_{eval_axis}"
 
-                if is_diagonal:
+                if is_diagonal and args.reuse_diagonal:
                     if gen_cond in existing_results and sid in existing_results[gen_cond]:
                         sample_results[cell_key] = {
                             k: existing_results[gen_cond][sid][k]
@@ -456,6 +472,10 @@ def main() -> None:
                         gxe_video,
                         video_duration=video_duration,
                         audio_duration=audio_duration,
+                        align_duration=not is_diagonal,
+                    )
+                    tempo_ratio = (
+                        audio_duration / video_duration if not is_diagonal else 1.0
                     )
                 except (subprocess.SubprocessError, ValueError) as exc:
                     failed.append({"sample_id": sid, "cell": cell_key, "error": str(exc)})
@@ -499,9 +519,19 @@ def main() -> None:
                         if parsed:
                             parsed["sample_id"] = sid
                             parsed["cell"] = cell_key
+                            parsed["video_duration_s"] = video_duration
+                            parsed["audio_duration_s"] = audio_duration
+                            parsed["tempo_ratio"] = tempo_ratio
+                            parsed["uniform_remux"] = True
                             cached_json.write_text(json.dumps(parsed, indent=2))
                             sample_results[cell_key] = {
-                                k: parsed[k] for k in ["sync_c", "sync_d", "av_offset"] if k in parsed
+                                k: parsed[k]
+                                for k in [
+                                    "sync_c", "sync_d", "av_offset",
+                                    "video_duration_s", "audio_duration_s",
+                                    "tempo_ratio", "uniform_remux",
+                                ]
+                                if k in parsed
                             }
                             c, d = parsed["sync_c"], parsed["sync_d"]
                             print(f"  -> Sync-C={c:.3f} Sync-D={d:.3f}")
@@ -519,6 +549,8 @@ def main() -> None:
 
     output_json = {
         "run_id": args.run_id,
+        "config_override": args.config or None,
+        "uniform_remux": not args.reuse_diagonal,
         "samples": sample_ids,
         "matrix_axes": matrix_axes,
         "results": results_by_sample,

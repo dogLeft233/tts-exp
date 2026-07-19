@@ -1,0 +1,871 @@
+{
+  "run_id": "english_wav2sem_gate1_s43",
+  "config": "scripts/configs/english_wav2sem.yaml",
+  "samples_expected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "samples_ok": 13,
+  "samples_failed": 0,
+  "complete": true,
+  "image_identity_groups": [
+    [
+      3,
+      11
+    ],
+    [
+      8,
+      12
+    ],
+    [
+      9,
+      13
+    ]
+  ],
+  "records": [
+    {
+      "sample_id": 1,
+      "librispeech_id": "2830-3980-0036",
+      "speaker_id": 2830,
+      "chapter_id": 3980,
+      "text": "WHEREVER THE MEANS OF GRACE ARE FOUND THERE IS THE HOLY CHURCH EVEN THOUGH ANTICHRIST REIGNS THERE",
+      "image": "data/data/image/1.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6",
+      "natural": {
+        "source": "data/data/audio_en/1.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/natural/1.wav",
+        "source_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.765,
+          "frames": 92240,
+          "peak": 0.64242554,
+          "rms": 0.07835304,
+          "clipped_fraction": 0.0,
+          "sha256": "9a5f837c42c6f1005ab66ad7a92c6826c81ef8fcd3f446537da38577fd4ba270"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.765,
+          "frames": 92240,
+          "peak": 0.64242554,
+          "rms": 0.07835304,
+          "clipped_fraction": 0.0,
+          "sha256": "451a37ac2d45dc883ac24690236e1eb571ef7e5e3335e207f74b662d6d0b7477"
+        }
+      },
+      "tts": {
+        "source": "data/data/audio_en_qwen3_tts/1.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/tts/1.wav",
+        "source_qc": {
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.32,
+          "frames": 151680,
+          "peak": 0.34176636,
+          "rms": 0.04352518,
+          "clipped_fraction": 0.0,
+          "sha256": "b240d0dd1b62511b5cceb33675a826ec8e388848f8e08617e41ca8a955d0abf3"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.32,
+          "frames": 101120,
+          "peak": 0.34103394,
+          "rms": 0.04349884,
+          "clipped_fraction": 0.0,
+          "sha256": "4a5b67e94b618d1ba881f4a0a22ba2922ee3316554b1189e7bd328d683f4b1dd"
+        },
+        "provider": "dashscope_vc",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice_id": "qwen-tts-vc-ttseng260718_1-voice-20260718155449510-37a7"
+      }
+    },
+    {
+      "sample_id": 2,
+      "librispeech_id": "1995-1837-0029",
+      "speaker_id": 1995,
+      "chapter_id": 1837,
+      "text": "HE DARTED THROUGH THE TREES AND PAUSED A TALL MAN STRONGLY BUT SLIMLY MADE",
+      "image": "data/data/image/2.png",
+      "image_sha256": "955d5de1f434db4402fcaec6b8bcbebda66dd7d9c99a805430fbaf53d190676f",
+      "natural": {
+        "source": "data/data/audio_en/2.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/natural/2.wav",
+        "source_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.58,
+          "frames": 89280,
+          "peak": 0.32312012,
+          "rms": 0.06393677,
+          "clipped_fraction": 0.0,
+          "sha256": "ad23f6f2750df58842c0a8e90bbee3d44e967c9610496e7e6e74a4de299d702e"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.58,
+          "frames": 89280,
+          "peak": 0.32312012,
+          "rms": 0.06393677,
+          "clipped_fraction": 0.0,
+          "sha256": "75e4d80d582cdfa3aea7b30f7f0d3aaaf7f525a61c942bb13ca91b72cc372b2f"
+        }
+      },
+      "tts": {
+        "source": "data/data/audio_en_qwen3_tts/2.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/tts/2.wav",
+        "source_qc": {
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.52,
+          "frames": 132480,
+          "peak": 0.42184448,
+          "rms": 0.07423402,
+          "clipped_fraction": 0.0,
+          "sha256": "f0ee3726664cc7c99541f67f7f00ac85982ec87ecb2f4dc6a27fc7266c62db3c"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.52,
+          "frames": 88320,
+          "peak": 0.42330933,
+          "rms": 0.07422108,
+          "clipped_fraction": 0.0,
+          "sha256": "5267c6746231ed196a01d77b77de805b96c419e17b3f2aa6eddb24a3d1cc1286"
+        },
+        "provider": "dashscope_vc",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice_id": "qwen-tts-vc-ttseng260718_2-voice-20260718155453287-9a34"
+      }
+    },
+    {
+      "sample_id": 3,
+      "librispeech_id": "3729-6852-0036",
+      "speaker_id": 3729,
+      "chapter_id": 6852,
+      "text": "WHEN THE KING COMES TO PARIS EVERYBODY CALLS OUT VIVE LE ROI",
+      "image": "data/data/image/3.png",
+      "image_sha256": "f425463ba279fea88ac807d02bf048fd2f891d4efae1c8903eae3afc22d216c9",
+      "natural": {
+        "source": "data/data/audio_en/3.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/natural/3.wav",
+        "source_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.24,
+          "frames": 83840,
+          "peak": 0.58441162,
+          "rms": 0.06026927,
+          "clipped_fraction": 0.0,
+          "sha256": "4e2e0febbdc319bd33f85b63cdb8c29dba8abaed43a7fe8e3bfa2cf4a5e8e8bb"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.24,
+          "frames": 83840,
+          "peak": 0.58441162,
+          "rms": 0.06026927,
+          "clipped_fraction": 0.0,
+          "sha256": "79f938b1f22576cbf023ce90cd3e14529eb43913f9136712e3e2110df29eb4e3"
+        }
+      },
+      "tts": {
+        "source": "data/data/audio_en_qwen3_tts/3.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/tts/3.wav",
+        "source_qc": {
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 4.8,
+          "frames": 115200,
+          "peak": 0.33590698,
+          "rms": 0.03873069,
+          "clipped_fraction": 0.0,
+          "sha256": "8faa926a18947eacffe3160a156f3fb6cb5172a364769b881f9559bc023ef672"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 4.8,
+          "frames": 76800,
+          "peak": 0.33587646,
+          "rms": 0.03871399,
+          "clipped_fraction": 0.0,
+          "sha256": "774b79f38f0e18b76daea76f7234ddd58a60434793be7a64fdb4e49a27dde86e"
+        },
+        "provider": "dashscope_vc",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice_id": "qwen-tts-vc-ttseng260718_3-voice-20260718155456604-0213"
+      }
+    },
+    {
+      "sample_id": 4,
+      "librispeech_id": "2094-142345-0049",
+      "speaker_id": 2094,
+      "chapter_id": 142345,
+      "text": "NO SIR HE ISN'T HE'S GONE TO ROSSETER TO SEE MISTER WEST THE FACTOR ABOUT THE WOOL",
+      "image": "data/data/image/4.png",
+      "image_sha256": "1e066742fe17a9cef6fc1752bc904c9927b6fbba2608084d7fa5ea7ed8e79df2",
+      "natural": {
+        "source": "data/data/audio_en/4.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/natural/4.wav",
+        "source_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.125,
+          "frames": 98000,
+          "peak": 0.5463562,
+          "rms": 0.06353946,
+          "clipped_fraction": 0.0,
+          "sha256": "5be42a68fc9ca41bcbdd2fb6c69ef443924cd01588e893855c793f7f681ceac5"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.125,
+          "frames": 98000,
+          "peak": 0.5463562,
+          "rms": 0.06353946,
+          "clipped_fraction": 0.0,
+          "sha256": "21699df9d2c024b1ad851b3e6858e53ab1ddacb2ca8aed7f502cfd87d4959c6d"
+        }
+      },
+      "tts": {
+        "source": "data/data/audio_en_qwen3_tts/4.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/tts/4.wav",
+        "source_qc": {
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.12,
+          "frames": 122880,
+          "peak": 0.37301636,
+          "rms": 0.05284204,
+          "clipped_fraction": 0.0,
+          "sha256": "3219300f764717f7b865b8a8c514f67190cd6930b4ab209dfb5c069acee7e496"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.12,
+          "frames": 81920,
+          "peak": 0.37161255,
+          "rms": 0.05281968,
+          "clipped_fraction": 0.0,
+          "sha256": "f9178143c82535964b32889e4d4f952bc694f3974d69594a437caafaed197783"
+        },
+        "provider": "dashscope_vc",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice_id": "qwen-tts-vc-ttseng260718_4-voice-20260718155500035-355d"
+      }
+    },
+    {
+      "sample_id": 5,
+      "librispeech_id": "1284-1180-0020",
+      "speaker_id": 1284,
+      "chapter_id": 1180,
+      "text": "THE FIRST LOT WE TESTED ON OUR GLASS CAT WHICH NOT ONLY BEGAN TO LIVE BUT HAS LIVED EVER SINCE",
+      "image": "data/data/image/5.png",
+      "image_sha256": "a8357397449225d1bdc0c1fba8c44b84af082fbe0a7ca1abbd557137da627e04",
+      "natural": {
+        "source": "data/data/audio_en/5.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/natural/5.wav",
+        "source_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.87,
+          "frames": 93920,
+          "peak": 0.43652344,
+          "rms": 0.06124572,
+          "clipped_fraction": 0.0,
+          "sha256": "e2fa9e1870ad76ff19bf8817e638d6c60e1fc83bbbc3577cf3cd7f2b51ced390"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.87,
+          "frames": 93920,
+          "peak": 0.43652344,
+          "rms": 0.06124572,
+          "clipped_fraction": 0.0,
+          "sha256": "b2ccec3e217ae760558a7300da65b07326c0be02686760e8383cd29ca725068b"
+        }
+      },
+      "tts": {
+        "source": "data/data/audio_en_qwen3_tts/5.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/tts/5.wav",
+        "source_qc": {
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.0,
+          "frames": 144000,
+          "peak": 0.36129761,
+          "rms": 0.054612,
+          "clipped_fraction": 0.0,
+          "sha256": "81d461adda3e2747ede50bd330e78349a215d489ed0fd4b62b9e8c817acdd3ec"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.0,
+          "frames": 96000,
+          "peak": 0.36148071,
+          "rms": 0.05460387,
+          "clipped_fraction": 0.0,
+          "sha256": "7a779c2705c9f2e5bdef2682121fd4d30d64460dd4150ec1a83d380081eb0c45"
+        },
+        "provider": "dashscope_vc",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice_id": "qwen-tts-vc-ttseng260718_5-voice-20260718155503303-1de7"
+      }
+    },
+    {
+      "sample_id": 6,
+      "librispeech_id": "1320-122612-0015",
+      "speaker_id": 1320,
+      "chapter_id": 122612,
+      "text": "THE WHOLE PARTY CROWDED TO THE SPOT WHERE UNCAS POINTED OUT THE IMPRESSION OF A MOCCASIN IN THE MOIST ALLUVION",
+      "image": "data/data/image/6.png",
+      "image_sha256": "768a5ebee3ddf01e510ab10c2e3addb2bd3bb1ca3adf68efb002d0d5831374d1",
+      "natural": {
+        "source": "data/data/audio_en/6.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/natural/6.wav",
+        "source_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.385,
+          "frames": 102160,
+          "peak": 0.4151001,
+          "rms": 0.04590017,
+          "clipped_fraction": 0.0,
+          "sha256": "e11e9ebb93b2940fdc21d6b7e081597ea486752eeb25f1b7b1cb7695ec9e2c16"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.385,
+          "frames": 102160,
+          "peak": 0.4151001,
+          "rms": 0.04590017,
+          "clipped_fraction": 0.0,
+          "sha256": "da6062ac1122c3ab2fc89070b6fc159dd723a654e99df8319387d36930599486"
+        }
+      },
+      "tts": {
+        "source": "data/data/audio_en_qwen3_tts/6.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/tts/6.wav",
+        "source_qc": {
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.56,
+          "frames": 157440,
+          "peak": 0.28707886,
+          "rms": 0.03878412,
+          "clipped_fraction": 0.0,
+          "sha256": "2202800113ae9c96b9ae40c3213641246961d99ce7bca7d4f3ef9b8a457dea7b"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.56,
+          "frames": 104960,
+          "peak": 0.28683472,
+          "rms": 0.03877719,
+          "clipped_fraction": 0.0,
+          "sha256": "5531ab9a6e9e30bdc0c49d63083055a21426139fcbb98730b8cb7ff2ab0e49db"
+        },
+        "provider": "dashscope_vc",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice_id": "qwen-tts-vc-ttseng260718_6-voice-20260718155506824-2f41"
+      }
+    },
+    {
+      "sample_id": 7,
+      "librispeech_id": "2961-961-0009",
+      "speaker_id": 2961,
+      "chapter_id": 961,
+      "text": "TELL US SAID THE OTHER THE WHOLE STORY AND WHERE SOLON HEARD THE STORY",
+      "image": "data/data/image/7.png",
+      "image_sha256": "ca1c7b28124a7207b12e00bb73f65f7b847a3dc876b95671e6070053bcbf7c81",
+      "natural": {
+        "source": "data/data/audio_en/7.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/natural/7.wav",
+        "source_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.705,
+          "frames": 91280,
+          "peak": 0.42974854,
+          "rms": 0.0421035,
+          "clipped_fraction": 0.0,
+          "sha256": "6b5d4d9e11da6c1758a558b97bc8d1e6728ce5d41b2bc0e34512d490fd7e2215"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.705,
+          "frames": 91280,
+          "peak": 0.42974854,
+          "rms": 0.0421035,
+          "clipped_fraction": 0.0,
+          "sha256": "bac68e9ac1185bdb7fd3b2c086e65329b2178dcd8bb705e2c87e7aa4ccbd9a48"
+        }
+      },
+      "tts": {
+        "source": "data/data/audio_en_qwen3_tts/7.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/tts/7.wav",
+        "source_qc": {
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.36,
+          "frames": 128640,
+          "peak": 0.31051636,
+          "rms": 0.04209273,
+          "clipped_fraction": 0.0,
+          "sha256": "f374527b09bc48a4069a5ea121ea9f2e4c0023a5404f33ac272bc4b0fc9bafe3"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.36,
+          "frames": 85760,
+          "peak": 0.30999756,
+          "rms": 0.04208371,
+          "clipped_fraction": 0.0,
+          "sha256": "46ff44021e41c5cd63625a235a30f5848fb32d546dfbdd30c3370c7e310d5eca"
+        },
+        "provider": "dashscope_vc",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice_id": "qwen-tts-vc-ttseng260718_7-voice-20260718155510496-20dd"
+      }
+    },
+    {
+      "sample_id": 8,
+      "librispeech_id": "7021-79740-0001",
+      "speaker_id": 7021,
+      "chapter_id": 79740,
+      "text": "DELLA HAD A YOUNG SISTER NAMED MARIA AND A COUSIN WHOSE NAME WAS JANE",
+      "image": "data/data/image/8.png",
+      "image_sha256": "9d41a2cae97ff3b279a4b84a649be6047a0364ce3bbbf5305f2dfbef7faa0ca9",
+      "natural": {
+        "source": "data/data/audio_en/8.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/natural/8.wav",
+        "source_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.995,
+          "frames": 95920,
+          "peak": 0.68426514,
+          "rms": 0.07401307,
+          "clipped_fraction": 0.0,
+          "sha256": "fab8472d503b75e7edba00cc9f31735832a29bb1a590a6c69c1d9d102b16e07b"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.995,
+          "frames": 95920,
+          "peak": 0.68426514,
+          "rms": 0.07401307,
+          "clipped_fraction": 0.0,
+          "sha256": "2236c5cfe77362d03252af3d61b8fd24947303d9782532c1b3cb5d06800a6a6b"
+        }
+      },
+      "tts": {
+        "source": "data/data/audio_en_qwen3_tts/8.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/tts/8.wav",
+        "source_qc": {
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 8.32,
+          "frames": 199680,
+          "peak": 0.29684448,
+          "rms": 0.03835313,
+          "clipped_fraction": 0.0,
+          "sha256": "cd862fae30bbf509d59a2cd45bb42d5f7d3fb2a0f6ddef3416d2f24466744055"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 8.32,
+          "frames": 133120,
+          "peak": 0.2961731,
+          "rms": 0.03834237,
+          "clipped_fraction": 0.0,
+          "sha256": "8c9a433083668fc6988ef5653d0ee32a094ca483d2bd957625767749ce483523"
+        },
+        "provider": "dashscope_vc",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice_id": "qwen-tts-vc-ttseng260718_8-voice-20260718155513650-2685"
+      }
+    },
+    {
+      "sample_id": 9,
+      "librispeech_id": "4446-2271-0008",
+      "speaker_id": 4446,
+      "chapter_id": 2271,
+      "text": "IRENE BURGOYNE ONE OF HER FAMILY TOLD ME IN CONFIDENCE THAT THERE WAS A ROMANCE SOMEWHERE BACK IN THE BEGINNING",
+      "image": "data/data/image/9.png",
+      "image_sha256": "3900dc2dc5e08079464efb4d995404263c485591782359295a79ddfd4fb77f94",
+      "natural": {
+        "source": "data/data/audio_en/9.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/natural/9.wav",
+        "source_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.495,
+          "frames": 87920,
+          "peak": 0.3034668,
+          "rms": 0.05747881,
+          "clipped_fraction": 0.0,
+          "sha256": "f3f05d15d6d1898562653a5a6ecfd006b2eb6232c4f5410149261cfb38c9a18a"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.495,
+          "frames": 87920,
+          "peak": 0.3034668,
+          "rms": 0.05747881,
+          "clipped_fraction": 0.0,
+          "sha256": "caa94cddadaedd7b4caa28a2b37fbc526c495ef54eb2e8c8551a4229256118f3"
+        }
+      },
+      "tts": {
+        "source": "data/data/audio_en_qwen3_tts/9.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/tts/9.wav",
+        "source_qc": {
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.72,
+          "frames": 161280,
+          "peak": 0.38864136,
+          "rms": 0.0628703,
+          "clipped_fraction": 0.0,
+          "sha256": "ec7f9aa7373280c5f63f7b41bf4a283d86f3e80867800b6973baf8ab3ab2057e"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.72,
+          "frames": 107520,
+          "peak": 0.38912964,
+          "rms": 0.06286597,
+          "clipped_fraction": 0.0,
+          "sha256": "bf2c616e42d07cfc2f533f907b1fa4569dc10d0476f7234ef7e81a4b4d798528"
+        },
+        "provider": "dashscope_vc",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice_id": "qwen-tts-vc-ttseng260718_9-voice-20260718155518121-36e7"
+      }
+    },
+    {
+      "sample_id": 10,
+      "librispeech_id": "908-31957-0007",
+      "speaker_id": 908,
+      "chapter_id": 31957,
+      "text": "COULD IT MEAN TO LAST A LOVE SET PENDULOUS BETWEEN SORROW AND SORROW",
+      "image": "data/data/image/10.png",
+      "image_sha256": "b19a921c40bce2f2f9ec9e6140b77a74785cbc212f8f2828fe3278d22a4e52fb",
+      "natural": {
+        "source": "data/data/audio_en/10.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/natural/10.wav",
+        "source_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.8,
+          "frames": 92800,
+          "peak": 0.57174683,
+          "rms": 0.07699534,
+          "clipped_fraction": 0.0,
+          "sha256": "20335aa0c8728e6c8bfe8f5e2495b52fc849391f11b0926b64d649dfa2dfff0f"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 5.8,
+          "frames": 92800,
+          "peak": 0.57174683,
+          "rms": 0.07699534,
+          "clipped_fraction": 0.0,
+          "sha256": "710d8b47f5ca24c98fa60fa1514db9448832abd786344fb8b8461d731250971a"
+        }
+      },
+      "tts": {
+        "source": "data/data/audio_en_qwen3_tts/10.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/tts/10.wav",
+        "source_qc": {
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.48,
+          "frames": 155520,
+          "peak": 0.41793823,
+          "rms": 0.05054072,
+          "clipped_fraction": 0.0,
+          "sha256": "7ff325a49552ac6e57dc73b364b9be886dfd8b3f6d141c5d827e126e02d09a0f"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.48,
+          "frames": 103680,
+          "peak": 0.41799927,
+          "rms": 0.0505356,
+          "clipped_fraction": 0.0,
+          "sha256": "1a72ef33dd83ae9c2a16129bd89410c31cf79c1b202f90e52058786fe7b1e7cb"
+        },
+        "provider": "dashscope_vc",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice_id": "qwen-tts-vc-ttseng260718_10-voice-20260718155521931-93af"
+      }
+    },
+    {
+      "sample_id": 11,
+      "librispeech_id": "7729-102255-0038",
+      "speaker_id": 7729,
+      "chapter_id": 102255,
+      "text": "ATCHISON WHO HAD BEEN HARANGUING THE MOB PLANTED HIS TWO GUNS BEFORE THE BUILDING AND TRAINED THEM UPON IT",
+      "image": "data/data/image/11.png",
+      "image_sha256": "f425463ba279fea88ac807d02bf048fd2f891d4efae1c8903eae3afc22d216c9",
+      "natural": {
+        "source": "data/data/audio_en/11.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/natural/11.wav",
+        "source_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 7.92,
+          "frames": 126720,
+          "peak": 0.54751587,
+          "rms": 0.06405999,
+          "clipped_fraction": 0.0,
+          "sha256": "b74c24750ddac32d162fd267caa8077dd1b1ce41e69840db61fc22a5aa5a4c04"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 7.92,
+          "frames": 126720,
+          "peak": 0.54751587,
+          "rms": 0.06405999,
+          "clipped_fraction": 0.0,
+          "sha256": "5ffb1aed69e290ac2a2b41d874ca1884515685ee0914c043e40afdd91e50deed"
+        }
+      },
+      "tts": {
+        "source": "data/data/audio_en_qwen3_tts/11.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/tts/11.wav",
+        "source_qc": {
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 7.6,
+          "frames": 182400,
+          "peak": 0.40817261,
+          "rms": 0.04471274,
+          "clipped_fraction": 0.0,
+          "sha256": "1fef6b679b2a1aac682b92f15857c2cf363d58f906804beb7b2b6d76d5eb2047"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 7.6,
+          "frames": 121600,
+          "peak": 0.37805176,
+          "rms": 0.0447013,
+          "clipped_fraction": 0.0,
+          "sha256": "1850fedeb06c468065f08526e82fe41349875f9986c3c46241e24856f63fba70"
+        },
+        "provider": "dashscope_vc",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice_id": "qwen-tts-vc-ttseng260718_11-voice-20260718155525467-c8b2"
+      }
+    },
+    {
+      "sample_id": 12,
+      "librispeech_id": "4970-29093-0023",
+      "speaker_id": 4970,
+      "chapter_id": 29093,
+      "text": "HE WELL KNEW THE PERILS OF THE FRONTIER THE SAVAGE STATE OF SOCIETY THE LURKING INDIANS AND THE DANGERS OF FEVER",
+      "image": "data/data/image/12.png",
+      "image_sha256": "9d41a2cae97ff3b279a4b84a649be6047a0364ce3bbbf5305f2dfbef7faa0ca9",
+      "natural": {
+        "source": "data/data/audio_en/12.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/natural/12.wav",
+        "source_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 8.07,
+          "frames": 129120,
+          "peak": 0.66442871,
+          "rms": 0.04889267,
+          "clipped_fraction": 0.0,
+          "sha256": "d073619607a6027c23110888e5e2eb7a0192d759401ec36644b54b6e95f4af3f"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 8.07,
+          "frames": 129120,
+          "peak": 0.66442871,
+          "rms": 0.04889267,
+          "clipped_fraction": 0.0,
+          "sha256": "a0b7ce32acce8ae10208009ceaee75eb2aaccfbfde16aea5875f13c3623a1df8"
+        }
+      },
+      "tts": {
+        "source": "data/data/audio_en_qwen3_tts/12.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/tts/12.wav",
+        "source_qc": {
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 7.36,
+          "frames": 176640,
+          "peak": 0.41207886,
+          "rms": 0.03980498,
+          "clipped_fraction": 0.0,
+          "sha256": "fe9369431148b5383dd707b0db9e75c4f9fb21c3302dbca84511f51b5ec7f901"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 7.36,
+          "frames": 117760,
+          "peak": 0.41964722,
+          "rms": 0.03978435,
+          "clipped_fraction": 0.0,
+          "sha256": "7f0849ba2b1b2c2fe263fe738e4145369d186d4f2d5b080a9947be0a3a23c8a7"
+        },
+        "provider": "dashscope_vc",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice_id": "qwen-tts-vc-ttseng260718_12-voice-20260718155529449-302c"
+      }
+    },
+    {
+      "sample_id": 13,
+      "librispeech_id": "237-126133-0019",
+      "speaker_id": 237,
+      "chapter_id": 126133,
+      "text": "DEAR ME EJACULATED THE OLD GENTLEMAN IN THE UTMOST AMAZEMENT AND SUCH A TIME AS I'VE HAD TO GET HER HERE TOO",
+      "image": "data/data/image/13.png",
+      "image_sha256": "3900dc2dc5e08079464efb4d995404263c485591782359295a79ddfd4fb77f94",
+      "natural": {
+        "source": "data/data/audio_en/13.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/natural/13.wav",
+        "source_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 7.12,
+          "frames": 113920,
+          "peak": 0.59292603,
+          "rms": 0.03282497,
+          "clipped_fraction": 0.0,
+          "sha256": "527ae948ba6d808588baf4af342329172b56f1789cbe25a66c92a387485934d4"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 7.12,
+          "frames": 113920,
+          "peak": 0.59292603,
+          "rms": 0.03282497,
+          "clipped_fraction": 0.0,
+          "sha256": "ed786ea96d72daea839fed58aa78589480a500679a0468b4f52d9bed74137c88"
+        }
+      },
+      "tts": {
+        "source": "data/data/audio_en_qwen3_tts/13.wav",
+        "canonical": "runs/english_wav2sem_gate1_s43/00_pairs/tts/13.wav",
+        "source_qc": {
+          "sample_rate_hz": 24000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.96,
+          "frames": 167040,
+          "peak": 0.17477417,
+          "rms": 0.02140663,
+          "clipped_fraction": 0.0,
+          "sha256": "b37cb0cbc1238e4fccb505f8fa72f30f77fa8a75f25e133b9a183aef98b4700a"
+        },
+        "canonical_qc": {
+          "sample_rate_hz": 16000,
+          "channels": 1,
+          "subtype": "PCM_16",
+          "duration_s": 6.96,
+          "frames": 111360,
+          "peak": 0.17501831,
+          "rms": 0.02140496,
+          "clipped_fraction": 0.0,
+          "sha256": "ef730f26238320eb03bbfb9c772862cd60aedff6e7f0690709a604004d15c412"
+        },
+        "provider": "dashscope_vc",
+        "model": "qwen3-tts-vc-2026-01-22",
+        "voice_id": "qwen-tts-vc-ttseng260718_13-voice-20260718155533473-3d48"
+      }
+    }
+  ],
+  "failed": []
+}

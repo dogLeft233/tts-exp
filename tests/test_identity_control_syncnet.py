@@ -31,19 +31,22 @@ _SPEC.loader.exec_module(_MOD)
 
 
 class TestIdentityIntervention:
-    def test_builds_single_identity_intervention(self):
+    def test_builds_bilateral_identity_interventions(self):
         ivs = _MOD._build_identity_interventions()
-        assert len(ivs) == 1
-        assert ivs[0].name == "identity_tts"
-        assert ivs[0].source == "tts"
-        assert ivs[0].baseline_cond == "tts_raw"
-        assert ivs[0].expected_sync_direction == "no change"
+        assert len(ivs) == 2
+        assert [iv.name for iv in ivs] == ["identity_natural", "identity_tts"]
+        assert [iv.source for iv in ivs] == ["natural", "tts"]
+        assert [iv.baseline_cond for iv in ivs] == ["natural_raw", "tts_raw"]
+        assert all(iv.expected_sync_direction == "no change" for iv in ivs)
 
     def test_identity_transform_returns_input_unchanged(self):
         rng = np.random.default_rng(7)
         y_tts = rng.standard_normal(16000).astype(np.float32) * 0.1
         y_nat = rng.standard_normal(16000).astype(np.float32) * 0.1
-        iv = _MOD._build_identity_interventions()[0]
+        iv = next(
+            item for item in _MOD._build_identity_interventions()
+            if item.name == "identity_tts"
+        )
         y_out = iv.transform(y_tts, y_nat, sr=16000, sid=1)
         # Must be bit-identical to the TTS input.
         assert y_out is y_tts or np.array_equal(y_out, y_tts)
@@ -52,7 +55,10 @@ class TestIdentityIntervention:
     def test_identity_transform_preserves_dtype_and_shape(self):
         rng = np.random.default_rng(2)
         y_tts = rng.standard_normal(8000).astype(np.float32)
-        iv = _MOD._build_identity_interventions()[0]
+        iv = next(
+            item for item in _MOD._build_identity_interventions()
+            if item.name == "identity_tts"
+        )
         y_out = iv.transform(y_tts, np.zeros_like(y_tts), sr=16000, sid=3)
         assert y_out.shape == y_tts.shape
         assert y_out.dtype == y_tts.dtype
@@ -63,7 +69,10 @@ class TestIdentityIntervention:
         y_tts = rng.standard_normal(4000).astype(np.float32)
         y_nat_a = np.zeros(4000, dtype=np.float32)
         y_nat_b = rng.standard_normal(4000).astype(np.float32) * 0.5
-        iv = _MOD._build_identity_interventions()[0]
+        iv = next(
+            item for item in _MOD._build_identity_interventions()
+            if item.name == "identity_tts"
+        )
         out_a = iv.transform(y_tts, y_nat_a, sr=16000, sid=1)
         out_b = iv.transform(y_tts, y_nat_b, sr=16000, sid=1)
         assert np.array_equal(out_a, out_b)
@@ -86,7 +95,10 @@ class TestScript22MachineryImport:
     def test_identity_intervention_is_compatible_with_pipeline(self):
         """Identity intervention must be a valid Intervention instance."""
         from dataclasses import is_dataclass
-        iv = _MOD._build_identity_interventions()[0]
+        iv = next(
+            item for item in _MOD._build_identity_interventions()
+            if item.name == "identity_tts"
+        )
         assert is_dataclass(iv)
         # The transform must accept the (y_tts, y_nat, sr, sid) signature.
         rng = np.random.default_rng(0)
@@ -146,7 +158,10 @@ class TestVerdictThresholds:
 
 class TestAggregationWithIdentity:
     def _identity_iv(self):
-        return _MOD._build_identity_interventions()[0]
+        return next(
+            item for item in _MOD._build_identity_interventions()
+            if item.name == "identity_tts"
+        )
 
     def test_aggregate_identity_zero_deltas_when_results_match_baseline(self):
         iv = self._identity_iv()

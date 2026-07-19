@@ -1,0 +1,1 @@
+{"nodes": [], "edges": [{"source": "transcripts_4_4_doc", "target": "transcripts_qin_hong_researcher", "relation": "references_entity", "confidence": "HIGH", "confidence_score": 0.95, "source_file": "graphify-out/transcripts/4_4.txt", "source_location": "line 1", "weight": 0.75}], "hyperedges": []}

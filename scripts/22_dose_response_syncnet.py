@@ -261,6 +261,7 @@ def run_intervention_pipeline(
     skip_video: bool = True,
     skip_syncnet: bool = True,
     dry_run: bool = False,
+    seed: int | None = None,
 ) -> tuple[dict | None, str]:
     """Run one (intervention, sample) cell end-to-end.
 
@@ -292,9 +293,13 @@ def run_intervention_pipeline(
             return None, f"WOULD run Ditto on {audio_path} → {video_path}"
         if not audio_path.exists():
             return None, "audio missing for Ditto"
-        ok = run_ditto(repo, run_id, cfg, audio_path, img_path, video_path, "trt_online")
+        ok = run_ditto(
+            repo, run_id, cfg, audio_path, img_path, video_path, "trt_online", seed=seed
+        )
         if not ok:
-            ok = run_ditto(repo, run_id, cfg, audio_path, img_path, video_path, "pytorch")
+            ok = run_ditto(
+                repo, run_id, cfg, audio_path, img_path, video_path, "pytorch", seed=seed
+            )
         video_status = "computed" if ok else "ditto-failed"
         if not ok:
             return None, "ditto inference failed"

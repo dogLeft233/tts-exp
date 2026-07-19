@@ -25,14 +25,11 @@ from pathlib import Path
 
 import yaml
 
+from utils import detect_sample_ids, load_config, resolve_repo_path
+
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
-
-
-def load_config(repo: Path) -> dict:
-    cfg_path = repo / "scripts" / "config.yaml"
-    return yaml.safe_load(cfg_path.read_text()) if cfg_path.exists() else {}
 
 
 def _ffmpeg_bin(ditto_bin: str) -> str:
@@ -118,8 +115,9 @@ def run_ditto(
     output_path: Path,
     mode: str,
     retries: int = 1,
+    seed: int | None = None,
 ) -> bool:
-    """Call ditto inference.py. Returns True on success."""
+    """Call Ditto through the seeded adapter."""
     if mode == "trt_online":
         data_root = cfg["ditto"]["trt_online"]["data_root"]
         cfg_pkl = cfg["ditto"]["trt_online"]["cfg_pkl"]
@@ -145,30 +143,44 @@ def run_ditto(
     script = ditto_dir / "inference.py"
     if not script.exists():
         return False
+    effective_seed = int(seed if seed is not None else cfg.get("ditto", {}).get("seed", 42))
+    adapter = repo / "scripts" / "ditto_seeded_inference.py"
     cmd = [
-        "python", str(script),
-        "--data_root", data_root,
-        "--cfg_pkl", cfg_pkl,
-        "--audio_path", str(audio_path),
-        "--source_path", str(source_path),
-        "--output_path", str(output_path),
+        "python", str(adapter),
+        "--ditto-dir", str(ditto_dir),
+        "--data-root", data_root,
+        "--cfg-pkl", cfg_pkl,
+        "--audio-path", str(audio_path),
+        "--source-path", str(source_path),
+        "--output-path", str(output_path),
+        "--seed", str(effective_seed),
     ]
+    last_error = "Ditto inference failed"
     for attempt in range(retries + 1):
         try:
             if attempt > 0:
                 time.sleep(1)
             subprocess.run(cmd, check=True, capture_output=True, text=True, timeout=300, env=env)
             return True
-        except subprocess.CalledProcessError as e:
-            if "libcudnn" in (e.stderr or "") or "Could not load" in (e.stderr or ""):
+        except subprocess.CalledProcessError as exc:
+            stderr = exc.stderr or ""
+            last_error = stderr[-1000:] or str(exc)
+            if "libcudnn" in stderr or "Could not load" in stderr:
                 return False
+        except (subprocess.TimeoutExpired, OSError) as exc:
+            last_error = str(exc)
+    if last_error:
+        print(f"[ditto] inference error: {last_error}")
     return False
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="Ditto 4-condition inference")
-    ap.add_argument("--run_id", required=True)
+    ap.add_argument("--run_id", "--run-id", dest="run_id", required=True)
     ap.add_argument("--smoke", action="store_true")
+    ap.add_argument("--config", default="")
+    ap.add_argument("--seed", type=int, default=None)
+    ap.add_argument("--no-cache", action="store_true")
     args = ap.parse_args()
 
     repo = Path(__file__).resolve().parent.parent
@@ -176,16 +188,23 @@ def main() -> None:
     out_base = run_dir / "03_ditto"
     out_base.mkdir(parents=True, exist_ok=True)
 
-    cfg = load_config(repo)
+    cfg = load_config(repo, args.config or None)
     ditto_bin = str(Path(cfg["paths"]["envs_dir"]) / "ditto" / "bin")
-    from utils import detect_sample_ids
-    sample_ids = detect_sample_ids(repo, args.smoke)
+    sample_ids = detect_sample_ids(repo, args.smoke, cfg=cfg)
     conditions = cfg.get("ditto", {}).get("conditions", ["natural_raw", "natural_resamp", "tts_raw", "tts_resamp"])
     do_loudnorm = cfg.get("ditto", {}).get("loudnorm", True)
+    seed = int(args.seed if args.seed is not None else cfg.get("ditto", {}).get("seed", 42))
 
-    audio_dir = repo / "data" / "data" / "audio"
-    tts_dir = run_dir / "02_tts"
-    img_dir = repo / "data" / "data" / "image"
+    input_stage = cfg.get("ditto", {}).get("input_stage")
+    if input_stage:
+        pair_base = run_dir / input_stage
+        audio_dir = pair_base / "natural"
+        tts_dir = pair_base / "tts"
+    else:
+        audio_dir = resolve_repo_path(repo, cfg.get("paths", {}).get("audio_dir", "data/data/audio"))
+        configured_tts = cfg.get("paths", {}).get("tts_audio_dir")
+        tts_dir = resolve_repo_path(repo, configured_tts) if configured_tts else run_dir / "02_tts"
+    img_dir = resolve_repo_path(repo, cfg.get("paths", {}).get("image_dir", "data/data/image"))
 
     # Check if tts wavs exist
     _ = all((tts_dir / f"{i}.wav").exists() for i in sample_ids)  # noqa
@@ -203,7 +222,7 @@ def main() -> None:
             img_path = img_dir / f"{i}.png"
 
             # Determine audio source
-            if cond.startswith("natural"):
+            if cond.startswith("natural") or cond == "natural":
                 audio_src = audio_dir / f"{i}.wav"
             else:  # tts
                 audio_src = tts_dir / f"{i}.wav"
@@ -232,20 +251,27 @@ def main() -> None:
                 feed_audio = tmp_audio
 
             out_video = cond_dir / f"{i}.mp4"
-            if out_video.exists():
+            if out_video.exists() and not args.no_cache:
                 results[f"{cond}:{i}"] = "ok-cached"
                 continue
-            print(f"[ditto] {cond}:{i} ...")
+            if out_video.exists():
+                out_video.unlink()
+            print(f"[ditto] {cond}:{i} seed={seed} ...")
 
-            ok = run_ditto(repo, args.run_id, cfg, feed_audio, img_path, out_video, mode)
+            ok = run_ditto(
+                repo, args.run_id, cfg, feed_audio, img_path, out_video, mode,
+                retries=int(cfg.get("ditto", {}).get("retry", 1)), seed=seed,
+            )
             if ok:
                 results[f"{cond}:{i}"] = "ok"
                 print(f"  -> {out_video}")
             elif mode == "trt_online":
-                # TRT failed — retry with PyTorch
-                print(f"  TRT failed, switching to PyTorch ...")
+                print("  TRT failed, switching to PyTorch ...")
                 mode = "pytorch"
-                ok = run_ditto(repo, args.run_id, cfg, feed_audio, img_path, out_video, mode)
+                ok = run_ditto(
+                    repo, args.run_id, cfg, feed_audio, img_path, out_video, mode,
+                    retries=int(cfg.get("ditto", {}).get("retry", 1)), seed=seed,
+                )
                 if ok:
                     results[f"{cond}:{i}"] = "ok-pytorch"
                 else:
@@ -256,6 +282,8 @@ def main() -> None:
     elapsed = time.monotonic() - t0
     meta = {
         "mode_used": mode,
+        "seed": seed,
+        "config_override": args.config or None,
         "conditions": conditions,
         "samples": sample_ids,
         "time_s": round(elapsed, 1),

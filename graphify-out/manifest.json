@@ -1,0 +1,1122 @@
+{
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/manifest/alignment.json": {
+    "mtime": 1784339781.8927839,
+    "ast_hash": "b9e01416a682c70d284f4b339cf7f665",
+    "semantic_hash": "b9e01416a682c70d284f4b339cf7f665"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/metrics/cross_tfg_validation.json": {
+    "mtime": 1784339782.338473,
+    "ast_hash": "262070a893e77fc2f02e73a39eeff6d1",
+    "semantic_hash": "262070a893e77fc2f02e73a39eeff6d1"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/metrics/dose_response.json": {
+    "mtime": 1784343742.4970896,
+    "ast_hash": "93d262e959a53a67eccacc7396b8e7af",
+    "semantic_hash": "93d262e959a53a67eccacc7396b8e7af"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/metrics/feature_tfg_link.json": {
+    "mtime": 1784339781.810879,
+    "ast_hash": "0c15e146bdcf3a22433a4d0a5acff9b6",
+    "semantic_hash": "0c15e146bdcf3a22433a4d0a5acff9b6"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/metrics/identity_control.json": {
+    "mtime": 1784345152.96852,
+    "ast_hash": "8f173024aa520e2bd285c46a3baa9c39",
+    "semantic_hash": "8f173024aa520e2bd285c46a3baa9c39"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/metrics/identity_corrected_summary.json": {
+    "mtime": 1784345270.4442508,
+    "ast_hash": "692c274daa26ff09bdf39f33c03d1796",
+    "semantic_hash": "692c274daa26ff09bdf39f33c03d1796"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/metrics/intervention_pilot_20260718.json": {
+    "mtime": 1784340534.9706337,
+    "ast_hash": "88b363ce0c9e13b34afc32f61ee18861",
+    "semantic_hash": "88b363ce0c9e13b34afc32f61ee18861"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/metrics/intervention_results.json": {
+    "mtime": 1784340534.945177,
+    "ast_hash": "265b7ab6cf49664cd38b37206a40129e",
+    "semantic_hash": "265b7ab6cf49664cd38b37206a40129e"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/metrics/pilot_20260718/intervention_results.json": {
+    "mtime": 1784339782.2316203,
+    "ast_hash": "4e45aa52537482a4e70c123b6a936a5e",
+    "semantic_hash": "4e45aa52537482a4e70c123b6a936a5e"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/metrics/separability_metrics.json": {
+    "mtime": 1784339781.9212103,
+    "ast_hash": "b3c9f75feff9d816443e81c8074155b0",
+    "semantic_hash": "b3c9f75feff9d816443e81c8074155b0"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/metrics/stability_intervention.json": {
+    "mtime": 1784353206.3086045,
+    "ast_hash": "fc1bde98125691f7bc14551a0b5225cf",
+    "semantic_hash": "fc1bde98125691f7bc14551a0b5225cf"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/00_datacheck.py": {
+    "mtime": 1783432411.6079593,
+    "ast_hash": "369c6a874b1ab9dcaccd4722a2b5c797",
+    "semantic_hash": "369c6a874b1ab9dcaccd4722a2b5c797"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/01_asr.py": {
+    "mtime": 1783432408.665815,
+    "ast_hash": "70dceb1e8d1b7eaee1e0f323043a1b11",
+    "semantic_hash": "70dceb1e8d1b7eaee1e0f323043a1b11"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/02_tts.py": {
+    "mtime": 1783432391.712348,
+    "ast_hash": "d0e78cc6dd5a1b0edb0a7eba9f4063a5",
+    "semantic_hash": "d0e78cc6dd5a1b0edb0a7eba9f4063a5"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/03_ditto.py": {
+    "mtime": 1783432405.1350923,
+    "ast_hash": "b1d199b33a7b564d6709d329f4d180d4",
+    "semantic_hash": "b1d199b33a7b564d6709d329f4d180d4"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/04_eval.py": {
+    "mtime": 1783398814.6034877,
+    "ast_hash": "287f998578e9fe3f1392828d3387b8aa",
+    "semantic_hash": "287f998578e9fe3f1392828d3387b8aa"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/05_report.py": {
+    "mtime": 1783415990.655648,
+    "ast_hash": "de5fc38157b15a9c7d4226a62d9ac091",
+    "semantic_hash": "de5fc38157b15a9c7d4226a62d9ac091"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/06_cross_model.py": {
+    "mtime": 1783437794.586208,
+    "ast_hash": "dca645daa6b6026f03b6d3bcda28effc",
+    "semantic_hash": "dca645daa6b6026f03b6d3bcda28effc"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/07_emo_analysis.py": {
+    "mtime": 1783482317.3335383,
+    "ast_hash": "66851379a5ca34aa38bb3cb091002133",
+    "semantic_hash": "66851379a5ca34aa38bb3cb091002133"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/08_audio_features.py": {
+    "mtime": 1783490585.5299518,
+    "ast_hash": "84012ad524af9357f0ab7674f94b4d20",
+    "semantic_hash": "84012ad524af9357f0ab7674f94b4d20"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/08_audio_features_v2.py": {
+    "mtime": 1783517818.7404003,
+    "ast_hash": "4345f0e4d6b5580643b565e69f6e6f67",
+    "semantic_hash": "4345f0e4d6b5580643b565e69f6e6f67"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/09_observational_analysis.py": {
+    "mtime": 1783490782.8934498,
+    "ast_hash": "7e58cf663e22a7eadcaa2e7d8dbd12cf",
+    "semantic_hash": "7e58cf663e22a7eadcaa2e7d8dbd12cf"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/09_observational_analysis_v2.py": {
+    "mtime": 1783518392.3616672,
+    "ast_hash": "3e52d87c6b44309bd29f335b8c3040c9",
+    "semantic_hash": "3e52d87c6b44309bd29f335b8c3040c9"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/10_normalize_audio.py": {
+    "mtime": 1783490867.427926,
+    "ast_hash": "6711b0b12bfa7697c098501d18c70333",
+    "semantic_hash": "6711b0b12bfa7697c098501d18c70333"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/11_interventional_analysis.py": {
+    "mtime": 1783490994.9547927,
+    "ast_hash": "31c44f2855ff4310440538385a603206",
+    "semantic_hash": "31c44f2855ff4310440538385a603206"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/12_transformation_experiment.py": {
+    "mtime": 1783518745.7662873,
+    "ast_hash": "898f53319a22b5c38cdbe4e7088a7842",
+    "semantic_hash": "898f53319a22b5c38cdbe4e7088a7842"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/13_rule_enhancer.py": {
+    "mtime": 1783557826.1710658,
+    "ast_hash": "d1174ba0334e8bdd8f69b4f4a3d7628c",
+    "semantic_hash": "d1174ba0334e8bdd8f69b4f4a3d7628c"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/14_prepare_mandarin_alignment.py": {
+    "mtime": 1784277720.562275,
+    "ast_hash": "fe4e7ac5383ea650f0c39c57ed047ff7",
+    "semantic_hash": "fe4e7ac5383ea650f0c39c57ed047ff7"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/15_extract_ssl_embeddings.py": {
+    "mtime": 1784277102.622607,
+    "ast_hash": "8e35a6223d29914e7ae5b4d8269c751a",
+    "semantic_hash": "8e35a6223d29914e7ae5b4d8269c751a"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/16_feature_separability.py": {
+    "mtime": 1784300399.5985003,
+    "ast_hash": "8db5205aa1772d9588b6c41998d503a7",
+    "semantic_hash": "8db5205aa1772d9588b6c41998d503a7"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/17_link_features_to_tfg.py": {
+    "mtime": 1784272292.3423536,
+    "ast_hash": "4e5453879a25e57e913ebda50a73633c",
+    "semantic_hash": "4e5453879a25e57e913ebda50a73633c"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/18_render_wav2sem_report.py": {
+    "mtime": 1784272697.5817053,
+    "ast_hash": "9b70417e92799af583afbaf9ce43f138",
+    "semantic_hash": "9b70417e92799af583afbaf9ce43f138"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/19_generate_eval_matrix.py": {
+    "mtime": 1784339160.544633,
+    "ast_hash": "14b44f6c857f97bd96ed4153d1d58e86",
+    "semantic_hash": "14b44f6c857f97bd96ed4153d1d58e86"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/20_causal_feature_interventions.py": {
+    "mtime": 1784340438.4758291,
+    "ast_hash": "4fdd674790e26dce61a1777c7bd70e18",
+    "semantic_hash": "4fdd674790e26dce61a1777c7bd70e18"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/21_validate_causal_results.py": {
+    "mtime": 1784338397.2472632,
+    "ast_hash": "b63e3d07faf128a5c661f77310e2dcff",
+    "semantic_hash": "b63e3d07faf128a5c661f77310e2dcff"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/22_dose_response_syncnet.py": {
+    "mtime": 1784341133.007282,
+    "ast_hash": "42947676cdddbdc69c0149e806aa35b2",
+    "semantic_hash": "42947676cdddbdc69c0149e806aa35b2"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/23_identity_control_syncnet.py": {
+    "mtime": 1784344332.131751,
+    "ast_hash": "df1d6b52f5275e4eba7f40c6bfc85b00",
+    "semantic_hash": "df1d6b52f5275e4eba7f40c6bfc85b00"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/24_identity_corrected_analysis.py": {
+    "mtime": 1784345320.8634865,
+    "ast_hash": "cf6a2bfcef2c954dd864d3c307b83397",
+    "semantic_hash": "cf6a2bfcef2c954dd864d3c307b83397"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/25_stability_perturbation_syncnet.py": {
+    "mtime": 1784351912.308607,
+    "ast_hash": "f51fae429a460ef778aa771e4c9e5de6",
+    "semantic_hash": "f51fae429a460ef778aa771e4c9e5de6"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/run_all.sh": {
+    "mtime": 1783395922.643559,
+    "ast_hash": "fd86f18c0e1c349ca83a6eaa45cba3e5",
+    "semantic_hash": "fd86f18c0e1c349ca83a6eaa45cba3e5"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/run_r1_matrix.sh": {
+    "mtime": 1783419581.225408,
+    "ast_hash": "6a4e83d72126ac2571f1fdd357f68564",
+    "semantic_hash": "6a4e83d72126ac2571f1fdd357f68564"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/setup_env.sh": {
+    "mtime": 1783395745.2843254,
+    "ast_hash": "b32d02fe71a5589eabb2aaad344d46a9",
+    "semantic_hash": "b32d02fe71a5589eabb2aaad344d46a9"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/tfg_feature_common.py": {
+    "mtime": 1784270696.9745207,
+    "ast_hash": "7112027e374dfdfe8b25fbfbcbccb7d5",
+    "semantic_hash": "7112027e374dfdfe8b25fbfbcbccb7d5"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/tts/__init__.py": {
+    "mtime": 1783402688.4936914,
+    "ast_hash": "7128540586185f7634cb63bdf66ad658",
+    "semantic_hash": "7128540586185f7634cb63bdf66ad658"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/tts/base.py": {
+    "mtime": 1783402714.4353,
+    "ast_hash": "b95755c179d8025031cd6cb9adc28496",
+    "semantic_hash": "b95755c179d8025031cd6cb9adc28496"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/tts/dashscope_vc.py": {
+    "mtime": 1783402798.07899,
+    "ast_hash": "61ec66d7225cadfabd5b1c808ebfc5a4",
+    "semantic_hash": "61ec66d7225cadfabd5b1c808ebfc5a4"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/tts/f5_tts.py": {
+    "mtime": 1783506164.4192939,
+    "ast_hash": "ea4e401e6ac227fccb62f1ffba634a39",
+    "semantic_hash": "ea4e401e6ac227fccb62f1ffba634a39"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/tts/factory.py": {
+    "mtime": 1783515231.5962212,
+    "ast_hash": "9e770a26a68eb7252d42b192c728e1db",
+    "semantic_hash": "9e770a26a68eb7252d42b192c728e1db"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/tts/faster_qwen3.py": {
+    "mtime": 1783402736.6100056,
+    "ast_hash": "2f5e181279cea225bc4a490bc2b1a4b9",
+    "semantic_hash": "2f5e181279cea225bc4a490bc2b1a4b9"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/tts/fish_audio.py": {
+    "mtime": 1783419913.7403295,
+    "ast_hash": "df1d6e3defd0a85a82227efc36e9e08b",
+    "semantic_hash": "df1d6e3defd0a85a82227efc36e9e08b"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/tts/higgs_tts.py": {
+    "mtime": 1783515221.328687,
+    "ast_hash": "72c5b75fc8525de56badbd9465853289",
+    "semantic_hash": "72c5b75fc8525de56badbd9465853289"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/tts/siliconflow.py": {
+    "mtime": 1783429486.3027284,
+    "ast_hash": "2baced59d0dd06032519c7afa1829538",
+    "semantic_hash": "2baced59d0dd06032519c7afa1829538"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/utils.py": {
+    "mtime": 1783432387.9349337,
+    "ast_hash": "f9528986754bcefe555d0a1d26cd48d9",
+    "semantic_hash": "f9528986754bcefe555d0a1d26cd48d9"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/tests/__init__.py": {
+    "mtime": 1784269804.1597896,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/tests/test_audio_interventions.py": {
+    "mtime": 1784340421.6051278,
+    "ast_hash": "01227c63eb58a27ffbf9132f4f356fd1",
+    "semantic_hash": "01227c63eb58a27ffbf9132f4f356fd1"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/tests/test_cross_tfg_validation.py": {
+    "mtime": 1784338377.5535977,
+    "ast_hash": "4efba61431cc0952b05729ebdb9c7834",
+    "semantic_hash": "4efba61431cc0952b05729ebdb9c7834"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/tests/test_dose_response_syncnet.py": {
+    "mtime": 1784341149.4182358,
+    "ast_hash": "884d768432e9cec9a75f9e5e75243578",
+    "semantic_hash": "884d768432e9cec9a75f9e5e75243578"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/tests/test_eval_matrix.py": {
+    "mtime": 1784339133.6529455,
+    "ast_hash": "7cbfa6b2f5ac4d5cea1836e2eb154f0f",
+    "semantic_hash": "7cbfa6b2f5ac4d5cea1836e2eb154f0f"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/tests/test_feature_separability.py": {
+    "mtime": 1784272101.4303381,
+    "ast_hash": "0815f8faa6e0128948913c31a61b5a09",
+    "semantic_hash": "0815f8faa6e0128948913c31a61b5a09"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/tests/test_feature_tfg_link.py": {
+    "mtime": 1784272394.9471931,
+    "ast_hash": "6ec8b8fe9dd610f805bcf400ebe1697f",
+    "semantic_hash": "6ec8b8fe9dd610f805bcf400ebe1697f"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/tests/test_identity_control_syncnet.py": {
+    "mtime": 1784344349.9979913,
+    "ast_hash": "199521e660d21c52c69b4952a7925df1",
+    "semantic_hash": "199521e660d21c52c69b4952a7925df1"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/tests/test_identity_corrected_analysis.py": {
+    "mtime": 1784345430.8140144,
+    "ast_hash": "571dd4b2c9e8a67b3ed79cb2eae615d8",
+    "semantic_hash": "571dd4b2c9e8a67b3ed79cb2eae615d8"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/tests/test_mandarin_alignment.py": {
+    "mtime": 1784271076.738095,
+    "ast_hash": "2c129a3052e1394e96767493d5b8110e",
+    "semantic_hash": "2c129a3052e1394e96767493d5b8110e"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/tests/test_ssl_embedding_shapes.py": {
+    "mtime": 1784271648.95289,
+    "ast_hash": "319feeb7a46d489cf1025df7232e8c09",
+    "semantic_hash": "319feeb7a46d489cf1025df7232e8c09"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/tests/test_stability_perturbation.py": {
+    "mtime": 1784351015.8975625,
+    "ast_hash": "a0336f0b2509d275c5efcbaf5d3c8903",
+    "semantic_hash": "a0336f0b2509d275c5efcbaf5d3c8903"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/tests/test_tfg_feature_common.py": {
+    "mtime": 1784339735.2430813,
+    "ast_hash": "5ba361122c3a09553d8f9e682fcf6d54",
+    "semantic_hash": "5ba361122c3a09553d8f9e682fcf6d54"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/.claude/skills/remote-gpu-deploy/SKILL.md": {
+    "mtime": 1784268844.1990395,
+    "ast_hash": "96072d17ed1850a08542ea7d977c671e",
+    "semantic_hash": "96072d17ed1850a08542ea7d977c671e"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/AGENTS.md": {
+    "mtime": 1784268850.5368187,
+    "ast_hash": "a8b49afe6747e907d1de118fb7ac113c",
+    "semantic_hash": "a8b49afe6747e907d1de118fb7ac113c"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/r4_results/experiments_summary.md": {
+    "mtime": 1783558694.6058283,
+    "ast_hash": "2c7302d14a6f0a2cecb4224c611c92c9",
+    "semantic_hash": "2c7302d14a6f0a2cecb4224c611c92c9"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/r4_results/observational_analysis_v2.txt": {
+    "mtime": 1783518404.4256103,
+    "ast_hash": "96faa10640ea6bc66a61341963b4b899",
+    "semantic_hash": "96faa10640ea6bc66a61341963b4b899"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/mandarin_viseme_map.yaml": {
+    "mtime": 1784339885.493873,
+    "ast_hash": "3da893d8b1b01c75abc468a3dbd312c7",
+    "semantic_hash": "3da893d8b1b01c75abc468a3dbd312c7"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/report.md": {
+    "mtime": 1784339781.599924,
+    "ast_hash": "b6a560887a99c4064bbf12b54cc528b0",
+    "semantic_hash": "b6a560887a99c4064bbf12b54cc528b0"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/agents/domain.md": {
+    "mtime": 1783385770.3803675,
+    "ast_hash": "477d9959972912279da5677825ef61c3",
+    "semantic_hash": "477d9959972912279da5677825ef61c3"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/agents/issue-tracker.md": {
+    "mtime": 1783385762.5090606,
+    "ast_hash": "b3268117bb0bb6b731632d35d6a1369a",
+    "semantic_hash": "b3268117bb0bb6b731632d35d6a1369a"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/agents/triage-labels.md": {
+    "mtime": 1783385765.1694436,
+    "ast_hash": "22add54cb98451c55b20e6b7992d4a85",
+    "semantic_hash": "22add54cb98451c55b20e6b7992d4a85"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/chattts.md": {
+    "mtime": 1783508758.024235,
+    "ast_hash": "ac2da57371887a344966ffd2ddd72c85",
+    "semantic_hash": "ac2da57371887a344966ffd2ddd72c85"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/ditto.md": {
+    "mtime": 1783385557.9510834,
+    "ast_hash": "5c06e3c3f1a3ea067672fba4df88c276",
+    "semantic_hash": "5c06e3c3f1a3ea067672fba4df88c276"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/experiments/indextts2_emo_tfg_20260708.md": {
+    "mtime": 1783489500.682573,
+    "ast_hash": "a486bb57614fed1e899d5438ed2e1972",
+    "semantic_hash": "a486bb57614fed1e899d5438ed2e1972"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/experiments/phase2_execution_20260718.md": {
+    "mtime": 1784353452.2121131,
+    "ast_hash": "491f7c9dfcb587b072861f35e1c99f96",
+    "semantic_hash": "491f7c9dfcb587b072861f35e1c99f96"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/experiments/tfg_progress_20260717.md": {
+    "mtime": 1784250911.018104,
+    "ast_hash": "de6485bac462a7fc8cf3422e0cbbd54b",
+    "semantic_hash": "de6485bac462a7fc8cf3422e0cbbd54b"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/experiments/tts_tfg_mechanism_report.md": {
+    "mtime": 1784353523.783496,
+    "ast_hash": "a3e2f6c2a6540be06083efdb088a9cac",
+    "semantic_hash": "a3e2f6c2a6540be06083efdb088a9cac"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/experiments/wav2sem_style_analysis.md": {
+    "mtime": 1784269856.669327,
+    "ast_hash": "baef9d30c4b9a82061a8784769b3ca41",
+    "semantic_hash": "baef9d30c4b9a82061a8784769b3ca41"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/indextts2.md": {
+    "mtime": 1783503300.5557153,
+    "ast_hash": "0d5e0d9ee44f49e25e50941e48b2e497",
+    "semantic_hash": "0d5e0d9ee44f49e25e50941e48b2e497"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/superpowers/plans/2026-07-16-new-server-tfg-deployment.md": {
+    "mtime": 1784167983.9634154,
+    "ast_hash": "0a101d1a25b52387a66ff1af1fc1bed2",
+    "semantic_hash": "0a101d1a25b52387a66ff1af1fc1bed2"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/superpowers/plans/2026-07-18-stability-intervention.md": {
+    "mtime": 1784346612.9138107,
+    "ast_hash": "a7c8f4bfcfdaed8043cb6e3d870f84f4",
+    "semantic_hash": "a7c8f4bfcfdaed8043cb6e3d870f84f4"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/superpowers/specs/2026-07-16-new-server-tfg-deployment-design.md": {
+    "mtime": 1784167866.6197927,
+    "ast_hash": "adec7573785e15c1822963f9f7c03ffe",
+    "semantic_hash": "adec7573785e15c1822963f9f7c03ffe"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/superpowers/specs/2026-07-18-stability-intervention-design.md": {
+    "mtime": 1784346372.8644407,
+    "ast_hash": "0f5127fc781262b0b08e4696abff119b",
+    "semantic_hash": "0f5127fc781262b0b08e4696abff119b"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/tfg_models/README_AniPortrait.md": {
+    "mtime": 1784096793.5835412,
+    "ast_hash": "243ed4f5afac5ccccd0dea1e5d69afa6",
+    "semantic_hash": "243ed4f5afac5ccccd0dea1e5d69afa6"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/tfg_models/README_EchoMimic.md": {
+    "mtime": 1784096776.8399704,
+    "ast_hash": "2127e9b90040ae3bf611e17df9f7c8e6",
+    "semantic_hash": "2127e9b90040ae3bf611e17df9f7c8e6"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/tfg_models/README_Hallo2.md": {
+    "mtime": 1784096811.6338747,
+    "ast_hash": "923b5727531433bfb9861384a521c96c",
+    "semantic_hash": "923b5727531433bfb9861384a521c96c"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/tfg_models/README_LatentSync.md": {
+    "mtime": 1784096784.9959464,
+    "ast_hash": "0e46344051a344c8e914394f0356e1f2",
+    "semantic_hash": "0e46344051a344c8e914394f0356e1f2"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/tfg_models/README_MuseTalk.md": {
+    "mtime": 1784096768.4766712,
+    "ast_hash": "2a9b4931b6547055f8fd5d3d0e1ff2b1",
+    "semantic_hash": "2a9b4931b6547055f8fd5d3d0e1ff2b1"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/tfg_models/README_Wav2Lip.md": {
+    "mtime": 1784096802.191299,
+    "ast_hash": "cbdc0e878db6e5c76507d993df7f998c",
+    "semantic_hash": "cbdc0e878db6e5c76507d993df7f998c"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/tfg_models/TFG_DEPLOY_SUMMARY.md": {
+    "mtime": 1784268781.1458585,
+    "ast_hash": "8dd881f1c90efb63139c42c8d2988e96",
+    "semantic_hash": "8dd881f1c90efb63139c42c8d2988e96"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/docs/tts-tfg\u63d0\u5347\u5b9e\u9a8c.md": {
+    "mtime": 1783385547.1122458,
+    "ast_hash": "685f270d45c08bb5b01c8a20ffd8133f",
+    "semantic_hash": "685f270d45c08bb5b01c8a20ffd8133f"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/config.yaml": {
+    "mtime": 1783414513.2566311,
+    "ast_hash": "28c160b554d0425d12853d6e0a877e38",
+    "semantic_hash": "28c160b554d0425d12853d6e0a877e38"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/configs/r1_dashscope_cv3.yaml": {
+    "mtime": 1783419555.180359,
+    "ast_hash": "6a5e5587880f62f644b73fef6da46ca7",
+    "semantic_hash": "6a5e5587880f62f644b73fef6da46ca7"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/configs/r1_dashscope_flash.yaml": {
+    "mtime": 1783419553.4244876,
+    "ast_hash": "22f2aec7b879ce91a32cfc947162468a",
+    "semantic_hash": "22f2aec7b879ce91a32cfc947162468a"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/configs/r1_dashscope_vc.yaml": {
+    "mtime": 1783419551.9676807,
+    "ast_hash": "b0b67b1bc1df47b26e2edb6eb63dc22a",
+    "semantic_hash": "b0b67b1bc1df47b26e2edb6eb63dc22a"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/configs/r1_faster_qwen3.yaml": {
+    "mtime": 1783419550.7214077,
+    "ast_hash": "924270a2864907e6397132a3de02164a",
+    "semantic_hash": "924270a2864907e6397132a3de02164a"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/configs/r1_fish_audio.yaml": {
+    "mtime": 1783419556.945829,
+    "ast_hash": "3cec6c0e73567d38ebd91dc184a59cca",
+    "semantic_hash": "3cec6c0e73567d38ebd91dc184a59cca"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/configs/r1_siliconflow_cv2.yaml": {
+    "mtime": 1783429419.4309256,
+    "ast_hash": "6bde3e257681c94811de49cd57b40082",
+    "semantic_hash": "6bde3e257681c94811de49cd57b40082"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/scripts/configs/r2_f5_tts.yaml": {
+    "mtime": 1783419563.0427523,
+    "ast_hash": "cace0e995489aba5e28bc40e21e486a6",
+    "semantic_hash": "cace0e995489aba5e28bc40e21e486a6"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/papers/Wav2Sem_CVPR2025.pdf": {
+    "mtime": 1747598801.0,
+    "ast_hash": "266f7ec02502d873f770503cfe9ce9e1",
+    "semantic_hash": "266f7ec02502d873f770503cfe9ce9e1"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/papers/Wav2Sem_arXiv.pdf": {
+    "mtime": 1748652827.0,
+    "ast_hash": "0197282207edd861b8d1ad683d8b0a02",
+    "semantic_hash": "0197282207edd861b8d1ad683d8b0a02"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/image/1.png": {
+    "mtime": 1783353214.0,
+    "ast_hash": "6f926366c7ab83419789725f5f34dc2a",
+    "semantic_hash": "6f926366c7ab83419789725f5f34dc2a"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/image/10.png": {
+    "mtime": 1783353216.0,
+    "ast_hash": "fde566b3ab5524f654ca6679d7a6504c",
+    "semantic_hash": "fde566b3ab5524f654ca6679d7a6504c"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/image/11.png": {
+    "mtime": 1783471391.844382,
+    "ast_hash": "bfe67ade7133679e3b63dcdd6f85b7aa",
+    "semantic_hash": "bfe67ade7133679e3b63dcdd6f85b7aa"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/image/12.png": {
+    "mtime": 1783471392.7413015,
+    "ast_hash": "e426b50b73b656395f1abfba3e3b3d39",
+    "semantic_hash": "e426b50b73b656395f1abfba3e3b3d39"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/image/13.png": {
+    "mtime": 1783471393.6495626,
+    "ast_hash": "f1a2d452954c63c0babc4972c1cdb2f3",
+    "semantic_hash": "f1a2d452954c63c0babc4972c1cdb2f3"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/image/2.png": {
+    "mtime": 1783353216.0,
+    "ast_hash": "7d90c82880e3c24ebc7d679f615b7db3",
+    "semantic_hash": "7d90c82880e3c24ebc7d679f615b7db3"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/image/3.png": {
+    "mtime": 1783353216.0,
+    "ast_hash": "bfe67ade7133679e3b63dcdd6f85b7aa",
+    "semantic_hash": "bfe67ade7133679e3b63dcdd6f85b7aa"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/image/4.png": {
+    "mtime": 1783353214.0,
+    "ast_hash": "52f1cfd6d73d35904c7fdea7c0b37784",
+    "semantic_hash": "52f1cfd6d73d35904c7fdea7c0b37784"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/image/5.png": {
+    "mtime": 1783353214.0,
+    "ast_hash": "56c425ef6ac5188ad2b12d3783029a2c",
+    "semantic_hash": "56c425ef6ac5188ad2b12d3783029a2c"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/image/6.png": {
+    "mtime": 1783353214.0,
+    "ast_hash": "174d9f8f6413edab6b633fb07d06a231",
+    "semantic_hash": "174d9f8f6413edab6b633fb07d06a231"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/image/7.png": {
+    "mtime": 1783353214.0,
+    "ast_hash": "3d0254b1fa0052ee717829720c2d7792",
+    "semantic_hash": "3d0254b1fa0052ee717829720c2d7792"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/image/8.png": {
+    "mtime": 1783353215.0,
+    "ast_hash": "e426b50b73b656395f1abfba3e3b3d39",
+    "semantic_hash": "e426b50b73b656395f1abfba3e3b3d39"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/image/9.png": {
+    "mtime": 1783353215.0,
+    "ast_hash": "f1a2d452954c63c0babc4972c1cdb2f3",
+    "semantic_hash": "f1a2d452954c63c0babc4972c1cdb2f3"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/figures/boundary_sharpness_curve.png": {
+    "mtime": 1784339781.7794316,
+    "ast_hash": "4715c130d13e73a31ad1687e78cca933",
+    "semantic_hash": "4715c130d13e73a31ad1687e78cca933"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/figures/candidate_ranking.png": {
+    "mtime": 1784339782.0897377,
+    "ast_hash": "960f176ca212dec9efe45494b7aa8af8",
+    "semantic_hash": "960f176ca212dec9efe45494b7aa8af8"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/figures/feature_vs_sync_scatter.png": {
+    "mtime": 1784339781.9885192,
+    "ast_hash": "d9ff386626d08aa281414c3aad55b9a7",
+    "semantic_hash": "d9ff386626d08aa281414c3aad55b9a7"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/figures/metrics_forest_plot.png": {
+    "mtime": 1784339781.8822749,
+    "ast_hash": "2fbf94b1fbca354ca2e3ba53f40e7eaf",
+    "semantic_hash": "2fbf94b1fbca354ca2e3ba53f40e7eaf"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/wav2sem_analysis/figures/syncnet_summary.png": {
+    "mtime": 1784339782.1910782,
+    "ast_hash": "08a87836a2e5c95b870c49347a471c64",
+    "semantic_hash": "08a87836a2e5c95b870c49347a471c64"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/figures/case_study.png": {
+    "mtime": 1783523188.82036,
+    "ast_hash": "ab33b80eb2a79c5cf784b901aa3c3ba4",
+    "semantic_hash": "ab33b80eb2a79c5cf784b901aa3c3ba4"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/figures/nat_vs_tts_features.png": {
+    "mtime": 1783523186.1335,
+    "ast_hash": "2d6937b47cd1fe945d341869a21ea257",
+    "semantic_hash": "2d6937b47cd1fe945d341869a21ea257"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/figures/nat_vs_tts_spectrograms.png": {
+    "mtime": 1783523188.3385732,
+    "ast_hash": "711bd7ba25b029b0615f0127c7036957",
+    "semantic_hash": "711bd7ba25b029b0615f0127c7036957"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/figures/obs_v2_corr_heatmap.png": {
+    "mtime": 1783518400.0795324,
+    "ast_hash": "d06430240f23dd59979618b13f867226",
+    "semantic_hash": "d06430240f23dd59979618b13f867226"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/figures/obs_v2_pairplot.png": {
+    "mtime": 1783518404.4173746,
+    "ast_hash": "c7683d92246ba8848c5638327295e1fe",
+    "semantic_hash": "c7683d92246ba8848c5638327295e1fe"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/figures/obs_v2_pca.png": {
+    "mtime": 1783518401.3692632,
+    "ast_hash": "b705c78ab71930db5d1053571f96d650",
+    "semantic_hash": "b705c78ab71930db5d1053571f96d650"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/figures/obs_v2_rf_importance.png": {
+    "mtime": 1783518400.676533,
+    "ast_hash": "3fb9633f290cb0fd9add728e8fe69275",
+    "semantic_hash": "3fb9633f290cb0fd9add728e8fe69275"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/figures/obs_v2_scatter_top4.png": {
+    "mtime": 1783518401.210848,
+    "ast_hash": "c71fde8b7963f69bccd6f1a5466c0481",
+    "semantic_hash": "c71fde8b7963f69bccd6f1a5466c0481"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/figures/tform_gain_heatmap.png": {
+    "mtime": 1783522471.5566163,
+    "ast_hash": "a70328781d65981a5f98544c1065d923",
+    "semantic_hash": "a70328781d65981a5f98544c1065d923"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/figures/tform_sensitivity.png": {
+    "mtime": 1783522471.438634,
+    "ast_hash": "f187b6f7d8ad5424fd62d7d7c3c8dc66",
+    "semantic_hash": "f187b6f7d8ad5424fd62d7d7c3c8dc66"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/audio/1.wav": {
+    "mtime": 1783436834.9842546,
+    "ast_hash": "cd1987a7204604af09b06e39cdadccff",
+    "semantic_hash": "cd1987a7204604af09b06e39cdadccff"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/audio/10.wav": {
+    "mtime": 1783436834.9874105,
+    "ast_hash": "2c34ab7dc6a8189e694a13fdb153cdce",
+    "semantic_hash": "2c34ab7dc6a8189e694a13fdb153cdce"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/audio/11.wav": {
+    "mtime": 1783436834.9925625,
+    "ast_hash": "d14f092cdeec47b55ac141009ec7c734",
+    "semantic_hash": "d14f092cdeec47b55ac141009ec7c734"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/audio/12.wav": {
+    "mtime": 1783436834.9962158,
+    "ast_hash": "a92117d54fc4dc1e3c72466dbd9d2ee2",
+    "semantic_hash": "a92117d54fc4dc1e3c72466dbd9d2ee2"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/audio/13.wav": {
+    "mtime": 1783436834.9992146,
+    "ast_hash": "4ed092adb9627c268a2c7ef8f627103b",
+    "semantic_hash": "4ed092adb9627c268a2c7ef8f627103b"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/audio/2.wav": {
+    "mtime": 1783436835.0022135,
+    "ast_hash": "8f2666c8e11a3168e5f9a45806208ff8",
+    "semantic_hash": "8f2666c8e11a3168e5f9a45806208ff8"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/audio/3.wav": {
+    "mtime": 1783436835.0058053,
+    "ast_hash": "4b3d670b52cd23f175af51f40f63c209",
+    "semantic_hash": "4b3d670b52cd23f175af51f40f63c209"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/audio/4.wav": {
+    "mtime": 1783436835.0098763,
+    "ast_hash": "75b30af83b6c522f83c2b61b483334c9",
+    "semantic_hash": "75b30af83b6c522f83c2b61b483334c9"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/audio/5.wav": {
+    "mtime": 1783436835.0142837,
+    "ast_hash": "8f3ed06b1229f52d551c52d00d230d8b",
+    "semantic_hash": "8f3ed06b1229f52d551c52d00d230d8b"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/audio/6.wav": {
+    "mtime": 1783436835.0182831,
+    "ast_hash": "1510e4eaf419a8a74178087d64d3ef7b",
+    "semantic_hash": "1510e4eaf419a8a74178087d64d3ef7b"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/audio/7.wav": {
+    "mtime": 1783436835.0217166,
+    "ast_hash": "70385b8a2c370be53f59548d1b569caf",
+    "semantic_hash": "70385b8a2c370be53f59548d1b569caf"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/audio/8.wav": {
+    "mtime": 1783436835.0257194,
+    "ast_hash": "10315a9eb5a4c200f76afde18407d89f",
+    "semantic_hash": "10315a9eb5a4c200f76afde18407d89f"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/data/data/audio/9.wav": {
+    "mtime": 1783436835.030005,
+    "ast_hash": "505639f00685382dd3c2f4f12df55849",
+    "semantic_hash": "505639f00685382dd3c2f4f12df55849"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/natural_raw/1/1_1.mp4": {
+    "mtime": 1784252518.31853,
+    "ast_hash": "186c4a36bd8bc213328439466415c3ab",
+    "semantic_hash": "186c4a36bd8bc213328439466415c3ab"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/natural_raw/10/10_10.mp4": {
+    "mtime": 1784252522.6178093,
+    "ast_hash": "8c7faeba9faa624fecb251524a36e540",
+    "semantic_hash": "8c7faeba9faa624fecb251524a36e540"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/natural_raw/11/11_11.mp4": {
+    "mtime": 1784252523.1144965,
+    "ast_hash": "4fd532f17538180963baeabb33ef236a",
+    "semantic_hash": "4fd532f17538180963baeabb33ef236a"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/natural_raw/12/12_12.mp4": {
+    "mtime": 1784252523.5921247,
+    "ast_hash": "21a687f5d43a4bcc1204cbe701810d7d",
+    "semantic_hash": "21a687f5d43a4bcc1204cbe701810d7d"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/natural_raw/13/13_13.mp4": {
+    "mtime": 1784252524.0607176,
+    "ast_hash": "831107da092c6b0a238cdd27bdb1b111",
+    "semantic_hash": "831107da092c6b0a238cdd27bdb1b111"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/natural_raw/2/2_2.mp4": {
+    "mtime": 1784252518.8496919,
+    "ast_hash": "3050a08a283bbd96cbac0aa00356716b",
+    "semantic_hash": "3050a08a283bbd96cbac0aa00356716b"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/natural_raw/3/3_3.mp4": {
+    "mtime": 1784252519.3492053,
+    "ast_hash": "c8542759a6c3b3e7db145068d1267a39",
+    "semantic_hash": "c8542759a6c3b3e7db145068d1267a39"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/natural_raw/4/4_4.mp4": {
+    "mtime": 1784252519.8845222,
+    "ast_hash": "ae3c8dfe92cd8af555e944aab0591c77",
+    "semantic_hash": "ae3c8dfe92cd8af555e944aab0591c77"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/natural_raw/5/5_5.mp4": {
+    "mtime": 1784252520.39491,
+    "ast_hash": "c0a3bd37d40848a60ec1f61e0b5014d8",
+    "semantic_hash": "c0a3bd37d40848a60ec1f61e0b5014d8"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/natural_raw/6/6_6.mp4": {
+    "mtime": 1784252520.8387363,
+    "ast_hash": "e24c28722f2495746d5505e2e20e4717",
+    "semantic_hash": "e24c28722f2495746d5505e2e20e4717"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/natural_raw/7/7_7.mp4": {
+    "mtime": 1784252521.2693863,
+    "ast_hash": "c9669b5bdb8ccc6c83ac5dd7de6af2b0",
+    "semantic_hash": "c9669b5bdb8ccc6c83ac5dd7de6af2b0"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/natural_raw/8/8_8.mp4": {
+    "mtime": 1784252521.692911,
+    "ast_hash": "d3a4cd7498bdffdb935f5647c03d0aec",
+    "semantic_hash": "d3a4cd7498bdffdb935f5647c03d0aec"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/natural_raw/9/9_9.mp4": {
+    "mtime": 1784252522.212562,
+    "ast_hash": "7a3b5780d74cf1a97ca3912dec85782c",
+    "semantic_hash": "7a3b5780d74cf1a97ca3912dec85782c"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/tts_raw/1/1_1.mp4": {
+    "mtime": 1784252525.4612138,
+    "ast_hash": "eb8777183df669476df96d6ce7856f8d",
+    "semantic_hash": "eb8777183df669476df96d6ce7856f8d"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/tts_raw/10/10_10.mp4": {
+    "mtime": 1784252528.3657477,
+    "ast_hash": "f213fe7f64bde7aec68ac5c7c935b724",
+    "semantic_hash": "f213fe7f64bde7aec68ac5c7c935b724"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/tts_raw/11/11_11.mp4": {
+    "mtime": 1784252528.67081,
+    "ast_hash": "d1b990b0837ceab729a9a881c1c82678",
+    "semantic_hash": "d1b990b0837ceab729a9a881c1c82678"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/tts_raw/12/12_12.mp4": {
+    "mtime": 1784252528.9769356,
+    "ast_hash": "ab7a94cbaf686b6168a1a3f8d0365f72",
+    "semantic_hash": "ab7a94cbaf686b6168a1a3f8d0365f72"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/tts_raw/13/13_13.mp4": {
+    "mtime": 1784252529.3113372,
+    "ast_hash": "239496a386f6b05466868001b58dc124",
+    "semantic_hash": "239496a386f6b05466868001b58dc124"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/tts_raw/2/2_2.mp4": {
+    "mtime": 1784252525.860907,
+    "ast_hash": "3fd63069935f692fad3143bfd3f2b812",
+    "semantic_hash": "3fd63069935f692fad3143bfd3f2b812"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/tts_raw/3/3_3.mp4": {
+    "mtime": 1784252526.215318,
+    "ast_hash": "f52bfcb8a8639e9b9e554adef0ea5b12",
+    "semantic_hash": "f52bfcb8a8639e9b9e554adef0ea5b12"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/tts_raw/4/4_4.mp4": {
+    "mtime": 1784252526.5278387,
+    "ast_hash": "4d3ff907651b58e3ef83b7f2548d6f67",
+    "semantic_hash": "4d3ff907651b58e3ef83b7f2548d6f67"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/tts_raw/5/5_5.mp4": {
+    "mtime": 1784252526.8494914,
+    "ast_hash": "19361d313dcf2a30e552755881b5c7c3",
+    "semantic_hash": "19361d313dcf2a30e552755881b5c7c3"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/tts_raw/6/6_6.mp4": {
+    "mtime": 1784252527.146561,
+    "ast_hash": "f33afdcceff27264068452026e786c7a",
+    "semantic_hash": "f33afdcceff27264068452026e786c7a"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/tts_raw/7/7_7.mp4": {
+    "mtime": 1784252527.4980762,
+    "ast_hash": "57c96c3875f1643b1d762f873a28f624",
+    "semantic_hash": "57c96c3875f1643b1d762f873a28f624"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/tts_raw/8/8_8.mp4": {
+    "mtime": 1784252527.7937765,
+    "ast_hash": "5ee457ca2eddc92ace55f47986ecd988",
+    "semantic_hash": "5ee457ca2eddc92ace55f47986ecd988"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/joyvasa/tts_raw/9/9_9.mp4": {
+    "mtime": 1784252528.0504136,
+    "ast_hash": "9682b0d44f1807649e33ebd2085581ff",
+    "semantic_hash": "9682b0d44f1807649e33ebd2085581ff"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/natural_raw/1.mp4": {
+    "mtime": 1784252515.9359424,
+    "ast_hash": "65758dcc138b78f67812a5e413ac8000",
+    "semantic_hash": "65758dcc138b78f67812a5e413ac8000"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/natural_raw/10.mp4": {
+    "mtime": 1784252517.029466,
+    "ast_hash": "fddda00351a508f7c1bf8a189fc29b5e",
+    "semantic_hash": "fddda00351a508f7c1bf8a189fc29b5e"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/natural_raw/11.mp4": {
+    "mtime": 1784252517.1545694,
+    "ast_hash": "c9d73cbc0b5a54bdc456ce56b6a754af",
+    "semantic_hash": "c9d73cbc0b5a54bdc456ce56b6a754af"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/natural_raw/12.mp4": {
+    "mtime": 1784252517.2715194,
+    "ast_hash": "955c5578088e272b999a479e0c719379",
+    "semantic_hash": "955c5578088e272b999a479e0c719379"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/natural_raw/13.mp4": {
+    "mtime": 1784252517.387221,
+    "ast_hash": "dd1d07c33c8394048f648867f96a0b43",
+    "semantic_hash": "dd1d07c33c8394048f648867f96a0b43"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/natural_raw/2.mp4": {
+    "mtime": 1784252516.052455,
+    "ast_hash": "543ed35976881d85844ece1d91b64a91",
+    "semantic_hash": "543ed35976881d85844ece1d91b64a91"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/natural_raw/3.mp4": {
+    "mtime": 1784252516.1634011,
+    "ast_hash": "8cdb0c3c86651ca2729163367d28998f",
+    "semantic_hash": "8cdb0c3c86651ca2729163367d28998f"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/natural_raw/4.mp4": {
+    "mtime": 1784252516.2863228,
+    "ast_hash": "f8c7c87098d00bff43ea3c94c0b3cc08",
+    "semantic_hash": "f8c7c87098d00bff43ea3c94c0b3cc08"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/natural_raw/5.mp4": {
+    "mtime": 1784252516.417704,
+    "ast_hash": "e856a05bcb3a8df044fc83e5a55fecfd",
+    "semantic_hash": "e856a05bcb3a8df044fc83e5a55fecfd"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/natural_raw/6.mp4": {
+    "mtime": 1784252516.5417173,
+    "ast_hash": "5465e2095346a6eba71ae2dbc0b68836",
+    "semantic_hash": "5465e2095346a6eba71ae2dbc0b68836"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/natural_raw/7.mp4": {
+    "mtime": 1784252516.6695597,
+    "ast_hash": "2a3fbadb96b6ef09dd65fc541139c921",
+    "semantic_hash": "2a3fbadb96b6ef09dd65fc541139c921"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/natural_raw/8.mp4": {
+    "mtime": 1784252516.7935424,
+    "ast_hash": "f1afcc7d7b210cef04def4816eb9c338",
+    "semantic_hash": "f1afcc7d7b210cef04def4816eb9c338"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/natural_raw/9.mp4": {
+    "mtime": 1784252516.9131768,
+    "ast_hash": "c59a9d93e1ef093b2dd820bdfacb56d6",
+    "semantic_hash": "c59a9d93e1ef093b2dd820bdfacb56d6"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/tts_raw/1.mp4": {
+    "mtime": 1784252518.450756,
+    "ast_hash": "28a01d6559addecb03de754ae9472aa6",
+    "semantic_hash": "28a01d6559addecb03de754ae9472aa6"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/tts_raw/10.mp4": {
+    "mtime": 1784252519.4390328,
+    "ast_hash": "293926f8d868d5bcc4a71384c799c192",
+    "semantic_hash": "293926f8d868d5bcc4a71384c799c192"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/tts_raw/11.mp4": {
+    "mtime": 1784252519.5672004,
+    "ast_hash": "cbed3ab4e369c1d4d85dd1f0a7ed42a8",
+    "semantic_hash": "cbed3ab4e369c1d4d85dd1f0a7ed42a8"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/tts_raw/12.mp4": {
+    "mtime": 1784252519.6764746,
+    "ast_hash": "1231e1334fda0944b3eb5d8cdc20e7b8",
+    "semantic_hash": "1231e1334fda0944b3eb5d8cdc20e7b8"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/tts_raw/13.mp4": {
+    "mtime": 1784252519.7806082,
+    "ast_hash": "9689cd124955a4ca7bd4a94ae8dd9c43",
+    "semantic_hash": "9689cd124955a4ca7bd4a94ae8dd9c43"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/tts_raw/2.mp4": {
+    "mtime": 1784252518.568406,
+    "ast_hash": "b741a5f131b935c9da69cdfe5280e30e",
+    "semantic_hash": "b741a5f131b935c9da69cdfe5280e30e"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/tts_raw/3.mp4": {
+    "mtime": 1784252518.6893513,
+    "ast_hash": "3308f69908e8db1ea48386785b817464",
+    "semantic_hash": "3308f69908e8db1ea48386785b817464"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/tts_raw/4.mp4": {
+    "mtime": 1784252518.8047724,
+    "ast_hash": "a46054837c54e857fefeba3ca0273c0b",
+    "semantic_hash": "a46054837c54e857fefeba3ca0273c0b"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/tts_raw/5.mp4": {
+    "mtime": 1784252518.9107494,
+    "ast_hash": "1dff58dc6e3d1632ebf902218cd6c50e",
+    "semantic_hash": "1dff58dc6e3d1632ebf902218cd6c50e"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/tts_raw/6.mp4": {
+    "mtime": 1784252519.015793,
+    "ast_hash": "3e44c2e1d0d4e0472ff084bf2ea74fec",
+    "semantic_hash": "3e44c2e1d0d4e0472ff084bf2ea74fec"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/tts_raw/7.mp4": {
+    "mtime": 1784252519.1193085,
+    "ast_hash": "695c30f36fbe5b50f0e5165f69376af3",
+    "semantic_hash": "695c30f36fbe5b50f0e5165f69376af3"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/tts_raw/8.mp4": {
+    "mtime": 1784252519.225994,
+    "ast_hash": "19e396425e391f20110333bf02df9966",
+    "semantic_hash": "19e396425e391f20110333bf02df9966"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/latentsync/tts_raw/9.mp4": {
+    "mtime": 1784252519.3305511,
+    "ast_hash": "0cb4281a23e74785441ef68868c7933b",
+    "semantic_hash": "0cb4281a23e74785441ef68868c7933b"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/natural_raw/1.mp4": {
+    "mtime": 1784267604.1273847,
+    "ast_hash": "9a854d19ace70e2bf5445c281ed06e84",
+    "semantic_hash": "9a854d19ace70e2bf5445c281ed06e84"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/natural_raw/10.mp4": {
+    "mtime": 1784267605.4960506,
+    "ast_hash": "ef730480472a014a271c4f865a7f3c16",
+    "semantic_hash": "ef730480472a014a271c4f865a7f3c16"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/natural_raw/11.mp4": {
+    "mtime": 1784267605.662123,
+    "ast_hash": "ff7e426d71ee75e7634efed802421676",
+    "semantic_hash": "ff7e426d71ee75e7634efed802421676"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/natural_raw/12.mp4": {
+    "mtime": 1784267605.8162313,
+    "ast_hash": "e4e4b7f3292820954b32371c4b4b937e",
+    "semantic_hash": "e4e4b7f3292820954b32371c4b4b937e"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/natural_raw/13.mp4": {
+    "mtime": 1784267605.9729116,
+    "ast_hash": "dd08a076dd4bf92506e4263f64055b8f",
+    "semantic_hash": "dd08a076dd4bf92506e4263f64055b8f"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/natural_raw/2.mp4": {
+    "mtime": 1784267604.2794986,
+    "ast_hash": "6a0f861763391d56810e84e20c7e3c5e",
+    "semantic_hash": "6a0f861763391d56810e84e20c7e3c5e"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/natural_raw/3.mp4": {
+    "mtime": 1784267604.4993076,
+    "ast_hash": "1e1184d4ea9605ea6ed972fe4be85d48",
+    "semantic_hash": "1e1184d4ea9605ea6ed972fe4be85d48"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/natural_raw/4.mp4": {
+    "mtime": 1784267604.6220205,
+    "ast_hash": "c3cc7b8ebe1b642dc1dadcc92168c1c3",
+    "semantic_hash": "c3cc7b8ebe1b642dc1dadcc92168c1c3"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/natural_raw/5.mp4": {
+    "mtime": 1784267604.7735038,
+    "ast_hash": "5e3858fb5b67987e6c327c36aee294f2",
+    "semantic_hash": "5e3858fb5b67987e6c327c36aee294f2"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/natural_raw/6.mp4": {
+    "mtime": 1784267604.8941684,
+    "ast_hash": "a8a74446bd6377ed521588bd8971b613",
+    "semantic_hash": "a8a74446bd6377ed521588bd8971b613"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/natural_raw/7.mp4": {
+    "mtime": 1784267605.0445843,
+    "ast_hash": "dcd352a8abc5a23cbe210458afa43866",
+    "semantic_hash": "dcd352a8abc5a23cbe210458afa43866"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/natural_raw/8.mp4": {
+    "mtime": 1784267605.192652,
+    "ast_hash": "5d665945be70510ccc00403dd60a76e8",
+    "semantic_hash": "5d665945be70510ccc00403dd60a76e8"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/natural_raw/9.mp4": {
+    "mtime": 1784267605.345384,
+    "ast_hash": "014e6af04f4826a809b9440a19de8a65",
+    "semantic_hash": "014e6af04f4826a809b9440a19de8a65"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/tts_raw/1.mp4": {
+    "mtime": 1784267607.0532055,
+    "ast_hash": "12ebad44040c4b5072a6c6cd160ebe1c",
+    "semantic_hash": "12ebad44040c4b5072a6c6cd160ebe1c"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/tts_raw/10.mp4": {
+    "mtime": 1784267608.5492294,
+    "ast_hash": "6942fb8437344c9c5a9f34d5068856c2",
+    "semantic_hash": "6942fb8437344c9c5a9f34d5068856c2"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/tts_raw/11.mp4": {
+    "mtime": 1784267608.716119,
+    "ast_hash": "190ba654584730e24a8c36b8932aa004",
+    "semantic_hash": "190ba654584730e24a8c36b8932aa004"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/tts_raw/12.mp4": {
+    "mtime": 1784267608.86918,
+    "ast_hash": "9c20a3be5e9346432a32a7d92abe7d8a",
+    "semantic_hash": "9c20a3be5e9346432a32a7d92abe7d8a"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/tts_raw/13.mp4": {
+    "mtime": 1784267609.0320947,
+    "ast_hash": "4240f5387ba3013bc68bd0e51fd905cf",
+    "semantic_hash": "4240f5387ba3013bc68bd0e51fd905cf"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/tts_raw/2.mp4": {
+    "mtime": 1784267607.2341666,
+    "ast_hash": "d0c3b93019527f6e7a3cb332a4958dcb",
+    "semantic_hash": "d0c3b93019527f6e7a3cb332a4958dcb"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/tts_raw/3.mp4": {
+    "mtime": 1784267607.4020548,
+    "ast_hash": "e896953f4a5e10f8d50339d40346862c",
+    "semantic_hash": "e896953f4a5e10f8d50339d40346862c"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/tts_raw/4.mp4": {
+    "mtime": 1784267607.6339407,
+    "ast_hash": "b5f996f86d8fc81d33d76e324b6fd2c6",
+    "semantic_hash": "b5f996f86d8fc81d33d76e324b6fd2c6"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/tts_raw/5.mp4": {
+    "mtime": 1784267607.8021083,
+    "ast_hash": "7e06ab10081444d3b29487fce0986bbd",
+    "semantic_hash": "7e06ab10081444d3b29487fce0986bbd"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/tts_raw/6.mp4": {
+    "mtime": 1784267607.9317667,
+    "ast_hash": "79e644b2b43359b3cd1657ea55fb29c4",
+    "semantic_hash": "79e644b2b43359b3cd1657ea55fb29c4"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/tts_raw/7.mp4": {
+    "mtime": 1784267608.0985472,
+    "ast_hash": "aee88317c5cd256f15310e2f9c039e78",
+    "semantic_hash": "aee88317c5cd256f15310e2f9c039e78"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/tts_raw/8.mp4": {
+    "mtime": 1784267608.2750957,
+    "ast_hash": "d6c5021d2ab8dbd5730c895d23afc17e",
+    "semantic_hash": "d6c5021d2ab8dbd5730c895d23afc17e"
+  },
+  "/mnt/e/Documents/tts-audio/tts-exp/results/vexpress/tts_raw/9.mp4": {
+    "mtime": 1784267608.3967755,
+    "ast_hash": "26d2dd6df7d8f03150deff850834e5f5",
+    "semantic_hash": "26d2dd6df7d8f03150deff850834e5f5"
+  }
+}

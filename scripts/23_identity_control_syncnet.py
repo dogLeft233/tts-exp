@@ -39,6 +39,7 @@ _REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(_REPO / "scripts"))
 
 from tfg_feature_common import STUDY_SAMPLES, TARGET_SR, load_audio_mono, ensure_output_dirs
+from utils import load_config, resolve_repo_path
 
 
 def _load_script_module(filename: str):
@@ -66,21 +67,30 @@ aggregate_deltas = _s22.aggregate_deltas
 
 
 def _identity_tts(y_tts, y_nat, sr, sid):
-    """No-op transform: return TTS audio unchanged.
-
-    The point is to exercise the downstream write/Ditto/SyncNet pipeline
-    with bit-identical audio — any ΔSync-C must therefore come from the
-    pipeline itself, not from a feature modification.
-    """
     return y_tts
 
 
-def _build_identity_interventions() -> list[Intervention]:
+def _identity_natural(y_tts, y_nat, sr, sid):
+    return y_nat
+
+
+def _build_identity_interventions(
+    natural_baseline: str = "natural_raw",
+    tts_baseline: str = "tts_raw",
+) -> list[Intervention]:
     return [
+        Intervention(
+            name="identity_natural",
+            source="natural",
+            baseline_cond=natural_baseline,
+            transform_description="No-op: natural audio re-written as PCM_16 unchanged",
+            expected_sync_direction="no change",
+            transform=_identity_natural,
+        ),
         Intervention(
             name="identity_tts",
             source="tts",
-            baseline_cond="tts_raw",
+            baseline_cond=tts_baseline,
             transform_description="No-op: TTS audio re-written as PCM_16 unchanged",
             expected_sync_direction="no change",
             transform=_identity_tts,
@@ -98,6 +108,10 @@ def main() -> None:
         description="Identity control for the dose-response pipeline (script 22)"
     )
     ap.add_argument("--run-id", required=True)
+    ap.add_argument("--config", default="")
+    ap.add_argument("--seed", type=int, default=None)
+    ap.add_argument("--natural-baseline", default=None)
+    ap.add_argument("--tts-baseline", default=None)
     ap.add_argument(
         "--samples",
         default=",".join(str(s) for s in STUDY_SAMPLES),
@@ -116,22 +130,43 @@ def main() -> None:
         print(f"ERROR: run directory not found: {run_dir}")
         return
 
-    cfg_path = repo / "scripts" / "config.yaml"
-    cfg = yaml.safe_load(cfg_path.read_text()) if cfg_path.exists() else {}
+    cfg = load_config(repo, args.config or None)
 
     sample_ids = [int(s.strip()) for s in args.samples.split(",") if s.strip()]
-    interventions = _build_identity_interventions()
+    configured_conditions = cfg.get("ditto", {}).get("conditions", [])
+    natural_baseline = args.natural_baseline or (
+        "natural" if "natural" in configured_conditions else "natural_raw"
+    )
+    tts_baseline = args.tts_baseline or (
+        "tts" if "tts" in configured_conditions else "tts_raw"
+    )
+    interventions = _build_identity_interventions(natural_baseline, tts_baseline)
+    seed = int(args.seed if args.seed is not None else cfg.get("ditto", {}).get("seed", 42))
 
     eval_base = run_dir / "04_eval"
     baseline_conds = sorted({iv.baseline_cond for iv in interventions})
     baselines = load_baseline_results(eval_base, baseline_conds)
 
-    nat_audio_dir = repo / "data" / "data" / "audio"
-    tts_audio_dir = run_dir / "02_tts"
+    input_stage = cfg.get("ditto", {}).get("input_stage")
+    if input_stage:
+        pair_base = run_dir / input_stage
+        nat_audio_dir = pair_base / "natural"
+        tts_audio_dir = pair_base / "tts"
+    else:
+        nat_audio_dir = resolve_repo_path(
+            repo, cfg.get("paths", {}).get("audio_dir", "data/data/audio")
+        )
+        configured_tts = cfg.get("paths", {}).get("tts_audio_dir")
+        tts_audio_dir = (
+            resolve_repo_path(repo, configured_tts)
+            if configured_tts else run_dir / "02_tts"
+        )
     if not tts_audio_dir.is_dir():
         print(f"ERROR: TTS audio dir not found: {tts_audio_dir}")
         return
-    img_dir = repo / "data" / "data" / "image"
+    img_dir = resolve_repo_path(
+        repo, cfg.get("paths", {}).get("image_dir", "data/data/image")
+    )
 
     natural_audio: dict[int, np.ndarray] = {}
     tts_audio: dict[int, np.ndarray] = {}
@@ -150,7 +185,12 @@ def main() -> None:
 
     ditto_intv_base = run_dir / "03_ditto" / "interventions"
     eval_intv_base = run_dir / "04_eval" / "interventions"
-    out_dir = args.output_dir if args.output_dir else ensure_output_dirs()["metrics"]
+    if args.output_dir:
+        out_dir = args.output_dir
+    elif args.config:
+        out_dir = run_dir / "04_eval" / "controls"
+    else:
+        out_dir = ensure_output_dirs()["metrics"]
     out_dir.mkdir(parents=True, exist_ok=True)
 
     print(f"[identity] run_id={args.run_id}")
@@ -193,6 +233,7 @@ def main() -> None:
                 skip_video=not args.no_cache_video,
                 skip_syncnet=not args.no_cache_syncnet,
                 dry_run=args.dry_run,
+                seed=seed,
             )
 
             if res is None:
@@ -217,45 +258,35 @@ def main() -> None:
 
     summary = aggregate_deltas(results, baselines, interventions)
 
-    # Interpretation
-    iv_name = interventions[0].name
-    s = summary.get(iv_name, {})
-    if s.get("n_samples"):
-        mean_dc = s["mean_delta_c"]
-        if mean_dc is not None:
-            if abs(mean_dc) < 0.2:
-                verdict = "PIPELINE_CLEAN"
-                verdict_msg = (
-                    f"Identity ΔSync-C = {mean_dc:+.3f} (|Δ| < 0.2). The write/Ditto/SyncNet "
-                    "pipeline itself does not account for the dose-response drops. "
-                    "The −1.0 to −1.2 Sync-C drops in script 22 can be attributed to "
-                    "feature-specific perturbations."
-                )
-            elif mean_dc <= -0.5:
-                verdict = "PIPELINE_CONFOUNDS_DOSE_RESPONSE"
-                verdict_msg = (
-                    f"Identity ΔSync-C = {mean_dc:+.3f} (≤ −0.5). The pipeline alone accounts "
-                    "for a substantial fraction of the dose-response drop. The TTS-source "
-                    "intervention findings in script 22 should be reinterpreted: the common-mode "
-                    "degradation is partly a write/Ditto/SyncNet re-run artifact, not purely a "
-                    "feature-specific effect."
-                )
-            else:
-                verdict = "AMBIGUOUS"
-                verdict_msg = (
-                    f"Identity ΔSync-C = {mean_dc:+.3f} (0.2 ≤ |Δ| < 0.5). Pipeline contributes "
-                    "a small but non-negligible offset; interpret dose-response magnitudes with "
-                    "this baseline in mind."
-                )
+    verdict_by_arm: dict[str, dict] = {}
+    for iv in interventions:
+        arm_summary = summary.get(iv.name, {})
+        mean_dc = arm_summary.get("mean_delta_c")
+        if mean_dc is None:
+            arm_verdict = "NO_DATA"
+        elif abs(mean_dc) < 0.2:
+            arm_verdict = "PIPELINE_CLEAN"
+        elif abs(mean_dc) >= 0.5:
+            arm_verdict = "PIPELINE_CONFOUNDS_BASELINE"
         else:
-            verdict = "NO_DATA"
-            verdict_msg = "No samples produced results."
+            arm_verdict = "AMBIGUOUS"
+        verdict_by_arm[iv.name] = {
+            "verdict": arm_verdict,
+            "mean_delta_c": mean_dc,
+            "mean_delta_d": arm_summary.get("mean_delta_d"),
+        }
+    if any(v["verdict"] == "PIPELINE_CONFOUNDS_BASELINE" for v in verdict_by_arm.values()):
+        verdict = "PIPELINE_CONFOUNDS_BASELINE"
+    elif any(v["verdict"] in {"AMBIGUOUS", "NO_DATA"} for v in verdict_by_arm.values()):
+        verdict = "AMBIGUOUS"
     else:
-        verdict = "NO_DATA"
-        verdict_msg = "No samples produced results."
+        verdict = "PIPELINE_CLEAN"
+    verdict_msg = "Bilateral no-op results are reported per arm; subtract them per sample from the TTS-natural contrast."
 
     output = {
         "run_id": args.run_id,
+        "seed": seed,
+        "config_override": args.config or None,
         "samples": loaded_ids,
         "baselines": {
             cond: {str(sid): vals for sid, vals in baselines.get(cond, {}).items()}
@@ -264,6 +295,7 @@ def main() -> None:
         "interventions": summary,
         "failed": failures,
         "elapsed_s": round(elapsed, 1),
+        "verdict_by_arm": verdict_by_arm,
         "verdict": verdict,
         "verdict_message": verdict_msg,
     }
@@ -273,11 +305,14 @@ def main() -> None:
     print(f"[identity] results -> {out_path}")
 
     print("\n=== Identity Control Summary ===")
-    if s.get("n_samples"):
-        print(
-            f"{iv_name:<24} n={s['n_samples']:>2}  "
-            f"ΔSync-C={s['mean_delta_c']:+.4f}  ΔSync-D={s['mean_delta_d']:+.4f}"
-        )
+    for iv in interventions:
+        arm_summary = summary.get(iv.name, {})
+        if arm_summary.get("n_samples"):
+            print(
+                f"{iv.name:<24} n={arm_summary['n_samples']:>2}  "
+                f"ΔSync-C={arm_summary['mean_delta_c']:+.4f}  "
+                f"ΔSync-D={arm_summary['mean_delta_d']:+.4f}"
+            )
     print(f"\nVERDICT: {verdict}")
     print(verdict_msg)
 

@@ -19,17 +19,14 @@ from pathlib import Path
 
 import yaml
 
+from utils import detect_sample_ids, load_config
+
 # Regex patterns for SyncNet stdout
 RE_CONFIDENCE = re.compile(r"Confidence:\s+([\d.]+)")
 RE_MIN_DIST = re.compile(r"Min dist:\s+([\d.]+)")
 RE_AV_OFFSET = re.compile(r"AV offset:\s+(\d+)")
 
 # ---------------------------------------------------------------------------
-
-
-def load_config(repo: Path) -> dict:
-    cfg_path = repo / "scripts" / "config.yaml"
-    return yaml.safe_load(cfg_path.read_text()) if cfg_path.exists() else {}
 
 
 def parse_syncnet_output(stdout: str) -> dict | None:
@@ -89,6 +86,7 @@ def run_syncnet_pipeline(
         "--videofile", str(video_path),
         "--reference", reference,
         "--data_dir", str(data_dir),
+        "--overwrite",
     ]
     try:
         subprocess.run(cmd1, check=True, capture_output=True, text=True, timeout=180, env=env, cwd=str(syncnet_dir))
@@ -113,8 +111,10 @@ def run_syncnet_pipeline(
 
 def main() -> None:
     ap = argparse.ArgumentParser(description="SyncNet evaluation")
-    ap.add_argument("--run_id", required=True)
+    ap.add_argument("--run_id", "--run-id", dest="run_id", required=True)
     ap.add_argument("--smoke", action="store_true")
+    ap.add_argument("--config", default="")
+    ap.add_argument("--no-cache", action="store_true")
     args = ap.parse_args()
 
     repo = Path(__file__).resolve().parent.parent
@@ -123,8 +123,9 @@ def main() -> None:
     out_base = run_dir / "04_eval"
     out_base.mkdir(parents=True, exist_ok=True)
 
-    cfg = load_config(repo)
+    cfg = load_config(repo, args.config or None)
     conditions = cfg.get("ditto", {}).get("conditions", ["natural_raw", "natural_resamp", "tts_raw", "tts_resamp"])
+    expected_ids = detect_sample_ids(repo, args.smoke, cfg=cfg)
     syncnet_dir = repo / cfg["paths"]["syncnet_repo"]
     syn_env = Path(cfg["paths"]["envs_dir"]) / "syncnet"
     syncnet_python = str(syn_env / "bin" / "python")
@@ -143,6 +144,16 @@ def main() -> None:
         for sid, vpath in sorted(sample_videos.items()):
             sample_dir = cond_out / str(sid)
             sample_dir.mkdir(exist_ok=True)
+            sync_path = sample_dir / "syncnet.json"
+            if sync_path.exists() and not args.no_cache:
+                try:
+                    cached = json.loads(sync_path.read_text())
+                    if cached.get("sync_c") is not None and cached.get("sync_d") is not None:
+                        results[f"{cond}:{sid}"] = cached
+                        print(f"[eval] {cond}:{sid} cached")
+                        continue
+                except (json.JSONDecodeError, OSError):
+                    pass
             data_dir = sample_dir / "syncnet_data"
             data_dir.mkdir(exist_ok=True)
             reference = f"{cond}_{sid}"
@@ -169,7 +180,7 @@ def main() -> None:
                             "condition": cond,
                             **parsed,
                         }
-                        (sample_dir / "syncnet.json").write_text(
+                        sync_path.write_text(
                             json.dumps(sample_out, indent=2)
                         )
                         results[f"{cond}:{sid}"] = sample_out
@@ -187,7 +198,29 @@ def main() -> None:
             else:
                 print(f"  -> FAILED")
 
+    successful_by_condition = {
+        condition: sorted(
+            sid for sid in expected_ids if f"{condition}:{sid}" in results
+        )
+        for condition in conditions
+    }
+    complete_ids = sorted(
+        set(expected_ids).intersection(
+            *(set(ids) for ids in successful_by_condition.values())
+        )
+    ) if conditions else []
+    require_complete = bool(
+        cfg.get("eval", {}).get("require_complete_pairs", False)
+    )
+    incomplete_ids = sorted(set(expected_ids) - set(complete_ids))
     meta = {
+        "config_override": args.config or None,
+        "conditions": conditions,
+        "expected_sample_ids": expected_ids,
+        "successful_by_condition": successful_by_condition,
+        "complete_case_ids": complete_ids,
+        "incomplete_ids": incomplete_ids,
+        "complete": not incomplete_ids,
         "samples_total": sum(len(v) for v in videos.values()),
         "samples_ok": len(results),
         "samples_failed": len(failed),
@@ -195,7 +228,12 @@ def main() -> None:
         "failed": failed,
     }
     (out_base / "eval_meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False))
-    print(f"[eval] {len(results)} ok, {len(failed)} failed")
+    print(
+        f"[eval] {len(results)} ok, {len(failed)} failed; "
+        f"complete cases={len(complete_ids)}/{len(expected_ids)}"
+    )
+    if require_complete and incomplete_ids:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

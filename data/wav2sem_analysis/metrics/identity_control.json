@@ -1,0 +1,161 @@
+{
+  "run_id": "aishell1_strict_20260707T081223Z",
+  "samples": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "baselines": {
+    "tts_raw": {
+      "1": {
+        "sync_c": 6.491,
+        "sync_d": 7.36,
+        "av_offset": 1
+      },
+      "10": {
+        "sync_c": 7.303,
+        "sync_d": 6.989,
+        "av_offset": 1
+      },
+      "2": {
+        "sync_c": 6.6,
+        "sync_d": 7.752,
+        "av_offset": 1
+      },
+      "3": {
+        "sync_c": 7.444,
+        "sync_d": 7.131,
+        "av_offset": 1
+      },
+      "4": {
+        "sync_c": 6.843,
+        "sync_d": 7.941,
+        "av_offset": 1
+      },
+      "5": {
+        "sync_c": 6.161,
+        "sync_d": 8.007,
+        "av_offset": 1
+      },
+      "6": {
+        "sync_c": 6.149,
+        "sync_d": 7.996,
+        "av_offset": 1
+      },
+      "7": {
+        "sync_c": 6.406,
+        "sync_d": 7.828,
+        "av_offset": 1
+      },
+      "8": {
+        "sync_c": 7.977,
+        "sync_d": 6.948,
+        "av_offset": 1
+      }
+    }
+  },
+  "interventions": {
+    "identity_tts": {
+      "source": "tts",
+      "baseline_cond": "tts_raw",
+      "description": "No-op: TTS audio re-written as PCM_16 unchanged",
+      "expected_sync_direction": "no change",
+      "n_samples": 9,
+      "mean_delta_c": -1.161111111111111,
+      "mean_delta_d": 0.539111111111111,
+      "std_delta_c": 0.4693078532382675,
+      "std_delta_d": 0.47223946373753106,
+      "per_sample": {
+        "1": {
+          "intervention_sync_c": 4.468,
+          "intervention_sync_d": 8.432,
+          "baseline_sync_c": 6.491,
+          "baseline_sync_d": 7.36,
+          "delta_c": -2.0229999999999997,
+          "delta_d": 1.072
+        },
+        "2": {
+          "intervention_sync_c": 5.478,
+          "intervention_sync_d": 8.28,
+          "baseline_sync_c": 6.6,
+          "baseline_sync_d": 7.752,
+          "delta_c": -1.1219999999999999,
+          "delta_d": 0.5279999999999996
+        },
+        "3": {
+          "intervention_sync_c": 5.927,
+          "intervention_sync_d": 7.892,
+          "baseline_sync_c": 7.444,
+          "baseline_sync_d": 7.131,
+          "delta_c": -1.5170000000000003,
+          "delta_d": 0.7610000000000001
+        },
+        "4": {
+          "intervention_sync_c": 5.807,
+          "intervention_sync_d": 8.604,
+          "baseline_sync_c": 6.843,
+          "baseline_sync_d": 7.941,
+          "delta_c": -1.0359999999999996,
+          "delta_d": 0.6629999999999994
+        },
+        "5": {
+          "intervention_sync_c": 5.426,
+          "intervention_sync_d": 8.144,
+          "baseline_sync_c": 6.161,
+          "baseline_sync_d": 8.007,
+          "delta_c": -0.7349999999999994,
+          "delta_d": 0.13700000000000045
+        },
+        "6": {
+          "intervention_sync_c": 5.682,
+          "intervention_sync_d": 7.676,
+          "baseline_sync_c": 6.149,
+          "baseline_sync_d": 7.996,
+          "delta_c": -0.46699999999999964,
+          "delta_d": -0.3200000000000003
+        },
+        "7": {
+          "intervention_sync_c": 5.138,
+          "intervention_sync_d": 8.442,
+          "baseline_sync_c": 6.406,
+          "baseline_sync_d": 7.828,
+          "delta_c": -1.2679999999999998,
+          "delta_d": 0.6139999999999999
+        },
+        "8": {
+          "intervention_sync_c": 6.52,
+          "intervention_sync_d": 8.136,
+          "baseline_sync_c": 7.977,
+          "baseline_sync_d": 6.948,
+          "delta_c": -1.4570000000000007,
+          "delta_d": 1.1879999999999988
+        },
+        "10": {
+          "intervention_sync_c": 6.478,
+          "intervention_sync_d": 7.198,
+          "baseline_sync_c": 7.303,
+          "baseline_sync_d": 6.989,
+          "delta_c": -0.8250000000000002,
+          "delta_d": 0.20900000000000052
+        }
+      }
+    }
+  },
+  "failed": [
+    {
+      "intervention": "identity_tts",
+      "sample_id": 9,
+      "error": "syncnet parse failed"
+    }
+  ],
+  "elapsed_s": 256.0,
+  "verdict": "PIPELINE_CONFOUNDS_DOSE_RESPONSE",
+  "verdict_message": "Identity ΔSync-C = -1.161 (≤ −0.5). The pipeline alone accounts for a substantial fraction of the dose-response drop. The TTS-source intervention findings in script 22 should be reinterpreted: the common-mode degradation is partly a write/Ditto/SyncNet re-run artifact, not purely a feature-specific effect."
+}

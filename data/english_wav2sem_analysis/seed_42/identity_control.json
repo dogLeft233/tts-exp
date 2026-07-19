@@ -1,0 +1,408 @@
+{
+  "run_id": "english_wav2sem_gate1_s42",
+  "seed": 42,
+  "config_override": "scripts/configs/english_wav2sem.yaml",
+  "samples": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "baselines": {
+    "natural": {
+      "1": {
+        "sync_c": 6.0,
+        "sync_d": 8.759,
+        "av_offset": 1
+      },
+      "10": {
+        "sync_c": 7.354,
+        "sync_d": 7.836,
+        "av_offset": 1
+      },
+      "11": {
+        "sync_c": 6.471,
+        "sync_d": 8.02,
+        "av_offset": 1
+      },
+      "12": {
+        "sync_c": 5.44,
+        "sync_d": 8.331,
+        "av_offset": 1
+      },
+      "13": {
+        "sync_c": 6.813,
+        "sync_d": 7.92,
+        "av_offset": 0
+      },
+      "2": {
+        "sync_c": 6.843,
+        "sync_d": 8.137,
+        "av_offset": 0
+      },
+      "3": {
+        "sync_c": 7.332,
+        "sync_d": 7.397,
+        "av_offset": 0
+      },
+      "4": {
+        "sync_c": 4.312,
+        "sync_d": 11.145,
+        "av_offset": 1
+      },
+      "5": {
+        "sync_c": 7.48,
+        "sync_d": 7.215,
+        "av_offset": 1
+      },
+      "6": {
+        "sync_c": 7.419,
+        "sync_d": 7.535,
+        "av_offset": 1
+      },
+      "7": {
+        "sync_c": 7.48,
+        "sync_d": 7.508,
+        "av_offset": 1
+      },
+      "8": {
+        "sync_c": 5.208,
+        "sync_d": 9.22,
+        "av_offset": 1
+      },
+      "9": {
+        "sync_c": 7.252,
+        "sync_d": 7.787,
+        "av_offset": 1
+      }
+    },
+    "tts": {
+      "1": {
+        "sync_c": 6.192,
+        "sync_d": 8.35,
+        "av_offset": 1
+      },
+      "10": {
+        "sync_c": 7.018,
+        "sync_d": 8.126,
+        "av_offset": 1
+      },
+      "11": {
+        "sync_c": 7.034,
+        "sync_d": 7.658,
+        "av_offset": 0
+      },
+      "12": {
+        "sync_c": 5.527,
+        "sync_d": 8.421,
+        "av_offset": 1
+      },
+      "13": {
+        "sync_c": 6.548,
+        "sync_d": 7.74,
+        "av_offset": 1
+      },
+      "2": {
+        "sync_c": 7.583,
+        "sync_d": 7.573,
+        "av_offset": 0
+      },
+      "3": {
+        "sync_c": 7.028,
+        "sync_d": 7.386,
+        "av_offset": 0
+      },
+      "4": {
+        "sync_c": 4.824,
+        "sync_d": 10.289,
+        "av_offset": 1
+      },
+      "5": {
+        "sync_c": 8.151,
+        "sync_d": 7.235,
+        "av_offset": 1
+      },
+      "6": {
+        "sync_c": 6.658,
+        "sync_d": 8.3,
+        "av_offset": 0
+      },
+      "7": {
+        "sync_c": 7.414,
+        "sync_d": 7.552,
+        "av_offset": 1
+      },
+      "8": {
+        "sync_c": 6.369,
+        "sync_d": 8.297,
+        "av_offset": 0
+      },
+      "9": {
+        "sync_c": 7.395,
+        "sync_d": 7.821,
+        "av_offset": 1
+      }
+    }
+  },
+  "interventions": {
+    "identity_natural": {
+      "source": "natural",
+      "baseline_cond": "natural",
+      "description": "No-op: natural audio re-written as PCM_16 unchanged",
+      "expected_sync_direction": "no change",
+      "n_samples": 13,
+      "mean_delta_c": 0.0,
+      "mean_delta_d": 0.0,
+      "std_delta_c": 0.0,
+      "std_delta_d": 0.0,
+      "per_sample": {
+        "1": {
+          "intervention_sync_c": 6.0,
+          "intervention_sync_d": 8.759,
+          "baseline_sync_c": 6.0,
+          "baseline_sync_d": 8.759,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "2": {
+          "intervention_sync_c": 6.843,
+          "intervention_sync_d": 8.137,
+          "baseline_sync_c": 6.843,
+          "baseline_sync_d": 8.137,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "3": {
+          "intervention_sync_c": 7.332,
+          "intervention_sync_d": 7.397,
+          "baseline_sync_c": 7.332,
+          "baseline_sync_d": 7.397,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "4": {
+          "intervention_sync_c": 4.312,
+          "intervention_sync_d": 11.145,
+          "baseline_sync_c": 4.312,
+          "baseline_sync_d": 11.145,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "5": {
+          "intervention_sync_c": 7.48,
+          "intervention_sync_d": 7.215,
+          "baseline_sync_c": 7.48,
+          "baseline_sync_d": 7.215,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "6": {
+          "intervention_sync_c": 7.419,
+          "intervention_sync_d": 7.535,
+          "baseline_sync_c": 7.419,
+          "baseline_sync_d": 7.535,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "7": {
+          "intervention_sync_c": 7.48,
+          "intervention_sync_d": 7.508,
+          "baseline_sync_c": 7.48,
+          "baseline_sync_d": 7.508,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "8": {
+          "intervention_sync_c": 5.208,
+          "intervention_sync_d": 9.22,
+          "baseline_sync_c": 5.208,
+          "baseline_sync_d": 9.22,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "9": {
+          "intervention_sync_c": 7.252,
+          "intervention_sync_d": 7.787,
+          "baseline_sync_c": 7.252,
+          "baseline_sync_d": 7.787,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "10": {
+          "intervention_sync_c": 7.354,
+          "intervention_sync_d": 7.836,
+          "baseline_sync_c": 7.354,
+          "baseline_sync_d": 7.836,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "11": {
+          "intervention_sync_c": 6.471,
+          "intervention_sync_d": 8.02,
+          "baseline_sync_c": 6.471,
+          "baseline_sync_d": 8.02,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "12": {
+          "intervention_sync_c": 5.44,
+          "intervention_sync_d": 8.331,
+          "baseline_sync_c": 5.44,
+          "baseline_sync_d": 8.331,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "13": {
+          "intervention_sync_c": 6.813,
+          "intervention_sync_d": 7.92,
+          "baseline_sync_c": 6.813,
+          "baseline_sync_d": 7.92,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        }
+      }
+    },
+    "identity_tts": {
+      "source": "tts",
+      "baseline_cond": "tts",
+      "description": "No-op: TTS audio re-written as PCM_16 unchanged",
+      "expected_sync_direction": "no change",
+      "n_samples": 13,
+      "mean_delta_c": 0.0,
+      "mean_delta_d": 0.0,
+      "std_delta_c": 0.0,
+      "std_delta_d": 0.0,
+      "per_sample": {
+        "1": {
+          "intervention_sync_c": 6.192,
+          "intervention_sync_d": 8.35,
+          "baseline_sync_c": 6.192,
+          "baseline_sync_d": 8.35,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "2": {
+          "intervention_sync_c": 7.583,
+          "intervention_sync_d": 7.573,
+          "baseline_sync_c": 7.583,
+          "baseline_sync_d": 7.573,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "3": {
+          "intervention_sync_c": 7.028,
+          "intervention_sync_d": 7.386,
+          "baseline_sync_c": 7.028,
+          "baseline_sync_d": 7.386,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "4": {
+          "intervention_sync_c": 4.824,
+          "intervention_sync_d": 10.289,
+          "baseline_sync_c": 4.824,
+          "baseline_sync_d": 10.289,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "5": {
+          "intervention_sync_c": 8.151,
+          "intervention_sync_d": 7.235,
+          "baseline_sync_c": 8.151,
+          "baseline_sync_d": 7.235,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "6": {
+          "intervention_sync_c": 6.658,
+          "intervention_sync_d": 8.3,
+          "baseline_sync_c": 6.658,
+          "baseline_sync_d": 8.3,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "7": {
+          "intervention_sync_c": 7.414,
+          "intervention_sync_d": 7.552,
+          "baseline_sync_c": 7.414,
+          "baseline_sync_d": 7.552,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "8": {
+          "intervention_sync_c": 6.369,
+          "intervention_sync_d": 8.297,
+          "baseline_sync_c": 6.369,
+          "baseline_sync_d": 8.297,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "9": {
+          "intervention_sync_c": 7.395,
+          "intervention_sync_d": 7.821,
+          "baseline_sync_c": 7.395,
+          "baseline_sync_d": 7.821,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "10": {
+          "intervention_sync_c": 7.018,
+          "intervention_sync_d": 8.126,
+          "baseline_sync_c": 7.018,
+          "baseline_sync_d": 8.126,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "11": {
+          "intervention_sync_c": 7.034,
+          "intervention_sync_d": 7.658,
+          "baseline_sync_c": 7.034,
+          "baseline_sync_d": 7.658,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "12": {
+          "intervention_sync_c": 5.527,
+          "intervention_sync_d": 8.421,
+          "baseline_sync_c": 5.527,
+          "baseline_sync_d": 8.421,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "13": {
+          "intervention_sync_c": 6.548,
+          "intervention_sync_d": 7.74,
+          "baseline_sync_c": 6.548,
+          "baseline_sync_d": 7.74,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        }
+      }
+    }
+  },
+  "failed": [],
+  "elapsed_s": 637.7,
+  "verdict_by_arm": {
+    "identity_natural": {
+      "verdict": "PIPELINE_CLEAN",
+      "mean_delta_c": 0.0,
+      "mean_delta_d": 0.0
+    },
+    "identity_tts": {
+      "verdict": "PIPELINE_CLEAN",
+      "mean_delta_c": 0.0,
+      "mean_delta_d": 0.0
+    }
+  },
+  "verdict": "PIPELINE_CLEAN",
+  "verdict_message": "Bilateral no-op results are reported per arm; subtract them per sample from the TTS-natural contrast."
+}

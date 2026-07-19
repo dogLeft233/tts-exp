@@ -1,0 +1,1 @@
+{"nodes": [], "edges": [{"source": "transcripts_13_13_doc", "target": "transcripts_market_growth_transition", "relation": "describes", "confidence": "HIGH", "confidence_score": 0.9, "source_file": "graphify-out/transcripts/13_13.txt", "source_location": "line 1", "weight": 0.7}], "hyperedges": []}

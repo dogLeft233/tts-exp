@@ -186,6 +186,19 @@ class TestFfmpegCommandBuilding:
         assert any("atempo=1.1" in arg for arg in cmd)
         assert "-t" in cmd
         assert "5.000000" in cmd
+    def test_ffmpeg_diagonal_remux_skips_time_stretch(self):
+        cmd = build_ffmpeg_command(
+            Path("video.mp4"),
+            Path("audio.wav"),
+            Path("out.mp4"),
+            video_duration=5.0,
+            audio_duration=5.5,
+            align_duration=False,
+        )
+        assert "-af" not in cmd
+        assert "-t" not in cmd
+        assert "aac" in cmd
+
 
 
 class TestSyncnetPipeline:

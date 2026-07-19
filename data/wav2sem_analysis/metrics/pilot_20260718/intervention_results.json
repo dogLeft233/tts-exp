@@ -1,0 +1,156 @@
+{
+  "phase": "pilot",
+  "samples": [
+    3,
+    6,
+    8,
+    10,
+    12
+  ],
+  "interventions": [
+    {
+      "name": "LUFS_match_tts_to_nat",
+      "target_metric": "LUFS",
+      "expected_direction": "increase",
+      "verified_count": 4,
+      "total": 5,
+      "pre_mean": -39.83746086528612,
+      "post_mean": -39.310423664443384,
+      "mean_delta": 0.5270372008427359,
+      "pilot_result": "PASS",
+      "per_sample_deltas": {
+        "3": 0.08826525637909555,
+        "6": 1.8422973387393569,
+        "8": 1.6947020966035993,
+        "10": -1.0941929533959893,
+        "12": 0.10411426588761685
+      }
+    },
+    {
+      "name": "LUFS_match_nat_to_tts",
+      "target_metric": "LUFS",
+      "expected_direction": "decrease",
+      "verified_count": 4,
+      "total": 5,
+      "pre_mean": -39.31042360065725,
+      "post_mean": -39.83746075696441,
+      "mean_delta": -0.5270371563071621,
+      "pilot_result": "PASS",
+      "per_sample_deltas": {
+        "3": -0.08826565958202792,
+        "6": -1.8422978635276408,
+        "8": -1.6947016324766224,
+        "10": 1.0941933861085715,
+        "12": -0.10411401205809057
+      }
+    },
+    {
+      "name": "spectral_tilt_match_tts_to_nat",
+      "target_metric": "spectral_tilt",
+      "expected_direction": "increase",
+      "verified_count": 5,
+      "total": 5,
+      "pre_mean": -1.2126622482663136,
+      "post_mean": -1.1785417810902479,
+      "mean_delta": 0.03412046717606576,
+      "pilot_result": "PASS",
+      "per_sample_deltas": {
+        "3": 0.022235291214870667,
+        "6": 0.015501269139805762,
+        "8": 0.06720745753060164,
+        "10": 0.03842504262448454,
+        "12": 0.02723327537056619
+      }
+    },
+    {
+      "name": "spectral_tilt_match_nat_to_tts",
+      "target_metric": "spectral_tilt",
+      "expected_direction": "decrease",
+      "verified_count": 5,
+      "total": 5,
+      "pre_mean": -1.0072860439817024,
+      "post_mean": -1.041398270356639,
+      "mean_delta": -0.03411222637493645,
+      "pilot_result": "PASS",
+      "per_sample_deltas": {
+        "3": -0.022244586431252378,
+        "6": -0.015501350421014637,
+        "8": -0.06715895989804888,
+        "10": -0.03842308245392956,
+        "12": -0.0272331526704368
+      }
+    },
+    {
+      "name": "dynamic_compression_tts_compress",
+      "target_metric": "energy_env_std",
+      "expected_direction": "decrease",
+      "verified_count": 5,
+      "total": 5,
+      "pre_mean": 0.005854804384636093,
+      "post_mean": 0.004105526464324743,
+      "mean_delta": -0.0017492779203113497,
+      "pilot_result": "PASS",
+      "per_sample_deltas": {
+        "3": -0.0012665074328010884,
+        "6": -0.0010607900201159487,
+        "8": -0.002285107395934612,
+        "10": -0.0025003941133419725,
+        "12": -0.0016335906393631283
+      }
+    },
+    {
+      "name": "dynamic_compression_nat_compress",
+      "target_metric": "energy_env_std",
+      "expected_direction": "decrease",
+      "verified_count": 5,
+      "total": 5,
+      "pre_mean": 0.005769663939524991,
+      "post_mean": 0.003993443241117046,
+      "mean_delta": -0.0017762206984079459,
+      "pilot_result": "PASS",
+      "per_sample_deltas": {
+        "3": -0.0012186217496737094,
+        "6": -0.0013854729077185548,
+        "8": -0.0027928760011989478,
+        "10": -0.0019291087155752056,
+        "12": -0.001555024117873313
+      }
+    },
+    {
+      "name": "dynamic_expansion_tts_expand",
+      "target_metric": "energy_env_std",
+      "expected_direction": "increase",
+      "verified_count": 5,
+      "total": 5,
+      "pre_mean": 0.005854804384636093,
+      "post_mean": 0.00810251725014036,
+      "mean_delta": 0.002247712865504267,
+      "pilot_result": "PASS",
+      "per_sample_deltas": {
+        "3": 0.0016033858989246436,
+        "6": 0.0012782023501065505,
+        "8": 0.003102147807362418,
+        "10": 0.0032630711851491514,
+        "12": 0.00199175708597857
+      }
+    },
+    {
+      "name": "dynamic_expansion_nat_expand",
+      "target_metric": "energy_env_std",
+      "expected_direction": "increase",
+      "verified_count": 5,
+      "total": 5,
+      "pre_mean": 0.005769663939524991,
+      "post_mean": 0.007914364537155267,
+      "mean_delta": 0.002144700597630275,
+      "pilot_result": "PASS",
+      "per_sample_deltas": {
+        "3": 0.0014484719632813139,
+        "6": 0.0016774681880350317,
+        "8": 0.00358624883715372,
+        "10": 0.002243066711660668,
+        "12": 0.001768247288020641
+      }
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "meta": {
+    "timestamp": "2026-07-18T01:33:38Z",
+    "tfg_models_available": [
+      "ditto",
+      "joyvasa",
+      "latentsync",
+      "musetalk",
+      "wav2lip"
+    ],
+    "tfg_models_pending": [],
+    "n_samples_per_model": {
+      "ditto": 9
+    },
+    "per_sample_available": true,
+    "aggregate_only_models": [],
+    "warnings": []
+  },
+  "ditto": {
+    "has_per_sample": true,
+    "aggregate": {
+      "delta_c": 1.2457777777777777,
+      "delta_d": -0.7663333333333333
+    }
+  },
+  "other_models": {
+    "wav2lip": {
+      "has_per_sample": true,
+      "aggregate": {
+        "delta_c": 1.51525,
+        "delta_d": -1.3950833333333332
+      },
+      "source": "runs/tfg_wav2lip/04_eval/eval_meta.json"
+    },
+    "musetalk": {
+      "has_per_sample": true,
+      "aggregate": {
+        "delta_c": 0.5719166666666666,
+        "delta_d": -0.16908333333333334
+      },
+      "source": "runs/tfg_musetalk/04_eval/eval_meta.json"
+    },
+    "latentsync": {
+      "has_per_sample": true,
+      "aggregate": {
+        "delta_c": -0.06258333333333344,
+        "delta_d": -0.12058333333333326
+      },
+      "source": "runs/tfg_latentsync/04_eval/eval_meta.json"
+    },
+    "joyvasa": {
+      "has_per_sample": true,
+      "aggregate": {
+        "delta_c": 0.32883333333333337,
+        "delta_d": 0.1436666666666664
+      },
+      "source": "runs/tfg_joyvasa/04_eval/eval_meta.json"
+    }
+  },
+  "mechanisms": [
+    {
+      "name": "segment_stability",
+      "description": "Significant (FDR<0.05) in 2/6 configs; Mean |d|=0.88",
+      "phase1_evidence": "Significant (FDR<0.05) in 2/6 configs; Mean |d|=0.88",
+      "phase2_evidence": "",
+      "ditto_direction": "neutral",
+      "consistency": "ditto_only",
+      "models_with_same_direction": [],
+      "models_with_opposite_direction": [],
+      "models_neutral": [],
+      "latentsync_neutral": true,
+      "verdict": "ditto-specific — no confirmation from other TFG models"
+    },
+    {
+      "name": "silhouette_score",
+      "description": "Direction consistent (100%)",
+      "phase1_evidence": "Direction consistent (100%)",
+      "phase2_evidence": "",
+      "ditto_direction": "neutral",
+      "consistency": "ditto_only",
+      "models_with_same_direction": [],
+      "models_with_opposite_direction": [],
+      "models_neutral": [],
+      "latentsync_neutral": true,
+      "verdict": "ditto-specific — no confirmation from other TFG models"
+    },
+    {
+      "name": "boundary_sharpness",
+      "description": "Mean |d|=0.58",
+      "phase1_evidence": "Mean |d|=0.58",
+      "phase2_evidence": "",
+      "ditto_direction": "neutral",
+      "consistency": "ditto_only",
+      "models_with_same_direction": [],
+      "models_with_opposite_direction": [],
+      "models_neutral": [],
+      "latentsync_neutral": true,
+      "verdict": "ditto-specific — no confirmation from other TFG models"
+    },
+    {
+      "name": "intra_class_compactness",
+      "description": "No strong signal",
+      "phase1_evidence": "No strong signal",
+      "phase2_evidence": "",
+      "ditto_direction": "neutral",
+      "consistency": "ditto_only",
+      "models_with_same_direction": [],
+      "models_with_opposite_direction": [],
+      "models_neutral": [],
+      "latentsync_neutral": true,
+      "verdict": "ditto-specific — no confirmation from other TFG models"
+    }
+  ],
+  "summary_table": [
+    {
+      "mechanism": "segment_stability",
+      "ditto": "~",
+      "joyvasa": "+",
+      "latentsync": "~",
+      "musetalk": "+",
+      "wav2lip": "+",
+      "verdict": "ditto-specific — no confirmation from other TFG models"
+    },
+    {
+      "mechanism": "silhouette_score",
+      "ditto": "~",
+      "joyvasa": "+",
+      "latentsync": "~",
+      "musetalk": "+",
+      "wav2lip": "+",
+      "verdict": "ditto-specific — no confirmation from other TFG models"
+    },
+    {
+      "mechanism": "boundary_sharpness",
+      "ditto": "~",
+      "joyvasa": "+",
+      "latentsync": "~",
+      "musetalk": "+",
+      "wav2lip": "+",
+      "verdict": "ditto-specific — no confirmation from other TFG models"
+    },
+    {
+      "mechanism": "intra_class_compactness",
+      "ditto": "~",
+      "joyvasa": "+",
+      "latentsync": "~",
+      "musetalk": "+",
+      "wav2lip": "+",
+      "verdict": "ditto-specific — no confirmation from other TFG models"
+    }
+  ],
+  "interventions": [
+    {
+      "name": "LUFS_match_tts_to_nat",
+      "target_metric": "LUFS",
+      "pilot_result": "UNKNOWN",
+      "verified_count": 5,
+      "total": 12
+    },
+    {
+      "name": "LUFS_match_nat_to_tts",
+      "target_metric": "LUFS",
+      "pilot_result": "UNKNOWN",
+      "verified_count": 5,
+      "total": 12
+    },
+    {
+      "name": "spectral_tilt_match_tts_to_nat",
+      "target_metric": "spectral_tilt",
+      "pilot_result": "UNKNOWN",
+      "verified_count": 12,
+      "total": 12
+    },
+    {
+      "name": "spectral_tilt_match_nat_to_tts",
+      "target_metric": "spectral_tilt",
+      "pilot_result": "UNKNOWN",
+      "verified_count": 12,
+      "total": 12
+    },
+    {
+      "name": "dynamic_compression_tts_compress",
+      "target_metric": "energy_env_std",
+      "pilot_result": "UNKNOWN",
+      "verified_count": 12,
+      "total": 12
+    },
+    {
+      "name": "dynamic_compression_nat_compress",
+      "target_metric": "energy_env_std",
+      "pilot_result": "UNKNOWN",
+      "verified_count": 12,
+      "total": 12
+    },
+    {
+      "name": "dynamic_expansion_tts_expand",
+      "target_metric": "energy_env_std",
+      "pilot_result": "UNKNOWN",
+      "verified_count": 12,
+      "total": 12
+    },
+    {
+      "name": "dynamic_expansion_nat_expand",
+      "target_metric": "energy_env_std",
+      "pilot_result": "UNKNOWN",
+      "verified_count": 12,
+      "total": 12
+    }
+  ]
+}

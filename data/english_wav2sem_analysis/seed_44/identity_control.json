@@ -1,0 +1,408 @@
+{
+  "run_id": "english_wav2sem_gate1_s44",
+  "seed": 44,
+  "config_override": "scripts/configs/english_wav2sem.yaml",
+  "samples": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13
+  ],
+  "baselines": {
+    "natural": {
+      "1": {
+        "sync_c": 6.138,
+        "sync_d": 8.656,
+        "av_offset": 1
+      },
+      "10": {
+        "sync_c": 7.351,
+        "sync_d": 7.962,
+        "av_offset": 1
+      },
+      "11": {
+        "sync_c": 6.427,
+        "sync_d": 8.051,
+        "av_offset": 1
+      },
+      "12": {
+        "sync_c": 5.646,
+        "sync_d": 8.262,
+        "av_offset": 1
+      },
+      "13": {
+        "sync_c": 6.898,
+        "sync_d": 7.769,
+        "av_offset": 0
+      },
+      "2": {
+        "sync_c": 6.767,
+        "sync_d": 8.221,
+        "av_offset": 0
+      },
+      "3": {
+        "sync_c": 7.17,
+        "sync_d": 7.484,
+        "av_offset": 0
+      },
+      "4": {
+        "sync_c": 4.702,
+        "sync_d": 10.713,
+        "av_offset": 1
+      },
+      "5": {
+        "sync_c": 7.335,
+        "sync_d": 7.379,
+        "av_offset": 1
+      },
+      "6": {
+        "sync_c": 7.482,
+        "sync_d": 7.476,
+        "av_offset": 1
+      },
+      "7": {
+        "sync_c": 7.407,
+        "sync_d": 7.5,
+        "av_offset": 1
+      },
+      "8": {
+        "sync_c": 5.315,
+        "sync_d": 9.214,
+        "av_offset": 1
+      },
+      "9": {
+        "sync_c": 7.279,
+        "sync_d": 7.804,
+        "av_offset": 1
+      }
+    },
+    "tts": {
+      "1": {
+        "sync_c": 6.315,
+        "sync_d": 8.213,
+        "av_offset": 1
+      },
+      "10": {
+        "sync_c": 7.006,
+        "sync_d": 8.194,
+        "av_offset": 1
+      },
+      "11": {
+        "sync_c": 7.057,
+        "sync_d": 7.592,
+        "av_offset": 0
+      },
+      "12": {
+        "sync_c": 5.595,
+        "sync_d": 8.402,
+        "av_offset": 1
+      },
+      "13": {
+        "sync_c": 6.619,
+        "sync_d": 7.609,
+        "av_offset": 1
+      },
+      "2": {
+        "sync_c": 7.405,
+        "sync_d": 7.682,
+        "av_offset": 0
+      },
+      "3": {
+        "sync_c": 7.069,
+        "sync_d": 7.362,
+        "av_offset": 0
+      },
+      "4": {
+        "sync_c": 4.799,
+        "sync_d": 10.408,
+        "av_offset": 1
+      },
+      "5": {
+        "sync_c": 8.085,
+        "sync_d": 7.269,
+        "av_offset": 1
+      },
+      "6": {
+        "sync_c": 6.703,
+        "sync_d": 8.321,
+        "av_offset": 0
+      },
+      "7": {
+        "sync_c": 7.448,
+        "sync_d": 7.558,
+        "av_offset": 1
+      },
+      "8": {
+        "sync_c": 6.325,
+        "sync_d": 8.244,
+        "av_offset": 0
+      },
+      "9": {
+        "sync_c": 7.451,
+        "sync_d": 7.843,
+        "av_offset": 1
+      }
+    }
+  },
+  "interventions": {
+    "identity_natural": {
+      "source": "natural",
+      "baseline_cond": "natural",
+      "description": "No-op: natural audio re-written as PCM_16 unchanged",
+      "expected_sync_direction": "no change",
+      "n_samples": 13,
+      "mean_delta_c": 0.0,
+      "mean_delta_d": 0.0,
+      "std_delta_c": 0.0,
+      "std_delta_d": 0.0,
+      "per_sample": {
+        "1": {
+          "intervention_sync_c": 6.138,
+          "intervention_sync_d": 8.656,
+          "baseline_sync_c": 6.138,
+          "baseline_sync_d": 8.656,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "2": {
+          "intervention_sync_c": 6.767,
+          "intervention_sync_d": 8.221,
+          "baseline_sync_c": 6.767,
+          "baseline_sync_d": 8.221,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "3": {
+          "intervention_sync_c": 7.17,
+          "intervention_sync_d": 7.484,
+          "baseline_sync_c": 7.17,
+          "baseline_sync_d": 7.484,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "4": {
+          "intervention_sync_c": 4.702,
+          "intervention_sync_d": 10.713,
+          "baseline_sync_c": 4.702,
+          "baseline_sync_d": 10.713,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "5": {
+          "intervention_sync_c": 7.335,
+          "intervention_sync_d": 7.379,
+          "baseline_sync_c": 7.335,
+          "baseline_sync_d": 7.379,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "6": {
+          "intervention_sync_c": 7.482,
+          "intervention_sync_d": 7.476,
+          "baseline_sync_c": 7.482,
+          "baseline_sync_d": 7.476,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "7": {
+          "intervention_sync_c": 7.407,
+          "intervention_sync_d": 7.5,
+          "baseline_sync_c": 7.407,
+          "baseline_sync_d": 7.5,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "8": {
+          "intervention_sync_c": 5.315,
+          "intervention_sync_d": 9.214,
+          "baseline_sync_c": 5.315,
+          "baseline_sync_d": 9.214,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "9": {
+          "intervention_sync_c": 7.279,
+          "intervention_sync_d": 7.804,
+          "baseline_sync_c": 7.279,
+          "baseline_sync_d": 7.804,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "10": {
+          "intervention_sync_c": 7.351,
+          "intervention_sync_d": 7.962,
+          "baseline_sync_c": 7.351,
+          "baseline_sync_d": 7.962,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "11": {
+          "intervention_sync_c": 6.427,
+          "intervention_sync_d": 8.051,
+          "baseline_sync_c": 6.427,
+          "baseline_sync_d": 8.051,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "12": {
+          "intervention_sync_c": 5.646,
+          "intervention_sync_d": 8.262,
+          "baseline_sync_c": 5.646,
+          "baseline_sync_d": 8.262,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "13": {
+          "intervention_sync_c": 6.898,
+          "intervention_sync_d": 7.769,
+          "baseline_sync_c": 6.898,
+          "baseline_sync_d": 7.769,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        }
+      }
+    },
+    "identity_tts": {
+      "source": "tts",
+      "baseline_cond": "tts",
+      "description": "No-op: TTS audio re-written as PCM_16 unchanged",
+      "expected_sync_direction": "no change",
+      "n_samples": 13,
+      "mean_delta_c": 0.0,
+      "mean_delta_d": 0.0,
+      "std_delta_c": 0.0,
+      "std_delta_d": 0.0,
+      "per_sample": {
+        "1": {
+          "intervention_sync_c": 6.315,
+          "intervention_sync_d": 8.213,
+          "baseline_sync_c": 6.315,
+          "baseline_sync_d": 8.213,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "2": {
+          "intervention_sync_c": 7.405,
+          "intervention_sync_d": 7.682,
+          "baseline_sync_c": 7.405,
+          "baseline_sync_d": 7.682,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "3": {
+          "intervention_sync_c": 7.069,
+          "intervention_sync_d": 7.362,
+          "baseline_sync_c": 7.069,
+          "baseline_sync_d": 7.362,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "4": {
+          "intervention_sync_c": 4.799,
+          "intervention_sync_d": 10.408,
+          "baseline_sync_c": 4.799,
+          "baseline_sync_d": 10.408,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "5": {
+          "intervention_sync_c": 8.085,
+          "intervention_sync_d": 7.269,
+          "baseline_sync_c": 8.085,
+          "baseline_sync_d": 7.269,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "6": {
+          "intervention_sync_c": 6.703,
+          "intervention_sync_d": 8.321,
+          "baseline_sync_c": 6.703,
+          "baseline_sync_d": 8.321,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "7": {
+          "intervention_sync_c": 7.448,
+          "intervention_sync_d": 7.558,
+          "baseline_sync_c": 7.448,
+          "baseline_sync_d": 7.558,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "8": {
+          "intervention_sync_c": 6.325,
+          "intervention_sync_d": 8.244,
+          "baseline_sync_c": 6.325,
+          "baseline_sync_d": 8.244,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "9": {
+          "intervention_sync_c": 7.451,
+          "intervention_sync_d": 7.843,
+          "baseline_sync_c": 7.451,
+          "baseline_sync_d": 7.843,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "10": {
+          "intervention_sync_c": 7.006,
+          "intervention_sync_d": 8.194,
+          "baseline_sync_c": 7.006,
+          "baseline_sync_d": 8.194,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "11": {
+          "intervention_sync_c": 7.057,
+          "intervention_sync_d": 7.592,
+          "baseline_sync_c": 7.057,
+          "baseline_sync_d": 7.592,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "12": {
+          "intervention_sync_c": 5.595,
+          "intervention_sync_d": 8.402,
+          "baseline_sync_c": 5.595,
+          "baseline_sync_d": 8.402,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        },
+        "13": {
+          "intervention_sync_c": 6.619,
+          "intervention_sync_d": 7.609,
+          "baseline_sync_c": 6.619,
+          "baseline_sync_d": 7.609,
+          "delta_c": 0.0,
+          "delta_d": 0.0
+        }
+      }
+    }
+  },
+  "failed": [],
+  "elapsed_s": 630.7,
+  "verdict_by_arm": {
+    "identity_natural": {
+      "verdict": "PIPELINE_CLEAN",
+      "mean_delta_c": 0.0,
+      "mean_delta_d": 0.0
+    },
+    "identity_tts": {
+      "verdict": "PIPELINE_CLEAN",
+      "mean_delta_c": 0.0,
+      "mean_delta_d": 0.0
+    }
+  },
+  "verdict": "PIPELINE_CLEAN",
+  "verdict_message": "Bilateral no-op results are reported per arm; subtract them per sample from the TTS-natural contrast."
+}

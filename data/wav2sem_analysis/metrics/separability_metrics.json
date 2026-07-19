@@ -1,0 +1,1829 @@
+{
+  "meta": {
+    "models": [
+      "hubert"
+    ],
+    "layers": [
+      0,
+      6,
+      11,
+      12
+    ],
+    "levels": [
+      "viseme"
+    ],
+    "num_embedding_files": 144
+  },
+  "results": [
+    {
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "condition": "natural",
+      "variant": "raw",
+      "intra_class_dist": 0.700123151143392,
+      "inter_class_dist": 0.09256809949874878,
+      "fisher_ratio": 1.0723352598609288,
+      "silhouette": -0.05845528468489647,
+      "probe_accuracy": 0.863695824928174,
+      "probe_f1_macro": 0.3088628874444561,
+      "probe_f1_weighted": 0.8095925102365531,
+      "confusable_pairs": [
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.07196950912475586
+        },
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.07886594533920288
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.1268688440322876
+        }
+      ],
+      "boundary_sharpness": 0.32663218281648637,
+      "segment_stability": 0.3208291681270641
+    },
+    {
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "condition": "natural",
+      "variant": "gain_matched",
+      "intra_class_dist": 0.7001221577326456,
+      "inter_class_dist": 0.09256800264120102,
+      "fisher_ratio": 1.0723368295426514,
+      "silhouette": -0.05845581740140915,
+      "probe_accuracy": 0.863695824928174,
+      "probe_f1_macro": 0.3088628874444561,
+      "probe_f1_weighted": 0.8095925102365531,
+      "confusable_pairs": [
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.07196879386901855
+        },
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.07886719703674316
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.12686800956726074
+        }
+      ],
+      "boundary_sharpness": 0.3266332996193042,
+      "segment_stability": 0.3208290752366482
+    },
+    {
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "condition": "faster_qwen3",
+      "variant": "raw",
+      "intra_class_dist": 0.7165414690971375,
+      "inter_class_dist": 0.1513439565896988,
+      "fisher_ratio": 1.143440579383278,
+      "silhouette": -0.06570544838905334,
+      "probe_accuracy": 0.869594718503576,
+      "probe_f1_macro": 0.3432336217241877,
+      "probe_f1_weighted": 0.8193655609407715,
+      "confusable_pairs": [
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.07134902477264404
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.1310267448425293
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.25165611505508423
+        }
+      ],
+      "boundary_sharpness": 0.30111986120389583,
+      "segment_stability": 0.31096366983388746
+    },
+    {
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "condition": "faster_qwen3",
+      "variant": "gain_matched",
+      "intra_class_dist": 0.7165414690971375,
+      "inter_class_dist": 0.1513439565896988,
+      "fisher_ratio": 1.143440579383278,
+      "silhouette": -0.06570544838905334,
+      "probe_accuracy": 0.869594718503576,
+      "probe_f1_macro": 0.3432336217241877,
+      "probe_f1_weighted": 0.8193655609407715,
+      "confusable_pairs": [
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.07134902477264404
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.1310267448425293
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.25165611505508423
+        }
+      ],
+      "boundary_sharpness": 0.30111986120389583,
+      "segment_stability": 0.31096366983388746
+    },
+    {
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "condition": "f5_tts",
+      "variant": "raw",
+      "intra_class_dist": 0.6910769939422607,
+      "inter_class_dist": 0.13043485581874847,
+      "fisher_ratio": 1.3924827204079222,
+      "silhouette": -0.055897053331136703,
+      "probe_accuracy": 0.8518002322880373,
+      "probe_f1_macro": 0.33979367038190567,
+      "probe_f1_weighted": 0.8068048407246474,
+      "confusable_pairs": [
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.08419501781463623
+        },
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.12418729066848755
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.18292224407196045
+        }
+      ],
+      "boundary_sharpness": 0.33364182941388454,
+      "segment_stability": 0.3038434009402218
+    },
+    {
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "condition": "f5_tts",
+      "variant": "gain_matched",
+      "intra_class_dist": 0.6910769939422607,
+      "inter_class_dist": 0.13043485581874847,
+      "fisher_ratio": 1.3924827204079222,
+      "silhouette": -0.055897053331136703,
+      "probe_accuracy": 0.8518002322880373,
+      "probe_f1_macro": 0.33979367038190567,
+      "probe_f1_weighted": 0.8068048407246474,
+      "confusable_pairs": [
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.08419501781463623
+        },
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.12418729066848755
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.18292224407196045
+        }
+      ],
+      "boundary_sharpness": 0.33364182941388454,
+      "segment_stability": 0.3038434009402218
+    },
+    {
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "condition": "natural",
+      "variant": "raw",
+      "intra_class_dist": 0.7559259732564291,
+      "inter_class_dist": 0.14928849041461945,
+      "fisher_ratio": 1.579741891208342,
+      "silhouette": -0.022968504577875137,
+      "probe_accuracy": 0.8479246897732136,
+      "probe_f1_macro": 0.3390220919399025,
+      "probe_f1_weighted": 0.8112873356621924,
+      "confusable_pairs": [
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.10362392663955688
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.14538460969924927
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.19885694980621338
+        }
+      ],
+      "boundary_sharpness": 0.16568602464017443,
+      "segment_stability": 0.1721633031100719
+    },
+    {
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "condition": "natural",
+      "variant": "gain_matched",
+      "intra_class_dist": 0.7559259335199991,
+      "inter_class_dist": 0.14928816258907318,
+      "fisher_ratio": 1.5797395454476826,
+      "silhouette": -0.022968728095293045,
+      "probe_accuracy": 0.8479246897732136,
+      "probe_f1_macro": 0.3390220919399025,
+      "probe_f1_weighted": 0.8112873356621924,
+      "confusable_pairs": [
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.10362410545349121
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.14538389444351196
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.19885647296905518
+        }
+      ],
+      "boundary_sharpness": 0.16568399651370877,
+      "segment_stability": 0.17216364944579968
+    },
+    {
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "condition": "faster_qwen3",
+      "variant": "raw",
+      "intra_class_dist": 0.7517186601956686,
+      "inter_class_dist": 0.20028340816497803,
+      "fisher_ratio": 1.6024436163676785,
+      "silhouette": -0.03208151087164879,
+      "probe_accuracy": 0.8755914175683109,
+      "probe_f1_macro": 0.4240185080906125,
+      "probe_f1_weighted": 0.8381807654186545,
+      "confusable_pairs": [
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.11594736576080322
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.17362719774246216
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.3112756609916687
+        }
+      ],
+      "boundary_sharpness": 0.18563674765518293,
+      "segment_stability": 0.18391323610748836
+    },
+    {
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "condition": "faster_qwen3",
+      "variant": "gain_matched",
+      "intra_class_dist": 0.7517186601956686,
+      "inter_class_dist": 0.20028340816497803,
+      "fisher_ratio": 1.6024436163676785,
+      "silhouette": -0.03208151087164879,
+      "probe_accuracy": 0.8755914175683109,
+      "probe_f1_macro": 0.4240185080906125,
+      "probe_f1_weighted": 0.8381807654186545,
+      "confusable_pairs": [
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.11594736576080322
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.17362719774246216
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.3112756609916687
+        }
+      ],
+      "boundary_sharpness": 0.18563674765518293,
+      "segment_stability": 0.18391323610748836
+    },
+    {
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "condition": "f5_tts",
+      "variant": "raw",
+      "intra_class_dist": 0.7475049098332723,
+      "inter_class_dist": 0.18624669313430786,
+      "fisher_ratio": 1.6945340861177034,
+      "silhouette": -0.032230526208877563,
+      "probe_accuracy": 0.849776881227459,
+      "probe_f1_macro": 0.366987248175367,
+      "probe_f1_weighted": 0.8136211962264657,
+      "confusable_pairs": [
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.14728260040283203
+        },
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.17565542459487915
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.2358020544052124
+        }
+      ],
+      "boundary_sharpness": 0.19020787990171173,
+      "segment_stability": 0.17498937950077767
+    },
+    {
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "condition": "f5_tts",
+      "variant": "gain_matched",
+      "intra_class_dist": 0.7475049098332723,
+      "inter_class_dist": 0.18624669313430786,
+      "fisher_ratio": 1.6945340861177034,
+      "silhouette": -0.032230526208877563,
+      "probe_accuracy": 0.849776881227459,
+      "probe_f1_macro": 0.366987248175367,
+      "probe_f1_weighted": 0.8136211962264657,
+      "confusable_pairs": [
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.14728260040283203
+        },
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.17565542459487915
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.2358020544052124
+        }
+      ],
+      "boundary_sharpness": 0.19020787990171173,
+      "segment_stability": 0.17498937950077767
+    },
+    {
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "condition": "natural",
+      "variant": "raw",
+      "intra_class_dist": 0.6918917496999105,
+      "inter_class_dist": 0.12413027137517929,
+      "fisher_ratio": 1.3849210212488179,
+      "silhouette": -0.031765565276145935,
+      "probe_accuracy": 0.8277584204413472,
+      "probe_f1_macro": 0.35479548898743946,
+      "probe_f1_weighted": 0.8052897979046133,
+      "confusable_pairs": [
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.08270162343978882
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.1258465051651001
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.16384267807006836
+        }
+      ],
+      "boundary_sharpness": 0.1431723116744599,
+      "segment_stability": 0.1506257007342883
+    },
+    {
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "condition": "natural",
+      "variant": "gain_matched",
+      "intra_class_dist": 0.6918922066688538,
+      "inter_class_dist": 0.12412955611944199,
+      "fisher_ratio": 1.3849156273636158,
+      "silhouette": -0.03176574409008026,
+      "probe_accuracy": 0.8277584204413472,
+      "probe_f1_macro": 0.35479548898743946,
+      "probe_f1_weighted": 0.8052897979046133,
+      "confusable_pairs": [
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.08270120620727539
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.12584543228149414
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.16384202241897583
+        }
+      ],
+      "boundary_sharpness": 0.14317046366904798,
+      "segment_stability": 0.15062582398047172
+    },
+    {
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "condition": "faster_qwen3",
+      "variant": "raw",
+      "intra_class_dist": 0.6728146076202393,
+      "inter_class_dist": 0.15196943283081055,
+      "fisher_ratio": 1.385041691919583,
+      "silhouette": -0.05070672929286957,
+      "probe_accuracy": 0.8711962833914054,
+      "probe_f1_macro": 0.44879890506359593,
+      "probe_f1_weighted": 0.8391067660144449,
+      "confusable_pairs": [
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.0716368556022644
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.14561998844146729
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.23865145444869995
+        }
+      ],
+      "boundary_sharpness": 0.16420887017447333,
+      "segment_stability": 0.16339541033394758
+    },
+    {
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "condition": "faster_qwen3",
+      "variant": "gain_matched",
+      "intra_class_dist": 0.6728146076202393,
+      "inter_class_dist": 0.15196943283081055,
+      "fisher_ratio": 1.385041691919583,
+      "silhouette": -0.05070672929286957,
+      "probe_accuracy": 0.8711962833914054,
+      "probe_f1_macro": 0.44879890506359593,
+      "probe_f1_weighted": 0.8391067660144449,
+      "confusable_pairs": [
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.0716368556022644
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.14561998844146729
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.23865145444869995
+        }
+      ],
+      "boundary_sharpness": 0.16420887017447333,
+      "segment_stability": 0.16339541033394758
+    },
+    {
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "condition": "f5_tts",
+      "variant": "raw",
+      "intra_class_dist": 0.6842072804768881,
+      "inter_class_dist": 0.18506847321987152,
+      "fisher_ratio": 1.9970554073768536,
+      "silhouette": -0.02845543436706066,
+      "probe_accuracy": 0.8605538235833488,
+      "probe_f1_macro": 0.4489592690623619,
+      "probe_f1_weighted": 0.8287734260631048,
+      "confusable_pairs": [
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.14249706268310547
+        },
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.17120212316513062
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.24150621891021729
+        }
+      ],
+      "boundary_sharpness": 0.17570990993445545,
+      "segment_stability": 0.16258731971261622
+    },
+    {
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "condition": "f5_tts",
+      "variant": "gain_matched",
+      "intra_class_dist": 0.6842072804768881,
+      "inter_class_dist": 0.18506847321987152,
+      "fisher_ratio": 1.9970554073768536,
+      "silhouette": -0.02845543436706066,
+      "probe_accuracy": 0.8605538235833488,
+      "probe_f1_macro": 0.4489592690623619,
+      "probe_f1_weighted": 0.8287734260631048,
+      "confusable_pairs": [
+        {
+          "class_a": "bilabial",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.14249706268310547
+        },
+        {
+          "class_a": "labiodental",
+          "class_b": "nonlabial_consonant",
+          "centroid_distance": 0.17120212316513062
+        },
+        {
+          "class_a": "bilabial",
+          "class_b": "labiodental",
+          "centroid_distance": 0.24150621891021729
+        }
+      ],
+      "boundary_sharpness": 0.17570990993445545,
+      "segment_stability": 0.16258731971261622
+    }
+  ],
+  "comparisons": [
+    {
+      "metric": "intra_class_dist",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.7418619866172472,
+      "tts_mean": 0.7602225293715795,
+      "delta": -0.018360542754332226,
+      "p_perm": 0.0215,
+      "ci_95": [
+        -0.030784690876801808,
+        -0.006721847007671999
+      ],
+      "cohens_d": -0.8271567230505505,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.08600000000000001,
+      "significant_fdr": false
+    },
+    {
+      "metric": "silhouette",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": -0.08856526135720989,
+      "tts_mean": -0.06310914725657892,
+      "delta": -0.025456114100630988,
+      "p_perm": 0.0695,
+      "ci_95": [
+        -0.051984924965919076,
+        -0.002682864327322353
+      ],
+      "cohens_d": -0.5753316646158017,
+      "n_pairs": 11,
+      "fdr_corrected_p": 0.13457142857142856,
+      "significant_fdr": false
+    },
+    {
+      "metric": "boundary_sharpness",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.32663218281648626,
+      "tts_mean": 0.30111986120389583,
+      "delta": 0.02551232161259048,
+      "p_perm": 0.035,
+      "ci_95": [
+        0.007135493422486828,
+        0.04434871869927643
+      ],
+      "cohens_d": 0.7284193832730774,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.10500000000000001,
+      "significant_fdr": false
+    },
+    {
+      "metric": "segment_stability",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.320829168127064,
+      "tts_mean": 0.3109636698338875,
+      "delta": 0.0098654982931766,
+      "p_perm": 0.0525,
+      "ci_95": [
+        0.0018413062641386745,
+        0.017907254914637058
+      ],
+      "cohens_d": 0.6569419708898192,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.126,
+      "significant_fdr": false
+    },
+    {
+      "metric": "intra_class_dist",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "gain_matched",
+      "natural_mean": 0.7418618674079577,
+      "tts_mean": 0.7602225293715795,
+      "delta": -0.018360661963621776,
+      "p_perm": 0.0215,
+      "ci_95": [
+        -0.03078492333491643,
+        -0.006721861908833193
+      ],
+      "cohens_d": -0.8271662198221464,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.08600000000000001,
+      "significant_fdr": false
+    },
+    {
+      "metric": "silhouette",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "gain_matched",
+      "natural_mean": -0.08856674165210941,
+      "tts_mean": -0.06310914725657892,
+      "delta": -0.025457594395530494,
+      "p_perm": 0.0695,
+      "ci_95": [
+        -0.05198496197329156,
+        -0.002685742867602544
+      ],
+      "cohens_d": -0.5753772145098134,
+      "n_pairs": 11,
+      "fdr_corrected_p": 0.13457142857142856,
+      "significant_fdr": false
+    },
+    {
+      "metric": "boundary_sharpness",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "gain_matched",
+      "natural_mean": 0.3266332996193042,
+      "tts_mean": 0.30111986120389583,
+      "delta": 0.025513438415408374,
+      "p_perm": 0.035,
+      "ci_95": [
+        0.00713772702812262,
+        0.04434871869927643
+      ],
+      "cohens_d": 0.728471237866273,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.10500000000000001,
+      "significant_fdr": false
+    },
+    {
+      "metric": "segment_stability",
+      "model": "hubert",
+      "layer": 0,
+      "level": "viseme",
+      "variant": "gain_matched",
+      "natural_mean": 0.32082907523664816,
+      "tts_mean": 0.3109636698338875,
+      "delta": 0.009865405402760702,
+      "p_perm": 0.0525,
+      "ci_95": [
+        0.0018411204833068818,
+        0.01790725259237666
+      ],
+      "cohens_d": 0.6569370065263941,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.126,
+      "significant_fdr": false
+    },
+    {
+      "metric": "intra_class_dist",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.781632291773955,
+      "tts_mean": 0.783273403843244,
+      "delta": -0.0016411120692888896,
+      "p_perm": 0.559,
+      "ci_95": [
+        -0.007058723705510297,
+        0.003929996242125825
+      ],
+      "cohens_d": -0.16191221047391316,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.559,
+      "significant_fdr": false
+    },
+    {
+      "metric": "silhouette",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": -0.048799785086885095,
+      "tts_mean": -0.03537663508375937,
+      "delta": -0.013423150003125722,
+      "p_perm": 0.233,
+      "ci_95": [
+        -0.035607511908429756,
+        0.00409820098377002
+      ],
+      "cohens_d": -0.38081291051111854,
+      "n_pairs": 11,
+      "fdr_corrected_p": 0.2796,
+      "significant_fdr": false
+    },
+    {
+      "metric": "boundary_sharpness",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.16568602464017443,
+      "tts_mean": 0.18563674765518293,
+      "delta": -0.01995072301500852,
+      "p_perm": 0.144,
+      "ci_95": [
+        -0.043308515591601086,
+        0.0063513265882465175
+      ],
+      "cohens_d": -0.4471589764056576,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.21599999999999997,
+      "significant_fdr": false
+    },
+    {
+      "metric": "segment_stability",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.1721633031100719,
+      "tts_mean": 0.18391323610748841,
+      "delta": -0.011749932997416444,
+      "p_perm": 0.0085,
+      "ci_95": [
+        -0.018488980488931328,
+        -0.005022783439924761
+      ],
+      "cohens_d": -0.9273785538625666,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.051000000000000004,
+      "significant_fdr": false
+    },
+    {
+      "metric": "intra_class_dist",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "gain_matched",
+      "natural_mean": 0.7816324904561043,
+      "tts_mean": 0.783273403843244,
+      "delta": -0.0016409133871396382,
+      "p_perm": 0.559,
+      "ci_95": [
+        -0.007058525023361045,
+        0.003930189957221346
+      ],
+      "cohens_d": -0.16189712744403992,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.559,
+      "significant_fdr": false
+    },
+    {
+      "metric": "silhouette",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "gain_matched",
+      "natural_mean": -0.04880038272081451,
+      "tts_mean": -0.03537663508375937,
+      "delta": -0.013423747637055138,
+      "p_perm": 0.233,
+      "ci_95": [
+        -0.03560752684927799,
+        0.004097588408992369
+      ],
+      "cohens_d": -0.3808327437571387,
+      "n_pairs": 11,
+      "fdr_corrected_p": 0.2796,
+      "significant_fdr": false
+    },
+    {
+      "metric": "boundary_sharpness",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "gain_matched",
+      "natural_mean": 0.16568399651370877,
+      "tts_mean": 0.18563674765518293,
+      "delta": -0.019952751141474167,
+      "p_perm": 0.144,
+      "ci_95": [
+        -0.04331449856467474,
+        0.006349349164942511
+      ],
+      "cohens_d": -0.4471929363740229,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.21599999999999997,
+      "significant_fdr": false
+    },
+    {
+      "metric": "segment_stability",
+      "model": "hubert",
+      "layer": 6,
+      "level": "viseme",
+      "variant": "gain_matched",
+      "natural_mean": 0.17216364944579968,
+      "tts_mean": 0.18391323610748841,
+      "delta": -0.01174958666168867,
+      "p_perm": 0.0085,
+      "ci_95": [
+        -0.018488954513751744,
+        -0.005022445762590182
+      ],
+      "cohens_d": -0.9273496878757672,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.051000000000000004,
+      "significant_fdr": false
+    },
+    {
+      "metric": "intra_class_dist",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.718718113998572,
+      "tts_mean": 0.7123050168156624,
+      "delta": 0.006413097182909648,
+      "p_perm": 0.184,
+      "ci_95": [
+        -0.0021804042160511,
+        0.015190505112210907
+      ],
+      "cohens_d": 0.40288488763819474,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.24533333333333335,
+      "significant_fdr": false
+    },
+    {
+      "metric": "silhouette",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": -0.061393778763224625,
+      "tts_mean": -0.047127545906484804,
+      "delta": -0.01426623285673982,
+      "p_perm": 0.518,
+      "ci_95": [
+        -0.0494917110526082,
+        0.01336659245498592
+      ],
+      "cohens_d": -0.2544157563489692,
+      "n_pairs": 11,
+      "fdr_corrected_p": 0.559,
+      "significant_fdr": false
+    },
+    {
+      "metric": "boundary_sharpness",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.14317231167445993,
+      "tts_mean": 0.16420887017447336,
+      "delta": -0.02103655850001343,
+      "p_perm": 0.0785,
+      "ci_95": [
+        -0.041230675776374605,
+        0.00018007485156900892
+      ],
+      "cohens_d": -0.5511391825159818,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.13457142857142856,
+      "significant_fdr": false
+    },
+    {
+      "metric": "segment_stability",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "raw",
+      "natural_mean": 0.1506257007342883,
+      "tts_mean": 0.16339541033394758,
+      "delta": -0.012769709599659264,
+      "p_perm": 0.002,
+      "ci_95": [
+        -0.019336923630902877,
+        -0.006321968614581602
+      ],
+      "cohens_d": -1.045293505697072,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.024,
+      "significant_fdr": true
+    },
+    {
+      "metric": "intra_class_dist",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "gain_matched",
+      "natural_mean": 0.7187181785702705,
+      "tts_mean": 0.7123050168156624,
+      "delta": 0.006413161754608154,
+      "p_perm": 0.184,
+      "ci_95": [
+        -0.0021804042160511,
+        0.015190632641315456
+      ],
+      "cohens_d": 0.40288968770637384,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.24533333333333335,
+      "significant_fdr": false
+    },
+    {
+      "metric": "silhouette",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "gain_matched",
+      "natural_mean": -0.061393777272314765,
+      "tts_mean": -0.047127545906484804,
+      "delta": -0.01426623136582996,
+      "p_perm": 0.518,
+      "ci_95": [
+        -0.04949170959897109,
+        0.013366593983168527
+      ],
+      "cohens_d": -0.2544157289346613,
+      "n_pairs": 11,
+      "fdr_corrected_p": 0.559,
+      "significant_fdr": false
+    },
+    {
+      "metric": "boundary_sharpness",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "gain_matched",
+      "natural_mean": 0.143170463669048,
+      "tts_mean": 0.16420887017447336,
+      "delta": -0.02103840650542535,
+      "p_perm": 0.0785,
+      "ci_95": [
+        -0.041230675776374605,
+        0.00018002865143371165
+      ],
+      "cohens_d": -0.5511931711066125,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.13457142857142856,
+      "significant_fdr": false
+    },
+    {
+      "metric": "segment_stability",
+      "model": "hubert",
+      "layer": 11,
+      "level": "viseme",
+      "variant": "gain_matched",
+      "natural_mean": 0.1506258239804717,
+      "tts_mean": 0.16339541033394758,
+      "delta": -0.012769586353475857,
+      "p_perm": 0.002,
+      "ci_95": [
+        -0.019336917468593708,
+        -0.006321725203369373
+      ],
+      "cohens_d": -1.0452780656487677,
+      "n_pairs": 12,
+      "fdr_corrected_p": 0.024,
+      "significant_fdr": true
+    }
+  ],
+  "per_sample": {
+    "hubert_0_viseme_raw_intra_class_dist": {
+      "1": -0.01980215311050415,
+      "2": -0.025898993015289307,
+      "3": 0.049823641777038574,
+      "4": -0.009317338466644287,
+      "5": 0.04145514965057373,
+      "6": 0.03925961256027222,
+      "7": 0.0015276670455932617,
+      "8": -0.06472092866897583,
+      "10": -0.03994673490524292,
+      "11": -0.03946638107299805,
+      "12": 0.03515303134918213,
+      "13": 0.039525389671325684
+    },
+    "hubert_0_viseme_raw_inter_class_dist": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": 0.0377616286277771,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_0_viseme_raw_fisher_ratio": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": 0.04163277760588158,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_0_viseme_raw_silhouette": {
+      "1": 0.03997485339641571,
+      "2": -0.005044028162956238,
+      "3": -0.09433629363775253,
+      "4": -0.03190540708601475,
+      "5": 0.06681326776742935,
+      "6": 0.003207411617040634,
+      "7": -0.01302117109298706,
+      "8": 0.03833577036857605,
+      "10": -0.002697393298149109,
+      "11": -0.10509124025702477,
+      "12": -0.012266188859939575,
+      "13": NaN
+    },
+    "hubert_0_viseme_raw_probe_accuracy": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_0_viseme_raw_probe_f1_macro": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_0_viseme_raw_probe_f1_weighted": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_0_viseme_raw_boundary_sharpness": {
+      "1": 0.0268577776457134,
+      "2": -0.05810020698441398,
+      "3": 0.06510350108146667,
+      "4": -0.02265552017423844,
+      "5": -0.0013911111487282524,
+      "6": 0.029514696668176077,
+      "7": -0.0883247289392683,
+      "8": 0.058031252201865724,
+      "10": -0.022514042101408338,
+      "11": 0.07488013609595923,
+      "12": -0.014681522141803405,
+      "13": 0.037395526965459225
+    },
+    "hubert_0_viseme_raw_segment_stability": {
+      "1": -0.00612547886877618,
+      "2": -0.007912836383975441,
+      "3": 0.006582382011649679,
+      "4": -0.04748558306018863,
+      "5": -0.019270557588075832,
+      "6": -0.01836923021860104,
+      "7": -0.012654307483943805,
+      "8": -0.0070163225461579715,
+      "10": -0.02942259372679934,
+      "11": -0.011942469733645433,
+      "12": -0.03171325491558613,
+      "13": -0.01849895372800736
+    },
+    "hubert_0_viseme_gain_matched_intra_class_dist": {
+      "1": -0.01980072259902954,
+      "2": -0.025898993015289307,
+      "3": 0.049823641777038574,
+      "4": -0.009317338466644287,
+      "5": 0.04145514965057373,
+      "6": 0.03925961256027222,
+      "7": 0.0015276670455932617,
+      "8": -0.06472092866897583,
+      "10": -0.03994673490524292,
+      "11": -0.03946638107299805,
+      "12": 0.03515303134918213,
+      "13": 0.039525389671325684
+    },
+    "hubert_0_viseme_gain_matched_inter_class_dist": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": 0.0377616286277771,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_0_viseme_gain_matched_fisher_ratio": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": 0.04163277760588158,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_0_viseme_gain_matched_silhouette": {
+      "1": 0.03999113664031029,
+      "2": -0.005044028162956238,
+      "3": -0.09433629363775253,
+      "4": -0.03190540708601475,
+      "5": 0.06681326776742935,
+      "6": 0.003207411617040634,
+      "7": -0.01302117109298706,
+      "8": 0.03833577036857605,
+      "10": -0.002697393298149109,
+      "11": -0.10509124025702477,
+      "12": -0.012266188859939575,
+      "13": NaN
+    },
+    "hubert_0_viseme_gain_matched_probe_accuracy": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_0_viseme_gain_matched_probe_f1_macro": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_0_viseme_gain_matched_probe_f1_weighted": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_0_viseme_gain_matched_boundary_sharpness": {
+      "1": 0.026844376011898652,
+      "2": -0.05810020698441398,
+      "3": 0.06510350108146667,
+      "4": -0.02265552017423844,
+      "5": -0.0013911111487282524,
+      "6": 0.029514696668176077,
+      "7": -0.0883247289392683,
+      "8": 0.058031252201865724,
+      "10": -0.022514042101408338,
+      "11": 0.07488013609595923,
+      "12": -0.014681522141803405,
+      "13": 0.037395526965459225
+    },
+    "hubert_0_viseme_gain_matched_segment_stability": {
+      "1": -0.006124364183785425,
+      "2": -0.007912836383975441,
+      "3": 0.006582382011649679,
+      "4": -0.04748558306018863,
+      "5": -0.019270557588075832,
+      "6": -0.01836923021860104,
+      "7": -0.012654307483943805,
+      "8": -0.0070163225461579715,
+      "10": -0.02942259372679934,
+      "11": -0.011942469733645433,
+      "12": -0.03171325491558613,
+      "13": -0.01849895372800736
+    },
+    "hubert_6_viseme_raw_intra_class_dist": {
+      "1": 0.014529585838317871,
+      "2": 0.01207435131072998,
+      "3": 0.03998756408691406,
+      "4": 0.008992373943328857,
+      "5": 0.00064849853515625,
+      "6": 0.024228185415267944,
+      "7": -0.0030020475387573242,
+      "8": -0.013173818588256836,
+      "10": -0.0113753080368042,
+      "11": -0.00487208366394043,
+      "12": 0.0205003023147583,
+      "13": 0.018823623657226562
+    },
+    "hubert_6_viseme_raw_inter_class_dist": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": 0.06838095188140869,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_6_viseme_raw_fisher_ratio": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": -0.13217656129703892,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_6_viseme_raw_silhouette": {
+      "1": -0.023982682498171926,
+      "2": -0.0029060877859592438,
+      "3": -0.06539393216371536,
+      "4": -0.03236766345798969,
+      "5": 0.03876234218478203,
+      "6": 0.00876634381711483,
+      "7": 0.046392135322093964,
+      "8": 0.045776963233947754,
+      "10": 0.06827332265675068,
+      "11": -0.08970591798424721,
+      "12": 0.03523070737719536,
+      "13": NaN
+    },
+    "hubert_6_viseme_raw_probe_accuracy": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_6_viseme_raw_probe_f1_macro": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_6_viseme_raw_probe_f1_weighted": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_6_viseme_raw_boundary_sharpness": {
+      "1": 0.008962028904965058,
+      "2": -0.025000924865404756,
+      "3": 0.03969807835186229,
+      "4": 0.018906776793301105,
+      "5": 0.02191316750314501,
+      "6": 0.011708974838256836,
+      "7": -0.05780009594228533,
+      "8": 0.0582045090987402,
+      "10": 0.0028465813712069687,
+      "11": 0.08893466902815778,
+      "12": 0.03480848670005798,
+      "13": 0.09108001135644456
+    },
+    "hubert_6_viseme_raw_segment_stability": {
+      "1": 0.005647506751073589,
+      "2": 0.012218162561245388,
+      "3": 0.02423737336795667,
+      "4": -0.009985387361936576,
+      "5": 0.015045252240575707,
+      "6": 0.005685541648441539,
+      "7": -0.0005561749867400156,
+      "8": 0.012155865843822083,
+      "10": -0.012738666188002262,
+      "11": -0.004762818420051634,
+      "12": -0.00972937256329362,
+      "13": -0.0033043662046217392
+    },
+    "hubert_6_viseme_gain_matched_intra_class_dist": {
+      "1": 0.014527201652526855,
+      "2": 0.01207435131072998,
+      "3": 0.03998756408691406,
+      "4": 0.008992373943328857,
+      "5": 0.00064849853515625,
+      "6": 0.024228185415267944,
+      "7": -0.0030020475387573242,
+      "8": -0.013173818588256836,
+      "10": -0.0113753080368042,
+      "11": -0.00487208366394043,
+      "12": 0.0205003023147583,
+      "13": 0.018823623657226562
+    },
+    "hubert_6_viseme_gain_matched_inter_class_dist": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": 0.06838095188140869,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_6_viseme_gain_matched_fisher_ratio": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": -0.13217656129703892,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_6_viseme_gain_matched_silhouette": {
+      "1": -0.02397610852494836,
+      "2": -0.0029060877859592438,
+      "3": -0.06539393216371536,
+      "4": -0.03236766345798969,
+      "5": 0.03876234218478203,
+      "6": 0.00876634381711483,
+      "7": 0.046392135322093964,
+      "8": 0.045776963233947754,
+      "10": 0.06827332265675068,
+      "11": -0.08970591798424721,
+      "12": 0.03523070737719536,
+      "13": NaN
+    },
+    "hubert_6_viseme_gain_matched_probe_accuracy": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_6_viseme_gain_matched_probe_f1_macro": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_6_viseme_gain_matched_probe_f1_weighted": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_6_viseme_gain_matched_boundary_sharpness": {
+      "1": 0.008986366422552822,
+      "2": -0.025000924865404756,
+      "3": 0.03969807835186229,
+      "4": 0.018906776793301105,
+      "5": 0.02191316750314501,
+      "6": 0.011708974838256836,
+      "7": -0.05780009594228533,
+      "8": 0.0582045090987402,
+      "10": 0.0028465813712069687,
+      "11": 0.08893466902815778,
+      "12": 0.03480848670005798,
+      "13": 0.09108001135644456
+    },
+    "hubert_6_viseme_gain_matched_segment_stability": {
+      "1": 0.005643350722340318,
+      "2": 0.012218162561245388,
+      "3": 0.02423737336795667,
+      "4": -0.009985387361936576,
+      "5": 0.015045252240575707,
+      "6": 0.005685541648441539,
+      "7": -0.0005561749867400156,
+      "8": 0.012155865843822083,
+      "10": -0.012738666188002262,
+      "11": -0.004762818420051634,
+      "12": -0.00972937256329362,
+      "13": -0.0033043662046217392
+    },
+    "hubert_11_viseme_raw_intra_class_dist": {
+      "1": -0.002104043960571289,
+      "2": -0.005370736122131348,
+      "3": 0.023071646690368652,
+      "4": -0.01123201847076416,
+      "5": -0.012025535106658936,
+      "6": 0.024961352348327637,
+      "7": -0.010776996612548828,
+      "8": -0.01939237117767334,
+      "10": -0.0019244551658630371,
+      "11": -0.013936877250671387,
+      "12": 0.027826249599456787,
+      "13": -0.0045809149742126465
+    },
+    "hubert_11_viseme_raw_inter_class_dist": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": 0.05406391620635986,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_11_viseme_raw_fisher_ratio": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": 0.28721523643456215,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_11_viseme_raw_silhouette": {
+      "1": 0.0006056949787307531,
+      "2": -0.00722818449139595,
+      "3": -0.06562970578670502,
+      "4": 0.012692723423242569,
+      "5": 0.045400068163871765,
+      "6": 0.010172655340284109,
+      "7": 0.07903563976287842,
+      "8": 0.061818040907382965,
+      "10": 0.07897218689322472,
+      "11": -0.08467734232544899,
+      "12": -0.012281917035579681,
+      "13": NaN
+    },
+    "hubert_11_viseme_raw_probe_accuracy": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_11_viseme_raw_probe_f1_macro": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_11_viseme_raw_probe_f1_weighted": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_11_viseme_raw_boundary_sharpness": {
+      "1": -0.0011036709735268019,
+      "2": 0.007224410772323608,
+      "3": 0.07523399591445923,
+      "4": 0.01651473343372345,
+      "5": 0.0115454461839464,
+      "6": 0.0341965871698716,
+      "7": -0.03333762039740881,
+      "8": 0.04412988003562479,
+      "10": -0.007869507137097831,
+      "11": 0.11614766587381778,
+      "12": 0.048870484937321074,
+      "13": 0.07889877330689202
+    },
+    "hubert_11_viseme_raw_segment_stability": {
+      "1": 0.015733140711480742,
+      "2": 0.018533969190129895,
+      "3": 0.03874520120328323,
+      "4": 0.002341746869997441,
+      "5": 0.021664251266572315,
+      "6": 0.01680507420259167,
+      "7": 0.003512467148105297,
+      "8": 0.019312273745434982,
+      "10": 0.0016054094794713258,
+      "11": -0.0010665127899089077,
+      "12": -0.0017858789557324284,
+      "13": 0.008138285668509576
+    },
+    "hubert_11_viseme_gain_matched_intra_class_dist": {
+      "1": -0.002104818820953369,
+      "2": -0.005370736122131348,
+      "3": 0.023071646690368652,
+      "4": -0.01123201847076416,
+      "5": -0.012025535106658936,
+      "6": 0.024961352348327637,
+      "7": -0.010776996612548828,
+      "8": -0.01939237117767334,
+      "10": -0.0019244551658630371,
+      "11": -0.013936877250671387,
+      "12": 0.027826249599456787,
+      "13": -0.0045809149742126465
+    },
+    "hubert_11_viseme_gain_matched_inter_class_dist": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": 0.05406391620635986,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_11_viseme_gain_matched_fisher_ratio": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": 0.28721523643456215,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_11_viseme_gain_matched_silhouette": {
+      "1": 0.0006056785787222907,
+      "2": -0.00722818449139595,
+      "3": -0.06562970578670502,
+      "4": 0.012692723423242569,
+      "5": 0.045400068163871765,
+      "6": 0.010172655340284109,
+      "7": 0.07903563976287842,
+      "8": 0.061818040907382965,
+      "10": 0.07897218689322472,
+      "11": -0.08467734232544899,
+      "12": -0.012281917035579681,
+      "13": NaN
+    },
+    "hubert_11_viseme_gain_matched_probe_accuracy": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_11_viseme_gain_matched_probe_f1_macro": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_11_viseme_gain_matched_probe_f1_weighted": {
+      "1": NaN,
+      "2": NaN,
+      "3": NaN,
+      "4": NaN,
+      "5": NaN,
+      "6": NaN,
+      "7": NaN,
+      "8": NaN,
+      "10": NaN,
+      "11": NaN,
+      "12": NaN,
+      "13": NaN
+    },
+    "hubert_11_viseme_gain_matched_boundary_sharpness": {
+      "1": -0.0010814949085837938,
+      "2": 0.007224410772323608,
+      "3": 0.07523399591445923,
+      "4": 0.01651473343372345,
+      "5": 0.0115454461839464,
+      "6": 0.0341965871698716,
+      "7": -0.03333762039740881,
+      "8": 0.04412988003562479,
+      "10": -0.007869507137097831,
+      "11": 0.11614766587381778,
+      "12": 0.048870484937321074,
+      "13": 0.07889877330689202
+    },
+    "hubert_11_viseme_gain_matched_segment_stability": {
+      "1": 0.015731661757279858,
+      "2": 0.018533969190129895,
+      "3": 0.03874520120328323,
+      "4": 0.002341746869997441,
+      "5": 0.021664251266572315,
+      "6": 0.01680507420259167,
+      "7": 0.003512467148105297,
+      "8": 0.019312273745434982,
+      "10": 0.0016054094794713258,
+      "11": -0.0010665127899089077,
+      "12": -0.0017858789557324284,
+      "13": 0.008138285668509576
+    }
+  }
+}
