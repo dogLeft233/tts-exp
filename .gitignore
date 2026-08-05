@@ -41,5 +41,28 @@ HANDOFF.md
 data/gsv-tts/
 data/data/audio/r2_audio/
 
+# Locally acquired source audio; manifests remain trackable
+data/multilingual_tts/audio/
+data/hdtf_audio_en/audio/
+data/mdc_tts/audio/
+
+# Large locally-acquired datasets / reproducible outputs (manifests tracked)
+data/aishell3/
+data/dataset_samples/
+data/tts_audio_250/
+data/wav2sem_analysis_zh/
+data/hdtf_videos_test/*.mp4
+data/hdtf_videos_test/paired_audio/
+data/mdc_tts/replacements/
+data/aishell1_100_zh/audio/
+data/data/audio/*.wav
+data/tts-audio.lnk
+
+# Model output videos (regenerable; reports/metrics tracked separately)
+results/
+
+# Intermediate bundles
+experiments_intermediate_results.tar.gz
+
 # Scratch notes
 data/data/audio/trans.md
