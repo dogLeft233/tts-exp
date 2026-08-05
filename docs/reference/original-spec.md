@@ -1,0 +1,13 @@
+- 我的语音克隆模型用的是Qwen3-TTS-12Hz-0.6B-Base
+- 视频生成模型就是ditto
+- 调用模型用的是github上的faster-qwen3-tts
+- https://github.com/andimarafioti/faster-qwen3-tts
+- ditto用的是tensorRT模式
+- 基本的环境配置和使用参考这个文件 `ditto.md`
+- 音频数据用的是在网上找的中文语音数据集
+- 叫AISHELL-1
+- 数据集下载`https://www.openslr.org/33/`
+- 视频数据用的是HDTF数据集
+- 随便找了10个图像
+- 具体用到的音频和数据： `data.zip`
+- 评价指标是Sync-C和Sync-D `https://github.com/joonson/syncnet_python`

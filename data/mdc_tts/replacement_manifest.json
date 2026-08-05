@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "source_manifest": "data/mdc_tts/manifest.json",
+  "selection_policy": "three longest unused MDC English rows, each deterministically repeated twice to exceed the SyncNet duration floor",
+  "source_risk": "same MDC source; composite repetition is explicitly marked and is not a raw utterance",
+  "samples": [
+    {
+      "sample_id": "en_008_x2",
+      "language_code": "en",
+      "text": "Near the water bucket, her uncle rinsed his hands slowly. Near the water bucket, her uncle rinsed his hands slowly.",
+      "duration_s": 7.8,
+      "file_path": "data/mdc_tts/replacements/en_008_x2.wav",
+      "source_sample_id": "en_008",
+      "source_author_id": 4483,
+      "source_dataset": "Effect AI Scripted Speech 1.0"
+    },
+    {
+      "sample_id": "en_017_x2",
+      "language_code": "en",
+      "text": "This song makes me want to dance. This song makes me want to dance.",
+      "duration_s": 7.678,
+      "file_path": "data/mdc_tts/replacements/en_017_x2.wav",
+      "source_sample_id": "en_017",
+      "source_author_id": 4794,
+      "source_dataset": "Effect AI Scripted Speech 1.0"
+    },
+    {
+      "sample_id": "en_003_x2",
+      "language_code": "en",
+      "text": "The crosswalk button doesn't seem to work. The crosswalk button doesn't seem to work.",
+      "duration_s": 7.32,
+      "file_path": "data/mdc_tts/replacements/en_003_x2.wav",
+      "source_sample_id": "en_003",
+      "source_author_id": 4578,
+      "source_dataset": "Effect AI Scripted Speech 1.0"
+    }
+  ]
+}

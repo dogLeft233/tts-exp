@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "records": [
+    {
+      "stem": "RD_Radio47_000",
+      "speaker_key": "RD_Radio47",
+      "video_local_path": "data/hdtf_videos_test/RD_Radio47_000.mp4",
+      "duration_s": 60.0
+    },
+    {
+      "stem": "WRA_FredUpton_000",
+      "speaker_key": "WRA_FredUpton",
+      "video_local_path": "data/hdtf_videos_test/WRA_FredUpton_000.mp4",
+      "duration_s": 68.0
+    },
+    {
+      "stem": "WDA_AdamSchiff_000",
+      "speaker_key": "WDA_AdamSchiff",
+      "video_local_path": "data/hdtf_videos_test/WDA_AdamSchiff_000.mp4",
+      "duration_s": 275.0
+    }
+  ]
+}

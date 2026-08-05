@@ -1,0 +1,2369 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-07-28T02:33:11.162911+00:00",
+  "nas_host": "10.108.21.182",
+  "nas_account": "dhg_mm",
+  "remote_root": "/dhg_mm/HDTF/_audio_raw",
+  "audio_role": "HDTF_English_source_audio",
+  "records": [
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 913159,
+      "sha256": "67e0a8fe60d51c418cc9ac33d7286ad2203805bf07455e6bb53564efb9593f0a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio10.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio10.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2822163,
+      "sha256": "ad6e0d565b960c1e64f967fc48c6492323ca928b15f026732ee71d8cd951684a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio11.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio11.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2505019,
+      "sha256": "f9e8fa193b7398de128451fe93486bca89ada264870302d775e5602e19c28932"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio12.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio12.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 687903,
+      "sha256": "917a660f18b905497973a454aa77f367a3512be129cd2bbba2c9399021c28123"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio13.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio13.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 396286,
+      "sha256": "6bf0a1edd2fa0973ff3d0eec34280901359573ac1999ddd0e8e11e222ce6fd7c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio14.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio14.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 862169,
+      "sha256": "88ccb92353a05c87a9555bda260da00fc09cf6faaa066a8c0d2e48eecd6da917"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio16.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio16.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1270896,
+      "sha256": "658c59b7001810cf39f7b5849ad8fb96d77047c3ffd0387320d9855ad1fc16a9"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio17.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio17.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1224515,
+      "sha256": "2d299fc70f52eec9d270f8461bfe9d2cc50db728b4e7509996939c4a8a7ecfe1"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio18.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio18.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1414019,
+      "sha256": "8c08432a1d416464f6d274d0e8fb7191d26e5e99e82027ec818e835b6ec235a4"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio19.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio19.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1153962,
+      "sha256": "97b270d6ba0bb595c2fedb4ec531cb38aa7663fe82720aeed4fb942bffc20dfa"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio2.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio2.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1099229,
+      "sha256": "d697120706749dc8c441b8d8e47e1cac969d35643daf6ce396ab266a517527b8"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio20.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio20.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1056725,
+      "sha256": "532b165bff3e46c2ac31ca7c2060ee220ab8f7913012f31476db69287dd50fa8"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio21.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio21.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 810485,
+      "sha256": "495d565990cc9df70983a2487f275d32f998582d1915e202af3ff29085ec7319"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio22.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio22.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 982230,
+      "sha256": "048e25a539c2a0a7fa8953648359cd49aa793697012e05304e7b110f749ede85"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio23.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio23.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1023671,
+      "sha256": "f03a93b72da88e660bb5b8b3144edcee14cfa268ea8468ed9b65496ef298fed4"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio25.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio25.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1178032,
+      "sha256": "8d94b3ca78e4d525c5d5844bb73f97b3d6b612646f14596a339a1846c3e16b42"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio26.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio26.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 966501,
+      "sha256": "b8175f797de6776ac6b95e82875e20ce578f9a9f09df198f09ede8bc5a9a1490"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio27.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio27.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 865784,
+      "sha256": "97c5e0b13bf45df841f7d2b500a9637cc901bd4e3dd693faa1a4553d6cf83cf4"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio28.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio28.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 968463,
+      "sha256": "39cfbf81aa6bd522f3ffed8ddf6b9cb4c0485c27018194f5458ef57f759042ef"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio29.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio29.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1040114,
+      "sha256": "6c08810dd38f5a6e99d3fc560d5226590009de7956430e29a60ae74aac185a83"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio3.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio3.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2059092,
+      "sha256": "37fc1563c5d99235cc7002a3715c88d9ed7daca3474ead4f5a28fe6dd3f42ab7"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio30.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio30.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1372280,
+      "sha256": "f876e866118b1096d11ee978dd231d269bdf738fcda92a5972dc01052cdc2a71"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio31.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio31.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 702572,
+      "sha256": "ccabebb98140295c697fc94d51d2362db224747603c3f96a1040687850567dc7"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio32.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio32.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 745926,
+      "sha256": "885e2c687b3c789b9d50c88515b9996944311e28461d71346a6167e61fa76c81"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio33.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio33.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1007756,
+      "sha256": "d34ff40fb5c792c06152f0f3cb842f8312d787f14dd2345938a55e08033ff83e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio34.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio34.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3115978,
+      "sha256": "6d399a97b35d8a9e8e38d703fed81d7e2468a92973310959600fc2d42be1ce06"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio35.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio35.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 931173,
+      "sha256": "bb5a69393a2db7e13ba052e6f1ce1fbca592342546acab9887fd57f0e86734a6"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio36.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio36.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1082971,
+      "sha256": "2203b2f595af2f2ae73adf41fb1f7846bf41176304602db5ab92070884844b1c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio37.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio37.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1353442,
+      "sha256": "3e7d8d4f822e4fbc3da7c4c467bcb4f1ae4f12c4996a5610da5e19fa8bc4a1c5"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio38.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio38.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1639211,
+      "sha256": "168ac600f3ef1dee07feafe6ad097b16e9f154f347eec7e0231ecda0338dc9af"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio39.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio39.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 709147,
+      "sha256": "dc285a8f058aef420874943fbdd82dfeeafc1601a533f7d15a58227e2e4999ea"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio4.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio4.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1204305,
+      "sha256": "992af8969f003da5f2c35353163560ceb3e5b4038ca72eaf8ad59f80e1e0c629"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio40.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio40.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 608156,
+      "sha256": "8993bdf81fcf0f06245f839b8be46a6b57a95f0498d46d94783ffd94d2f6fff5"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio41.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio41.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 932726,
+      "sha256": "8fb5e0860832782bd9ee973a5f08d6d947fef5aef745b31ccbb849fd363677be"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio42.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio42.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 787616,
+      "sha256": "4be345bdff4980537dbc9cb4dca2f2efecfa05d6051a80fb8850e66bc63cd1f3"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio43.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio43.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 690525,
+      "sha256": "81c0b92e3a473ceeae5edd168ce8228930be14ef77767bdd0f683efc03604862"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio44.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio44.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 539375,
+      "sha256": "095d4ff7cb843570eff3ddc523b1e18661ed6236e0b5ed0b5b15727a3072f716"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio45.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio45.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 738464,
+      "sha256": "9af39a065199a65c4b1c8703d4c51301881c6b7378043fb46b8d2cf2419f3279"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio46.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio46.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 823388,
+      "sha256": "69acb2eb72e993598f32096fe3809983550e4d8e6930f0fe6d2142acdce81796"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio47.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio47.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 703406,
+      "sha256": "18d49e62d34a94e82bd43f7b16ca726c07f6e2f41f9115d0ef905f0f9c7a7788"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio48.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio48.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1349037,
+      "sha256": "c6b5493da2b4e48f6d518baacb0c15512d624db5929a64388bae21258b956715"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio49.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio49.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 664864,
+      "sha256": "7cf592d52d14e857074a6155047133c62f8685336ed29efb2926fc2f17c54ea2"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio5.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio5.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 750923,
+      "sha256": "cb3379b968b4a96f68eb500a1ceb5d9df98c2b79795054d7b62e5d672ee4ae0e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio50.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio50.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1436367,
+      "sha256": "341ab7ba244788da46d3d1e51114d469d8c9ab27798caed1a77b9182ba17ea03"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio51.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio51.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1429062,
+      "sha256": "6e68e59622e2e1d35b132235f50ad54daab92f47526275fbba95c9e26b5ce21a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio52.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio52.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1221035,
+      "sha256": "125be9053f3088dd2861e156bf00b2aeb0059323afb155668553fd2652c22eaa"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio53.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio53.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1233887,
+      "sha256": "30a787fe24d952b853da1bcefa316cd3ce0b20a3d18931789952cebfa4326e95"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio54.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio54.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 292212,
+      "sha256": "10729a0a604e641cbea376220c64467ab65df4fe9f7ac4b147bcaeb800445312"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio56.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio56.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 833783,
+      "sha256": "b0f8f138d3ed84881ad107cff4c260d285929dc0d25d4919ac025b50d909500a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio57.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio57.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1296053,
+      "sha256": "23703954398843054c8de309e50fa524f9c18f12d937784bbc4d8e9d03d58a0a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio59.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio59.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 824927,
+      "sha256": "8850fbf5f7350e7a7d7151f0289a0889445a43eb4813cfc6e4e61be7cb3ae42b"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio7.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio7.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1338333,
+      "sha256": "638235805f8002dc8be4507fbc133bd0b2da552b9737fc4a1a20323fae5e21e5"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio8.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio8.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1163314,
+      "sha256": "0b66afc8ef2d8361eac5d5307604c7669f7c7a37fe34580eac06d337104dbe1e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/RD_Radio9.m4a",
+      "local_path": "data/hdtf_audio_en/audio/RD_Radio9.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 934535,
+      "sha256": "b91737e5c1b8cb971220ae0098858324c7bee4c1a4b41562f3d61da1429b8341"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_AdamSchiff.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_AdamSchiff.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2911470,
+      "sha256": "f37f79db96b3d2dd17d318a0c43dad2c86c41f3c60a81553af947f64aaf8fd2a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_AdamSmith.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_AdamSmith.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3309784,
+      "sha256": "8f8fa11e0e3021c3218d290e2886b0d144472971daa81f2fbef5c0c83f32357c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_AlexandriaOcasioCortez.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_AlexandriaOcasioCortez.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 938380,
+      "sha256": "065ac2f253436c07446b4528b93ad0c19f20c31a6b51849946588784d132262e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_AmyKlobuchar0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_AmyKlobuchar0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4527052,
+      "sha256": "a31534765cf1987b3fde4fd869e8b3579a9aeaf84bf5ecb73af0abaa383c63d1"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_AmyKlobuchar1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_AmyKlobuchar1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4716003,
+      "sha256": "df3a9a35a74ed6c34220be411ae47a6e8758597ef59470c25745051a380c3ad0"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_AndyKim.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_AndyKim.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4634099,
+      "sha256": "b2c5dc730f6b836c9870af24fd15c3ed661b96fbcdb1cfd039c8b205d947fb6d"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_AndyLevin.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_AndyLevin.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2163909,
+      "sha256": "3ee45ccd0a78939585a85e27ada4b909032fe767884818127e822a17556a4ce5"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_AnnieKuster.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_AnnieKuster.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2071860,
+      "sha256": "11e9b9e01caaba0278fece562e84a3e8c64459930d79908723b7d63821feb674"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BarackObama.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BarackObama.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3966439,
+      "sha256": "1e4f3b30fc24584e7b423c48b6f204bfdeab59e18fba6f44faf5529e9240d0f2"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BarbaraLee0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BarbaraLee0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2550545,
+      "sha256": "123e2ff50f0d1251390447a68ebc1d8bb841dfced0ab71b9de78edbc6b268bb1"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BarbaraLee1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BarbaraLee1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1882809,
+      "sha256": "5cfc7cdfe86f7eebc6838866915be3380e12936baf3b25c1648f8b9b137d60a6"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BenCardin0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BenCardin0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 5593895,
+      "sha256": "cff709b858d9d40f2d7d55431cdc1f5cc8e4f37fed670d2afbb8c1ff048073de"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BenCardin1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BenCardin1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2919682,
+      "sha256": "5c1ec144730fbcda2770f79a0719f79362e14c13ce3c002325ab4f5293e36d64"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BenRayLujn.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BenRayLujn.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2884173,
+      "sha256": "9fa7f8285fe65d71b9d49584fcc3ede7d5e419b1fd6a5775a272d96b9c8fd435"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BennieThompson.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BennieThompson.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2196646,
+      "sha256": "4702fce028ee0f4223dbfa05e4abb26b5016ddf9e7659847ac4eea20ec4d12cf"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BennieThompson1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BennieThompson1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4063268,
+      "sha256": "acfe1847ed2e4f0a75ab34c05a870a3ba160dba900ad7c26a853840dee5da3e3"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BernieSanders.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BernieSanders.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 5791394,
+      "sha256": "2804b83faa69c41b4e135ac89bdd4365bb95aa4713c900f311e9983fc74aa602"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BettyMcCollum.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BettyMcCollum.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2796606,
+      "sha256": "d1bcde193bd35bf9e8dea6f028824ee82708ed16d873fd2e6fe833094dc85d2e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BillPascrell.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BillPascrell.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3132698,
+      "sha256": "f9762536d3acd72c75d2088f07ec85b234a658d26e90dfa1ee8245b61285035f"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BillRichardson.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BillRichardson.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1417350,
+      "sha256": "8c20d5bc050291d75ffdb210ece26ea66c4098549f4c31da47558f258331f667"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BobCasey0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BobCasey0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4349250,
+      "sha256": "cd7c2ffe471fec1b06a684bad7006acf2af75f83e67b080f5afae678232360fe"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BobCasey1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BobCasey1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2282938,
+      "sha256": "ddb11d3698505f3731e983068f464038c5c801eebd1f54306ec50e8aeb7000e5"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BobMenendez.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BobMenendez.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1432430,
+      "sha256": "526472b2df1f821062f0bc4aa75c0540fe52f3d97808c70944c142974feaf032"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BobbyScott.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BobbyScott.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 897239,
+      "sha256": "4053eeda362f506d0f3050cbca2ca9c249fa716d9dda2d517f959e935378d073"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BradSchneider.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BradSchneider.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2750871,
+      "sha256": "db65899d75c181d7f38d6866ba0967b53cf3db72ae2f14d2bc274beccfc906ec"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BrendaLawrence.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BrendaLawrence.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2288662,
+      "sha256": "6fc5430fef96d7a50e95c9b691ffdf23cf6c0d7447edb7d965785e2e90c722fe"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BrianSchatz0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BrianSchatz0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1545938,
+      "sha256": "7dc762edde603de224acf717a90a6c7fe63337a41f504a339b84d0bf5fcb5e40"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BrianSchatz1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BrianSchatz1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2155980,
+      "sha256": "b6e4990cb8939512e0f4a4dd8ed5af3b1bd77df31fd56c91b0c5f74e4a1e2fb0"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_BrianSchatz2.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_BrianSchatz2.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1617505,
+      "sha256": "487d6d4ec19a3869b19856e115e2517b68489409e6554f5c0416868dbaf43fe8"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ByronDorgan1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ByronDorgan1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1498253,
+      "sha256": "fcbb360376410ae7147af9be1b754e7b0324617db9bc1ef25803f8e4932042de"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_CarolynMaloney1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_CarolynMaloney1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3435142,
+      "sha256": "5721ead6c66eb305585631cfa09afdc2078b46602799d153cfeded69744c1926"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_CatherineCortezMasto.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_CatherineCortezMasto.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1171177,
+      "sha256": "44200a23ba1b2a9f33c453bc060419b57d3795457fa0234b4ded670ac2818fef"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_CedricRichmond.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_CedricRichmond.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2950515,
+      "sha256": "5bc51e569c69c82da7a52c725945e28b0e78a2c6af3e6cdd53751338845d6c22"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ChrisCoons.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ChrisCoons.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2780967,
+      "sha256": "7007cebeb8757f97867810ef907ff19660cd9f00cb7dcf43431cf325c06b4b6d"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ChrisCoons1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ChrisCoons1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2380101,
+      "sha256": "1bce89b3592c36b4dada4eb29c3210db194f669401e6ca7a65a0e3d660721f30"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ChrisMurphy0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ChrisMurphy0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2635552,
+      "sha256": "2ac2b70ae2da4a36bf9fcaf192120f0314d0c8aba897945a2f27fb7e8f790567"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ChrisMurphy1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ChrisMurphy1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2579140,
+      "sha256": "ccdfb6b3fb836fe502c871df8a0746eb58ff032b133f13a5ecd048a6fdc83cf0"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ChrisVanHollen0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ChrisVanHollen0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 5612307,
+      "sha256": "7d5a297b21596c1e436a23116eb413c76559a6937becf5e52354f527308fde9a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ChrisVanHollen1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ChrisVanHollen1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4982486,
+      "sha256": "1fca468fd67f13e150656175863e1330255deb80bbbe1adc88596e83297be01d"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ChuckSchumer0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ChuckSchumer0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2373319,
+      "sha256": "d1006c8acf24558d06b2af3ea211536cbfc89b830b2431db7731f3a4d981cc1e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ChuckSchumer1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ChuckSchumer1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2274403,
+      "sha256": "c847283265c767dd47118ec09f9fe31b5a0e402c6b691529f2972612936db569"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ColinAllred.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ColinAllred.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2043545,
+      "sha256": "bc4693bdaf49e9a565f671d3f559aa42dad5ff5f7eb5caa1ed10ce343d82cf8c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DanKildee.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DanKildee.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1036613,
+      "sha256": "1ba6209c86f0d2daa7b387bd3be301a1de984fa30f44a39db68919872e732e81"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DanKildee1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DanKildee1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2526871,
+      "sha256": "5c7ea6e7b9a57458ca1766ab4111cca90f8a41425d4ca01fc3cef069303352ed"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DavidCicilline.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DavidCicilline.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3970868,
+      "sha256": "ea02868c107b3204d9dd7482501b654660119b47651fd8e30325ef9ca0dd5baf"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DebHaaland.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DebHaaland.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2281921,
+      "sha256": "6cb75e8f30ec32440d1e7e3ff4603897e99f1616ce49e4e54c70664043d3a03f"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DebbieDingell0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DebbieDingell0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3112614,
+      "sha256": "be60eba0268413df14ed6fe77d1923befb381b7f37df9a4e77fd1b903177f426"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DebbieDingell1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DebbieDingell1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2858198,
+      "sha256": "7cd696c24924a68c8904d967d993c8906839f9160e65eb18c6993f29679393db"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DebbieStabenow0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DebbieStabenow0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1985569,
+      "sha256": "914d6be6ca36b45dba8545264cfe57c51801b12b56e4e38a94f1d5c24798a1ff"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DebbieStabenow1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DebbieStabenow1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2162277,
+      "sha256": "07a2492c0ca98b3ac8d708ff5d179cf02f8e0a4fc93f2e385ec2b816da6d1288"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DebbieWassermanSchultz.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DebbieWassermanSchultz.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3004484,
+      "sha256": "b85baa128f7b934d41d362649f502f52c16ee5fb449914ed392894d0c5fc7f65"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DianaDeGette0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DianaDeGette0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2524816,
+      "sha256": "98e8baf5f3e51b35a5987ba8b6abc1abaa454a65a0cc145013aa3b4919aea74f"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DianaDeGette1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DianaDeGette1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1071650,
+      "sha256": "a1725823d41db0f3be9772984861c7427cc0f8e5e77ba2b5aeda92056de805cb"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DianneFeinstein.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DianneFeinstein.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 5112463,
+      "sha256": "a85d25d12cf954b45543496970aa634424c37ff8594b14ce5fe8604bbb52fded"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DickDurbin.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DickDurbin.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2686454,
+      "sha256": "e89b418168515b284b231046add5bc806f2e91d8e1d23013d42d1e71d93fcdfa"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DonaldMcEachin.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DonaldMcEachin.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3140040,
+      "sha256": "98a5e265924adcf36291a88c9c68aa16aee023c6d50414f3c809448edda6e085"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DonnaShalala1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DonnaShalala1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2776402,
+      "sha256": "54c0c4ae5bb9933debb36c585f903d04bfdaa5410d384a51ebae123a663351d1"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_DougJones.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_DougJones.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4273952,
+      "sha256": "80247e716b17d3e86e41a1733a65f8611a4b57626649cc34eed4c5bf06445738"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_EdMarkey0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_EdMarkey0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2033114,
+      "sha256": "362c82748bd33211c09573c0dde6d15e5a7e667052e728145e44ab0c27edfc6a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_EdMarkey1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_EdMarkey1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4416809,
+      "sha256": "df75faa8609e9a3d5a7c5a1b9f860300ea9d12b2bffe3b5d4c29d28eadf587ce"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ElijahCummings.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ElijahCummings.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2826091,
+      "sha256": "a275835b4af4db4e64f8f66706530bf443268fac0db6c656854435391c7adc1e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_EliotEngel.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_EliotEngel.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2564325,
+      "sha256": "f0b6e9cb692794cf3515878d13334c925de015a60569a290754a3a1c2cfbe347"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_EmanuelCleaver.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_EmanuelCleaver.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3103016,
+      "sha256": "671b645336e7730e5f291bb2788bc6733fcd27aef53e942629f18c0df9be23bf"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_EricSwalwell.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_EricSwalwell.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2814330,
+      "sha256": "c7a4b761a1ca0640f0fe5facfd3250f9d69b031dfb5531f55127ea46bad68547"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_FrankPallone0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_FrankPallone0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2227668,
+      "sha256": "cd96567372ec15965dfc84b57ac83e5a16a459f384d4ce3d544f02a982c48581"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_FrankPallone1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_FrankPallone1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4289670,
+      "sha256": "d11529db3f2f5a9f1d0277f68c90025285ebbd7f222222401cfd0dec49ca949c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_GerryConnolly.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_GerryConnolly.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2737819,
+      "sha256": "6c6fc192197ea2f7b96c49153b41318aae4b290f7ffce6ec9fd2c4cf7877689c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_HakeemJeffries.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_HakeemJeffries.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2342807,
+      "sha256": "f10f05866095be282ca93f46c9e8abd6aec41a75949383e93ff3fed4c9843bdf"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_HaleyStevens.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_HaleyStevens.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2014865,
+      "sha256": "74ceb791151b361148d2d62bf97ef66d16cdda1bd91385f2f5a9540807020118"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_HillaryClinton.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_HillaryClinton.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1403752,
+      "sha256": "7ef27a04b2d21df3347fd02f7acb2d4dd85043c070efdaa6a937ac161308e528"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JackReed0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JackReed0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 972323,
+      "sha256": "b78bbfd2d260ac11f76db05c296eb2c67486c589aaf495ac6dd254920c3df771"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JackReed1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JackReed1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1974582,
+      "sha256": "f0068dadc0cbb5b2f015b8d453181aebb2e092ed411e9a8a75b187fae0632dd7"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JackieSpeier.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JackieSpeier.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3092723,
+      "sha256": "140e79b98cd569b9314d2925ef0a054f3176ec83197def8f299669e0ad66908f"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JackyRosen.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JackyRosen.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2114724,
+      "sha256": "a198d1a9d918b6843c7e0095ba01793954b119e96729bee807cd0ac2834b745b"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JackyRosen1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JackyRosen1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3846566,
+      "sha256": "5b5cd072b09e2c77e1e18f28c6e6821f5fa0d081a0d63795b247d972d2963ab4"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JamesClyburn.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JamesClyburn.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2776125,
+      "sha256": "f5e7b991bda35347f96f6aff941642b12fd2533816ac17f240e793731539f507"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JamesClyburn1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JamesClyburn1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2870531,
+      "sha256": "68a37a912d52264ea3f3064405decc9dd4a6b089dab5523c782ef9412ef293d5"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JanSchakowsky0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JanSchakowsky0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1781328,
+      "sha256": "8599414947b48c57e340bad50424fec1d885868211af9ecbcd8300986ddf32ec"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JanSchakowsky1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JanSchakowsky1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2684976,
+      "sha256": "e171f591052a33bc4c477b5038b24a462746a053dc2ba818935daa7b1a06b008"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JeanneShaheen0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JeanneShaheen0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4638957,
+      "sha256": "08916b8282ca6820723cc58463b19cad32a9b2ee0d99b2e9f009de794395cca6"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JeanneShaheen1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JeanneShaheen1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2672043,
+      "sha256": "dc25c607a4648c6b8c1d95a03bd36e0366007c872bf6f014dbff6b63b5c0925f"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JeffMerkley1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JeffMerkley1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4758438,
+      "sha256": "d96e1fb05e09b4a787591412d9522b7f1bd532bceefb7860abfb977a242d7de9"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JerryNadler.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JerryNadler.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3160103,
+      "sha256": "ba9e3c44a8db4433d7a2af49227da2451e13f3e42f1c20f2d708855a07bb8d6f"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JimHimes.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JimHimes.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4703135,
+      "sha256": "c51686d52620636a88e48f67fac9cec90fae616131761488fd0e30ef46b38972"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JoaquinCastro.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JoaquinCastro.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2496080,
+      "sha256": "ed73c602f9159b7c8600a621ab11737eb087d4926c09b8e726113011d3088298"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JoeCrowley0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JoeCrowley0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3688024,
+      "sha256": "3b613a3ae223d0c32e05632f4867c031b2a7e94cb869cbcf87118c6fedd8e06d"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JoeCrowley1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JoeCrowley1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2812554,
+      "sha256": "ada38dd78fd4a6ce1cdeb61e83659f58b6e540cac8ecb18aa4bdee013780163d"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JoeDonnelly.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JoeDonnelly.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 578574,
+      "sha256": "fdc5d21b3950fdbbc9210f16b57a8db58c1920e4a43af95bb5520f141eee3302"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JoeKennedy.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JoeKennedy.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 668916,
+      "sha256": "9567edfc86410dfd4c85a7e697bf121203d4a6ddf3ad3e4ad8a17cccbcdd8b1a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JoeManchin.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JoeManchin.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1727712,
+      "sha256": "fa37a1e92ae092a60737189f8a52a271c8ef44f9cf9abd434fc6c72730419fb1"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JoeNeguse.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JoeNeguse.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2830106,
+      "sha256": "449baa0bff531063e425191afcaca06f863f7a21da964e5e35d64bf6467feb97"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JohnLewis0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JohnLewis0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2660717,
+      "sha256": "01b7987c352583122b92b13e837709a62566983b4cb688b2d32b0a8e7cd20c69"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JohnLewis1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JohnLewis1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2820839,
+      "sha256": "4ac9ec43ba499759157fb017549420e606ad9158a3c8cf4fd8e9a7c00d6bb44e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JohnSarbanes0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JohnSarbanes0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2283118,
+      "sha256": "7680779f6beece21fde985a6eb834f601fa96977879f9dc84bca1194c4619db4"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JohnSarbanes1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JohnSarbanes1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1353866,
+      "sha256": "be5dcaa8e78d1bc8998063b67662e1cff1eacea00c5ae2613c7335f02eb7ab72"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JohnYarmuth.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JohnYarmuth.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2412449,
+      "sha256": "19b7e33746960c16242d219dc9693e71fe3fe57fa36078582472269fdb8dc08c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JohnYarmuth1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JohnYarmuth1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2162553,
+      "sha256": "3b8a2ebb2e199618d56057fae14aa8df5adf20de6666b89bd737e7c9aa9a319e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JonTester0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JonTester0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1420927,
+      "sha256": "efc26be30167c055fb2e99680f579c2222db4a9cf68346553d2313ab9d3ad586"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_JonTester1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_JonTester1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2688156,
+      "sha256": "8e2c3d1dce62a99437dd436349cfa4a0851c0540dda4fb0b21855e9f89d7401e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_KarenBass.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_KarenBass.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2974273,
+      "sha256": "39ec30c1bbfd72fee9b47f08e032bc3d27455e2049771372a9e07f3a27912602"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_KatherineClark.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_KatherineClark.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 721742,
+      "sha256": "6d0ae551a7034bb78b2fbb3c1de72a8e7c4991235cc398a181ad4f45a888163d"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_KathyCastor.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_KathyCastor.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1001884,
+      "sha256": "477335ffaa226cb47410c949cdb60f9d594a7deb450f377ea33b639f3ffae526"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_KathyCastor1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_KathyCastor1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2322746,
+      "sha256": "d27eb3222b3373e0d8365c5af04c9052403d22df43d3d6b1163bf28b7d961203"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_KatieHill.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_KatieHill.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2082179,
+      "sha256": "5b80aee2115e510dcfd223f37051e0609374dc90a0987edd23a5c8fa458cff4a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_KimSchrier.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_KimSchrier.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2763336,
+      "sha256": "7882e2793f15bada9b2d8be8fcfcc065fcbfbd59c1e68e96dc1b729e33b4f25d"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_KirstenGillibrand.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_KirstenGillibrand.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3620452,
+      "sha256": "c301f3a70f919929cdef2bfa08f59f0d64ca75d4222e8fc13d30605ac7c97122"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_LisaBluntRochester.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_LisaBluntRochester.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1818198,
+      "sha256": "ccb52ac136c950cef83e0b01e6e65bfc0293bb8e32926b9876d0f304fa6e834f"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_LloydDoggett0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_LloydDoggett0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2647436,
+      "sha256": "eef4a2120aea37171b02e35fd4f73a883c72444df1246444e7cc895ff7ded912"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_LloydDoggett1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_LloydDoggett1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1116889,
+      "sha256": "dfd29d8d738f702b4906a2f1b20cb0bebad4cdc10b25cc8a85aef5f09a9d634c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_LucilleRoybal-Allard.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_LucilleRoybal-Allard.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1157005,
+      "sha256": "881b2ab765f50e2120ecead26530371a87d5c932ab3cec43dd3ab647e12e7720"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_LucyMcBath.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_LucyMcBath.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2019748,
+      "sha256": "567cb68153e2e34864bdbeea234ef169820d0448fe9e74ae4b5e88c3900390df"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MaggieHassan.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MaggieHassan.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 996695,
+      "sha256": "af4d2ac1286f4b3d0cb5f16084405c1341ebe077d13206fc60e1324cdae88724"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MarciaFudge.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MarciaFudge.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4939360,
+      "sha256": "4b8730b50a8b5f959f87c298b9f25450aa4c65eb30dc8888a1e6e761fcedc350"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MarkWarner.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MarkWarner.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1288645,
+      "sha256": "ae633690771ed2409a35a52354ec8860113f631826c5d9d5d73289800df300cd"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MarkWarner1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MarkWarner1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3850726,
+      "sha256": "ff3d0fcc40e9f8b60e18a9fae47a5b0283ce24a0af31d56b0a853fe25cd75527"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MarkWarner2.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MarkWarner2.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3236056,
+      "sha256": "bf5ca8d2414e87234ad0f0a9e1e70b5436722181b36cfde9b6c5e4f1c0172f96"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MartinHeinrich.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MartinHeinrich.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2306021,
+      "sha256": "aaf0324300eb3c9a1ba4ec791d9a637a13d3de6e128240c729f6792f16ab39a7"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MattCartwright.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MattCartwright.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4756471,
+      "sha256": "7deb4fc7dfe3689148a770f179cb582aeb306d8f9cb9dc4927b3d2583f211b46"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MazieHirono0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MazieHirono0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1710067,
+      "sha256": "404fdb50720d6a994686aadcd0e5730df0a16752531f788dd1847eb599aa9275"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MazieHirono1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MazieHirono1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2143513,
+      "sha256": "c284f8dc3b8042339bd5d4a4429bc6b6be35b09393abd1ac4230adb83bf30758"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MichaelBennet.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MichaelBennet.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 771436,
+      "sha256": "d8aa231f059e3b5a11af5bd54872e2b3a2dadc2a333af161de8ad85c6892183f"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MichelleLujanGrisham.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MichelleLujanGrisham.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4656958,
+      "sha256": "f52e999538ea8b4fad6cc1d7f30969ca3e08849bccdb9220c392ecfb5f87a584"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MichelleObama.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MichelleObama.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1484547,
+      "sha256": "883346e4bfcd88f4c81881631c90c2cc1adfcf8de33fca58359d86ea7f6f2666"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MikeDoyle.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MikeDoyle.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3231176,
+      "sha256": "64215e8598fbe02275555c83f52e0d7559b6077cf2ec7971bcc43fa59baba664"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MikeThompson0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MikeThompson0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1902834,
+      "sha256": "d9d49583095f419744a60c5da0e99c92b600ed537b30dd74ddca473b70fdc86b"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_MikeThompson1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_MikeThompson1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 796824,
+      "sha256": "52f0ed3945cc2f81987060fee85856b9d4bc975f4d020229c99dea94b4adc2fb"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_NancyPelosi0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_NancyPelosi0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4219657,
+      "sha256": "f74ec226a9fbba53705db441e0c26d5eaf8c128ccef828aeddd5bf5f10d41f0e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_NancyPelosi1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_NancyPelosi1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 610858,
+      "sha256": "a0132c908f75dc8214c2a7d8a6723b58e94f46072740450a435d9a7416112162"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_NancyPelosi3.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_NancyPelosi3.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 938045,
+      "sha256": "6af00dbb50fa779a29772e986788f5345887571aa158223ed7aa7561d8d24408"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_NitaLowey.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_NitaLowey.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2530763,
+      "sha256": "5d52aabbfee700bd28670c46442e6dec0de00787627531e51c01bb56948ae791"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_NydiaVelzquez.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_NydiaVelzquez.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2234870,
+      "sha256": "a40433de5ab6e6e72f85b5177531bb090e179c47af0a58e4abe1ff37efc6b08b"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_PatrickLeahy0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_PatrickLeahy0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4870628,
+      "sha256": "e38753e9b80b04e53836683abdb5cd94d8859554d3a63328f2f0b7a148fdf945"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_PatrickLeahy1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_PatrickLeahy1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 6729644,
+      "sha256": "7e86e2666abf14c7ba489255daf003a8f16042de915e1095b0ee9c1a6569da9c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_PattyMurray0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_PattyMurray0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1524574,
+      "sha256": "237b7d2d2d95a9d69eb091d1186102a80aa58ce75fb1bf81ffc63bcbd0ec9e7e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_PattyMurray1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_PattyMurray1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2329353,
+      "sha256": "60b9c962e988375da187106e8a90e96a5977aff33b067f0ff57633f6a1ee864b"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_PeterDeFazio.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_PeterDeFazio.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2792262,
+      "sha256": "5987c2435efeb351bd5478ea44121d2272b60e26d6ff9a908883b77dd3ba4e50"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_RichardBlumenthal.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_RichardBlumenthal.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3300502,
+      "sha256": "c82ff3bd73a89e96f59c30de8e10e284b5d5ba7c6bec8c3719e657068a1378d6"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_RichardNeal0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_RichardNeal0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2596932,
+      "sha256": "ab961e7c44ae39fd7daecc6131d5795857e70f5bb91d515b2a41150715fc8476"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_RichardNeal1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_RichardNeal1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3121404,
+      "sha256": "a4acd95f3d3f57bb0456c05a1cce7850ecee87bf7c898da3947fdae029297e17"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_RobinKelly.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_RobinKelly.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3012743,
+      "sha256": "6ef028f045abd95612d44465c7461fffe3122d7398c6ce27dc73a34b4d88c5db"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_RonWyden0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_RonWyden0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3626941,
+      "sha256": "941db80354bcde4c73b167443b8c51f48818e32caf7a73071a6e4de73ed42741"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_RonWyden1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_RonWyden1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 5651745,
+      "sha256": "e3d68f10e15003eb8b1384a888cd5ae84fe0fe756f0a1aee5349360b49728228"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ScottPeters0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ScottPeters0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2860719,
+      "sha256": "5ac0715bd2c049889cdf67538a9b8623d0d48d86bfa7ca8fbbe638b95001d6c4"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ScottPeters1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ScottPeters1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1644674,
+      "sha256": "587985f7ec2b16ebdff2bd5f0e9eaad69bff2c611d1b80c3c7f5c904e4fafe17"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_SeanCasten.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_SeanCasten.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2641047,
+      "sha256": "2c826f05b8363843ac7765b3095315936a4975e965bf952f1da61d1a8eaeef17"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_SeanPatrickMaloney.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_SeanPatrickMaloney.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2514043,
+      "sha256": "5aff8bd5600a4c5ddaebda324d95cbd0f254092e22d7e0e5d4bb48b578bf82f0"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_SheldonWhitehouse0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_SheldonWhitehouse0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2496120,
+      "sha256": "58262f749c20fb4bcad03b2ecdda98106eab963aeb0577f92075483e1c5a9dba"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_SheldonWhitehouse1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_SheldonWhitehouse1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4041853,
+      "sha256": "31dfef0d615e7faba9da09f3910a696825c02be66cbbcab365db0d0512f1d4cd"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_SherrodBrown0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_SherrodBrown0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 5058401,
+      "sha256": "b467ef3841ac33dcb47da62ba1f0cdb91527c69f4b9739f69586867a789238b6"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_SherrodBrown1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_SherrodBrown1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3069447,
+      "sha256": "16bef12ca8ec89d3ef03bbf00d74807867eba21561e7ffe861992a0de814c910"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_StenyHoyer.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_StenyHoyer.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2447395,
+      "sha256": "244333b8ee0cb5600f041dd24b75e5b190f037e1e9c6d7ec71cef31891eccbe8"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_StephanieMurphy.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_StephanieMurphy.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2788730,
+      "sha256": "fc733df631eed78ee716c306dffb0985cc4a49f70e401b149dca0254b17baa02"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_SuzanDelBene.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_SuzanDelBene.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2721716,
+      "sha256": "212b4eccb294cdc9ec92b411a098796d524a76d5e6093968239b5a601826f5f9"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_TammyBaldwin0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_TammyBaldwin0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2194849,
+      "sha256": "708139d86ca968ddf5b626985f7659633644e1c6ef2ba61f3692a2fed86da9a8"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_TammyBaldwin1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_TammyBaldwin1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1042699,
+      "sha256": "d117475920efc7f6b3d23b9d2a66b5474ad674c5da917d280ef1e0af81189346"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_TammyDuckworth.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_TammyDuckworth.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2573747,
+      "sha256": "351c0f2c46dc4d3653ddd47e52fcfafac5579a57a45a97de4dc7574b08abb0e0"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_TedLieu.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_TedLieu.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4670864,
+      "sha256": "98c4040d09fae8735461503072bd624e19c067ba3edf0b3f149493762671a3ec"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_TerriSewell.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_TerriSewell.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4433048,
+      "sha256": "7582086e8e203d8770b817734a787208e550ce892d53d931a5db8dcffd505ff3"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_TerriSewell0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_TerriSewell0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 960327,
+      "sha256": "7ca4c575f7d9374e1019cdc09bf37618abdc5ed45c05a65c8140d44db9244f1f"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_TerriSewell1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_TerriSewell1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4297108,
+      "sha256": "c41376b5feafb51963a13607695662329e6aace815a4f964be68956763b72435"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_TimWalz.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_TimWalz.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4425653,
+      "sha256": "6b5a1a78885514b19c9dbb800b9ba3b77d92a6eacb788403ddb2ca82a3e15ece"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_TinaSmith.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_TinaSmith.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3977640,
+      "sha256": "28b73aaaf38e4e779333c00bec135d338a644cd45fe79b0f6486e7a6c6ca94c0"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_TomCarper.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_TomCarper.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3304994,
+      "sha256": "1602d80584ac440c03da9456ecc6f2fa36975016aea29b6a336d4d23bd34472a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_TomPerez.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_TomPerez.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3754312,
+      "sha256": "413d3c93de18d5e78a099497ef958faddd097dd54835a8b393694303cc6aeb89"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_TomUdall.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_TomUdall.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2967501,
+      "sha256": "672f2a4f786bbdab0b75afcd035922cb129af271cde2cb1348747e5a3fe06161"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_VeronicaEscobar0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_VeronicaEscobar0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1781489,
+      "sha256": "29f73f711cf58e643857f80b0becbfdf5423d3116aa1d6fe85e2f154ccee771c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_VeronicaEscobar1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_VeronicaEscobar1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1094856,
+      "sha256": "dd006f996d11f65ef0c00de913455d7fbfee9f508ec3f7b9c5191afe3fcbc695"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_WhipJimClyburn.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_WhipJimClyburn.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2870531,
+      "sha256": "68a37a912d52264ea3f3064405decc9dd4a6b089dab5523c782ef9412ef293d5"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_XavierBecerra.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_XavierBecerra.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3848894,
+      "sha256": "7a96c512f06ae7764b7c5e7dc759229777173114e8d6b11b5085d63940ae2559"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WDA_ZoeLofgren.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WDA_ZoeLofgren.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1958584,
+      "sha256": "2375ca29527536da80be8166eb19eca885b078d3ae0277898313211594249899"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_AdamKinzinger0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_AdamKinzinger0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1756687,
+      "sha256": "51c3f150dd50b7dbe663879a7fe19e23e0343cdacc044496f4969bd8bafc834b"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_AdamKinzinger1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_AdamKinzinger1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1139273,
+      "sha256": "1d248deabee4f44169772ffde8262f5c50bb244863b11a5778e9245c022f7da4"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_AdamKinzinger2.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_AdamKinzinger2.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3376801,
+      "sha256": "07f2481b6d5ca4f8a071f90af106cab9a92237b579c043f59fe2ac8108cf749d"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_AnnMarieBuerkle.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_AnnMarieBuerkle.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1469151,
+      "sha256": "8524bc90cff896406c521318efa798d55635b02634f8b0ec5c09f595aacae21e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_AnnWagner.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_AnnWagner.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1353189,
+      "sha256": "04eb358a2f45d8eb6f72a5ac557c7a23595f925df8bf32540139ffe8c1162d2b"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_AustinScott0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_AustinScott0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 848402,
+      "sha256": "33848c4ef54971ef1281da5291dc8d1a5a90eb8ebb31e43e2fc2fc5d07247815"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_AustinScott2.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_AustinScott2.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 740044,
+      "sha256": "18ba2254c43607454549b04c227d0dd182f2b89be5838578126e7c66248d00ad"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_BillCassidy0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_BillCassidy0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 317741,
+      "sha256": "ffe8ea7ce99c030806b296771e0c1a27aa9ca704d4c2c419f428177868cf0ff8"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_BobCorker.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_BobCorker.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 480101,
+      "sha256": "4cef87b72b00e73a362e91a96315a6aa13574186de47a451e35df0272a07d786"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_BobGoodlatte0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_BobGoodlatte0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3133889,
+      "sha256": "6cd591ef30765f3098de5e71e51ee0f654e08db109475ffd2f2b2ce88c861989"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_BobbySchilling.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_BobbySchilling.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 19457986,
+      "sha256": "58452796ce4d0047033db9fad773d165cadd469a3ac2170aed55efb6a086950d"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_CandiceMiller0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_CandiceMiller0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1328834,
+      "sha256": "d90faeb3a6a40dc5fb6a36a49473efd541aef4b4d6faaf433fb1b2811e58436c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_CarlyFiorina.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_CarlyFiorina.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 890562,
+      "sha256": "3f30755f14279c03d5934b184d483d18edfcdf19891293795f3b90f99261bca6"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_CarlyFiorina0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_CarlyFiorina0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3327328,
+      "sha256": "153d2db92655caf2860d124673690d93892083ec474cf3288c249f492f45641f"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_CathyMcMorrisRodgers0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_CathyMcMorrisRodgers0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2554881,
+      "sha256": "fb14d7a763838b77d3c4143b3b018173a61d821bcb592684c2a3f29aedb10eda"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_CathyMcMorrisRodgers1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_CathyMcMorrisRodgers1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 9352950,
+      "sha256": "e996c1384ccca3b188d2158feebd7d4d6d7e04466b11f390dff75f136aa524f0"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_CathyMcMorrisRodgers2.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_CathyMcMorrisRodgers2.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1097820,
+      "sha256": "82f3e8d923ced7c358e46c91863cb807414f135f7f59e7a932aedc31fdaeb3e1"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_ChuckGrassley.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_ChuckGrassley.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2408223,
+      "sha256": "821efd8f20015d37021cd4d76e5d658364619fe0441180ebbb4d74de76977840"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_CoryGardner.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_CoryGardner.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 712329,
+      "sha256": "88ecf445270875655c1f7afcaeded0472f64eda527f38620892b06a4c3032a1b"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_CoryGardner0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_CoryGardner0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 5878151,
+      "sha256": "fa1d811c24fe71b9126d10ef18fcac837863e3701bd8b37c8426379546082b0e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_CoryGardner1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_CoryGardner1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1036987,
+      "sha256": "3e3a0b64d95d7878c2ca8f331cfeb5edfa2dde8b80737b024414e686bf364da9"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_DanNewhouse.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_DanNewhouse.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1661355,
+      "sha256": "ef2edc270d43fe27f624f3e22570f8f30d0f883358470fb31c16fab941a6eab7"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_DanSullivan.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_DanSullivan.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2774747,
+      "sha256": "9d83bc40ddb07e2592e9f0b48569406b9053b92e2550b9a0b5193aa61d112959"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_DaveCamp.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_DaveCamp.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2885138,
+      "sha256": "183f52fd0376bc9692acd99e9dcd9012aa7ac7fdb6f1029284c57fb61b325580"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_DavidVitter.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_DavidVitter.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1230114,
+      "sha256": "7303ac2c5c4e9bb9ad13eee1fcf6fbff557bce4dbeb1726719ebd24744e8853e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_DeanHeller.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_DeanHeller.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1378999,
+      "sha256": "e072c96dd26061995d3da5332ec101b50f6e506996d214e8e278c4b8854069af"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_DebFischer0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_DebFischer0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3054847,
+      "sha256": "5db9bfc3699b8b8815df4b13cac0b25bbf9288387f870f4a62e5a9e0fcb91597"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_DebFischer2.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_DebFischer2.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2226854,
+      "sha256": "5444241afe123f06bf550fc419b399fc433faa56cb7a20b3d09fdabc0cf1ff9d"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_DianeBlack0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_DianeBlack0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 5613871,
+      "sha256": "6de97690b3e96f1eafee1a86a7864d70fc6518aaee84829338ed61af4f9808a3"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_DianeBlack1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_DianeBlack1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 13968176,
+      "sha256": "d8ec2d6cfbd6ab96861fd2461f7b87c6c2e71957bed2ed6ad6b83bd049390c14"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_DuncanHunter.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_DuncanHunter.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3140264,
+      "sha256": "fc5294d24236f3f21bf349b07cc895378e3cfa8ca9930a5cb60e29211190b920"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_EricCantor.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_EricCantor.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1103608,
+      "sha256": "ff815b5e0d338b7e215b9c4163c8fee825f4079dc9fe94a8233141708154d99d"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_ErikPaulsen.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_ErikPaulsen.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3869450,
+      "sha256": "9caa50b2a1e9022106106d99922cc43288f0367f15be3b413bb30b62ffc5b9b5"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_FredUpton.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_FredUpton.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 952157,
+      "sha256": "e2eed6086d8c47c6cf7f4c4d7a959d72f775bdbdddd38da9070a532ef17d2f77"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_GeorgeLeMieux.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_GeorgeLeMieux.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2462681,
+      "sha256": "dae1bbe273f3ba0e8864a1c1084892e6d1a0cc351391e4366898248d38ab76bf"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_GregWalden.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_GregWalden.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1900630,
+      "sha256": "ffb2c42d483d8c3cbcd83a3e34497438628d687848f902a6d9998d667a1a53cf"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_GregWalden1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_GregWalden1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3047627,
+      "sha256": "b0fc66a2a68817bc6c00dda07fb01c270319a4670997198861f254cb36fa38ea"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JaimeHerreraBeutler0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JaimeHerreraBeutler0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 400721,
+      "sha256": "500bb351c6d1f86e33ed26613ad0b546794fd6e8f83362e1eb2bad4f5da1f786"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JebHensarling0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JebHensarling0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4067841,
+      "sha256": "48c95857ea650d01450fac82d9858844d6922d8080e458ec4f97066c57af699a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JebHensarling1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JebHensarling1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 7059550,
+      "sha256": "6aca48bed1c8a16372397d0a2c29b20003a5835e049dcd7f28c337de34de2295"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JebHensarling2.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JebHensarling2.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 6367820,
+      "sha256": "63b153ea8091a4b80a9d935287872ab6f6799fdee7a78c50aef8a180753ed2fd"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JeffFlake.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JeffFlake.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 8675136,
+      "sha256": "aef4c1be78fccbc2e453a27823acf0efc9475d231339b0f5eaae6ba4aaee331f"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JimInhofe.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JimInhofe.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1325383,
+      "sha256": "d815a34819206751d899307f6ed11b7dcdc485788a2998b1a0d997cf6c86452c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JimRisch.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JimRisch.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 514332,
+      "sha256": "c0e311b9a8e7a4534855e798bbe323b523e27e53e75176ecfb28b3256bd8cf52"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JoeHeck1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JoeHeck1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 333669,
+      "sha256": "f6db23f5ca35e2b6c1927674681b9ad39367895e4c3c3d3c799a7f7f095bba80"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JoePitts.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JoePitts.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 580163,
+      "sha256": "07a0f85beacde38cee010db601ed2c67f677bc48a90520bab163b246d3e347e8"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JohnBarrasso0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JohnBarrasso0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1820499,
+      "sha256": "fd5ccccf46584a9dbb6ffdd8f35dc9383ebe6671eee99a0f4a0e786f48eec803"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JohnBarrasso1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JohnBarrasso1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2594211,
+      "sha256": "93bce1b85bc3bfe6dc6e4502f94c528732474f6b4384aa372a81252e4e59c599"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JohnBoehner0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JohnBoehner0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 738234,
+      "sha256": "f2e6538fcba3cd682b121676efea2ba20ace3ea69ca744fab2b0d7d252017ba8"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JohnBoehner1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JohnBoehner1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1560881,
+      "sha256": "62147697fa64516c384406f4626df8d6b39da65791acf32251f53f2316a1c9a2"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JohnBoozman.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JohnBoozman.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 656898,
+      "sha256": "775e12a9876338203e9d8a5b8ebf991bb28e51ec7aa56f497b60d72f1f7ff29e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JohnHoeven.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JohnHoeven.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 954765,
+      "sha256": "d6ab4225a648eb6f0f5f700f61ef3b8b51843d1892da09e41344d22153c59579"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JohnKasich0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JohnKasich0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2014355,
+      "sha256": "4dc74cd4a19941a4ef524c2be5606e889f08f4bf41d452924945a29cbce8c734"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JohnKasich1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JohnKasich1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1707469,
+      "sha256": "122bdf57376bb8f860012f48551c74b02bd711595cf70f7626d2037da8213542"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JohnKasich3.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JohnKasich3.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3715086,
+      "sha256": "1b467d39a7cf46335478f416ed4c84611175a1cb98f4d8dd0b299abaab825b27"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JohnThune.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JohnThune.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 567966,
+      "sha256": "302e63e4ffd979744ee005693845756b7ecea48e96d0ba90c95d5f878cab9be1"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JohnnyIsakson.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JohnnyIsakson.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4285139,
+      "sha256": "59a79d5d19428c5ea23efbef240529b7b63a5495f3eb5b1620507efec11319b0"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JonKyl.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JonKyl.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 377254,
+      "sha256": "3c49b420b226030550c1a4864ba71b2b0ab2c89007dba200c8187a7144af5029"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JoniErnst0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JoniErnst0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 874217,
+      "sha256": "8812bd5861294fac6d50f30c68194de6f239717a1e5c8ec12c9e7fdb284a7dfe"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_JuddGregg.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_JuddGregg.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3690366,
+      "sha256": "66dbfb66c2aa443fadbfee3168f2a2ad726dc84c04832a4e4ab283ee69f42598"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_KayBaileyHutchison.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_KayBaileyHutchison.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2613400,
+      "sha256": "6113a3f7d73560a41214574e1190ab29d131da06f20b4106d1e16481735c22eb"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_KellyAyotte.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_KellyAyotte.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3317158,
+      "sha256": "f3303c8c26fbdaf5d3021e90461ff43430d833aaf961149cac8bd03974176954"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_KevinBrady.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_KevinBrady.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1048095,
+      "sha256": "fb6294dbbd656801f9350f22445f68bf10ae9022b87b7730666cdb56b856330e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_KevinBrady2.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_KevinBrady2.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1123741,
+      "sha256": "ddf159f8ebcc46b5493169f3721431b832beca93da1aa0a7c86a31922745123e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_KevinBrady3.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_KevinBrady3.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3351484,
+      "sha256": "41a816cbef79c613169bd2d404bc3308504c1595b45fa5afdebc901306269548"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_KevinMcCarthy0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_KevinMcCarthy0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3835639,
+      "sha256": "1a63d506af90eb065c900e414e5a068d35ebb14fca94ce3ad70656b5c98abd82"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_KevinMcCarthy1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_KevinMcCarthy1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2540094,
+      "sha256": "417ac1a47208371f52f96c3de35d57857fb89181e50ea17abf8c03f25cd1573a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_KristiNoem1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_KristiNoem1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 275096,
+      "sha256": "940f22e6035814c4198101ddfac9943577ffb25255f725e0f24f4baeff30162b"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_KristiNoem2.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_KristiNoem2.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4978763,
+      "sha256": "a66cbbd22194a46dec0dcf7e8889a397482705219b93c70f95d8e2216136eb64"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_LamarAlexander.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_LamarAlexander.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 929822,
+      "sha256": "4e545507ac64dfe9fd43df2fb8ebe2cd8abfc5f3b8ba3514a0ccf2b89ea23047"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_LamarAlexander0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_LamarAlexander0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1040384,
+      "sha256": "2869083e265f4f311a19e673121b9f69497cb97121ee44852ded8c3009a4a390"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_LisaMurkowski0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_LisaMurkowski0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 625837,
+      "sha256": "4f995c1a61483d64fa2a5e6f9545361130a8b351b9657943e3f400705fe1d930"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_LynnJenkins.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_LynnJenkins.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3877376,
+      "sha256": "d2f6b7006be02d4af7f18f73b3aacbec6b800c42a0087145a0bf922c9550b263"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_MarcoRubio.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_MarcoRubio.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 670826,
+      "sha256": "a1a045cf3082477726fccb58a72cce192fcdd1f8487e285a3083f34e665a1dd7"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_MarkwayneMullin.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_MarkwayneMullin.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3988546,
+      "sha256": "3b5bf294030656932292e196e8d7115f133c6abd8de110858bf3d20a91f263f2"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_MarshaBlackburn0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_MarshaBlackburn0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1116221,
+      "sha256": "70003fd1d49501a33fb3de6f4ed5fc3ec186c3045f98457e0689db3b69a1c57c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_MichaelSteele.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_MichaelSteele.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3366807,
+      "sha256": "b82ccf6292f44fa38b253013725dd92f87ab3021573984e7d6113e99b87d5944"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_MikeCrapo.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_MikeCrapo.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 818538,
+      "sha256": "13c2ec29a6e227606dbe21b21411c8867b1d60d1da1a19e2ce27ebb1803b53e4"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_MikeEnzi.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_MikeEnzi.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4547810,
+      "sha256": "cf5c9629c4f7dcd84a6384bae0cefcc06f18de6c1776f7018ffb4401117f9042"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_MikeJohanns.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_MikeJohanns.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1161185,
+      "sha256": "9341a2644d5b64a6b49434d9c898bba8e98da179e9ff4d62d5424609c74a4a9b"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_MikeJohanns1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_MikeJohanns1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1861887,
+      "sha256": "56975e7144525e5fbbb6f6d2289526b6908fc5233c5a57b6723b3c9eced37d0f"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_MitchDaniels0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_MitchDaniels0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2079646,
+      "sha256": "8fd42d7dfdcaf1a8753997e64c817ea48c7b38afa020b5c7540db81264c6b95e"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_MitchDaniels1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_MitchDaniels1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1527920,
+      "sha256": "bc147ba8d911d8c94b66ba377ff917c8b0e1b293b8ec6948851ca75a6aafc906"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_MittRomney.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_MittRomney.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4584042,
+      "sha256": "ebb9bb196266386247f52bd858d0aeb83a66b4873ac84606a951f33aab356074"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_NanHayworth.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_NanHayworth.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1912626,
+      "sha256": "27d1ac53ac8bb746618b73c110ba66fa6d1cb3ffcefd33c051f46eab9a5dbeef"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_OlympiaSnowe.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_OlympiaSnowe.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 566826,
+      "sha256": "d8ae21ed86a1eca36f7fc154c5465fce752b06a550719abddb5e1ae28263f38b"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_PatRoberts.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_PatRoberts.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 260394,
+      "sha256": "db9ddcd0b7c807fb9f3d2ee851c9a335e5e4beb3735f3a1dfb4494a405340b1d"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_PaulRyan0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_PaulRyan0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4883642,
+      "sha256": "7ce8f215a87b9cff07a819ba71833171cd592c40832678b04bdecfbbe5a5f1eb"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_PaulRyan1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_PaulRyan1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3508206,
+      "sha256": "57754f44e3c8aadf7d6df7ef06e5c8f773fcd1aa429279e558c50c455a7436ea"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_PeteHoekstra.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_PeteHoekstra.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2583708,
+      "sha256": "7421a0c50304700d00cec7ea68ecc23c8f0faefe3b6ff138a1fa1d32773e6006"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_PeterKing.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_PeterKing.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1424861,
+      "sha256": "a22550ace2dd60fb6ae0603db1cec812e7b06e28104335cddacb3caed19456e0"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_PeterRoskam0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_PeterRoskam0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 5574701,
+      "sha256": "1fef5c72566148ca7e939f4f607f1740f32c55ff8afabfa280c3de941b3bc5b2"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_PeterRoskam1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_PeterRoskam1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4072884,
+      "sha256": "3fbe81ebeafc71d711b8c22b52a3f6c77eca733b5ab3c3016966e5730afa06b1"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_RandPaul0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_RandPaul0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1855203,
+      "sha256": "86575ec05b167920c033777fa06a0d55be837c0a446f3c94f38fb76de09b5957"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_ReincePriebus.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_ReincePriebus.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 9847329,
+      "sha256": "012e272726a80274fa3f304e277091ba404039e348c0ebdcdd857a62cad6d57f"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_ReneeEllmers.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_ReneeEllmers.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1595325,
+      "sha256": "39c32a1bbc1c7e63bb947dfc4e7267457be6533d2049761128ab58b9ca6ed7ea"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_RobPortman.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_RobPortman.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2397141,
+      "sha256": "f738216bf0d5f46744694db3f3906198c30a31fbac4c45e3baedc1d9a7ae2d2b"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_RogerWicker0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_RogerWicker0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 1311905,
+      "sha256": "5afefd083d4fdac8e9b92beeda91b9f8e8ae2bd914e7e4f3e81909646abcbb73"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_RogerWicker1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_RogerWicker1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 4536457,
+      "sha256": "8e2ad21a476dff00fd12e5f304c63ee0216d8e777f73bcde94ce325f730f5a01"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_RogerWicker2.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_RogerWicker2.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2710405,
+      "sha256": "f96611fd68b53fa44b5c5cd0360aa86c855d02d429133934e291a1fae9535f61"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_RoyBlunt.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_RoyBlunt.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 544170,
+      "sha256": "96d0d6eab763cd73fbc1e62064b3b660c1db0001d4f5e120cabd44918e92aea3"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_SamBrownback.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_SamBrownback.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2779502,
+      "sha256": "7b248123e2563ad3f9546c44f884df6fdd0cb5b1bf3581f69a44358e43b8ecba"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_SaxbyChambliss.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_SaxbyChambliss.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 89291629,
+      "sha256": "ea14f5d126365ad98cbd77d8d94ebe46e563f9a3cfaf22502a80de8be7fc6755"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_ShelleyMooreCapito0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_ShelleyMooreCapito0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2478275,
+      "sha256": "f0966a77cba44f1094baa623ceab25b6d0687cc8f9290c4e80f5cbc1edc7c7d4"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_ShelleyMooreCapito1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_ShelleyMooreCapito1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3503726,
+      "sha256": "4c8197f57f9b2e92c5ac660d9ef01623f51e90e90cc2b5d8d7f7180cfe100e9c"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_SteveDaines.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_SteveDaines.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 937237,
+      "sha256": "77852b07983ea64092db30bed93f9c8eeb20b726fcdca2326f6397bc9eb955c8"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_SteveDaines0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_SteveDaines0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 916670,
+      "sha256": "b34904d60c975e89d6ed1dc7f6dc628b43043629e24da19b7b2a34f9c90a343a"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_SteveScalise0.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_SteveScalise0.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 797344,
+      "sha256": "8322d15393b9b545963aed1bae6efaa2511089736395407b630e6ff7492f16dc"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_SteveScalise1.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_SteveScalise1.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 3358642,
+      "sha256": "01dff6ec342375f301e47549e05786a498e09a5dc433963f3c4619a9d3c71ceb"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_TimScott.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_TimScott.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 561209,
+      "sha256": "d42b3ab61912e87d68f8368e243fa923e56e2bc0c9c90d2bb5b6dfd546073039"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_ToddYoung.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_ToddYoung.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2594046,
+      "sha256": "c9755329840368ada46d8642e27c4f45ac42ebaabc9332c74983cbc89ba75f68"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_TomCotton.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_TomCotton.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 993459,
+      "sha256": "76f06a266cd26b1dc707470345ec003b635c03be444bbe12ae71db6926e2ca48"
+    },
+    {
+      "remote_path": "/dhg_mm/HDTF/_audio_raw/WRA_VickyHartzler.m4a",
+      "local_path": "data/hdtf_audio_en/audio/WRA_VickyHartzler.m4a",
+      "remote_size_bytes": null,
+      "local_size_bytes": 2789919,
+      "sha256": "bd0c27184f6db44dc1df4ef2fd3791ca8c12fcc6e0fe78304182922eaa5c04c4"
+    }
+  ]
+}

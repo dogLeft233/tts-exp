@@ -1,7 +1,7 @@
 # 多 TFG 模型对比实验总报告
 
 **实验日期**: 2026-07-17 至 2026-07-19  
-**实验目标**: 系统对比 5 个端到端 TFG（Talking Face Generation）模型在相同音频条件下的唇形同步表现，并探究 TTS 音频改善 SyncNet 分数的因果机制
+**实验目标**: 系统对比多个端到端 TFG（Talking Face Generation）模型在相同音频条件下的唇形同步表现，并探究 TTS 音频改善 SyncNet 分数的因果机制
 
 ---
 
@@ -49,7 +49,27 @@
 | **AniPortrait** | 旧服务器 OOM（256×256 fp16 仍 ~9.8GB） |
 | **Hallo2** | CUDA 11.8 硬需求与新服务器 CUDA 13.0 不兼容 |
 
-### 2.3 网络受限环境的权重下载经验
+### 2.3 模型论文来源
+
+年份优先记录正式会议发表年份；仅有 arXiv 版本的模型记录首次提交年份。当前评分表中的模型，以及曾尝试但未纳入原始评分的模型，来源如下：
+
+| 模型 | 对应论文 | 来源年份 |
+|------|---------|---------:|
+| Wav2Lip | [A Lip Sync Expert Is All You Need for Speech to Lip Generation In The Wild](https://arxiv.org/abs/2008.10010) | **ACM MM 2020** |
+| IMTalker | [IMTalker: Efficient Audio-driven Talking Face Generation with Implicit Motion Transfer](https://arxiv.org/abs/2511.22167) | arXiv **2025** |
+| V-Express | [V-Express: Conditional Dropout for Progressive Training of Portrait Video Generation](https://arxiv.org/abs/2406.02511) | arXiv **2024** |
+| Hallo2 | [Hallo2: Long-Duration and High-Resolution Audio-Driven Portrait Image Animation](https://arxiv.org/abs/2410.07718) | **ICLR 2025**（arXiv 2024） |
+| MuseTalk 1.5 | [MuseTalk: Real-Time High-Fidelity Video Dubbing via Spatio-Temporal Sampling](https://arxiv.org/abs/2410.10122) | 论文首发 arXiv **2024**；v3 **2025**；**1.5 模型 2025-03-28 发布** |
+| Ditto | [Ditto: Motion-Space Diffusion for Controllable Realtime Talking Head Synthesis](https://arxiv.org/abs/2411.19509) | **ACM MM 2025**（arXiv 2024） |
+| JoyVASA | [JoyVASA: Portrait and Animal Image Animation with Diffusion-Based Audio-Driven Facial Dynamics and Head Motion Generation](https://arxiv.org/abs/2411.09209) | arXiv **2024** |
+| LatentSync | [LatentSync: Taming Audio-Conditioned Latent Diffusion Models for Lip Sync with SyncNet Supervision](https://arxiv.org/abs/2412.09262) | arXiv **2024** |
+| EchoMimic V2 | [EchoMimicV2: Towards Striking, Simplified, and Semi-Body Human Animation](https://arxiv.org/abs/2411.10061) | **CVPR 2025**（arXiv 2024） |
+| EchoMimic V1 | [EchoMimic: Lifelike Audio-Driven Portrait Animations through Editable Landmark Conditions](https://arxiv.org/abs/2407.08136) | **AAAI 2025**（arXiv 2024） |
+| AniPortrait | [AniPortrait: Audio-Driven Synthesis of Photorealistic Portrait Animation](https://arxiv.org/abs/2403.17694) | arXiv **2024** |
+
+> 本实验使用 MuseTalk 1.5 checkpoint（`models/musetalkV15/unet.pth`，推理参数 `--version v15`），不是 MuseTalk 1.0。根据[官方仓库](https://github.com/TMElyralab/MuseTalk)，截至 2026-07-28 未公布 2.0 或更新的模型 checkpoint；2025-09-26 的最新代码提交是下载脚本更新，不是新模型版本。
+
+### 2.4 网络受限环境的权重下载经验
 
 1. **hf-mirror.com** — 优先使用（无需代理），`wget --no-check-certificate`
 2. **`source /etc/network_turbo`** — SeetaCloud 学术代理，稳定性差
