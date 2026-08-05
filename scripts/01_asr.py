@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""01_asr.py - Transcribe AISHELL-1 audio via Qwen ASR Flash (DashScope) (issue #2).
+"""01_asr.py - Transcribe experiment audio via Qwen ASR Flash (DashScope) (issue #2).
 
 Uses the multimodal-generation API endpoint with base64-encoded local wav files.
 Retries once on transient failure (per plan Q21/B).
@@ -101,11 +101,49 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Transcribe audio via Qwen ASR Flash")
     ap.add_argument("--run_id", required=True)
     ap.add_argument("--smoke", action="store_true")
+    ap.add_argument("--config", default="")
     args = ap.parse_args()
 
     repo = Path(__file__).resolve().parent.parent
     out_dir = repo / "runs" / args.run_id / "01_transcript"
     out_dir.mkdir(parents=True, exist_ok=True)
+
+    from utils import detect_sample_ids, load_config as load_merged_config, resolve_repo_path
+    cfg = load_merged_config(repo, args.config or None)
+    sample_ids = detect_sample_ids(repo, args.smoke, cfg=cfg)
+    audio_dir = resolve_repo_path(
+        repo, cfg.get("paths", {}).get("audio_dir", "data/data/audio")
+    )
+    canonical_dir_value = cfg.get("asr", {}).get("canonical_transcript_dir")
+    canonical_dir = resolve_repo_path(repo, canonical_dir_value) if canonical_dir_value else None
+
+    if canonical_dir is not None:
+        results: dict[int, dict] = {}
+        failed: list[dict] = []
+        for i in sample_ids:
+            transcript_path = canonical_dir / f"{i}.txt"
+            if not transcript_path.exists():
+                failed.append({"sample_id": i, "error": "canonical transcript missing"})
+                continue
+            text = transcript_path.read_text(encoding="utf-8").strip()
+            if not text:
+                failed.append({"sample_id": i, "error": "canonical transcript empty"})
+                continue
+            results[i] = {"sample_id": i, "text": text, "source": "canonical"}
+            (out_dir / f"{i}.txt").write_text(text + "\n", encoding="utf-8")
+            print(f"[asr] sample {i}: canonical transcript")
+        summary = {
+            "model": "canonical_transcript",
+            "source_dir": str(canonical_dir),
+            "samples_total": len(sample_ids),
+            "samples_ok": len(results),
+            "samples_failed": len(failed),
+            "results": results,
+            "failed": failed,
+        }
+        (out_dir / "transcript.json").write_text(json.dumps(summary, indent=2, ensure_ascii=False))
+        print(f"[asr] {len(results)}/{len(sample_ids)} canonical transcripts copied")
+        return
 
     api_key = load_api_key(repo)
     if not api_key:
@@ -114,10 +152,6 @@ def main() -> None:
             "Set it in scripts/.env or env var."
         )
         raise SystemExit(1)
-
-    from utils import detect_sample_ids
-    sample_ids = detect_sample_ids(repo, args.smoke)
-    audio_dir = repo / "data" / "data" / "audio"
 
     results: dict[int, dict] = {}
     failed: list[dict] = []

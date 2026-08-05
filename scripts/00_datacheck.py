@@ -55,10 +55,14 @@ def check_audio(audio_dir: Path, sample_ids: list[int]) -> list[dict]:
     return results
 
 
-def check_images(image_dir: Path, sample_ids: list[int]) -> list[dict]:
+def check_images(
+    image_dir: Path,
+    sample_ids: list[int],
+    image_path: Path | None = None,
+) -> list[dict]:
     results = []
     for i in sample_ids:
-        p = image_dir / f"{i}.png"
+        p = image_path if image_path is not None else image_dir / f"{i}.png"
         entry: dict = {"sample_id": i, "file": str(p), "exists": p.exists()}
         if not p.exists():
             entry["error"] = "missing"
@@ -77,19 +81,30 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Data quality check for tts-exp")
     ap.add_argument("--run_id", required=True)
     ap.add_argument("--smoke", action="store_true")
+    ap.add_argument("--config", default="")
     args = ap.parse_args()
 
     repo = Path(__file__).resolve().parent.parent
     out_dir = repo / "runs" / args.run_id / "00_datacheck"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    from utils import detect_sample_ids
-    sample_ids = detect_sample_ids(repo, args.smoke)
+    from utils import detect_sample_ids, load_config, resolve_repo_path
+    cfg = load_config(repo, args.config or None)
+    sample_ids = detect_sample_ids(repo, args.smoke, cfg=cfg)
+    audio_dir = resolve_repo_path(
+        repo, cfg.get("paths", {}).get("audio_dir", "data/data/audio")
+    )
+    image_dir = resolve_repo_path(
+        repo, cfg.get("paths", {}).get("image_dir", "data/data/image")
+    )
+    fixed_image = cfg.get("paths", {}).get("fixed_image")
+    image_path = resolve_repo_path(repo, fixed_image) if fixed_image else None
 
-    audio_results = check_audio(repo / "data" / "data" / "audio", sample_ids)
-    image_results = check_images(repo / "data" / "data" / "image", sample_ids)
+    audio_results = check_audio(audio_dir, sample_ids)
+    image_results = check_images(image_dir, sample_ids, image_path=image_path)
 
     warnings = [e for e in audio_results if "warning" in e]
+    errors = [e for e in audio_results + image_results if "error" in e]
 
     report = {
         "run_id": args.run_id,
@@ -97,11 +112,13 @@ def main() -> None:
         "audio": audio_results,
         "images": image_results,
         "warnings": [w["warning"] for w in warnings],
+        "errors": errors,
         "summary": {
             "total": len(sample_ids),
             "audio_ok": sum(1 for e in audio_results if "error" not in e),
             "images_ok": sum(1 for e in image_results if "error" not in e),
             "warnings": len(warnings),
+            "errors": len(errors),
         },
     }
 
@@ -109,8 +126,12 @@ def main() -> None:
     print(f"[datacheck] {report['summary']}")
     for w in warnings:
         print(f"[datacheck] WARNING: sample {w['sample_id']} - {w['warning']}")
+    for error in errors:
+        print(f"[datacheck] ERROR: sample {error['sample_id']} - {error['error']}")
 
-    # Never exit non-zero on warnings — per plan they don't block the pipeline
+    # Warnings remain non-blocking; missing or invalid assets are blocking.
+    if errors:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

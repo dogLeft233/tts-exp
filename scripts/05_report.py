@@ -14,6 +14,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from utils import load_config
+
 # ---------------------------------------------------------------------------
 
 
@@ -168,8 +170,10 @@ def generate_report(
     out_dir: Path,
     mode_used: str = "unknown",
     tts_desc: str = "Qwen3-TTS",
+    run_metadata: dict | None = None,
 ) -> dict:
     """Generate report.md and return stats dict."""
+    metadata = run_metadata or {}
     stats_c = {}
     stats_d = {}
     for cond in conditions:
@@ -217,6 +221,21 @@ def generate_report(
     sync_d_better = mean_tts_d < mean_nat_d
     direction_ok = sync_c_better and sync_d_better
 
+    method_lines = [
+        f"- **TTS model**: {tts_desc}",
+        "- **TFG model**: Ditto (antgroup/ditto-talkinghead)",
+        "- **Evaluation**: SyncNet (syncnet_v2.model), Sync-C (confidence) and Sync-D (min distance)",
+    ]
+    if metadata:
+        method_lines.extend([
+            f"- **Design**: {metadata.get('design', 'unknown')}",
+            f"- **Language**: {metadata.get('language', 'unknown')}",
+            f"- **Samples**: {metadata.get('sample_description', 'MDC sample set')}",
+        ])
+    else:
+        method_lines.append("- **Samples**: 10 paired audio-image pairs from AISHELL-1 + HDTF")
+    method_lines.append("- **Seed**: torch.manual_seed(42) for both TTS and Ditto")
+
     report_lines = [
         "# TTS-TFG Enhancement Experiment — Replication Report",
         "",
@@ -226,11 +245,7 @@ def generate_report(
         "",
         "## Method",
         "",
-        f"- **TTS model**: {tts_desc}",
-        "- **TFG model**: Ditto (antgroup/ditto-talkinghead)",
-        "- **Evaluation**: SyncNet (syncnet_v2.model), Sync-C (confidence) and Sync-D (min distance)",
-        "- **Samples**: 10 paired audio-image pairs from AISHELL-1 + HDTF",
-        "- **Seed**: torch.manual_seed(42) for both TTS and Ditto",
+        *method_lines,
         "",
         "## Results",
         "",
@@ -288,6 +303,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description="Generate experiment report")
     ap.add_argument("--run_id", required=True)
     ap.add_argument("--smoke", action="store_true")
+    ap.add_argument("--config", default="")
     args = ap.parse_args()
 
     repo = Path(__file__).resolve().parent.parent
@@ -296,7 +312,10 @@ def main() -> None:
     out_dir = run_dir / "05_report"
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    conditions = ["natural_raw", "tts_raw", "natural_resamp", "tts_resamp"]
+    cfg = load_config(repo, args.config or None)
+    conditions = cfg.get("ditto", {}).get(
+        "conditions", ["natural_raw", "natural_resamp", "tts_raw", "tts_resamp"]
+    )
     rows = find_syncnet_results(eval_dir)
     # Limit to conditions that actually have data so empty arms don't pollute the table
     present_conds = {r["condition"] for r in rows}
@@ -335,7 +354,21 @@ def main() -> None:
         else:
             tts_desc = prov
 
-    stats = generate_report(summary_rows, conditions, out_dir, mode_used, tts_desc)
+    run_metadata = {}
+    metadata_path = run_dir / "run_metadata.json"
+    if metadata_path.exists():
+        run_metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    if not run_metadata:
+        run_metadata = cfg.get("run_metadata", {})
+
+    stats = generate_report(
+        summary_rows,
+        conditions,
+        out_dir,
+        mode_used,
+        tts_desc,
+        run_metadata,
+    )
     generate_figures(summary_rows, out_dir)
 
     # Dump full stats json for downstream

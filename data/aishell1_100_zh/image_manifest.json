@@ -1,0 +1,606 @@
+{
+  "schema_version": 1,
+  "strategy": "single neutral avatar reused for all audio samples",
+  "records": [
+    {
+      "sample_id": 1,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 2,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 3,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 4,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 5,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 6,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 7,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 8,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 9,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 10,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 11,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 12,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 13,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 14,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 15,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 16,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 17,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 18,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 19,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 20,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 21,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 22,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 23,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 24,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 25,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 26,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 27,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 28,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 29,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 30,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 31,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 32,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 33,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 34,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 35,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 36,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 37,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 38,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 39,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 40,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 41,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 42,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 43,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 44,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 45,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 46,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 47,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 48,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 49,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 50,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 51,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 52,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 53,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 54,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 55,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 56,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 57,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 58,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 59,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 60,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 61,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 62,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 63,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 64,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 65,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 66,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 67,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 68,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 69,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 70,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 71,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 72,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 73,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 74,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 75,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 76,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 77,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 78,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 79,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 80,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 81,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 82,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 83,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 84,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 85,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 86,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 87,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 88,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 89,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 90,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 91,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 92,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 93,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 94,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 95,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 96,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 97,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 98,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 99,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    },
+    {
+      "sample_id": 100,
+      "image_id": "neutral_01",
+      "image_path": "data/aishell1_100_zh/image/neutral_01.png",
+      "image_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6"
+    }
+  ]
+}

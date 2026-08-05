@@ -1,0 +1,32 @@
+# AISHELL-1 test split, 100 utterances, speaker-balanced.
+paths:
+  audio_dir: "data/aishell1_100_zh/audio"
+  image_dir: "data/aishell1_100_zh/image"
+  fixed_image: "data/aishell1_100_zh/image/neutral_01.png"
+
+samples:
+  count: 100
+  ids: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]
+  smoke_id: 1
+
+asr:
+  canonical_transcript_dir: "data/aishell1_100_zh/transcripts"
+
+# Start with the same two raw arms as the legacy strict run.
+ditto:
+  loudnorm: false
+  conditions:
+    - natural_raw
+    - tts_raw
+  seed: 42
+
+eval:
+  require_complete_pairs: false
+
+run_metadata:
+  design: "100 paired AISHELL-1 test utterances; natural vs self-cloned TTS"
+  language: "Mandarin Chinese"
+  sample_description: "100 speaker-stratified AISHELL-1 test utterances; one fixed neutral avatar"
+  dataset: "TwinkStart/AISHELL-1"
+  dataset_revision: "2a509ef3a7a88d3234205eaeecba39fdd9d50518"
+  manifest: "data/aishell1_100_zh/manifest.json"

@@ -1,16 +1,31 @@
 #!/usr/bin/env bash
 # run_all.sh - Sequential pipeline runner (issue #1)
 # Usage:
-#   ./run_all.sh             # full run, 10 samples (Q20)
-#   ./run_all.sh --smoke     # smoke test, 1 sample (Q25)
+#   ./run_all.sh             # full run using scripts/config.yaml
+#   ./run_all.sh --smoke     # smoke test, 1 configured sample
+#   ./run_all.sh --config scripts/configs/aishell1_100_zh.yaml
 # Per Q11 of plan: fail-fast-free (failures recorded, run continues).
 # Per Q21: each step is independently rerunnable via --run_id reuse.
 
 set -uo pipefail
 
 SMOKE_FLAG=""
+CONFIG_FLAG=""
 if [ "${1:-}" = "--smoke" ]; then
   SMOKE_FLAG="--smoke"
+  shift
+fi
+if [ "${1:-}" = "--config" ]; then
+  if [ -z "${2:-}" ]; then
+    echo "[run_all] --config requires a path" >&2
+    exit 2
+  fi
+  CONFIG_FLAG="--config $2"
+  shift 2
+fi
+if [ "$#" -gt 0 ]; then
+  echo "[run_all] unknown arguments: $*" >&2
+  exit 2
 fi
 
 RUN_ID="${RUN_ID:-$(date -u +%Y%m%dT%H%M%SZ)}"
@@ -38,8 +53,12 @@ echo "[run_all] RUN_ID=$RUN_ID python=$DITTO_PYTHON"
 echo "[run_all] RUN_DIR=$RUN_DIR"
 echo "[run_all] smoke=$SMOKE_FLAG"
 
-# Snapshot config.yaml + git commit for reproducibility (Q22)
+# Snapshot base + override config and git commit for reproducibility.
 cp scripts/config.yaml "$RUN_DIR/config.yaml"
+if [ -n "$CONFIG_FLAG" ]; then
+  CONFIG_PATH="${CONFIG_FLAG#--config }"
+  cp "$CONFIG_PATH" "$RUN_DIR/config_override.yaml"
+fi
 git rev-parse HEAD > "$RUN_DIR/git_commit.txt" 2>/dev/null || echo "unknown" > "$RUN_DIR/git_commit.txt"
 
 STEPS=("00_datacheck.py" "01_asr.py" "02_tts.py" "03_ditto.py" "04_eval.py" "05_report.py")
@@ -48,7 +67,7 @@ FAILS=()
 for step in "${STEPS[@]}"; do
   echo ""
   echo "===== $step$SMOKE_FLAG ====="
-    if $DITTO_PYTHON "scripts/$step" --run_id "$RUN_ID" $SMOKE_FLAG; then
+    if $DITTO_PYTHON "scripts/$step" --run_id "$RUN_ID" $SMOKE_FLAG $CONFIG_FLAG; then
     echo "[ok] $step"
   else
     rc=$?

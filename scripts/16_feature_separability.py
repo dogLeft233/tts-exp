@@ -45,6 +45,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from tfg_feature_common import (
     OUTPUT_BASE,
+    embedding_file_stem,
     paired_permutation_test,
     bootstrap_paired_ci,
     fdr_bh_correction,
@@ -70,6 +71,14 @@ DEFAULT_LAYERS: list[int] = [0, 6, 11, 12]
 DEFAULT_LEVELS: list[str] = ["phoneme", "viseme"]
 MIN_CLASS_SAMPLES: int = 3
 """Minimum samples per class for per-class metrics."""
+
+
+def _analysis_condition(meta: dict) -> str:
+    """Return provider-specific condition while accepting legacy metadata."""
+    if meta.get("condition") == "tts":
+        return str(meta.get("tts_provider") or "tts")
+    return str(meta.get("condition", ""))
+
 
 # ---------------------------------------------------------------------------
 # Metric helpers
@@ -523,14 +532,14 @@ def _gather_layer_data(
     condition: str,
     variant: str,
     level: str,
-) -> tuple[np.ndarray, np.ndarray, np.ndarray, list[int], float | None, float | None]:
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, list[str], float | None, float | None]:
     """Pool tokens across all samples for one (model, layer, condition, variant, level).
 
     Returns
     -------
     embeddings : np.ndarray, shape (n_tokens, dim)
     labels : np.ndarray, shape (n_tokens,)
-    groups : np.ndarray, shape (n_tokens,) int (sample_id)
+    groups : np.ndarray, shape (n_tokens,) str (speaker_id)
     layer_indices : list[int]
         Indices in the NPY file for this layer.
     boundary_sharp : float or None
@@ -549,12 +558,12 @@ def _gather_layer_data(
     for meta in entries:
         if meta.get("model") != model:
             continue
-        if meta.get("condition") != condition:
+        if _analysis_condition(meta) != condition:
             continue
         if meta.get("variant") != variant:
             continue
 
-        sample_id = int(meta.get("sample_id", -1))
+        sample_id = str(meta.get("paired_key", meta.get("utterance_id", meta.get("sample_id", "unknown"))))
         layers = meta.get("layers", [])
         tokens = meta.get("tokens", [])
         if not tokens:
@@ -587,7 +596,7 @@ def _gather_layer_data(
 
         all_embeddings.append(pooled)
         all_labels.append(label_map[level])
-        all_groups.append(np.full(pooled.shape[0], sample_id, dtype=int))
+        all_groups.append(np.full(pooled.shape[0], str(meta.get("speaker_id", sample_id)), dtype=object))
 
         # Compute boundary sharpness per sample
         n_frames = layer_emb.shape[0]
@@ -607,7 +616,7 @@ def _gather_layer_data(
         return (
             np.array([], dtype=np.float32),
             np.array([], dtype=str),
-            np.array([], dtype=int),
+            np.array([], dtype=str),
             [],
             None,
             None,
@@ -629,6 +638,7 @@ def _compute_metrics_for_pool(
     groups: np.ndarray,
     boundary_sharp: float | None,
     segment_stability: float | None,
+    do_probe: bool = True,
 ) -> dict[str, float | None]:
     """Compute all metrics for a pooled set of tokens."""
     result: dict[str, float | None] = {}
@@ -636,10 +646,17 @@ def _compute_metrics_for_pool(
     result["inter_class_dist"] = inter_class_separation(embeddings, labels)
     result["fisher_ratio"] = fisher_ratio(embeddings, labels)
     result["silhouette"] = _silhouette_cosine(embeddings, labels)
-    probe = linear_probe_cv(embeddings, labels, groups, cv=5)
-    result["probe_accuracy"] = probe["accuracy"]
-    result["probe_f1_macro"] = probe["f1_macro"]
-    result["probe_f1_weighted"] = probe["f1_weighted"]
+    if do_probe:
+        probe = linear_probe_cv(embeddings, labels, groups, cv=5)
+        result["probe_accuracy"] = probe["accuracy"]
+        result["probe_f1_macro"] = probe["f1_macro"]
+        result["probe_f1_weighted"] = probe["f1_weighted"]
+    else:
+        # Logistic-regression probe skipped for this model (prohibitively slow
+        # at this dimensionality); separability metrics remain valid.
+        result["probe_accuracy"] = None
+        result["probe_f1_macro"] = None
+        result["probe_f1_weighted"] = None
     result["confusable_pairs"] = confusable_pairs(embeddings, labels, top_k=5)
     result["boundary_sharpness"] = boundary_sharp
     result["segment_stability"] = segment_stability
@@ -651,7 +668,7 @@ def _compute_metrics_per_sample(
     model: str,
     layer: int,
     level: str,
-) -> dict[tuple[str, str], dict[int, dict[str, float | None]]]:
+) -> dict[tuple[str, str], dict[str, dict[str, float | None]]]:
     """Compute metrics per-sample for paired comparison.
 
     Returns
@@ -659,15 +676,15 @@ def _compute_metrics_per_sample(
     per_sample : dict
         ``{(condition, variant): {sample_id: {metric: value}}}``
     """
-    result: dict[tuple[str, str], dict[int, dict[str, float | None]]] = defaultdict(dict)
+    result: dict[tuple[str, str], dict[str, dict[str, float | None]]] = defaultdict(dict)
     frame_stride = 320
     target_sr = 16000
 
     for meta in entries:
         if meta.get("model") != model:
             continue
-        sample_id = int(meta.get("sample_id", -1))
-        condition = str(meta.get("condition", ""))
+        sample_id = str(meta.get("paired_key", meta.get("utterance_id", meta.get("sample_id", "unknown"))))
+        condition = _analysis_condition(meta)
         variant = str(meta.get("variant", ""))
         layers = meta.get("layers", [])
         tokens = meta.get("tokens", [])
@@ -691,7 +708,7 @@ def _compute_metrics_per_sample(
         if pooled.shape[0] == 0 or level not in label_map:
             continue
         labels_arr = label_map[level]
-        groups_arr = np.full(pooled.shape[0], sample_id, dtype=int)
+        groups_arr = np.full(pooled.shape[0], str(meta.get("speaker_id", sample_id)), dtype=object)
 
         n_frames = layer_emb.shape[0]
         frame_times = np.arange(n_frames, dtype=np.float32) * (frame_stride / target_sr)
@@ -713,7 +730,7 @@ def _compute_metrics_per_sample(
 
 
 def _compare_natural_vs_tts(
-    per_sample: dict[tuple[str, str], dict[int, dict[str, float | None]]],
+    per_sample: dict[tuple[str, str], dict[str, dict[str, float | None]]],
     model: str,
     layer: int,
     level: str,
@@ -842,7 +859,7 @@ def process_all(
     all_comparisons: list[dict] = []
     per_sample_deltas: dict[str, dict[str, float]] = {}
 
-    conditions = ["natural", "faster_qwen3", "f5_tts"]
+    conditions = ["natural", "faster_qwen3", "f5_tts", "tts"]
     variants = ["raw", "gain_matched"]
 
     for model in models:
@@ -885,7 +902,9 @@ def process_all(
                         )
                         if emb.shape[0] == 0:
                             continue
-                        metrics = _compute_metrics_for_pool(emb, labels, groups, bs, ss)
+                        metrics = _compute_metrics_for_pool(
+                            emb, labels, groups, bs, ss, do_probe=(model == "hubert")
+                        )
 
                         result_entry: dict = {
                             "model": model,
@@ -929,6 +948,13 @@ def process_all(
             "layers": layers,
             "levels": levels,
             "num_embedding_files": len(entries),
+            "datasets": sorted({str(entry.get("dataset", "legacy")) for entry in entries}),
+            "speakers": len({str(entry.get("speaker_id", entry.get("sample_id", "unknown"))) for entry in entries}),
+            "paired": any(
+                entry.get("paired_key") is not None and not entry.get("representation_only", False)
+                for entry in entries
+            ),
+            "representation_only": all(entry.get("representation_only", False) for entry in entries),
         },
         "results": results,
         "comparisons": all_comparisons,

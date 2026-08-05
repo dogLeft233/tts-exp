@@ -205,6 +205,8 @@ def main() -> None:
         configured_tts = cfg.get("paths", {}).get("tts_audio_dir")
         tts_dir = resolve_repo_path(repo, configured_tts) if configured_tts else run_dir / "02_tts"
     img_dir = resolve_repo_path(repo, cfg.get("paths", {}).get("image_dir", "data/data/image"))
+    fixed_image = cfg.get("paths", {}).get("fixed_image")
+    fixed_image_path = resolve_repo_path(repo, fixed_image) if fixed_image else None
 
     # Check if tts wavs exist
     _ = all((tts_dir / f"{i}.wav").exists() for i in sample_ids)  # noqa
@@ -219,7 +221,10 @@ def main() -> None:
         cond_dir.mkdir(exist_ok=True)
 
         for i in sample_ids:
-            img_path = img_dir / f"{i}.png"
+            img_path = fixed_image_path or (img_dir / f"{i}.png")
+            if not img_path.exists():
+                failed.append({"condition": cond, "sample_id": i, "error": "image missing"})
+                continue
 
             # Determine audio source
             if cond.startswith("natural") or cond == "natural":
