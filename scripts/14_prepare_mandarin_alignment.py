@@ -30,6 +30,7 @@ from pathlib import Path
 # ---------------------------------------------------------------------------
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from tfg_feature_common import STUDY_SAMPLES, OUTPUT_BASE
+from manifest import MANIFEST_SCHEMA_VERSION, write_manifest
 
 # ---------------------------------------------------------------------------
 # Third-party imports
@@ -461,15 +462,30 @@ def build_manifest(
 
             for variant in variants:
                 entry: dict = {
+                    "schema_version": MANIFEST_SCHEMA_VERSION,
+                    "dataset": "aishell1",
+                    "utterance_id": f"{sample_id}:{condition}:{variant}",
+                    "speaker_id": f"aishell1_{sample_id}",
+                    "paired_key": str(sample_id),
                     "sample_id": sample_id,
-                    "condition": condition,
+                    "condition": "natural" if condition == "natural" else "tts",
+                    "tts_provider": None if condition == "natural" else condition,
                     "variant": variant,
+                    "transcript": transcript_text,
                     "filepath": str(audio_path),
+                    "audio_path": str(audio_path),
                     "duration_s": duration_s,
+                    "sample_rate": 16000,
+                    "split": "legacy",
+                    "license": "Apache-2.0",
+                    "alignment_source": "missing",
+                    "alignment_confidence": None,
                     "tokens": [],
                 }
 
                 if not mfa_ok and pinyin_tokens and duration_s > 0:
+                    entry["alignment_source"] = "uniform_fallback"
+                    entry["alignment_confidence"] = 0.0
                     n = len(pinyin_tokens)
                     segment_s = duration_s / n
                     for i, (char, init, fin, tone) in enumerate(pinyin_tokens):
@@ -495,6 +511,11 @@ def build_manifest(
                     total_tokens_kept += stats["kept"]
 
                     token_count = min(len(ctm_tokens), len(pinyin_tokens))
+                    entry["alignment_source"] = "mfa"
+                    entry["alignment_confidence"] = (
+                        sum(t["confidence"] for t in ctm_tokens) / len(ctm_tokens)
+                        if ctm_tokens else None
+                    )
                     for i in range(token_count):
                         ct = ctm_tokens[i]
                         char, init, fin, tone = pinyin_tokens[i]
@@ -606,8 +627,7 @@ def main(argv: list[str] | None = None) -> int:
         manifest_path = output_dir / "manifest" / "alignment.json"
         manifest_path.parent.mkdir(parents=True, exist_ok=True)
 
-        with open(manifest_path, "w", encoding="utf-8") as f:
-            json.dump(manifest, f, ensure_ascii=False, indent=2)
+        write_manifest(manifest_path, manifest)
 
         logger.info("Wrote %d entries to %s", len(manifest), manifest_path)
         return 0

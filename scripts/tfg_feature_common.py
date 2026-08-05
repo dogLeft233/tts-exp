@@ -150,6 +150,19 @@ TARGET_LUFS: float = -23.0
 """EBU R128 target integrated loudness level."""
 
 
+def embedding_file_stem(entry: dict, model: str, variant: str | None = None) -> str:
+    """Return the embedding filename stem for a manifest or legacy entry."""
+    identifier = str(entry.get("utterance_id", entry.get("sample_id", "unknown")))
+    condition = str(entry["condition"])
+    if condition == "tts" and entry.get("tts_provider"):
+        condition = str(entry["tts_provider"])
+    selected_variant = str(variant if variant is not None else entry.get("variant", "raw"))
+    explicit_stem = entry.get("embedding_stem", entry.get("embedding_file_stem"))
+    if explicit_stem:
+        return f"{explicit_stem}_{model}"
+    return f"{identifier}_{condition}_{selected_variant}_{model}"
+
+
 # =============================================================================
 # Audio utilities
 # =============================================================================

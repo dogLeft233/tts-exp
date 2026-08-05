@@ -32,8 +32,12 @@ class FasterQwen3TTSProvider(TTSProvider):
 
     def _ensure_model(self):
         if self._model is None:
-            from faster_qwen3_tts import FasterQwen3TTS
-            self._model = FasterQwen3TTS.from_pretrained(self.model_id)
+            try:
+                from faster_qwen3_tts import FasterQwen3TTS
+                self._model = FasterQwen3TTS.from_pretrained(self.model_id)
+            except (ImportError, ValueError, RuntimeError):
+                from qwen_tts import Qwen3TTSModel
+                self._model = Qwen3TTSModel.from_pretrained(self.model_id)
         return self._model
 
     def generate_voice_clone(
@@ -44,11 +48,15 @@ class FasterQwen3TTSProvider(TTSProvider):
         language: str = "Chinese",
     ) -> TTSResult:
         model = self._ensure_model()
+        generation_kwargs = {}
+        if self.sub.get("max_new_tokens") is not None:
+            generation_kwargs["max_new_tokens"] = int(self.sub["max_new_tokens"])
         audio_list, sr = model.generate_voice_clone(
             text=text,
             language=language,
             ref_audio=str(ref_audio_path),
             ref_text=ref_text,
+            **generation_kwargs,
         )
         audio = audio_list[0] if isinstance(audio_list, list) else audio_list
         audio_np = np.asarray(audio, dtype=np.float32)

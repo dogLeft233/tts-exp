@@ -1,0 +1,12 @@
+# GRID slow samples, seed 7
+tts:
+  provider: faster_qwen3
+  faster_qwen3:
+    model_id: /root/autodl-tmp/models/Qwen3-TTS-12Hz-0.6B-Base
+    clone_mode: icl
+    x_vector_only: false
+    append_silence: true
+  seed: 7
+  language: Chinese
+samples:
+  ids: [210, 228]

@@ -40,7 +40,8 @@ import numpy as np
 # Path set-up
 # ---------------------------------------------------------------------------
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from tfg_feature_common import TARGET_SR, OUTPUT_BASE, EmbeddingRecord
+from tfg_feature_common import TARGET_SR, OUTPUT_BASE, EmbeddingRecord, embedding_file_stem
+from manifest import load_manifest
 
 # ---------------------------------------------------------------------------
 # Third-party imports (heavy)
@@ -292,7 +293,7 @@ def _frame_to_token_pooling(
 
 
 def _make_output_stem(
-    sample_id: int, condition: str, variant: str, model_key: str
+    sample_id: int | str, condition: str, variant: str, model_key: str
 ) -> str:
     """Return the filename stem for a given sample/model combination.
 
@@ -341,16 +342,11 @@ def _load_manifest(manifest_path: Path) -> list[dict]:
     if not manifest_path.exists():
         logger.warning("Manifest file not found: %s", manifest_path)
         return []
-    with open(manifest_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
-    if isinstance(data, list):
-        return data
-    if isinstance(data, dict) and "entries" in data:
-        return data["entries"]
-    if isinstance(data, dict) and "manifest" in data:
-        return data["manifest"]
-    logger.warning("Unexpected manifest format; expected a list of entries")
-    return []
+    try:
+        return load_manifest(manifest_path)
+    except ValueError as exc:
+        logger.warning("Manifest validation failed for %s: %s", manifest_path, exc)
+        return []
 
 
 # ---------------------------------------------------------------------------
@@ -418,10 +414,10 @@ def process_all(
             logger.warning("Skipping model %s", model_key)
 
     for entry in entries:
-        sample_id = entry["sample_id"]
+        sample_id = entry.get("sample_id", entry.get("utterance_id", "unknown"))
         condition = entry["condition"]
-        variant = entry["variant"]
-        filepath = Path(entry["filepath"])
+        variant = entry.get("variant", "raw")
+        filepath = Path(entry.get("audio_path", entry.get("filepath", "")))
         tokens = entry.get("tokens", [])
 
         if not filepath.exists():
@@ -444,7 +440,7 @@ def process_all(
             continue
 
         for model_key, (model, embedding_dim, frame_stride, num_layers) in loaded_models.items():
-            stem = _make_output_stem(sample_id, condition, variant, model_key)
+            stem = embedding_file_stem(entry, model_key, variant)
             npy_path = output_dir / f"{stem}.npy"
             json_path = output_dir / f"{stem}.json"
 
@@ -478,8 +474,17 @@ def process_all(
 
             metadata: dict = {
                 "sample_id": sample_id,
+                "utterance_id": entry.get("utterance_id", str(sample_id)),
+                "dataset": entry.get("dataset", "legacy"),
+                "speaker_id": entry.get("speaker_id", str(sample_id)),
+                "paired_key": entry.get("paired_key"),
+                "split": entry.get("split"),
+                "representation_only": bool(entry.get("representation_only", False)),
+                "alignment_source": entry.get("alignment_source", "missing"),
                 "condition": condition,
+                "tts_provider": entry.get("tts_provider"),
                 "variant": variant,
+                "embedding_stem": entry.get("embedding_stem", entry.get("embedding_file_stem")),
                 "model": model_key,
                 "sample_rate": sr,
                 "duration_s": round(duration_s, 4),

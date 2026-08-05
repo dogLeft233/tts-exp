@@ -1,0 +1,12 @@
+# Fix 12 stale/dup VFHQ samples
+tts:
+  provider: faster_qwen3
+  faster_qwen3:
+    model_id: /root/autodl-tmp/models/Qwen3-TTS-12Hz-0.6B-Base
+    clone_mode: icl
+    x_vector_only: false
+    append_silence: true
+  seed: 42
+  language: Chinese
+samples:
+  ids: [61, 71, 73, 76, 77, 90, 91, 94, 95, 97, 98, 99]

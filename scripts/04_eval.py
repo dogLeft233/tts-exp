@@ -68,6 +68,7 @@ def run_syncnet_pipeline(
     data_dir: Path,
     reference: str,
     model_path: Path,
+    min_track: int = 100,
 ) -> tuple[str | None, str]:
     """Run full SyncNet pipeline: detect+crop faces, then evaluate.
 
@@ -87,6 +88,7 @@ def run_syncnet_pipeline(
         "--reference", reference,
         "--data_dir", str(data_dir),
         "--overwrite",
+        "--min_track", str(min_track),
     ]
     try:
         subprocess.run(cmd1, check=True, capture_output=True, text=True, timeout=180, env=env, cwd=str(syncnet_dir))
@@ -115,6 +117,7 @@ def main() -> None:
     ap.add_argument("--smoke", action="store_true")
     ap.add_argument("--config", default="")
     ap.add_argument("--no-cache", action="store_true")
+    ap.add_argument("--min-track", type=int, default=100)
     args = ap.parse_args()
 
     repo = Path(__file__).resolve().parent.parent
@@ -164,6 +167,7 @@ def main() -> None:
                     stdout, stderr = run_syncnet_pipeline(
                         syncnet_dir, syncnet_python, syncnet_bin,
                         vpath, data_dir, reference, syncnet_model,
+                        min_track=args.min_track,
                     )
                     if stdout is None:
                         if attempt == 1:

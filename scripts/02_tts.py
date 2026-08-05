@@ -97,8 +97,8 @@ def main() -> None:
     language = tts_cfg.get("language", "Chinese")
     retries = int(tts_cfg.get("retry", 1))
 
-    from utils import detect_sample_ids
-    sample_ids = detect_sample_ids(repo, args.smoke)
+    from utils import detect_sample_ids, resolve_repo_path
+    sample_ids = detect_sample_ids(repo, args.smoke, cfg=cfg)
     transcripts = load_transcripts(run_dir, sample_ids)
     if not transcripts:
         print("[tts] ERROR: no transcripts found. Run 01_asr.py first.")
@@ -120,7 +120,9 @@ def main() -> None:
     provider_name = provider.name
     print(f"[tts] provider: {provider_name}")
 
-    audio_dir = repo / "data" / "data" / "audio"
+    audio_dir = resolve_repo_path(
+        repo, cfg.get("paths", {}).get("audio_dir", "data/data/audio")
+    )
     results: dict[int, dict] = {}
     failed: list[dict] = []
     t0 = time.monotonic()

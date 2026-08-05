@@ -199,9 +199,58 @@ def ipa_to_viseme(phone: str) -> str:
     return "other"
 
 
-# ---------------------------------------------------------------------------
-# TextGrid parser
-# ---------------------------------------------------------------------------
+# LibriSpeech ARPABET phone labels used by the legacy .phn adapter.
+ARPABET_TO_VISEME: dict[str, str] = {
+    "P": "pbmv", "B": "pbmv", "M": "pbmv",
+    "F": "fv", "V": "fv",
+    "TH": "th", "DH": "th",
+    "T": "cdsz", "D": "cdsz", "S": "cdsz", "Z": "cdsz",
+    "N": "cdsz", "L": "cdsz",
+    "K": "kg", "G": "kg", "NG": "kg",
+    "CH": "chjsh", "JH": "chjsh", "SH": "chjsh", "ZH": "chjsh",
+    "HH": "e",
+    "IY": "i", "IH": "i", "EH": "e", "AE": "e", "AH": "e",
+    "AA": "o", "AO": "o", "OW": "o", "UH": "o",
+    "UW": "u", "ER": "r", "R": "r", "W": "u", "Y": "i",
+}
+
+
+def arpabet_to_viseme(phone: str) -> str:
+    """Map a LibriSpeech ARPABET phone to a Preston Blair viseme."""
+    normalized = phone.strip().upper()
+    if normalized in {"", "H#", "SIL", "SP", "SPN"}:
+        return "sil"
+    normalized = re.sub(r"[0-9]$", "", normalized)
+    return ARPABET_TO_VISEME.get(normalized, "other")
+
+
+def parse_phn_file(phn_path: Path, sample_rate: int = 16000) -> list[dict]:
+    """Parse LibriSpeech sample-index phone boundaries into token spans."""
+    tokens: list[dict] = []
+    for line_number, raw_line in enumerate(phn_path.read_text(encoding="utf-8").splitlines(), 1):
+        parts = raw_line.split()
+        if len(parts) != 3:
+            raise ValueError(f"invalid .phn line {phn_path}:{line_number}")
+        try:
+            start_sample = int(parts[0])
+            end_sample = int(parts[1])
+        except ValueError as exc:
+            raise ValueError(f"invalid .phn boundary {phn_path}:{line_number}") from exc
+        if end_sample < start_sample or sample_rate <= 0:
+            raise ValueError(f"invalid .phn interval {phn_path}:{line_number}")
+        start_s = start_sample / sample_rate
+        end_s = end_sample / sample_rate
+        tokens.append({
+            "token": parts[2],
+            "viseme": arpabet_to_viseme(parts[2]),
+            "start_s": round(start_s, 6),
+            "end_s": round(end_s, 6),
+            "duration_s": round(end_s - start_s, 6),
+            "confidence": 1.0,
+        })
+    return tokens
+
+
 # MFA TextGrid format:
 #   intervals [N]:
 #       xmin = 0.54
@@ -330,6 +379,7 @@ def build_english_manifest(
     output_path: Path = OUTPUT_MANIFEST_REL,
     run_mfa: bool = False,
     conda_env: str = MFA_MFA_ENV,
+    phn_dir: Path | None = None,
 ) -> dict:
     """Build alignment manifest from MFA TextGrids."""
     audio_records, tts_records = _load_manifest_records(repo_root)
@@ -344,12 +394,16 @@ def build_english_manifest(
     failures: list[dict] = []
 
     for sid in sorted(sample_ids):
+        librispeech_id = audio_records.get(sid, {}).get("librispeech_id", str(sid))
+        phn_path = (phn_dir / f"{librispeech_id}.phn") if phn_dir is not None else None
         textgrid_path = mfa_dir / f"{sid}.TextGrid"
-        if not textgrid_path.exists():
-            failures.append({"sample_id": sid, "error": f"MFA TextGrid not found: {textgrid_path}"})
+        if phn_path is not None and phn_path.exists():
+            tokens = parse_phn_file(phn_path)
+        elif textgrid_path.exists():
+            tokens = parse_textgrid(textgrid_path)
+        else:
+            failures.append({"sample_id": sid, "error": f"alignment not found: {phn_path or textgrid_path}"})
             continue
-
-        tokens = parse_textgrid(textgrid_path)
         if not tokens:
             failures.append({"sample_id": sid, "error": "empty TextGrid"})
             continue

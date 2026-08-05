@@ -17,6 +17,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "scripts"))
 
 from tfg_feature_common import (
+    embedding_file_stem,
     paired_permutation_test,
     bootstrap_paired_ci,
     fdr_bh_correction,
@@ -110,6 +111,37 @@ def _make_frame_embeddings_with_boundary(
         vec = (1 - weight) * vec_a + weight * vec_b
         embeddings[i] = vec / (np.linalg.norm(vec) + 1e-12)
     return frame_times, embeddings
+
+
+# ---------------------------------------------------------------------------
+# Manifest-compatible identifiers
+# ---------------------------------------------------------------------------
+
+
+def test_embedding_stem_supports_string_utterance_id():
+    entry = {
+        "utterance_id": "utt-001",
+        "condition": "tts",
+        "variant": "raw",
+    }
+    assert embedding_file_stem(entry, "hubert") == "utt-001_tts_raw_hubert"
+
+
+def test_embedding_stem_keeps_tts_provider_distinct():
+    entry = {
+        "utterance_id": "utt-001",
+        "condition": "tts",
+        "tts_provider": "faster_qwen3",
+        "variant": "raw",
+    }
+    assert embedding_file_stem(entry, "hubert") == "utt-001_faster_qwen3_raw_hubert"
+
+
+def test_speaker_grouping_prevents_utterance_leakage():
+    embeddings, labels = _make_clustered_embeddings(n_classes=2, n_per_class=6)
+    groups = np.array(["speaker-a"] * 6 + ["speaker-b"] * 6)
+    result = linear_probe_cv(embeddings, labels, groups, cv=2)
+    assert set(result) == {"accuracy", "f1_macro", "f1_weighted"}
 
 
 # ---------------------------------------------------------------------------
