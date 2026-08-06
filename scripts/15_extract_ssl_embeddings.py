@@ -472,6 +472,10 @@ def process_all(
                     best_layer, frame_times, tokens,
                 )
 
+            # Record the layers ACTUALLY stored, not the requested list:
+            # ``extract_frame_embeddings`` drops any layer >= model depth, so
+            # the NPY rows may be a strict subset of the requested layers.
+            stored_layers = [l for l in layers if l < num_layers]
             metadata: dict = {
                 "sample_id": sample_id,
                 "utterance_id": entry.get("utterance_id", str(sample_id)),
@@ -488,7 +492,7 @@ def process_all(
                 "model": model_key,
                 "sample_rate": sr,
                 "duration_s": round(duration_s, 4),
-                "layers": layers,
+                "layers": stored_layers,
                 "num_frames": int(n_frames),
                 "embedding_dim": embedding_dim,
                 "filepath": str(npy_path.relative_to(output_dir.parent.parent)),
