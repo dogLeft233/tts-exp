@@ -8,11 +8,11 @@
 
 ## 关键结论
 
-1. **TTS > Natural 在中文唇形同步上成立**（Ditto: ΔSync-C=+1.25, p=0.0005）
-2. **效应跨模型泛化**：Wav2Lip (+1.52) > IMTalker (+1.13) > 其余模型
-3. **英文不成立**（两个独立数据集：LibriSpeech ΔC=+0.16 ns；HDTF 13 说话人 ΔC=−0.14 ns）
-4. **单一声学特征无法解释**——可能是 Generator×Evaluator 共适应
-5. **TTS 不损害帧级音素信息**——自然和 TTS 在 HuBERT 特征空间完全重叠
+1. **TTS > Natural 在中文唇形同步上成立**，n=100 稳健复现（Ditto: ΔSync-C=+1.02, d=1.24, p<0.0001, 92% 样本；详见 `15`）
+2. **效应跨模型泛化**：Wav2Lip (+1.52) > IMTalker (+1.13) > 其余模型（n=13 旧数据）
+3. **英文不成立**（LibriSpeech ΔC=+0.16 ns；HDTF 13 说话人 ΔC=−0.14 ns）
+4. **差异在声学/韵律层而非音素可分离性**：早层（l0-2）最强（`12`/`13`）；TTS 更快、停顿少 63%、句内时长更均匀（`11`）；**无可分离性指标能预测逐样本 lip-sync 增益**（`15`，Wav2Sem 假设不被支持）
+5. **音素结构非说话人混杂**（`14`）；早期"TTS 与自然在 HuBERT 空间完全重叠"结论已被 `13` 修正——逐音素差异在早层可检测（AUC 0.87-0.95）
 
 ## 正在使用
 
@@ -46,7 +46,7 @@
 | 多语言 TTS 参考音频（旧版） | `data/multilingual_tts/` | 旧版 9 语言、每语言 20 条；CSS10/CML-TTS 存在已知来源重合风险 |
 | 多语言 TTS 参考音频（MDC） | `data/mdc_tts/` | 当前 5 语言 × 20 条 = 100 条；英语/德语/意大利语/西班牙语/韩语已提取，另 4 种 MDC 条款仍返回 403 |
 | TTS 资产目录 | `data/tts/catalog.json` | 本地 TTS 音频索引，支持按 provider/model/language/dataset 检索 |
-| AISHELL-1 100 音素 corpus | `data/aishell1_100_zh/` | AISHELL-1 test split 100 条（16 说话人）+ 同文本 faster_qwen3 TTS；MFA 对齐 + HuBERT/XLS-R 分析 → `docs/experiments/09-aishell100-phoneme-extension.md`，产物在 `results/aishell100_phoneme/` |
+| AISHELL-1 100 音素 corpus | `data/aishell1_100_zh/` | AISHELL-1 test split 100 条（16 说话人）+ 同文本 faster_qwen3 TTS；MFA 对齐 + HuBERT/XLS-R 分析 → `docs/experiments/09`，B 系列深化（`11-15`：时长 JSD / 逐层曲线 / 逐音素 KLD / 解纠缠 / TFG 关联）产物在 `results/aishell100_phoneme/` |
 
 ## 技术栈
 
@@ -62,8 +62,10 @@
 CONTEXT.md              ← 你在这里
 docs/
 ├── adr/                ← 架构决策记录
-├── experiments/        ← 实验报告（按阶段编号）
+├── experiments/        ← 实验报告（按阶段编号；索引见 experiments/README.md）
 ├── deployment/         ← 模型部署记录
 ├── results/            ← 评分汇总
 └── reference/          ← 流水线/服务器/部署参考
 ```
+
+实验报告索引：`docs/experiments/README.md`。B 系列（11-15）为 2026-08 的音素/韵律/TFG 深化实验，均经对抗子 agent 审查修复。
