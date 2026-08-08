@@ -24,6 +24,7 @@
 | 17 | [TTS 特征迁移与 natural 节奏对齐调研](17-tts-feature-rhythm-alignment-research.md) | **显式 duration-controlled acoustic transfer** 比 waveform splice 更有证据支持；属性解耦仍需 factorial 验证 | ✅ |
 | 18 | [TTS 特征控制与 natural 节奏对齐验证](18-tts-feature-control-validation.md) | **n=10 Ditto/SyncNet：loudness 最接近 natural（ΔSync-C −0.058），但没有 control 恢复 raw TTS 优势；spectral 有 6/10 正向但均值 −0.226** | ✅ |
 | 19 | [MDC English natural-vs-F5-TTS 音素与表征审查](19-mdc-english-representation-audit.md) | **50 对表征审查完成：TTS 多层 phone/viseme 可迁移性与时长规整性更强；B4 downstream TFG/SyncNet 仍阻塞** | ✅ |
+| 20 | [AISHELL-100 跨条件音素/视位 PER](20-aishell100-cross-condition-per.md) | **补齐 100 对中文跨条件 frame-level PER：L6 phoneme natural→TTS 38.97%、TTS→natural 40.70%；TTS 略优且迁移对称** | ✅ |
 
 ## 专题/总结文档
 
