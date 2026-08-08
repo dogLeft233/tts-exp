@@ -20,6 +20,10 @@
 | 13 | [B3 逐音素 KLD + 判别探针](13-per-phoneme-kld.md) | 早层（l1）逐音素判别力最强（AUC 0.87-0.95）；KLD↔判别力相关弱、元音更敏感 | ✅ |
 | 14 | [B5 说话人/音素解纠缠](14-ph-spk-disentangle.md) | RV(Ph,Spk)≈0.01 与随机不可区分——音素结论非说话人混杂 | ✅ |
 | 15 | [B4 表征→TFG 关联](15-tfg-link.md) | **n=100 头号结论**：TTS Sync-C +1.02（d=1.24, 92%）；可分离性指标均不预测 lip-sync（FDR 后） | ✅ |
+| 16 | [phone-local-warp 目标验证](16-phone-local-warp-validation.md) | **V2 No-Go**：raw TTS Sync-C +0.418，但 phone-local-warp −0.488；高 coverage 子集仍退化 | ✅ |
+| 17 | [TTS 特征迁移与 natural 节奏对齐调研](17-tts-feature-rhythm-alignment-research.md) | **显式 duration-controlled acoustic transfer** 比 waveform splice 更有证据支持；属性解耦仍需 factorial 验证 | ✅ |
+| 18 | [TTS 特征控制与 natural 节奏对齐验证](18-tts-feature-control-validation.md) | **n=10 Ditto/SyncNet：loudness 最接近 natural（ΔSync-C −0.058），但没有 control 恢复 raw TTS 优势；spectral 有 6/10 正向但均值 −0.226** | ✅ |
+| 19 | [MDC English natural-vs-F5-TTS 音素与表征审查](19-mdc-english-representation-audit.md) | **50 对表征审查完成：TTS 多层 phone/viseme 可迁移性与时长规整性更强；B4 downstream TFG/SyncNet 仍阻塞** | ✅ |
 
 ## 专题/总结文档
 

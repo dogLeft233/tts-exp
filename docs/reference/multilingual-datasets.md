@@ -28,12 +28,12 @@ uses these labels:
 Release dates are useful evidence but do not prove when the underlying
 recordings were collected or what entered model training.
 
-## Current Progress (2026-07-28)
+## Current Progress (2026-08-06)
 
 | Language | Status | Dataset | License | Risk |
 |---|---|---|---|---|
 | Chinese | candidate identified | MSceneSpeech HF mirror | TBD | B |
-| English | **downloaded** (20 MP3 + CSV) | Effect AI Scripted Speech 1.0 | CC0 | B |
+| English | **downloaded** (50 MP3 + CSV) | Effect AI Scripted Speech 1.0 | CC0 | B |
 | German | **downloaded** (20 MP3 + TSV) | CV Spontaneous Speech 4.0 | CC0 | B |
 | Italian | **downloaded** (20 WAV + TSV) | Italian TTS - female voice | Apache-2.0 | B |
 | Portuguese | blocked: MDC returned 403 | Faber 1.0 | CC0 | B |
@@ -43,7 +43,7 @@ recordings were collected or what entered model training.
 | French | blocked: MDC returned 403 | CV Spontaneous Speech 4.0 | CC0 | B |
 | Russian | blocked: MDC returned 403 | CV Spontaneous Speech 4.0 | CC0 | B |
 
-The current MDC artifact set contains 5 languages × 20 samples = 100 samples.
+The current MDC artifact set contains 50 English samples plus 20 samples for each of German, Italian, Spanish, and Korean (130 samples total).
 Audio is under `data/mdc_tts/audio/<language>/`; the manifest is at
 `data/mdc_tts/manifest.json`. Italian WEBM clips were converted to 24 kHz mono
 WAV. Only selected audio and provenance metadata are kept in the repository;

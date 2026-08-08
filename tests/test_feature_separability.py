@@ -469,6 +469,17 @@ class TestPoolFramesForLayer:
         assert labels["(initial,final)"].tolist() == ["b_a", "p_i", "b_u"]
         assert labels["(initial,final,tone)"].tolist() == ["b_a_1", "p_i_2", "b_u_3"]
 
+    def test_pooling_excludes_non_speech_tokens(self):
+        emb = np.ones((10, DIM), dtype=np.float32)
+        tokens = [
+            {"phoneme": "", "viseme": "sil", "is_silence": True,
+             "start_s": 0.0, "end_s": 0.05},
+            {"phoneme": "aa", "viseme": "vowel", "start_s": 0.06, "end_s": 0.1},
+        ]
+        pooled, labels = _pool_frames_for_layer(emb, 320, 16000, tokens)
+        assert pooled.shape[0] == 1
+        assert labels["phoneme"].tolist() == ["aa"]
+
     def test_skips_token_without_times(self):
         emb = np.ones((10, DIM), dtype=np.float32)
         tokens = [

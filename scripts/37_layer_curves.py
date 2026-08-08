@@ -21,6 +21,7 @@ Usage
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib.util
 import json
 import logging
@@ -39,8 +40,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_EMBEDDINGS_DIR = PROJECT_ROOT / "results/aishell100_phoneme/embeddings"
-DEFAULT_OUT_DIR = PROJECT_ROOT / "results/aishell100_phoneme/layer_curves"
+DEFAULT_EMBEDDINGS_DIR = PROJECT_ROOT / "runs/mdc_en_phoneme_20260807_f5_full/04_embeddings"
+DEFAULT_OUT_DIR = PROJECT_ROOT / "runs/mdc_en_phoneme_20260807_f5_full/08_layer_curves"
 
 FRAME_STRIDE = 320
 TARGET_SR = 16000
@@ -55,6 +56,62 @@ def _load_f16() -> Any:
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _analysis_condition(meta: dict, f16: Any) -> str:
+    return f16._analysis_condition(meta)
+
+
+def _condition_inventory(entries: list[dict], f16: Any) -> list[str]:
+    conditions = sorted({_analysis_condition(entry, f16) for entry in entries})
+    if "natural" not in conditions:
+        raise ValueError("MDC layer curves require a natural condition")
+    tts_conditions = [condition for condition in conditions if condition != "natural"]
+    if len(tts_conditions) != 1:
+        raise ValueError(f"Expected exactly one TTS provider, found {tts_conditions}")
+    return ["natural", tts_conditions[0]]
+
+
+def _entry_ids(entries: list[dict], condition: str, f16: Any) -> set[str]:
+    return {
+        str(entry.get("paired_key", entry.get("utterance_id", entry.get("sample_id", "unknown"))))
+        for entry in entries
+        if _analysis_condition(entry, f16) == condition and entry.get("variant") == "raw"
+    }
+
+def _embedding_inventory(
+    entries: list[dict],
+    paired_keys: set[str],
+    models: list[str],
+) -> tuple[int, int, str]:
+    """Hash the exact embedding JSON/NPY inputs used by this run."""
+    rows: list[str] = []
+    n_json = 0
+    n_npy = 0
+    for entry in entries:
+        if entry.get("model") not in models or entry.get("variant") != "raw":
+            continue
+        paired_key = str(entry.get("paired_key", entry.get("utterance_id", entry.get("sample_id", "unknown"))))
+        if paired_key not in paired_keys:
+            continue
+        for key, count_name in (("_json_path", "json"), ("_npy_path", "npy")):
+            path = Path(entry.get(key, ""))
+            if not path.exists():
+                raise FileNotFoundError(f"Missing embedding input: {path}")
+            digest = _sha256(path)
+            rows.append(f"{count_name}\t{path.name}\t{digest}")
+            if count_name == "json":
+                n_json += 1
+            else:
+                n_npy += 1
+    inventory_hash = hashlib.sha256("\n".join(sorted(rows)).encode("utf-8")).hexdigest()
+    return n_json, n_npy, inventory_hash
 
 
 def gather_by_layer(
@@ -65,6 +122,7 @@ def gather_by_layer(
     variant: str,
     layers: list[int],
     f16: Any,
+    paired_keys: set[str] | None = None,
 ) -> dict[int, tuple[np.ndarray, np.ndarray, np.ndarray]]:
     """Pool per-token vectors for every saved layer, loading each NPY once.
 
@@ -80,6 +138,9 @@ def gather_by_layer(
             continue
         if meta.get("variant") != variant:
             continue
+        paired_key = str(meta.get("paired_key", meta.get("utterance_id", meta.get("sample_id", "unknown"))))
+        if paired_keys is not None and paired_key not in paired_keys:
+            continue
         tokens = meta.get("tokens", [])
         if not tokens:
             continue
@@ -92,7 +153,7 @@ def gather_by_layer(
         except (OSError, ValueError) as exc:
             logger.warning("Failed to load %s: %s", npy_path.name, exc)
             continue
-        group = str(meta.get("speaker_id", meta.get("paired_key", "?")))
+        group = paired_key
         # ``saved_layers`` in the metadata may over-report when extraction
         # dropped layers exceeding model depth (e.g. HuBERT records 0..12 but
         # stores 0..11).  Guard with the actual array depth.
@@ -129,6 +190,7 @@ def run(
     models: list[str],
     level: str,
     out_dir: Path,
+    manifest_path: Path | None = None,
 ) -> int:
     f16 = _load_f16()
     entries = f16._discover_embedding_files(embeddings_dir)
@@ -144,7 +206,21 @@ def run(
             layers_by_model[model].update(e.get("layers", []))
     logger.info("Models: %s", {m: sorted(v) for m, v in layers_by_model.items()})
 
-    conditions = ["natural", "faster_qwen3"]
+    conditions = _condition_inventory(entries, f16)
+    natural_ids = _entry_ids(entries, "natural", f16)
+    tts_ids = _entry_ids(entries, conditions[1], f16)
+    paired_keys = natural_ids & tts_ids
+    expected_mdc_ids = {f"en_{i:03d}" for i in range(1, 51)}
+    if paired_keys != expected_mdc_ids:
+        raise ValueError(
+            f"MDC layer curves require exact 50 paired keys; missing={sorted(expected_mdc_ids - paired_keys)}"
+        )
+    if not paired_keys:
+        raise ValueError("No paired keys shared by natural and TTS embeddings")
+    logger.info("Conditions: %s; paired keys: %d", conditions, len(paired_keys))
+    n_embedding_json, n_embedding_npy, embedding_inventory_hash = _embedding_inventory(
+        entries, paired_keys, models
+    )
     curves: dict[str, dict[int, dict[str, dict]]] = {}
     for model in models:
         layers = sorted(layers_by_model.get(model, []))
@@ -155,7 +231,9 @@ def run(
         do_probe = model == "hubert"  # XLS-R probe too slow (1024-dim)
         per_cond: dict[str, dict[int, tuple]] = {}
         for cond in conditions:
-            per_cond[cond] = gather_by_layer(entries, model, level, cond, "raw", layers, f16)
+            per_cond[cond] = gather_by_layer(
+                entries, model, level, cond, "raw", layers, f16, paired_keys
+            )
         curves[model] = {}
         for layer in layers:
             curves[model][layer] = {}
@@ -194,12 +272,20 @@ def run(
             # zero distances (all tokens identical) is NOT a compactness peak.
             # Flag the layer if either condition shows collapse.
             if curves[model][layer]:
-                inter_vals = [float(c["inter_class_dist"]) for c in curves[model][layer].values()
-                              if isinstance(c.get("inter_class_dist"), (int, float))]
-                intra_vals = [float(c["intra_class_dist"]) for c in curves[model][layer].values()
-                              if isinstance(c.get("intra_class_dist"), (int, float))]
-                degenerate = bool(inter_vals and intra_vals and
-                                  max(inter_vals) < 1e-3 and max(intra_vals) < 1e-3)
+                def _is_degenerate(metrics: dict) -> bool:
+                    inter = metrics.get("inter_class_dist")
+                    intra = metrics.get("intra_class_dist")
+                    return (
+                        isinstance(inter, (int, float))
+                        and isinstance(intra, (int, float))
+                        and inter < 1e-3
+                        and intra < 1e-3
+                    )
+
+                degenerate = any(
+                    _is_degenerate(metrics)
+                    for metrics in curves[model][layer].values()
+                )
             else:
                 degenerate = False
             for cond in curves[model][layer]:
@@ -243,7 +329,7 @@ def run(
                 if any(cc.get("degenerate") for cc in c.values()):
                     continue
                 nv = _clean_metric(c.get("natural", {}).get(metric))
-                tv = _clean_metric(c.get("faster_qwen3", {}).get(metric))
+                tv = _clean_metric(c.get(conditions[1], {}).get(metric))
                 if nv is not None and tv is not None:
                     deltas[int(l)] = tv - nv
             max_abs_delta_layer = int(max(deltas, key=lambda l: abs(deltas[l]))) if deltas else None
@@ -254,21 +340,38 @@ def run(
                     "max_abs_delta_layer": max_abs_delta_layer,
                 }
 
-    out_dir.mkdir(parents=True, exist_ok=True)
+    out_json = out_dir / "layer_curves.json"
     result = {
         "meta": {
             "embeddings_dir": str(embeddings_dir),
             "models": models,
             "level": level,
             "conditions": conditions,
+            "tts_providers": [conditions[1]],
+            "paired_keys": sorted(paired_keys),
+            "n_paired_keys": len(paired_keys),
+            "n_records": len(entries),
+            "actual_saved_layers_by_model": {m: sorted(layers_by_model.get(m, [])) for m in models},
+            "embedding_input_json_count": n_embedding_json,
+            "embedding_input_npy_count": n_embedding_npy,
+            "embedding_input_inventory_sha256": embedding_inventory_hash,
+            "helper_script_path": str(PROJECT_ROOT / "scripts/16_feature_separability.py"),
+            "helper_script_sha256": _sha256(PROJECT_ROOT / "scripts/16_feature_separability.py"),
+            "grouping": "paired_key_per_utterance",
             "do_probe_models": ["hubert"],
             "note": "probe computed for hubert only; XLS-R probe skipped (1024-dim cost)",
+            "peak_selection": "descriptive argmax/argmin across saved layers; no confirmatory layer-wise FDR",
+            "manifest_path": str(manifest_path) if manifest_path else None,
+            "manifest_sha256": _sha256(manifest_path) if manifest_path and manifest_path.exists() else None,
+            "script_path": str(Path(__file__).resolve()),
+            "script_sha256": _sha256(Path(__file__).resolve()),
         },
         "curves": {m: {int(l): c for l, c in curve.items()} for m, curve in curves.items()},
         "peaks": peaks,
     }
+    out_dir.mkdir(parents=True, exist_ok=True)
     out_json = out_dir / "layer_curves.json"
-    out_json.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    out_json.write_text(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False), encoding="utf-8")
     logger.info("Wrote %s", out_json)
 
     # ---- Console summary --------------------------------------------------
@@ -294,13 +397,18 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--models", type=str, default="hubert,xlsr")
     parser.add_argument("--level", type=str, default="viseme")
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
+    parser.add_argument(
+        "--manifest",
+        type=Path,
+        default=PROJECT_ROOT / "runs/mdc_en_phoneme_20260807_f5_full/03_alignment/alignment.json",
+    )
     return parser.parse_args(argv)
 
 
 def main(argv: list[str] | None = None) -> int:
     args = _parse_args(argv)
     models = [m.strip().lower() for m in args.models.split(",") if m.strip()]
-    return run(args.embeddings_dir, models, args.level, args.out_dir)
+    return run(args.embeddings_dir, models, args.level, args.out_dir, args.manifest)
 
 
 if __name__ == "__main__":

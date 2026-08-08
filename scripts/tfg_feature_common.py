@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
+import re
 
 import numpy as np
 import librosa
@@ -150,17 +151,27 @@ TARGET_LUFS: float = -23.0
 """EBU R128 target integrated loudness level."""
 
 
+def _filesystem_stem_component(value: object) -> str:
+    """Convert an identifier to one safe filename component."""
+    component = re.sub(r"[^A-Za-z0-9.-]+", "_", str(value)).strip("._")
+    return component or "unknown"
+
+
 def embedding_file_stem(entry: dict, model: str, variant: str | None = None) -> str:
     """Return the embedding filename stem for a manifest or legacy entry."""
-    identifier = str(entry.get("utterance_id", entry.get("sample_id", "unknown")))
+    identifier = entry.get("sample_id", entry.get("utterance_id", "unknown"))
+    identifier = _filesystem_stem_component(identifier)
     condition = str(entry["condition"])
     if condition == "tts" and entry.get("tts_provider"):
         condition = str(entry["tts_provider"])
     selected_variant = str(variant if variant is not None else entry.get("variant", "raw"))
     explicit_stem = entry.get("embedding_stem", entry.get("embedding_file_stem"))
     if explicit_stem:
-        return f"{explicit_stem}_{model}"
-    return f"{identifier}_{condition}_{selected_variant}_{model}"
+        return f"{_filesystem_stem_component(explicit_stem)}_{_filesystem_stem_component(model)}"
+    return "_".join(
+        _filesystem_stem_component(value)
+        for value in (identifier, condition, selected_variant, model)
+    )
 
 
 # =============================================================================

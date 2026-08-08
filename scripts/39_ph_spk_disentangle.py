@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """B5 — Speaker/phoneme disentanglement control for natural-vs-TTS separability.
 
-The natural pool mixes 100 speakers (1 utterance each) while the TTS pool is a
-single synthetic voice.  This script quantifies how much of the phoneme
-separability difference between conditions could be an artefact of that
-speaker mismatch:
+The MDC natural pool contains repeated and unequal source-author IDs across 50
+utterances, while all TTS outputs use one provider-level synthetic voice.  This
+script therefore reports which speaker controls are identifiable and separates
+them from symmetric per-utterance residualization; residualization is not a
+speaker-balanced design.
 
   1. **Speaker probe** (natural only): grouped logistic probe predicting which
      of the 100 speakers a token belongs to — how dominant speaker identity is
@@ -27,6 +28,7 @@ Usage
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib.util
 import json
 import logging
@@ -44,13 +46,59 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_EMBEDDINGS_DIR = PROJECT_ROOT / "results/aishell100_phoneme/embeddings"
-DEFAULT_OUT_DIR = PROJECT_ROOT / "results/aishell100_phoneme/ph_spk"
+DEFAULT_EMBEDDINGS_DIR = PROJECT_ROOT / "runs/mdc_en_phoneme_20260807_f5_full/04_embeddings"
+DEFAULT_OUT_DIR = PROJECT_ROOT / "runs/mdc_en_phoneme_20260807_f5_full/10_ph_spk_disentangle"
 
 FRAME_STRIDE = 320
 TARGET_SR = 16000
 RNG_SEED = 42
 CV_REPEATS = 3
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _json_safe(value):
+    if isinstance(value, dict):
+        return {key: _json_safe(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_json_safe(item) for item in value]
+    if isinstance(value, (float, np.floating)):
+        return float(value) if np.isfinite(value) else None
+    if isinstance(value, np.ndarray):
+        return _json_safe(value.tolist())
+    return value
+
+
+def _embedding_inventory(entries: list[dict], models: list[str]) -> tuple[int, int, str]:
+    rows: list[str] = []
+    n_json = 0
+    n_npy = 0
+    for entry in entries:
+        if entry.get("model") not in models or entry.get("variant") != "raw":
+            continue
+        for key, label in (("_json_path", "json"), ("_npy_path", "npy")):
+            path = Path(entry.get(key, ""))
+            if not path.exists():
+                raise FileNotFoundError(f"Missing embedding input: {path}")
+            rows.append(f"{label}\t{path.name}\t{_sha256(path)}")
+            if label == "json":
+                n_json += 1
+            else:
+                n_npy += 1
+    return n_json, n_npy, hashlib.sha256("\n".join(sorted(rows)).encode()).hexdigest()
+
+
+def _condition_inventory(entries: list[dict], f16: Any) -> list[str]:
+    conditions = sorted({f16._analysis_condition(e) for e in entries})
+    if conditions != ["f5_tts", "natural"]:
+        raise ValueError(f"Expected natural and f5_tts only, found {conditions}")
+    return conditions
 
 
 def _load_f16() -> Any:
@@ -191,13 +239,21 @@ def _cramers_v(labels: np.ndarray, groups: np.ndarray) -> float:
     return float(v)
 
 
-def gather_tokens(entries: list[dict], model: str, layer: int, level: str, cond: str, f16: Any) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-    """Pool per-token vectors + phoneme labels + speaker/utterance labels."""
+def gather_tokens(
+    entries: list[dict],
+    model: str,
+    layer: int,
+    level: str,
+    cond: str,
+    f16: Any,
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, np.ndarray]:
+    """Pool token vectors with phoneme, paired-utterance, and speaker labels."""
     vecs: list[np.ndarray] = []
-    labs: list[str] = []
+    labs: list[np.ndarray] = []
     utts: list[str] = []
+    speakers: list[str] = []
     for meta in entries:
-        if meta.get("model") != model:
+        if meta.get("model") != model or meta.get("variant") != "raw":
             continue
         if f16._analysis_condition(meta) != cond:
             continue
@@ -214,18 +270,25 @@ def gather_tokens(entries: list[dict], model: str, layer: int, level: str, cond:
         emb_all = np.load(npy)
         if li >= emb_all.shape[0]:
             continue
-        pooled, labels = f16._pool_frames_for_layer(emb_all[li], FRAME_STRIDE, TARGET_SR, tokens)
+        pooled, labels = f16._pool_frames_for_layer(
+            emb_all[li], FRAME_STRIDE, TARGET_SR, tokens
+        )
         if pooled.shape[0] == 0 or level not in labels:
             continue
+        paired_key = str(meta.get("paired_key", "?"))
+        speaker_id = str(meta.get("speaker_id", "unknown"))
         vecs.append(pooled)
-        labs.append(labels[level])
-        utts.extend([str(meta.get("paired_key", "?"))] * pooled.shape[0])
+        labs.append(np.asarray(labels[level]))
+        utts.extend([paired_key] * pooled.shape[0])
+        speakers.extend([speaker_id] * pooled.shape[0])
     if not vecs:
-        return np.empty((0, 0)), np.array([], dtype=str), np.array([], dtype=str)
+        empty = np.array([], dtype=str)
+        return np.empty((0, 0)), empty, empty, empty
     return (
         np.concatenate(vecs, axis=0),
         np.concatenate(labs, axis=0),
         np.array(utts),
+        np.array(speakers),
     )
 
 
@@ -235,90 +298,143 @@ def run(
     layers: list[int],
     level: str,
     out_dir: Path,
+    manifest_path: Path,
 ) -> int:
     f16 = _load_f16()
     entries = f16._discover_embedding_files(embeddings_dir)
     if not entries:
-        logger.error("No embedding files in %s", embeddings_dir)
+        logger.error("No embeddings in %s", embeddings_dir)
         return 1
+    conditions = _condition_inventory(entries, f16)
+    expected_ids = {f"en_{i:03d}" for i in range(1, 51)}
+    arm_ids = {
+        cond: {
+            str(e.get("paired_key", e.get("sample_id", "unknown")))
+            for e in entries
+            if e.get("variant") == "raw" and f16._analysis_condition(e) == cond
+        }
+        for cond in conditions
+    }
+    if any(ids != expected_ids for ids in arm_ids.values()):
+        raise ValueError(f"B5 requires exact en_001..en_050 in both arms: {arm_ids}")
+    n_json, n_npy, inventory_hash = _embedding_inventory(entries, models)
 
     results: dict[str, dict] = {}
     for model in models:
         for layer in layers:
-            nat_x, nat_lab, nat_utt = gather_tokens(entries, model, layer, level, "natural", f16)
-            tts_x, tts_lab, tts_utt = gather_tokens(entries, model, layer, level, "faster_qwen3", f16)
+            nat_x, nat_lab, nat_utt, nat_spk = gather_tokens(
+                entries, model, layer, level, "natural", f16
+            )
+            tts_x, tts_lab, tts_utt, tts_spk = gather_tokens(
+                entries, model, layer, level, "f5_tts", f16
+            )
             if nat_x.shape[0] == 0 or tts_x.shape[0] == 0:
                 logger.warning("No tokens for %s l%s", model, layer)
                 continue
 
-            # Phoneme probe per condition (raw).
             nat_ph_probe = _grouped_probe(nat_x, nat_lab, nat_utt)
             tts_ph_probe = _grouped_probe(tts_x, tts_lab, tts_utt)
-
-            # Symmetric speaker/utterance control: residualise BOTH conditions
-            # by their own per-utterance baseline.
             nat_resid = _orthogonalize_means(nat_x, nat_utt)
             tts_resid = _orthogonalize_means(tts_x, tts_utt)
             nat_ph_probe_ctrl = _grouped_probe(nat_resid, nat_lab, nat_utt)
             tts_ph_probe_ctrl = _grouped_probe(tts_resid, tts_lab, tts_utt)
 
-            # Phoneme × speaker label independence (Cramér's V) on natural:
-            # near 0 means the AISHELL design gives no phoneme-speaker confound.
-            cramers_v = _cramers_v(nat_lab, nat_utt)
-
-            # RV(Ph, Spk) with permutation null: is the phoneme-speaker subspace
-            # overlap distinguishable from chance?
-            rv, rv_p, rv_null_med = _rv_with_permutation(nat_x, nat_lab, nat_utt)
-
+            natural_speaker_inventory = {
+                str(speaker): int(np.sum(nat_spk == speaker))
+                for speaker in sorted(np.unique(nat_spk))
+            }
+            tts_speaker_inventory = {
+                str(speaker): int(np.sum(tts_spk == speaker))
+                for speaker in sorted(np.unique(tts_spk))
+            }
+            cramers_v = _cramers_v(nat_lab, nat_spk)
+            rv, rv_p, rv_null_med = _rv_with_permutation(nat_x, nat_lab, nat_spk)
+            speaker_probe = _grouped_probe(nat_x, nat_spk, nat_utt)
             results[f"{model}_l{layer}"] = {
                 "model": model,
                 "layer": layer,
                 "n_natural_tokens": int(nat_x.shape[0]),
                 "n_tts_tokens": int(tts_x.shape[0]),
                 "n_natural_utterances": int(len(np.unique(nat_utt))),
-                "n_natural_phoneme_classes": int(len(np.unique(nat_lab))),
+                "n_tts_utterances": int(len(np.unique(tts_utt))),
+                "n_natural_speakers": int(len(np.unique(nat_spk))),
+                "n_tts_speakers": int(len(np.unique(tts_spk))),
+                "natural_speaker_inventory": natural_speaker_inventory,
+                "tts_speaker_inventory": tts_speaker_inventory,
                 "natural_phoneme_probe": nat_ph_probe,
                 "tts_phoneme_probe": tts_ph_probe,
-                "natural_phoneme_probe_speaker_controlled": nat_ph_probe_ctrl,
-                "tts_phoneme_probe_utterance_controlled": tts_ph_probe_ctrl,
-                "cramers_v_ph_spk": cramers_v,
-                "ph_spk_rv": rv,
-                "ph_spk_rv_p_perm": rv_p,
-                "ph_spk_rv_null_median": rv_null_med,
+                "natural_phoneme_probe_per_utterance_controlled": nat_ph_probe_ctrl,
+                "tts_phoneme_probe_per_utterance_controlled": tts_ph_probe_ctrl,
+                "natural_speaker_probe": speaker_probe,
+                "cramers_v_ph_speaker": cramers_v,
+                "ph_speaker_rv": rv,
+                "ph_speaker_rv_p_perm": rv_p,
+                "ph_speaker_rv_null_median": rv_null_med,
+                "residualization_note": "Per-utterance mean removal is symmetric but is not a speaker-balanced design; repeated and unequal natural author IDs and the single TTS provider identity remain structurally unmatched.",
             }
             d = results[f"{model}_l{layer}"]
             logger.info(
-                "[%s l%s] ph-nat=%.3f ph-tts=%.3f | ctrl-nat=%.3f ctrl-tts=%.3f | CramV=%.3f | RV=%.3f (p=%.2f)",
+                "[%s l%s] ph-nat=%.3f ph-tts=%.3f | utterance-ctrl nat=%.3f tts=%.3f | speakers nat=%d tts=%d",
                 model, layer,
                 d["natural_phoneme_probe"]["accuracy"] or float("nan"),
                 d["tts_phoneme_probe"]["accuracy"] or float("nan"),
-                d["natural_phoneme_probe_speaker_controlled"]["accuracy"] or float("nan"),
-                d["tts_phoneme_probe_utterance_controlled"]["accuracy"] or float("nan"),
-                cramers_v, rv, rv_p,
+                d["natural_phoneme_probe_per_utterance_controlled"]["accuracy"] or float("nan"),
+                d["tts_phoneme_probe_per_utterance_controlled"]["accuracy"] or float("nan"),
+                d["n_natural_speakers"], d["n_tts_speakers"],
             )
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    out_json = out_dir / "ph_spk_disentangle.json"
-    out_json.write_text(json.dumps({
-        "meta": {"models": models, "layers": layers, "level": level},
+    result = {
+        "meta": {
+            "dataset": "mdc_tts",
+            "run_id": "mdc_en_phoneme_20260807_f5_full",
+            "models": models,
+            "layers": layers,
+            "level": level,
+            "conditions": ["natural", "f5_tts"],
+            "tts_provider": "f5_tts",
+            "paired_keys": sorted(expected_ids),
+            "n_paired_keys": len(expected_ids),
+            "arm_record_counts": {cond: len(ids) for cond, ids in arm_ids.items()},
+            "speaker_definition": "natural speaker_id=author:<source_author_id>; TTS speaker_id=tts:f5_tts",
+            "speaker_balance_status": "not_balanced: repeated and unequal natural source-author IDs across 50 utterances and one provider-level TTS speaker",
+            "residualization": "symmetric per-utterance mean removal in each arm; not speaker-balanced",
+            "embedding_dir": str(embeddings_dir),
+            "embedding_input_json_count": n_json,
+            "embedding_input_npy_count": n_npy,
+            "embedding_input_inventory_sha256": inventory_hash,
+            "manifest_path": str(manifest_path),
+            "manifest_sha256": _sha256(manifest_path),
+            "script_path": str(Path(__file__).resolve()),
+            "script_sha256": _sha256(Path(__file__).resolve()),
+            "helper_script_path": str(PROJECT_ROOT / "scripts/16_feature_separability.py"),
+            "helper_script_sha256": _sha256(PROJECT_ROOT / "scripts/16_feature_separability.py"),
+            "seed": RNG_SEED,
+            "grouping": "paired_key for phoneme probes; speaker_id for natural author confounding metrics",
+            "note": "Results are representation-level controls and do not establish MDC English TFG or SyncNet effects.",
+        },
         "results": results,
-    }, ensure_ascii=False, indent=2), encoding="utf-8")
+    }
+    out_json = out_dir / "ph_spk_disentangle.json"
+    out_json.write_text(
+        json.dumps(_json_safe(result), ensure_ascii=False, indent=2, allow_nan=False),
+        encoding="utf-8",
+    )
     logger.info("Wrote %s", out_json)
 
-    # ---- Console summary --------------------------------------------------
     print("\n=== B5 Ph/Spk disentanglement ===")
     for key, d in sorted(results.items()):
-        np_ = d["natural_phoneme_probe"]
-        tp = d["tts_phoneme_probe"]
-        nc = d["natural_phoneme_probe_speaker_controlled"]
-        tc = d["tts_phoneme_probe_utterance_controlled"]
-        print("%-12s ph-nat=%.3f ph-tts=%.3f | ctrl-nat=%.3f ctrl-tts=%.3f | CramV=%.3f | RV=%.3f (p=%.2f)" % (
-            key, np_["accuracy"] or 0, tp["accuracy"] or 0,
-            nc["accuracy"] or 0, tc["accuracy"] or 0,
-            d["cramers_v_ph_spk"], d["ph_spk_rv"], d["ph_spk_rv_p_perm"]))
-        print("   nat-tts diff raw=%.3f  symmetric-ctrl=%.3f" % (
-            (np_["accuracy"] or 0) - (tp["accuracy"] or 0),
-            (nc["accuracy"] or 0) - (tc["accuracy"] or 0)))
+        print(
+            "%-12s ph-nat=%.3f ph-tts=%.3f | ctrl-nat=%.3f ctrl-tts=%.3f | speakers=%d/%d"
+            % (
+                key,
+                d["natural_phoneme_probe"]["accuracy"] or 0,
+                d["tts_phoneme_probe"]["accuracy"] or 0,
+                d["natural_phoneme_probe_per_utterance_controlled"]["accuracy"] or 0,
+                d["tts_phoneme_probe_per_utterance_controlled"]["accuracy"] or 0,
+                d["n_natural_speakers"], d["n_tts_speakers"],
+            )
+        )
     return 0
 
 
@@ -329,6 +445,11 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--layers", type=str, default="6,10")
     parser.add_argument("--level", type=str, default="viseme")
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
+    parser.add_argument(
+        "--manifest",
+        type=Path,
+        default=PROJECT_ROOT / "runs/mdc_en_phoneme_20260807_f5_full/03_alignment/alignment.json",
+    )
     return parser.parse_args(argv)
 
 
@@ -336,7 +457,7 @@ def main(argv: list[str] | None = None) -> int:
     args = _parse_args(argv)
     models = [m.strip().lower() for m in args.models.split(",") if m.strip()]
     layers = [int(x) for x in args.layers.split(",") if x.strip()]
-    return run(args.embeddings_dir, models, layers, args.level, args.out_dir)
+    return run(args.embeddings_dir, models, layers, args.level, args.out_dir, args.manifest)
 
 
 if __name__ == "__main__":

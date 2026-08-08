@@ -40,7 +40,7 @@ import numpy as np
 # Path set-up
 # ---------------------------------------------------------------------------
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from tfg_feature_common import TARGET_SR, OUTPUT_BASE, EmbeddingRecord, embedding_file_stem
+from tfg_feature_common import TARGET_SR, OUTPUT_BASE, embedding_file_stem
 from manifest import load_manifest
 
 # ---------------------------------------------------------------------------
@@ -112,12 +112,10 @@ def _compute_frame_stride(model_config: Any) -> int:
     strides = getattr(model_config, "conv_stride", None)
     if strides is None:
         # Fallback: most HuBERT/wav2vec2 base models use 320-sample stride
-        _strides = getattr(model_config, "conv_stride", [5, 2, 2, 2, 2, 2, 2])
-    else:
-        _strides = strides
+        strides = [5, 2, 2, 2, 2, 2, 2]
     stride = 1
-    for s in _strides:
-        stride *= s
+    for value in strides:
+        stride *= int(value)
     return stride
 
 
@@ -146,7 +144,8 @@ def load_model(
     frame_stride : int
         Number of audio samples per output frame.
     num_layers : int
-        Total number of Transformer layers (including embedding layer).
+        Number of Transformer layers. Valid saved-layer indices are
+        ``0`` (input representation) through ``num_layers`` (final output).
     """
     if torch is None:
         raise ImportError("torch is required; install with: pip install torch")
@@ -193,7 +192,8 @@ def extract_frame_embeddings(
     sample_rate : int
         Audio sample rate in Hz (must be 16000).
     layers : list[int]
-        0-indexed Transformer layer indices to extract.
+        Hidden-state indices to extract. Index 0 is the input representation;
+        indices 1 through ``num_hidden_layers`` are Transformer outputs.
     device : str
         Torch device string.
 
@@ -222,12 +222,13 @@ def extract_frame_embeddings(
     frame_stride = _compute_frame_stride(model.config)
     n_frames = hidden_states[0].shape[1]
 
-    frame_times = np.arange(n_frames, dtype=np.float32) * (
-        frame_stride / TARGET_SR
+    frame_times = (
+        np.arange(n_frames, dtype=np.float32) * (frame_stride / TARGET_SR)
+        + (frame_stride / TARGET_SR) / 2.0
     )
 
     embedding_dim = _get_embedding_dim(model.config)
-    valid_layers = [l for l in layers if l < model.config.num_hidden_layers]
+    valid_layers = [l for l in layers if 0 <= l <= model.config.num_hidden_layers]
     if len(valid_layers) != len(layers):
         logger.warning(
             "Requested layers %s exceed model depth (%d); using subset %s",
@@ -236,7 +237,7 @@ def extract_frame_embeddings(
         layers = valid_layers
     emb = np.zeros((len(layers), n_frames, embedding_dim), dtype=np.float32)
     for i, layer_idx in enumerate(layers):
-        emb[i] = hidden_states[layer_idx + 1].squeeze(0).cpu().numpy()
+        emb[i] = hidden_states[layer_idx].squeeze(0).cpu().numpy()
 
     return emb, frame_times
 
@@ -295,11 +296,7 @@ def _frame_to_token_pooling(
 def _make_output_stem(
     sample_id: int | str, condition: str, variant: str, model_key: str
 ) -> str:
-    """Return the filename stem for a given sample/model combination.
-
-    >>> _make_output_stem(1, "natural", "raw", "hubert")
-    '1_natural_raw_hubert'
-    """
+    """Return the filename stem for a given sample/model combination."""
     return f"{sample_id}_{condition}_{variant}_{model_key}"
 
 
@@ -422,7 +419,7 @@ def process_all(
 
         if not filepath.exists():
             logger.warning(
-                "Audio file not found for sample %d (%s/%s): %s",
+                "Audio file not found for sample %s (%s/%s): %s",
                 sample_id, condition, variant, filepath,
             )
             counts["failed"] += 1
@@ -433,7 +430,7 @@ def process_all(
             duration_s = len(audio) / sr
         except Exception as exc:
             logger.error(
-                "Failed to load audio sample %d (%s/%s): %s",
+                "Failed to load audio sample %s (%s/%s): %s",
                 sample_id, condition, variant, exc,
             )
             counts["failed"] += 1
@@ -443,6 +440,7 @@ def process_all(
             stem = embedding_file_stem(entry, model_key, variant)
             npy_path = output_dir / f"{stem}.npy"
             json_path = output_dir / f"{stem}.json"
+            npy_path.parent.mkdir(parents=True, exist_ok=True)
 
             if npy_path.exists() and json_path.exists():
                 logger.debug("Skipping existing: %s", stem)
@@ -473,9 +471,9 @@ def process_all(
                 )
 
             # Record the layers ACTUALLY stored, not the requested list:
-            # ``extract_frame_embeddings`` drops any layer >= model depth, so
-            # the NPY rows may be a strict subset of the requested layers.
-            stored_layers = [l for l in layers if l < num_layers]
+            # ``extract_frame_embeddings`` drops any layer above the final
+            # hidden-state index, so the NPY rows may be a strict subset.
+            stored_layers = [l for l in layers if 0 <= l <= num_layers]
             metadata: dict = {
                 "sample_id": sample_id,
                 "utterance_id": entry.get("utterance_id", str(sample_id)),
@@ -485,16 +483,30 @@ def process_all(
                 "split": entry.get("split"),
                 "representation_only": bool(entry.get("representation_only", False)),
                 "alignment_source": entry.get("alignment_source", "missing"),
+                "alignment_manifest": entry.get("alignment_manifest"),
+                "alignment_manifest_sha256": entry.get("alignment_manifest_sha256"),
                 "condition": condition,
                 "tts_provider": entry.get("tts_provider"),
                 "variant": variant,
                 "embedding_stem": entry.get("embedding_stem", entry.get("embedding_file_stem")),
                 "model": model_key,
+                "model_id": MODEL_REGISTRY[model_key],
                 "sample_rate": sr,
                 "duration_s": round(duration_s, 4),
+                "audio_path": str(filepath),
+                "audio_sha256": entry.get("source_sha256", entry.get("natural_sha256")),
+                "preprocessing": {
+                    "mono": True,
+                    "target_sample_rate": TARGET_SR,
+                    "resampling": "librosa.load",
+                    "normalization": "librosa.load_default_float32",
+                },
+                "frame_stride_samples": int(frame_stride),
+                "frame_times_s": [round(float(t), 6) for t in frame_times],
                 "layers": stored_layers,
                 "num_frames": int(n_frames),
                 "embedding_dim": embedding_dim,
+                "shape": [len(stored_layers), int(n_frames), int(embedding_dim)],
                 "filepath": str(npy_path.relative_to(output_dir.parent.parent)),
                 "tokens": token_entries,
             }

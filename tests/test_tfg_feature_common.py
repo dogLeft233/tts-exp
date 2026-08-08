@@ -28,6 +28,7 @@ from tfg_feature_common import (
     bootstrap_paired_ci,
     fdr_bh_correction,
     ensure_output_dirs,
+    embedding_file_stem,
 )
 
 
@@ -111,6 +112,33 @@ def test_pilot_samples_are_subset():
 def test_tts_constants_are_known():
     assert PRIMARY_TTS == "faster_qwen3"
     assert VALIDATION_TTS == "f5_tts"
+
+
+def test_embedding_stem_uses_stable_sample_id_for_mdc_utterance():
+    stem = embedding_file_stem(
+        {
+            "sample_id": "en_001",
+            "utterance_id": "mdc_tts/en_001/natural",
+            "condition": "natural",
+            "variant": "raw",
+        },
+        "hubert",
+    )
+    assert stem == "en_001_natural_raw_hubert"
+    assert "/" not in stem
+
+
+def test_embedding_stem_sanitizes_explicit_stem():
+    stem = embedding_file_stem(
+        {
+            "sample_id": "en_001",
+            "condition": "tts",
+            "embedding_stem": "mdc_tts/en_001/tts",
+        },
+        "xlsr",
+    )
+    assert stem == "mdc_tts_en_001_tts_xlsr"
+    assert "/" not in stem
 
 
 # ============================================================================

@@ -22,6 +22,7 @@ _SCRIPT_PATH = (
 _spec = importlib.util.spec_from_file_location(
     "_ssl_embeddings", str(_SCRIPT_PATH)
 )
+assert _spec is not None and _spec.loader is not None
 _ssl_embeddings = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_ssl_embeddings)
 
@@ -180,9 +181,122 @@ class TestOutputPaths:
         assert len(parts) == 4
 
 
-# ---------------------------------------------------------------------------
-# Frame stride computation (mock)
-# ---------------------------------------------------------------------------
+    def test_mdc_string_id_writes_flat_embedding_outputs(self, tmp_path, monkeypatch):
+        audio_path = tmp_path / "natural.wav"
+        audio_path.touch()
+        output_dir = tmp_path / "run" / "embeddings"
+
+        monkeypatch.setattr(
+            _ssl_embeddings,
+            "load_model",
+            lambda model_name, device="cpu": (object(), 3, 320, 1),
+        )
+        monkeypatch.setattr(
+            _ssl_embeddings,
+            "_load_audio_mono",
+            lambda filepath: (np.zeros(1600, dtype=np.float32), 16000),
+        )
+        monkeypatch.setattr(
+            _ssl_embeddings,
+            "extract_frame_embeddings",
+            lambda model, audio, sample_rate, layers, device="cpu": (
+                np.ones((1, 4, 3), dtype=np.float32),
+                np.array([0.0, 0.02, 0.04, 0.06], dtype=np.float32),
+            ),
+        )
+
+        manifest = [{
+            "sample_id": "en_001",
+            "utterance_id": "mdc_tts/en_001/natural",
+            "condition": "natural",
+            "variant": "raw",
+            "audio_path": str(audio_path),
+            "dataset": "mdc_tts",
+        }]
+        counts = _ssl_embeddings.process_all(
+            manifest, ["hubert"], [0], output_dir, device="cpu"
+        )
+
+        stem = "en_001_natural_raw_hubert"
+        assert counts == {"processed": 1, "skipped": 0, "failed": 0}
+        assert (output_dir / f"{stem}.npy").is_file()
+        assert (output_dir / f"{stem}.json").is_file()
+        assert not (output_dir / "mdc_tts").exists()
+
+        second_counts = _ssl_embeddings.process_all(
+            manifest, ["hubert"], [0], output_dir, device="cpu"
+        )
+        assert second_counts == {"processed": 0, "skipped": 1, "failed": 0}
+
+
+class TestExtractionLayerMapping:
+    """Tests for hidden-state index semantics."""
+
+    def test_hidden_state_indices_are_inclusive_and_unshifted(self, monkeypatch):
+        class FakeConfig:
+            num_hidden_layers = 2
+            conv_stride = [1]
+            hidden_size = 2
+
+        class FakeHiddenState:
+            def __init__(self, value):
+                self._array = np.full((1, 3, 2), value, dtype=np.float32)
+                self.shape = self._array.shape
+
+            def squeeze(self, axis):
+                return self
+
+            def cpu(self):
+                return self
+
+            def numpy(self):
+                return self._array.squeeze(0)
+
+        hidden_states = tuple(FakeHiddenState(value) for value in range(3))
+
+        class FakeModel:
+            config = FakeConfig()
+
+            def __call__(self, waveform, output_hidden_states):
+                return type("Outputs", (), {"hidden_states": hidden_states})()
+
+        class FakeTorch:
+            class _NoGrad:
+                def __enter__(self):
+                    return self
+
+                def __exit__(self, *args):
+                    return False
+
+            @staticmethod
+            def from_numpy(audio):
+                return FakeTensor()
+
+            @staticmethod
+            def no_grad():
+                return FakeTorch._NoGrad()
+
+        class FakeTensor:
+            def copy(self):
+                return self
+
+            def float(self):
+                return self
+
+            def unsqueeze(self, axis):
+                return self
+
+            def to(self, device):
+                return self
+
+        monkeypatch.setattr(_ssl_embeddings, "torch", FakeTorch)
+        embeddings, _ = _ssl_embeddings.extract_frame_embeddings(
+            FakeModel(), np.zeros(3, dtype=np.float32), 16000, [0, 1, 2]
+        )
+        assert embeddings.shape == (3, 3, 2)
+        np.testing.assert_array_equal(embeddings[:, 0, 0], [0.0, 1.0, 2.0])
+
+
 
 
 class TestFrameStride:

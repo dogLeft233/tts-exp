@@ -34,6 +34,7 @@ Usage
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib.util
 import json
 import logging
@@ -53,12 +54,13 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-DEFAULT_EMBEDDINGS_DIR = PROJECT_ROOT / "results/aishell100_phoneme/embeddings"
+DEFAULT_EMBEDDINGS_DIR = PROJECT_ROOT / "runs/mdc_en_phoneme_20260807_f5_full/04_embeddings"
 DEFAULT_TEXTGRID_DIRS = {
-    "natural": PROJECT_ROOT / "results/aishell100_phoneme/mfa_full/out/natural",
-    "tts": PROJECT_ROOT / "results/aishell100_phoneme/mfa_full/out/tts",
+    "natural": PROJECT_ROOT / "runs/mdc_en_phoneme_20260807_f5_full/03_alignment/mfa_out/natural",
+    "tts": PROJECT_ROOT / "runs/mdc_en_phoneme_20260807_f5_full/03_alignment/mfa_out/tts",
 }
-DEFAULT_OUT_DIR = PROJECT_ROOT / "results/aishell100_phoneme/per_phoneme_kld"
+DEFAULT_MANIFEST = PROJECT_ROOT / "runs/mdc_en_phoneme_20260807_f5_full/03_alignment/alignment.json"
+DEFAULT_OUT_DIR = PROJECT_ROOT / "runs/mdc_en_phoneme_20260807_f5_full/09_per_phoneme_kld"
 
 FRAME_STRIDE = 320
 TARGET_SR = 16000
@@ -72,6 +74,26 @@ ASPIRATION_PAIRS = [("b", "p"), ("d", "t"), ("g", "k"), ("zh", "ch"), ("j", "q")
 
 _TONE_RE = re.compile(r"[˥-˩ˊˋ̀-ͯ]+$")
 _VOWEL_RE = re.compile(r"[aæɐɑɒeəɛɜɘɵɤoɔøɞʊuʉɯyʏiɪɨ]")
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _json_safe(value):
+    if isinstance(value, dict):
+        return {key: _json_safe(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_json_safe(item) for item in value]
+    if isinstance(value, (float, np.floating)):
+        return float(value) if np.isfinite(value) else None
+    if isinstance(value, np.ndarray):
+        return _json_safe(value.tolist())
+    return value
 
 
 def strip_tone(symbol: str) -> str:
@@ -133,11 +155,15 @@ def pool_frames_in_spans(layer_emb: np.ndarray, spans: list[tuple[float, float]]
     return out
 
 
-def _gaussian_kld_sym(x: np.ndarray, y: np.ndarray, n_components: int) -> float:
+def _gaussian_kld_sym(x: np.ndarray, y: np.ndarray, n_components: int) -> float | None:
     from sklearn.covariance import LedoitWolf
     from sklearn.decomposition import PCA
 
-    n_comp = min(n_components, max(2, len(x) + len(y) - 2))
+    if len(x) < 2 or len(y) < 2:
+        return None
+    n_comp = min(n_components, len(x) + len(y) - 2, x.shape[1])
+    if n_comp < 2:
+        return None
     combined = np.vstack([x, y])
     proj = PCA(n_components=n_comp, random_state=RNG_SEED).fit_transform(combined)
     xp, yp = proj[: len(x)], proj[len(x):]
@@ -145,43 +171,66 @@ def _gaussian_kld_sym(x: np.ndarray, y: np.ndarray, n_components: int) -> float:
     cov_x = LedoitWolf().fit(xp).covariance_
     cov_y = LedoitWolf().fit(yp).covariance_
 
-    def _kl(mu_a, cov_a, mu_b, cov_b) -> float:
+    def _kl(mu_a, cov_a, mu_b, cov_b) -> float | None:
         d = cov_a.shape[0]
-        reg = 1e-6 * (np.trace(cov_a) + np.trace(cov_b)) / (2.0 * d)
+        reg = max(1e-8, 1e-6 * (np.trace(cov_a) + np.trace(cov_b)) / (2.0 * d))
         cov_a_reg = cov_a + reg * np.eye(d)
         cov_b_reg = cov_b + reg * np.eye(d)
         sign_a, logdet_a = np.linalg.slogdet(cov_a_reg)
         sign_b, logdet_b = np.linalg.slogdet(cov_b_reg)
         if sign_a <= 0 or sign_b <= 0:
-            return float("nan")
-        term1 = float(0.5 * (logdet_b - logdet_a - d))
-        term2 = float(0.5 * np.trace(cov_b_reg @ np.linalg.inv(cov_a_reg)))
-        diff = mu_b - mu_a
-        term3 = float(0.5 * diff @ np.linalg.inv(cov_b_reg) @ diff)
-        return term1 + term2 + term3
+            return None
+        try:
+            trace_term = np.trace(np.linalg.solve(cov_b_reg, cov_a_reg))
+            diff = mu_b - mu_a
+            mean_term = diff @ np.linalg.solve(cov_b_reg, diff)
+        except np.linalg.LinAlgError:
+            return None
+        value = 0.5 * (logdet_b - logdet_a - d + trace_term + mean_term)
+        return float(value) if np.isfinite(value) else None
 
     kld_xy = _kl(mu_x, cov_x, mu_y, cov_y)
     kld_yx = _kl(mu_y, cov_y, mu_x, cov_x)
-    if np.isnan(kld_xy) or np.isnan(kld_yx):
-        return float("nan")
+    if kld_xy is None or kld_yx is None:
+        return None
     return float(0.5 * (kld_xy + kld_yx))
 
 
-def _grouped_binary_metrics(x: np.ndarray, y: np.ndarray, groups: np.ndarray, n_components: int) -> dict:
-    """Grouped (by utterance) natural-vs-TTS logistic probe: accuracy + AUC.
+def _match_occurrences(
+    natural: dict[str, Any],
+    tts: dict[str, Any],
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, int]:
+    """Match same-base-phone occurrences within each paired utterance."""
+    nat_vecs = np.asarray(natural["vecs"])
+    tts_vecs = np.asarray(tts["vecs"])
+    nat_by_utt: dict[str, list[np.ndarray]] = defaultdict(list)
+    tts_by_utt: dict[str, list[np.ndarray]] = defaultdict(list)
+    for vec, utt in zip(nat_vecs, natural["utterances"]):
+        nat_by_utt[str(utt)].append(vec)
+    for vec, utt in zip(tts_vecs, tts["utterances"]):
+        tts_by_utt[str(utt)].append(vec)
+    x_out: list[np.ndarray] = []
+    y_out: list[np.ndarray] = []
+    g_out: list[str] = []
+    for utt in sorted(set(nat_by_utt) & set(tts_by_utt)):
+        n = min(len(nat_by_utt[utt]), len(tts_by_utt[utt]))
+        x_out.extend(nat_by_utt[utt][:n])
+        y_out.extend(tts_by_utt[utt][:n])
+        g_out.extend([utt] * n)
+    x = np.stack(x_out) if x_out else np.empty((0, nat_vecs.shape[1]))
+    y = np.stack(y_out) if y_out else np.empty((0, tts_vecs.shape[1]))
+    groups = np.asarray(g_out, dtype=object)
+    return x, y, groups, len(x_out)
 
-    PCA and scaler are fit inside each CV fold via a Pipeline.  Folds are
-    GroupShuffleSplit by utterance so no utterance straddles train/test.
-    """
+
+def _grouped_binary_metrics(x: np.ndarray, y: np.ndarray, groups: np.ndarray, n_components: int) -> dict:
+    """Grouped natural-vs-TTS logistic probe with PCA fit inside each fold."""
     from sklearn.decomposition import PCA
     from sklearn.linear_model import LogisticRegression
     from sklearn.model_selection import GroupShuffleSplit, cross_val_score
     from sklearn.pipeline import Pipeline
     from sklearn.preprocessing import StandardScaler
 
-    # Cap components so the fixed PCA always fits the smallest training fold
-    # (train size >= 4/5 * (len(x)+len(y)); min_class_samples=20/cond → train
-    # >= 32). 15 dims is ample for phone-level natural-vs-TTS discrimination.
     n_comp = min(n_components, 15, max(2, len(x) + len(y) - 2))
     X = np.vstack([x, y])
     labels = np.array([0] * len(x) + [1] * len(y))
@@ -196,12 +245,14 @@ def _grouped_binary_metrics(x: np.ndarray, y: np.ndarray, groups: np.ndarray, n_
     accs: list[float] = []
     aucs: list[float] = []
     for seed in range(CV_REPEATS):
-        cv = GroupShuffleSplit(n_splits=CV_SPLITS, test_size=1.0 / CV_SPLITS, random_state=seed)
+        cv = GroupShuffleSplit(
+            n_splits=CV_SPLITS,
+            test_size=1.0 / CV_SPLITS,
+            random_state=seed,
+        )
         try:
-            a = cross_val_score(pipe, X, labels, groups=groups, cv=cv, scoring="accuracy")
-            u = cross_val_score(pipe, X, labels, groups=groups, cv=cv, scoring="roc_auc")
-            accs.extend(a.tolist())
-            aucs.extend(u.tolist())
+            accs.extend(cross_val_score(pipe, X, labels, groups=groups, cv=cv, scoring="accuracy").tolist())
+            aucs.extend(cross_val_score(pipe, X, labels, groups=groups, cv=cv, scoring="roc_auc").tolist())
         except ValueError:
             continue
     if not accs:
@@ -247,16 +298,17 @@ def gather_phone_vectors(
     Returns ``{condition: {base_phone: {"vecs": ndarray, "utterances": ndarray}}}``.
     """
     raw: dict[str, dict[str, dict]] = {
-        cond: defaultdict(lambda: {"vecs": [], "utts": []}) for cond in ("natural", "faster_qwen3")
+        cond: defaultdict(lambda: {"vecs": [], "utts": []}) for cond in ("natural", "tts")
     }
     for meta in entries:
         if meta.get("model") != model:
             continue
-        cond = f16._analysis_condition(meta)
-        if cond not in raw:
+        if meta.get("variant") != "raw":
             continue
+        analysis_cond = f16._analysis_condition(meta)
+        cond = "natural" if analysis_cond == "natural" else "tts"
         sid = str(meta.get("paired_key", "?"))
-        tg_cond = "tts" if cond == "faster_qwen3" else "natural"
+        tg_cond = "tts" if cond == "tts" else "natural"
         tg = textgrid_dirs[tg_cond] / f"{sid}.TextGrid"
         if not tg.exists():
             continue
@@ -295,6 +347,33 @@ def gather_phone_vectors(
     return out
 
 
+def _input_inventory(
+    entries: list[dict],
+    paired_keys: set[str],
+    model: str,
+) -> tuple[int, int, str]:
+    rows: list[str] = []
+    n_json = 0
+    n_npy = 0
+    for entry in entries:
+        if entry.get("model") != model or entry.get("variant") != "raw":
+            continue
+        sid = str(entry.get("paired_key", entry.get("sample_id", "unknown")))
+        if sid not in paired_keys:
+            continue
+        for key, label in (("_json_path", "json"), ("_npy_path", "npy")):
+            path = Path(entry.get(key, ""))
+            if not path.exists():
+                raise FileNotFoundError(f"Missing embedding input: {path}")
+            rows.append(f"{label}\t{path.name}\t{_sha256(path)}")
+            if label == "json":
+                n_json += 1
+            else:
+                n_npy += 1
+    digest = hashlib.sha256("\n".join(sorted(rows)).encode("utf-8")).hexdigest()
+    return n_json, n_npy, digest
+
+
 def run(
     embeddings_dir: Path,
     model: str,
@@ -303,6 +382,7 @@ def run(
     min_class_samples: int,
     pca_dim: int,
     out_dir: Path,
+    manifest_path: Path,
 ) -> int:
     f16 = _load_f16()
     entries = f16._discover_embedding_files(embeddings_dir)
@@ -310,28 +390,75 @@ def run(
         logger.error("No embedding files in %s", embeddings_dir)
         return 1
 
+    tts_conditions = sorted({f16._analysis_condition(e) for e in entries if f16._analysis_condition(e) != "natural"})
+    if tts_conditions != ["f5_tts"]:
+        raise ValueError(f"Expected exactly one MDC TTS provider f5_tts, found {tts_conditions}")
+    natural_ids = {
+        str(e.get("paired_key", e.get("sample_id", "unknown")))
+        for e in entries
+        if e.get("model") == model and e.get("variant") == "raw"
+        and f16._analysis_condition(e) == "natural"
+    }
+    tts_ids = {
+        str(e.get("paired_key", e.get("sample_id", "unknown")))
+        for e in entries
+        if e.get("model") == model and e.get("variant") == "raw"
+        and f16._analysis_condition(e) == "f5_tts"
+    }
+    expected_ids = {f"en_{i:03d}" for i in range(1, 51)}
+    if natural_ids != expected_ids or tts_ids != expected_ids:
+        raise ValueError(
+            "MDC B3 requires exact natural and f5_tts en_001..en_050 coverage; "
+            f"natural_missing={sorted(expected_ids - natural_ids)} "
+            f"natural_extra={sorted(natural_ids - expected_ids)} "
+            f"tts_missing={sorted(expected_ids - tts_ids)} "
+            f"tts_extra={sorted(tts_ids - expected_ids)}"
+        )
+    paired_keys = natural_ids & tts_ids
+    n_json, n_npy, inventory_hash = _input_inventory(entries, paired_keys, model)
+
     per_layer: dict[int, dict] = {}
+    exclusions_by_layer: dict[str, dict[str, str]] = {}
+    support_inventory_by_layer: dict[str, dict[str, dict[str, int]]] = {}
     for layer in layers:
         data = gather_phone_vectors(entries, model, layer, textgrid_dirs, f16)
-        classes = sorted(set(data["natural"]) & set(data["faster_qwen3"]))
+        classes = sorted(set(data["natural"]) | set(data["tts"]))
         class_out: dict[str, dict] = {}
+        excluded: dict[str, str] = {}
+        support_inventory: dict[str, dict[str, int]] = {}
         kld_list: list[float] = []
         auc_list: list[float] = []
         n_list: list[float] = []
         for base in classes:
-            x = data["natural"][base]["vecs"]
-            y = data["faster_qwen3"][base]["vecs"]
-            groups_nat = data["natural"][base]["utterances"]
-            groups_tts = data["faster_qwen3"][base]["utterances"]
-            if len(x) < min_class_samples or len(y) < min_class_samples:
+            natural_entry = data["natural"].get(base)
+            tts_entry = data["tts"].get(base)
+            natural_raw = len(natural_entry["vecs"]) if natural_entry else 0
+            tts_raw = len(tts_entry["vecs"]) if tts_entry else 0
+            support_inventory[base] = {
+                "natural_raw": int(natural_raw),
+                "tts_raw": int(tts_raw),
+                "matched": 0,
+            }
+            if natural_entry is None or tts_entry is None:
+                excluded[base] = "missing_condition_support"
                 continue
-            # Same text → equal per-phone counts; matched subsample guards it.
-            n = min(len(x), len(y))
-            kld = _gaussian_kld_sym(x[:n], y[:n], pca_dim)
-            metrics = _grouped_binary_metrics(x, y, np.concatenate([groups_nat, groups_tts]), pca_dim)
-            if np.isnan(kld) or metrics["auc"] is None:
+            x_raw, y_raw, groups, n = _match_occurrences(natural_entry, tts_entry)
+            support_inventory[base]["matched"] = int(n)
+            if natural_raw < min_class_samples or tts_raw < min_class_samples:
+                excluded[base] = "raw_support_below_threshold"
+                continue
+            if n < min_class_samples:
+                excluded[base] = "matched_support_below_threshold"
+                continue
+            kld = _gaussian_kld_sym(x_raw, y_raw, pca_dim)
+            metrics = _grouped_binary_metrics(x_raw, y_raw, np.concatenate([groups, groups]), pca_dim)
+            if kld is None or metrics["auc"] is None:
+                excluded[base] = "nonfinite_kld_or_unavailable_auc"
                 continue
             class_out[base] = {
+                "natural_raw": int(natural_raw),
+                "tts_raw": int(tts_raw),
+                "matched": int(n),
                 "n": int(n),
                 "vowel": is_vowel(base),
                 "kld_sym": kld,
@@ -374,6 +501,8 @@ def run(
 
         per_layer[layer] = {
             "n_classes": len(class_out),
+            "n_classes_tested": len(class_out),
+            "n_classes_excluded": len(excluded),
             "spearman_kld_auc": rho_all,
             "spearman_kld_auc_vowel": rho_vowel,
             "spearman_kld_auc_consonant": rho_cons,
@@ -381,11 +510,14 @@ def run(
             "spearman_n_auc": rho_n_auc,
             "spearman_kld_auc_partial_n": rho_partial,
             "classes": class_out,
+            "exclusions": excluded,
             "aspiration_pairs": aspiration,
         }
+        exclusions_by_layer[str(layer)] = excluded
+        support_inventory_by_layer[str(layer)] = support_inventory
         logger.info(
-            "[%s] %s: %d classes, Spearman(KLD,AUC)=%s partial(n)=%s (V %s / C %s)",
-            model, layer, len(class_out),
+            "[%s] %s: %d tested, %d excluded, Spearman(KLD,AUC)=%s partial(n)=%s (V %s / C %s)",
+            model, layer, len(class_out), len(excluded),
             "%.3f" % rho_all if rho_all is not None else "n/a",
             "%.3f" % rho_partial if rho_partial is not None else "n/a",
             "%.3f" % rho_vowel if rho_vowel is not None else "n/a",
@@ -395,18 +527,43 @@ def run(
     out_dir.mkdir(parents=True, exist_ok=True)
     result = {
         "meta": {
+            "dataset": "mdc_tts",
+            "run_id": "mdc_en_phoneme_20260807_f5_full",
             "model": model,
             "layers": layers,
             "min_class_samples": min_class_samples,
             "pca_dim": pca_dim,
+            "seed": RNG_SEED,
+            "mfa_textgrid_dirs": {key: str(path) for key, path in textgrid_dirs.items()},
+            "manifest_path": str(manifest_path),
+            "manifest_sha256": _sha256(manifest_path),
+            "script_path": str(Path(__file__).resolve()),
+            "script_sha256": _sha256(Path(__file__).resolve()),
+            "helper_script_path": str(PROJECT_ROOT / "scripts/16_feature_separability.py"),
+            "helper_script_sha256": _sha256(PROJECT_ROOT / "scripts/16_feature_separability.py"),
+            "embedding_dir": str(embeddings_dir),
+            "embedding_input_json_count": n_json,
+            "embedding_input_npy_count": n_npy,
+            "embedding_input_inventory_sha256": inventory_hash,
+            "conditions": ["natural", "f5_tts"],
+            "tts_provider": "f5_tts",
+            "paired_keys": sorted(paired_keys),
+            "n_paired_keys": len(paired_keys),
+            "n_records": len(entries),
             "unit": "MFA phone intervals (TextGrid phones tier), tone-stripped base phone",
-            "classifier": "LR on PCA, GroupShuffleSplit by utterance, accuracy+AUC",
-            "conditions": ["natural", "faster_qwen3"],
+            "classifier": "LR on PCA, GroupShuffleSplit by paired utterance, accuracy+AUC",
+            "matching": "same-base-phone occurrence order within paired utterance; KLD and probe use matched support",
+            "support": "raw natural/TTS support and matched support are recorded; classes below threshold are explicit exclusions",
+            "exclusions_by_layer": exclusions_by_layer,
+            "support_inventory_by_layer": support_inventory_by_layer,
         },
         "results": {str(l): v for l, v in per_layer.items()},
     }
     out_json = out_dir / "per_phoneme_kld.json"
-    out_json.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    out_json.write_text(
+        json.dumps(_json_safe(result), ensure_ascii=False, indent=2, allow_nan=False),
+        encoding="utf-8",
+    )
     logger.info("Wrote %s", out_json)
 
     # ---- Console summary --------------------------------------------------
@@ -440,22 +597,25 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=(__doc__ or "").splitlines()[0])
     parser.add_argument("--embeddings-dir", type=Path, default=DEFAULT_EMBEDDINGS_DIR)
     parser.add_argument("--model", type=str, default="hubert")
-    parser.add_argument("--layers", type=str, default="1,4,7,10")
+    parser.add_argument("--layers", type=str, default="0,6,11,12")
     parser.add_argument("--min-class-samples", type=int, default=_MIN_SAMPLES)
     parser.add_argument("--pca-dim", type=int, default=_PCA_DIM)
     parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR)
     parser.add_argument("--natural-tg", type=Path, default=DEFAULT_TEXTGRID_DIRS["natural"])
     parser.add_argument("--tts-tg", type=Path, default=DEFAULT_TEXTGRID_DIRS["tts"])
+    parser.add_argument(
+        "--manifest",
+        type=Path,
+        default=DEFAULT_MANIFEST,
+    )
     return parser.parse_args(argv)
-
-
 def main(argv: list[str] | None = None) -> int:
     args = _parse_args(argv)
     layers = [int(x) for x in args.layers.split(",") if x.strip()]
     tg_dirs = {"natural": args.natural_tg, "tts": args.tts_tg}
     return run(
         args.embeddings_dir, args.model, layers, tg_dirs,
-        args.min_class_samples, args.pca_dim, args.out_dir,
+        args.min_class_samples, args.pca_dim, args.out_dir, args.manifest,
     )
 
 

@@ -73,6 +73,18 @@ MIN_CLASS_SAMPLES: int = 3
 """Minimum samples per class for per-class metrics."""
 
 
+def _is_analysis_token(token: dict) -> bool:
+    """Return whether a token is a speech unit eligible for classification."""
+    if any(bool(token.get(field, False)) for field in (
+        "is_silence", "is_noise", "is_unknown", "is_non_speech",
+    )):
+        return False
+    viseme = str(token.get("viseme") or "").strip().lower()
+    if viseme in {"sil", "sp", "spn", "pau", "noise"}:
+        return False
+    return True
+
+
 def _analysis_condition(meta: dict) -> str:
     """Return provider-specific condition while accepting legacy metadata."""
     if meta.get("condition") == "tts":
@@ -486,12 +498,15 @@ def _pool_frames_for_layer(
     frame_times = np.arange(n_frames, dtype=np.float32) * (frame_stride / sample_rate)
 
     pooled_list: list[np.ndarray] = []
+    phoneme_list: list[str] = []
     initial_list: list[str] = []
     final_list: list[str] = []
     viseme_list: list[str] = []
     tone_list: list[int] = []
 
     for token in tokens:
+        if not _is_analysis_token(token):
+            continue
         if "start_s" not in token or "end_s" not in token:
             continue
         start = float(token["start_s"])
@@ -501,9 +516,16 @@ def _pool_frames_for_layer(
             continue
         vec = layer_embeddings[mask].mean(axis=0)
         pooled_list.append(vec)
-        initial_list.append(str(token.get("initial", "")))
-        final_list.append(str(token.get("final", "")))
-        viseme_list.append(str(token.get("viseme", "")))
+        phoneme = str(
+            token.get("phoneme")
+            or token.get("token")
+            or token.get("viseme")
+            or "other"
+        )
+        phoneme_list.append(phoneme)
+        initial_list.append(str(token.get("initial") or ""))
+        final_list.append(str(token.get("final") or ""))
+        viseme_list.append(str(token.get("viseme") or "other"))
         tone_list.append(int(token.get("tone", 0)))
 
     if not pooled_list:
@@ -511,6 +533,7 @@ def _pool_frames_for_layer(
 
     pooled = np.stack(pooled_list, axis=0)
     labels: dict[str, np.ndarray] = {
+        "phoneme": np.array(phoneme_list, dtype=str),
         "initial": np.array(initial_list, dtype=str),
         "final": np.array(final_list, dtype=str),
         "viseme": np.array(viseme_list, dtype=str),
@@ -532,7 +555,7 @@ def _gather_layer_data(
     condition: str,
     variant: str,
     level: str,
-) -> tuple[np.ndarray, np.ndarray, np.ndarray, list[str], float | None, float | None]:
+) -> tuple[np.ndarray, np.ndarray, np.ndarray, list[int], float | None, float | None]:
     """Pool tokens across all samples for one (model, layer, condition, variant, level).
 
     Returns
@@ -596,15 +619,15 @@ def _gather_layer_data(
 
         all_embeddings.append(pooled)
         all_labels.append(label_map[level])
-        all_groups.append(np.full(pooled.shape[0], str(meta.get("speaker_id", sample_id)), dtype=object))
+        all_groups.append(np.full(pooled.shape[0], sample_id, dtype=object))
 
         # Compute boundary sharpness per sample
         n_frames = layer_emb.shape[0]
         frame_times = np.arange(n_frames, dtype=np.float32) * (frame_stride / target_sr)
         boundaries: list[float] = []
         for token in tokens:
-            end = float(token.get("end_s", 0))
-            boundaries.append(end)
+            if _is_analysis_token(token):
+                boundaries.append(float(token.get("end_s", 0)))
         boundaries = sorted(set(boundaries))
         bs, ss = boundary_sharpness(frame_times, layer_emb, boundaries)
         if not np.isnan(bs):
@@ -639,9 +662,9 @@ def _compute_metrics_for_pool(
     boundary_sharp: float | None,
     segment_stability: float | None,
     do_probe: bool = True,
-) -> dict[str, float | None]:
+) -> dict[str, Any]:
     """Compute all metrics for a pooled set of tokens."""
-    result: dict[str, float | None] = {}
+    result: dict[str, Any] = {}
     result["intra_class_dist"] = intra_class_variance(embeddings, labels)
     result["inter_class_dist"] = inter_class_separation(embeddings, labels)
     result["fisher_ratio"] = fisher_ratio(embeddings, labels)
@@ -708,12 +731,14 @@ def _compute_metrics_per_sample(
         if pooled.shape[0] == 0 or level not in label_map:
             continue
         labels_arr = label_map[level]
-        groups_arr = np.full(pooled.shape[0], str(meta.get("speaker_id", sample_id)), dtype=object)
+        groups_arr = np.full(pooled.shape[0], sample_id, dtype=object)
 
         n_frames = layer_emb.shape[0]
         frame_times = np.arange(n_frames, dtype=np.float32) * (frame_stride / target_sr)
         boundaries: list[float] = sorted({
-            float(token.get("end_s", 0)) for token in tokens
+            float(token.get("end_s", 0))
+            for token in tokens
+            if _is_analysis_token(token)
         })
         bs, ss = boundary_sharpness(frame_times, layer_emb, boundaries)
 
@@ -752,7 +777,9 @@ def _compare_natural_vs_tts(
 
     for variant in ["raw", "gain_matched"]:
         nat_key = ("natural", variant)
-        tts_key = (f"faster_qwen3", variant)  # primary TTS
+        tts_key = ("f5_tts", variant)  # primary MDC TTS when provider is resolved
+        if tts_key not in per_sample:
+            tts_key = ("faster_qwen3", variant)
         if tts_key not in per_sample:
             tts_key = ("tts", variant)
         if nat_key not in per_sample or tts_key not in per_sample:
@@ -801,7 +828,9 @@ def _compare_natural_vs_tts(
                 "p_perm": float(p_perm),
                 "ci_95": [float(ci_low), float(ci_high)],
                 "cohens_d": float(d_val) if not np.isnan(d_val) else None,
+                "n_candidate_pairs": len(common_ids),
                 "n_pairs": len(a_arr),
+                "n_missing_pairs": len(common_ids) - len(a_arr),
             })
     return comparisons
 
@@ -858,6 +887,7 @@ def process_all(
     results: list[dict] = []
     all_comparisons: list[dict] = []
     per_sample_deltas: dict[str, dict[str, float]] = {}
+    support_by_pool: dict[str, dict[str, Any]] = {}
 
     conditions = ["natural", "faster_qwen3", "f5_tts", "tts"]
     variants = ["raw", "gain_matched"]
@@ -906,6 +936,18 @@ def process_all(
                             emb, labels, groups, bs, ss, do_probe=(model == "hubert")
                         )
 
+                        support_by_pool[
+                            f"{model}_{layer}_{level}_{condition}_{variant}"
+                        ] = {
+                            "n_token_vectors": int(emb.shape[0]),
+                            "n_utterances": int(len(np.unique(groups))),
+                            "n_classes": int(len(np.unique(labels))),
+                            "class_counts": {
+                                str(label): int(count)
+                                for label, count in zip(*np.unique(labels, return_counts=True))
+                            },
+                            "min_class_samples": MIN_CLASS_SAMPLES,
+                        }
                         result_entry: dict = {
                             "model": model,
                             "layer": layer,
@@ -948,14 +990,31 @@ def process_all(
             "layers": layers,
             "levels": levels,
             "num_embedding_files": len(entries),
+            "embedding_directory": str(embeddings_dir),
             "datasets": sorted({str(entry.get("dataset", "legacy")) for entry in entries}),
+            "conditions": sorted({_analysis_condition(entry) for entry in entries}),
+            "tts_providers": sorted({
+                str(entry["tts_provider"])
+                for entry in entries
+                if entry.get("tts_provider")
+            }),
+            "num_paired_keys": len({
+                str(entry["paired_key"])
+                for entry in entries
+                if entry.get("paired_key") is not None
+            }),
             "speakers": len({str(entry.get("speaker_id", entry.get("sample_id", "unknown"))) for entry in entries}),
             "paired": any(
                 entry.get("paired_key") is not None and not entry.get("representation_only", False)
                 for entry in entries
             ),
             "representation_only": all(entry.get("representation_only", False) for entry in entries),
+            "fdr_family": "all_comparisons_global",
+            "fdr_n_tests": len(all_comparisons),
+            "non_speech_tokens_excluded": True,
+            "grouping": "paired_key_per_utterance",
         },
+        "support": support_by_pool,
         "results": results,
         "comparisons": all_comparisons,
         "per_sample": per_sample_deltas,

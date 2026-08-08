@@ -12,16 +12,16 @@ Compares:
 
 Usage
 -----
-    # Phoneme probe (tone-stripped)
     python scripts/35_phoneme_recognition_probe.py --target phoneme
-
-    # Viseme probe (Preston Blair 11-class)
     python scripts/35_phoneme_recognition_probe.py --target viseme
+
+Class inventories are reported from the selected input manifest.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import logging
 import re
@@ -41,16 +41,53 @@ from manifest import load_manifest
 TARGET_SR = 16000
 OUTPUT_BASE_ZH = Path(__file__).resolve().parent.parent / "data" / "wav2sem_analysis_zh"
 
-EMBEDDINGS_DIR = OUTPUT_BASE_ZH / "embeddings"
-MANIFEST_PATH = OUTPUT_BASE_ZH / "manifest" / "alignment.json"
-OUTPUT_PATH = OUTPUT_BASE_ZH / "metrics" / "phoneme_probe.json"
-VISEME_OUTPUT_PATH = OUTPUT_BASE_ZH / "metrics" / "viseme_probe.json"
+MDC_RUN = Path(__file__).resolve().parent.parent / "runs" / "mdc_en_phoneme_20260807_f5_full"
+EMBEDDINGS_DIR = MDC_RUN / "04_embeddings"
+MANIFEST_PATH = MDC_RUN / "03_alignment" / "alignment.json"
+OUTPUT_PATH = MDC_RUN / "06_probe_phoneme.json"
+VISEME_OUTPUT_PATH = MDC_RUN / "06_probe_viseme.json"
 
-DEFAULT_LAYERS = [0, 6, 11]
-SAVED_LAYERS: list[int] = [0, 6, 11]
+_TONE_RE = re.compile(r"[˥-˩ˊˋ]+$")
+
+
+DEFAULT_LAYERS = [0, 6, 11, 12]
+SAVED_LAYERS: list[int] = DEFAULT_LAYERS
 HUERT_FRAME_STRIDE = 320
 
-_TONE_RE = re.compile(r"[\u02E5-\u02E9\u02CA\u02CB]+$")
+
+def _analysis_condition(meta: dict) -> str:
+    if meta.get("condition") == "tts":
+        return str(meta.get("tts_provider") or "tts")
+    return str(meta.get("condition", ""))
+
+
+def _is_speech_token(token: dict) -> bool:
+    if any(bool(token.get(field, False)) for field in (
+        "is_silence", "is_noise", "is_unknown", "is_non_speech",
+    )):
+        return False
+    viseme = str(token.get("viseme") or "").strip().lower()
+    return viseme not in {"sil", "sp", "spn", "pau", "noise"}
+
+
+def _entry_key(entry: dict) -> str:
+    return str(entry.get("paired_key") or entry.get("utterance_id") or entry.get("sample_id"))
+
+
+def _discover_layers(entries: list[dict], embeddings_dir: Path, model: str) -> list[int]:
+    discovered: set[int] = set()
+    for entry in entries:
+        npy_path = embeddings_dir / f"{embedding_file_stem(entry, model)}.npy"
+        metadata_path = npy_path.with_suffix(".json")
+        if not metadata_path.exists():
+            continue
+        try:
+            metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        discovered.update(int(layer) for layer in metadata.get("layers", []))
+    return sorted(discovered) or list(SAVED_LAYERS)
+
 
 
 def strip_tone(token: str) -> str:
@@ -61,25 +98,31 @@ def load_alignment(manifest_path: Path) -> list[dict]:
     return load_manifest(manifest_path)
 
 
-def load_hubert_frames(npy_path: Path, layer: int) -> np.ndarray:
+def load_hubert_frames(npy_path: Path, layer: int, saved_layers: list[int]) -> np.ndarray:
     arr = np.load(npy_path)
-    idx = SAVED_LAYERS.index(layer)
+    if layer not in saved_layers:
+        raise ValueError(f"Layer {layer} not present in {npy_path.name}: {saved_layers}")
+    idx = saved_layers.index(layer)
     return arr[idx].astype(np.float32)
 
 
 def assign_frame_labels(
     T: int, frame_stride: int, sr: int, tokens: list[dict],
     target: str = "phoneme",  # "phoneme" | "viseme"
+    frame_times: np.ndarray | None = None,
 ) -> np.ndarray:
     labels = np.full(T, "_oob_", dtype=object)
-    for i in range(T):
-        centre_s = (i + 0.5) * frame_stride / sr
+    if frame_times is None:
+        frame_times = np.arange(T, dtype=np.float32) * frame_stride / sr
+    for i, centre_s in enumerate(frame_times[:T]):
         for tok in tokens:
+            if not _is_speech_token(tok):
+                continue
             if tok["start_s"] <= centre_s < tok["end_s"]:
                 if target == "viseme":
-                    labels[i] = tok.get("viseme", "other")
+                    labels[i] = str(tok.get("viseme") or "other")
                 else:
-                    labels[i] = strip_tone(tok["token"])
+                    labels[i] = strip_tone(str(tok.get("phoneme") or tok.get("token") or "other"))
                 break
     return labels
 
@@ -145,10 +188,12 @@ def _evaluate_loo(
     per_utt_n: list[int] = []
     total_correct = 0
     total_frames = 0
+    unseen_class_frames = 0
 
     for test_utt in unique_utts:
         train_mask = utt_all != test_utt
         test_mask = utt_all == test_utt
+        unseen_class_frames += int(np.sum(~np.isin(y[test_mask], np.unique(y[train_mask]))))
         acc, n, _ = nearest_centroid_accuracy(
             X[train_mask], y[train_mask],
             X[test_mask], y[test_mask],
@@ -162,22 +207,46 @@ def _evaluate_loo(
         "per_utterance_acc": per_utt_acc,
         "per_utterance_n": per_utt_n,
         "total_accuracy": float(total_correct) / max(total_frames, 1),
+        "majority_baseline": float(Counter(y.tolist()).most_common(1)[0][1]) / max(len(y), 1),
         "total_frames": total_frames,
+        "unseen_class_frames": unseen_class_frames,
         "n_utterances": int(len(unique_utts)),
         "unique_classes": len(set(y.tolist())),
     }
 
 
 def _cross_condition_evaluation(
-    X_nat: np.ndarray, y_nat: np.ndarray,
-    X_tts: np.ndarray, y_tts: np.ndarray,
+    X_nat: np.ndarray, y_nat: np.ndarray, utt_nat: np.ndarray,
+    X_tts: np.ndarray, y_tts: np.ndarray, utt_tts: np.ndarray,
 ) -> dict:
-    """Classify TTS frames using natural centroids, and vice versa."""
-    result = {}
-    acc_n2t, n_n2t, _ = nearest_centroid_accuracy(X_nat, y_nat, X_tts, y_tts)
-    result["natural_proto_to_tts"] = {"accuracy": acc_n2t, "total_frames": n_n2t}
-    acc_t2n, n_t2n, _ = nearest_centroid_accuracy(X_tts, y_tts, X_nat, y_nat)
-    result["tts_proto_to_natural"] = {"accuracy": acc_t2n, "total_frames": n_t2n}
+    """Cross-condition nearest-centroid transfer with paired-key holdout."""
+    result: dict[str, dict[str, float | int | str]] = {}
+    common_utts = sorted(set(utt_nat.tolist()) & set(utt_tts.tolist()))
+    for name, X_train, y_train, train_utts, X_test, y_test, test_utts in (
+        ("natural_proto_to_tts", X_nat, y_nat, utt_nat, X_tts, y_tts, utt_tts),
+        ("tts_proto_to_natural", X_tts, y_tts, utt_tts, X_nat, y_nat, utt_nat),
+    ):
+        correct = 0
+        total = 0
+        evaluated_utts = 0
+        for held_out in common_utts:
+            train_mask = train_utts != held_out
+            test_mask = test_utts == held_out
+            if not np.any(test_mask) or not np.any(train_mask):
+                continue
+            acc, n, _ = nearest_centroid_accuracy(
+                X_train[train_mask], y_train[train_mask],
+                X_test[test_mask], y_test[test_mask],
+            )
+            correct += int(round(acc * n))
+            total += n
+            evaluated_utts += 1
+        result[name] = {
+            "accuracy": float(correct) / max(total, 1),
+            "total_frames": total,
+            "n_utterances": evaluated_utts,
+            "evaluation": "paired_key_leave_one_out",
+        }
     return result
 
 
@@ -186,10 +255,14 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p.add_argument("--embeddings-dir", type=str, default=str(EMBEDDINGS_DIR))
     p.add_argument("--manifest", type=str, default=str(MANIFEST_PATH))
     p.add_argument("--model", type=str, default="hubert")
-    p.add_argument("--layers", type=str, default="0,6,11")
+    p.add_argument("--layers", type=str, default="0,6,11,12")
     p.add_argument("--target", type=str, default="phoneme",
                    choices=["phoneme", "viseme"],
-                   help="classification target: phoneme (44 classes) or viseme (11 classes)")
+                   help="classification target; class inventory is read from the input")
+    p.add_argument(
+        "--help-inventory", action="store_true",
+        help="Report class inventory from the selected input instead of assuming fixed counts.",
+    )
     p.add_argument("--smoke", action="store_true")
     p.add_argument("--device", type=str, default="cpu")  # kept for future GPU use
     p.add_argument("--output", type=str, default=None)
@@ -219,13 +292,48 @@ def main(argv: list[str] | None = None) -> int:
     alignment_entries = load_alignment(manifest_path)
     if args.smoke:
         alignment_entries = alignment_entries[:4]
-    logger.info("Manifest: %d entries", len(alignment_entries))
+    saved_layers = _discover_layers(alignment_entries, embeddings_dir, args.model)
+    layers = [layer for layer in layers if layer in saved_layers]
+    if not layers:
+        raise ValueError(f"Requested layers {args.layers!r} are not present; saved layers={saved_layers}")
+    logger.info("Manifest: %d entries; saved layers: %s", len(alignment_entries), saved_layers)
+
+    tts_conditions = {
+        _analysis_condition(entry)
+        for entry in alignment_entries
+        if _analysis_condition(entry) != "natural"
+    }
+    if len(tts_conditions) > 1:
+        raise ValueError(f"Multiple TTS providers/conditions are not supported: {sorted(tts_conditions)}")
 
     all_results: dict = {
         "model": args.model,
         "target": args.target,
         "layers": layers,
-        "n_utterances": len(alignment_entries),
+        "saved_layers": saved_layers,
+        "n_records": len(alignment_entries),
+        "n_paired_keys": len({_entry_key(entry) for entry in alignment_entries}),
+        "datasets": sorted({str(entry.get("dataset", "legacy")) for entry in alignment_entries}),
+        "conditions": sorted({_analysis_condition(entry) for entry in alignment_entries}),
+        "tts_providers": sorted({
+            str(entry["tts_provider"])
+            for entry in alignment_entries
+            if entry.get("tts_provider")
+        }),
+        "alignment_sources": sorted({str(entry.get("alignment_source", "missing")) for entry in alignment_entries}),
+        "manifest_path": str(manifest_path),
+        "manifest_sha256": _sha256(manifest_path),
+        "script_path": str(Path(__file__).resolve()),
+        "script_sha256": _sha256(Path(__file__).resolve()),
+        "embeddings_directory": str(embeddings_dir),
+        "paired_keys": sorted({_entry_key(entry) for entry in alignment_entries}),
+        "frame_stride_samples": HUERT_FRAME_STRIDE,
+        "sample_rate": TARGET_SR,
+        "frame_time_convention": "stride_aligned_extractor_timestamps_without_receptive_field_offset",
+        "non_speech_tokens_excluded": True,
+        "grouping": "paired_key_per_utterance",
+        "n_utterances": len({_entry_key(entry) for entry in alignment_entries}),
+        "class_support": {},
         "layer_results": {},
     }
 
@@ -240,9 +348,9 @@ def main(argv: list[str] | None = None) -> int:
         tts_y = []
         tts_utt = []
 
-        for entry_idx, entry in enumerate(alignment_entries):
-            sid = str(entry.get("utterance_id", entry.get("sample_id", "unknown")))
-            cond = entry["condition"]
+        for entry in alignment_entries:
+            sid = _entry_key(entry)
+            cond = _analysis_condition(entry)
             tokens = entry.get("tokens", [])
 
             npy_path = embeddings_dir / f"{embedding_file_stem(entry, args.model)}.npy"
@@ -250,10 +358,16 @@ def main(argv: list[str] | None = None) -> int:
                 logger.warning("Missing: %s", npy_path)
                 continue
 
-            fp = load_hubert_frames(npy_path, layer)
+            metadata_path = npy_path.with_suffix(".json")
+            metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+            entry_layers = [int(saved) for saved in metadata.get("layers", saved_layers)]
+            fp = load_hubert_frames(npy_path, layer, entry_layers)
             T = fp.shape[0]
-            labels = assign_frame_labels(T, HUERT_FRAME_STRIDE, TARGET_SR, tokens,
-                                          target=args.target)
+            frame_times = np.arange(T, dtype=np.float32) * HUERT_FRAME_STRIDE / TARGET_SR
+            labels = assign_frame_labels(
+                T, HUERT_FRAME_STRIDE, TARGET_SR, tokens,
+                target=args.target, frame_times=frame_times,
+            )
 
             mask = labels != "_oob_"
             fp_masked = fp[mask]
@@ -264,11 +378,11 @@ def main(argv: list[str] | None = None) -> int:
             if cond == "natural":
                 nat_X.append(fp_masked)
                 nat_y.append(labels_masked)
-                nat_utt.append(np.full(len(fp_masked), entry_idx, dtype=int))
-            else:
+                nat_utt.append(np.full(len(fp_masked), sid, dtype=object))
+            elif cond == next(iter(tts_conditions), "tts"):
                 tts_X.append(fp_masked)
                 tts_y.append(labels_masked)
-                tts_utt.append(np.full(len(fp_masked), entry_idx, dtype=int))
+                tts_utt.append(np.full(len(fp_masked), sid, dtype=object))
 
         # Stack per condition
         if nat_X:
@@ -294,14 +408,16 @@ def main(argv: list[str] | None = None) -> int:
         # --- Cross-condition evaluation ---
         cross = {}
         if len(y_nat) > 0 and len(y_tts) > 0:
-            cross = _cross_condition_evaluation(X_nat, y_nat, X_tts, y_tts)
+            cross = _cross_condition_evaluation(
+                X_nat, y_nat, utt_nat, X_tts, y_tts, utt_tts,
+            )
 
         nat_acc = eval_nat.get("total_accuracy")
         tts_acc = eval_tts.get("total_accuracy")
 
         delta_per = None
         if nat_acc is not None and tts_acc is not None:
-            delta_per = float(tts_acc) - float(nat_acc)
+            delta_per = (1.0 - float(tts_acc)) - (1.0 - float(nat_acc))
 
         cross_n2t = cross.get("natural_proto_to_tts", {}).get("accuracy")
         cross_t2n = cross.get("tts_proto_to_natural", {}).get("accuracy")
@@ -309,19 +425,30 @@ def main(argv: list[str] | None = None) -> int:
         layer_result = {
             "natural_self": {
                 "accuracy": nat_acc,
+                "majority_baseline": eval_nat.get("majority_baseline"),
                 "total_frames": eval_nat.get("total_frames"),
+                "unseen_class_frames": eval_nat.get("unseen_class_frames"),
                 "n_utterances": eval_nat.get("n_utterances"),
                 "n_classes": eval_nat.get("unique_classes"),
             },
             "tts_self": {
                 "accuracy": tts_acc,
+                "majority_baseline": eval_tts.get("majority_baseline"),
                 "total_frames": eval_tts.get("total_frames"),
+                "unseen_class_frames": eval_tts.get("unseen_class_frames"),
                 "n_utterances": eval_tts.get("n_utterances"),
                 "n_classes": eval_tts.get("unique_classes"),
             },
             "delta_tts_minus_nat_per": delta_per,
             "natural_proto_to_tts": cross.get("natural_proto_to_tts"),
             "tts_proto_to_natural": cross.get("tts_proto_to_natural"),
+        }
+
+        all_results["class_support"][f"L{layer}"] = {
+            "natural": _class_support(y_nat, utt_nat),
+            "tts": _class_support(y_tts, utt_tts),
+            "unseen_class_frames_natural_loo": eval_nat.get("unseen_class_frames"),
+            "unseen_class_frames_tts_loo": eval_tts.get("unseen_class_frames"),
         }
 
         all_results["layer_results"][f"L{layer}"] = layer_result
@@ -365,6 +492,24 @@ def _per_delta(v):
     if v is None:
         return "    None"
     return f"{v * 100:+7.2f}%"
+
+
+def _class_support(y: np.ndarray, utt: np.ndarray) -> dict[str, dict[str, int]]:
+    return {
+        str(label): {
+            "n_frames": int(np.sum(y == label)),
+            "n_utterances": int(len(set(utt[y == label].tolist()))),
+        }
+        for label in sorted(set(y.tolist()))
+    }
+
+
+def _sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def _fmt(v):

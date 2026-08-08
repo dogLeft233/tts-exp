@@ -35,12 +35,16 @@ pauses).
 
 Usage
 -----
-    python scripts/36_duration_jsd.py [--out-dir results/aishell100_phoneme/duration_analysis]
+    python scripts/36_duration_jsd.py
+
+The default input is the MDC English natural/TTS alignment run. Override the
+TextGrid and manifest paths explicitly for another dataset.
 """
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import logging
 import re
@@ -64,12 +68,13 @@ from tfg_feature_common import paired_permutation_test, bootstrap_paired_ci, fdr
 # Defaults
 # ---------------------------------------------------------------------------
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+MDC_RUN = PROJECT_ROOT / "runs" / "mdc_en_phoneme_20260807_f5_full"
 DEFAULT_TEXTGRID_DIRS = {
-    "natural": PROJECT_ROOT / "results/aishell100_phoneme/mfa_full/out/natural",
-    "tts": PROJECT_ROOT / "results/aishell100_phoneme/mfa_full/out/tts",
+    "natural": MDC_RUN / "03_alignment" / "mfa_out" / "natural",
+    "tts": MDC_RUN / "03_alignment" / "mfa_out" / "tts",
 }
-DEFAULT_MANIFEST = PROJECT_ROOT / "results/aishell100_phoneme/alignment/manifest.json"
-DEFAULT_OUT_DIR = PROJECT_ROOT / "results/aishell100_phoneme/duration_analysis"
+DEFAULT_MANIFEST = MDC_RUN / "03_alignment" / "alignment.json"
+DEFAULT_OUT_DIR = MDC_RUN / "07_duration_jsd"
 
 MIN_PHONE_SAMPLES = 20   # per condition, for a phone to enter the per-phone JSD test
 N_HIST_BINS = 6          # low bin count: keeps the null JSD small at n=20-40
@@ -129,8 +134,10 @@ def parse_textgrid_phones(path: Path) -> list[dict]:
         body,
     ):
         symbol = m.group(3)
-        if not symbol or symbol == "<eps>":
+        if symbol == "<eps>":
             continue
+        if not symbol:
+            symbol = "sil"
         intervals.append({
             "symbol": symbol,
             "start_s": float(m.group(1)),
@@ -150,9 +157,13 @@ def split_pauses(intervals: list[dict]) -> tuple[list[dict], list[dict]]:
     seen_phone = False
     pending_pause: dict | None = None
     for iv in intervals:
-        if iv["symbol"] == "sil":
+        if iv["symbol"] in {"sil", "sp", "pau"}:
             if seen_phone and pending_pause is None:
                 pending_pause = dict(iv)
+            elif seen_phone and pending_pause is not None:
+                pending_pause["end_s"] = iv["end_s"]
+            continue
+        if iv["symbol"] in NOISE_SYMBOLS:
             continue
         if pending_pause is not None:
             pauses.append(pending_pause)
@@ -227,32 +238,78 @@ def jsd_permutation_test(
     return observed, p, float(np.median(null_jsds))
 
 
-def cohens_d_paired(a: np.ndarray, b: np.ndarray) -> float:
+def cohens_d_paired(a: np.ndarray, b: np.ndarray) -> float | None:
     """Paired Cohen's d (d_z): mean(diff) / std(diff)."""
     diff = a - b
     sd = np.std(diff, ddof=1)
-    if sd == 0:
-        return float("nan")
-    return float(np.mean(diff) / sd)
+    if not np.isfinite(sd) or sd == 0:
+        return None
+    value = float(np.mean(diff) / sd)
+    return value if np.isfinite(value) else None
+
+
+def _json_safe(value):
+    """Convert non-finite numeric values to strict-JSON nulls."""
+    if isinstance(value, dict):
+        return {key: _json_safe(item) for key, item in value.items()}
+    if isinstance(value, list):
+        return [_json_safe(item) for item in value]
+    if isinstance(value, tuple):
+        return [_json_safe(item) for item in value]
+    if isinstance(value, (float, np.floating)):
+        return float(value) if np.isfinite(value) else None
+    if isinstance(value, np.ndarray):
+        return _json_safe(value.tolist())
+    return value
+
+
+def _load_manifest(path: Path) -> tuple[dict, dict[str, dict[str, dict]]]:
+    """Load alignment metadata indexed as ``records[paired_key][condition]``."""
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    records: dict[str, dict[str, dict]] = defaultdict(dict)
+    for record in payload.get("records", []):
+        paired_key = record.get("paired_key")
+        condition = record.get("condition")
+        if paired_key is not None and condition is not None:
+            records[str(paired_key)][str(condition)] = record
+    return payload, records
 
 
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
-def _load_samples(textgrid_dir: Path) -> dict[str, dict]:
-    """Return ``{sample_id: {"phones": [...], "pauses": [...], "file": str}}``."""
+def _load_samples(
+    textgrid_dir: Path,
+    manifest_records: dict[str, dict[str, dict]] | None = None,
+    condition: str | None = None,
+) -> dict[str, dict]:
+    """Return parsed TextGrids with manifest duration and provenance metadata."""
     samples: dict[str, dict] = {}
+    condition = condition or ("natural" if textgrid_dir.name == "natural" else "tts")
     for tg in sorted(textgrid_dir.glob("*.TextGrid")):
         sid = tg.stem
         try:
             intervals = parse_textgrid_phones(tg)
+            if not intervals:
+                raise ValueError("missing phones intervals")
         except Exception as exc:  # noqa: BLE001
             logger.warning("Failed to parse %s: %s", tg.name, exc)
             continue
         phones, pauses = split_pauses(intervals)
-        # Exclude MFA noise labels from phone-level metrics.
         phones = [p for p in phones if p["symbol"] not in NOISE_SYMBOLS]
-        samples[sid] = {"phones": phones, "pauses": pauses, "file": tg.name}
+        record = (manifest_records or {}).get(sid, {}).get(condition, {})
+        samples[sid] = {
+            "phones": phones,
+            "pauses": pauses,
+            "file": tg.name,
+            "duration_s": record.get("duration_s"),
+            "tts_provider": record.get("tts_provider"),
+            "dataset": record.get("dataset"),
+            "source_pair_manifest": record.get("source_pair_manifest"),
+            "source_pair_manifest_sha256": record.get("source_pair_manifest_sha256"),
+            "tts_meta": record.get("tts_meta"),
+            "tts_meta_sha256": record.get("tts_meta_sha256"),
+        }
     return samples
 
 
@@ -327,14 +384,26 @@ def run(
     n_bins: int = N_HIST_BINS,
     n_perm: int = N_PERM,
 ) -> int:
-    natural = _load_samples(textgrid_dirs["natural"])
-    tts = _load_samples(textgrid_dirs["tts"])
+    manifest, manifest_records = _load_manifest(manifest_path)
+    natural = _load_samples(textgrid_dirs["natural"], manifest_records, "natural")
+    tts = _load_samples(textgrid_dirs["tts"], manifest_records, "tts")
     logger.info("Loaded %d natural / %d tts TextGrids", len(natural), len(tts))
 
     common_ids = sorted(set(natural) & set(tts))
     if not common_ids:
         logger.error("No paired samples found between conditions.")
         return 1
+    if manifest_path.name == "alignment.json":
+        expected_ids = {
+            str(record.get("paired_key"))
+            for record in json.loads(manifest_path.read_text(encoding="utf-8")).get("records", [])
+            if record.get("paired_key") is not None
+        }
+        if expected_ids == {f"en_{i:03d}" for i in range(1, 51)} and set(common_ids) != expected_ids:
+            raise ValueError(
+                f"MDC full run requires en_001..en_050 in both TextGrid arms; "
+                f"missing={sorted(expected_ids - set(common_ids))}, extra={sorted(set(common_ids) - expected_ids)}"
+            )
     logger.info("%d paired samples", len(common_ids))
 
     # ---- Cross-check pairing against the alignment manifest --------------
@@ -355,11 +424,13 @@ def run(
     else:
         logger.warning("Manifest not found at %s; pairing is by filename stem", manifest_path)
 
-    # ---- Outlier flagging (TTS/natural duration ratio far from 1) --------
+    # ---- Outlier flagging (TTS/natural audio-duration ratio far from 1) -----
     dur_ratio = {}
     for sid in common_ids:
-        nat_dur = natural[sid]["phones"][-1]["end_s"] - natural[sid]["phones"][0]["start_s"] if natural[sid]["phones"] else 0.0
-        tts_dur = tts[sid]["phones"][-1]["end_s"] - tts[sid]["phones"][0]["start_s"] if tts[sid]["phones"] else 0.0
+        nat_dur = natural[sid].get("duration_s")
+        tts_dur = tts[sid].get("duration_s")
+        if nat_dur is None or tts_dur is None:
+            raise ValueError(f"Manifest duration_s missing for paired sample {sid}")
         dur_ratio[sid] = float(tts_dur / nat_dur) if nat_dur > 0 else float("nan")
     outlier_ids = sorted(sid for sid, r in dur_ratio.items() if r == r and abs(np.log(r)) > OUTLIER_LOG_RATIO)
     if outlier_ids:
@@ -430,23 +501,30 @@ def run(
         return np.array([x["end_s"] - x["start_s"] for x in p], dtype=np.float64)
 
     pair_metrics = {
-        "total_duration_s": (lambda p: (p[-1]["end_s"] - p[0]["start_s"]) if p else float("nan")),
-        "phone_count": (lambda p: float(len(p))),
-        "mean_phone_dur": (lambda p: float(np.mean(_durs(p))) if p else float("nan")),
-        "dur_std_within_utterance": (lambda p: float(np.std(_durs(p))) if len(p) > 1 else float("nan")),
-        "dur_cv_within_utterance": (lambda p: (float(np.std(_durs(p)) / np.mean(_durs(p)))
-                                               if len(p) > 1 and np.mean(_durs(p)) > 0 else float("nan"))),
+        "total_duration_s": (lambda p: float(p["duration_s"]) if p.get("duration_s") is not None else float("nan")),
+        "speech_span_duration_s": (lambda p: (
+            p["phones"][-1]["end_s"] - p["phones"][0]["start_s"]
+            if p["phones"] else float("nan")
+        )),
+        "phone_count": (lambda p: float(len(p["phones"]))),
+        "mean_phone_dur": (lambda p: float(np.mean(_durs(p["phones"]))) if p["phones"] else float("nan")),
+        "dur_std_within_utterance": (lambda p: float(np.std(_durs(p["phones"]))) if len(p["phones"]) > 1 else float("nan")),
+        "dur_cv_within_utterance": (lambda p: (float(np.std(_durs(p["phones"])) / np.mean(_durs(p["phones"])))
+                                               if len(p["phones"]) > 1 and np.mean(_durs(p["phones"])) > 0 else float("nan"))),
     }
     # ``pause_count`` reads from the pauses list, not the phones list.
-    pair_metric_sources = {"phones": list(pair_metrics.keys()), "pauses": ["pause_count"]}
+    pair_metric_sources = {"metadata": ["total_duration_s"], "phones": [
+        "speech_span_duration_s", "phone_count", "mean_phone_dur",
+        "dur_std_within_utterance", "dur_cv_within_utterance",
+    ], "pauses": ["pause_count"]}
 
     def _paired_rows(ids: list[str]) -> dict[str, dict]:
         rows: dict[str, dict] = {}
         for source, names in pair_metric_sources.items():
             for name in names:
-                fn = pair_metrics[name] if source == "phones" else (lambda p: float(len(p)))
-                a = np.array([fn(natural[sid][source]) for sid in ids], dtype=np.float64)
-                b = np.array([fn(tts[sid][source]) for sid in ids], dtype=np.float64)
+                fn = (lambda sample: float(len(sample["pauses"]))) if source == "pauses" else pair_metrics[name]
+                a = np.array([fn(natural[sid]) for sid in ids], dtype=np.float64)
+                b = np.array([fn(tts[sid]) for sid in ids], dtype=np.float64)
                 # Drop NaN pairs explicitly (empty/singleton utterances).
                 ok = ~(np.isnan(a) | np.isnan(b))
                 a, b = a[ok], b[ok]
@@ -519,8 +597,8 @@ def run(
         per_sample[name] = {}
         for sid in common_ids:
             per_sample[name][sid] = {
-                "natural": float(fn(natural[sid]["phones"])),
-                "tts": float(fn(tts[sid]["phones"])),
+                "natural": float(fn(natural[sid])),
+                "tts": float(fn(tts[sid])),
             }
     # pause_count in per_sample uses the actual pause lists:
     for sid in common_ids:
@@ -531,17 +609,50 @@ def run(
 
     # ---- Output ----------------------------------------------------------
     out_dir.mkdir(parents=True, exist_ok=True)
+    def _sha256(path: Path) -> str:
+        digest = hashlib.sha256()
+        with path.open("rb") as stream:
+            for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+                digest.update(chunk)
+        return digest.hexdigest()
+
+    manifest_hash = _sha256(manifest_path) if manifest_path.exists() else None
     result = {
         "meta": {
             "textgrid_dirs": {k: str(v) for k, v in textgrid_dirs.items()},
-            "n_paired_samples": len(common_ids),
-            "min_phone_samples": min_phone_samples,
+            "manifest_path": str(manifest_path),
+            "manifest_sha256": manifest_hash,
+            "script_path": str(Path(__file__).resolve()),
+            "script_sha256": _sha256(Path(__file__).resolve()),
+            "dataset": manifest.get("dataset", "mdc_tts" if set(common_ids) == {f"en_{i:03d}" for i in range(1, 51)} else "unknown"),
+            "paired_keys": common_ids,
+            "natural_textgrid_count": len(natural),
+            "tts_textgrid_count": len(tts),
+            "provider_counts": {
+                "natural": dict(sorted((str(natural[sid].get("tts_provider")), sum(1 for other in common_ids if natural[other].get("tts_provider") == natural[sid].get("tts_provider"))) for sid in common_ids)),
+                "tts": dict(sorted((str(tts[sid].get("tts_provider")), sum(1 for other in common_ids if tts[other].get("tts_provider") == tts[sid].get("tts_provider"))) for sid in common_ids)),
+            },
+            "source_pair_manifest": manifest.get("source_pair_manifest"),
+            "source_pair_manifest_sha256": manifest.get("source_pair_manifest_sha256"),
+            "tts_meta": manifest.get("tts_meta"),
+            "tts_meta_sha256": manifest.get("tts_meta_sha256"),
+            "provider_contamination_audit": {
+                "natural_tts_providers": sorted({str(natural[sid].get("tts_provider")) for sid in common_ids}),
+                "tts_providers": sorted({str(tts[sid].get("tts_provider")) for sid in common_ids}),
+                "mixed_tts_providers": len({tts[sid].get("tts_provider") for sid in common_ids}) > 1,
+            },
+            "phone_support_threshold_not_lowered": min_phone_samples >= MIN_PHONE_SAMPLES,
             "n_hist_bins": n_bins,
             "n_perm": n_perm,
             "seed": RNG_SEED,
             "outlier_ids": outlier_ids,
             "outlier_criterion": "|log(tts_dur/natural_dur)| > %.2f" % OUTLIER_LOG_RATIO,
             "fdr_scope": "BH-FDR applied within each test family (per-phone, per-utterance); raw p always reported",
+            "pause_fdr_scope": "single pooled pause test; no within-family correction",
+            "duration_sources": {
+                "total_duration_s": "alignment manifest record.duration_s",
+                "speech_span_duration_s": "MFA first-to-last non-silence phone span",
+            },
             "noise_excluded": sorted(NOISE_SYMBOLS),
         },
         "summary": {
@@ -561,7 +672,10 @@ def run(
         "per_sample": per_sample,
     }
     out_json = out_dir / "duration_jsd.json"
-    out_json.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
+    out_json.write_text(
+        json.dumps(_json_safe(result), ensure_ascii=False, indent=2, allow_nan=False),
+        encoding="utf-8",
+    )
     logger.info("Wrote %s", out_json)
 
     # ---- Console summary --------------------------------------------------
@@ -580,14 +694,16 @@ def run(
     print("\nOutliers flagged (n=%d): %s" % (len(outlier_ids), outlier_ids[:12]))
     print("\nPer-utterance paired (natural - tts):")
     for name, r in paired_results.items():
-        print("  %-26s nat=%.4f tts=%.4f d=%+.2f p=%.4f q=%.3f sig=%s"
-              % (name, r["natural_mean"], r["tts_mean"], r["cohens_d"],
+        d_text = "None" if r["cohens_d"] is None else f"{r['cohens_d']:+.2f}"
+        print("  %-26s nat=%.4f tts=%.4f d=%s p=%.4f q=%.3f sig=%s"
+              % (name, r["natural_mean"], r["tts_mean"], d_text,
                  r["p_perm"], r["q_fdr"], r["significant"]))
     if paired_results_no_outliers:
         print("\n  -- without outliers (%d samples) --" % len(kept_ids))
         for name, r in paired_results_no_outliers.items():
-            print("  %-26s nat=%.4f tts=%.4f d=%+.2f p=%.4f q=%.3f sig=%s"
-                  % (name, r["natural_mean"], r["tts_mean"], r["cohens_d"],
+            d_text = "None" if r["cohens_d"] is None else f"{r['cohens_d']:+.2f}"
+            print("  %-26s nat=%.4f tts=%.4f d=%s p=%.4f q=%.3f sig=%s"
+                  % (name, r["natural_mean"], r["tts_mean"], d_text,
                      r["p_perm"], r["q_fdr"], r["significant"]))
     if cv_sensitivity:
         print("\ndur_cv leave-one-out p range: [%.4f, %.4f] (full-data p=%.4f)"
