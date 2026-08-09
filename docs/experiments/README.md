@@ -25,6 +25,10 @@
 | 18 | [TTS 特征控制与 natural 节奏对齐验证](18-tts-feature-control-validation.md) | **n=10 Ditto/SyncNet：loudness 最接近 natural（ΔSync-C −0.058），但没有 control 恢复 raw TTS 优势；spectral 有 6/10 正向但均值 −0.226** | ✅ |
 | 19 | [MDC English natural-vs-F5-TTS 音素与表征审查](19-mdc-english-representation-audit.md) | **50 对表征审查完成：TTS 多层 phone/viseme 可迁移性与时长规整性更强；B4 downstream TFG/SyncNet 仍阻塞** | ✅ |
 | 20 | [AISHELL-100 跨条件音素/视位 PER](20-aishell100-cross-condition-per.md) | **补齐 100 对中文跨条件 frame-level PER：L6 phoneme natural→TTS 38.97%、TTS→natural 40.70%；TTS 略优且迁移对称** | ✅ |
+| 21 | [MVP waveform 失败诊断与 provenance 审查](21-mvp-audio-forensics.md) | **严格 paired cohort 与 natural alignment 50/50 通过；MVP Mandarin MFA 与逐样本 SyncNet ledger 仍阻塞，overall partial** | ⚠️ |
+| 22 | [TTS feature supervision 与 feature-domain enhancement head MVP](22-tts-feature-supervision-and-mvp.md) | **监督改为 train-only phone-conditioned HuBERT prototype 的弱表征目标；不把 feature metric 写成 TFG/SyncNet 结果** | 🚧 |
+| 23 | [Ditto-native feature head downstream 可行性验证](23-ditto-native-feature-head-feasibility.md) | **Ditto 原生 frontend 为 25 fps / 1024-D；native adapter 的 PyTorch 离线注入路线可完成渲染与 SyncNet 评估，但历史单样本仍远低于 raw TTS；online 非因果注入与泛化尚未验证** | 🚧 |
+| 24 | [MVP waveform HuBERT 编码器特征审计](24-mvp-hubert-encoder-audit.md) | **严格 50 对中，MVP 的 HuBERT layer 0/6/11/12 geometry 均明显更接近 natural 而非 raw TTS；尚未完成 Ditto-native 1024-D 或 phone-level audit** | ⚠️ |
 
 ## 专题/总结文档
 
