@@ -174,9 +174,19 @@ def embedding_file_stem(entry: dict, model: str, variant: str | None = None) -> 
     )
 
 
-# =============================================================================
-# Audio utilities
-# =============================================================================
+def half_open_span_mask(
+    frame_times: np.ndarray,
+    start_s: float,
+    end_s: float,
+) -> np.ndarray:
+    """Return ownership mask for the half-open interval ``[start_s, end_s)``."""
+    start = float(start_s)
+    end = float(end_s)
+    if not np.isfinite(start) or not np.isfinite(end) or end <= start:
+        return np.zeros(frame_times.shape, dtype=bool)
+    return (frame_times >= start) & (frame_times < end)
+
+
 
 
 def apply_linear_lufs_gain(

@@ -76,6 +76,10 @@ def test_generate_tts_writes_stable_pair_record(tmp_path: Path):
     assert record["condition"] == "tts"
     assert record["utterance_id"] == "mdc_tts/en_001/tts"
     assert record["provider"] == "mock_tts"
+    assert record["reference_role"] == "paired_natural_audio"
+    assert record["reference_sample_key"] == "en_001"
+    assert record["reference_is_natural_arm"] is True
+    assert record["voice_identity_relation"] == "reference_conditioned_not_independently_verified"
     assert result["source_pair_manifest"] == str(pair_manifest.relative_to(tmp_path))
     assert result["source_pair_manifest_sha256"] == module.sha256_file(pair_manifest)
     assert record["canonical_qc"]["sample_rate_hz"] == 16000

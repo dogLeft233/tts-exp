@@ -455,7 +455,18 @@ class TestPoolFramesForLayer:
         assert labels["initial"].tolist() == ["b", "p"]
         assert labels["final"].tolist() == ["a", "i"]
 
-    def test_label_levels(self):
+    def test_boundary_frame_is_owned_by_next_span_only(self):
+        emb = np.array([[1.0, 0.0], [0.5, 0.5], [0.0, 1.0], [-1.0, 0.0]], dtype=np.float32)
+        tokens = [
+            {"initial": "a", "final": "a", "viseme": "a", "tone": 1, "start_s": 0.0, "end_s": 0.04},
+            {"initial": "b", "final": "b", "viseme": "b", "tone": 1, "start_s": 0.04, "end_s": 0.08},
+        ]
+        pooled, labels = _pool_frames_for_layer(emb, 320, 16000, tokens)
+        assert pooled.shape == (2, 2)
+        np.testing.assert_allclose(pooled[0], emb[0:2].mean(axis=0))
+        np.testing.assert_allclose(pooled[1], emb[2:4].mean(axis=0))
+        assert labels["initial"].tolist() == ["a", "b"]
+
         emb = np.ones((10, DIM), dtype=np.float32)
         tokens = [
             {"initial": "b", "final": "a", "viseme": "bila", "tone": 1,

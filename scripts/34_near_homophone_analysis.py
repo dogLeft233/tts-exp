@@ -34,7 +34,7 @@ from itertools import combinations
 from pathlib import Path
 import numpy as np
 
-# Inline necessary items from tfg_feature_common to avoid heavy dependencies (librosa)
+from tfg_feature_common import half_open_span_mask
 OUTPUT_BASE_ZH = Path(__file__).resolve().parent.parent / "data" / "wav2sem_analysis_zh"
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -271,7 +271,7 @@ def _pool_tokens(
     for i, token in enumerate(tokens):
         start = float(token.get("start_s", 0))
         end = float(token.get("end_s", 0))
-        mask = (frame_times >= start) & (frame_times <= end)
+        mask = half_open_span_mask(frame_times, start, end)
         if not np.any(mask):
             continue
         vec = layer_emb[mask].mean(axis=0)

@@ -24,14 +24,12 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib.util
 import json
-import os
-import shutil
-import subprocess
 import sys
 import time
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pathlib import Path
 
 import numpy as np
@@ -70,7 +68,6 @@ def _load_script_module(filename: str):
 
 
 _ditto_mod = _load_script_module("03_ditto.py")
-_eval_mod = _load_script_module("04_eval.py")
 _intv_mod = _load_script_module("20_causal_feature_interventions.py")
 _gxe_mod = _load_script_module("19_generate_eval_matrix.py")
 
@@ -102,17 +99,14 @@ class Intervention:
     expected_sync_direction: str  # "decrease", "increase", or "unknown"
     # transform: (y_source, y_counterpart, sr, sid) -> y_transformed
     transform: callable  # type: ignore[type-arg]
+    parameters: dict[str, object] | None = None
 
 
 def _build_interventions() -> list[Intervention]:
-    """Define the 8 interventions mirroring script 20.
+    """Define the 8 causal interventions with stable parameter metadata.
 
-    For TTS-source interventions, the transform makes TTS audio more like
-    natural audio, so we expect Sync-C to *decrease* toward the natural
-    diagonal (if the feature is a real mechanism).
-
-    For natural-source interventions, the transform makes natural audio more
-    like TTS audio, so we expect Sync-C to *increase* toward the TTS diagonal.
+    The metadata is part of the stage cache fingerprint. A transform change
+    must therefore invalidate transformed audio and all downstream products.
     """
     return [
         Intervention(
@@ -121,6 +115,7 @@ def _build_interventions() -> list[Intervention]:
             baseline_cond="tts_raw",
             transform_description="Scale TTS loudness to match natural LUFS",
             expected_sync_direction="decrease",
+            parameters={"target": "natural_lufs"},
             transform=lambda y_tts, y_nat, sr, sid: apply_lufs_match(
                 y_tts, sr, compute_lufs(y_nat, sr)
             ),
@@ -131,6 +126,7 @@ def _build_interventions() -> list[Intervention]:
             baseline_cond="natural_raw",
             transform_description="Scale natural loudness to match TTS LUFS",
             expected_sync_direction="increase",
+            parameters={"target": "tts_lufs"},
             transform=lambda y_tts, y_nat, sr, sid: apply_lufs_match(
                 y_nat, sr, compute_lufs(y_tts, sr)
             ),
@@ -141,6 +137,7 @@ def _build_interventions() -> list[Intervention]:
             baseline_cond="tts_raw",
             transform_description="Reshape TTS spectrum to match natural tilt",
             expected_sync_direction="decrease",
+            parameters={"target": "natural_spectral_tilt"},
             transform=lambda y_tts, y_nat, sr, sid: apply_spectral_tilt_match(
                 y_tts, sr, compute_spectral_tilt(y_nat, sr)
             ),
@@ -151,6 +148,7 @@ def _build_interventions() -> list[Intervention]:
             baseline_cond="natural_raw",
             transform_description="Reshape natural spectrum to match TTS tilt",
             expected_sync_direction="increase",
+            parameters={"target": "tts_spectral_tilt"},
             transform=lambda y_tts, y_nat, sr, sid: apply_spectral_tilt_match(
                 y_nat, sr, compute_spectral_tilt(y_tts, sr)
             ),
@@ -161,6 +159,7 @@ def _build_interventions() -> list[Intervention]:
             baseline_cond="tts_raw",
             transform_description="Compress TTS dynamic range (exp=0.7)",
             expected_sync_direction="unknown",
+            parameters={"exponent": 0.7},
             transform=lambda y_tts, y_nat, sr, sid: apply_dynamic_transform(
                 y_tts, sr, 0.7
             ),
@@ -171,6 +170,7 @@ def _build_interventions() -> list[Intervention]:
             baseline_cond="natural_raw",
             transform_description="Compress natural dynamic range (exp=0.7)",
             expected_sync_direction="unknown",
+            parameters={"exponent": 0.7},
             transform=lambda y_tts, y_nat, sr, sid: apply_dynamic_transform(
                 y_nat, sr, 0.7
             ),
@@ -181,6 +181,7 @@ def _build_interventions() -> list[Intervention]:
             baseline_cond="tts_raw",
             transform_description="Expand TTS dynamic range (exp=1.3)",
             expected_sync_direction="unknown",
+            parameters={"exponent": 1.3},
             transform=lambda y_tts, y_nat, sr, sid: apply_dynamic_transform(
                 y_tts, sr, 1.3
             ),
@@ -191,6 +192,7 @@ def _build_interventions() -> list[Intervention]:
             baseline_cond="natural_raw",
             transform_description="Expand natural dynamic range (exp=1.3)",
             expected_sync_direction="unknown",
+            parameters={"exponent": 1.3},
             transform=lambda y_tts, y_nat, sr, sid: apply_dynamic_transform(
                 y_nat, sr, 1.3
             ),
@@ -244,6 +246,104 @@ def save_transformed_audio(y: np.ndarray, sr: int, path: Path) -> None:
     sf.write(str(path), y.astype(np.float32), sr, subtype="PCM_16")
 
 
+def _write_sidecar(path: Path, payload: dict) -> None:
+    sidecar = path.with_suffix(path.suffix + ".meta.json")
+    sidecar.write_text(json.dumps(payload, indent=2, sort_keys=True), encoding="utf-8")
+
+
+def _cache_matches(path: Path, expected: dict) -> bool:
+    sidecar = path.with_suffix(path.suffix + ".meta.json")
+    if not path.is_file() or not sidecar.is_file():
+        return False
+    try:
+        metadata = json.loads(sidecar.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return False
+    if not isinstance(metadata, dict):
+        return False
+    integrity = {
+        "output_sha256": metadata.get("output_sha256"),
+        "output_size": metadata.get("output_size"),
+    }
+    if integrity["output_sha256"] != _sha256_file(path):
+        return False
+    if integrity["output_size"] != path.stat().st_size:
+        return False
+    observed = {
+        key: value
+        for key, value in metadata.items()
+        if key not in {"output_sha256", "output_size"}
+    }
+    return observed == expected
+
+
+def _stage_fingerprint(
+    *,
+    stage: str,
+    sid: int,
+    run_id: str,
+    intervention: Intervention,
+    audio_sha256: str | None,
+    natural_sha256: str,
+    tts_sha256: str,
+    image_sha256: str | None,
+    cfg: dict,
+    seed: int | None,
+    upstream_sha256: str | None = None,
+    ditto_mode: str | None = None,
+    syncnet_model_sha256: str | None = None,
+    syncnet_evaluator: str | None = None,
+    extra: dict[str, object] | None = None,
+) -> dict:
+    """Build a deterministic dependency record for one pipeline stage."""
+    return {
+        "schema_version": 1,
+        "stage": stage,
+        "sample_id": sid,
+        "run_id": run_id,
+        "intervention": {
+            "name": intervention.name,
+            "source": intervention.source,
+            "parameters": intervention.parameters or {},
+            "description": intervention.transform_description,
+        },
+        "audio_sha256": audio_sha256,
+        "natural_sha256": natural_sha256,
+        "tts_sha256": tts_sha256,
+        "image_sha256": image_sha256,
+        "config": cfg,
+        "seed": seed,
+        "upstream_sha256": upstream_sha256,
+        "ditto_mode": ditto_mode,
+        "syncnet_model_sha256": syncnet_model_sha256,
+        "syncnet_evaluator": syncnet_evaluator,
+        "extra": extra or {},
+    }
+
+
+def _cache_payload(fingerprint: dict, path: Path) -> dict:
+    """Attach output integrity data to a dependency fingerprint."""
+    return {
+        **fingerprint,
+        "output_sha256": _sha256_file(path),
+        "output_size": path.stat().st_size,
+    }
+
+
+def _sha256_bytes(array: np.ndarray) -> str:
+    return hashlib.sha256(np.asarray(array).tobytes()).hexdigest()
+
+
+def _valid_syncnet_result(value: object) -> bool:
+    if not isinstance(value, dict):
+        return False
+    return _finite_metric(value.get("sync_c")) is not None
+
+
+def _valid_syncnet_cache(value: object) -> bool:
+    return _valid_syncnet_result(value)
+
+
 def run_intervention_pipeline(
     intervention: Intervention,
     sid: int,
@@ -271,9 +371,24 @@ def run_intervention_pipeline(
     audio_path = audio_out_dir / f"{sid}.wav"
     video_path = video_out_dir / f"{sid}.mp4"
     syncnet_json = eval_out_dir / str(sid) / "syncnet.json"
+    natural_sha256 = _sha256_bytes(y_nat)
+    tts_sha256 = _sha256_bytes(y_tts)
+    image_sha256 = _sha256_file(img_path) if img_path.is_file() else None
+    source_fingerprint = _stage_fingerprint(
+        stage="audio",
+        sid=sid,
+        run_id=run_id,
+        intervention=intervention,
+        audio_sha256=None,
+        natural_sha256=natural_sha256,
+        tts_sha256=tts_sha256,
+        image_sha256=image_sha256,
+        cfg=cfg,
+        seed=seed,
+    )
 
-    # Stage 1 — transform + write audio
-    if skip_audio and audio_path.exists():
+    # Stage 1 — transform + write audio. Filename-only caches are legacy misses.
+    if skip_audio and _cache_matches(audio_path, source_fingerprint):
         audio_status = "cached"
     else:
         if dry_run:
@@ -281,12 +396,28 @@ def run_intervention_pipeline(
         try:
             y_out = intervention.transform(y_tts, y_nat, sr, sid)
             save_transformed_audio(y_out, sr, audio_path)
+            _write_sidecar(audio_path, _cache_payload(source_fingerprint, audio_path))
             audio_status = "computed"
         except Exception as exc:
             return None, f"transform failed: {exc}"
 
-    # Stage 2 — Ditto inference
-    if skip_video and video_path.exists():
+    audio_sha256 = _sha256_file(audio_path) if audio_path.is_file() else None
+    video_fingerprint = _stage_fingerprint(
+        stage="video",
+        sid=sid,
+        run_id=run_id,
+        intervention=intervention,
+        audio_sha256=audio_sha256,
+        natural_sha256=natural_sha256,
+        tts_sha256=tts_sha256,
+        image_sha256=image_sha256,
+        cfg=cfg,
+        seed=seed,
+        upstream_sha256=audio_sha256,
+    )
+
+    # Stage 2 — Ditto inference. Audio changes transitively invalidate video.
+    if skip_video and _cache_matches(video_path, video_fingerprint):
         video_status = "cached"
     else:
         if dry_run:
@@ -296,23 +427,49 @@ def run_intervention_pipeline(
         ok = run_ditto(
             repo, run_id, cfg, audio_path, img_path, video_path, "trt_online", seed=seed
         )
+        ditto_mode = "trt_online"
         if not ok:
             ok = run_ditto(
                 repo, run_id, cfg, audio_path, img_path, video_path, "pytorch", seed=seed
             )
+            ditto_mode = "pytorch"
         video_status = "computed" if ok else "ditto-failed"
         if not ok:
             return None, "ditto inference failed"
+        video_fingerprint["ditto_mode"] = ditto_mode
+        _write_sidecar(video_path, _cache_payload(video_fingerprint, video_path))
 
-    # Stage 3 — SyncNet
-    if skip_syncnet and syncnet_json.exists():
+    video_sha256 = _sha256_file(video_path) if video_path.is_file() else None
+    syncnet_dir = repo / cfg["paths"]["syncnet_repo"]
+    syncnet_model = syncnet_dir / "data" / "syncnet_v2.model"
+    syncnet_fingerprint = _stage_fingerprint(
+        stage="syncnet",
+        sid=sid,
+        run_id=run_id,
+        intervention=intervention,
+        audio_sha256=audio_sha256,
+        natural_sha256=natural_sha256,
+        tts_sha256=tts_sha256,
+        image_sha256=image_sha256,
+        cfg=cfg,
+        seed=seed,
+        upstream_sha256=video_sha256,
+        syncnet_model_sha256=(
+            _sha256_file(syncnet_model) if syncnet_model.is_file() else None
+        ),
+        syncnet_evaluator="19_generate_eval_matrix.parse_syncnet_output",
+    )
+
+    # Stage 3 — SyncNet. Require a sidecar and parseable Sync-C; legacy JSON is a miss.
+    if skip_syncnet and _cache_matches(syncnet_json, syncnet_fingerprint):
         try:
             cached = json.loads(syncnet_json.read_text())
-            return (
-                {k: cached[k] for k in ("sync_c", "sync_d", "av_offset") if k in cached},
-                f"cached ({audio_status}/{video_status}/syncnet-cached)",
-            )
-        except (json.JSONDecodeError, KeyError):
+            if _valid_syncnet_cache(cached):
+                return (
+                    {k: cached[k] for k in ("sync_c", "sync_d", "av_offset") if k in cached},
+                    f"cached ({audio_status}/{video_status}/syncnet-cached)",
+                )
+        except (OSError, json.JSONDecodeError):
             pass
 
     if dry_run:
@@ -322,9 +479,8 @@ def run_intervention_pipeline(
     syn_env = Path(cfg["paths"]["envs_dir"]) / "syncnet"
     syncnet_python = str(syn_env / "bin" / "python")
     syncnet_bin = str(syn_env / "bin")
-    syncnet_model = syncnet_dir / "data" / "syncnet_v2.model"
-
     data_dir = eval_out_dir / str(sid) / "syncnet_data"
+    data_dir.mkdir(parents=True, exist_ok=True)
     data_dir.mkdir(parents=True, exist_ok=True)
     reference = f"{intervention.name}_{sid}"
 
@@ -353,6 +509,10 @@ def run_intervention_pipeline(
                 parsed_out["intervention"] = intervention.name
                 syncnet_json.parent.mkdir(parents=True, exist_ok=True)
                 syncnet_json.write_text(json.dumps(parsed_out, indent=2))
+                _write_sidecar(
+                    syncnet_json,
+                    _cache_payload(syncnet_fingerprint, syncnet_json),
+                )
                 return parsed_out, f"{audio_status}/{video_status}/syncnet-computed"
             return None, "syncnet parse failed"
         except Exception as exc:
@@ -362,9 +522,24 @@ def run_intervention_pipeline(
     return None, "syncnet exhausted retries"
 
 
-# ---------------------------------------------------------------------------
-# Aggregation
-# ---------------------------------------------------------------------------
+def _sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as stream:
+        for chunk in iter(lambda: stream.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+
+def _finite_metric(value: object) -> float | None:
+    if not isinstance(value, (int, float, str, np.number)):
+        return None
+    try:
+        parsed = float(value)
+    except (TypeError, ValueError):
+        return None
+    return parsed if np.isfinite(parsed) else None
+
+
 
 
 def aggregate_deltas(
@@ -390,10 +565,17 @@ def aggregate_deltas(
             base = baseline_cond.get(sid)
             if base is None or "sync_c" not in res or "sync_c" not in base:
                 continue
-            dc = float(res["sync_c"]) - float(base["sync_c"])
-            dd = float(res.get("sync_d", 0.0)) - float(base.get("sync_d", 0.0))
+            res_c = _finite_metric(res.get("sync_c"))
+            base_c = _finite_metric(base.get("sync_c"))
+            if res_c is None or base_c is None:
+                continue
+            dc = res_c - base_c
+            res_d = _finite_metric(res.get("sync_d"))
+            base_d = _finite_metric(base.get("sync_d"))
+            dd = res_d - base_d if res_d is not None and base_d is not None else None
             delta_c_list.append(dc)
-            delta_d_list.append(dd)
+            if dd is not None:
+                delta_d_list.append(dd)
             per_sample_records[str(sid)] = {
                 "intervention_sync_c": res["sync_c"],
                 "intervention_sync_d": res.get("sync_d"),
@@ -409,11 +591,13 @@ def aggregate_deltas(
             "baseline_cond": iv.baseline_cond,
             "description": iv.transform_description,
             "expected_sync_direction": iv.expected_sync_direction,
-            "n_samples": n,
+            "n_sync_c": len(delta_c_list),
+            "n_sync_d": len(delta_d_list),
+            "n_samples": len(delta_c_list),
             "mean_delta_c": float(np.mean(delta_c_list)) if n else None,
-            "mean_delta_d": float(np.mean(delta_d_list)) if n else None,
+            "mean_delta_d": float(np.mean(delta_d_list)) if delta_d_list else None,
             "std_delta_c": float(np.std(delta_c_list, ddof=1)) if n > 1 else None,
-            "std_delta_d": float(np.std(delta_d_list, ddof=1)) if n > 1 else None,
+            "std_delta_d": float(np.std(delta_d_list, ddof=1)) if len(delta_d_list) > 1 else None,
             "per_sample": per_sample_records,
         }
     return summary
@@ -567,14 +751,16 @@ def main() -> None:
                 print(f"  sample {sid}: FAIL — {status}")
             else:
                 results[iv.name][sid] = res
-                c = res.get("sync_c", 0.0)
-                d = res.get("sync_d", 0.0)
+                c = _finite_metric(res.get("sync_c"))
+                d = _finite_metric(res.get("sync_d"))
                 base = baselines.get(iv.baseline_cond, {}).get(sid, {})
-                bc = base.get("sync_c")
-                if bc is not None:
+                bc = _finite_metric(base.get("sync_c"))
+                if c is not None and bc is not None:
                     print(f"  sample {sid}: Sync-C={c:.3f} (base={bc:.3f}, Δ={c - bc:+.3f}) — {status}")
-                else:
+                elif c is not None:
                     print(f"  sample {sid}: Sync-C={c:.3f} (no baseline) — {status}")
+                else:
+                    print(f"  sample {sid}: Sync-C=n/a (invalid metric) — {status}")
 
     elapsed = time.monotonic() - t0
     print(f"\n[dose] completed in {elapsed:.0f}s; {sum(len(v) for v in results.values())} ok, {len(failures)} failures")
@@ -603,17 +789,19 @@ def main() -> None:
 
     # Console summary
     print("\n=== Dose-Response Summary ===")
-    print(f"{'intervention':<36} {'n':>3} {'ΔSync-C':>10} {'ΔSync-D':>10} {'expected':>10}")
+    print(f"{'intervention':<36} {'n_C':>4} {'n_D':>4} {'ΔSync-C':>10} {'ΔSync-D':>10} {'expected':>10}")
     for iv in interventions:
         s = summary.get(iv.name, {})
-        if s.get("n_samples"):
+        if s.get("n_sync_c"):
+            mean_d = s.get("mean_delta_d")
+            d_text = f"{mean_d:+10.4f}" if mean_d is not None else f"{'n/a':>10}"
             print(
-                f"{iv.name:<36} {s['n_samples']:>3} "
-                f"{s['mean_delta_c']:+10.4f} {s['mean_delta_d']:+10.4f} "
+                f"{iv.name:<36} {s['n_sync_c']:>4} {s['n_sync_d']:>4} "
+                f"{s['mean_delta_c']:+10.4f} {d_text} "
                 f"{iv.expected_sync_direction:>10}"
             )
         else:
-            print(f"{iv.name:<36}   0        n/a        n/a {iv.expected_sync_direction:>10}")
+            print(f"{iv.name:<36}    0    0        n/a        n/a {iv.expected_sync_direction:>10}")
 
 
 if __name__ == "__main__":

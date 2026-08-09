@@ -40,7 +40,7 @@ import numpy as np
 # Path set-up
 # ---------------------------------------------------------------------------
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from tfg_feature_common import TARGET_SR, OUTPUT_BASE, embedding_file_stem
+from tfg_feature_common import TARGET_SR, OUTPUT_BASE, embedding_file_stem, half_open_span_mask
 from manifest import load_manifest
 
 # ---------------------------------------------------------------------------
@@ -277,7 +277,7 @@ def _frame_to_token_pooling(
     for token in token_spans:
         start = float(token["start_s"])
         end = float(token["end_s"])
-        mask = (frame_times >= start) & (frame_times <= end)
+        mask = half_open_span_mask(frame_times, start, end)
         if not np.any(mask):
             pooled = None
         else:

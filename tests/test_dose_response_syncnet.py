@@ -185,7 +185,16 @@ class TestAggregateDeltas:
         # Δ_d: 1.0, 0.5, 2.0  → mean 1.1667
         assert s["mean_delta_d"] == pytest.approx(7 / 6, abs=1e-6)
 
-    def test_excludes_samples_without_baseline(self):
+    def test_missing_sync_d_does_not_create_zero_delta(self):
+        iv = self._iv()
+        results = {iv.name: {1: {"sync_c": 5.5}, 2: {"sync_c": 6.0, "sync_d": 7.5}}}
+        baselines = {"tts_raw": {1: {"sync_c": 6.5, "sync_d": 7.0}, 2: {"sync_c": 6.0, "sync_d": 7.0}}}
+        out = _MOD.aggregate_deltas(results, baselines, [iv])[iv.name]
+        assert out["n_sync_c"] == 2
+        assert out["n_sync_d"] == 1
+        assert out["per_sample"]["1"]["delta_d"] is None
+        assert out["mean_delta_d"] == pytest.approx(0.5)
+
         iv = self._iv()
         results = {iv.name: {1: {"sync_c": 5.5, "sync_d": 8.0}, 9: {"sync_c": 4.0, "sync_d": 9.0}}}
         baselines = {"tts_raw": {1: {"sync_c": 6.5, "sync_d": 7.0}}}  # 9 missing
@@ -217,6 +226,67 @@ class TestAggregateDeltas:
 
 
 class TestPipelineSkipFlags:
+    def _iv(self):
+        return _MOD.Intervention(
+            name="cache_test",
+            source="tts",
+            baseline_cond="tts_raw",
+            transform_description="cache test",
+            expected_sync_direction="unknown",
+            parameters={"gain": 1.0},
+            transform=lambda y_tts, y_nat, sr, sid: y_tts,
+        )
+
+    def _fingerprint(self, tmp_path):
+        image = tmp_path / "image.png"
+        image.write_bytes(b"image")
+        return image, _MOD._stage_fingerprint(
+            stage="audio",
+            sid=1,
+            run_id="run",
+            intervention=self._iv(),
+            audio_sha256=None,
+            natural_sha256="nat",
+            tts_sha256="tts",
+            image_sha256=_MOD._sha256_file(image),
+            cfg={"seed": 42},
+            seed=42,
+        )
+
+    def test_sidecar_requires_matching_fingerprint_and_integrity(self, tmp_path):
+        path = tmp_path / "1.wav"
+        path.write_bytes(b"audio")
+        _, fingerprint = self._fingerprint(tmp_path)
+        _MOD._write_sidecar(path, _MOD._cache_payload(fingerprint, path))
+        assert _MOD._cache_matches(path, fingerprint)
+
+        path.write_bytes(b"changed")
+        assert not _MOD._cache_matches(path, fingerprint)
+
+    def test_legacy_filename_cache_is_rejected(self, tmp_path):
+        path = tmp_path / "1.wav"
+        path.write_bytes(b"audio")
+        _, fingerprint = self._fingerprint(tmp_path)
+        assert not _MOD._cache_matches(path, fingerprint)
+
+    def test_changed_dependency_invalidates_cache(self, tmp_path):
+        path = tmp_path / "1.wav"
+        path.write_bytes(b"audio")
+        _, fingerprint = self._fingerprint(tmp_path)
+        _MOD._write_sidecar(path, _MOD._cache_payload(fingerprint, path))
+        changed = {**fingerprint, "seed": 43}
+        assert not _MOD._cache_matches(path, changed)
+
+    def test_syncnet_cache_can_have_missing_sync_d_but_not_sync_c(self, tmp_path):
+        path = tmp_path / "syncnet.json"
+        path.write_text(json.dumps({"sync_c": 4.5, "sample_id": 1}))
+        _, fingerprint = self._fingerprint(tmp_path)
+        _MOD._write_sidecar(path, _MOD._cache_payload(fingerprint, path))
+        assert _MOD._cache_matches(path, fingerprint)
+        assert _MOD._valid_syncnet_cache(json.loads(path.read_text()))
+        assert not _MOD._valid_syncnet_cache({"sync_d": 7.0})
+
+
     def test_skips_audio_when_cache_exists(self, tmp_path):
         audio_path = tmp_path / "audio" / "1.wav"
         audio_path.parent.mkdir()

@@ -330,6 +330,7 @@ def main(argv: list[str] | None = None) -> int:
         "frame_stride_samples": HUERT_FRAME_STRIDE,
         "sample_rate": TARGET_SR,
         "frame_time_convention": "stride_aligned_extractor_timestamps_without_receptive_field_offset",
+        "frame_span_convention": "half_open_[start,end)",
         "non_speech_tokens_excluded": True,
         "grouping": "paired_key_per_utterance",
         "n_utterances": len({_entry_key(entry) for entry in alignment_entries}),
@@ -423,7 +424,14 @@ def main(argv: list[str] | None = None) -> int:
         cross_t2n = cross.get("tts_proto_to_natural", {}).get("accuracy")
 
         layer_result = {
-            "natural_self": {
+            "result_schema_version": 2,
+            "metric_semantics": {
+                "natural_self_loo": "within-condition utterance-held-out prototype evaluation",
+                "tts_self_loo": "within-condition utterance-held-out prototype evaluation",
+                "natural_proto_to_tts_cross": "paired-key leave-one-out cross-condition transfer",
+                "tts_proto_to_natural_cross": "paired-key leave-one-out cross-condition transfer",
+            },
+            "natural_self_loo": {
                 "accuracy": nat_acc,
                 "majority_baseline": eval_nat.get("majority_baseline"),
                 "total_frames": eval_nat.get("total_frames"),
@@ -431,7 +439,7 @@ def main(argv: list[str] | None = None) -> int:
                 "n_utterances": eval_nat.get("n_utterances"),
                 "n_classes": eval_nat.get("unique_classes"),
             },
-            "tts_self": {
+            "tts_self_loo": {
                 "accuracy": tts_acc,
                 "majority_baseline": eval_tts.get("majority_baseline"),
                 "total_frames": eval_tts.get("total_frames"),
@@ -439,7 +447,10 @@ def main(argv: list[str] | None = None) -> int:
                 "n_utterances": eval_tts.get("n_utterances"),
                 "n_classes": eval_tts.get("unique_classes"),
             },
+            "delta_tts_minus_nat_self_loo_per": delta_per,
             "delta_tts_minus_nat_per": delta_per,
+            "natural_proto_to_tts_cross": cross.get("natural_proto_to_tts"),
+            "tts_proto_to_natural_cross": cross.get("tts_proto_to_natural"),
             "natural_proto_to_tts": cross.get("natural_proto_to_tts"),
             "tts_proto_to_natural": cross.get("tts_proto_to_natural"),
         }
@@ -455,9 +466,9 @@ def main(argv: list[str] | None = None) -> int:
 
         # Print summary
         print()
-        print(f"  L{layer}: PER nat_self={_per(nat_acc)} tts_self={_per(tts_acc)} "
-              f"Δ={_per_delta(delta_per)} "
-              f"nat→tts={_per(cross_n2t)} tts→nat={_per(cross_t2n)}")
+        print(f"  L{layer}: PER self_nat={_per(nat_acc)} self_tts={_per(tts_acc)} "
+              f"Δself={_per_delta(delta_per)} "
+              f"cross_nat→tts={_per(cross_n2t)} cross_tts→nat={_per(cross_t2n)}")
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(all_results, ensure_ascii=False, indent=2))
@@ -465,17 +476,17 @@ def main(argv: list[str] | None = None) -> int:
 
     # Final table
     print()
-    hdr = f"{'':>6s} {'nat_PER':>9s} {'tts_PER':>9s} {'Δ_PER':>9s} {'nat→tts':>9s} {'tts→nat':>9s}"
+    hdr = f"{'':>6s} {'self_nat_PER':>13s} {'self_tts_PER':>13s} {'Δself_PER':>11s} {'cross_nat→tts':>15s} {'cross_tts→nat':>15s}"
     print(hdr)
     print("-" * len(hdr))
     for layer in layers:
         lr = all_results["layer_results"][f"L{layer}"]
-        nat_acc = lr["natural_self"]["accuracy"]
-        tts_acc = lr["tts_self"]["accuracy"]
+        nat_acc = lr["natural_self_loo"]["accuracy"]
+        tts_acc = lr["tts_self_loo"]["accuracy"]
         cross_n2t = (lr.get("natural_proto_to_tts") or {}).get("accuracy")
         cross_t2n = (lr.get("tts_proto_to_natural") or {}).get("accuracy")
         print(f"  L{layer}: {_per(nat_acc)} {_per(tts_acc)} "
-              f"{_per_delta(lr['delta_tts_minus_nat_per'])} "
+              f"{_per_delta(lr['delta_tts_minus_nat_self_loo_per'])} "
               f"{_per(cross_n2t)} {_per(cross_t2n)}")
     return 0
 

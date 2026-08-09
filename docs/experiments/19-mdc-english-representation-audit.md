@@ -30,7 +30,8 @@
 
 对 HuBERT/XLS-R 的 phoneme 与 viseme token vectors 计算 intra-class distance、inter-class distance、Fisher ratio、silhouette、probe、boundary sharpness 与 segment stability。使用 50 个 paired keys，排除 non-speech tokens；全局 96 个 comparison 使用一个 BH-FDR family。结果包含 32 个 metric/model/layer/level 条目，phoneme 支持 55 类，viseme 支持 14 类。
 
-### Experiment 35：phoneme/viseme probe
+现有生成协议是 `reference_conditioned_same_source`：每个 TTS 输出使用对应 natural 音频作为 reference。`tts:<provider>` 是 provider/condition scope 标签，不是经过独立验证的统一 synthetic speaker identity；source author 与 TTS provider 不应在 B5 中混为同一 speaker 语义。
+
 
 使用 MFA 边界将 SSL frames 池化到 phoneme 或 viseme；保存层按 embedding metadata 直接索引。跨条件 probe 使用 paired-key leave-one-out：natural prototype→TTS 与 TTS prototype→natural 时，held-out paired key 不进入 source prototype。HuBERT 报告 phoneme 与 viseme；XLS-R 的 logistic probe 没有运行，不能写入 XLS-R probe 结论。
 
@@ -58,9 +59,9 @@ Experiment 16 的 96 个全局比较中有 58 个经 FDR 显著。总体方向�
 
 在 HuBERT phoneme 层，layer 0 的 probe accuracy 为 natural `.3366`、TTS `.3926`；layer 6 为 `.5427/.6941`；layer 11 为 `.5911/.7310`；layer 12 为 `.5584/.7095`。HuBERT viseme 层对应为 `.4788/.5433`、`.6521/.7848`、`.6942/.8148`、`.6720/.7801`。这说明 TTS 优势不只存在于输入层；在本轮四个保存层中，layer 6–12 的差异更明显。
 
-### 2. Phoneme/viseme probe：TTS 在跨条件原型迁移中 PER 更低
+### 2. Phoneme/viseme probe：明确区分 self-LOO 与跨条件迁移
 
-HuBERT phoneme probe 的 `delta_tts_minus_nat_per` 为：
+下面两张表中的 natural/TTS PER 与 `delta_tts_minus_nat_per` 是**同条件 utterance-held-out self-LOO**，不是跨条件迁移：
 
 | 层 | natural PER | TTS PER | TTS−natural PER |
 |---|---:|---:|---:|
@@ -78,7 +79,8 @@ HuBERT viseme PER 为：
 | 11 | 47.38% | 38.77% | −8.60 pp |
 | 12 | 48.49% | 40.54% | −7.95 pp |
 
-natural prototype→TTS 和 TTS prototype→natural 都使用 paired-key leave-one-out，而不是将同一 utterance 的向量泄漏到 source prototype。该结果支持“F5-TTS 音频中的 phone/viseme 模式更容易被跨条件迁移识别”，但仍是 SSL 表征结果，不是 TFG 结果。
+跨条件结果单独保存在 `natural_proto_to_tts` 与 `tts_proto_to_natural` 字段中，分别表示 paired-key leave-one-out 的两个方向。两个方向不对称，不能用上表的 self-LOO 数值代替。现有表格保留历史数值，但其语义按 self-LOO 解释。
+
 
 ### 3. B1 时长与停顿：TTS 更短、更规整、停顿更少
 
@@ -175,7 +177,7 @@ B5 独立审查为 **PASS with material interpretability caveat**：实现正确
 ### 数据与运行产物
 
 - 数据 manifest：`data/mdc_tts/manifest.json`
-- Pair manifest：`runs/mdc_en_phoneme_20260807_f5_full/00_pairs/pair_manifest.json`
+- Pair manifest：`runs/mdc_en_phoneme_20260807/00_pairs/pair_manifest.json`（由 alignment/TTS provenance hash 引用；`_f5_full` 目录不包含独立 pair manifest）
 - TTS provenance：`runs/mdc_en_phoneme_20260807_f5_full/02_tts/tts_meta.json`
 - MFA alignment：`runs/mdc_en_phoneme_20260807_f5_full/03_alignment/alignment.json`
 - MFA retry provenance：`runs/mdc_en_phoneme_20260807_f5_full/03_alignment/mfa_retry_provenance.json`

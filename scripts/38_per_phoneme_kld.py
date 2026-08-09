@@ -46,8 +46,11 @@ from typing import Any
 
 import numpy as np
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
+from tfg_feature_common import half_open_span_mask
+
 logging.basicConfig(
-    level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
 )
@@ -148,7 +151,7 @@ def pool_frames_in_spans(layer_emb: np.ndarray, spans: list[tuple[float, float]]
     frame_times = np.arange(n_frames, dtype=np.float32) * (FRAME_STRIDE / TARGET_SR)
     out: list[np.ndarray] = []
     for start, end in spans:
-        mask = (frame_times >= start) & (frame_times <= end)
+        mask = half_open_span_mask(frame_times, start, end)
         if not np.any(mask):
             continue
         out.append(layer_emb[mask].mean(axis=0))

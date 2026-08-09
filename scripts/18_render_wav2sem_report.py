@@ -35,7 +35,7 @@ import numpy as np
 import seaborn as sns
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from tfg_feature_common import OUTPUT_BASE
+from tfg_feature_common import OUTPUT_BASE, half_open_span_mask
 
 # ---------------------------------------------------------------------------
 # Logging
@@ -264,7 +264,7 @@ def _generate_umap_projection(
                     continue
                 start = float(token.get("start_s", 0))
                 end = float(token.get("end_s", 0))
-                mask = (frame_times >= start) & (frame_times <= end)
+                mask = half_open_span_mask(frame_times, start, end)
                 if not np.any(mask):
                     continue
                 vec = layer_emb[mask].mean(axis=0)

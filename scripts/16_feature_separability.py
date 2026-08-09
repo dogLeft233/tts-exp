@@ -49,6 +49,7 @@ from tfg_feature_common import (
     paired_permutation_test,
     bootstrap_paired_ci,
     fdr_bh_correction,
+    half_open_span_mask,
 )
 
 # ---------------------------------------------------------------------------
@@ -511,7 +512,7 @@ def _pool_frames_for_layer(
             continue
         start = float(token["start_s"])
         end = float(token["end_s"])
-        mask = (frame_times >= start) & (frame_times <= end)
+        mask = half_open_span_mask(frame_times, start, end)
         if not np.any(mask):
             continue
         vec = layer_embeddings[mask].mean(axis=0)

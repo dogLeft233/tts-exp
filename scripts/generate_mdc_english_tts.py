@@ -131,8 +131,13 @@ def generate_tts(
                     "condition": "tts",
                     "utterance_id": f"mdc_tts/{sample_key}/tts",
                     "text": text,
+                    "generation_mode": "reference_conditioned_same_source",
+                    "reference_role": "paired_natural_audio",
+                    "reference_sample_key": sample_key,
+                    "reference_speaker_id": row.get("speaker_id"),
+                    "reference_is_natural_arm": True,
+                    "voice_identity_relation": "reference_conditioned_not_independently_verified",
                     "reference_audio": str(ref_audio.relative_to(repo)),
-                    "reference_sha256": sha256_file(ref_audio),
                     "generated_audio": str(canonical_path.relative_to(repo)),
                     "generated_source_audio": str(raw_path.relative_to(repo)),
                     "provider": provider.name,
@@ -185,7 +190,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--pair-manifest", default="")
-    parser.add_argument("--config", default="scripts/configs/r1_multiset.yaml")
+    parser.add_argument("--config", default="scripts/configs/r2_f5_tts.yaml")
     parser.add_argument("--sample-ids", default="")
     parser.add_argument("--retries", type=int, default=None)
     args = parser.parse_args()
