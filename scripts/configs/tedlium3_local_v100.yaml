@@ -1,0 +1,11 @@
+# Local V100 faster_qwen3 override for TED-LIUM 3 augmentation TTS
+tts:
+  provider: "faster_qwen3"
+  language: "English"
+  seed: 42
+  retry: 1
+  faster_qwen3:
+    model_id: "/home/wjj/tts-audio/tts-exp/models/Qwen3-TTS-12Hz-0.6B-Base"
+    clone_mode: "icl"
+    x_vector_only: false
+    append_silence: true

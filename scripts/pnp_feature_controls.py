@@ -73,6 +73,9 @@ def _phase_vocoder_resample(
             source.astype(np.float64), rate=float(rate),
             n_fft=n_fft, hop_length=hop_length,
         )
+        stretched = np.asarray(stretched, dtype=np.float32)
+        if not np.isfinite(stretched).all():
+            return _exact_length(source, target_length), True, "phase_vocoder_nonfinite"
         return _exact_length(stretched, target_length), False, None
     except (ValueError, RuntimeError, librosa.util.exceptions.ParameterError) as exc:
         return _exact_length(source, target_length), True, f"phase_vocoder_failed:{type(exc).__name__}"
@@ -163,6 +166,93 @@ def pitch_preserving_phone_local_warp(
 def ordinary_phone_local_warp(*args: Any, **kwargs: Any) -> WarpResult:
     """Expose the existing ordinary waveform warp as a named control."""
     return phone_local_warp(*args, **kwargs)
+
+
+def reallocate_pause_samples(
+    audio: np.ndarray,
+    sample_rate: int,
+    speech_spans: Iterable[Span | Mapping[str, Any] | Any],
+    target_gap_sample_counts: Sequence[int],
+) -> ControlResult:
+    """Reassign existing pause samples while preserving speech and exact length.
+
+    The waveform is partitioned into non-overlapping speech spans and the gaps
+    around them. Gap samples are concatenated once and repartitioned according
+    to ``target_gap_sample_counts``; no sample is synthesized or discarded.
+    """
+    if sample_rate <= 0:
+        raise ValueError("sample_rate must be positive")
+    source = np.asarray(audio, dtype=np.float32).reshape(-1)
+    spans = as_spans(speech_spans)
+    if len(target_gap_sample_counts) != len(spans) + 1:
+        raise ValueError("target gap count must equal speech span count plus one")
+    target_counts = [int(value) for value in target_gap_sample_counts]
+    if any(value < 0 for value in target_counts):
+        raise ValueError("target gap sample counts must be non-negative")
+
+    speech_parts: list[np.ndarray] = []
+    gap_parts: list[np.ndarray] = []
+    cursor = 0
+    previous_end = 0
+    speech_bounds: list[tuple[int, int]] = []
+    for span in spans:
+        start, end = _sample_bounds(span.start_s, span.end_s, sample_rate, len(source))
+        if start < previous_end:
+            raise ValueError("speech spans must be sorted and non-overlapping")
+        gap_parts.append(source[cursor:start])
+        speech_parts.append(source[start:end])
+        speech_bounds.append((start, end))
+        cursor = end
+        previous_end = end
+    gap_parts.append(source[cursor:])
+
+    source_counts = [len(part) for part in gap_parts]
+    total_gap_samples = sum(source_counts)
+    if sum(target_counts) != total_gap_samples:
+        raise ValueError(
+            "target gap sample counts must preserve the source gap sample total"
+        )
+    gap_pool = (
+        np.concatenate(gap_parts).astype(np.float32, copy=False)
+        if gap_parts
+        else np.empty(0, dtype=np.float32)
+    )
+    target_parts: list[np.ndarray] = []
+    pool_cursor = 0
+    for count in target_counts:
+        target_parts.append(gap_pool[pool_cursor : pool_cursor + count])
+        pool_cursor += count
+    if pool_cursor != len(gap_pool):
+        raise AssertionError("pause sample pool was not consumed exactly once")
+
+    output_parts: list[np.ndarray] = []
+    for index, speech in enumerate(speech_parts):
+        output_parts.extend((target_parts[index], speech))
+    output_parts.append(target_parts[-1])
+    output = (
+        np.concatenate(output_parts).astype(np.float32, copy=False)
+        if output_parts
+        else source.copy()
+    )
+    if len(output) != len(source) or not np.isfinite(output).all():
+        raise FloatingPointError("pause reallocation violated exact-length/finite contract")
+    return ControlResult(
+        audio=output,
+        metadata={
+            "transform": "reallocate_existing_pause_samples",
+            "sample_rate": int(sample_rate),
+            "source_sample_count": int(len(source)),
+            "output_sample_count": int(len(output)),
+            "exact_sample_count": True,
+            "speech_span_count": len(spans),
+            "speech_sample_count": int(sum(len(part) for part in speech_parts)),
+            "pause_sample_count": int(total_gap_samples),
+            "source_gap_sample_counts": source_counts,
+            "target_gap_sample_counts": target_counts,
+            "sample_conservation": "all speech and gap samples used exactly once",
+            "speech_bounds": [list(bounds) for bounds in speech_bounds],
+        },
+    )
 
 
 def _duration_targets(

@@ -1,0 +1,95 @@
+topic: "让输入音频特征向 TTS 特征靠近的简单模型设计"
+time_range: "不限时间"
+items:
+  - id: tcn_waveform_residual
+    name: "TCN waveform residual enhancer"
+    description: "使用非因果 dilated Conv1D/TCN 预测受限 waveform residual，再通过 frozen HuBERT feature loss 让 enhanced waveform 靠近 aligned TTS feature。"
+    priority: 1
+    primary_question: "在保持 exact length、内容和说话人的前提下，轻量 waveform residual 网络能否实现 TTS-like feature shift？"
+    compare_variants:
+      - "plain Conv1D residual blocks"
+      - "non-causal dilated TCN"
+      - "bounded residual with tanh or learned scale"
+      - "feature loss only versus feature plus STFT/content preservation"
+  - id: unet_waveform_residual
+    name: "U-Net waveform residual enhancer"
+    description: "通过多尺度 encoder-decoder 和 skip connections 修改输入 waveform，输出 exact-length enhanced waveform 或 waveform residual。"
+    priority: 2
+    primary_question: "相较于 TCN，U-Net 的多尺度上下文是否能更好地实现音素级和韵律级 target feature realization？"
+    compare_variants:
+      - "direct waveform output versus residual output"
+      - "sample-level U-Net versus strided multi-scale U-Net"
+      - "skip connection strength and residual budget"
+      - "feature loss with optional multi-resolution STFT loss"
+  - id: feature_residual_predictor
+    name: "Feature residual predictor"
+    description: "在 frozen HuBERT L2/L6 feature space 中预测 TTS-natural residual，可先作为 feature-only baseline，再接 feature-to-waveform decoder。"
+    priority: 3
+    primary_question: "feature mapping 能否过拟合并泛化，以及 waveform decoder 是否才是当前主要瓶颈？"
+    compare_variants:
+      - "framewise affine or low-rank residual map"
+      - "TCN feature residual predictor"
+      - "small Transformer or MLP adapter"
+      - "direct feature evaluation versus decoder reconstruction"
+alignment_duration_axis:
+  description: "最终报告只比较三条 alignment 主线；MFA/phonemizer 是 phone-local 的边界依赖，LASER/DTW-Align/T2A 是 HuBERT/SSL 的全局或训练期近邻证据。"
+  strategies:
+    - id: phone_local_hard_dtw
+      name: "Phone-local hard DTW"
+      target_policy: "使用 MFA/phonemizer 提供的 matched phone spans，在每个 phone 矩形内以固定端点、duration-ratio band 和 run limit 求离线 hard path，再生成 source-grid target。"
+      output_length: "由 target grid 或显式 duration policy 决定"
+      inference_requirement: "训练/离线 audit 需要两侧 phone boundaries 和 target feature；natural-only 推理不能直接运行 DTW。"
+    - id: constrained_soft_dtw
+      name: "Constrained soft-DTW"
+      target_policy: "在 phone anchor、sil/sp mask 和局部 slope/band 约束下，用 soft-DTW 作为可微 alignment-aware loss 或 soft target aggregation。"
+      output_length: "loss 本身不决定输出长度，需要 source grid 或 duration/length regulator。"
+      inference_requirement: "训练时需要 target sequence；部署时需蒸馏到 predictor，或仅在 reference-conditioned inference 使用。"
+    - id: differentiable_duration_warp
+      name: "Differentiable duration / warping alignment"
+      target_policy: "预测 phone/pause duration 或 monotonic occupancy，再用 length regulator/warp matrix 生成目标 frame grid；可支持 exact-N 归一化或 variable-length 输出。"
+      output_length: "explicit exact-N allocation or variable-length target grid"
+      inference_requirement: "通常需要 transcript/phoneme sequence，或 natural-side ASR/phoneme encoder；不依赖 TTS waveform target。"
+  boundary_dependencies:
+    - "MFA/phonemizer/ASR/CTC 只提供 noisy phone boundary or content anchors，不是 warp operator。"
+    - "LASER、DTW-Align、T2A 作为 HuBERT/SSL 全局或训练期 soft-DTW 近邻，不冒充 phone-local solution。"
+  secondary_controls:
+    - "exact-N crop/pad、global resampling、phone-local interpolation 只作为 baseline/control，不作为主 alignment strategy。"
+    - "variable-length resynthesis 是 duration/warping 主线的 output contract，不单独列为第四种 alignment 方法。"
+  required_comparisons:
+    - "target feature gap before and after alignment"
+    - "K=1 direct waveform or feature-only reachability"
+    - "per-phone and boundary error"
+    - "pause, duration, F0 and energy transfer"
+    - "exact-length preservation versus TTS rhythm transfer"
+    - "whether alignment metadata is available at inference"
+execution:
+  batch_size: 3
+  items_per_agent: 1
+  output_dir: "./results"
+  research_output_dir: "./simple-tts-feature-pull-models"
+  source_policy: "先用成熟基础方法，再补充可复用的近年方案；不把复杂 diffusion/flow/token-LM 作为主调研对象。"
+  project_constraints:
+    - "优先支持 natural-only inference。"
+    - "优先支持输入输出 exact sample count 相同。"
+    - "优先支持 frozen HuBERT L6 masked feature loss。"
+    - "必须区分 feature target 可达性与 waveform decoder 可达性。"
+    - "不得把 downstream SyncNet 效果由 feature proximity 单独推断。"
+    - "每类模型必须在至少两种 alignment/duration strategy 下比较，不能把 phone-local resampling 当作唯一真值。"
+    - "必须单独报告 source-grid acoustic transfer 与 TTS rhythm/duration transfer，不能混为一个目标。"
+  evaluation_order:
+    - "alignment preflight: phone spans, duration ratios, pause regions and boundary confidence"
+    - "K=1 overfit feasibility under each selected alignment strategy"
+    - "K=4/K=16 train-valid generalization"
+    - "masked HuBERT target gap reduction"
+    - "per-phone, boundary, pause and duration metrics"
+    - "content, speaker, duration, energy and clipping preservation"
+    - "exact-length versus variable-length output comparison"
+    - "Ditto and SyncNet downstream evaluation"
+  required_deliverables:
+    - "每类模型的原理和最小架构图"
+    - "每种 alignment/duration strategy 的 target 构造方式和适用边界"
+    - "最小可用训练目标"
+    - "与当前 HuBERT L2/L6 pipeline 的接口"
+    - "训练和推理时分别需要哪些 alignment、transcript 或 duration 信息"
+    - "实现复杂度、训练稳定性和主要失败模式"
+    - "推荐的最小 ablation 和停止条件"

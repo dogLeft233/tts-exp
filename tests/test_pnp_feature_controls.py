@@ -19,6 +19,7 @@ from pnp_feature_controls import (
     ordinary_phone_local_warp,
     pitch_preserving_phone_local_warp,
     pitch_preserving_resample,
+    reallocate_pause_samples,
     spectral_timbre_transfer,
 )
 
@@ -47,11 +48,19 @@ def test_pitch_preserving_resample_keeps_single_tone_frequency() -> None:
     assert abs(peak_frequency - 220.0) < 2.0
 
 
-def test_short_segment_is_explicit_fallback() -> None:
-    result = pitch_preserving_resample(np.ones(8, dtype=np.float32), 20)
+def test_nonfinite_phase_vocoder_output_is_explicit_fallback(monkeypatch) -> None:
+    import pnp_feature_controls as controls
+
+    def fake_time_stretch(*args, **kwargs):
+        return np.array([np.nan, np.inf], dtype=np.float64)
+
+    monkeypatch.setattr(controls.librosa.effects, "time_stretch", fake_time_stretch)
+    source = np.ones(2048, dtype=np.float32)
+    result = pitch_preserving_resample(source, 3072)
     assert result.metadata["fallback"] is True
-    assert result.metadata["fallback_reason"] == "short_segment_exact_fit"
-    assert len(result.audio) == 20
+    assert result.metadata["fallback_reason"] == "phase_vocoder_nonfinite"
+    assert np.isfinite(result.audio).all()
+    assert len(result.audio) == 3072
 
 
 def test_pitch_preserving_local_warp_preserves_natural_length_and_gap() -> None:
@@ -67,6 +76,35 @@ def test_pitch_preserving_local_warp_preserves_natural_length_and_gap() -> None:
     assert np.array_equal(result.audio[:200], natural[:200])
     assert np.array_equal(result.audio[600:900], natural[600:900])
     assert np.array_equal(result.audio[1300:], natural[1300:])
+
+
+def test_pause_reallocation_is_identity_for_source_counts() -> None:
+    audio = np.arange(20, dtype=np.float32)
+    spans = [Span("a", 0.004, 0.008), Span("b", 0.012, 0.016)]
+    result = reallocate_pause_samples(audio, 1000, spans, [4, 4, 4])
+    assert np.array_equal(result.audio, audio)
+    assert result.metadata["exact_sample_count"]
+    assert result.metadata["pause_sample_count"] == 12
+
+
+def test_pause_reallocation_preserves_every_speech_and_gap_sample() -> None:
+    audio = np.arange(20, dtype=np.float32)
+    spans = [Span("a", 0.004, 0.008), Span("b", 0.012, 0.016)]
+    result = reallocate_pause_samples(audio, 1000, spans, [0, 8, 4])
+    assert len(result.audio) == len(audio)
+    assert np.isfinite(result.audio).all()
+    assert np.array_equal(np.sort(result.audio), np.sort(audio))
+    assert np.array_equal(result.audio[:4], audio[4:8])
+    assert np.array_equal(result.audio[12:16], audio[12:16])
+
+
+def test_pause_reallocation_rejects_nonconserving_targets() -> None:
+    audio = np.arange(20, dtype=np.float32)
+    spans = [Span("a", 0.004, 0.008), Span("b", 0.012, 0.016)]
+    import pytest
+
+    with pytest.raises(ValueError, match="preserve"):
+        reallocate_pause_samples(audio, 1000, spans, [1, 2, 3])
 
 
 def test_duration_alpha_zero_matches_natural_phone_durations() -> None:

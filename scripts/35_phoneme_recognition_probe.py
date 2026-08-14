@@ -186,6 +186,7 @@ def _evaluate_loo(
     unique_utts = np.unique(utt_all)
     per_utt_acc: list[float] = []
     per_utt_n: list[int] = []
+    per_utt_key: list[str] = []
     total_correct = 0
     total_frames = 0
     unseen_class_frames = 0
@@ -200,12 +201,14 @@ def _evaluate_loo(
         )
         per_utt_acc.append(acc)
         per_utt_n.append(n)
+        per_utt_key.append(str(test_utt))
         total_correct += int(round(acc * n))
         total_frames += n
 
     return {
         "per_utterance_acc": per_utt_acc,
         "per_utterance_n": per_utt_n,
+        "per_utterance_key": per_utt_key,
         "total_accuracy": float(total_correct) / max(total_frames, 1),
         "majority_baseline": float(Counter(y.tolist()).most_common(1)[0][1]) / max(len(y), 1),
         "total_frames": total_frames,
@@ -438,6 +441,9 @@ def main(argv: list[str] | None = None) -> int:
                 "unseen_class_frames": eval_nat.get("unseen_class_frames"),
                 "n_utterances": eval_nat.get("n_utterances"),
                 "n_classes": eval_nat.get("unique_classes"),
+                "per_utterance_key": eval_nat.get("per_utterance_key", []),
+                "per_utterance_acc": eval_nat.get("per_utterance_acc", []),
+                "per_utterance_n": eval_nat.get("per_utterance_n", []),
             },
             "tts_self_loo": {
                 "accuracy": tts_acc,
@@ -446,6 +452,9 @@ def main(argv: list[str] | None = None) -> int:
                 "unseen_class_frames": eval_tts.get("unseen_class_frames"),
                 "n_utterances": eval_tts.get("n_utterances"),
                 "n_classes": eval_tts.get("unique_classes"),
+                "per_utterance_key": eval_tts.get("per_utterance_key", []),
+                "per_utterance_acc": eval_tts.get("per_utterance_acc", []),
+                "per_utterance_n": eval_tts.get("per_utterance_n", []),
             },
             "delta_tts_minus_nat_self_loo_per": delta_per,
             "delta_tts_minus_nat_per": delta_per,

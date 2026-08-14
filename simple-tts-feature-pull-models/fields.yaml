@@ -1,0 +1,180 @@
+topic: "让输入音频特征向 TTS 特征靠近的简单模型设计"
+field_groups:
+  - group: basic
+    description: "确认方法来源、成熟度和是否可复现。"
+    fields:
+      - name: model_name
+        description: "模型或架构名称。"
+        detail_level: "简要"
+      - name: model_family
+        description: "TCN residual、U-Net residual 或 feature residual predictor，以及对应的经典变体。"
+        detail_level: "简要"
+      - name: reference_and_year
+        description: "主要论文、开源实现或技术来源及年份。"
+        detail_level: "简要"
+      - name: reproducibility
+        description: "是否有公开代码、预训练模型、清晰训练配置和可复现实验。"
+        detail_level: "详细"
+  - group: input_output_and_alignment
+    description: "判断方法是否能直接接入当前 paired natural/TTS、MFA 和 exact-length pipeline。"
+    fields:
+      - name: input_output_type
+        description: "输入和输出是 waveform、HuBERT feature、mel、WORLD 参数、codec latent 还是组合。"
+        detail_level: "详细"
+      - name: input_output_length_relation
+        description: "输出是否保持输入 frame 数、sample 数，或允许 duration 改变。"
+        detail_level: "详细"
+      - name: exact_length_support
+        description: "是否能在不 crop/pad 或重新生成时长的情况下保持 natural sample count。"
+        detail_level: "详细"
+      - name: alignment_requirement
+        description: "需要 sample alignment、frame alignment、DTW、MFA、CTC、soft-DTW 或不需要配对。"
+        detail_level: "详细"
+      - name: duration_and_pause_policy
+        description: "duration、pause、句首句尾和音素边界来自 source、TTS target、预测模块还是固定不变。"
+        detail_level: "详细"
+      - name: alignment_confidence_mask
+        description: "是否支持按 matched spans、alignment confidence、VAD 或 voiced/unvoiced 对 loss 加 mask。"
+        detail_level: "详细"
+      - name: alignment_strategy
+        description: "MFA phone-local resampling、phone-local DTW/soft-DTW、duration predictor/monotonic attention 或 variable-length resynthesis。"
+        detail_level: "详细"
+      - name: time_map_representation
+        description: "时间映射是固定 frame index、phone-relative coordinate、单调 attention、DTW path 还是显式 duration sequence。"
+        detail_level: "详细"
+      - name: correspondence_uncertainty
+        description: "如何处理 phone 边界、HuBERT context 跨边界、低置信 alignment 和一对多/多对一 frame correspondence。"
+        detail_level: "详细"
+      - name: alignment_inference_dependency
+        description: "推理时是否仍需要 transcript、MFA、ASR/phoneme sequence、TTS target 或仅依赖 natural waveform。"
+        detail_level: "详细"
+      - name: output_duration_mode
+        description: "模型保持 source duration、复制 TTS duration、预测 duration，还是支持 source-grid 与 variable-length 两种模式。"
+        detail_level: "详细"
+  - group: target_representation
+    description: "检查目标特征是否可预测、可逆并适合 TFG。"
+    fields:
+      - name: target_representation
+        description: "HuBERT/WavLM/ContentVec hidden state、mel、WORLD 参数或 codec latent。"
+        detail_level: "详细"
+      - name: target_layer_and_dimension
+        description: "目标 layer、frame stride、维度及其对 content、speaker、prosody、acoustic detail 的偏向。"
+        detail_level: "详细"
+      - name: feature_loss
+        description: "cosine、Smooth-L1、normalized distance、MSE、OT/CORAL 或组合损失。"
+        detail_level: "详细"
+      - name: feature_invertibility
+        description: "目标表示是否能稳定重建 waveform/mel/F0，以及是否需要额外 decoder。"
+        detail_level: "详细"
+      - name: feature_target_leakage
+        description: "TTS target 是否可能把文本、音素、speaker 或目标 waveform 细节直接泄漏给输出。"
+        detail_level: "详细"
+  - group: architecture
+    description: "比较最小模型的结构、上下文范围和输出参数化。"
+    fields:
+      - name: backbone
+        description: "Conv1D、dilated TCN、U-Net、MLP、Transformer 或低秩线性映射。"
+        detail_level: "详细"
+      - name: receptive_field
+        description: "有效上下文范围，是否覆盖音素、词、停顿和句内韵律。"
+        detail_level: "详细"
+      - name: causal_or_noncausal
+        description: "是否使用未来上下文、lookahead、chunk 或完全离线计算。"
+        detail_level: "简要"
+      - name: residual_or_direct_prediction
+        description: "预测 bounded residual、feature delta、complex mask 还是完整 waveform/feature。"
+        detail_level: "详细"
+      - name: skip_connection_and_multiscale
+        description: "是否保留 source 内容，是否使用 U-Net skip、stride、dilation 或多尺度分支。"
+        detail_level: "详细"
+      - name: residual_bound_parameterization
+        description: "tanh、learned scale、spectral constraint 或无显式约束，以及对 clipping 和可达性的影响。"
+        detail_level: "详细"
+      - name: parameter_count_and_memory
+        description: "参数量、显存、单句推理时间和实现依赖。"
+        detail_level: "简要"
+  - group: training_and_preservation
+    description: "判断训练是否稳定，并防止 feature gap 降低但语音内容被破坏。"
+    fields:
+      - name: training_data_requirement
+        description: "paired same-text、same-speaker、non-parallel、unpaired 或目标 reference bank 的要求。"
+        detail_level: "详细"
+      - name: differentiable_encoder_requirement
+        description: "训练是否需要对 frozen HuBERT/WavLM 保留 waveform input gradient。"
+        detail_level: "简要"
+      - name: loss_schedule_and_weights
+        description: "feature、STFT、waveform、content、speaker、energy 和 residual loss 的权重及 warm-up。"
+        detail_level: "详细"
+      - name: content_preservation
+        description: "如何保持音素/ASR 内容，包括 CTC、PPG、HuBERT L2、source reconstruction 或 skip connection。"
+        detail_level: "详细"
+      - name: speaker_preservation
+        description: "保持 source speaker、转换到 TTS speaker，还是允许 style 与 speaker 混合。"
+        detail_level: "详细"
+      - name: prosody_preservation_or_transfer
+        description: "F0、energy、duration、pause 和 rhythm 采用 source、TTS 或 source/target 插值。"
+        detail_level: "详细"
+      - name: single_sample_overfit_difficulty
+        description: "K=1 是否能下降到接近 direct waveform upper bound，以及 K=4/K=16 的容量表现。"
+        detail_level: "详细"
+  - group: current_project_fit
+    description: "面向当前 natural-only、HuBERT、Ditto 和 SyncNet pipeline 的适配判断。"
+    fields:
+      - name: natural_only_inference
+        description: "推理时是否只需要 natural waveform，还是仍然依赖 raw TTS 或 reference audio。"
+        detail_level: "详细"
+      - name: compatible_with_hubert_l2_l6
+        description: "是否可以直接使用当前 HuBERT L2 content、L6 target、16 kHz 和 320-sample stride。"
+        detail_level: "详细"
+      - name: compatible_with_ditto_and_syncnet
+        description: "输出是否能直接进入 Ditto/SyncNet，并保留现有采样率、长度和导出协议。"
+        detail_level: "详细"
+      - name: implementation_complexity
+        description: "从现有 renderer 改造所需的代码、依赖、训练和调试工作量。"
+        detail_level: "详细"
+      - name: diagnostic_value
+        description: "该模型最能区分 feature target、alignment、decoder、容量还是数据泛化中的哪一个问题。"
+        detail_level: "详细"
+  - group: evaluation
+    description: "用统一指标比较三类设计，不把单一 feature 指标当作 TFG 结论。"
+    fields:
+      - name: feature_gap_reduction
+        description: "masked target feature gap、relative reduction、per-layer gap 和 per-phone gap。"
+        detail_level: "详细"
+      - name: pre_post_alignment_gap
+        description: "对齐前、对齐后以及不同 time-map strategy 下的 target gap，区分 alignment 改善与模型改善。"
+        detail_level: "详细"
+      - name: per_phone_alignment_error
+        description: "按 phone 类别、phone 内相对位置和边界统计 feature correspondence error。"
+        detail_level: "详细"
+      - name: rhythm_transfer_score
+        description: "duration、pause、F0、energy 和句内节奏从 TTS 向输出转移的程度，同时报告 source preservation。"
+        detail_level: "详细"
+      - name: content_drift
+        description: "CER/WER、phoneme accuracy 或 content embedding drift。"
+        detail_level: "详细"
+      - name: speaker_drift
+        description: "speaker embedding similarity、verification score 或 source speaker retention。"
+        detail_level: "简要"
+      - name: duration_energy_and_f0_drift
+        description: "phone-duration error、pause F1、energy correlation、F0 RMSE 和 voicing error。"
+        detail_level: "详细"
+      - name: waveform_integrity
+        description: "finite、exact sample count、clipping、residual RMS/peak、boundary click 和 spectral artifacts。"
+        detail_level: "详细"
+      - name: downstream_sync_metrics
+        description: "固定 Ditto/SyncNet 协议下的 Sync-C、Sync-D、AV offset 和失败清单。"
+        detail_level: "详细"
+      - name: failure_modes
+        description: "feature gap 不降、content hallucination、speaker drift、over-smoothing、metallic artifact、boundary error 或泛化失败。"
+        detail_level: "详细"
+uncertain:
+  - best_alignment_strategy_for_hubert_target
+  - whether_phone_local_resampling_is_waveform_realizable
+  - whether_exact_length_is_compatible_with_tts_pause_transfer
+  - whether_variable_length_output_is_needed_for_tfg_gain
+  - alignment_inference_dependency_without_transcript
+  - feature_target_sufficiency
+  - best_hubert_layer_for_waveform_realization
+  - optimal_receptive_field_for_phone_and_rhythm_shift
+  - whether_feature_decoder_or_waveform_residual_is_the_main_bottleneck

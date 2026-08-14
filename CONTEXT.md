@@ -47,6 +47,7 @@
 | 多语言 TTS 参考音频（MDC） | `data/mdc_tts/` | 当前 5 语言 × 20 条 = 100 条；英语/德语/意大利语/西班牙语/韩语已提取，另 4 种 MDC 条款仍返回 403 |
 | TTS 资产目录 | `data/tts/catalog.json` | 本地 TTS 音频索引，支持按 provider/model/language/dataset 检索 |
 | AISHELL-1 100 音素 corpus | `data/aishell1_100_zh/` | AISHELL-1 test split 100 条（16 说话人）+ 同文本 faster_qwen3 TTS；MFA 对齐 + HuBERT/XLS-R 分析 → `docs/experiments/09`，B 系列深化（`11-15`：时长 JSD / 逐层曲线 / 逐音素 KLD / 解纠缠 / TFG 关联）产物在 `results/aishell100_phoneme/` |
+| TED-LIUM 3 (30%) | `data/tedlium3_30pct/` | SpeechColab TED-LIUM 3 子集，32 个 HF parquet 分片，81,760 条（15.97GB，≈277h，均值 12.2s）；字段 `audio(bytes)/text/speaker_id/gender/file/id`；16kHz 内嵌音频，尚未被代码引用 |
 
 ## 技术栈
 
@@ -58,9 +59,11 @@
 
 ## 文档结构
 
+文档由 Basic Memory 管理（`basic-memory/docs/`，经 MCP 索引）。仓库根不再维护独立 `docs/`。
+
 ```
-CONTEXT.md              ← 你在这里
-docs/
+CONTEXT.md              ← 你在这里（仓库根，agent 入口）
+basic-memory/docs/
 ├── adr/                ← 架构决策记录
 ├── experiments/        ← 实验报告（按阶段编号；索引见 experiments/README.md）
 ├── deployment/         ← 模型部署记录
@@ -68,4 +71,4 @@ docs/
 └── reference/          ← 流水线/服务器/部署参考
 ```
 
-实验报告索引：`docs/experiments/README.md`。B 系列（11-15）为 2026-08 的音素/韵律/TFG 深化实验，均经对抗子 agent 审查修复。
+实验报告索引：`basic-memory/docs/experiments/README.md`。B 系列（11-15）为 2026-08 的音素/韵律/TFG 深化实验，均经对抗子 agent 审查修复。

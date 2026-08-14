@@ -73,21 +73,34 @@ Issues are tracked in GitHub Issues. See `docs/agents/issue-tracker.md`.
 
 Default label vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-human`, `wontfix`. See `docs/agents/triage-labels.md`.
 
+### Basic Memory (跨会话记忆)
+
+持久记忆在 Basic Memory 的知识图谱 (MCP tools)。两个项目:
+- **项目记忆** = `tts-exp` (本仓库的 `basic-memory/` 目录)
+- **全局记忆** = `main` (`~/basic-memory/`)
+
+**启动时必读**: 会话开始、任何知识库操作之前,先 `read_note(identifier="Startup Router", project="tts-exp")`(memory://instructions/startup-router,搜不到就按标题搜),按其中的分发表加载对应指令笔记。**在所有读/写操作前加载完,再动手写。**
+
+**搜索顺序固定**:回答关于过往工作/决策的问题时,先搜项目记忆,再搜全局记忆:
+1. `search_notes(query=..., project="tts-exp")` — 项目内搜索
+2. 无结果(或想找全局结论)再 `search_notes(query=..., project="main")`
+3. 命中后用 `build_context(url="memory://...", project=...)` 或 `read_note` 取全文
+
+写入约定:项目相关笔记一律 `write_note(..., project="tts-exp")`;涉及跨项目/个人通用知识才写 `main`。避免在 `main` 里重复存项目内容。目录规范、命名、changelog、索引规则都在 Startup Router 与各指令笔记中。相关 skill: `memory-notes` (笔记格式), `memory-capture` (捕获工作状态), `memory-continue` (恢复上下文), `memory-tasks` (任务跟踪)。
+
 ### Domain docs
 
 Entry point: `CONTEXT.md` — project overview, active/deprecated components, tech stack.
 
-Architecture decisions: `docs/adr/`. Experiment reports: `docs/experiments/`. Results: `docs/results/`.
-
-See `docs/agents/domain.md` for conventions.
+**项目文档由 Basic Memory 管理**(`basic-memory/` 目录,经 MCP 索引)。仓库根不再维护独立 `docs/` — 文档写 `basic-memory/docs/...`,索引路径见 Startup Router 分发表。Architecture decisions: `docs/adr/`(bm 内)。Experiment reports: `docs/experiments/`(bm 内)。Results: `docs/results/`(bm 内)。
 
 ### Documentation rules
 
 1. `CONTEXT.md` is the entry point — keep it under 100 lines
-2. `docs/experiments/` is for final reports only — no progress logs
-3. `docs/deployment/` is for per-model deployment records
-4. `docs/results/` is for reproducible score tables
-5. `docs/reference/` is for deployment guides and server info
+2. `docs/experiments/` (bm 内) is for final reports only — no progress logs
+3. `docs/deployment/` (bm 内) is for per-model deployment records
+4. `docs/results/` (bm 内) is for reproducible score tables
+5. `docs/reference/` (bm 内) is for deployment guides and server info
 6. Don't write progress logs (`*_progress_*.md`) — use git log
 7. Don't write >50KB plan files — break into task cards
 
@@ -100,7 +113,7 @@ CONTEXT.md                  ← entry point: project goal, active/deprecated, te
 AGENTS.md                   ← agent configuration (this file)
 HANDOFF.md                  ← current state snapshot for agent handoff
 │
-docs/
+basic-memory/docs/          ← 项目文档 (由 Basic Memory 索引管理)
 ├── adr/                    ← architectural decision records
 │   └── NNN-<slug>.md       ← numbered, one decision per file
 │
@@ -127,12 +140,12 @@ docs/
 
 | If you have… | Put it in… |
 |---|---|
-| A new experiment conclusion | `docs/experiments/NN-<slug>.md` |
-| A model deployment guide | `docs/deployment/<model>.md` |
-| A SyncNet score table | `docs/results/SYNC-C-SCORES.md` (update existing) |
-| A server IP/password change | `docs/reference/server-access.md` |
-| A pipeline command or workflow change | `docs/reference/pipeline.md` |
-| A fundamental project decision | `docs/adr/NNN-<slug>.md` |
+| A new experiment conclusion | `basic-memory/docs/experiments/NN-<slug>.md` |
+| A model deployment guide | `basic-memory/docs/deployment/<model>.md` |
+| A SyncNet score table | `basic-memory/docs/results/SYNC-C-SCORES.md` (update existing) |
+| A server IP/password change | `basic-memory/docs/reference/server-access.md` |
+| A pipeline command or workflow change | `basic-memory/docs/reference/pipeline.md` |
+| A fundamental project decision | `basic-memory/docs/adr/NNN-<slug>.md` |
 | New model MP4 output files | `results/<model>/{natural_raw,tts_raw}/` |
 
 ### Naming conventions
