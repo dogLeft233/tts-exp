@@ -66,3 +66,17 @@ experiments_intermediate_results.tar.gz
 
 # Scratch notes
 data/data/audio/trans.md
+
+# Basic Memory (personal knowledge base)
+basic-memory/
+
+# Claude Code ephemeral agent worktrees (never track these)
+.claude/worktrees/
+
+# Large locally-acquired datasets / reproducible outputs (manifests tracked)
+data/ramc_alimeeting_pilot50/
+data/tedlium3_30pct/
+data_remote_backup_20260808/
+models/
+artifacts/
+graphify-out/

@@ -1,1 +1,0 @@
-{"nodes": [], "edges": [{"source": "transcripts_12_12_doc", "target": "transcripts_spring_festival_fare_enforcement", "relation": "describes", "confidence": "HIGH", "confidence_score": 0.9, "source_file": "graphify-out/transcripts/12_12.txt", "source_location": "line 1", "weight": 0.7}], "hyperedges": []}

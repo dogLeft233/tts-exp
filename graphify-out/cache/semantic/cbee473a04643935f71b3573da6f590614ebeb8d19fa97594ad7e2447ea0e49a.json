@@ -1,1 +1,0 @@
-{"nodes": [], "edges": [{"source": "transcripts_1_1_doc", "target": "transcripts_tri_network_convergence", "relation": "describes", "confidence": "HIGH", "confidence_score": 0.9, "source_file": "graphify-out/transcripts/1_1.txt", "source_location": "line 1", "weight": 0.7}], "hyperedges": []}

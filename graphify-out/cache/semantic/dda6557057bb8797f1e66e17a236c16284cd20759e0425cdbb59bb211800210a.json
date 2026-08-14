@@ -1,1 +1,0 @@
-{"nodes": [{"id": "papers_wav2sem_arxiv", "label": "Wav2Sem (arXiv)", "file_type": "paper", "source_file": "papers/Wav2Sem_arXiv.pdf", "source_location": "1:1", "description": "arXiv preprint of Wav2Sem paper. Audio-to-semantic model for speech representation learning and lip-sync applications.", "metadata": {"venue": "arXiv"}}], "edges": [], "hyperedges": []}
