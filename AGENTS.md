@@ -86,6 +86,15 @@ Default label vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `read
 2. 无结果(或想找全局结论)再 `search_notes(query=..., project="main")`
 3. 命中后用 `build_context(url="memory://...", project=...)` 或 `read_note` 取全文
 
+**搜索配方(找实验/结论时,遵循此顺序)**:
+1. 先读 Startup Router,再按分发表加载指令笔记(实验类 → `memory://instructions/实验指令`)
+2. 用 `search_type="text"`(全文搜索)— 默认 hybrid 语义搜索对中文专名/编号不可靠,text 才稳定命中
+3. 多查询变体:中文标题、英文 slug/编号、关键词(如 `"MFA-linear"`、`"ΔSync-C"`、`"增强头"`、`"29"`)
+4. 实验笔记位置:新实验在 `Experiments/`(记忆侧,描述性标题,无编号);旧实验镜像在 `docs/experiments/`(`NN-<slug>` 编号,只读)。**两处都要搜,不能只按编号找**
+5. 按类型/状态过滤:`search_notes(note_types=["experiment"])` 或 `metadata_filters={"status": "concluded"}`
+6. 命中后 `read_note` 取全文,再按需 `build_context` 展开 relations 找关联实验
+7. 确认命中后再回答;`score` 低或只命中 `tts-exp` 总览页时,换变体重搜,不要直接说"不存在"
+
 写入约定:项目相关笔记一律 `write_note(..., project="tts-exp")`;涉及跨项目/个人通用知识才写 `main`。避免在 `main` 里重复存项目内容。目录规范、命名、changelog、索引规则都在 Startup Router 与各指令笔记中。相关 skill: `memory-notes` (笔记格式), `memory-capture` (捕获工作状态), `memory-continue` (恢复上下文), `memory-tasks` (任务跟踪)。
 
 ### Domain docs
