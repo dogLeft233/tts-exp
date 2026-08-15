@@ -29,7 +29,75 @@ def sha256_file(path: Path) -> str:
 
 
 def clean_lab_text(text: str) -> str:
-    return re.sub(r"[^㐀-鿿A-Za-z0-9]+", "", text.strip())
+    """Normalize a transcript for MFA mandarin_mfa dictionary lookup.
+
+    - CJK runs are split into individual characters (character-segmented);
+    - punctuation is dropped (MFA also treats it as word break markers);
+    - arabic numerals are expanded to their Mandarin reading;
+    - "<digits>%" expands to "百分之<reading>";
+    - bare Latin tokens are kept as-is (they will be OOV -> spn).
+    """
+    tokens = []
+    for token in re.findall(r"[㐀-鿿]+|[0-9]+%|[0-9]+|[A-Za-z]+|[%]", text):
+        if re.fullmatch(r"[㐀-鿿]+", token):
+            tokens.extend(token)
+        elif re.fullmatch(r"[0-9]+%", token):
+            tokens.append("百分之" + _cn_number(int(token[:-1])))
+        elif re.fullmatch(r"[0-9]+", token):
+            tokens.append(_cn_number(int(token)))
+        elif token == "%":
+            tokens.append("百分之")
+        else:
+            tokens.append(token)
+    return " ".join(tokens)
+
+
+def _cn_number(n: int) -> str:
+    """Read an integer in Mandarin (supports 0..99999999, larger via digit-by-digit)."""
+    if n == 0:
+        return "零"
+    digits = "零一二三四五六七八九"
+    if n >= 100_000_000:
+        return "".join(digits[int(c)] for c in str(n))
+    wan, rest = divmod(n, 10_000)
+    parts: list[str] = []
+    if wan:
+        parts.append(_cn_under_10000(wan, leading=True))
+        parts.append("万")
+    if rest:
+        if wan and rest < 1_000:
+            parts.append("零")
+        parts.append(_cn_under_10000(rest, leading=wan == 0))
+    return "".join(parts)
+
+
+def _cn_under_10000(n: int, leading: bool) -> str:
+    if n == 0:
+        return "零"
+    digits = "零一二三四五六七八九"
+    unit_at = {2: "十", 3: "百", 4: "千"}
+    s = str(n)
+    length = len(s)
+    parts: list[str] = []
+    zero_pending = False
+    for i, ch in enumerate(s):
+        pos = length - i
+        d = int(ch)
+        if d == 0:
+            if parts:
+                zero_pending = True
+            continue
+        if zero_pending and parts:
+            parts.append("零")
+        zero_pending = False
+        if d == 1 and pos == 2 and i == 0 and leading:
+            parts.append("十")
+            continue
+        parts.append(digits[d])
+        unit = unit_at.get(pos)
+        if unit:
+            parts.append(unit)
+    return "".join(parts)
 
 
 def parse_phones(path: Path) -> list[dict[str, Any]]:

@@ -26,12 +26,79 @@ TEXTGRID_INTERVAL_RE = re.compile(
     re.DOTALL,
 )
 KEEP_CHARS_RE = re.compile(r"[^一-鿿A-Za-z0-9%]+")
+CJK_WORD_RE = re.compile(r"[一-鿿]+")
 SILENCE_LABELS = {"", "sil", "sp", "spn", "<sil>"}
+DIGITS = "零一二三四五六七八九"
+UNIT_AT = {2: "十", 3: "百", 4: "千"}
+
+
+def cn_number(n: int) -> str:
+    """Read an integer in Mandarin (supports 0..99999999, larger via digit-by-digit)."""
+    if n == 0:
+        return "零"
+    if n >= 100_000_000:
+        return "".join(DIGITS[int(c)] for c in str(n))
+    wan, rest = divmod(n, 10_000)
+    parts: list[str] = []
+    if wan:
+        parts.append(cn_under_10000(wan, leading=True))
+        parts.append("万")
+    if rest:
+        if wan and rest < 1_000:
+            parts.append("零")
+        parts.append(cn_under_10000(rest, leading=wan == 0))
+    return "".join(parts)
+
+
+def cn_under_10000(n: int, leading: bool) -> str:
+    if n == 0:
+        return "零"
+    s = str(n)
+    length = len(s)
+    parts: list[str] = []
+    zero_pending = False
+    for i, ch in enumerate(s):
+        pos = length - i
+        d = int(ch)
+        if d == 0:
+            if parts:
+                zero_pending = True
+            continue
+        if zero_pending and parts:
+            parts.append("零")
+        zero_pending = False
+        if d == 1 and pos == 2 and i == 0 and leading:
+            parts.append("十")
+            continue
+        parts.append(DIGITS[d])
+        unit = UNIT_AT.get(pos)
+        if unit:
+            parts.append(unit)
+    return "".join(parts)
 
 
 def clean_lab_text(text: str) -> str:
-    cleaned = KEEP_CHARS_RE.sub("", text.strip())
-    return cleaned
+    """Normalize a transcript for MFA mandarin_mfa dictionary lookup.
+
+    - CJK runs split into individual characters (character-segmented);
+    - punctuation dropped (MFA also treats it as word break markers);
+    - arabic numerals expanded to their Mandarin reading;
+    - "<digits>%" expands to "百分之<reading>";
+    - bare Latin tokens kept as-is (they will be OOV -> spn).
+    """
+    tokens = []
+    for token in re.findall(r"[一-鿿]+|[0-9]+%|[0-9]+|[A-Za-z]+|[%]", text):
+        if CJK_WORD_RE.fullmatch(token):
+            tokens.extend(token)
+        elif re.fullmatch(r"[0-9]+%", token):
+            tokens.append("百分之" + cn_number(int(token[:-1])))
+        elif re.fullmatch(r"[0-9]+", token):
+            tokens.append(cn_number(int(token)))
+        elif token == "%":
+            tokens.append("百分之")
+        else:
+            tokens.append(token)
+    return " ".join(tokens)
 
 
 def parse_phones(textgrid: Path) -> list[dict[str, Any]]:
