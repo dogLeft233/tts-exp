@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_visual_features",
+  "review_type": "artifact_review",
+  "status": "BLOCKED",
+  "scientific_decision": "BLOCKED",
+  "run_directory": null,
+  "code_review": "_reviews/lrs3_tts_visual_advantage/01_visual_features/code_review.json",
+  "verified": [
+    "visual feature and metric source review PASS",
+    "CPU synthetic and related regression tests PASS",
+    "Stage 00 protocol lock remains blocked before any fit media access",
+    "no MP4/WAV media opened",
+    "no visual feature archives or scores created"
+  ],
+  "blocker": {
+    "type": "upstream_protocol_lock_blocked",
+    "path": "checkpoints/mediapipe/face_landmarker.task",
+    "resolution": "obtain and hash an approved asset, then restart Stage 00 in a new retry directory before Stage 01 pilot parity"
+  },
+  "media_access": {
+    "fit_media_opened": false,
+    "internal_dev_media_opened": false,
+    "validation_media_opened": false,
+    "test_media_opened": false
+  },
+  "scientific_result": "not_available",
+  "next_allowed_stage": null
+}

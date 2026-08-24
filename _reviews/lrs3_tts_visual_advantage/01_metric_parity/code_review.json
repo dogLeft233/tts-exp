@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_metric_parity",
+  "review_type": "code_review",
+  "status": "PASS",
+  "review_basis": "read_only_source_review_with_targeted_tests_and_py_compile",
+  "source_manifest": [
+    {
+      "path": "scripts/experiments/lrs3_tts_visual_advantage/run_metric_parity.py",
+      "sha256": "0bffe6bc43c8ebaaa42dac8f73df84f7b40dc46d45f771d5b2a12c6027a92fd6"
+    },
+    {
+      "path": "scripts/experiments/lrs3_tts_visual_advantage/video_features.py",
+      "sha256": "1d963ad2fe1a42272c1a4fc3ebb00a41e5b6665d855fe78f44899d9f8c172e9e"
+    },
+    {
+      "path": "scripts/experiments/lrs3_tts_visual_advantage/visual_metrics.py",
+      "sha256": "222331c92304aedee82ed96a5b125fc0f4ce1fc15539c89ed8377f395537e599"
+    },
+    {
+      "path": "tests/experiments/lrs3_tts_visual_advantage/test_metric_parity.py",
+      "sha256": "d8423f2cf707a199402575074e042e7bd5de70a948eacb783665bcba2ce7a7ee"
+    },
+    {
+      "path": "tests/experiments/lrs3_tts_visual_advantage/test_visual_features_metrics.py",
+      "sha256": "4a1d25bdcf9e1a29ee9e016b72fb6998f52e41ab1301af2be998687d17b881a2"
+    }
+  ],
+  "test_commands": [
+    {
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_tts_visual_advantage",
+      "status": "PASS",
+      "test_count": 37
+    },
+    {
+      "command": "/usr/bin/python3 -m py_compile scripts/experiments/lrs3_tts_visual_advantage/video_features.py scripts/experiments/lrs3_tts_visual_advantage/visual_metrics.py scripts/experiments/lrs3_tts_visual_advantage/run_metric_parity.py tests/experiments/lrs3_tts_visual_advantage/test_visual_features_metrics.py tests/experiments/lrs3_tts_visual_advantage/test_metric_parity.py",
+      "status": "PASS"
+    }
+  ],
+  "verified": [
+    "frozen Stage 00 protocol manifest and sealed test lock are path- and hash-bound",
+    "canonical source manifest test membership is checked before media access",
+    "pilot cohort is fit-only with 48 records, 24 unique groups, and exactly two records per group",
+    "teacher natural and TTS arms are path-, hash-, and semantic-arm distinct",
+    "MediaPipe asset and all three video arms are copied to run-local snapshots before extraction",
+    "snapshot bytes are hash-checked before and after extraction",
+    "exact-time and visual-DTW metrics require finite complete fields for eligibility",
+    "scientific decision remains unavailable when the engineering parity gate is blocked",
+    "validation and test media/features/scores remain unopened"
+  ],
+  "run_directory": "runs/lrs3_tts_visual_advantage_20260824/01_metric_parity_retry7",
+  "run_manifest_sha256": "360949bd97fe5acc8b2b3b70e1e19a2109ee1f56a165d814312509a800da095f",
+  "protocol_manifest_sha256": "89ee465f981419da48d22c119e08bae45b099479523648e3c87fca7bb0255e79",
+  "stage00_test_lock_sha256": "0db2a6da818a51229e106ab9cd15a8bee37c1782822e39b22758e085272d53ba",
+  "artifact_counts": {
+    "record_count": 48,
+    "successful_extraction_count": 48,
+    "feature_record_count": 48,
+    "eligible_record_count": 28,
+    "minimum_eligible_record_count": 44,
+    "fit_group_count": 24,
+    "groups_with_eligible_record_count": 20
+  },
+  "artifact_integrity": {
+    "unique_sample_ids": true,
+    "all_records_fit_only": true,
+    "all_video_snapshots_present": true,
+    "all_feature_archives_present_and_nonempty": true,
+    "all_snapshot_hashes_match_record_hashes": true,
+    "landmarker_snapshot_hash_matches": true,
+    "all_primary_and_secondary_metrics_finite": true,
+    "old_direction_overlap_count": 28,
+    "old_direction_sign_agreement_fraction": 0.8571428571428571
+  },
+  "coverage_gate": {
+    "status": "BLOCKED",
+    "eligible_record_fraction": 0.5833333333333334,
+    "valid_fraction_check_pass_count": 39,
+    "exact_time_coverage_check_pass_count": 28,
+    "every_fit_group_has_eligible_record": false,
+    "reason": "28 of 48 records met the complete engineering eligibility gate; the preregistered minimum is 44 and four fit groups had no eligible record"
+  },
+  "media_access": {
+    "pilot_media_opened": true,
+    "internal_dev_media_opened": false,
+    "validation_media_opened": false,
+    "test_media_opened": false,
+    "sealed_test_lock_status": "sealed_unvisited"
+  },
+  "scientific_decision": "not_available",
+  "next_allowed_stage": null,
+  "reviewer": "read-only artifact verification after completed retry7"
+}

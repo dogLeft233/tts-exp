@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_metric_parity_investigation_retry1",
+  "review_type": "code_review",
+  "status": "NOT_APPLICABLE",
+  "review_basis": "read_only_diagnostic_recomputed_from_immutable_retry7_artifacts",
+  "source_changes": [],
+  "diagnostic_artifact": "runs/lrs3_tts_visual_advantage_20260824/01_metric_parity_investigation_retry1/coverage_investigation.json",
+  "diagnostic_artifact_sha256": "d1b165dcff3d4985cf18f7a519edb0aa30882fc71d721587ab5063fb39df9658",
+  "bound_inputs": {
+    "retry7_manifest_sha256": "360949bd97fe5acc8b2b3b70e1e19a2109ee1f56a165d814312509a800da095f",
+    "retry7_summary_sha256": "1177332fbfd37fb3ac611642e2b105d6fae88e2de8bb7ec56a36d34998ca2816",
+    "retry7_decision_sha256": "3e459afa5e501aaf8a4be877fd7c4926c2a854e0fdb84b31aad8bec940a5275d",
+    "tts_metadata_sha256": "2de0e1d3770b3a7b36fde1df0307faa057aa0ab5cbce052f4",
+    "canonical_source_manifest_sha256": "34efb614d72e183727d87d40a05807d4c6ccda954cadc14f76bc8cbd01ee255f"
+  },
+  "verified": [
+    "No implementation or frozen protocol source was changed for this investigation",
+    "The decomposition uses only the 48 fit-only pilot records already materialized by retry7",
+    "The strict monotonic pairing and frozen half-frame tolerance were recomputed from run-local feature archives",
+    "TTS duration ratios were read from the hash-bound TTS metadata rather than selected by visual outcome",
+    "The investigation does not alter eligibility thresholds, cohort membership, or scientific decision state"
+  ],
+  "sealed_access": {
+    "internal_dev_media_opened": false,
+    "validation_media_opened": false,
+    "test_media_opened": false,
+    "test_lock_status": "sealed_unvisited"
+  },
+  "decision": "diagnostic_integrity_pass; protocol_remains_blocked",
+  "scientific_decision": "not_available",
+  "reviewer": "read-only artifact verification"
+}

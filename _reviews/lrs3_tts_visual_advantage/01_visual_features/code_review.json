@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_visual_features",
+  "review_type": "code_review",
+  "status": "PASS",
+  "review_basis": "independent_read_only_source_review_and_cpu_test_execution",
+  "source_manifest": [
+    {
+      "path": "scripts/experiments/lrs3_tts_visual_advantage/video_features.py",
+      "sha256": "1d963ad2fe1a42272c1a4fc3ebb00a41e5b6665d855fe78f44899d9f8c172e9e"
+    },
+    {
+      "path": "scripts/experiments/lrs3_tts_visual_advantage/visual_metrics.py",
+      "sha256": "222331c92304aedee82ed96a5b125fc0f4ce1fc15539c89ed8377f395537e599"
+    },
+    {
+      "path": "tests/experiments/lrs3_tts_visual_advantage/test_visual_features_metrics.py",
+      "sha256": "4a1d25bdcf9e1a29ee9e016b72fb6998f52e41ab1301af2be998687d17b881a2"
+    }
+  ],
+  "source_manifest_sha256": "dc6a038cddcd3bd28f04f08f5aea091872b80a77f74b84ebba31bcca90661099",
+  "test_commands": [
+    {
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_tts_visual_advantage",
+      "status": "PASS",
+      "test_count": 26
+    },
+    {
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_tts_visual_advantage tests/test_frame_quality.py tests/test_prepare_frames.py",
+      "status": "PASS",
+      "test_count": 42
+    },
+    {
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m py_compile scripts/experiments/lrs3_tts_visual_advantage/video_features.py scripts/experiments/lrs3_tts_visual_advantage/visual_metrics.py tests/experiments/lrs3_tts_visual_advantage/test_visual_features_metrics.py",
+      "status": "PASS"
+    }
+  ],
+  "verified": [
+    "monotonic one-to-one exact-time pairing without lookahead",
+    "conservative coverage including unmatched temporal tails",
+    "correct diagonal/horizontal/vertical DTW max_run transitions",
+    "DTW banding uses original frame positions across invalid gaps",
+    "decoder early EOF, malformed frame, unknown frame count, channel and dtype checks fail closed",
+    "invalid derived feature zero contract",
+    "unrelated landmark failures do not invalidate required mouth features",
+    "strict persistence schema version and boolean valid-array validation",
+    "synthetic identity, perturbation, warp, reverse, invalid-frame, and round-trip tests",
+    "no media opened and no scientific scores created"
+  ],
+  "reviewer": "independent read-only review agent with coordinator follow-up verification",
+  "known_scope": "CPU feature/metric implementation only; no real-video extraction or scientific visual advantage decision"
+}

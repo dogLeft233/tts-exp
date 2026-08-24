@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "stage_id": "00_protocol_lock",
+  "review_type": "code_review",
+  "status": "PASS",
+  "review_basis": "independent_read_only_review_and_cpu_test_execution",
+  "source_manifest": [
+    {
+      "path": "scripts/experiments/lrs3_tts_visual_advantage/protocol.py",
+      "sha256": "f799eae1cb665ad0d3603f2d4f8556b62fb72f87447edf738d3b321e2d8db556"
+    },
+    {
+      "path": "tests/experiments/lrs3_tts_visual_advantage/test_protocol.py",
+      "sha256": "0c89b227c9c0b632d226b422005297455ea6934302bc06e440969e9edc401e18"
+    }
+  ],
+  "source_manifest_sha256": "046db30e1c622d207b59add68748de3b2c1e00e17c55c9b723184e5243a5a02f",
+  "test_command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_tts_visual_advantage/test_protocol.py",
+  "test_status": "PASS",
+  "test_count": 13,
+  "verified": [
+    "canonical source/TTS/parent/teacher joins and path/hash consistency",
+    "exact canonical sealed-test membership",
+    "complete top-level and generated split-specific access flags",
+    "generated test-lock round trip",
+    "old landmark and strict 2x2 parent schema/run/status/decision/teacher provenance",
+    "deterministic fit-only 48-record pilot and 24-record fresh cohort selection",
+    "non-empty output refusal and finite JSON handling",
+    "Stage 00 does not open media"
+  ],
+  "known_scope": "Stage 00 protocol only; visual feature implementation has a separate review",
+  "reviewer": "independent code-review agent"
+}

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_metric_parity_investigation_retry1",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "scientific_decision": "not_available",
+  "diagnostic_artifact": "runs/lrs3_tts_visual_advantage_20260824/01_metric_parity_investigation_retry1/coverage_investigation.json",
+  "diagnostic_artifact_sha256": "d1b165dcff3d4985cf18f7a519edb0aa30882fc71d721587ab5063fb39df9658",
+  "code_review": "_reviews/lrs3_tts_visual_advantage/01_metric_parity_investigation_retry1/code_review.json",
+  "code_review_sha256": "4d088c284833820ee177445639ee3b903f787dd3e5328cda0f4a96692d49c251",
+  "verified": [
+    "The diagnostic artifact is hash-bound to retry7 manifest, summary, decision, TTS metadata, and canonical source manifest",
+    "All 48 pilot records are fit-only and no new media outside the retry7 run-local snapshots was opened",
+    "The 28 eligible, 20 exact-time coverage failures, 9 valid-fraction failures, and 11 coverage-only failures reproduce the retry7 gate decomposition",
+    "Natural-clock pairing coverage is materially higher than TTS pairing coverage before validity filtering",
+    "The TTS metadata duration gate permits ratios from 0.5 to 1.5, while 16 of 48 pilot records fall outside the narrower 0.85 to 1.18 duration-compatible interval used only as a diagnostic",
+    "No source video hash mismatch, declared-frame-count mismatch, or finite-metric failure was found"
+  ],
+  "blocker_interpretation": {
+    "primary": "raw TTS duration/timing variation causes natural-clock temporal-tail non-overlap",
+    "secondary": "nine records also contain low three-arm landmark valid fraction",
+    "not_a_scientific_result": true
+  },
+  "media_access": {
+    "pilot_media_opened": true,
+    "internal_dev_media_opened": false,
+    "validation_media_opened": false,
+    "test_media_opened": false
+  },
+  "resolution": "Keep retry7 BLOCKED; do not run fresh confirmation. Any duration-compatible or duration-preserving audit requires a separately preregistered protocol version.",
+  "reviewer": "independent read-only artifact verification"
+}
