@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "stage_id": "02_candidate_audio_retry2",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "85e5c5d788c69ee2e02d47e00509002ae4d39db878bf550add8d715371b10b6d"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_alignment.py",
+        "sha256": "6862b5c0b4237ea1094e605d94ea58dd57ccdac74c6d920103b362c8d9c1ec0f"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_candidate_audio.py",
+        "sha256": "a791e5069885a97e9e0887e6965b9f1d47638f55fc5881c24a354248860a752e"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "158e9e8c1b202bcce1c82c24c9129bd1010730f2e0e8cdb5e7433e7fc01dbe00"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "canonical Stage00 provenance",
+      "status": "PASS",
+      "verified": "alignment and candidate entrypoints require the immutable 00_protocol_lock_retry2 manifest path and stage identity"
+    },
+    {
+      "name": "candidate retry identity",
+      "status": "PASS",
+      "verified": "new output artifacts use 02_candidate_audio_retry2 and do not overwrite retry1"
+    },
+    {
+      "name": "candidate asset/interface binding",
+      "status": "PASS",
+      "verified": "WavLM/vocoder checkpoint hashes and pinned kNN-VC revision are validated before use"
+    },
+    {
+      "name": "strict mapping and exact length",
+      "status": "PASS",
+      "verified": "candidate uses phone frame mapping, frozen adapter, right crop/zero-pad only, canonical PCM QC, and per-frame traces"
+    },
+    {
+      "name": "GPU fail-closed",
+      "status": "PASS",
+      "verified": "occupancy and time gate run before model load; failure writes BLOCKED artifact"
+    },
+    {
+      "name": "protocol tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory",
+      "result": "4 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

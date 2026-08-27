@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "stage_id": "00_protocol_lock_mfa3_retry1",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "GO",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_mfa3_20260825/00_protocol_lock_mfa3_retry1",
+  "prior_mfa2_stage00_manifest_sha256": "feb1c1de09361f8b032f1a9e547ab5a69e09894d8334b3339ea9652157a057f6",
+  "cohort_sha256": "031312aaa18da90a53c3907543a7e7f51070c9c0ffe28a14e159f8bd8e6bc276",
+  "artifact_sha256": {
+    "manifest.json": "60d4f4c6dcc9ab3574842f3c30012fa42688e080238bc3889043f5f49e4d12fb",
+    "test_lock.json": "0db2a6da818a51229e106ab9cd15a8bee37c1782822e39b22758e085272d53ba",
+    "summary.json": "23a887515e43fb358a202bebdd062fbb4d790b427b0af3333b82a4231a766ea8",
+    "decision.json": "7d3cdf841b910706a9c5939e5c6702550616f1a726fe5f74593d40f5045a6d16"
+  },
+  "counts": {
+    "expected_fit_records": 24,
+    "ordered_fit_records": 24,
+    "unique_source_groups": 24,
+    "sealed_internal_dev_validation_test": true,
+    "fit_media_opened": false,
+    "mfa_run": false,
+    "features_created": false,
+    "scores_created": false
+  },
+  "mfa_contract": {
+    "version": "3.4.1",
+    "dictionary": "english_mfa",
+    "acoustic_model": "english_mfa",
+    "root_dir": "/home/wjj/Documents/MFA/mfa3_runtime_20260815",
+    "normalization_policy_id": "english_mfa3_token_normalization_v1"
+  },
+  "checks": [
+    {
+      "name": "immutable parent binding",
+      "status": "PASS",
+      "verified": "new manifest binds the prior MFA2 Stage00 manifest path and hash without modifying it"
+    },
+    {
+      "name": "ordered cohort identity",
+      "status": "PASS",
+      "verified": "the new manifest reproduces the prior 24-record ordered fit-only cohort hash and one record per source group"
+    },
+    {
+      "name": "MFA3 provenance",
+      "status": "PASS",
+      "verified": "MFA executable, root config, english_mfa dictionary, and english_mfa acoustic model are present and hash-bound"
+    },
+    {
+      "name": "sealed split lock",
+      "status": "PASS",
+      "verified": "internal-dev, validation, and test media/features/scores remain unopened"
+    },
+    {
+      "name": "Stage00 access boundary",
+      "status": "PASS",
+      "verified": "Stage00 performed metadata/model checks only; no media, MFA alignment, feature extraction, or scoring"
+    },
+    {
+      "name": "decision consistency",
+      "status": "PASS",
+      "verified": "manifest, summary, and decision report engineering GO, scientific not_available, and authorize only MFA3 Stage01"
+    }
+  ],
+  "reviewer": "independent read-only artifact verification",
+  "reviewed_at": "2026-08-25"
+}

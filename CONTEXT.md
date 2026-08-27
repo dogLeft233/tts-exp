@@ -13,6 +13,8 @@
 3. **英文不成立**（LibriSpeech ΔC=+0.16 ns；HDTF 13 说话人 ΔC=−0.14 ns）
 4. **差异在声学/韵律层而非音素可分离性**：早层（l0-2）最强（`12`/`13`）；TTS 更快、停顿少 63%、句内时长更均匀（`11`）；**无可分离性指标能预测逐样本 lip-sync 增益**（`15`，Wav2Sem 假设不被支持）
 5. **音素结构非说话人混杂**（`14`）；早期"TTS 与自然在 HuBERT 空间完全重叠"结论已被 `13` 修正——逐音素差异在早层可检测（AUC 0.87-0.95）
+6. **LRS3 MFA3/`english_mfa` 严格 replacement 未保留增益**：133 条记录的 Wav2Lip 四-cell 矩阵、532 个 strict mux 和 532 个 fresh SyncNet score 全部通过工程核验，但 natural-audio replacement 的 `benefit_C` 均值为 −1.201、`benefit_D` 均值为 −1.061，科学结论为 `NO_GO`；详见 `runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/04_statistics_exploratory_retry2/`
+7. **Duration-compatible TTS visual teacher audit 当前工程 BLOCKED**：133 条 fit-only record 全部完成 real/natural/candidate landmark extraction 与独立 artifact review，但仅 115/133 达到固定 eligibility、21/23 effective groups 有 eligible record，低于预注册 minimum 122；scientific decision 为 `not_available`，不得进入 Stage02 或降低阈值；详见 `runs/lrs3_tts_visual_control_20260825/01_visual_teacher_audit_retry4/`
 
 ## 正在使用
 

@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "stage_id": "00_protocol_lock_retry1",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "75939ce00cd80f60dc41bfba4df54466f24103917e66e7938dbfcfbf0e55b733"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_alignment.py",
+        "sha256": "f670b5b24baeb2ccd5a9da9c36d3fd3295b46d95ff3b41a9fdb61586919efb2a"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/__init__.py",
+        "sha256": "3d45c936624bca47f010a86ba09ca5c14b1e3dc11395cde254debf51e6bc35c0"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "b0cc9f7d2d05ab3e1b05bbc60fe2eaf9725422dfb136fa7c838f0fb38d71303d"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "source/TTS join and cohort binding",
+      "status": "PASS",
+      "verified": "source manifest, TTS metadata, parent split, teacher cache, and original MFA3 cohort are hash-bound"
+    },
+    {
+      "name": "sealed split exclusion",
+      "status": "PASS",
+      "verified": "only fit groups are eligible and all sealed groups are excluded"
+    },
+    {
+      "name": "strict MFA3 runtime",
+      "status": "PASS",
+      "verified": "MFA 3.4.1, english_mfa dictionary/acoustic model, MFA_ROOT_DIR and executable-directory PATH are bound"
+    },
+    {
+      "name": "strict unknown-phone handling",
+      "status": "PASS",
+      "verified": "TextGrid parsing reuses strict parser; spn is a failure, not silence"
+    },
+    {
+      "name": "alignment-only stop gate",
+      "status": "PASS",
+      "verified": "candidate generation and GPU code are not called by exploratory Stage01"
+    },
+    {
+      "name": "protocol tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory",
+      "result": "4 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

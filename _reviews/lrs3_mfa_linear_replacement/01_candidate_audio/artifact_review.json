@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_candidate_audio_retry2",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "BLOCKED",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_20260824/01_candidate_audio_retry2",
+  "summary_sha256": "4970eb715fd21eab163caf5f3ab9a26c8d9c5ec622ba487087a099b85c9eceff",
+  "decision_sha256": "83b7fc591d45bb43e1a2baf14a79ad074d6a7e86bbc79ff4057b25b00b8e99ef",
+  "failure_sha256": "bbfd66744a37475fa92ade3ea940e6d16376efe82f27d44021c07b6e738e2651",
+  "record_count_attempted": 24,
+  "unknown_phone_record_count": 13,
+  "unknown_phone_side_row_count": 26,
+  "candidate_generation_started": false,
+  "gpu_used": false,
+  "verified": [
+    "all 24 frozen fit records entered the dual MFA attempt",
+    "13 unique records contain spn in both natural and TTS TextGrids",
+    "all recorded unknown TextGrid hashes reproduce",
+    "no candidate audio, traces, or candidate manifest were produced",
+    "internal-dev/validation/test access remains false",
+    "strict blocker is engineering not scientific"
+  ],
+  "media_access": {
+    "fit_media_opened": true,
+    "internal_dev_media_opened": false,
+    "validation_media_opened": false,
+    "test_media_opened": false,
+    "gpu_used": false
+  },
+  "next_allowed_stage": null,
+  "reviewer": "independent read-only artifact verification"
+}

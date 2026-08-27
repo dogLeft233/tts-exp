@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "stage_id": "03_strict_replacement_face_ready_retry3",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_strict_replacement.py",
+        "sha256": "be1f97336fa1ccc6ce744cc860ef0c4693e43acf7e8ad0bf7aebad66506d4228"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "53191c59e829ff2036c3508d4b98882ededcfeae94e650d8df5f1a6f5b27e28b"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement/strict_mux.py",
+        "sha256": "8a884fff9578963bbb9d29c6f6f8d910f6a8ad84bf5f92af217a36e1737aabfd"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "e6fcbaa8d1ccbff3750bd58c20c8eb74c3d1d01e921b0c512b3d918704981d8c"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "face-ready cohort and render reuse",
+      "status": "PASS",
+      "verified": "canonical 135-record preflight and hash-verified retry1 renders are required"
+    },
+    {
+      "name": "strict mux implementation",
+      "status": "PASS",
+      "verified": "mux helper is present, creates each output parent, and delegates to strict video-copy/PCM verification"
+    },
+    {
+      "name": "endpoint separation",
+      "status": "PASS",
+      "verified": "authoritative baseline/target remain G_N_E_N/G_M_E_N; diagonal cells remain diagnostics"
+    },
+    {
+      "name": "fresh SyncNet and fail-closed behavior",
+      "status": "PASS",
+      "verified": "all selected cells require fresh SyncNet calls and any partial matrix remains BLOCKED"
+    },
+    {
+      "name": "tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory tests/experiments/lrs3_mfa_linear_replacement/test_mfa_alignment.py",
+      "result": "13 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

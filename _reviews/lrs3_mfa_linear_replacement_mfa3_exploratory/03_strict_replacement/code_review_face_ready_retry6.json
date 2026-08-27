@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "stage_id": "03_strict_replacement_face_ready_retry6",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_strict_replacement.py",
+        "sha256": "1d9148279cb9b9c42f154fce9652363d8b316fe5df991bfbe696c442d71694bd"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "d8c6eb25e7e10ac19046689dda5225064fcdd0a3446d54afc24d480fe98bb212"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement/strict_mux.py",
+        "sha256": "8a884fff9578963bbb9d29c6f6f8d910f6a8ad84bf5f92af217a36e1737aabfd"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "36731d52434cfea19046689dda5225064fcdd0a3446d54afc24d480fe98bb212"
+      }
+    ],
+    "structural_preflight": {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/03_syncnet_preflight_retry1/syncnet_preflight_manifest.json",
+      "sha256": "269d79ec48c5664374388f05bfd768081e75ed7c797c0e0ea132dafe2e8b70c4"
+    }
+  },
+  "checks": [
+    {
+      "name": "immutable structural preflight",
+      "status": "PASS",
+      "verified": "canonical preflight SHA, fixed min_track=50, score-free selection, exact 135 input/133 selected/2 excluded counts, ordered unique IDs, and recomputed selected-ID hash are enforced"
+    },
+    {
+      "name": "render-parent provenance",
+      "status": "PASS",
+      "verified": "reuse requires the canonical 135-record/270-render parent and exact complete face-ready key set before selected hashes are checked"
+    },
+    {
+      "name": "virtualenv executable provenance",
+      "status": "PASS",
+      "verified": "asset bindings preserve venv symlink invocation paths while hashing executable content"
+    },
+    {
+      "name": "fail-closed behavior",
+      "status": "PASS",
+      "verified": "missing protocol manifest during early failure still emits blocked failure, summary, and decision artifacts"
+    },
+    {
+      "name": "strict endpoint and fresh evaluation",
+      "status": "PASS",
+      "verified": "_mux/_score are top-level; strict mux verification, authoritative cells, fresh per-cell SyncNet, and partial-matrix blocking remain intact"
+    },
+    {
+      "name": "tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory tests/experiments/lrs3_mfa_linear_replacement/test_mfa_alignment.py",
+      "result": "16 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "independent read-only review",
+  "reviewed_at": "2026-08-25",
+  "coverage_note": "Wrong preflight hash/count and malformed render-parent negative cases are not yet unit-tested; implementation review found no correctness issue."
+}

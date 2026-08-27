@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "stage_id": "03_strict_replacement_retry3",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_strict_replacement.py",
+        "sha256": "fdc672b9bb01a6ff441cf228526e2363148b4a725c71d7e331b58faacd91b80f"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "4c800dbe37cb460fad4ef8b77d6fd50ae256f5ee1b0beca0be7a65f6b426c08c"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement/strict_mux.py",
+        "sha256": "8a884fff9578963bbb9d29c6f6f8d910f6a8ad84bf5f92af217a36e1737aabfd"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "88fcafc13c1e6a8f25b3fa4f144d6c39223e5c6d6302ff15ef5c4840cc939c8c"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement/test_strict_mux.py",
+        "sha256": "7b8264e832b5261ccf6cf665fcd53f45f38e0db8dff858e5b110bdf2970f8314"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "canonical input provenance",
+      "status": "PASS",
+      "verified": "runner requires immutable Stage00 retry2 and candidate retry4 manifests and rechecks source face-video, natural-audio, and candidate-audio hashes"
+    },
+    {
+      "name": "strict 2x2 cell contract",
+      "status": "PASS",
+      "verified": "baseline and target are G_N_E_N/G_M_E_N; both diagonal cells remain separate diagnostics"
+    },
+    {
+      "name": "fresh official evaluation",
+      "status": "PASS",
+      "verified": "all mux cells use strict verification and SyncNet scores are fresh with no cache reuse"
+    },
+    {
+      "name": "GPU occupancy gate",
+      "status": "PASS",
+      "verified": "active compute processes always block; daytime driver-only residual memory and transient utilization are recorded without terminating or competing with another process"
+    },
+    {
+      "name": "fail-closed accounting",
+      "status": "PASS",
+      "verified": "partial render/mux/score counts produce BLOCKED artifacts and never a scientific conclusion"
+    },
+    {
+      "name": "tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory tests/experiments/lrs3_mfa_linear_replacement/test_mfa_alignment.py",
+      "result": "12 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

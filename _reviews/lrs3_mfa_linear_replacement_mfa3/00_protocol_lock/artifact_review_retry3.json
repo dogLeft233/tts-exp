@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "stage_id": "00_protocol_lock_mfa3_retry3",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "GO",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_mfa3_20260825/00_protocol_lock_mfa3_retry3",
+  "prior_mfa2_stage00_manifest_sha256": "feb1c1de09361f8b032f1a9e547ab5a69e09894d8334b3339ea9652157a057f6",
+  "cohort_sha256": "031312aaa18da90a53c3907543a7e7f51070c9c0ffe28a14e159f8bd8e6bc276",
+  "artifact_sha256": {
+    "manifest.json": "0dee2620a1e95d8a1a00d8c0ed9add42b0b7fa235ae14220ae8452c675e1cd01",
+    "manifest.sha256": "6903b3acdb8d0ea7fee39f17aee418a85563696f04346c61b4839846b3db177d",
+    "test_lock.json": "0db2a6da818a51229e106ab9cd15a8bee37c1782822e39b22758e085272d53ba",
+    "summary.json": "ef95e265522119a915fde00aaf4443a20d1f0f7bd8185fcc3cd2a4f7ed603d99",
+    "decision.json": "ebc1a0e2f70b0c328f5287cfa0274392eac2dda2b2143fabecce421c84215f94"
+  },
+  "counts": {
+    "expected_fit_records": 24,
+    "ordered_fit_records": 24,
+    "unique_source_groups": 24,
+    "sealed_internal_dev_validation_test": true,
+    "fit_media_opened": false,
+    "mfa_run": false,
+    "features_created": false,
+    "scores_created": false,
+    "manifest_companion_sha256_verified": true
+  },
+  "mfa_contract": {
+    "version": "3.4.1",
+    "dictionary": "english_mfa",
+    "acoustic_model": "english_mfa",
+    "root_dir": "/home/wjj/Documents/MFA/mfa3_runtime_20260815",
+    "normalization_policy_id": "english_mfa3_token_normalization_v1"
+  },
+  "checks": [
+    {
+      "name": "immutable parent binding",
+      "status": "PASS",
+      "verified": "new retry3 binds the prior MFA2 Stage00 path and hash without modifying it"
+    },
+    {
+      "name": "ordered cohort identity",
+      "status": "PASS",
+      "verified": "retry3 reproduces the prior 24-record ordered fit-only cohort hash and one record per source group"
+    },
+    {
+      "name": "MFA3 provenance",
+      "status": "PASS",
+      "verified": "MFA 3.4.1 executable, pinned root config, english_mfa dictionary, and english_mfa acoustic model are present and hash-bound"
+    },
+    {
+      "name": "Stage00 self-integrity lock",
+      "status": "PASS",
+      "verified": "manifest.sha256 matches manifest.json and is required by the retry-specific Stage01 runner"
+    },
+    {
+      "name": "sealed split lock",
+      "status": "PASS",
+      "verified": "internal-dev, validation, and test media/features/scores remain unopened"
+    },
+    {
+      "name": "Stage00 access boundary",
+      "status": "PASS",
+      "verified": "only MFA metadata/model checks ran; no media, MFA alignment, feature extraction, or scoring"
+    },
+    {
+      "name": "decision consistency",
+      "status": "PASS",
+      "verified": "retry3 authorizes only 01_candidate_audio_mfa3_retry3"
+    }
+  ],
+  "reviewer": "independent read-only artifact verification",
+  "reviewed_at": "2026-08-25"
+}

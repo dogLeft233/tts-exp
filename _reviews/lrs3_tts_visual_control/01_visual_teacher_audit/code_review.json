@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_visual_teacher_audit",
+  "review_type": "code_review",
+  "status": "PASS",
+  "review_basis": "independent_read_only_review_and_cpu_test_execution",
+  "source_manifest": [
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_tts_visual_control/run_visual_teacher_audit.py",
+      "sha256": "b3f9a52e61c9f4557234f9caff4ac85ddc68a9a4c629531de6d93132b80ac380"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_tts_visual_advantage/video_features.py",
+      "sha256": "483f361f571feee56eb714b4b15c9cc778eaafbf21041418400257e233cae1da"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_tts_visual_advantage/visual_metrics.py",
+      "sha256": "222331c92304aedee82ed96a5b125fc0f4ce1fc15539c89ed8377f395537e599"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_tts_visual_control/test_visual_teacher_audit.py",
+      "sha256": "94fe05045ed0222dcfc863f0a6591f24caeb363c0e36de1575b9b100ff9a30a0"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_tts_visual_advantage/test_visual_features_metrics.py",
+      "sha256": "4a1d25bdcf9e1a29ee9e016b72fb6998f52e41ab1301af2be998687d17b881a2"
+    }
+  ],
+  "source_manifest_sha256": "daf740d60ebf01eadd18bb0d24daaef167aa96b8a3d9b3a8ef3345ecdc3982ba",
+  "test_command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_tts_visual_control/test_visual_teacher_audit.py tests/experiments/lrs3_tts_visual_advantage/test_visual_features_metrics.py",
+  "test_status": "PASS",
+  "test_count": 24,
+  "verified": [
+    "frozen Stage00 hash, authorization, common-support 23-group split, and sealed test-lock checks are required before media access",
+    "CLI review binding includes the runner, reusable landmark extractor, visual metric implementation, and both test files",
+    "real, natural, and candidate videos are hash-checked before and after extraction",
+    "primary uses exact natural-clock canonical mouth distance with no shift/stretch correction",
+    "secondary uses fixed visual-only DTW band_fraction=0.20 and max_run=2 and cannot rescue primary",
+    "valid-fraction, exact-time coverage, finite primary/secondary metrics, minimum denominator, and all-effective-group gates fail closed",
+    "group-level exact sign-flip and deterministic bootstrap statistics are independent of SyncNet/audio scores",
+    "runner contains no SyncNet, candidate-native, audio-score, or non-fit split access",
+    "all three feature snapshots are written per record and the same MediaPipe landmarker handle is reused within each worker",
+    "parallel worker count is explicit, positive, and source-order results are collected by contiguous chunks",
+    "checked-in review binding, stage-id protection, and shared video feature extraction regressions pass"
+  ],
+  "known_scope": "Stage01 visual teacher audit source only; media artifact review and scientific decision are separate",
+  "reviewer": "independent read-only review"
+}

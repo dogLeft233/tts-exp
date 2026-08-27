@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "stage_id": "00_protocol_lock_mfa3_retry2",
+  "review_type": "code_review",
+  "status": "PASS",
+  "engineering_decision": "GO",
+  "scientific_decision": "not_available",
+  "scope": {
+    "protocol_source_directory": "scripts/experiments/lrs3_mfa_linear_replacement_mfa3",
+    "test_source_directory": "tests/experiments/lrs3_mfa_linear_replacement_mfa3",
+    "prior_mfa3_retry1_untouched": true,
+    "prior_mfa2_retry4_untouched": true
+  },
+  "source_sha256": {
+    "__init__.py": "863663b6d453eb16a19800b9df0950ec430130107babe3ef70fe3a0ee2719f6d",
+    "mfa3_alignment.py": "60520f1b6685040ef253419e6dad42b0694bdc48896986d9e259cb2242b2168b",
+    "protocol.py": "634bc4c7b9f7a0fa9ce980adcf20a6244bdddf1daab92b7347647ef1f95c6389",
+    "run_stage01_mfa3.py": "23639b9a60ffa44cef4498785043b55b38ca2f81a05562a4a6bf8d95a33f32eb"
+  },
+  "test_sha256": {
+    "test_mfa3.py": "5976778eb2b39931d75c3467fe305d6c9a239a787ac3d3910d345f2e85399b2d"
+  },
+  "checks": [
+    {
+      "name": "MFA subprocess dependency path",
+      "status": "PASS",
+      "verified": "the pinned MFA executable directory is prepended to PATH so its fstcompile dependency is discoverable"
+    },
+    {
+      "name": "Stage00 MFA contract enforcement",
+      "status": "PASS",
+      "verified": "Stage01 compares executable, root config, dictionary, and acoustic model paths and hashes to the Stage00 contract"
+    },
+    {
+      "name": "ordered candidate binding",
+      "status": "PASS",
+      "verified": "candidate results must match the ordered frozen 24-record sample IDs exactly"
+    },
+    {
+      "name": "normalization validation",
+      "status": "PASS",
+      "verified": "invalid ordinal suffixes and zero ordinals are rejected; registered events and number expansion remain deterministic"
+    },
+    {
+      "name": "protocol isolation",
+      "status": "PASS",
+      "verified": "new retry IDs are derived from immutable output names and shared base protocol constants are restored after Stage00 construction"
+    },
+    {
+      "name": "Stage00 manifest integrity binding",
+      "status": "PASS",
+      "verified": "Stage01 requires the canonical retry-specific Stage00 path, matching stage ID, and manifest.sha256 companion lock"
+    },
+    {
+      "name": "tests and compilation",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement tests/experiments/lrs3_mfa_linear_replacement_mfa3",
+      "result": "30 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

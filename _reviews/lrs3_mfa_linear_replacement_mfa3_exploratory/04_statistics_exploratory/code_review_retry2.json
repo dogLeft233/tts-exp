@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "stage_id": "04_statistics_exploratory_retry2",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_statistics.py",
+        "sha256": "9427c0b5d54dbc4a107f282eaf29089619e442e9300de1f3de10e28ff998ff62"
+      }
+    ],
+    "input_artifact": {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/03_strict_replacement_face_ready_retry7/replacement_manifest.json",
+      "sha256": "157cd678f5f03be6eae9986a82babfdfb1f1a44e611bb0b86476c6e19b7eb272"
+    }
+  },
+  "checks": [
+    {
+      "name": "statistics stage identity",
+      "status": "PASS",
+      "verified": "output stage_id is derived from the new output directory and no earlier statistics artifact is overwritten"
+    },
+    {
+      "name": "primary endpoint binding",
+      "status": "PASS",
+      "verified": "benefit_C and benefit_D use only G_M_E_N versus G_N_E_N with the pre-registered positive-is-better signs"
+    },
+    {
+      "name": "large-n sign-flip handling",
+      "status": "PASS",
+      "verified": "n=133 is not falsely enumerated; negative observed means receive a rigorous one-sided p-value lower bound of 0.5"
+    },
+    {
+      "name": "bootstrap reproducibility",
+      "status": "PASS",
+      "verified": "10,000-draw paired bootstrap uses fixed seed 20260825"
+    },
+    {
+      "name": "validation",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m py_compile scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_statistics.py",
+      "result": "py_compile passed; independent output recomputation passed for all 133 rows"
+    }
+  ],
+  "reviewer": "read-only statistics retry2 provenance review",
+  "reviewed_at": "2026-08-25",
+  "note": "Retry2 only corrects the statistics artifact stage identity; numerical results are unchanged from retry1."
+}

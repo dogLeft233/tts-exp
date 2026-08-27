@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "stage_id": "03_strict_replacement_face_ready_retry5",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_strict_replacement.py",
+        "sha256": "53c87a8035ae5a506316257bb7a0641618904e445fefc45153c485685f1c9a16"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "53191c59e829ff2036c3508d4b98882ededcfeae94e650d8df5f1a6f5b27e28b"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement/strict_mux.py",
+        "sha256": "8a884fff9578963bbb9d29c6f6f8d910f6a8ad84bf5f92af217a36e1737aabfd"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "ce766d2a91ccfc793ca37d6b43d7a370fb5e9055f2b8b74b31cb31a7d72a1884"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "virtualenv executable provenance",
+      "status": "PASS",
+      "verified": "asset bindings preserve symlink invocation paths while hashing the referenced executable content"
+    },
+    {
+      "name": "fail-closed failure artifacts",
+      "status": "PASS",
+      "verified": "failure handling emits artifacts when protocol_manifest.json is not yet present"
+    },
+    {
+      "name": "top-level mux and score functions",
+      "status": "PASS",
+      "verified": "_mux and _score are single reachable top-level functions"
+    },
+    {
+      "name": "face-ready cohort and render reuse",
+      "status": "PASS",
+      "verified": "canonical 135-record preflight and hash-verified retry1 renders remain required"
+    },
+    {
+      "name": "strict mux, endpoint separation, and fresh SyncNet",
+      "status": "PASS",
+      "verified": "strict mux delegation, authoritative cells, fresh per-cell SyncNet, and partial-matrix blocking remain intact"
+    },
+    {
+      "name": "tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory tests/experiments/lrs3_mfa_linear_replacement/test_mfa_alignment.py",
+      "result": "15 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "read-only review with regression verification; prior independent retry4 review findings addressed",
+  "reviewed_at": "2026-08-25"
+}

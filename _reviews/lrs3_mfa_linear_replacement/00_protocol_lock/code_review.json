@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "stage_id": "00_protocol_lock_retry1",
+  "review_type": "code_review",
+  "status": "PASS",
+  "review_basis": "independent_read_only_review_with_targeted_fail_closed_probes",
+  "source_manifest_sha256": "12885980fd24f5533e92ad4cd7d4a359e2d199a536db579ea90862f2948f38b0",
+  "source_manifest": [
+    {"path": "scripts/experiments/lrs3_mfa_linear_replacement/__init__.py", "sha256": "2391926503db998650a645a3d89b9ca55a2edcf225589abe40625beb014fa86c"},
+    {"path": "scripts/experiments/lrs3_mfa_linear_replacement/protocol.py", "sha256": "93819071c119b35c7745e14d44a5d4e2f61f6c7839fef641f8ee1feb0a3a5da7"},
+    {"path": "scripts/experiments/lrs3_mfa_linear_replacement/mfa_alignment.py", "sha256": "bd1be07af69211b938d2906e21583e87eeff2e17530daabe2948520c55ee5679"},
+    {"path": "scripts/experiments/lrs3_mfa_linear_replacement/candidate_audio.py", "sha256": "e36d2aa5286304c754cd203a874f9b16445aeba3d2a62aa16b8f7ca79320d962"},
+    {"path": "scripts/experiments/lrs3_mfa_linear_replacement/strict_mux.py", "sha256": "8a884fff9578963bbb9d29c6f6f8d910f6a8ad84bf5f92af217a36e1737aabfd"},
+    {"path": "scripts/experiments/lrs3_mfa_linear_replacement/run_evaluation.py", "sha256": "1956c6611893da178a5df52f0817549ec54b31e60040fad8e2e2c098586fc766"},
+    {"path": "scripts/experiments/lrs3_mfa_linear_replacement/statistics.py", "sha256": "498fdfaf34e3313b2f05e1206412a79e80cb48408b0440fe8f9f8cefc6e42623"},
+    {"path": "tests/experiments/lrs3_mfa_linear_replacement/test_protocol.py", "sha256": "ff3b8c51a7b062435956673d4e066ff88ff9fc8dce07c4a9063842444a61fe8f"},
+    {"path": "tests/experiments/lrs3_mfa_linear_replacement/test_mfa_alignment.py", "sha256": "4f26c343ca4d3da9403273c1d7db93a9e256121792adf387e431b9346ce28a27"},
+    {"path": "tests/experiments/lrs3_mfa_linear_replacement/test_candidate_audio.py", "sha256": "2aa3c52ecd2d66b076ccf4bb148437420ab271abf9d74d5ff780ec202657d737"},
+    {"path": "tests/experiments/lrs3_mfa_linear_replacement/test_strict_mux.py", "sha256": "7b8264e832b5261ccf6cf665fcd53f45f38e0db8dff858e5b110bdf2970f8314"},
+    {"path": "tests/experiments/lrs3_mfa_linear_replacement/test_evaluation.py", "sha256": "0070b80e7e9a7eb84661fb3fcc91e97a98573ee478d84a3d683cd51c413d7d26"}
+  ],
+  "test_commands": [
+    {"command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement", "status": "PASS", "test_count": 22},
+    {"command": "python -m py_compile scripts/experiments/lrs3_mfa_linear_replacement/*.py tests/experiments/lrs3_mfa_linear_replacement/*.py", "status": "PASS"}
+  ],
+  "verified": [
+    "ordered 24-record fit-only cohort binding and canonical source/TTS/reference joins",
+    "visual and motion parent manifest split identity plus sealed lock membership checks",
+    "independent natural/TTS MFA corpus seams with mandatory ordered cohort, WAV format, audio hash, and TextGrid completion guards",
+    "unknown/OOV/spn rejection, complete frame ownership, zero natural-speech fallback, and silence-only fallback",
+    "bounded final feature-tail extension and contiguous natural-frame mapping",
+    "frozen WavLM layer-6/1024/320-hop/prematched interface contract",
+    "right-only exact length, canonical PCM16 conversion, finite/nonzero/clipping waveform QC",
+    "exact strict Matroska mux command, canonical input-audio checks, elementary-video and decoded-PCM identity verification",
+    "complete four-cell matrix, non-empty SyncNet/mux SHA-256 provenance, frozen cohort hash, and exact sign-flip statistics",
+    "synthetic mux verification reaches stream/hash checks; no fit media, MFA alignment, features, scores, or GPU access"
+  ],
+  "resolved_findings": [
+    "score matrix accepted arbitrary cohort IDs",
+    "parent split and lock provenance was incomplete",
+    "strict mux validator accepted appended conflicting options",
+    "mux verifier omitted container and canonical-input checks",
+    "candidate mapping accepted duplicate natural frame ownership",
+    "near-tie sign-flip tolerance was not exact",
+    "MFA execution helpers allowed omitted cohort/hash/completion guards",
+    "analysis omitted frozen cohort provenance"
+  ],
+  "media_access": {"fit_media_opened": false, "internal_dev_media_opened": false, "validation_media_opened": false, "test_media_opened": false},
+  "reviewer": "independent read-only code review"
+}

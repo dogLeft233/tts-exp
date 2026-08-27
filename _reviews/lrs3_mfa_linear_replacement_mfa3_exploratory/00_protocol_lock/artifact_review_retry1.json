@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "stage_id": "00_protocol_lock_retry1",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "GO",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/00_protocol_lock_retry1",
+  "artifact_sha256": {
+    "manifest.json": "a3767ce31a4c97373a9ae1721c374a8addcea1ec01ce6a39ee70441d4891c4a3",
+    "test_lock.json": "12741171dac3873f74812475eb612f6e8d6c0e8a3aac949787ce8e7ac224609b",
+    "manifest.sha256": "223cb666826706fd98e3a6cf7de64e3e34eaf5eb2900e6ed55fa9f085d73ec4c",
+    "summary.json": "73e30dab354e40363820d5c484023abd016f16d40c648144965b84e921bee4b7",
+    "decision.json": "6a3ef27068d571a80988ab5bb194358600a014ab8877062f46e84540a25afc7e"
+  },
+  "counts": {
+    "fit_pool_records": 271,
+    "eligible_records": 148,
+    "eligible_source_groups": 23,
+    "teacher_overlap": 0,
+    "original_overlap": 0,
+    "sealed_group_overlap": 0
+  },
+  "checks": [
+    {
+      "name": "source and TTS provenance",
+      "status": "PASS",
+      "verified": "canonical n=500 source and complete n=500 TTS metadata are hash-bound"
+    },
+    {
+      "name": "fit-only disjoint cohort",
+      "status": "PASS",
+      "verified": "148 eligible records, no teacher-cache/original-MFA3 overlap"
+    },
+    {
+      "name": "sealed split lock",
+      "status": "PASS",
+      "verified": "all selected records belong to parent fit groups; internal-dev, validation, and test groups are excluded"
+    },
+    {
+      "name": "dictionary prefilter",
+      "status": "PASS",
+      "verified": "selection is deterministic from pinned english_mfa dictionary and registered MFA3 normalization, before MFA execution"
+    },
+    {
+      "name": "Stage00 access boundary",
+      "status": "PASS",
+      "verified": "Stage00 opened no fit/sealed media and ran no MFA/features/scores"
+    },
+    {
+      "name": "manifest companion integrity",
+      "status": "PASS",
+      "verified": "manifest.sha256 matches manifest.json"
+    }
+  ],
+  "reviewer": "independent read-only artifact verification",
+  "reviewed_at": "2026-08-25"
+}

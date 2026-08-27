@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "stage_id": "02_candidate_audio_retry1",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "BLOCKED",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/02_candidate_audio_retry1",
+  "artifact_sha256": {
+    "candidate_failure.json": "c314a88de82774fa8d9288d38b49c4773400fd984c4737e54aaac3f7b8038a2b",
+    "summary.json": "e2e2e02bab23c04bddc6756598656c647a4120258212f93f31c8437622a9b8aa",
+    "decision.json": "857a5d1feea7054d0ba8a853d1c1f7ae8f2977c6c96610a8d9f2f40113e56f69"
+  },
+  "counts": {
+    "candidate_generation_started": false,
+    "partial_audio_count": 0,
+    "gpu_used": false,
+    "sealed_media_opened": false
+  },
+  "checks": [
+    {
+      "name": "GPU occupancy gate",
+      "status": "PASS",
+      "verified": "nvidia-smi reported GPU 0 memory_used=5860 MiB of 16384 MiB and candidate generation stopped before model load"
+    },
+    {
+      "name": "no partial candidate audio",
+      "status": "PASS",
+      "verified": "no audio files were written"
+    },
+    {
+      "name": "sealed split access",
+      "status": "PASS",
+      "verified": "internal-dev, validation, and test media remain unopened"
+    },
+    {
+      "name": "scientific status boundary",
+      "status": "PASS",
+      "verified": "scientific decision remains not_available because no candidate or replacement endpoint was produced"
+    }
+  ],
+  "reviewer": "independent read-only artifact verification",
+  "reviewed_at": "2026-08-25"
+}

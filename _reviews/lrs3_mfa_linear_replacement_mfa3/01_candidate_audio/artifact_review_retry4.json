@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_candidate_audio_mfa3_retry4",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "BLOCKED",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_mfa3_20260825/01_candidate_audio_mfa3_retry4",
+  "stage00_manifest_sha256": "7ce8f9dc659f31f049d0f819209ca1f18fb8ea6bcb188b254e016d0f3e7d8bb3",
+  "stage00_manifest_companion_sha256": "358edb8cce0cce45ba3d22123a37e2970b47e2dbd10765789f32dd4900f70795",
+  "artifact_sha256": {
+    "alignment_failure.json": "0ef2dd43388557511818bc366953801f748e5f2ce93235af2c798e2560986742",
+    "summary.json": "2dbed9bd7fe389225b11633d5902045297ef7cb88ebc4e9eff85f1447f1785ac",
+    "decision.json": "5ed6bec92ab6a23916c888b49bfbc4bcb860c360cbba9b21036921b6ecffe5b5"
+  },
+  "counts": {
+    "expected_fit_records": 24,
+    "natural_textgrids": 24,
+    "tts_textgrids": 24,
+    "natural_textgrid_ids_unique": 24,
+    "tts_textgrid_ids_unique": 24,
+    "alignment_error_rows": 16,
+    "unknown_phone_side_rows": 16,
+    "unknown_phone_unique_records": 8,
+    "candidate_generation_started": false,
+    "candidate_audio_count": 0,
+    "gpu_used": false
+  },
+  "remaining_unknown_words": {
+    "natural_and_tts": [
+      "didn",
+      "acr's",
+      "damselfish",
+      "snappers",
+      "groupers",
+      "kean",
+      "maximization",
+      "beser",
+      "uk",
+      "vermiculture"
+    ],
+    "interpretation": "remaining spn intervals are lexical/OOV coverage failures rather than allowed silence"
+  },
+  "checks": [
+    {
+      "name": "dual MFA execution",
+      "status": "PASS",
+      "verified": "all 24 natural and all 24 TTS TextGrids were produced by MFA3.4.1 with english_mfa"
+    },
+    {
+      "name": "complete blocker accounting",
+      "status": "PASS",
+      "verified": "all 16 side-specific failures and 8 unique records are preserved"
+    },
+    {
+      "name": "strict unknown-phone policy",
+      "status": "PASS",
+      "verified": "every blocker is spn and no row is reclassified as silence"
+    },
+    {
+      "name": "candidate/GPU stop gate",
+      "status": "PASS",
+      "verified": "candidate generation, WavLM/vocoder features, and GPU execution did not start"
+    },
+    {
+      "name": "sealed split access",
+      "status": "PASS",
+      "verified": "internal-dev, validation, and test media remain unopened"
+    },
+    {
+      "name": "MFA2 comparison",
+      "status": "PASS",
+      "verified": "MFA3 plus the preregistered tokenizer reduced unknown unique records from 13 to 8 without relaxing the strict gate"
+    }
+  ],
+  "reviewer": "independent read-only artifact verification",
+  "reviewed_at": "2026-08-25"
+}

@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "stage_id": "02_candidate_audio_retry4",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "GO",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/02_candidate_audio_retry4",
+  "artifact_sha256": {
+    "candidate_manifest.json": "2ff6da4923e3a2abb31463014ba69d6587c5bd8bf2da257d9aff32a23fa42d6a",
+    "summary.json": "1dc88b6d49f5ba0fbaef8b65474a27dc0b2a949b54794c775192396937c97385",
+    "decision.json": "3f4e78f39ff23ade7f03e7f2d970951642045e2bfae9be6a321e19cf8fe816f3"
+  },
+  "counts": {
+    "alignment_clean_records": 146,
+    "candidate_records": 146,
+    "audio_files": 146,
+    "trace_files": 146,
+    "ordered_ids_match": true,
+    "unique_ids": 146,
+    "exact_natural_length_failures": 0,
+    "candidate_hash_failures": 0,
+    "trace_frame_count_failures": 0,
+    "speech_fallback_frames": 0,
+    "silence_fallback_frames": 6185,
+    "nonfinite_pcm_files": 0,
+    "all_zero_pcm_files": 0,
+    "sealed_media_opened": false
+  },
+  "checks": [
+    {
+      "name": "ordered cohort identity",
+      "status": "PASS",
+      "verified": "candidate result IDs exactly match the ordered 146-record clean MFA3 alignment manifest and are a subset of the canonical Stage00 pool"
+    },
+    {
+      "name": "audio and trace completeness",
+      "status": "PASS",
+      "verified": "146 audio files and 146 traces exist; every trace frame count matches its natural feature-frame count"
+    },
+    {
+      "name": "exact natural length and PCM readback",
+      "status": "PASS",
+      "verified": "all candidate WAV files are mono 16 kHz PCM16 with exact natural sample counts, matching manifest hashes, finite nonzero samples"
+    },
+    {
+      "name": "strict mapping fallback",
+      "status": "PASS",
+      "verified": "speech_fallback_frames=0; 6185 fallback frames are natural-silence mappings only"
+    },
+    {
+      "name": "GPU and runtime provenance",
+      "status": "PASS",
+      "verified": "GPU gate recorded daytime execution, zero utilization, no active compute process, and only 5 MiB residual memory; candidate manifest binds the pinned assets and model contract"
+    },
+    {
+      "name": "sealed split access",
+      "status": "PASS",
+      "verified": "internal-dev, validation, and test media remain unopened"
+    },
+    {
+      "name": "scientific status boundary",
+      "status": "PASS",
+      "verified": "scientific decision remains not_available because no Wav2Lip strict replacement renders, muxes, or SyncNet endpoint has been produced"
+    }
+  ],
+  "reviewer": "independent read-only artifact verification",
+  "reviewed_at": "2026-08-25"
+}

@@ -161,7 +161,17 @@ def _landmarker(model_path: Path):
     return mp, vision.FaceLandmarker.create_from_options(options)
 
 
-def extract_video_features(video_path: str | Path, landmarker_asset: str | Path) -> VisualSequence:
+def create_landmarker(model_path: str | Path):
+    """Create one reusable MediaPipe landmarker handle for sequential videos."""
+    return _landmarker(Path(model_path).resolve())
+
+
+def extract_video_features(
+    video_path: str | Path,
+    landmarker_asset: str | Path,
+    *,
+    landmarker_handle: tuple[Any, Any] | None = None,
+) -> VisualSequence:
     """Sequentially decode one video and extract deterministic landmark features."""
     import cv2
 
@@ -183,7 +193,8 @@ def extract_video_features(video_path: str | Path, landmarker_asset: str | Path)
         capture.release()
         raise ValueError(f"invalid video metadata: {path}")
 
-    mp, landmarker = _landmarker(Path(landmarker_asset).resolve())
+    owns_landmarker = landmarker_handle is None
+    mp, landmarker = landmarker_handle or _landmarker(Path(landmarker_asset).resolve())
     frames: list[np.ndarray] = []
     timestamps: list[float] = []
     decode_errors = 0
@@ -221,7 +232,8 @@ def extract_video_features(video_path: str | Path, landmarker_asset: str | Path)
             frame_index += 1
     finally:
         capture.release()
-        landmarker.close()
+        if owns_landmarker:
+            landmarker.close()
 
     if not frames:
         raise ValueError(f"video has no decodable frames: {path}")

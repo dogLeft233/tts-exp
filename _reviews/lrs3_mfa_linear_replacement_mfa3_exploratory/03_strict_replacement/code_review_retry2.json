@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "stage_id": "03_strict_replacement_retry2",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_strict_replacement.py",
+        "sha256": "b5fd411843ac7fe36d292a017fe4f37d29b0ed1e5e179ffcbca8c3c111b09276"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "4c800dbe37cb460fad4ef8b77d6fd50ae256f5ee1b0beca0be7a65f6b426c08c"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement/strict_mux.py",
+        "sha256": "8a884fff9578963bbb9d29c6f6f8d910f6a8ad84bf5f92af217a36e1737aabfd"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "88fcafc13c1e6a8f25b3fa4f144d6c39223e5c6d6302ff15ef5c4840cc939c8c"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement/test_strict_mux.py",
+        "sha256": "7b8264e832b5261ccf6cf665fcd53f45f38e0db8dff858e5b110bdf2970f8314"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "canonical input provenance",
+      "status": "PASS",
+      "verified": "runner requires the immutable exploratory Stage00 retry2 and candidate retry4 manifests, then rechecks source face-video, natural-audio, and candidate-audio hashes"
+    },
+    {
+      "name": "strict 2x2 cell contract",
+      "status": "PASS",
+      "verified": "runner creates G_N_E_N and G_M_E_N as authoritative baseline/target cells and attempts G_N_E_M/G_M_E_M as separate diagnostics"
+    },
+    {
+      "name": "fresh official evaluation",
+      "status": "PASS",
+      "verified": "all 584 mux cells use strict video-copy/PCM mux verification and fresh SyncNet pipeline/score calls with no cached scores"
+    },
+    {
+      "name": "GPU and sealed split gates",
+      "status": "PASS",
+      "verified": "Wav2Lip and SyncNet subprocesses check daytime and zero-utilization/no-active-compute state; only fit media are bound"
+    },
+    {
+      "name": "fail-closed accounting",
+      "status": "PASS",
+      "verified": "partial render/mux/score counts become BLOCKED artifacts; scientific decision remains not_available unless the complete matrix is produced"
+    },
+    {
+      "name": "tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory tests/experiments/lrs3_mfa_linear_replacement/test_mfa_alignment.py",
+      "result": "12 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

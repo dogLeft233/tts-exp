@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "stage_id": "00_protocol_lock_retry2",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "GO",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/00_protocol_lock_retry2",
+  "artifact_sha256": {
+    "manifest.json": "7db85750e2249a5cd04637f51df7ba278f7d09d094cdc0bc176792f1f068df28",
+    "test_lock.json": "12741171dac3873f74812475eb612f6e8d6c0e8a3aac949787ce8e7ac224609b",
+    "manifest.sha256": "db5ad58471c10b3cb30398840651c73c4dc7f2f5f643b1dd6f5a2d1518b2c3aa",
+    "summary.json": "b3ca5e5703053bedb4126f0e2b0e03d1fe6ba34d25989a5767119f6f5f9fc048",
+    "decision.json": "ed9e5104481e698f5fc326cb6afacd3482e11adfc56f2028394f87626451717a"
+  },
+  "counts": {
+    "fit_pool_records": 271,
+    "eligible_records": 148,
+    "source_groups": 23
+  },
+  "checks": [
+    {
+      "name": "candidate asset provenance",
+      "status": "PASS",
+      "verified": "WavLM and prematched vocoder checkpoint paths/hashes are present in the retry2 lock"
+    },
+    {
+      "name": "manifest integrity",
+      "status": "PASS",
+      "verified": "manifest companion hash matches manifest.json"
+    },
+    {
+      "name": "pool identity",
+      "status": "PASS",
+      "verified": "retry2 freezes the same deterministic 148-record fit-only pool as retry1"
+    },
+    {
+      "name": "sealed split lock",
+      "status": "PASS",
+      "verified": "sealed splits remain unopened"
+    }
+  ],
+  "reviewer": "independent read-only artifact verification",
+  "reviewed_at": "2026-08-25"
+}

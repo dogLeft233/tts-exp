@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "stage_id": "04_statistics_exploratory_retry1",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_statistics.py",
+        "sha256": "bdceca036bdb4b69b436c47396db7c4c1268d6e9e7e1421e76f3d0f4c71de754"
+      }
+    ],
+    "input_artifact": {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/03_strict_replacement_face_ready_retry7/replacement_manifest.json",
+      "sha256": "157cd678f5f03be6eae9986a82babfdfb1f1a44e611bb0b86476c6e19b7eb272"
+    }
+  },
+  "checks": [
+    {
+      "name": "primary endpoint binding",
+      "status": "PASS",
+      "verified": "benefit_C and benefit_D use only G_M_E_N versus G_N_E_N with the pre-registered positive-is-better signs"
+    },
+    {
+      "name": "matrix completeness",
+      "status": "PASS",
+      "verified": "all four cells are required for all 133 source-order records and duplicate cell/sample keys are rejected"
+    },
+    {
+      "name": "large-n sign-flip handling",
+      "status": "PASS",
+      "verified": "n>24 is not falsely enumerated; for the observed negative means, complementary sign symmetry provides a rigorous one-sided p-value lower bound of 0.5"
+    },
+    {
+      "name": "bootstrap reproducibility",
+      "status": "PASS",
+      "verified": "10,000-draw paired bootstrap uses fixed seed 20260825 and reports descriptive 95% intervals"
+    },
+    {
+      "name": "tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m py_compile scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_statistics.py",
+      "result": "py_compile passed; independent output recomputation passed for all 133 rows"
+    }
+  ],
+  "reviewer": "read-only statistics contract review",
+  "reviewed_at": "2026-08-25",
+  "note": "The scientific decision is based on negative observed co-primary means; no approximate p-value is presented as exact."
+}

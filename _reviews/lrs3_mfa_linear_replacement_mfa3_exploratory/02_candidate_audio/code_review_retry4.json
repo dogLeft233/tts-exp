@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "stage_id": "02_candidate_audio_retry4",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement/mfa_alignment.py",
+        "sha256": "bd1803a1f70aaafec286b60b428118c1be68b26ebd1179d8c729611ca1052f48"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "c7eaf6c7bc9d6601c41f5127d3645358ed858e6f123e834d044ee575bc3427d9"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_alignment.py",
+        "sha256": "6862b5c0b4237ea1094e605d94ea58dd57ccdac74c6d920103b362c8d9c1ec0f"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_candidate_audio.py",
+        "sha256": "edcf23d7bdfb6b55e1cf1736864cc601eb2f08ab9a1bc17345ae3e840c9bd1bf"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement/test_mfa_alignment.py",
+        "sha256": "b1c12aa0c99375cef018060bac670e68e2857e37e30a343d73d6bbd7e6e65365"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "158e9e8c1b202bcce1c82c24c9129bd1010730f2e0e8cdb5e7433e7fc01dbe00"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "ordered phone ownership",
+      "status": "PASS",
+      "verified": "matching maximizes ordered speech-phone matches before silence matches, preventing inserted silence intervals from stealing a real speech match"
+    },
+    {
+      "name": "strict fallback contract",
+      "status": "PASS",
+      "verified": "unmatched speech remains fail-closed; only unmatched natural silence may use actual TTS silence frames"
+    },
+    {
+      "name": "canonical Stage00 provenance",
+      "status": "PASS",
+      "verified": "alignment and candidate entrypoints require the immutable 00_protocol_lock_retry2 manifest path and stage identity"
+    },
+    {
+      "name": "candidate retry identity",
+      "status": "PASS",
+      "verified": "new output artifacts use 02_candidate_audio_retry4 and do not overwrite retries1-3"
+    },
+    {
+      "name": "GPU fail-closed",
+      "status": "PASS",
+      "verified": "daytime gate requires zero utilization and no active compute process; driver-only residual memory is recorded but not treated as a running task"
+    },
+    {
+      "name": "dependency and regression tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement/test_mfa_alignment.py tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory",
+      "result": "10 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

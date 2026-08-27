@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "review_type": "pre-run code review",
+  "stage_id": "01_visual_teacher_audit_expanded_face_ready_retry1",
+  "status": "PASS",
+  "test_status": "PASS",
+  "reviewer": "local static review",
+  "checks": {
+    "frozen_parent_bindings": "PASS",
+    "clean_to_face_ready_order": "PASS",
+    "fixed_eligibility_denominator": "PASS",
+    "exact_time_metric_contract": "PASS",
+    "syncnet_firewall": "PASS",
+    "sealed_split_firewall": "PASS",
+    "spawned_worker_path": "PASS",
+    "nonempty_output_refusal": "PASS"
+  },
+  "findings": [],
+  "test_command": "pytest -q tests/experiments/lrs3_tts_visual_control/test_visual_teacher_audit_face_ready.py",
+  "test_result": "3 passed",
+  "source_manifest": [
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_visual_teacher_audit_face_ready.py",
+      "sha256": "d55ce17cd2b39ec256b4591377dfe55823d55eeed12a887a840e4ac23a5059df"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_tts_visual_control/run_visual_teacher_audit.py",
+      "sha256": "b3f9a52e61c9f4557234f9caff4ac85ddc68a9a4c629531de6d93132b80ac380"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_tts_visual_advantage/video_features.py",
+      "sha256": "483f361f571feee56eb714b4b15c9cc778eaafbf21041418400257e233cae1da"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_tts_visual_advantage/visual_metrics.py",
+      "sha256": "222331c92304aedee82ed96a5b125fc0f4ce1fc15539c89ed8377f395537e599"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_visual_expanded_face_ready_render_retry3.py",
+      "sha256": "7b19cc859e514fea5324480db88641131bbdc534951064c680a93b5882917651"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_tts_visual_control/test_visual_teacher_audit_face_ready.py",
+      "sha256": "8d14216dce51d518afc23f146e667df3bc899da823745248d658fa139a2b4fa2"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_tts_visual_control/test_visual_teacher_audit.py",
+      "sha256": "94fe05045ed0222dcfc863f0a6591f24caeb363c0e36de1575b9b100ff9a30a0"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_tts_visual_advantage/test_visual_features_metrics.py",
+      "sha256": "4a1d25bdcf9e1a29ee9e016b72fb6998f52e41ab1301af2be998687d17b881a2"
+    }
+  ],
+  "source_manifest_sha256": "864dff093d577be9938781dafef7bbe0a363250169f20cecf568abe9f9eda7ac"
+}

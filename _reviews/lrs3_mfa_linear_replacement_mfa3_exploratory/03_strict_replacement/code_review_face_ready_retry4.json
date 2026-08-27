@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "stage_id": "03_strict_replacement_face_ready_retry4",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_strict_replacement.py",
+        "sha256": "767ea8bf58031a15b7a2253072691ba093a5a07dd0c07e5464b89fdc6595a80e"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "53191c59e829ff2036c3508d4b98882ededcfeae94e650d8df5f1a6f5b27e28b"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement/strict_mux.py",
+        "sha256": "8a884fff9578963bbb9d29c6f6f8d910f6a8ad84bf5f92af217a36e1737aabfd"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "9e6e14ebff1879ae67e5436afd1707233362a95549340a3b987acedc47161bb4"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "top-level mux and score functions",
+      "status": "PASS",
+      "verified": "_mux and _score are single reachable top-level functions with no duplicate or unreachable implementation blocks"
+    },
+    {
+      "name": "fail-closed failure artifacts",
+      "status": "PASS",
+      "verified": "failure handling emits failure, summary, and decision artifacts even when protocol_manifest.json has not been written"
+    },
+    {
+      "name": "face-ready cohort and render reuse",
+      "status": "PASS",
+      "verified": "canonical 135-record preflight and hash-verified retry1 renders are required"
+    },
+    {
+      "name": "strict mux and endpoint separation",
+      "status": "PASS",
+      "verified": "strict mux verification is delegated to the checked-in helper and authoritative baseline/target remain G_N_E_N/G_M_E_N"
+    },
+    {
+      "name": "fresh SyncNet and fail-closed matrix",
+      "status": "PASS",
+      "verified": "all selected cells require fresh SyncNet calls and partial matrices remain BLOCKED"
+    },
+    {
+      "name": "tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory tests/experiments/lrs3_mfa_linear_replacement/test_mfa_alignment.py",
+      "result": "14 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

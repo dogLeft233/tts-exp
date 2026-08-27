@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_candidate_audio_mfa3_retry3",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "BLOCKED",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_mfa3_20260825/01_candidate_audio_mfa3_retry3",
+  "stage00_manifest_sha256": "0dee2620a1e95d8a1a00d8c0ed9add42b0b7fa235ae14220ae8452c675e1cd01",
+  "artifact_sha256": {
+    "alignment_failure.json": "e4fdda218104b8f4ec025e36c36e769a9761b3d76716612303015dbf867c6e32",
+    "summary.json": "55c7e65f3c3dffd5439e1d4a532381b300b219e06d767733f4148c5eb872a590",
+    "decision.json": "64b966c0472b575b3c7787cfec1f34f6db4843a66baaaec740e8492c9b81fe69"
+  },
+  "counts": {
+    "expected_fit_records": 24,
+    "natural_textgrids": 0,
+    "tts_textgrids": 0,
+    "alignment_error_rows": 0,
+    "candidate_generation_started": false,
+    "candidate_audio_count": 0,
+    "features_created": false,
+    "gpu_used": false
+  },
+  "checks": [
+    {
+      "name": "Stage00 integrity gate",
+      "status": "PASS",
+      "verified": "canonical retry3 Stage00 path and companion hash were accepted"
+    },
+    {
+      "name": "MFA root contract gate",
+      "status": "PASS",
+      "verified": "the supplied non-locked 20260825 root was rejected before corpus preparation or MFA"
+    },
+    {
+      "name": "candidate/GPU stop gate",
+      "status": "PASS",
+      "verified": "no TextGrid, candidate audio, feature extraction, or GPU execution started"
+    },
+    {
+      "name": "sealed split access",
+      "status": "PASS",
+      "verified": "internal-dev, validation, and test media remain unopened"
+    },
+    {
+      "name": "retry isolation",
+      "status": "PASS",
+      "verified": "retry3 is preserved; corrected root invocation is assigned to a new Stage00/Stage01 retry4"
+    }
+  ],
+  "reviewer": "independent read-only artifact verification",
+  "reviewed_at": "2026-08-25"
+}

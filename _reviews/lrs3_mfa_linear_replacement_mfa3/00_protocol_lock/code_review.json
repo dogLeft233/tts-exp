@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "stage_id": "00_protocol_lock_mfa3_retry1",
+  "review_type": "code_review",
+  "status": "PASS",
+  "engineering_decision": "GO",
+  "scientific_decision": "not_available",
+  "scope": {
+    "protocol_source_directory": "scripts/experiments/lrs3_mfa_linear_replacement_mfa3",
+    "test_source_directory": "tests/experiments/lrs3_mfa_linear_replacement_mfa3",
+    "prior_protocol_source_untouched": true,
+    "prior_stage00_untouched": true,
+    "prior_retry4_untouched": true
+  },
+  "source_sha256": {
+    "__init__.py": "863663b6d453eb16a19800b9df0950ec430130107babe3ef70fe3a0ee2719f6d",
+    "mfa3_alignment.py": "6bd1fd9d3dc92133c7fac3eec812d83ba13b0b955eeeea2b368962e7e6d98c98",
+    "protocol.py": "cfcdbc5db1d3c836789c546085144795621446ee39122c69e1663e23c21b1ed0",
+    "run_stage01_mfa3.py": "3c0b0e234e43fef5e1c751160e9c6a4211c74f47598ba3f998de8c00f252f89c"
+  },
+  "test_sha256": {
+    "test_mfa3.py": "ffdc3063779b85e9a0f06f38b8b23b28b3b5a33f2a97ca1d807ec862a129a035"
+  },
+  "checks": [
+    {
+      "name": "protocol isolation",
+      "status": "PASS",
+      "verified": "new MFA3 protocol ID and output prefixes are separate; old source and retry4 paths are not overwritten"
+    },
+    {
+      "name": "MFA3 runtime binding",
+      "status": "PASS",
+      "verified": "MFA_ROOT_DIR is set explicitly for metadata and alignment; executable, root config, dictionary, and acoustic model are hash-bound"
+    },
+    {
+      "name": "English model binding",
+      "status": "PASS",
+      "verified": "MFA 3.4.1, english_mfa dictionary, and english_mfa acoustic model are required"
+    },
+    {
+      "name": "transcript policy",
+      "status": "PASS",
+      "verified": "decimal numbers and ordinals are expanded deterministically, registered nonlexical events are removed, unsupported annotations fail, and lexical apostrophes are preserved"
+    },
+    {
+      "name": "unknown-phone policy",
+      "status": "PASS",
+      "verified": "spn and related unknown labels remain rejected by the inherited strict parser"
+    },
+    {
+      "name": "24-record fail-closed execution",
+      "status": "PASS",
+      "verified": "both natural and TTS MFA require all ordered 24 IDs before candidate generation"
+    },
+    {
+      "name": "tests and compilation",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3 && py_compile scripts/experiments/lrs3_mfa_linear_replacement_mfa3/*.py tests/experiments/lrs3_mfa_linear_replacement_mfa3/*.py",
+      "result": "4 passed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

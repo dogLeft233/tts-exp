@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "stage_id": "04_statistics_exploratory_retry2",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "GO",
+  "scientific_decision": "NO_GO",
+  "reviewed_at": "2026-08-25",
+  "input_artifact": {
+    "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/03_strict_replacement_face_ready_retry7/replacement_manifest.json",
+    "sha256": "157cd678f5f03be6eae9986a82babfdfb1f1a44e611bb0b86476c6e19b7eb272"
+  },
+  "output_artifacts": [
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/04_statistics_exploratory_retry2/analysis.json",
+      "sha256": "880563c361948f77a62e6a3b9f507393ac6d6c253cdb2c9ced4cc8c671c05690"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/04_statistics_exploratory_retry2/summary.json",
+      "sha256": "129aa5f73d7e612de1ed9f3d4aff4e5b95270c343f7a96d2cb409b4a1f4f2362"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/04_statistics_exploratory_retry2/decision.json",
+      "sha256": "744648bb0a26be310d8173051bef15486e2461f061b1b4fbbf3fd2746edb1518"
+    }
+  ],
+  "source_review": {
+    "path": "/home/wjj/tts-audio/tts-exp/_reviews/lrs3_mfa_linear_replacement_mfa3_exploratory/04_statistics_exploratory/code_review_retry2.json",
+    "status": "PASS",
+    "source_sha256": "9427c0b5d54dbc4a107f282eaf29089619e442e9300de1f3de10e28ff998ff62"
+  },
+  "checks": [
+    {
+      "name": "stage identity and immutability",
+      "status": "PASS",
+      "verified": "retry2 JSON artifacts identify 04_statistics_exploratory_retry2 and retry1 remains preserved"
+    },
+    {
+      "name": "complete paired matrix",
+      "status": "PASS",
+      "verified": "133 source-order records, all four cells, and 133 per-record benefit pairs are present"
+    },
+    {
+      "name": "benefit recomputation",
+      "status": "PASS",
+      "verified": "independent recomputation of all benefit values, means, signs, four-cell means, and diagnostics matches retry2 analysis.json"
+    },
+    {
+      "name": "scientific decision",
+      "status": "PASS",
+      "verified": "both co-primary observed means are negative, so the complete engineering run is scientific NO_GO rather than BLOCKED"
+    },
+    {
+      "name": "large-n statistical disclosure",
+      "status": "PASS",
+      "verified": "exact 2^133 enumeration is explicitly not claimed; negative means provide a rigorous one-sided p-value lower bound of 0.5 for both endpoints"
+    }
+  ],
+  "results": {
+    "benefit_C_mean": -1.2006842105,
+    "benefit_D_mean": -1.0612706767,
+    "benefit_C_positive_count": 1,
+    "benefit_D_positive_count": 2,
+    "next_allowed_stage": "stop_mfa_linear_candidate"
+  }
+}

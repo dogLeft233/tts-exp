@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_candidate_audio_mfa3_retry4",
+  "review_type": "code_review",
+  "status": "PASS",
+  "engineering_decision": "BLOCKED",
+  "scientific_decision": "not_available",
+  "scope": {
+    "protocol_source_directory": "scripts/experiments/lrs3_mfa_linear_replacement_mfa3",
+    "test_source_directory": "tests/experiments/lrs3_mfa_linear_replacement_mfa3",
+    "stage00_manifest_sha256": "7ce8f9dc659f31f049d0f819209ca1f18fb8ea6bcb188b254e016d0f3e7d8bb3"
+  },
+  "checks": [
+    {
+      "name": "MFA3 executable and environment binding",
+      "status": "PASS",
+      "verified": "MFA_ROOT_DIR, executable directory PATH, exact MFA version/model tokens, and executable/root/model hashes are enforced"
+    },
+    {
+      "name": "independent natural/TTS alignment",
+      "status": "PASS",
+      "verified": "natural and TTS corpora use separate audio/transcript directories and both require the ordered 24 IDs"
+    },
+    {
+      "name": "strict unknown-phone gate",
+      "status": "PASS",
+      "verified": "spn remains an unknown/OOV failure and is not reclassified as silence"
+    },
+    {
+      "name": "candidate and GPU fail-closed behavior",
+      "status": "PASS",
+      "verified": "candidate generation is not entered after alignment failure; ordered candidate IDs are checked; GPU gate remains fail-closed"
+    },
+    {
+      "name": "protocol tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement tests/experiments/lrs3_mfa_linear_replacement_mfa3",
+      "result": "30 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

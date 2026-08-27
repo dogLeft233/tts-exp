@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "stage_id": "03_strict_replacement_face_ready_retry7",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "GO",
+  "scientific_decision": "not_available",
+  "reviewed_at": "2026-08-25",
+  "artifact": {
+    "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/03_strict_replacement_face_ready_retry7/replacement_manifest.json",
+    "sha256": "157cd678f5f03be6eae9986a82babfdfb1f1a44e611bb0b86476c6e19b7eb272"
+  },
+  "source_review": {
+    "path": "/home/wjj/tts-audio/tts-exp/_reviews/lrs3_mfa_linear_replacement_mfa3_exploratory/03_strict_replacement/code_review_face_ready_retry7_current.json",
+    "status": "PASS",
+    "protocol_sources_unchanged_from_retry7": true,
+    "current_test_source_bound": true
+  },
+  "counts": {
+    "records": 133,
+    "renders": 266,
+    "muxes": 532,
+    "scores": 532,
+    "scores_per_cell": {
+      "G_N_E_N": 133,
+      "G_M_E_N": 133,
+      "G_N_E_M": 133,
+      "G_M_E_M": 133
+    }
+  },
+  "checks": [
+    {
+      "name": "manifest completion",
+      "status": "PASS",
+      "verified": "replacement_manifest status=complete, engineering_decision=GO, summary and decision artifacts agree on 133 records, 266 renders, 532 muxes, and 532 scores"
+    },
+    {
+      "name": "cohort provenance",
+      "status": "PASS",
+      "verified": "133 unique sample IDs preserve the protocol-defined source order; canonical ordered-ID hash matches 61f8c982041cdfdded8daf8850d31e127943386ba2cb7035aa742e94cea9a973"
+    },
+    {
+      "name": "input and render hashes",
+      "status": "PASS",
+      "verified": "all 399 cohort input files and all 266 reused render files exist and match their manifest SHA256 values"
+    },
+    {
+      "name": "strict mux integrity",
+      "status": "PASS",
+      "verified": "all 532 mux files exist; every output is Matroska with one video and one 16 kHz mono pcm_s16le audio stream; every source/render elementary video hash and decoded expected PCM hash match independently"
+    },
+    {
+      "name": "strict four-cell binding",
+      "status": "PASS",
+      "verified": "all 532 mux entries have unique cell/sample keys and every score links to the matching mux, video hash, and audio hash"
+    },
+    {
+      "name": "fresh SyncNet scores",
+      "status": "PASS",
+      "verified": "all 532 scores are finite, cache_reused=false, min_track=50, use the pinned SyncNet model hash, have pipeline and score logs, and manifest values exactly match Confidence, Min dist, and AV offset in all 532 score logs"
+    },
+    {
+      "name": "selection and sealed-media contract",
+      "status": "PASS",
+      "verified": "score_based_selection=false, syncnet_used_for_selection=false, source_order_preserved=true, and fit/internal-dev/validation/test media access flags are all false"
+    },
+    {
+      "name": "runtime and test verification",
+      "status": "PASS",
+      "verified": "16 pytest tests passed and py_compile passed for the current protocol, strict mux, and test sources"
+    }
+  ],
+  "independent_verification": {
+    "method": "read-only recomputation of file SHA256 values, ffprobe stream/format checks, elementary video extraction, decoded canonical PCM extraction, score-log parsing, and manifest cross-link checks",
+    "mux_integrity_rows_checked": 532,
+    "score_log_rows_checked": 532,
+    "initial_checker_correction": "The first checker incorrectly required lexical sample-ID order and reported two checker errors; protocol canonical ordering is source/preflight order, not lexical order. Recomputed canonical JSON hash matches the manifest and all media checks passed."
+  },
+  "next_allowed_stage": "04_statistics_exploratory"
+}

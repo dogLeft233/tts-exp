@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "stage_id": "00_protocol_lock_mfa3_retry2",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "BLOCKED",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_mfa3_20260825/00_protocol_lock_mfa3_retry2",
+  "artifact_sha256": {
+    "manifest.json": "5b0919774c69670d6ba9d2a69b8e019986cda0097d55bf923c840b440be271a4",
+    "test_lock.json": "0db2a6da818a51229e106ab9cd15a8bee37c1782822e39b22758e085272d53ba",
+    "summary.json": "98084a20aeaf83044f77afd11c730000a972b8f22ee3d82ecede8df6914a7e5d",
+    "decision.json": "c92e9670794b3ecacee59347541d546acf21bf7284d365d19018606689f15031"
+  },
+  "counts": {
+    "expected_fit_records": 24,
+    "ordered_fit_records": 24,
+    "sealed_internal_dev_validation_test": true,
+    "mfa_run": false,
+    "features_created": false,
+    "scores_created": false,
+    "manifest_companion_sha256_written": false
+  },
+  "checks": [
+    {
+      "name": "partial-artifact preservation",
+      "status": "PASS",
+      "verified": "retry2 files were retained after the Stage00 writer failed while creating the companion manifest hash"
+    },
+    {
+      "name": "authorization gate",
+      "status": "PASS",
+      "verified": "retry2 has no manifest.sha256 companion and therefore cannot authorize Stage01"
+    },
+    {
+      "name": "media boundary",
+      "status": "PASS",
+      "verified": "no MFA alignment, media, features, scores, or GPU execution occurred"
+    },
+    {
+      "name": "next retry isolation",
+      "status": "PASS",
+      "verified": "writer fix is assigned to a new retry3 directory"
+    }
+  ],
+  "reviewer": "independent read-only artifact verification",
+  "reviewed_at": "2026-08-25"
+}

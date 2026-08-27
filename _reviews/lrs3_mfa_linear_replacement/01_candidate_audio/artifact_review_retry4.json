@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_candidate_audio_retry4",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "BLOCKED",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_20260824/01_candidate_audio_retry4",
+  "stage00_manifest_sha256": "feb1c1de09361f8b032f1a9e547ab5a69e09894d8334b3339ea9652157a057f6",
+  "stage00_test_lock_sha256": "0db2a6da818a51229e106ab9cd15a8bee37c1782822e39b22758e085272d53ba",
+  "stage00_cohort_sha256": "031312aaa18da90a53c3907543a7e7f51070c9c0ffe28a14e159f8bd8e6bc276",
+  "artifact_sha256": {
+    "summary.json": "04e9f04ad603588de0a2f64054a9b03bc34013076ff1e368d2a336d5f77c4cc8",
+    "decision.json": "5870ebe814239323648fb1632a33738d7cd629a78d65123e85fc9a6bd59837a1",
+    "alignment_failure.json": "6d066fdaed4458e04c094b582fbc2e89e818de6c21891718f8641a4aaeda36ed",
+    "natural_textgrids_aggregate": "2a599d4808404a3102bba6163882c3719e2a0729f6a04766663e73ae16da35a1",
+    "tts_textgrids_aggregate": "72bf00fb921013453e8456e6970bdd63a373b8fc18e1835139466f6f22c6338e"
+  },
+  "counts": {
+    "expected_fit_records": 24,
+    "natural_textgrids": 24,
+    "tts_textgrids": 24,
+    "natural_textgrid_ids_unique": 24,
+    "tts_textgrid_ids_unique": 24,
+    "natural_ids_match_stage00_cohort": true,
+    "tts_ids_match_stage00_cohort": true,
+    "alignment_error_rows": 26,
+    "unknown_phone_side_rows": 26,
+    "unknown_phone_unique_records": 13,
+    "unknown_phone_natural_records": 13,
+    "unknown_phone_tts_records": 13,
+    "candidate_generation_started": false,
+    "candidate_audio_count": 0,
+    "trace_count": 0
+  },
+  "checks": [
+    {
+      "name": "ordered frozen cohort binding",
+      "status": "PASS",
+      "verified": "all 24 Stage00 fit-only sample IDs have exactly one natural and one TTS TextGrid"
+    },
+    {
+      "name": "dual MFA execution",
+      "status": "PASS",
+      "verified": "all 24 records entered both natural and TTS MFA; both sides produced 24 TextGrids"
+    },
+    {
+      "name": "complete blocker accounting",
+      "status": "PASS",
+      "verified": "all 26 side-specific failures are present, with 13 matching unique records on each side"
+    },
+    {
+      "name": "strict unknown-phone gate",
+      "status": "PASS",
+      "verified": "every recorded unknown label is spn and no spn row is reclassified as silence"
+    },
+    {
+      "name": "candidate stop gate",
+      "status": "PASS",
+      "verified": "candidate generation, audio, traces, and GPU execution did not start"
+    },
+    {
+      "name": "sealed split access",
+      "status": "PASS",
+      "verified": "internal-dev, validation, and test media remain unopened"
+    },
+    {
+      "name": "decision consistency",
+      "status": "PASS",
+      "verified": "summary and decision both report engineering BLOCKED, scientific not_available, and no next allowed stage"
+    }
+  ],
+  "media_access": {
+    "fit_media_opened": true,
+    "internal_dev_media_opened": false,
+    "validation_media_opened": false,
+    "test_media_opened": false,
+    "gpu_used": false
+  },
+  "next_allowed_stage": null,
+  "reviewer": "independent read-only artifact verification",
+  "reviewed_at": "2026-08-24"
+}

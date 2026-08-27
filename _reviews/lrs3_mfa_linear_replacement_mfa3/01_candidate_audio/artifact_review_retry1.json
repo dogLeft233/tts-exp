@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_candidate_audio_mfa3_retry1",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "BLOCKED",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_mfa3_20260825/01_candidate_audio_mfa3_retry1",
+  "stage00_manifest_sha256": "60d4f4c6dcc9ab3574842f3c30012fa42688e080238bc3889043f5f49e4d12fb",
+  "artifact_sha256": {
+    "alignment_failure.json": "91e712b2ef1d3cee61d631bc47c5ffb6b806e260ff7b2111659f71a64503b277",
+    "summary.json": "3c58edbdaac01dec6db46b6b15836b5a8500c40f500f70019e768b03ff296022",
+    "decision.json": "f3c2ae093071a61546c0034305bbcb4417cd49cb90e0a8cef494788d68321865"
+  },
+  "counts": {
+    "expected_fit_records": 24,
+    "natural_textgrids": 0,
+    "tts_textgrids": 0,
+    "alignment_error_rows": 0,
+    "candidate_generation_started": false,
+    "candidate_audio_count": 0,
+    "features_created": false,
+    "gpu_used": false
+  },
+  "checks": [
+    {
+      "name": "MFA3 invocation provenance",
+      "status": "PASS",
+      "verified": "the artifact records the new protocol ID and did not use the old MFA2 executable path"
+    },
+    {
+      "name": "fail-closed alignment gate",
+      "status": "PASS",
+      "verified": "MFA3 exited before TextGrid creation because fstcompile was missing from the subprocess PATH"
+    },
+    {
+      "name": "candidate/GPU stop gate",
+      "status": "PASS",
+      "verified": "no candidate generation, feature extraction, or GPU execution started"
+    },
+    {
+      "name": "sealed split access",
+      "status": "PASS",
+      "verified": "internal-dev, validation, and test media remain unopened"
+    },
+    {
+      "name": "retry immutability",
+      "status": "PASS",
+      "verified": "retry1 is preserved and the PATH fix is assigned to a new retry"
+    }
+  ],
+  "reviewer": "independent read-only artifact verification",
+  "reviewed_at": "2026-08-25"
+}

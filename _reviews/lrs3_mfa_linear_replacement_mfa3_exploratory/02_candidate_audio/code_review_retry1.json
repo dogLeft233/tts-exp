@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "stage_id": "02_candidate_audio_retry1",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "31f81a9315659263fc150f80b9f0d8d00d71741c0691608d83350d8e71e82a27"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_candidate_audio.py",
+        "sha256": "b40a3aecc6d1f932232571931665c81633f2c7b8a409afe93febc83233c6a2ad"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "b0cc9f7d2d05ab3e1b05bbc60fe2eaf9725422dfb136fa7c838f0fb38d71303d"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "candidate asset/interface binding",
+      "status": "PASS",
+      "verified": "WavLM/vocoder checkpoint hashes and pinned kNN-VC revision are validated before use"
+    },
+    {
+      "name": "strict mapping and exact length",
+      "status": "PASS",
+      "verified": "candidate uses phone frame mapping, frozen adapter, right crop/zero-pad only, canonical PCM QC, and per-frame traces"
+    },
+    {
+      "name": "GPU fail-closed",
+      "status": "PASS",
+      "verified": "nvidia-smi occupancy and time gate run before model load; failure writes BLOCKED artifact"
+    },
+    {
+      "name": "ordered result accounting",
+      "status": "PASS",
+      "verified": "candidate records derive from the ordered clean alignment manifest and no fallback policy is relaxed"
+    },
+    {
+      "name": "protocol tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory",
+      "result": "4 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

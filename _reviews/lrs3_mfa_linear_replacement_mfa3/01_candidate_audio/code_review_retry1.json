@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_candidate_audio_mfa3_retry1",
+  "review_type": "code_review",
+  "status": "BLOCKED",
+  "engineering_decision": "BLOCKED",
+  "scientific_decision": "not_available",
+  "scope": {
+    "protocol_source_directory": "scripts/experiments/lrs3_mfa_linear_replacement_mfa3",
+    "test_source_directory": "tests/experiments/lrs3_mfa_linear_replacement_mfa3"
+  },
+  "source_sha256_at_execution": {
+    "mfa3_alignment.py": "6bd1fd9d3dc92133c7fac3eec812d83ba13b0b955eeeea2b368962e7e6d98c98",
+    "protocol.py": "cfcdbc5db1d3c836789c546085144795621446ee39122c69e1663e23c21b1ed0",
+    "run_stage01_mfa3.py": "3c0b0e234e43fef5e1c751160e9c6a4211c74f47598ba3f998de8c00f252f89c",
+    "test_mfa3.py": "ffdc3063779b85e9a0f06f38b8b23b28b3b5a33f2a97ca1d807ec862a129a035"
+  },
+  "findings": [
+    "Stage01 did not verify the Stage00 MFA executable/root/model contract.",
+    "Candidate completion used only a count check and did not verify ordered sample IDs.",
+    "Invalid ordinal suffixes, including zero ordinals, were not rejected.",
+    "The MFA3 subprocess environment did not prepend the pinned executable directory, so fstcompile was unavailable despite existing in the MFA3 environment."
+  ],
+  "checks": [
+    {
+      "name": "strict unknown-phone policy",
+      "status": "PASS",
+      "verified": "spn remained an unknown/OOV label and was not reclassified as silence"
+    },
+    {
+      "name": "sealed split boundary",
+      "status": "PASS",
+      "verified": "internal-dev, validation, and test media were not accessed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

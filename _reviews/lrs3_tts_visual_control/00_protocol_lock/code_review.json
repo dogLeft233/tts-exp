@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "stage_id": "00_protocol_lock",
+  "review_type": "code_review",
+  "status": "PASS",
+  "review_basis": "independent_read_only_review_and_cpu_test_execution",
+  "source_manifest": [
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_tts_visual_control/protocol.py",
+      "sha256": "1df5afd3ca0c7ceb9bdd4c32c644c788249216a00864965750f225c610ee9fe7"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_tts_visual_control/test_protocol.py",
+      "sha256": "cf784b7ca6fd37cfb79c6bb0ca80a2bed71dc88402ebed2a0deb027538863d15"
+    }
+  ],
+  "source_manifest_sha256": "ba54f5f3cf3e1a51b8b72f0b9df70be658d983a429e81b70fb38f70b8d865d05",
+  "test_command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_tts_visual_control/test_protocol.py",
+  "test_status": "PASS",
+  "test_count": 14,
+  "verified": [
+    "pre-score common-support policy is explicit and only permits the registered missing fit group 6W2dsnhC18Q",
+    "parent 24-group split remains immutable while effective cohort is 23 groups with 17 fit-train and 6 fit-selection groups",
+    "canonical build_protocol round trip validates parent states, source review binding, split counts, and sealed test-lock inheritance",
+    "candidate, strict replacement, and render joins preserve source order, source-group identity, audio hashes, candidate path, and exact sample count",
+    "candidate speech fallback and exact-natural-length contract fail closed",
+    "sealed test lock remains sealed_unvisited with all media, feature, and score access flags false",
+    "canonical parent hashes and non-empty retry refusal are checked without opening media",
+    "direct script entry adds the repository root to sys.path before package imports",
+    "Stage00 creates no decoded media, visual features, or SyncNet scores"
+  ],
+  "known_scope": "Stage00 protocol lock only; Stage01 visual feature extraction has a separate review",
+  "reviewer": "independent read-only review"
+}

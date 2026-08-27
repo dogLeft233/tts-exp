@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_visual_teacher_audit_retry4",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "BLOCKED",
+  "scientific_decision": "not_available",
+  "reviewed_at": "2026-08-25",
+  "input_artifacts": [
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_tts_visual_control_20260825/00_protocol_lock_retry2/manifest.json",
+      "sha256": "e1c970542eb90a2dac787463ebe4e8708ad3f2c4b4f1c4379f22e8382a29ec38"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_tts_visual_control_20260825/00_protocol_lock_retry2/test_lock.json",
+      "sha256": "295ccba71fb50d873a3ddf1b5cfd895418fd5bd95d242ec6441c57ef7e9660d4"
+    }
+  ],
+  "output_artifacts": [
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_tts_visual_control_20260825/01_visual_teacher_audit_retry4/manifest.json",
+      "sha256": "139ab35e89f837de6f32b4f4934c49d94577b0216a622b416cc6523bda6d23be"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_tts_visual_control_20260825/01_visual_teacher_audit_retry4/summary.json",
+      "sha256": "0d080bfb7bc49467d19296aa674ebc2e79a9541ff86c896dcb6acc43c5fef8ff"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_tts_visual_control_20260825/01_visual_teacher_audit_retry4/decision.json",
+      "sha256": "3e82b583937ee655b714f1e19ebca1327d8828c70dfcd229df5129583fd07ba9"
+    }
+  ],
+  "source_review": {
+    "path": "/home/wjj/tts-audio/tts-exp/_reviews/lrs3_tts_visual_control/01_visual_teacher_audit/code_review.json",
+    "status": "PASS",
+    "sha256": "10ecc5413944caa497f32ae1379b6ce048829a0595600a6eb1006ec6cfcd1477"
+  },
+  "independent_verifier": "read-only standard-library JSON plus saved-feature metric recomputation",
+  "checks": {
+    "count": 410,
+    "passed": [
+      "133 source-order records are represented by 133 record JSON artifacts",
+      "399 feature NPZ artifacts exist with real, natural, and candidate arms for every record",
+      "zero extraction failures and all non-fit access flags remain false",
+      "saved VisualSequence artifacts independently recompute exact-time and constrained-DTW benefits matching every record payload",
+      "record-level eligibility independently recomputes to 115 records",
+      "ineligibility reasons are 18 valid-fraction failures and 16 exact-time-coverage failures",
+      "eligible records cover 21 of 23 effective groups; missing groups are 6ZiN9ZJT294 and 79tRTivyMSM",
+      "fixed minimum denominator is 122 and the scientific decision remains unavailable when denominator/group coverage is incomplete",
+      "Stage01 summary closes next-stage authorization"
+    ]
+  },
+  "results": {
+    "record_count": 133,
+    "feature_count": 399,
+    "eligible_record_count": 115,
+    "minimum_eligible_record_count": 122,
+    "effective_fit_group_count": 23,
+    "eligible_group_count": 21,
+    "missing_eligible_groups": ["6ZiN9ZJT294", "79tRTivyMSM"],
+    "valid_fraction_failure_count": 18,
+    "exact_time_coverage_failure_count": 16
+  },
+  "decision_basis": "The media extraction and artifact provenance are complete, but the preregistered eligibility denominator and all-effective-group gate are not met; this is engineering BLOCKED, not a scientific NO_GO.",
+  "next_allowed_stage": null
+}

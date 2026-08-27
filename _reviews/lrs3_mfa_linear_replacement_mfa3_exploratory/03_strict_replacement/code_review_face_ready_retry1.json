@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "stage_id": "03_strict_replacement_face_ready_retry1",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_strict_replacement.py",
+        "sha256": "cf11d47639c7bd3ea850fff271bc0b9dedd92a367cc527e88975fa8a36e97f20"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_face_preflight.py",
+        "sha256": "7a58ba5dfe388e039a901307b8f58eb27de4d986f1e6be616c3c1066cd0221ed"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "4a4077ba68429c7414bc0eab60e9142f84d49c8bd710d0ce5773c1473e374a24"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement/strict_mux.py",
+        "sha256": "8a884fff9578963bbb9d29c6f6f8d910f6a8ad84bf5f92af217a36e1737aabfd"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "e6fcbaa8d1ccbff3750bd58c20c8eb74c3d1d01e921b0c512b3d918704981d8c"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "face-ready cohort binding",
+      "status": "PASS",
+      "verified": "strict stage requires the canonical face preflight manifest and its Stage00/candidate parent hashes; 135 IDs are frozen in source order"
+    },
+    {
+      "name": "engineering-only selection",
+      "status": "PASS",
+      "verified": "the 11 face failures are recorded before strict replacement and no SyncNet, audio score, or candidate-quality value enters selection"
+    },
+    {
+      "name": "strict 2x2 cell contract",
+      "status": "PASS",
+      "verified": "G_N_E_N/G_M_E_N remain authoritative baseline/target and G_N_E_M/G_M_E_M remain diagnostics"
+    },
+    {
+      "name": "fresh file-level evaluation",
+      "status": "PASS",
+      "verified": "each selected record requires fresh Wav2Lip renders, strict mux verification, and fresh SyncNet scores with no cache reuse"
+    },
+    {
+      "name": "GPU and sealed split gates",
+      "status": "PASS",
+      "verified": "active compute processes block subprocess launch, daytime is enforced, and sealed media remain unopened"
+    },
+    {
+      "name": "tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory tests/experiments/lrs3_mfa_linear_replacement/test_mfa_alignment.py",
+      "result": "13 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

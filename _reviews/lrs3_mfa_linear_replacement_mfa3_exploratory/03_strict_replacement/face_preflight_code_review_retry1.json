@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "stage_id": "03_face_preflight_retry1",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_face_preflight.py",
+        "sha256": "7a58ba5dfe388e039a901307b8f58eb27de4d986f1e6be616c3c1066cd0221ed"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_strict_replacement.py",
+        "sha256": "fdc672b9bb01a6ff441cf228526e2363148b4a725c71d7e331b58faacd91b80f"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "4c800dbe37cb460fad4ef8b77d6fd50ae256f5ee1b0beca0be7a65f6b426c08c"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "88fcafc13c1e6a8f25b3fa4f144d6c39223e5c6d6302ff15ef5c4840cc939c8c"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "same frozen face detector",
+      "status": "PASS",
+      "verified": "preflight uses Wav2Lip's bundled S3FD FaceAlignment detector with the same source videos and no alternate box/static fallback"
+    },
+    {
+      "name": "engineering-only selection",
+      "status": "PASS",
+      "verified": "selection is source-order-preserving and based only on all-frame detector availability; SyncNet, candidate quality, and scores are not read"
+    },
+    {
+      "name": "provenance and sealed split binding",
+      "status": "PASS",
+      "verified": "Stage00/candidate paths and hashes are inherited from the canonical exploratory protocol; sealed media remain unopened"
+    },
+    {
+      "name": "fail-closed behavior",
+      "status": "PASS",
+      "verified": "detector failures are recorded per sample/frame and cannot become scientific GO; at least 24 face-ready records are required"
+    },
+    {
+      "name": "tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory",
+      "result": "6 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-25"
+}

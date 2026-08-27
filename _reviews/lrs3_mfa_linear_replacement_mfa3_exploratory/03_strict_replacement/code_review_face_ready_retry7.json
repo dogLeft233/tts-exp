@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "stage_id": "03_strict_replacement_face_ready_retry7",
+  "review_type": "code_review",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_strict_replacement.py",
+        "sha256": "c3e0b4e065b52afffe8f9058e3b6493c57c326ddee5eac14f86008fcec01f5d3"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "d8c6eb25e7e10ac19046689dda5225064fcdd0a3446d54afc24d480fe98bb212"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement/strict_mux.py",
+        "sha256": "8a884fff9578963bbb9d29c6f6f8d910f6a8ad84bf5f92af217a36e1737aabfd"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "36731d52434cfea19046689dda5225064fcdd0a3446d54afc24d480fe98bb212"
+      }
+    ],
+    "structural_preflight": {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/03_syncnet_preflight_retry1/syncnet_preflight_manifest.json",
+      "sha256": "269d79ec48c5664374388f05bfd768081e75ed7c797c0e0ea132dafe2e8b70c4"
+    }
+  },
+  "checks": [
+    {
+      "name": "retry7 identity",
+      "status": "PASS",
+      "verified": "new retry stage ID is explicit and output paths remain separate from all prior retries"
+    },
+    {
+      "name": "preflight and render provenance",
+      "status": "PASS",
+      "verified": "pinned structural preflight and exact canonical 135-render parent validation remain unchanged"
+    },
+    {
+      "name": "strict endpoint and fresh evaluation",
+      "status": "PASS",
+      "verified": "strict mux verification, authoritative cells, fresh per-cell SyncNet, and partial-matrix blocking remain intact"
+    },
+    {
+      "name": "tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory tests/experiments/lrs3_mfa_linear_replacement/test_mfa_alignment.py",
+      "result": "16 passed; py_compile passed"
+    }
+  ],
+  "reviewer": "read-only review against the PASSed retry6 implementation review; only stage identity changed",
+  "reviewed_at": "2026-08-25"
+}

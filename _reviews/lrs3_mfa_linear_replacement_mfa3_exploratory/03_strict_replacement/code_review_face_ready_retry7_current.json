@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "stage_id": "03_strict_replacement_face_ready_retry7",
+  "review_type": "code_review_current_source_provenance",
+  "status": "PASS",
+  "scope": {
+    "protocol_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/run_strict_replacement.py",
+        "sha256": "c3e0b4e065b52afffe8f9058e3b6493c57c326ddee5eac14f86008fcec01f5d3"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/protocol.py",
+        "sha256": "d8c6eb25e7e10ac19046689dda5225064fcdd0a3446d54afc24d480fe98bb212"
+      },
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_mfa_linear_replacement/strict_mux.py",
+        "sha256": "8a884fff9578963bbb9d29c6f6f8d910f6a8ad84bf5f92af217a36e1737aabfd"
+      }
+    ],
+    "test_source_manifest": [
+      {
+        "path": "/home/wjj/tts-audio/tts-exp/tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory/test_protocol.py",
+        "sha256": "36731d52434cfea1904cd4132cd591d2ea8a08ae25567ae066285d91bc302c2e"
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "protocol implementation unchanged",
+      "status": "PASS",
+      "verified": "run_strict_replacement.py, protocol.py, and strict_mux.py hashes match the retry7 reviewed implementation"
+    },
+    {
+      "name": "current test provenance",
+      "status": "PASS",
+      "verified": "the current test source is explicitly bound; the earlier review's stale test hash is not reused"
+    },
+    {
+      "name": "tests",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement_mfa3_exploratory tests/experiments/lrs3_mfa_linear_replacement/test_mfa_alignment.py",
+      "result": "16 passed; py_compile passed"
+    },
+    {
+      "name": "strict endpoint contract",
+      "status": "PASS",
+      "verified": "the retry7 review remains applicable to the unchanged protocol and strict mux sources"
+    }
+  ],
+  "reviewer": "read-only current-source provenance refresh",
+  "reviewed_at": "2026-08-25",
+  "note": "The prior retry7 review remains immutable. This file records the current test-source hash after detecting that the prior review bound an older test file."
+}

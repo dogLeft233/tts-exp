@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "stage_id": "00_protocol_lock_retry2",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "GO",
+  "scientific_decision": "not_available",
+  "reviewed_at": "2026-08-25",
+  "input_artifacts": [
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_tts_visual_control_20260825/00_protocol_lock_retry2/manifest.json",
+      "sha256": "e1c970542eb90a2dac787463ebe4e8708ad3f2c4b4f1c4379f22e8382a29ec38"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_tts_visual_control_20260825/00_protocol_lock_retry2/test_lock.json",
+      "sha256": "295ccba71fb50d873a3ddf1b5cfd895418fd5bd95d242ec6441c57ef7e9660d4"
+    }
+  ],
+  "output_artifacts": [
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_tts_visual_control_20260825/00_protocol_lock_retry2/summary.json",
+      "sha256": "632dd2a3eab5df00248c287ef92a8d33ecbe6857af9f66fff167f79def901a52"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_tts_visual_control_20260825/00_protocol_lock_retry2/decision.json",
+      "sha256": "fe9adf110d14e7065bf45ad608b3de34ec8e79c35a3a77fdc2fe78fc28f43413"
+    }
+  ],
+  "source_review": {
+    "path": "/home/wjj/tts-audio/tts-exp/_reviews/lrs3_tts_visual_control/00_protocol_lock/code_review.json",
+    "status": "PASS",
+    "sha256": "d7e4dcc3107ac98c6a7259157891b6e3d5263d3137ef8d224bd177846826424e"
+  },
+  "independent_verifier": "read-only standard-library JSON and SHA-256 verifier",
+  "checks": {
+    "count": 565,
+    "passed": [
+      "stage identity and engineering decision",
+      "133 source-order cohort records and unique ordered-ID hash",
+      "24 parent fit groups, 23 effective groups, and registered common exclusion 6W2dsnhC18Q",
+      "17 effective fit-train plus 6 fit-selection groups with disjoint union",
+      "cohort group support and candidate/strict-render parent joins",
+      "266 render count with both natural and candidate arms for every cohort ID",
+      "candidate audio/natural audio hashes and exact candidate sample counts for all 133 records",
+      "sealed_unvisited test lock and all split access flags false",
+      "Stage00 media/features/scores access flags false",
+      "cohort IDs disjoint from sealed test IDs"
+    ]
+  },
+  "decision_basis": "Stage00 protocol artifacts are complete and immutable; no visual metric or SyncNet scientific decision is available or claimed.",
+  "next_allowed_stage": "01_visual_teacher_audit_retry1"
+}

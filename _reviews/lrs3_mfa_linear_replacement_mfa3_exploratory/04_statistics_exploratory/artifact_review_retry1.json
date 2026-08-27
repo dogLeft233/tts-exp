@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "stage_id": "04_statistics_exploratory_retry1",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "GO",
+  "scientific_decision": "NO_GO",
+  "reviewed_at": "2026-08-25",
+  "input_artifact": {
+    "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/03_strict_replacement_face_ready_retry7/replacement_manifest.json",
+    "sha256": "157cd678f5f03be6eae9986a82babfdfb1f1a44e611bb0b86476c6e19b7eb272"
+  },
+  "output_artifacts": [
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/04_statistics_exploratory_retry1/analysis.json",
+      "sha256": "c72d4f1d2a2bfaac57a6012117877b52b1478f48ec93d72868963ba04be3058a"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/04_statistics_exploratory_retry1/summary.json",
+      "sha256": "a3e6aba5dc0a86f23a09e4bfc81b538ef11b7aa9197b425960c0e81b4bbaf0f7"
+    },
+    {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/04_statistics_exploratory_retry1/decision.json",
+      "sha256": "0b5e4f92585cbdeda33254772053e64b3b4ccc145f7b0196e08d76b6447f02f4"
+    }
+  ],
+  "source_review": {
+    "path": "/home/wjj/tts-audio/tts-exp/_reviews/lrs3_mfa_linear_replacement_mfa3_exploratory/04_statistics_exploratory/code_review_retry1.json",
+    "status": "PASS",
+    "source_sha256": "bdceca036bdb4b69b436c47396db7c4c1268d6e9e7e1421e76f3d0f4c71de754"
+  },
+  "checks": [
+    {
+      "name": "complete paired matrix",
+      "status": "PASS",
+      "verified": "133 source-order records, all four cells, and 133 per-record benefit pairs are present"
+    },
+    {
+      "name": "benefit recomputation",
+      "status": "PASS",
+      "verified": "independent recomputation of all 133 benefit_C and benefit_D values, means, signs, four-cell means, and diagnostics matches analysis.json"
+    },
+    {
+      "name": "benefit_C result",
+      "status": "PASS",
+      "verified": "mean=-1.2006842105, median=-1.142, positive=1/133, bootstrap CI95=[-1.3000246241,-1.1064714286]"
+    },
+    {
+      "name": "benefit_D result",
+      "status": "PASS",
+      "verified": "mean=-1.0612706767, median=-1.032, positive=2/133, bootstrap CI95=[-1.1556293233,-0.9708687970]"
+    },
+    {
+      "name": "sign-flip conclusion",
+      "status": "PASS",
+      "verified": "both observed means are negative; for n=133 the exact one-sided sign-flip p-values are rigorously bounded below by 0.5 without claiming an infeasible 2^133 enumeration"
+    },
+    {
+      "name": "decision integrity",
+      "status": "PASS",
+      "verified": "engineering is complete but both co-primary directional requirements fail, so the scientific decision is NO_GO rather than BLOCKED"
+    }
+  ],
+  "four_cell_means": {
+    "G_N_E_N": {"sync_c": 7.2099774436, "sync_d": 7.3066766917},
+    "G_M_E_N": {"sync_c": 6.0092932331, "sync_d": 8.3679473684},
+    "G_N_E_M": {"sync_c": 5.8045112782, "sync_d": 8.7786090226},
+    "G_M_E_M": {"sync_c": 6.8747443609, "sync_d": 7.5002857143}
+  },
+  "diagnostics": {
+    "native_pair_difference_G_M_E_M_minus_G_N_E_N": {"sync_c": -0.3352330827, "sync_d": 0.1936090226},
+    "m_video_replacement_delta_E_N_minus_E_M": {"sync_c": -0.8654511278, "sync_d": 0.8676616541},
+    "n_video_scorer_effect_E_M_minus_E_N": {"sync_c": -1.4054661654, "sync_d": 1.4719323308}
+  },
+  "next_allowed_stage": "stop_mfa_linear_candidate"
+}

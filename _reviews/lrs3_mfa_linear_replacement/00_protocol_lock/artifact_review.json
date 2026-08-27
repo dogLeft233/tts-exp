@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "stage_id": "00_protocol_lock_retry1",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "GO",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_20260824/00_protocol_lock_retry1",
+  "manifest_sha256": "feb1c1de09361f8b032f1a9e547ab5a69e09894d8334b3339ea9652157a057f6",
+  "test_lock_sha256": "0db2a6da818a51229e106ab9cd15a8bee37c1782822e39b22758e085272d53ba",
+  "summary_sha256": "5b89a3e65c17d3c881bd1543808bfb5568da93ec62cc7c620292a08fe5ced166",
+  "decision_sha256": "5c67c8d4a5ef847aaf48d72203d17eeaad152fabaa999d13659881a1ae83cfef",
+  "code_review_sha256": "c76f9ba51a0ad85602b29960c605fdbf09a92cc08c4bbf7503ccd19876f5711c",
+  "verified": [
+    "24 ordered fit-only fresh records and 24 source groups reproduce the parent fresh_confirmation list",
+    "canonical source/TTS/reference joins and ordered cohort hash reproduce",
+    "visual and motion parent manifests/locks remain bound to the same split and sealed test membership",
+    "all declared assets, source/test manifests, and code review hashes reproduce",
+    "all media, MFA, feature, and score access flags remain false",
+    "official Stage00 directory contains only the four immutable lock artifacts"
+  ],
+  "media_access": {
+    "fit_media_opened": false,
+    "internal_dev_media_opened": false,
+    "validation_media_opened": false,
+    "test_media_opened": false,
+    "mfa_run": false,
+    "features_created": false,
+    "scores_created": false
+  },
+  "next_allowed_stage": "01_candidate_audio_retry1",
+  "reviewer": "independent read-only artifact verification"
+}

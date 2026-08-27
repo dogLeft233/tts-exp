@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_candidate_audio_retry4",
+  "review_type": "code_review",
+  "status": "PASS",
+  "engineering_decision": "BLOCKED",
+  "scientific_decision": "not_available",
+  "scope": {
+    "protocol_source_directory": "scripts/experiments/lrs3_mfa_linear_replacement",
+    "test_source_directory": "tests/experiments/lrs3_mfa_linear_replacement",
+    "stage00_manifest": "runs/lrs3_mfa_linear_replacement_20260824/00_protocol_lock_retry1/manifest.json",
+    "stage00_manifest_sha256": "feb1c1de09361f8b032f1a9e547ab5a69e09894d8334b3339ea9652157a057f6",
+    "stage00_test_lock_sha256": "0db2a6da818a51229e106ab9cd15a8bee37c1782822e39b22758e085272d53ba"
+  },
+  "source_sha256": {
+    "protocol_sources_aggregate": "451275afb733f739612baf94dcd2382fc010af53c06ea6ebe85c03f72d598b14",
+    "test_sources_aggregate": "28b7b87be3f201736090aadf0b340d5cc1f8c98529f94b642f2165a8857de5ea",
+    "run_stage01.py": "96db5b64d0e32c40c3245fb8922992b98a0e97db8bc950889254fb9238f01fe6",
+    "mfa_alignment.py": "bd1be07af69211b938d2906e21583e87eeff2e17530daabe2948520c55ee5679",
+    "candidate_audio.py": "e36d2aa5286304c754cd203a874f9b16445aeba3d2a62aa16b8f7ca79320d962",
+    "protocol.py": "93819071c119b35c7745e14d44a5d4e2f61f6c7839fef641f8ee1feb0a3a5da7",
+    "strict_mux.py": "8a884fff9578963bbb9d29c6f6f8d910f6a8ad84bf5f92af217a36e1737aabfd",
+    "run_evaluation.py": "1956c6611893da178a5df52f0817549ec54b31e60040fad8e2e2c098586fc766",
+    "statistics.py": "498fdfaf34e3313b2f05e1206412a79e80cb48408b0440fe8f9f8cefc6e42623"
+  },
+  "checks": [
+    {
+      "name": "dual-side MFA is independent",
+      "status": "PASS",
+      "verified": "natural and TTS corpora use separate audio/transcript keys and separate TextGrid outputs"
+    },
+    {
+      "name": "unknown/OOV phone policy",
+      "status": "PASS",
+      "verified": "spn, unk, unknown, oov and related labels are rejected rather than treated as silence"
+    },
+    {
+      "name": "alignment failure accounting",
+      "status": "PASS",
+      "verified": "AlignmentBatchError preserves all side-specific failures before Stage01 blocks"
+    },
+    {
+      "name": "Stage00 provenance binding",
+      "status": "PASS",
+      "verified": "runner revalidates Stage00 cohort hash and declared source/TTS parent file hashes"
+    },
+    {
+      "name": "candidate/GPU fail-closed behavior",
+      "status": "PASS",
+      "verified": "candidate generation is not entered after alignment failure; GPU gate rejects forbidden hours and occupied or malformed GPUs"
+    },
+    {
+      "name": "output retry identity",
+      "status": "PASS",
+      "verified": "stage ID is derived from and validated against the immutable output directory basename"
+    },
+    {
+      "name": "protocol test suite",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m pytest -q tests/experiments/lrs3_mfa_linear_replacement",
+      "result": "24 passed in 6.86s"
+    },
+    {
+      "name": "syntax compilation",
+      "status": "PASS",
+      "command": "/home/wjj/.venvs/wav2lip/bin/python -m py_compile scripts/experiments/lrs3_mfa_linear_replacement/*.py tests/experiments/lrs3_mfa_linear_replacement/*.py"
+    }
+  ],
+  "reviewer": "independent read-only code review",
+  "reviewed_at": "2026-08-24"
+}

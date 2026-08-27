@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "stage_id": "01_mfa3_screen_retry1",
+  "review_type": "artifact_review",
+  "status": "PASS",
+  "engineering_decision": "GO",
+  "scientific_decision": "not_available",
+  "run_directory": "runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/01_mfa3_screen_retry1",
+  "artifact_sha256": {
+    "alignment_manifest.json": "111c270ed6d5c37f2318bc0b0e1becc327370c94740c9eada2228dade5d01c98",
+    "clean_records.json": "a39dbafbf5f02f60b7069fc2d3cc162cf13fe260a0f53d9223a37c10059122f2",
+    "summary.json": "2708e52ce3b18b9aed5ce0607093e7f8b38900c607f6568cc5e2640b263fe8a5",
+    "decision.json": "f3e3d1d7cf3f953aa89959c7058e2e79882bbb479484e32178f330fc8d532547"
+  },
+  "counts": {
+    "input_records": 148,
+    "natural_textgrids": 148,
+    "tts_textgrids": 146,
+    "clean_records": 146,
+    "failure_rows": 2,
+    "unknown_phone_failures": 0,
+    "candidate_generation_started": false,
+    "gpu_used": false
+  },
+  "checks": [
+    {
+      "name": "complete natural/TTS MFA execution",
+      "status": "PASS",
+      "verified": "natural=148, tts=146, input=148"
+    },
+    {
+      "name": "strict phone parser",
+      "status": "PASS",
+      "verified": "all 146 retained records pass strict natural/TTS phone parsing; no spn is reclassified"
+    },
+    {
+      "name": "failure accounting",
+      "status": "PASS",
+      "verified": "the two missing TTS TextGrids are retained as failures"
+    },
+    {
+      "name": "ordered subset binding",
+      "status": "PASS",
+      "verified": "clean records are a unique subset of the Stage00 pool"
+    },
+    {
+      "name": "MFA3 runtime provenance",
+      "status": "PASS",
+      "verified": "pinned MFA3.4.1 root/dictionary/model contract recorded"
+    },
+    {
+      "name": "candidate/GPU stop gate",
+      "status": "PASS",
+      "verified": "alignment screen did not start candidate generation or GPU"
+    },
+    {
+      "name": "sealed split access",
+      "status": "PASS",
+      "verified": "sealed media remain unopened"
+    }
+  ],
+  "reviewer": "independent read-only artifact verification",
+  "reviewed_at": "2026-08-25"
+}
