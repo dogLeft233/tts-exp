@@ -74,43 +74,9 @@ P1 原型在被训练和选择的单条记录上得到 `F D=6.7253 < A D=6.79`�
 - **当前在研方向**：phone-aligned cross-attention。Week 1 诊断在 Exp 30 的 split 上得到 CKA **0.383**、val probe accuracy **0.941**，表明 TTS/natural WavLM 特征可分；同时 Exp 30 的帧级 attention 近似均匀，支持先修复 phone-level 对齐再做 Week 2 验证。该诊断是方向性证据，不是 replacement 成功结果。
 - 当前协议草案：[`docs/specs/replacement-salvage-protocol.md`](docs/specs/replacement-salvage-protocol.md)。
 
-## 仓库结构
-
-```text
-CONTEXT.md                         项目状态、数据、在用/弃用组件
-AGENTS.md                          Claude Code/Agent 协作与复现约定
-scripts/                           编号流水线、TTS provider、实验脚本
-tests/                             pytest 测试
-basic-memory/                      Basic Memory 项目文档与知识图谱源文件
-data/                              数据、清单和 TTS 资产索引
-runs/                              按 run 保存的中间产物、日志和 summary
-results/                           受控实验输出
-openspec/                          OpenSpec 变更工件
-docs/specs/                        当前 replacement salvage 协议草案
-```
-
-项目文档的权威来源是本地 `basic-memory/` 知识库，不是另建一套根目录实验报告。该目录按设计被 `.gitignore` 忽略，因此下面列出的 Basic Memory 路径供本地检索或 MCP 使用，不会随 GitHub checkout 一起发布；GitHub 可见的入口和当前协议仍在本仓库中。`docs/specs/` 是当前仍在使用的协议草案例外；完成后的实验结论应写入 `basic-memory/Experiments/`，编号报告/结果镜像放在 `basic-memory/docs/` 对应目录。
-
-## 快速开始
-
-```bash
-# 运行测试
-pytest tests/
-
-# 只跑一个 smoke 样本，确认流水线环境
-./scripts/run_all.sh --smoke
-
-# 指定一个可复现的 run id
-RUN_ID=my_run ./scripts/run_all.sh
-```
-
-步骤 00–03、05 通常使用 Ditto 环境，`04_eval` 调用独立 SyncNet 环境。云端 ASR/TTS 需要运行时环境变量 `DASHSCOPE_API_KEY`；密钥、服务器密码和 token 不写入仓库。完整入口、环境和数据说明见 [`AGENTS.md`](AGENTS.md) 与 [`CONTEXT.md`](CONTEXT.md)。
-
-每个 run 保存配置和 git commit 快照，产物位于 `runs/<run_id>/<step>/`。Sync-C 统一按三位小数记录，Sync-C 越高越好，Sync-D 越低越好；正式结论必须同时检查 artifact provenance、音频 sample count、mux 后 PCM 一致性和 official SyncNet 评分。
-
 ## Basic Memory 文档系统
 
-本项目使用 Basic Memory 作为跨会话知识图谱，而不是把实验进度散落在聊天记录或临时 Markdown 中：
+本项目使用 Basic Memory 作为跨会话知识图谱，而不是把实验进度散落在聊天记录或临时 Markdown 中，github链接：`https://github.com/basicmachines-co/basic-memory`：
 
 - **项目记忆**：MCP 项目 `tts-exp`，本地源文件为 `basic-memory/`；记录本仓库的实验、任务、决策、部署和结果。
 - **全局记忆**：MCP 项目 `main`，只用于跨项目的通用知识；项目结论优先写入 `tts-exp`，避免重复。
@@ -129,52 +95,3 @@ build_context(url="memory://tts-exp/experiments/...", project="tts-exp")
 ```
 
 这里的 `project="tts-exp"` 是必要的路由参数；不要把项目笔记误写入 `main`。新增笔记前先搜索同名/近义标题，已有实体应更新而不是重复创建。
-
-## 新用户阅读本仓库的目的
-
-1. **先确认研究终点**：理解 generation advantage 与 replacement-safe advantage 的区别，避免用 candidate 自洽分数替代最终判据。
-2. **快速掌握结论**：知道哪些结果已成立、哪些是严格阴性结果、哪些仍是 BLOCKED/未判定，避免重复已经失败的路径。
-3. **复现实验**：从 `CONTEXT.md`、`AGENTS.md` 和 `scripts/config.yaml` 找到数据、环境、命令、seed 和产物位置。
-4. **审查证据链**：沿着实验报告 → `runs/.../summary.json` → 代码与测试核对 cohort、split、模型 hash、mux 和 SyncNet provenance。
-5. **继续研究而不破坏协议**：阅读当前 spec、遵守 sealed test、source-group disjoint split、exact-length waveform 和 immutable retry 约束，再启动下一阶段。
-6. **跨会话恢复上下文**：用 Basic Memory 的 Startup Router、全文搜索和关系展开，恢复实验动机、边界和下一步，而不是只看最后一次聊天。
-
-## 推荐查阅路径
-
-### 5 分钟快速路径
-
-```text
-README.md
-  → CONTEXT.md
-  → basic-memory/docs/experiments/README.md
-  → basic-memory/docs/experiments/30-replacement-audio-head-validation.md
-```
-
-### 理解 replacement 为什么困难
-
-```text
-basic-memory/Experiments/LRS3 WavLM-HiFi-GAN direct resynthesis replacement.md
-  → basic-memory/Experiments/Direct WavLM 重合成 2×2 音轨 Identity Control.md
-  → basic-memory/Experiments/Encoder-only SyncNet 微调与固定视频迁移性.md
-  → basic-memory/docs/experiments/30-replacement-audio-head-validation.md
-```
-
-### 了解当前方向
-
-```text
-basic-memory/Experiments/TTS 视觉教师到 replacement-safe 音频控制链路.md
-  → docs/specs/replacement-salvage-protocol.md
-  → basic-memory/Experiments/31 - Replacement Salvage- Phone-Aligned Cross-Attention.md
-```
-
-### 查命令、数据和部署
-
-```text
-AGENTS.md
-  → CONTEXT.md
-  → basic-memory/docs/reference/pipeline.md
-  → basic-memory/docs/reference/dataset-reference.md
-  → basic-memory/docs/deployment/DEPLOY.md
-```
-
-不要把 `basic-memory/docs/experiments/summary.md` 中已被后续 09–31 报告修正的旧结论当作当前状态；实验索引和带日期的正式报告优先级更高。
