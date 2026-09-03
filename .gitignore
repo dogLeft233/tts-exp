@@ -80,3 +80,5 @@ data_remote_backup_20260808/
 models/
 artifacts/
 graphify-out/
+checkpoints/huggingface/
+data/lrs3/
