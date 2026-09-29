@@ -39,6 +39,13 @@ def file_sha256(path: str | Path) -> str:
     return digest.hexdigest()
 
 
+def decoded_pcm_sha256(path: str | Path) -> str:
+    values, sample_rate = sf.read(path, dtype="int16", always_2d=False)
+    if int(sample_rate) != SAMPLE_RATE or np.asarray(values).ndim != 1:
+        raise ValueError(f"decoded PCM contract failed: {path}")
+    return hashlib.sha256(np.asarray(values, dtype=np.int16).tobytes()).hexdigest()
+
+
 def write_json(path: Path, payload: Mapping[str, Any]) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(
@@ -204,9 +211,22 @@ def resynthesize(model: Any, natural: np.ndarray, output_path: Path) -> dict[str
         raise ValueError(f"decoded waveform is non-finite or outside PCM range: {output_path}")
     output_path.parent.mkdir(parents=True, exist_ok=True)
     sf.write(output_path, decoded, SAMPLE_RATE, subtype="PCM_16")
+    decoder_float_path = output_path.with_name(output_path.name + ".decoder_float.npy")
+    natural_feature_path = output_path.with_name(output_path.name + ".natural_features.npy")
+    reencoded_feature_path = output_path.with_name(output_path.name + ".reencoded_features.npy")
+    np.save(decoder_float_path, decoded.astype(np.float32), allow_pickle=False)
+    np.save(natural_feature_path, encoded.detach().cpu().numpy().astype(np.float32), allow_pickle=False)
+    np.save(reencoded_feature_path, reencoded.detach().cpu().numpy().astype(np.float32), allow_pickle=False)
     return {
         "output_path": str(output_path),
         "output_sha256": file_sha256(output_path),
+        "decoded_pcm_sha256": decoded_pcm_sha256(output_path),
+        "decoder_float_path": str(decoder_float_path),
+        "decoder_float_sha256": file_sha256(decoder_float_path),
+        "natural_feature_path": str(natural_feature_path),
+        "natural_feature_sha256": file_sha256(natural_feature_path),
+        "reencoded_feature_path": str(reencoded_feature_path),
+        "reencoded_feature_sha256": file_sha256(reencoded_feature_path),
         "length_adjustment": length_adjustment,
         "audio": audio_qc(decoded, natural.size),
         "natural_feature_shape": list(encoded.shape),

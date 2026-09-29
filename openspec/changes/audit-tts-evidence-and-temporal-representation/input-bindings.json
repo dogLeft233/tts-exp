@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "protocol_id": "tts_evidence_temporal_patch_v1",
+  "status": "spec_only",
+  "date": "2026-09-22",
+  "parent_run": "runs/phoneme_tfg_association_external_visual_cpu_audit_v1_20260922",
+  "parent_expected": {"source_groups": 36, "video_cells": 108, "natural_tts_pairs": 72, "official_completed": 108, "official_failed": 0},
+  "files": [
+    {"relative_to_parent": "00_protocol/blocks.json", "sha256": "311eab4a9a050666debbe9443c55664fa3c699f9bec223135ba3fb700131ea6b"},
+    {"relative_to_parent": "00_protocol/generation_plan.json", "sha256": "3108d645c7a1afa6ce76289c541d55bc343650a3fdf2d82ad6aee8b8686cfcd2"},
+    {"relative_to_parent": "00_protocol/protocol.json", "sha256": "f7a8d452144127d11968c3dd640f3309b54b17b31dceefd886cd9dd5a0bc7760"},
+    {"relative_to_parent": "07_official_syncnet/full/summary.json", "sha256": "618b7f27ca26615455606b660340b5ca61f6dca6b48db615026d3be3ab8203f5"},
+    {"relative_to_parent": "07_official_syncnet/full/protocol.json", "sha256": "a35673268152fa1df89d492b8760495122ddc19993ee181f6ee04fdac325e0f5"}
+  ],
+  "design": {
+    "seed": 20260922,
+    "stage_a_new_tfg_videos": 0,
+    "stage_a_native_blind_pairs": 72,
+    "technical_source_groups": 4,
+    "scientific_source_groups": 12,
+    "layer": "audio_encoder.output",
+    "lambda": 0.5,
+    "dynamic_smoothing_frames": 5,
+    "science_conditions": ["BASE", "COHERENT", "SCRAMBLED", "ERASE"],
+    "directions": ["natural_from_tts", "tts_from_natural"],
+    "max_new_render_cells": 128,
+    "max_gpu_minutes": 120,
+    "selection_status": "not_selected_pending_cpu_audit",
+    "per_cell_asset_hash_audit": "required_before_execution",
+    "human_ratings_status": "not_collected"
+  }
+}

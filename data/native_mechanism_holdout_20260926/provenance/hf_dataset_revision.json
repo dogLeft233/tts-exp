@@ -1,0 +1,348 @@
+{
+  "_id": "64cb412dd469fc2cf838d549",
+  "id": "AISHELL/AISHELL-1",
+  "author": "AISHELL",
+  "sha": "bbe295d530192a4cd41644b711c9aecd087df653",
+  "lastModified": "2024-01-08T07:01:58.000Z",
+  "private": false,
+  "gated": false,
+  "disabled": false,
+  "tags": [
+    "task_categories:automatic-speech-recognition",
+    "language:zh",
+    "license:apache-2.0",
+    "region:us"
+  ],
+  "description": "Aishell is an open-source Chinese Mandarin speech corpus published by Beijing Shell Shell Technology Co.,Ltd.\n400 people from different accent areas in China are invited to participate in the recording, which is conducted in a quiet indoor environment using high fidelity microphone and downsampled to 16kHz. The manual transcription accuracy is above 95%, through professional speech annotation and strict quality inspection. The data is free for academic use. We hope to provide moderate amount\u2026 See the full description on the dataset page: https://huggingface.co/datasets/AISHELL/AISHELL-1.",
+  "downloads": 4045,
+  "likes": 15,
+  "cardData": {
+    "license": "apache-2.0",
+    "language": [
+      "zh"
+    ],
+    "task_categories": [
+      "automatic-speech-recognition"
+    ],
+    "viewer": false
+  },
+  "siblings": [
+    {
+      "rfilename": ".gitattributes"
+    },
+    {
+      "rfilename": "README.md"
+    },
+    {
+      "rfilename": "data_aishell/transcript/aishell_transcript_v0.8.txt"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0002.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0003.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0004.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0005.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0006.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0007.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0008.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0009.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0010.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0011.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0012.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0013.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0014.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0015.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0016.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0017.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0018.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0019.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0020.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0021.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0022.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0023.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0024.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0025.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0026.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0027.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0028.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0029.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0030.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0031.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0032.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0033.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0034.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0035.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0036.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0037.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0038.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0039.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0040.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0041.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0042.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0043.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0044.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0045.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0046.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0047.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0048.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0049.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0050.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0051.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0052.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0053.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0054.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0055.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0056.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0057.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0058.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0059.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0060.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0061.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0062.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0063.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0064.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0065.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0066.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0067.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0068.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0069.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0070.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0071.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0072.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0073.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0074.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0075.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0076.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0077.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0078.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0079.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0080.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0081.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0082.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0083.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0084.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0085.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0086.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0087.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0088.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0089.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0090.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0091.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0092.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0093.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0094.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0095.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0096.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0097.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0098.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0099.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0100.tar.gz"
+    },
+    {
+      "rfilename": "data_aishell/wav/S0101.tar.gz"
+    },
+    {
+      "rfilename": "resource_aishell/lexicon.txt"
+    },
+    {
+      "rfilename": "resource_aishell/speaker.info"
+    }
+  ],
+  "createdAt": "2023-08-03T05:54:53.000Z",
+  "usedStorage": 3709330098
+}

@@ -1,0 +1,122 @@
+schema_version: 2
+experiment: phone_gain_static_tfg_mfa
+protocol_id: phone_gain_static_tfg_mfa_remeasure_v2
+measurement_version: phone_gain_static_tfg_mfa_remeasure_v2
+experiment_mode: remeasure
+static_geometry: true
+source:
+  parent_registry: runs/phone_separability_enhancement_audit_v2_20260921/00_audit/registry.json
+  parent_support: runs/phone_separability_enhancement_audit_v2_20260921/00_audit/support_plan.json
+  parent_support_jsonl: runs/phone_separability_enhancement_audit_v2_20260921/01_calibration/support.jsonl
+  parent_lock: runs/phone_separability_enhancement_audit_v2_20260921/04_lock/selection_lock.json
+  parent_pilot: runs/phone_separability_enhancement_audit_v2_20260921/00_audit/pilot.json
+  parent_direct_dir: runs/phone_separability_enhancement_audit_v2_20260921/05_evaluation/direct/OPT_DYNAMIC_6
+  parent_run: runs/phone_separability_enhancement_audit_v2_20260921
+  old_run: runs/phone_gain_static_tfg_mfa_lrs3_phone_gain_static_tfg_mfa_v1_20260922b
+cohort:
+  expected_pairs: 240
+  split_counts: {fit: 135, dev: 65, e_seen: 40}
+  expected_groups: {fit: 12, dev: 6, e_seen: 40}
+support:
+  min_labels_per_pair: 5
+  min_tokens_per_pair: 10
+  min_speech_coverage: 0.70
+  core_fraction: [0.20, 0.80]
+models:
+  device: cuda:0
+  primary:
+    key: hubert
+    model_name: facebook/hubert-base-ls960
+    processor_name: facebook/hubert-base-ls960
+    revision: dba3bb02fda4248b6e082697eee756de8fe8aa8a
+    layer: 6
+  cross_encoder:
+    key: xlsr
+    model_name: facebook/wav2vec2-large-xlsr-53
+    processor_name: facebook/wav2vec2-large-xlsr-53
+    revision: c3f9d884181a224a6ac87bf8885c84d1cff3384f
+    layer: 10
+audio:
+  sample_rate: 16000
+  n_fft: 512
+  win_length: 512
+  hop_length: 128
+  n_bands: 24
+  max_gain_db: 6.0
+  edge_guard_s: 0.010
+  taper_s: 0.005
+  max_residual_energy_ratio: 0.01
+  min_snr_db: 20.0
+  max_rms_change_db: 1.0
+network:
+  embedding_dim: 16
+  hidden_channels: 64
+  residual_dilations: [1, 2, 4]
+  condition_channels: 19
+training:
+  seeds: [20260922, 20260923]
+  max_optimizer_updates: 400
+  gradient_accumulation: 4
+  timeout_s: 7200
+  learning_rate: 0.0001
+  weight_decay: 0.0001
+  grad_clip: 1.0
+  checkpoint_every_updates: 25
+  phone_weight: 1.0
+  keep_weight: 1.0
+  tv_weight: 0.01
+runtime:
+  device: cuda:0
+  gpu_index: 0
+  allow_model_download: true
+  proxy: http://127.0.0.1:7890
+  min_free_disk_gib: 4.0
+  min_available_ram_gib: 8.0
+  min_free_gpu_gib_train: 12.0
+  min_free_gpu_gib_render: 5.0
+  min_free_gpu_gib_audit: 5.0
+  min_free_gpu_gib_calibrate: 12.0
+  gpu_process_allowlist: [/usr/libexec/gnome-remote-desktop-daemon]
+portraits:
+  primary: data/data/image/3.png
+  sensitivity: [data/data/image/6.png, data/data/image/9.png]
+tfg:
+  wav2lip_checkpoint: third_party/Wav2Lip/checkpoints/wav2lip_gan.pth
+  syncnet_checkpoint: third_party/syncnet_python/data/syncnet_v2.model
+  wav2lip_python: /home/wjj/.venvs/wav2lip/bin/python
+  syncnet_python: /home/wjj/.venvs/syncnet/bin/python
+  fps: 25
+  batch_size: 4
+  syncnet_batch_size: 20
+  vshift: 15
+  seed: 42
+  primary_portrait: "3"
+  render_portraits: ["3"]
+statistics:
+  bootstrap_draws: 20000
+  bootstrap_seed: 20260922
+  primary_alpha: 0.0166666666667
+  phone_delta_min: 0.01
+  tts_noninferiority_epsilon: 0.02
+quality:
+  mfa_executable: /home/wjj/.local/bin/mfa
+  mfa_dictionary: english_us_mfa
+  mfa_acoustic_model: english_mfa
+  asr_model: base.en
+  asr_language: en
+  asr_beam_size: 5
+  asr_temperature: 0.0
+  asr_vad_filter: false
+  asr_condition_on_previous_text: false
+  timing_max_edit_rate: 0.05
+  timing_min_coverage: 0.90
+  timing_median_ms: 20.0
+  timing_p95_ms: 40.0
+  pause_min_ms: 50.0
+  pause_iou_min: 0.50
+  pause_edge_ms: 20.0
+  calibration_sentences: 8
+  calibration_global_shift_ms: 80.0
+  calibration_local_shift_ms: 40.0
+  calibration_local_detect_min_ms: 20.0
+stages: [audit, calibrate, train, lock, infer, quality, phone, render, score, official, analyze, report]

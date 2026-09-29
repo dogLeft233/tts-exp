@@ -6,7 +6,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
-
+import pytest
 
 _SCRIPTS = Path(__file__).resolve().parent.parent / "scripts"
 sys.path.insert(0, str(_SCRIPTS))
@@ -37,3 +37,12 @@ def test_provider_forwards_configured_max_new_tokens(tmp_path):
     )
 
     assert model.kwargs["max_new_tokens"] == 256
+
+
+def test_strict_backend_does_not_silently_fallback(monkeypatch):
+    provider = provider_module.FasterQwen3TTSProvider(
+        {"faster_qwen3": {"strict_backend": True}}
+    )
+    monkeypatch.setitem(sys.modules, "faster_qwen3_tts", None)
+    with pytest.raises(ModuleNotFoundError):
+        provider._ensure_model()

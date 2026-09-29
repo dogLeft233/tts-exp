@@ -1,0 +1,84 @@
+schema_version: 1
+protocol: mfa_linear_video_retiming_v2
+sample_ids: ["1", "2", "3", "4", "5", "6", "7", "8", "51", "52", "53", "54", "55", "56", "57", "58", "101", "102", "103", "104", "105", "106", "107", "108", "151", "152", "153", "154", "155", "156", "157", "158", "201", "202", "203", "204", "205", "206", "207", "208", "251", "252", "253", "254", "255", "256", "257", "258", "301", "302", "303", "304", "305", "306", "307", "308", "351", "352", "353", "354", "355", "356", "357", "358"]
+portraits: ["3", "6", "9"]
+paths:
+  strict_source_manifest: runs/two_stage_hubert_aishell1_20260810/data_boundary/aishell1_400_raw_mfa_faster_qwen3_heldout.json
+  cohort_audio_root: results/rhythm_style_500/aishell1_test_400
+  mfa_python: .venv/bin/python
+  portrait_registry: runs/phone_gain_static_tfg_mfa_repair_20260923_sync_c_v3/00_protocol/registry.json
+  wav2lip_python: /home/wjj/.venvs/wav2lip/bin/python
+  wav2lip_root: third_party/Wav2Lip
+  wav2lip_checkpoint: third_party/Wav2Lip/checkpoints/wav2lip_gan.pth
+  syncnet_python: /home/wjj/.venvs/syncnet/bin/python
+  syncnet_root: third_party/syncnet_python
+  syncnet_model: third_party/syncnet_python/data/syncnet_v2.model
+  ffmpeg: /home/wjj/miniconda3/bin/ffmpeg
+  ffprobe: /home/wjj/miniconda3/bin/ffprobe
+  render_worker: scripts/experiments/static_image_bridge/render_worker.py
+  legacy_score_worker: scripts/experiments/static_image_bridge/score_worker.py
+  official_score_adapter: scripts/experiments/phone_gain_static_tfg_mfa/official_score.py
+  output_root: runs/mfa_linear_video_retiming_v2
+media:
+  fps: 25
+  samples_per_frame: 640
+  channels: 1
+  sample_rate: 16000
+  sample_width_bytes: 2
+  tail_repair_max_frames: 5
+  protected_boundary_frames: 5
+  score_box_size: 224
+models:
+  wav2lip_checkpoint_sha256: ca9ab7b7b812c0e80a6e70a5977c545a1e8a365a6c49d5e533023c034d7ac3d8
+  syncnet_model_sha256: 961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442
+  wav2lip_batch_size: 4
+  syncnet_batch_size: 20
+  seed: 20260923
+  device: cuda
+retiming:
+  max_displacement_frames: 3.0
+  min_speed: 0.5
+  max_speed: 1.5
+  max_knots: 16
+  minimum_knot_gap_frames: 12
+  knot_grid_frames: 0.25
+  maximum_slope_change: 0.5
+  local_window_frames: 25
+search:
+  engine: embedding_beam_v2
+  proxy_anchor: window_center
+  proxy_unique_maps: 20000
+  stage_a_proxy_maps: 10000
+  stage_b_proxy_maps: 10000
+  true_candidate_forwards: 96
+  global_true_forwards: 6
+  shortlist_a_true_forwards: 25
+  shortlist_b_true_forwards: 25
+  local_true_forwards: 40
+  beam_width: 24
+  rounds_per_step: 5
+  steps: [1.0, 0.5, 0.25]
+  stage_a_wall_deadline_seconds: 420
+  stage_b_wall_deadline_seconds: 880
+  proxy_chunk_size: 64
+  proxy_memory_limit_mib: 512
+  max_seconds_per_sample: 1200.0
+  noninferiority_sync_c: 0.05
+  noninferiority_sync_d: 0.05
+  minimum_d0_improvement: 0.02
+  local_offset_quantile: 0.9
+  final_d0_slack: 0.02
+  c_gain_label_threshold: 0.1
+  score_tie_tolerance: 0.000001
+official:
+  min_track: 25
+  vshift: 15
+  batch_size: 20
+  pipeline_timeout_seconds: 900
+  syncnet_timeout_seconds: 600
+budget:
+  total_gpu_seconds: 129600
+  minimum_free_gpu_mib: 5000
+  minimum_available_ram_bytes: 8589934592
+  minimum_free_disk_bytes: 4294967296
+  output_safety_multiplier: 1.2

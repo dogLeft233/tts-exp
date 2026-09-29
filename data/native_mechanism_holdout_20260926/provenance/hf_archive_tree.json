@@ -1,0 +1,1202 @@
+[
+  {
+    "type": "file",
+    "oid": "49f322d69df50a2343df95c5856c42d528018281",
+    "size": 36455331,
+    "lfs": {
+      "oid": "5700ffa081f42c5a1be701147e680490fa494db959ca3c10ae205c3658af159f",
+      "size": 36455331,
+      "pointerSize": 133
+    },
+    "xetHash": "a2834d5a12b47b452d9b34ab40ecbf41c1923c76c4a8cd1a3e0f8093280a3c11",
+    "path": "data_aishell/wav/S0002.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "e0a1bf762c2b4cf75bd2e8cfc2b6d23601c14603",
+    "size": 42385634,
+    "lfs": {
+      "oid": "c15938c88bcdd0f5b2ad4b64862d2bdd0a577fdb966777aceb84572aea105517",
+      "size": 42385634,
+      "pointerSize": 133
+    },
+    "xetHash": "3518c302295698cb20a2e924d6d42640f3918903f222ac3565a1b6e9554d9732",
+    "path": "data_aishell/wav/S0003.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "ee9f558a3c703f2abd9eec319a5602f813cb0f49",
+    "size": 25559425,
+    "lfs": {
+      "oid": "c9169b501da24ad2b91ffd802a06bf4ed145860b96dd088188be30465d7ef058",
+      "size": 25559425,
+      "pointerSize": 133
+    },
+    "xetHash": "49e343de35a2329e7cbf404a5260229c9ebde27bbeb52152f0ee0501a4eadaf3",
+    "path": "data_aishell/wav/S0004.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "977ad3a5dc7995ee9e760c6954de9faf6ee7ede8",
+    "size": 27690975,
+    "lfs": {
+      "oid": "bb3fccdc61ce80f5f452296dc4290cc57107aa3842895e85e94b4d6423943b0f",
+      "size": 27690975,
+      "pointerSize": 133
+    },
+    "xetHash": "c05abd2f44f4103c86dcfb111e9650748d2c4e72cabd87dad914260bc1d26bb3",
+    "path": "data_aishell/wav/S0005.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "f3da1e87318298247f5eacd54c4f0da8f0c165bf",
+    "size": 33459193,
+    "lfs": {
+      "oid": "90f1bf29e19e2ed512122896f67314ff6df551ac2d38ef78719478f4c911c626",
+      "size": 33459193,
+      "pointerSize": 133
+    },
+    "xetHash": "30b7a6a7a187878abf4d134278680760909647fd777bb0aa68dda99dd3a9b0cd",
+    "path": "data_aishell/wav/S0006.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "f563ed8fb82dbd0e60b7bb975a20c79e90375be5",
+    "size": 43863213,
+    "lfs": {
+      "oid": "8334cbe4accfdf00fb7d5da0a0775dad526a47c066ff8bf596c80c4fe65e4dbd",
+      "size": 43863213,
+      "pointerSize": 133
+    },
+    "xetHash": "fc8653949a99b3085130c664b7c61d87e6853ad72b02de90db0f2253dc8e80c9",
+    "path": "data_aishell/wav/S0007.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "f4a786d2c4f6ce0cacae2a6bebb87ec4e80f1ad9",
+    "size": 35880264,
+    "lfs": {
+      "oid": "dda9ae858968f11d65a6b699448beb3f4a23ef8b4437616e86dbd88108ce5fcf",
+      "size": 35880264,
+      "pointerSize": 133
+    },
+    "xetHash": "0ac3d9f758a6c59d10e51c346933b382f817dc5b2afb31220a4d4ab4d4b6d63e",
+    "path": "data_aishell/wav/S0008.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "c634fbda97688e76cf7f9f8e92aceee245e3be68",
+    "size": 41045508,
+    "lfs": {
+      "oid": "df35e0c9ac3e28c13172ffc23360b33fbf1935c2b871f1449b38434a6f856333",
+      "size": 41045508,
+      "pointerSize": 133
+    },
+    "xetHash": "e97af7065084d50d0cc965db39ba8b7533054b3d17595e547c91eda16cf8459c",
+    "path": "data_aishell/wav/S0009.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "65c91dcefa77fe8ca8490cbf6909008675e73bf4",
+    "size": 36789063,
+    "lfs": {
+      "oid": "965c41ccb7e0b3faab059ab6ddab7f99ad9020c993fcfa85cd9f77d745078e7b",
+      "size": 36789063,
+      "pointerSize": 133
+    },
+    "xetHash": "0ef54bca18b413c9eedd75bff8e7d5c591e4646f7feedccf97123ba22ed92cbd",
+    "path": "data_aishell/wav/S0010.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "3ef1e446b1e6caac1a4b6ed62279120cb2a561b4",
+    "size": 34740794,
+    "lfs": {
+      "oid": "887f0ac40f1fcbeee96283fe140bf57ca7b1401f476618cc4229a6d2b25d8fc5",
+      "size": 34740794,
+      "pointerSize": 133
+    },
+    "xetHash": "44fee65900ed65910a14fced8451b76a3e24ab643a1d9a2a232f3db77c00705a",
+    "path": "data_aishell/wav/S0011.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "c193068d130ac398a85f832c1aca27f65353b7ac",
+    "size": 44520905,
+    "lfs": {
+      "oid": "af572911303fe3cf1a53550a68e3df7f5a975dbcf77f6378244c930547522004",
+      "size": 44520905,
+      "pointerSize": 133
+    },
+    "xetHash": "084274e06934a460c446145d86ff1fdae0c3edaa69666bdee3290ca0354e53f5",
+    "path": "data_aishell/wav/S0012.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "f08662628e0c927d61bf99a26a99b3dfa7208ee7",
+    "size": 44549302,
+    "lfs": {
+      "oid": "06a3f73739af34e2baf4da13480fe473e77703dd6757775b9d10ae32bf9ee728",
+      "size": 44549302,
+      "pointerSize": 133
+    },
+    "xetHash": "f0422e7a7fc8aa45eee37fb82a5e1791660097a10d5730db23148c304174d7d5",
+    "path": "data_aishell/wav/S0013.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "bcb6287add032df1b009162ba421ded82b564c3e",
+    "size": 54668640,
+    "lfs": {
+      "oid": "afe5141addf482ab718036795136d0fa710f8cc9b7881cbf47da4535b2bf37d1",
+      "size": 54668640,
+      "pointerSize": 133
+    },
+    "xetHash": "55e4960aa85129f1ef9454296c24e43cbc2d4d9ea4c9e0524aea28ff08b68b0a",
+    "path": "data_aishell/wav/S0014.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "b2acb3f062de235c44bce04b7f51dfc4fb29d984",
+    "size": 42485842,
+    "lfs": {
+      "oid": "96c21aa80b630fa12420d6fd0b4e55b6db33273674b0e0b188439c5a0fdc2a41",
+      "size": 42485842,
+      "pointerSize": 133
+    },
+    "xetHash": "a953c23531521a47935c06bfdc6ba8a3f34d79bbf4bc0de3938b50039ab7d9ab",
+    "path": "data_aishell/wav/S0015.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "5c706f33672d8ebcf6808a6f2bd82da386685a2c",
+    "size": 48270025,
+    "lfs": {
+      "oid": "917d662f6d0c5efe35d3a560a8e72b5fbe934105a615a9f5c97ae688d6a0b4ba",
+      "size": 48270025,
+      "pointerSize": 133
+    },
+    "xetHash": "c8657ef4aedeb13c43047d53a18a7a1f63a8d356b595a946d4c5ba4333dd379b",
+    "path": "data_aishell/wav/S0016.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "e4ddc7c75b7407d818c2578b06da7c6130a5f591",
+    "size": 36504805,
+    "lfs": {
+      "oid": "2104306e5ca4bb5f9df1f4cc6c8735657f4948ab21de7f6f895b30dc2cf7bd37",
+      "size": 36504805,
+      "pointerSize": 133
+    },
+    "xetHash": "6515cad10fb1108b8f886ae19e058d0a02ed1e332da03b862f8167513806c4ba",
+    "path": "data_aishell/wav/S0017.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "db61c0f3992d9a13ceb844df5562971275c98984",
+    "size": 34279560,
+    "lfs": {
+      "oid": "373b26397a8e9b2819018c369cc27d7e00f405dbd1cc909ec75550c942fc671c",
+      "size": 34279560,
+      "pointerSize": 133
+    },
+    "xetHash": "1aaf13ddb087f5812cc0b4bdd0c242fcfc9d755ee6317bd4d7f30dccc1999683",
+    "path": "data_aishell/wav/S0018.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "9a9d9043effc938ca610a8fa6a40f45dfcbe829f",
+    "size": 42639774,
+    "lfs": {
+      "oid": "d503949c0b78d0637cdb8dac0a08c2680f3148f15baea3423bd88d2ce1656995",
+      "size": 42639774,
+      "pointerSize": 133
+    },
+    "xetHash": "f06c75a86cc87a1623e2cfd41ed1ae9c292266167da85b297e4e4ac6cba4373e",
+    "path": "data_aishell/wav/S0019.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "efcaa416645ecbc61d863a8bf77fc036ad64a38e",
+    "size": 37812440,
+    "lfs": {
+      "oid": "fdafd0add9e79de872f259387c514d7012ec5ac6b1c5c190eb69a096ac284db2",
+      "size": 37812440,
+      "pointerSize": 133
+    },
+    "xetHash": "8ae8e4c7be6dd03c4967969ec09cfdfe8f1958aabb2a0d11540ac8aa37fdba17",
+    "path": "data_aishell/wav/S0020.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "db74a84421e8c8dc09b3c12d21ecc82fb81b6a3a",
+    "size": 31980647,
+    "lfs": {
+      "oid": "5e93e8f5e6b265a6be47e961b51e06da9cd73b639d86f1d4ab0e480bedd93956",
+      "size": 31980647,
+      "pointerSize": 133
+    },
+    "xetHash": "7717d4960b406bfa6e2b743172d460591c440d77ad14412343036d0e6bcbace2",
+    "path": "data_aishell/wav/S0021.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "46e4a83ed1b378a88732e085f358b156c9504c74",
+    "size": 32459386,
+    "lfs": {
+      "oid": "5853b5c0a92760547d9caebab4e6679cb7ebc1ab919df35f2076fcff319302e2",
+      "size": 32459386,
+      "pointerSize": 133
+    },
+    "xetHash": "46f1a0d5ca601ffbbce74d7aa33737cc8fe7770410f0a45d985845a9d77b205f",
+    "path": "data_aishell/wav/S0022.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "c12d9ffffec8a2d2f3105b07f60de95166b98b6b",
+    "size": 37981234,
+    "lfs": {
+      "oid": "a5774cb03afb498fb5471b596fc6a41da3576089eef4b6485304e6a3a0359ebf",
+      "size": 37981234,
+      "pointerSize": 133
+    },
+    "xetHash": "70163719bab9d39c70cb773d29b1692ca5bcd0476e8f5786b781df54b2b894fc",
+    "path": "data_aishell/wav/S0023.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "3c711c2e18d4ec486ab6cf2a09b754f9b96e65e4",
+    "size": 34635225,
+    "lfs": {
+      "oid": "189c0ee135898d853b8fc58735a0026ce45e12a3cdd25719a5e35152bee8eb0d",
+      "size": 34635225,
+      "pointerSize": 133
+    },
+    "xetHash": "3e879a4592a86d68f78ef1f0dbd53bc56f1d98b195aa76ca4cac28e23cadcac8",
+    "path": "data_aishell/wav/S0024.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "98a77cf95ef0d4ff3529101831745eb657f72aa6",
+    "size": 38810408,
+    "lfs": {
+      "oid": "7a8a675eb35ef03bae027a90be9e192a7d090355f002d0aa47e877493249f626",
+      "size": 38810408,
+      "pointerSize": 133
+    },
+    "xetHash": "1f5f80df41c9a23ce3c6a535da0e5c4e0216e56e7657203176fdce6e9186349f",
+    "path": "data_aishell/wav/S0025.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "08f413f2bc855765f4d9f04ea049e4776648b26b",
+    "size": 32896046,
+    "lfs": {
+      "oid": "e2fb4dcc2c8f717ec611f6c4f5bc003cd977253871097d487cd7f719382ed6ea",
+      "size": 32896046,
+      "pointerSize": 133
+    },
+    "xetHash": "2cf52eaeb49caacaef16d70e215fc1484aeed51ecb1da2ef4e935075b7194b4f",
+    "path": "data_aishell/wav/S0026.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "f1aea5bd7730068c65a5f231e7960615f952b995",
+    "size": 45252205,
+    "lfs": {
+      "oid": "293f4ef7fef2ac3a71ce47d9ab83e94cbae3d2f1bcdec627e6a13d708c4af0e3",
+      "size": 45252205,
+      "pointerSize": 133
+    },
+    "xetHash": "0ed1a89877a8e82b8e4fd05bebc78fc0c607a3c465a13b2d19781581372d7388",
+    "path": "data_aishell/wav/S0027.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "5861139c55e014f6187bd23188e2eb0492486a17",
+    "size": 44198714,
+    "lfs": {
+      "oid": "fa35042dcc4ce0d23f452184ca0a03c61dcf08c0f9efacacb6f66272c2ebf3a3",
+      "size": 44198714,
+      "pointerSize": 133
+    },
+    "xetHash": "9f987c16abddc727af75c1bfdf4396c405c9f436ccfb3cd301d31c03354f79d8",
+    "path": "data_aishell/wav/S0028.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "8655d2daac5bac2705620780e202e0804adb4edb",
+    "size": 33693564,
+    "lfs": {
+      "oid": "c25f60d69635d49161af8ee0ab7669e475e6b8c02e7a1b9a509153334d691606",
+      "size": 33693564,
+      "pointerSize": 133
+    },
+    "xetHash": "1b466f7edc1d5d6bbed1057722ff6d2df60ce06b38fe633da07aac37bd99237c",
+    "path": "data_aishell/wav/S0029.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "26cec372ccaef17e9ad97916ac0feb19e0d3bab8",
+    "size": 43199577,
+    "lfs": {
+      "oid": "0d6bfe4dc37d1212d12a63d353801b84be9533d4e09ad3c7cc0fa5b70c5e87cd",
+      "size": 43199577,
+      "pointerSize": 133
+    },
+    "xetHash": "7bb865b1ed0f156f8ce39d4b6b71221ac4e64328aacf6214f6b86000147d93ad",
+    "path": "data_aishell/wav/S0030.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "b22bd650f87f4f8b33e4ba4bb05f257ea39dbce2",
+    "size": 32724230,
+    "lfs": {
+      "oid": "4d26153e9480e3168a58b027cf90c2e851ed4d2c73ac0925835b5dd78406b878",
+      "size": 32724230,
+      "pointerSize": 133
+    },
+    "xetHash": "b0c5ceda3e9ac4c0144f9f1efd73c37fc401481338e7ba04cea5dbffc37e7e5c",
+    "path": "data_aishell/wav/S0031.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "1184fd21cde142a42e32bf332c16780ebccabe1f",
+    "size": 33733801,
+    "lfs": {
+      "oid": "a98b132c9d1c3b71c0912f316928a2293dde5d515c50fd69f22689fbb0c7ee6f",
+      "size": 33733801,
+      "pointerSize": 133
+    },
+    "xetHash": "49a88d7cca93e3d8d19a16177e083d9127e1acc148adef61e00740a4621b8ba7",
+    "path": "data_aishell/wav/S0032.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "0e09505812fdb9c75ad49124d6273598d26c4a67",
+    "size": 36004832,
+    "lfs": {
+      "oid": "9eea8f6b984aef72615df7cc7e595f78e5a6b83929bfb44453983cb1def1f4a8",
+      "size": 36004832,
+      "pointerSize": 133
+    },
+    "xetHash": "6a27b81700304fea7e57b24e88c798feba2bf673b9c5408ff175dd2651490710",
+    "path": "data_aishell/wav/S0033.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "b05e7aba2d480dcd314db728b2e9744371cd28e6",
+    "size": 37090416,
+    "lfs": {
+      "oid": "fddc0d44f9247f4bb5f9205fab17226afd925dbf2e6f1a7b93cce3d319e9f429",
+      "size": 37090416,
+      "pointerSize": 133
+    },
+    "xetHash": "0dd2b369e324683adb96643b859bdc07a134f4b1555df54abfb09263a8884a9b",
+    "path": "data_aishell/wav/S0034.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "28368d47b2090cc6c047d66ffe8fd4d6e3ef687b",
+    "size": 38565241,
+    "lfs": {
+      "oid": "f0c1239aef3508df24156830acc84b2edc8377ec8abeed5234215ceb56c2633c",
+      "size": 38565241,
+      "pointerSize": 133
+    },
+    "xetHash": "04b965b0d23a5dfac1c051bafba7911e675091c2ba49449f31c3c52fbb9692c0",
+    "path": "data_aishell/wav/S0035.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "f6c211936a82aa4e3ac2a1e85b19f586cd29fb98",
+    "size": 34643450,
+    "lfs": {
+      "oid": "e527ecf9bf33a1865ab79cb4a8e6dcd43f863cdf2283a204ae28027b02f81d21",
+      "size": 34643450,
+      "pointerSize": 133
+    },
+    "xetHash": "1ad1e81468c1e942d3e6147bd35dfd5d55b4d89feec2c368f3e58f2e767631d6",
+    "path": "data_aishell/wav/S0036.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "734eff495895d94217e356f547604f4a9e11b613",
+    "size": 32998322,
+    "lfs": {
+      "oid": "dbda2a027284d2a9670336643c8055c5ea803480aef1ee2cf30175de81eed727",
+      "size": 32998322,
+      "pointerSize": 133
+    },
+    "xetHash": "048ffc6fff923fd06e8e60045325f25478b4964238caca8c788c6fb1efbb5ed0",
+    "path": "data_aishell/wav/S0037.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "0a8918109cfc46dbb47447be0a228e51902926ab",
+    "size": 42610283,
+    "lfs": {
+      "oid": "a9330615d547f352ee09132b971d397bf8471f57e88fde555512f9f9f86ccb07",
+      "size": 42610283,
+      "pointerSize": 133
+    },
+    "xetHash": "2307c7361047d72acd8859ac3f4139ef1c459102d904ba153a3bfd08bc604267",
+    "path": "data_aishell/wav/S0038.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "16e1b048b8900e7bf0309b86451fa1e62c94534f",
+    "size": 33014556,
+    "lfs": {
+      "oid": "0c7b706c503f881803f5085e2049558b05639dd69b9a18a905ac68fe9b4de754",
+      "size": 33014556,
+      "pointerSize": 133
+    },
+    "xetHash": "49205b6be5caf9c71dd807fa4653db79bac61172473f5e14018b8ec037e84d46",
+    "path": "data_aishell/wav/S0039.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "6e2ec3f5eb061f524a7e4e9c13546a82bdfc2252",
+    "size": 34313996,
+    "lfs": {
+      "oid": "2c61b4e0f0d63d748f85855c0e6574320c86fb52aa1eef87452383671082d6e3",
+      "size": 34313996,
+      "pointerSize": 133
+    },
+    "xetHash": "8a302220818d7afddc8efa00d7ef346e19477fb1687f59bfe2c79c93e1369461",
+    "path": "data_aishell/wav/S0040.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "d16dfdf646f9ce98290b4629c7333b25f246ef0a",
+    "size": 38280137,
+    "lfs": {
+      "oid": "fdbdfd421b37ac88645312ec1a0be9415c05de46a9f44389eb0b16abd4520c03",
+      "size": 38280137,
+      "pointerSize": 133
+    },
+    "xetHash": "51bdd51db6a4923f3da10bba3370ec7dee6742a277ade4b6a96f822e24d257b9",
+    "path": "data_aishell/wav/S0041.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "e0de0da2e0fdd81b6e2059cfce78f85a111a3034",
+    "size": 36044893,
+    "lfs": {
+      "oid": "18b73d6744e1a4b9b0ebe4e1514c31ff8013217096c5275dcb16d9804dc2c8e1",
+      "size": 36044893,
+      "pointerSize": 133
+    },
+    "xetHash": "9fb8e232030e1c8da47d00e29523da586d353c110d923968839b30106f077fe2",
+    "path": "data_aishell/wav/S0042.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "4cfea266efdbe82e98a53ffa7b19b0abf2bab5cd",
+    "size": 30060576,
+    "lfs": {
+      "oid": "c53f70ae152dcf0c46fe79c0697fa9f2af62701755ebe1ab0eb0badb365f2714",
+      "size": 30060576,
+      "pointerSize": 133
+    },
+    "xetHash": "1f68bf7288d1250ef4b81d2b8b94002f30f8abc535b8eb621bc9814b019855bf",
+    "path": "data_aishell/wav/S0043.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "9fc210757e1b809bb64f7da4e7a7df34ddae8fbc",
+    "size": 30157135,
+    "lfs": {
+      "oid": "9a93f3fdc952446717d0744a39c0fb1317c1795d4d704b538ce7c3c77c05ee54",
+      "size": 30157135,
+      "pointerSize": 133
+    },
+    "xetHash": "04391b11ae17877918d611af7e249047417f84214f348b608174d9e3ad18ba35",
+    "path": "data_aishell/wav/S0044.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "74340685748b700cadce2f25eab6cd1ede2edc3f",
+    "size": 35825830,
+    "lfs": {
+      "oid": "8f40ffde68adb1d996b575247438a7dcd08c1c61d41bec5cab38859bd8e6be0d",
+      "size": 35825830,
+      "pointerSize": 133
+    },
+    "xetHash": "c74ac8ec886c4132777f1f8b8503128012254cec67dd0c2cec4a40d7b4ba4449",
+    "path": "data_aishell/wav/S0045.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "7ab9cf1506b16a8bae3892b6c696873c97a4a162",
+    "size": 39212603,
+    "lfs": {
+      "oid": "ec3107e8d117b9b098fb30b710ba2f1a6b4fe6b9ef4967d7510a604d7ecfe44d",
+      "size": 39212603,
+      "pointerSize": 133
+    },
+    "xetHash": "32eb91fcd330138bf9564906e5dd12ad22baa816eeec7a3a6ceb5fb76f8d5c7a",
+    "path": "data_aishell/wav/S0046.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "40bd5df3da4616a9e4fe201dda65a958b49db221",
+    "size": 40816528,
+    "lfs": {
+      "oid": "110e8cc196401c407746f056fafac95a05e11d4a52b274ada04faf9b1f908f31",
+      "size": 40816528,
+      "pointerSize": 133
+    },
+    "xetHash": "33225e61e6fed2ee5fc84bad705efbdec0a2bfe7f442fa36d1d124c9372aa6f4",
+    "path": "data_aishell/wav/S0047.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "ddf309a03ccb819bfb5b8c0a472f24256f8462c7",
+    "size": 38357701,
+    "lfs": {
+      "oid": "5ad73311efa07a33fa9dc92f0a5ae4ee04379e52e5ce814829eed24216a83d9f",
+      "size": 38357701,
+      "pointerSize": 133
+    },
+    "xetHash": "cb61a83e6d272deea8aaf5b1563006858b1e5c6e07919f05d73e1c797bd0b39b",
+    "path": "data_aishell/wav/S0048.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "dae1b8dad21d43c60662a50d937bcb8d1ba38cae",
+    "size": 33034906,
+    "lfs": {
+      "oid": "5cd7245d784a830612a9e3a21c8f6d75cdbe8488639479e3ea980c67b5ea2b90",
+      "size": 33034906,
+      "pointerSize": 133
+    },
+    "xetHash": "bdf4155a88a589500c6b42532e0841bb6e6b6408f7527c4399472e3b1ec04d27",
+    "path": "data_aishell/wav/S0049.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "610d876e9cee5a0ae416db54028b82b8d7aa1a5c",
+    "size": 36512460,
+    "lfs": {
+      "oid": "bfb2e0fa9257b35d4d46d49c686a429eb2ea6b8f09da171be15e8865accac2ec",
+      "size": 36512460,
+      "pointerSize": 133
+    },
+    "xetHash": "1d9095f2c99eaca8f53528771a1e54717d87aa8eea59b7f5cf3d8e0aadda5d86",
+    "path": "data_aishell/wav/S0050.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "b16b00afcf1d9d94ad2845bc0a964d5b1b6333ec",
+    "size": 38952629,
+    "lfs": {
+      "oid": "e6e8cb41c4b8c66e5914d12525dcbd0d775592e9726c9df4cae0f602135bbd5c",
+      "size": 38952629,
+      "pointerSize": 133
+    },
+    "xetHash": "c65e1e91f00c642a1bbd9cccebb2ef65a0d02037ab91d4f213eeb0b78a05ad07",
+    "path": "data_aishell/wav/S0051.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "f163127104ec9b7f4e62a36f19bdd44786d2871b",
+    "size": 36151747,
+    "lfs": {
+      "oid": "47b39c197c6eac0a4d7842e25039f2d763fa1ec5cbc14fcee31d5626e808c458",
+      "size": 36151747,
+      "pointerSize": 133
+    },
+    "xetHash": "97221476cf15e304dc1d594ca7d58d9c1012a01c459df69ff1ba3ad4758d9507",
+    "path": "data_aishell/wav/S0052.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "a25f045a4ebac7414aff09555dcd4fdbd7e2d7be",
+    "size": 35236272,
+    "lfs": {
+      "oid": "1e11f23f4d4df56e7a7496522126e3237a8f1a7d8a881e940152ed50b78c14ad",
+      "size": 35236272,
+      "pointerSize": 133
+    },
+    "xetHash": "39188a8ff002b1241e5282361fdcddaee24add721f9e90c6aec0a26ed3ad487e",
+    "path": "data_aishell/wav/S0053.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "03c3dabf37e50eb11e05b5d53173761ee9b641d6",
+    "size": 39451069,
+    "lfs": {
+      "oid": "b47ee57cc6b75ff4b5c09fc0371b6dc307e5fbe9946327428117c53027b89d0d",
+      "size": 39451069,
+      "pointerSize": 133
+    },
+    "xetHash": "6c2689a25dbabd451297df5e53bc4de27479bbe6df6a7e2f044fd2bc8563250f",
+    "path": "data_aishell/wav/S0054.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "a739707d4057bb2df568211313a125d1734eb949",
+    "size": 34732581,
+    "lfs": {
+      "oid": "94554e862a7fb296fdbecdc332a39bed9bec6e56d1d04f91a1e3dbaed1c83ef7",
+      "size": 34732581,
+      "pointerSize": 133
+    },
+    "xetHash": "27b958bf7047b18fabe11830a4021ce0c3f17ab4d43bbb05f1e7a0284fdc8913",
+    "path": "data_aishell/wav/S0055.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "76e80b6fc18005d9f15e08eed6ac874f47139e32",
+    "size": 36120634,
+    "lfs": {
+      "oid": "80502950b389e0ce556cc727c12ade670caaf79e0d8e16bc640d68ee4161b618",
+      "size": 36120634,
+      "pointerSize": 133
+    },
+    "xetHash": "db62c0ff28f194faf34ac648de60b9334af7414e6c6950a96404c08f5010c7bb",
+    "path": "data_aishell/wav/S0056.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "8ec39e9c2ffb3176968c7a7b91d12234c00286ff",
+    "size": 34483184,
+    "lfs": {
+      "oid": "446fb3f1d52355e865cc497639099409acb497fc9eede4bbf1ff9d0d9dee585b",
+      "size": 34483184,
+      "pointerSize": 133
+    },
+    "xetHash": "d6907dbe74208059cb8f4475ad5a243dddca9086f7af4aa3906c189c8127a95c",
+    "path": "data_aishell/wav/S0057.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "9a6fc5d1352aa9658cf7cc70b9e8ae5c40aec5bd",
+    "size": 30318010,
+    "lfs": {
+      "oid": "7b6e26483a085fe3503e032b64237bba51cbb5fb5016ddb3443cbb31497c32bd",
+      "size": 30318010,
+      "pointerSize": 133
+    },
+    "xetHash": "12fa06e80063c2bc7b1f8f02dd3f24945cdccedd543cb0cf728619efe857b664",
+    "path": "data_aishell/wav/S0058.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "44070fb5fdad43fa965c516d0a2e57c900587b46",
+    "size": 30390695,
+    "lfs": {
+      "oid": "a9271476483ea576cc5b49e82baea46e1acfd07ade3b7300d0d45b5b15dedf74",
+      "size": 30390695,
+      "pointerSize": 133
+    },
+    "xetHash": "ba0b255b4d17187dd9d37c6c66e1c5d9ebc6c94ad0674af85582ec155ed588f2",
+    "path": "data_aishell/wav/S0059.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "5cdc45027efdd983928c70ad99a33c01006c10d1",
+    "size": 35684121,
+    "lfs": {
+      "oid": "757b96cbb3f27088a0161f0441b8e079d75587f79d248b10edbfcfc011ac3d78",
+      "size": 35684121,
+      "pointerSize": 133
+    },
+    "xetHash": "b2c46e67b6b58c142bf5481e0d7103938a71cccd3f61697aa3922fda9af9663f",
+    "path": "data_aishell/wav/S0060.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "7a8105f1fc7170b4b96bebaed7152f3f8c70b582",
+    "size": 36948717,
+    "lfs": {
+      "oid": "c187753df1d42b873b6e5686298286a2502a5f65d713cb9cadb060b96f41560a",
+      "size": 36948717,
+      "pointerSize": 133
+    },
+    "xetHash": "6231a933d437ed13e76b25d78e3420a93fa567d4c355e7484e12962712682461",
+    "path": "data_aishell/wav/S0061.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "ac4975575410016c7f54ca2a1b4bd137ab22ef34",
+    "size": 34503444,
+    "lfs": {
+      "oid": "0c0a0d54ced2599a07b0e791256590a0c773401de528b2730e0d7ce5bfbfbf15",
+      "size": 34503444,
+      "pointerSize": 133
+    },
+    "xetHash": "b9bc37c849ac81946bcdcd638eeb46ec8d30328026b3c4d1276172129bb9274d",
+    "path": "data_aishell/wav/S0062.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "fc2de075bf7e407935d71516b10e4bc78cf1dbe7",
+    "size": 37832722,
+    "lfs": {
+      "oid": "1fb208b19710c9ca62f96ef426f57e78b7ce95f6884fcae758be0e1fd1c1cb2c",
+      "size": 37832722,
+      "pointerSize": 133
+    },
+    "xetHash": "fa028c5914a922942aef95ce1fa6a517ae3bbee01570165e674ef2e1833fa160",
+    "path": "data_aishell/wav/S0063.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "cddcb8dee691ad1f92e45a0950081eb1ac7b63ff",
+    "size": 37957217,
+    "lfs": {
+      "oid": "e0010debfa05a4b65d1349ae0f9664f2771c6ff957b36d462c6dc16fe2745d87",
+      "size": 37957217,
+      "pointerSize": 133
+    },
+    "xetHash": "4cbe0be6c6989fe58402a38e4c024d6b14db1a58f8e673355f080d5cb833484d",
+    "path": "data_aishell/wav/S0064.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "54ceaa9cf2e0d0deeaafd56a33fff4b176cf7ab2",
+    "size": 35267569,
+    "lfs": {
+      "oid": "4c2b3a53477f0e2501011e103327c60dae48241bb96be038a2e0ecfdc1efc1f6",
+      "size": 35267569,
+      "pointerSize": 133
+    },
+    "xetHash": "134f9d63833c65ffd25e6262c50893d9ca929db5751c478f9822f796f5fc7483",
+    "path": "data_aishell/wav/S0065.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "193a1dd8fca484a14339f8f7ef5190c5c36e4ec4",
+    "size": 38204693,
+    "lfs": {
+      "oid": "f088004cdc4ad5b3600cc1c0c2f1afbd719ffbdb38a2dda1c354a826f0518b9d",
+      "size": 38204693,
+      "pointerSize": 133
+    },
+    "xetHash": "ba4244f27b66f38c38434594756af94b6525bfaa83fed717ce6316ac7def7222",
+    "path": "data_aishell/wav/S0066.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "ac9a54daec61c78bb956002e476c5b66ee08c9e4",
+    "size": 38771053,
+    "lfs": {
+      "oid": "9aa6c5478c8dc2453ba052f055070b8c0ee89319564f6b8ec7ef1b08d5dad23b",
+      "size": 38771053,
+      "pointerSize": 133
+    },
+    "xetHash": "19c5e79ad6a721e48e00f1e21b61c5eb0381a232dbab97468fffa265466c70e6",
+    "path": "data_aishell/wav/S0067.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "2268ebbb7d4e665b9b4578326d220a234c5db141",
+    "size": 39776835,
+    "lfs": {
+      "oid": "57aeaf9fc55a1d3fef974d4795004f9d20428f189da45bdb6d9bac83d7c34adf",
+      "size": 39776835,
+      "pointerSize": 133
+    },
+    "xetHash": "3ab92fcfbffc751f6647b11aff7905b1e3b3867548202c848487e3c565d5286e",
+    "path": "data_aishell/wav/S0068.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "dfd0285f1981358daf77df8533f7669faa7e4dc6",
+    "size": 38828724,
+    "lfs": {
+      "oid": "6f3910463a62c1941482338544f3ff485562a7086d3b29e9ff4982b44ab70df5",
+      "size": 38828724,
+      "pointerSize": 133
+    },
+    "xetHash": "14869378f3761b831a7aeea85e7965c4cde32b260add23526abceecaa85cb5e4",
+    "path": "data_aishell/wav/S0069.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "9bf28b74ba4a89374b54bb3b786573419c4bbebd",
+    "size": 42769612,
+    "lfs": {
+      "oid": "e46094a69179b3ff98d6b28118ae8182809b2a674a738122de4f8377dc1dc3c4",
+      "size": 42769612,
+      "pointerSize": 133
+    },
+    "xetHash": "14c242dd3de8dabe0b5a53578acc81916956125b26046d1a0b23d936d6aacfb0",
+    "path": "data_aishell/wav/S0070.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "01a501ce6f6bd39038f5573631660b457805c92d",
+    "size": 35055241,
+    "lfs": {
+      "oid": "c9089321d5ec0816a6c39a2263cfec0a82e61a074f0048cc37dadfd55813830d",
+      "size": 35055241,
+      "pointerSize": 133
+    },
+    "xetHash": "63e7c4713e67bf4a80800d4244292a8110b3712ed48747f5bbf104965ed859ff",
+    "path": "data_aishell/wav/S0071.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "a8cf797d2ce185423a0e67a987735f12a59c9a08",
+    "size": 35381331,
+    "lfs": {
+      "oid": "c90daa38eff4cff5f039f7a9ac059e18c027a00a7fb4fda62aa992253c13bb44",
+      "size": 35381331,
+      "pointerSize": 133
+    },
+    "xetHash": "9ee22f69d95c2fb20e027a2c3a81caf46a9a55ea0f6e9ba370a1e2c301798eac",
+    "path": "data_aishell/wav/S0072.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "d2b7418d2fbfbc2c8bc471cfb7166e9cc6b6bca5",
+    "size": 33369329,
+    "lfs": {
+      "oid": "b5cc58e7e61ba609fd1276e0fc5d7abf96dfa1a6cac5e94d4570d59dfb9aee46",
+      "size": 33369329,
+      "pointerSize": 133
+    },
+    "xetHash": "ce661fa13cd02086cab15b7c0c37bf4be0df2d17439fc5f51ed5094336ab270c",
+    "path": "data_aishell/wav/S0073.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "8518af3f6f7385acb68919b2684f8a72b08adcbe",
+    "size": 34282671,
+    "lfs": {
+      "oid": "70dac88ba43cb394ec5d744de562c24aa92eebdf648a25ad5302d8dcbeffa26c",
+      "size": 34282671,
+      "pointerSize": 133
+    },
+    "xetHash": "1543fbd0554af7725e1851c146f69b75648bc586e628e274f41420c3750db540",
+    "path": "data_aishell/wav/S0074.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "7a122c5178c31c412c46883b2a0c60f0580fe022",
+    "size": 39638975,
+    "lfs": {
+      "oid": "e985259e6e6b88e7dbbe2c4d7b68ff93efb34df8b95ae81a78f6762ea5f0a4ad",
+      "size": 39638975,
+      "pointerSize": 133
+    },
+    "xetHash": "eccaef350c4d85dc113d36fc949dc7c6f2e21733fd8906c69f6abcd176688b1b",
+    "path": "data_aishell/wav/S0075.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "d3ba2ae5ddace7b060b41068637dd4a27e4067fe",
+    "size": 35322322,
+    "lfs": {
+      "oid": "e386f910ae13d2021d52016a5106d41417638000d8a3c5ac9ae827c22c8b2f89",
+      "size": 35322322,
+      "pointerSize": 133
+    },
+    "xetHash": "8bd132f4c90b6ec9d780cd3ff8e078a5bfa2ea094f505446b4b4ab6a7de0e52f",
+    "path": "data_aishell/wav/S0076.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "1a8c52890f1cca08d7debf076c3cfb960b9dbe97",
+    "size": 37355145,
+    "lfs": {
+      "oid": "44d39b1ba0862707144c890290fba096219bb25b9eaf578a282e80a20fbe2452",
+      "size": 37355145,
+      "pointerSize": 133
+    },
+    "xetHash": "a2c53aebd075cfb880462378f819f6e9a46febc32f5fc8751d368fa26e894a2b",
+    "path": "data_aishell/wav/S0077.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "a02d600af0b16746d25581a896bf041620c9f1fd",
+    "size": 44265418,
+    "lfs": {
+      "oid": "f7f107847318c8b1d7a8b41c34cf254c7f497be7032b7d38d57607ca4b29a9eb",
+      "size": 44265418,
+      "pointerSize": 133
+    },
+    "xetHash": "7a2ad23fdfef9e014c2fdcf4e2096f758671db3dc36a640a44b65fca85936cfe",
+    "path": "data_aishell/wav/S0078.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "33c84f6683faf73b50ae2fdd725ce73e627a7d33",
+    "size": 31608647,
+    "lfs": {
+      "oid": "2ea629422c98f9405ae3a55334b159a7e12869518255effb1f0124d695120a91",
+      "size": 31608647,
+      "pointerSize": 133
+    },
+    "xetHash": "41710fe48c566776f4f6f26e2d5ebd1c08dbe1d196d05a719c5886f5dadfdbab",
+    "path": "data_aishell/wav/S0079.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "3c60d452c125c3f1255ce4e1e29993c634b99794",
+    "size": 39924079,
+    "lfs": {
+      "oid": "f557dd5f89936095b6dfd87eafc5acfb479a065699da91e1e9a26427ee96e7ff",
+      "size": 39924079,
+      "pointerSize": 133
+    },
+    "xetHash": "22f3020fede34f8012442c7d2beae2c739ca6ef74bcfd653b93a9aae8b2f4770",
+    "path": "data_aishell/wav/S0080.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "6c9f44432e589a0a469fc2b55ced9edb2c1e75d9",
+    "size": 38891752,
+    "lfs": {
+      "oid": "c58bc7eac053c68e73e74669d8972e54b013aa61255184195f4a5ca9e60cbd72",
+      "size": 38891752,
+      "pointerSize": 133
+    },
+    "xetHash": "d56bece3a6fe2748e8b50f6521914251fb68fbb816760badfa8afeda4882786c",
+    "path": "data_aishell/wav/S0081.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "4bada4235dbedfff64b97cde6f3a12c60b7b84a8",
+    "size": 36892233,
+    "lfs": {
+      "oid": "676643859bac0f35bae2230fc6d77b7b0a499e50e9989e4b0de0e2dac04f62c7",
+      "size": 36892233,
+      "pointerSize": 133
+    },
+    "xetHash": "019e53c00f002a8bef274d738a06c699655ba89bc763d7475591fa7816c5715c",
+    "path": "data_aishell/wav/S0082.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "3fa341df7e7c22084ccea80cfd65933b4db1b69c",
+    "size": 39432561,
+    "lfs": {
+      "oid": "5fead33714d9d820b6a8b415d02e42eb9df506e58db399c2878b5485a10f7e07",
+      "size": 39432561,
+      "pointerSize": 133
+    },
+    "xetHash": "3b46f6c61bbaa449cff302bd9ce8285a548523eaa0460e6d9b9b17e8dfcfd395",
+    "path": "data_aishell/wav/S0083.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "7dabd35c705c84a40c250f9d31400b2261534aa1",
+    "size": 32283272,
+    "lfs": {
+      "oid": "22bd148563f19c8940bb22225a1ad7dae27b82f201211fa8c3c5fc0ffc17b91c",
+      "size": 32283272,
+      "pointerSize": 133
+    },
+    "xetHash": "d4a87c5f8f52f21dfbddd15497b2b2af9d1f8cfda226607d9dc8868b1ca3e62c",
+    "path": "data_aishell/wav/S0084.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "e8719887f3b1e12e2358723f3c18374c58b257aa",
+    "size": 42582004,
+    "lfs": {
+      "oid": "933083a9acb8464c7936c63dd6f7f1d5dd13f99c4afe0f9711f729d8dd5bccaf",
+      "size": 42582004,
+      "pointerSize": 133
+    },
+    "xetHash": "af7922971ffa7fad9f2d7cc34bf68bbdec91ed57d95dd7e1dcc75bef488de1ec",
+    "path": "data_aishell/wav/S0085.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "f56ea3dca0377f1b11f3cc73dcb82293e8d97a07",
+    "size": 38199564,
+    "lfs": {
+      "oid": "bcaeb8340d0248b16d77ec1ce017356e363be6b119dacff52ccd73c15c1d0faf",
+      "size": 38199564,
+      "pointerSize": 133
+    },
+    "xetHash": "946c75314ca94655f9d87d2816ea7f6b2adc05f85686de2cf897935107c3fd6b",
+    "path": "data_aishell/wav/S0086.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "666698ffc29efd947904b8d065af1859f1c0d627",
+    "size": 35824547,
+    "lfs": {
+      "oid": "c16547f130b743f184d90a4874d9ad469175de29dc568aa5f1b03a25d36c43fe",
+      "size": 35824547,
+      "pointerSize": 133
+    },
+    "xetHash": "92b68e559b2b5c812790b6f407c52a80230d31f9699089c0a0a3abe9355e3f3c",
+    "path": "data_aishell/wav/S0087.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "408e46ef3a338ab64f6c864ee1bc63b0f99538c1",
+    "size": 35707027,
+    "lfs": {
+      "oid": "46f367bc31f4e707cbb38ef7b28ef40528b56b463574eda13f0ccc001a7f7012",
+      "size": 35707027,
+      "pointerSize": 133
+    },
+    "xetHash": "2df02715ce730d85d7b9f2e11b63964687019d0d2af928c4da9e00f9bdec9bb6",
+    "path": "data_aishell/wav/S0088.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "43943c9534645a453c0996b2f44af787355af2b6",
+    "size": 33819700,
+    "lfs": {
+      "oid": "41fe9172db9aeb0ef6a556f5a253dc6c9aa9579e4d1cb8412df4e99fa746cdf5",
+      "size": 33819700,
+      "pointerSize": 133
+    },
+    "xetHash": "c11afb75f8a6e81671d61de50f75335ac231b6c74015b55ecdf55238b2f0a5da",
+    "path": "data_aishell/wav/S0089.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "a63c6b85e5ac64eb14152323549dbea954122be8",
+    "size": 34829567,
+    "lfs": {
+      "oid": "a18512b59cf0f8abf20d3784acedb6c6ed4ef314902789b9b4aca4a80cb5988b",
+      "size": 34829567,
+      "pointerSize": 133
+    },
+    "xetHash": "f41f8cfe43fb61a320bd1f7f169cb88d37f39f83d19b7a7d5ce4bd6d7c4ecc0c",
+    "path": "data_aishell/wav/S0090.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "c114e667ca298c5a99c8adc67f1265ad246e4f37",
+    "size": 38560878,
+    "lfs": {
+      "oid": "e56ef878e24f8ede51799dbd729ee6ed8e6aaa3ecec0f625188c03fe18dd2ac8",
+      "size": 38560878,
+      "pointerSize": 133
+    },
+    "xetHash": "bc62b2dce738df10f55a4f06be4102981ce1a97796facd94647255bdcec2df70",
+    "path": "data_aishell/wav/S0091.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "25043bad6f233cc5f8e29bb13ea6ed6ad0d1b1ed",
+    "size": 33309071,
+    "lfs": {
+      "oid": "1ae3913ff60575059620c5d94d2851b2ec78e9680f2ffb66c2c1ae8aae862117",
+      "size": 33309071,
+      "pointerSize": 133
+    },
+    "xetHash": "05121993e04799105789c9eb594f355acde7cca71ae000504c2c55e892a9aa46",
+    "path": "data_aishell/wav/S0092.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "9e3c9e6e94cab26835c8fe5acf0ba0485fa18c85",
+    "size": 36624987,
+    "lfs": {
+      "oid": "65eb139c40a009c70cb9312ee1b0b1ea430e57938e0602ec3bcc22bd846a86f7",
+      "size": 36624987,
+      "pointerSize": 133
+    },
+    "xetHash": "ec936cbcad45d6e7be0a49cf5bf8aad018095e3313ef8b76fe4155ead64cce9b",
+    "path": "data_aishell/wav/S0093.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "21faf89cff5599f2c796d157c74b2163c94c5006",
+    "size": 37877909,
+    "lfs": {
+      "oid": "82250a2befd36f5f3a80a6994dea2afea08c7b5a331bf50e7b32df1bdd531bd8",
+      "size": 37877909,
+      "pointerSize": 133
+    },
+    "xetHash": "267487e4e6f0c31936d6a99e07fa011b34cab245ad1d24930568c03b3f85ddd5",
+    "path": "data_aishell/wav/S0094.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "8160139df6c8207f11286c1a4ecf4cb1d7ae32e0",
+    "size": 37406413,
+    "lfs": {
+      "oid": "31cdb6caa7ee869e2b5ddb2f0645129209eaf4fec2fe9df5e09c03397feb3fe0",
+      "size": 37406413,
+      "pointerSize": 133
+    },
+    "xetHash": "cb2869dac82746257f99db0f21b957e048bac24fc909372b0d0c5650069d628c",
+    "path": "data_aishell/wav/S0095.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "2fce0ab0eca05d5103cb07872d3e1ca5efd576bf",
+    "size": 41609496,
+    "lfs": {
+      "oid": "5f3b80d03cc62d41a7b7c1cb32c8268a9360acd1f3a2bd832ff675e0e4882ae1",
+      "size": 41609496,
+      "pointerSize": 133
+    },
+    "xetHash": "9f4d8abd49f1cb8d54bf5916b70aece4e79bfe238f3f77248c1e23be5e7efd07",
+    "path": "data_aishell/wav/S0096.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "4cc6620f143859e2de8ef762dd00301b28bd3622",
+    "size": 38630543,
+    "lfs": {
+      "oid": "f76ffcc33e63b7a83952579fe9f2aea096b2db38be4290115d1a7c4bca9e79e7",
+      "size": 38630543,
+      "pointerSize": 133
+    },
+    "xetHash": "ea6d2900b0fa3d5661c81976221ea77945dfa30e2bbcd304e9a5ebf87cde0813",
+    "path": "data_aishell/wav/S0097.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "d5c1992d225ab1938201bbc5c9fc55d34a4a1d43",
+    "size": 31523238,
+    "lfs": {
+      "oid": "c659ea8306fe043c7c7a0845923a1dcad8fd4ea9e71d2c2d140d79aedfb7c29b",
+      "size": 31523238,
+      "pointerSize": 133
+    },
+    "xetHash": "ba32068a1a842dbe2abed57cffb0c0433fbcc0be07416a9bf99a93190cbe428a",
+    "path": "data_aishell/wav/S0098.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "a28adcd88b290f9a58c1f533b171c7c2dd3c5919",
+    "size": 29266947,
+    "lfs": {
+      "oid": "616a3b029d448bc5b8b0c096b2d0932ec498d073c3010ea7c8ce0d593fefe601",
+      "size": 29266947,
+      "pointerSize": 133
+    },
+    "xetHash": "50924a088f12f6d282ca136ae3d417e8f2e23516eaa09599ab24e33965d9a66b",
+    "path": "data_aishell/wav/S0099.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "c43648cf24657599dba771d483e0a433d985316c",
+    "size": 40373236,
+    "lfs": {
+      "oid": "19d7b8e94bd3e716874aa4319d5785cf279271929d3acf0a905699f91a9a90ed",
+      "size": 40373236,
+      "pointerSize": 133
+    },
+    "xetHash": "5f5a798b1ddc2cb3cd4eb95578c924c9e2eee8dba1620a9c4b1c60345c7a0a9f",
+    "path": "data_aishell/wav/S0100.tar.gz"
+  },
+  {
+    "type": "file",
+    "oid": "ee7f566619598be40ce148439df71b1ae8e50ee0",
+    "size": 44390872,
+    "lfs": {
+      "oid": "48973002249c75c32cdf0e4aa3b159c2de8d91a55647d16c03c4744d41e56c05",
+      "size": 44390872,
+      "pointerSize": 133
+    },
+    "xetHash": "b0f3ce55b2260792fe28c1aac5e7fe8ecacd4281233ec1e87b21b0924c3d72f3",
+    "path": "data_aishell/wav/S0101.tar.gz"
+  }
+]

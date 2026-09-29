@@ -1,0 +1,1 @@
+"""Frozen PCM gain probe."""

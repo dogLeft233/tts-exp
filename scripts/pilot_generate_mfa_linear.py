@@ -4,7 +4,9 @@
 Frozen kNN-VC chain: WavLM-Large L6 features of natural and canonical TTS,
 mapped onto the natural clock with mfa_linear_target (MFA tokens both
 sides), vocoded by the frozen prematched HiFi-GAN, right-cropped/padded to
-the exact natural sample count. 16 kHz, no loudness normalization.
+the exact natural sample count. Unmatched natural silence uses TTS silence
+features, and missing pauses of at least 100 ms are muted on the natural
+clock with 20 ms fades. 16 kHz, no loudness normalization.
 """
 
 # ============================================================================
@@ -45,7 +47,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
-from knn_vc_retrieval import mfa_linear_target  # noqa: E402
+from knn_vc_retrieval import mfa_linear_target, unmatched_silence_intervals  # noqa: E402
 from wavlm_knn_vc_adapter import KNN_VC_REVISION, SAMPLE_RATE, WavLMKNNVCAdapter  # noqa: E402
 
 REPO = SCRIPT_DIR.parent
@@ -93,6 +95,29 @@ def exact_natural_length(values: np.ndarray, count: int) -> tuple[np.ndarray, di
     return output, {"raw_samples": int(values.size), "target_samples": int(count), "action": action}
 
 
+def mute_missing_pauses(
+    values: np.ndarray,
+    intervals: list[tuple[float, float]],
+    *,
+    sample_rate: int = SAMPLE_RATE,
+    fade_s: float = 0.02,
+) -> np.ndarray:
+    """Mute unmatched natural pauses with short fades on the natural sample clock."""
+    output = np.asarray(values, dtype=np.float32).copy()
+    for start_s, end_s in intervals:
+        start = max(0, round(start_s * sample_rate))
+        end = min(output.size, round(end_s * sample_rate))
+        if end <= start:
+            continue
+        fade = min(round(fade_s * sample_rate), (end - start) // 3)
+        gain = np.zeros(end - start, dtype=np.float32)
+        if fade:
+            gain[:fade] = np.linspace(1.0, 0.0, fade, dtype=np.float32)
+            gain[-fade:] = np.linspace(0.0, 1.0, fade, dtype=np.float32)
+        output[start:end] *= gain
+    return output
+
+
 def extend_tokens_for_feature_tail(tokens: list[Mapping[str, Any]], frame_count: int) -> tuple[list[dict[str, Any]], float]:
     """把最后一个 MFA token 的时间边界向后延伸，以覆盖特征序列的尾部。
 
@@ -127,6 +152,7 @@ def generate(
     outdir: Path,
     device: str,
     manifest_path: Path | None = None,
+    silence_repair: bool = True,
 ) -> dict[str, Any]:
     """主流程：遍历 cohort 中每个样本，生成 mfa_linear 第三臂音频。
 
@@ -212,11 +238,15 @@ def generate(
             conditioning, meta = mfa_linear_target(
                 natural_features.shape[0], tts_features,
                 natural_tokens, tts_tokens,
+                silence_fallback="tts_silence" if silence_repair else "global",
             )
 
             # ---- 声码还原 + 精确等长 ----
             raw = adapter.vocode(conditioning).numpy()
             output, length_adjustment = exact_natural_length(raw, natural_audio.size)
+            missing_pauses = unmatched_silence_intervals(natural_tokens, tts_tokens) if silence_repair else []
+            if missing_pauses:
+                output = mute_missing_pauses(output, missing_pauses)
             wav_path = outdir / f"{sample_id}.wav"
             sf.write(wav_path, output, SAMPLE_RATE, subtype="FLOAT")  # FLOAT 子类型避免编码损失
 
@@ -244,6 +274,7 @@ def generate(
                     **meta,
                     "natural_feature_tail_extension_s": natural_tail_extension_s,
                     "tts_feature_tail_extension_s": tts_tail_extension_s,
+                    "muted_unmatched_pauses_s": missing_pauses,
                 },
                 "output_to_conditioning_cosine": float(cosine),
                 "peak": float(np.abs(output).max()) if output.size else 0.0,
@@ -257,6 +288,7 @@ def generate(
     summary = {
         "schema_version": 1,
         "arm": "mfa_linear",
+        "silence_repair": silence_repair,
         "cohort_manifest": str(manifest_path.resolve()) if manifest_path is not None else str(manifest.get("source_manifest", "")),
         "cohort_manifest_sha256": sha256_file(manifest_path.resolve()) if manifest_path is not None else None,
         "tokens_path": str(tokens_path.resolve()),
@@ -282,10 +314,17 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--tokens", type=Path, required=True)
     parser.add_argument("--outdir", type=Path, required=True)
     parser.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
+    parser.add_argument(
+        "--legacy-global-silence", action="store_true",
+        help="Reproduce the original MFA-linear output without silence or pause repair",
+    )
     args = parser.parse_args(argv)
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
     tts_meta = json.loads(args.tts_meta.read_text(encoding="utf-8"))
-    summary = generate(manifest, tts_meta, args.tokens.resolve(), args.outdir.resolve(), args.device, args.manifest.resolve())
+    summary = generate(
+        manifest, tts_meta, args.tokens.resolve(), args.outdir.resolve(), args.device,
+        args.manifest.resolve(), silence_repair=not args.legacy_global_silence,
+    )
     return 0 if not summary["failures"] and summary["samples_ok"] == summary["samples_total"] else 1
 
 

@@ -82,3 +82,15 @@ artifacts/
 graphify-out/
 checkpoints/huggingface/
 data/lrs3/
+
+# Locally acquired mechanism holdouts (keep small transcripts/provenance trackable)
+/data/fresh_aishell_disjoint_ref_target_20260929/audio/
+/data/fresh_aishell_disjoint_ref_target_20260929/archives/
+/data/native_mechanism_holdout_20260926/audio/
+/data/native_mechanism_holdout_20260926/archives/
+/data/native_mechanism_holdout_20260926/provenance/aishell_transcript_v0.8.txt
+/data/hdtf_videos_test.zip
+
+# Local bundles and repair backups
+/lrs3_tts_gain_mechanism_review_v13_share.zip
+/pre_repair_snapshot/

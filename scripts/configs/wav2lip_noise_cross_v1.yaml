@@ -1,0 +1,42 @@
+protocol_id: wav2lip_noise_cross_v1
+sample_ids: [151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174]
+control_ids: [151, 152]
+smoke_ids: [151, 152]
+source_labels: [N, T]
+dataset_manifest: data/dataset_samples/video_manifest_250.json
+natural_carrier_dir: runs/leaptalk_multiset/natural_raw
+tts_carrier_dir: runs/leaptalk_multiset/tts_raw
+portrait_dir: runs/tts_native_gain_attribution_implementation_20260915_v1/00_audit/portraits
+wav2lip:
+  python: /home/wjj/.venvs/wav2lip/bin/python
+  checkpoint: third_party/Wav2Lip/checkpoints/wav2lip_gan.pth
+  checkpoint_sha256: ca9ab7b7b812c0e80a6e70a5977c545a1e8a365a6c49d5e533023c034d7ac3d8
+  batch_size: 4
+  seed: 42
+  device: cuda
+syncnet:
+  python: /home/wjj/.venvs/syncnet/bin/python
+  root: third_party/syncnet_python
+  checkpoint: third_party/syncnet_python/data/syncnet_v2.model
+  checkpoint_sha256: 961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442
+  batch_size: 20
+  device: cuda
+media:
+  ffmpeg: /home/wjj/miniconda3/bin/ffmpeg
+  ffprobe: /home/wjj/miniconda3/bin/ffprobe
+  fps: 25
+  sample_rate: 16000
+  box_xyxy: [0, 0, 224, 224]
+audio:
+  snr_db: 20.0
+  min_active_samples: 16000
+  delay_ms: 200
+statistics:
+  bootstrap_draws: 20000
+  bootstrap_seed: 20260920
+  primary_metrics: [E_T, G_T]
+  primary_ci: [0.0125, 0.9875]
+  practical_range: 0.2
+resources:
+  keep_free_bytes: 1073741824
+  extra_factor: 1.5

@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "change_id": "complete-tts-native-gain-attribution",
+  "created_date": "2026-09-16",
+  "parent_run": "runs/tts_native_gain_attribution_implementation_20260915_v1",
+  "parent_engineering_status": "PARTIAL",
+  "purpose": "Read-only evidence and audited-code snapshot; downstream must additionally verify manifest transitive bindings. Audited source hashes describe pre-repair code, not required hashes of the future implementation.",
+  "bindings": [
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/protocol.json",
+      "bytes": 4332,
+      "sha256": "a1e36508945309f4b8ffddc6318628407c4f24fa8fdc0b4dc16a2238b5852c29"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/inputs.json",
+      "bytes": 165769,
+      "sha256": "6723c13d0ecb4752a12482d0514f9c5d9db5484454ad5769eb8d21042a6cc005"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/claim_registry.json",
+      "bytes": 1100,
+      "sha256": "c22deaea810cb21e3b7e2aced42a322a83fb1128d0d213c07fea1f4857586039"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/model_provenance.json",
+      "bytes": 1548,
+      "sha256": "a04113f2e90fababc6de358142e530c0865d638821d5a5964476a0183d03f2a4"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/00_audit/assets.json",
+      "bytes": 166989,
+      "sha256": "83b688e4a55318843d0396e0c72ec2cac21b075aed9411012d77116e58128de4"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/01_audio/manifest.json",
+      "bytes": 18029821,
+      "sha256": "f1500263e9eb6b7cd91bbc8928916e817701d0e786ea64a2bc468a799c718a3a"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/02_fixed_video/manifest.json",
+      "bytes": 48622,
+      "sha256": "9f9d553d8b8842f91815bc10068e71246e92dfef04838145d8540d5e50d622bf"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/02_fixed_video/a_manifest.json",
+      "bytes": 1481306,
+      "sha256": "e11c26b0e5f1ca9bd28d8ec15cde207136caad1e76e0b7a67f4f9d2343f9b364"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/03_generation/manifest.json",
+      "bytes": 96010,
+      "sha256": "ed983878fa9f247df8a2a2bc383f45d76c1e02f03f2e2d1a140d9eef4ab4e48d"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/04_crossed_scores/manifest.json",
+      "bytes": 215010,
+      "sha256": "9dafdf4b4f8c8c7ddea46080f8d37de9e50431d0e5f903bcf0eec0a0a757ea74"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/05_analysis/summary.json",
+      "bytes": 7191684,
+      "sha256": "12549bb2839a750864e12fd456f273a52d75d6af6be4b8229b59b19a4319cd5c"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/06_perception/package.json",
+      "bytes": 79571,
+      "sha256": "d296fcbcdb4a650672976b08ce005f714819fbc272c9b2b17079d8f037867b79"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/06_perception/analysis.json",
+      "bytes": 839,
+      "sha256": "32cd3828793147dea4f09617f66d0fbb204c06b418a034dfbd8dcceb85a21f53"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/report.md",
+      "bytes": 7493,
+      "sha256": "4adb85c7cd4cdee9a13df46f9bf3d97d9cdd54b66b6d89c7c9e21f9ee6b04f44"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/final.json",
+      "bytes": 16894,
+      "sha256": "25827354202968dee22672a77257b818311e7da25e591b05294d9c4b686cca48"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/validation.json",
+      "bytes": 485,
+      "sha256": "1ad97583b7595589789fc3db1712391be3104d3e8d783705b2f904067af66856"
+    },
+    {
+      "path": "runs/tts_native_gain_attribution_implementation_20260915_v1/05_analysis/bootstrap_indices.npy",
+      "bytes": 1920128,
+      "sha256": "82d3c6650c10b1d4ebf34de1f70162cb7dbf6ae53b4eb65a01518c5c6091c641"
+    },
+    {
+      "path": "openspec/changes/disentangle-tts-native-gain/README.md",
+      "bytes": 5133,
+      "sha256": "42e30acdccdde5817c81aa0f4b975c27d6cdce75e3943ae1432de52879aa8f4d"
+    },
+    {
+      "path": "openspec/changes/disentangle-tts-native-gain/design.md",
+      "bytes": 12064,
+      "sha256": "cf8a9c0799f98cf4ab4cd197a43bc52e9772d460bdb81f855e4d3deb4999570e"
+    },
+    {
+      "path": "openspec/changes/disentangle-tts-native-gain/proposal.md",
+      "bytes": 2429,
+      "sha256": "d2d1e35bd95f5c8ce8f61c72106d1d5cff395370a955b267f823d8f1139a27af"
+    },
+    {
+      "path": "openspec/changes/disentangle-tts-native-gain/protocol.md",
+      "bytes": 20978,
+      "sha256": "95218766d20909abe99e8897ab485aae76033326f7ad6b58aa1334034ea4f5ae"
+    },
+    {
+      "path": "openspec/changes/disentangle-tts-native-gain/specs/tts-native-gain-attribution/spec.md",
+      "bytes": 8286,
+      "sha256": "fbd299e0f1f4f6d8c05a3b1c93d5ac1712ba36eb27518fcc17533f49d256023b"
+    },
+    {
+      "path": "openspec/changes/disentangle-tts-native-gain/tasks.md",
+      "bytes": 3898,
+      "sha256": "daf5f3cc6c0203e2931c4de8f167ee67366c55e7648e1869cbb0965a05075ff6"
+    },
+    {
+      "path": "openspec/changes/disentangle-tts-native-gain/input-bindings.json",
+      "bytes": 49563,
+      "sha256": "72ae4fcd3e3a4a0d14cba00142edc68c8f40b0ae24ecdae2266f6016318570e2"
+    },
+    {
+      "path": "scripts/experiments/tts_native_gain_attribution/__init__.py",
+      "bytes": 98,
+      "sha256": "72db051ae1f54dc8badedf37a9a6128a85429c3fe15d9d3bef9db69ec8370102"
+    },
+    {
+      "path": "scripts/experiments/tts_native_gain_attribution/analysis.py",
+      "bytes": 41953,
+      "sha256": "289e2675abf04f7d31b412096f2a320ca0f7d65448129c88c775e02344a32ddf"
+    },
+    {
+      "path": "scripts/experiments/tts_native_gain_attribution/audio.py",
+      "bytes": 34838,
+      "sha256": "3dcf2be97ae6ecffa0d20ebb01811226888b192e625a4b41e4151cae37b733fc"
+    },
+    {
+      "path": "scripts/experiments/tts_native_gain_attribution/audit.py",
+      "bytes": 23548,
+      "sha256": "6aabfe00a950f029895e462d4a57b188738303c1536f4e0a12be6c8147304011"
+    },
+    {
+      "path": "scripts/experiments/tts_native_gain_attribution/common.py",
+      "bytes": 16719,
+      "sha256": "16b4a10f2ec2a20b6c0fec2950ea5c5366617757850f465c1647ab79363949e9"
+    },
+    {
+      "path": "scripts/experiments/tts_native_gain_attribution/config.py",
+      "bytes": 5961,
+      "sha256": "dd8cf52951e153fda247895893f41dc7c92870f209e03c7d2a9d3a375b1db78e"
+    },
+    {
+      "path": "scripts/experiments/tts_native_gain_attribution/generation.py",
+      "bytes": 16760,
+      "sha256": "1f4fb07152fa75a07a55f400b68fa9dded1c93c24cedf3d8dbc0f51e1b4ca113"
+    },
+    {
+      "path": "scripts/experiments/tts_native_gain_attribution/perception.py",
+      "bytes": 16008,
+      "sha256": "c01ab39eaac7b0f22cff8e74db84d1e8b75adedd9165f198c6d533cdacd3e87d"
+    },
+    {
+      "path": "scripts/experiments/tts_native_gain_attribution/report.py",
+      "bytes": 17108,
+      "sha256": "21a54e01d3fb5a48855ce45723cd3f8e7858308a5af26bc578364ae6b6aca6e1"
+    },
+    {
+      "path": "scripts/experiments/tts_native_gain_attribution/runner.py",
+      "bytes": 7685,
+      "sha256": "1de99a049aee36e465f5a76840d350175d50410a76f56d9ab3c3578379011b16"
+    },
+    {
+      "path": "scripts/experiments/tts_native_gain_attribution/syncnet.py",
+      "bytes": 50448,
+      "sha256": "ecb8fc12792762d9433067587442f1d58a0cc21c51255c667d64bb24c72d4df2"
+    },
+    {
+      "path": "scripts/experiments/tts_native_gain_attribution/validate.py",
+      "bytes": 38360,
+      "sha256": "162292bf4408c2fedecd460c00529ea8ea162109f242331f9b16f38fc8513056"
+    },
+    {
+      "path": "tests/experiments/tts_native_gain_attribution/test_audio_contract.py",
+      "bytes": 1130,
+      "sha256": "d6c66fe196770ed7a5899121f5238fa6c08ef21cd04e462caeaf61f11b2326ec"
+    },
+    {
+      "path": "tests/experiments/tts_native_gain_attribution/test_statistics_contract.py",
+      "bytes": 3450,
+      "sha256": "f04cf359c63c15c4651de43f402f4cba3ddea9d3ba7f1e1105942f496790aa69"
+    }
+  ]
+}

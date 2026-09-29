@@ -13,6 +13,7 @@ from knn_vc_retrieval import (  # noqa: E402
     frame_owners,
     mfa_linear_target,
     retrieve,
+    unmatched_silence_intervals,
 )
 
 
@@ -103,3 +104,65 @@ def test_mfa_linear_maps_each_token_to_natural_grid() -> None:
     assert target[0, 0] == pytest.approx(1.0)
     assert target[0, 0] <= target[1, 0] < target[2, 0]
     assert metadata["coverage"] == 1.0
+
+
+def test_unmatched_natural_pause_uses_tts_silence_without_changing_speech() -> None:
+    natural = [
+        {"token": "a", "start_s": 0.0, "end_s": 0.04},
+        {"token": "sil", "start_s": 0.04, "end_s": 0.16, "is_silence": True},
+        {"token": "b", "start_s": 0.16, "end_s": 0.20},
+    ]
+    tts = [
+        {"token": "sil", "start_s": 0.0, "end_s": 0.04, "is_silence": True},
+        {"token": "a", "start_s": 0.04, "end_s": 0.08},
+        {"token": "b", "start_s": 0.08, "end_s": 0.12},
+    ]
+    features = torch.tensor([[0.0], [0.0], [10.0], [11.0], [20.0], [21.0]])
+    old, _ = mfa_linear_target(10, features, natural, tts)
+    new, meta = mfa_linear_target(10, features, natural, tts, silence_fallback="tts_silence")
+    assert unmatched_silence_intervals(natural, tts) == [(0.04, 0.16)]
+    assert torch.equal(new[:2], old[:2])
+    assert torch.equal(new[8:], old[8:])
+    assert torch.equal(new[2:8], torch.zeros(6, 1))
+    assert meta["silence_fallback_frames"] == 6
+    assert meta["fallback_frames"] == 6
+
+
+def test_silence_repair_preserves_speech_fallback_and_handles_no_tts_silence() -> None:
+    natural = [
+        {"token": "a", "start_s": 0.0, "end_s": 0.02},
+        {"token": "sp", "start_s": 0.02, "end_s": 0.14},
+        {"token": "b", "start_s": 0.14, "end_s": 0.16},
+    ]
+    tts = [
+        {"token": "a", "start_s": 0.0, "end_s": 0.02},
+        {"token": "x", "start_s": 0.02, "end_s": 0.04},
+        {"token": "b", "start_s": 0.04, "end_s": 0.06},
+    ]
+    features = torch.arange(3.0).unsqueeze(1)
+    old, _ = mfa_linear_target(8, features, natural, tts)
+    new, meta = mfa_linear_target(8, features, natural, tts, silence_fallback="tts_silence")
+    assert torch.equal(new, old)
+    assert meta["silence_without_tts_frames"] == 6
+    assert unmatched_silence_intervals(natural, tts) == [(0.02, 0.14)]
+    with pytest.raises(ValueError, match="unsupported silence fallback"):
+        mfa_linear_target(8, features, natural, tts, silence_fallback="invalid")
+
+
+def test_unknown_speech_is_not_muted_or_used_as_silence_source() -> None:
+    natural = [
+        {"token": "a", "start_s": 0.0, "end_s": 0.02},
+        {"token": "spn", "start_s": 0.02, "end_s": 0.14, "is_unknown_speech": True},
+        {"token": "b", "start_s": 0.14, "end_s": 0.16},
+    ]
+    tts = [
+        {"token": "a", "start_s": 0.0, "end_s": 0.02},
+        {"token": "x", "start_s": 0.02, "end_s": 0.04},
+        {"token": "b", "start_s": 0.04, "end_s": 0.06},
+        {"token": "spn", "start_s": 0.06, "end_s": 0.16, "is_unknown_speech": True},
+    ]
+    old, _ = mfa_linear_target(8, torch.arange(8.0).unsqueeze(1), natural, tts)
+    new, meta = mfa_linear_target(8, torch.arange(8.0).unsqueeze(1), natural, tts, silence_fallback="tts_silence")
+    assert unmatched_silence_intervals(natural, tts) == []
+    assert torch.equal(new, old)
+    assert meta["silence_fallback_frames"] == 0

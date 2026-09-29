@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "change_id": "compare-lrs3-bridge-tts-quality",
+  "status": "design_only",
+  "audit_date": "2026-09-13",
+  "path_base": "repository_root",
+  "binding_hash_kind": "sha256_of_file_bytes",
+  "parents": {
+    "confirmation_cohort": {
+      "path": "runs/lrs3_natural_to_tts_bridge_confirmation_20260904/00_protocol/cohort.json",
+      "file_sha256": "b55403fdc508d359f6ee0063c2728cba2362ea583bc80cf8208fb3f16f4db33b"
+    },
+    "cloud_tts_metadata": {
+      "path": "runs/lrs3_qwen_cloud_n500_20260817/02_tts/tts_meta.json",
+      "file_sha256": "2de0e1d377a0513862b7573770b3a7b36fde1df0307faa057aa0ab5cbce052f4"
+    },
+    "historical_cloud_target_manifest": {
+      "path": "runs/lrs3_mfa_linear_replacement_mfa3_exploratory_20260825/02_candidate_audio_retry4/candidate_manifest.json",
+      "file_sha256": "2ff6da4923e3a2abb31463014ba69d6587c5bd8bf2da257d9aff32a23fa42d6a"
+    },
+    "parent_protocol": {
+      "path": "runs/lrs3_mfa_dtw_replacement_short_phone_20260904/00_protocol/manifest.json",
+      "file_sha256": "e8c50a459c8197c86ec11cf06a01c000e3f62def981d16d8ed9275a38a473784"
+    }
+  },
+  "cohort": {
+    "record_count": 22,
+    "source_group_count": 22,
+    "ordered_sample_ids_sha256_from_parent": "5999f6bae8ba6b17c2e316b5f1e1f9e6d73b402a34cc8e4cfe482bcc714f5b72",
+    "sample_ids": [
+      "lrs3_6WeS1bXRBOk_00006",
+      "lrs3_6ul2TSvUDog_00007",
+      "lrs3_6wk4dkYSrV0_00006",
+      "lrs3_73jPh0eRPSY_00008",
+      "lrs3_6qqqVwM6bMM_00007",
+      "lrs3_70VZ1SOzSnc_00007",
+      "lrs3_73cTNHEQhkQ_00007",
+      "lrs3_796LfXwzIUk_00007",
+      "lrs3_7CIq4mtiamY_00007",
+      "lrs3_7DCofMA9eQA_00007",
+      "lrs3_6ORDQFh0Byw_00008",
+      "lrs3_6VnKV1sr5VQ_00008",
+      "lrs3_6yR5OUVb2gY_00008",
+      "lrs3_6ydYeyNSQVY_00008",
+      "lrs3_6SdtkXAQq3k_00009",
+      "lrs3_6tSlMoMNSlY_00009",
+      "lrs3_6xtmm0MnaS0_00010",
+      "lrs3_73rUjrow5pI_00009",
+      "lrs3_6xy5pWOgeBY_00010",
+      "lrs3_6weGCM3sWKc_00014",
+      "lrs3_7DLzXAjscXk_00013",
+      "lrs3_79tRTivyMSM_00014"
+    ],
+    "historical_exposure": true,
+    "scope": "fit_only_paired_pilot"
+  },
+  "providers": {
+    "LOCAL": {
+      "provider": "faster_qwen3",
+      "model": "Qwen/Qwen3-TTS-12Hz-0.6B-Base",
+      "paired_asset_status": "must_audit_or_generate_under_setup"
+    },
+    "CLOUD": {
+      "provider": "dashscope_vc",
+      "model": "qwen3-tts-vc-2026-01-22",
+      "paired_metadata_count": 22
+    }
+  },
+  "design_audit": {
+    "metadata_chain_checks": 22,
+    "bound_media_file_checks": 88,
+    "errors": [],
+    "local_paired_assets_verified": false,
+    "perceptual_quality_assessed": false,
+    "new_inference_executed": false
+  },
+  "registered_counts": {
+    "records": 22,
+    "source_groups": 22,
+    "driver_arms": 4,
+    "render_repeats": 2,
+    "videos": 176,
+    "cells_per_record_repeat": 7,
+    "score_cells": 308,
+    "quality_stimuli": 88,
+    "minimum_raters_per_pair": 3
+  },
+  "runtime_lock_required": true
+}

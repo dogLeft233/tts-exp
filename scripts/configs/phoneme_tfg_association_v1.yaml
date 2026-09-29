@@ -1,0 +1,42 @@
+phoneme_tfg_association:
+  protocol_id: phoneme_tfg_association_v1
+  seed: 20260921
+  source_groups: 36
+  utterances_per_group: 1
+  tts_per_utterance: 2
+  pair_replicates: 6
+  tts_order: [qwen_cloud, qwen_local, index_tts2, cosyvoice2]
+  primary_tfg: wav2lip
+  primary_feature: hubert_layer6_phoneme_silhouette
+  primary_endpoint: native_interior_equal_count_sync_c
+  enable_ditto_replication: false
+  max_unique_wav2lip_videos: 108
+  max_unique_ditto_videos: 36
+  max_render_attempts_per_cell: 2
+  fps: 25
+  sample_rate: 16000
+  vshift: 15
+  minimum_interior_windows: 25
+  bootstrap_draws: 10000
+  wild_bootstrap_draws: 9999
+  power_simulations: 2000
+  sensitivity_family: secondary_associations_v1
+  primary_min_complete_blocks: 30
+  primary_min_pair_blocks: 4
+  duration_ratio_min: 0.5
+  duration_ratio_max: 1.5
+  silence_threshold: 0.005
+  device: cuda
+  wav2lip_batch_size: 4
+  syncnet_batch_size: 20
+  syncnet_threads: 4
+  smoke_source_groups: 2
+  cohort: runs/lrs3_local_tts_n100_20260921/00_inputs/cohort_n100.json
+  transfer_run: runs/lrs3_english_phoneme_transfer_n100_20260921
+  visual_manifest: data/dataset_samples/video_manifest_250.json
+  visual_dataset_allowlist: [mead, vfhq, talkvid, grid]
+  detector: mediapipe
+  face_detector_model: /home/wjj/miniconda3/envs/autoavsr/lib/python3.8/site-packages/mediapipe/modules/face_detection/face_detection_full_range_sparse.tflite
+  wav2lip_checkpoint: third_party/Wav2Lip/checkpoints/wav2lip_gan.pth
+  syncnet_model: third_party/syncnet_python/data/syncnet_v2.model
+  ffmpeg: /home/wjj/miniconda3/bin/ffmpeg

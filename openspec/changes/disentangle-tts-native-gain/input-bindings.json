@@ -1,0 +1,1285 @@
+{
+ "schema_version": 1,
+ "change_id": "disentangle-tts-native-gain",
+ "status": "SPEC_INPUTS_VERIFIED_NOT_EXECUTED",
+ "verified_on": "2026-09-15",
+ "parent_run": "runs/lrs3_tts_gain_mechanism_review_v15",
+ "sample_ids": [
+  151,
+  152,
+  153,
+  154,
+  155,
+  156,
+  157,
+  158,
+  159,
+  160,
+  161,
+  162
+ ],
+ "source_group_count": 12,
+ "records": [
+  {
+   "sample_id": 151,
+   "source_group": "6ORDQFh0Byw",
+   "real_video": "data/dataset_samples/lrs3/pretrain/6ORDQFh0Byw/00001.mp4",
+   "conditions": {
+    "natural_raw": {
+     "media": "runs/leaptalk_multiset/natural_raw/151.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/151_natural_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/151_natural_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/151_natural_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/151_natural_raw/worker.json",
+     "original_pcm_sha256": "5687ab88bfbda8a4cd6afd1b87bc10da6a61a5c13c9e644e79a3d06c55650697",
+     "matrix_shape": [
+      353,
+      31
+     ]
+    },
+    "tts_raw": {
+     "media": "runs/leaptalk_multiset/tts_raw/151.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/151_tts_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/151_tts_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/151_tts_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/151_tts_raw/worker.json",
+     "original_pcm_sha256": "03b93ceaa25e41c3c83e4ababd19361e5ce02be016912258fb0d75947f0427a0",
+     "matrix_shape": [
+      301,
+      31
+     ]
+    }
+   }
+  },
+  {
+   "sample_id": 152,
+   "source_group": "6SdtkXAQq3k",
+   "real_video": "data/dataset_samples/lrs3/pretrain/6SdtkXAQq3k/00001.mp4",
+   "conditions": {
+    "natural_raw": {
+     "media": "runs/leaptalk_multiset/natural_raw/152.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/152_natural_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/152_natural_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/152_natural_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/152_natural_raw/worker.json",
+     "original_pcm_sha256": "66249693ed3d89bba741da689731eea19d73e1da846c2073f5b381fac9a6c74d",
+     "matrix_shape": [
+      530,
+      31
+     ]
+    },
+    "tts_raw": {
+     "media": "runs/leaptalk_multiset/tts_raw/152.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/152_tts_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/152_tts_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/152_tts_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/152_tts_raw/worker.json",
+     "original_pcm_sha256": "43512f6f497cda38f6741e7b86f40200ebb28b3d7553f1561bf8fa5a5f46d024",
+     "matrix_shape": [
+      461,
+      31
+     ]
+    }
+   }
+  },
+  {
+   "sample_id": 153,
+   "source_group": "6StqiaPoS2U",
+   "real_video": "data/dataset_samples/lrs3/pretrain/6StqiaPoS2U/00001.mp4",
+   "conditions": {
+    "natural_raw": {
+     "media": "runs/leaptalk_multiset/natural_raw/153.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/153_natural_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/153_natural_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/153_natural_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/153_natural_raw/worker.json",
+     "original_pcm_sha256": "6f42b8efc6c64721ac93e2a59791ec12ee8fedca5efc33c8f28eca357d5c4b26",
+     "matrix_shape": [
+      161,
+      31
+     ]
+    },
+    "tts_raw": {
+     "media": "runs/leaptalk_multiset/tts_raw/153.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/153_tts_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/153_tts_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/153_tts_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/153_tts_raw/worker.json",
+     "original_pcm_sha256": "c6203c78875e58ba522c5fe114c8faa47d8d49ec0c78e3b9415245f46a4ac166",
+     "matrix_shape": [
+      134,
+      31
+     ]
+    }
+   }
+  },
+  {
+   "sample_id": 154,
+   "source_group": "6V6p1tgHfm0",
+   "real_video": "data/dataset_samples/lrs3/pretrain/6V6p1tgHfm0/00001.mp4",
+   "conditions": {
+    "natural_raw": {
+     "media": "runs/leaptalk_multiset/natural_raw/154.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/154_natural_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/154_natural_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/154_natural_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/154_natural_raw/worker.json",
+     "original_pcm_sha256": "da82c61a838a04853de6209deb6568d45dd98471020ea23f34c64aaa8614bbe2",
+     "matrix_shape": [
+      586,
+      31
+     ]
+    },
+    "tts_raw": {
+     "media": "runs/leaptalk_multiset/tts_raw/154.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/154_tts_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/154_tts_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/154_tts_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/154_tts_raw/worker.json",
+     "original_pcm_sha256": "c95deea87505a1a52432455aa06a022fad6f0877658c7823d3aa58165b976ab6",
+     "matrix_shape": [
+      457,
+      31
+     ]
+    }
+   }
+  },
+  {
+   "sample_id": 155,
+   "source_group": "6VWPHKABRQA",
+   "real_video": "data/dataset_samples/lrs3/pretrain/6VWPHKABRQA/00001.mp4",
+   "conditions": {
+    "natural_raw": {
+     "media": "runs/leaptalk_multiset/natural_raw/155.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/155_natural_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/155_natural_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/155_natural_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/155_natural_raw/worker.json",
+     "original_pcm_sha256": "2d1e08fe0171c0b956138f9ea2b39b39cd4dfceb5d3b65d8b693512466470349",
+     "matrix_shape": [
+      93,
+      31
+     ]
+    },
+    "tts_raw": {
+     "media": "runs/leaptalk_multiset/tts_raw/155.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/155_tts_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/155_tts_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/155_tts_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/155_tts_raw/worker.json",
+     "original_pcm_sha256": "80cdf4c1420bf39392842a8c02f1e22e2a052899ea1e83888c4102771f458384",
+     "matrix_shape": [
+      74,
+      31
+     ]
+    }
+   }
+  },
+  {
+   "sample_id": 156,
+   "source_group": "6VnKV1sr5VQ",
+   "real_video": "data/dataset_samples/lrs3/pretrain/6VnKV1sr5VQ/00001.mp4",
+   "conditions": {
+    "natural_raw": {
+     "media": "runs/leaptalk_multiset/natural_raw/156.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/156_natural_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/156_natural_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/156_natural_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/156_natural_raw/worker.json",
+     "original_pcm_sha256": "d75cea65ad4145a643d3120b2aa6ec20f8062f6f62411050bbddba97d585aabf",
+     "matrix_shape": [
+      1951,
+      31
+     ]
+    },
+    "tts_raw": {
+     "media": "runs/leaptalk_multiset/tts_raw/156.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/156_tts_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/156_tts_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/156_tts_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/156_tts_raw/worker.json",
+     "original_pcm_sha256": "8ba018e18f19542ffb25a1c1caeffc889b4f08b187bf98ede3d851cd6a6ececf",
+     "matrix_shape": [
+      1457,
+      31
+     ]
+    }
+   }
+  },
+  {
+   "sample_id": 157,
+   "source_group": "6W2dsnhC18Q",
+   "real_video": "data/dataset_samples/lrs3/pretrain/6W2dsnhC18Q/00003.mp4",
+   "conditions": {
+    "natural_raw": {
+     "media": "runs/leaptalk_multiset/natural_raw/157.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/157_natural_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/157_natural_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/157_natural_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/157_natural_raw/worker.json",
+     "original_pcm_sha256": "837c7f373cbf5c4368f0f9d3ac1ed89223d04856e49912956ca4cc1293656be0",
+     "matrix_shape": [
+      159,
+      31
+     ]
+    },
+    "tts_raw": {
+     "media": "runs/leaptalk_multiset/tts_raw/157.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/157_tts_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/157_tts_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/157_tts_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/157_tts_raw/worker.json",
+     "original_pcm_sha256": "8e2478b390440e81f420c9c94ae6534cb377fb9f9a303524b5a6e54dce61ce43",
+     "matrix_shape": [
+      155,
+      31
+     ]
+    }
+   }
+  },
+  {
+   "sample_id": 158,
+   "source_group": "6WeS1bXRBOk",
+   "real_video": "data/dataset_samples/lrs3/pretrain/6WeS1bXRBOk/00001.mp4",
+   "conditions": {
+    "natural_raw": {
+     "media": "runs/leaptalk_multiset/natural_raw/158.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/158_natural_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/158_natural_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/158_natural_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/158_natural_raw/worker.json",
+     "original_pcm_sha256": "3a231264cf395effbc395e01cc23f985101183b8ddc267db68be86371b58e255",
+     "matrix_shape": [
+      105,
+      31
+     ]
+    },
+    "tts_raw": {
+     "media": "runs/leaptalk_multiset/tts_raw/158.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/158_tts_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/158_tts_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/158_tts_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/158_tts_raw/worker.json",
+     "original_pcm_sha256": "3b207f5c092721e8f9940c64f76be24daa400c0dba7a22de3d155e11efb647c8",
+     "matrix_shape": [
+      98,
+      31
+     ]
+    }
+   }
+  },
+  {
+   "sample_id": 159,
+   "source_group": "6XNrzmh0EVs",
+   "real_video": "data/dataset_samples/lrs3/pretrain/6XNrzmh0EVs/00001.mp4",
+   "conditions": {
+    "natural_raw": {
+     "media": "runs/leaptalk_multiset/natural_raw/159.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/159_natural_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/159_natural_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/159_natural_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/159_natural_raw/worker.json",
+     "original_pcm_sha256": "be6a0c3cbe9d17e7e1859d680447a32ec7ff93d39f80950cfb6a6ed35b1cd7aa",
+     "matrix_shape": [
+      217,
+      31
+     ]
+    },
+    "tts_raw": {
+     "media": "runs/leaptalk_multiset/tts_raw/159.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/159_tts_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/159_tts_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/159_tts_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/159_tts_raw/worker.json",
+     "original_pcm_sha256": "fe51767962276c490ba31f362492bf091b09cb7ea0599b0014fb27852fcb4eec",
+     "matrix_shape": [
+      215,
+      31
+     ]
+    }
+   }
+  },
+  {
+   "sample_id": 160,
+   "source_group": "6XS8TA4RBog",
+   "real_video": "data/dataset_samples/lrs3/pretrain/6XS8TA4RBog/00001.mp4",
+   "conditions": {
+    "natural_raw": {
+     "media": "runs/leaptalk_multiset/natural_raw/160.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/160_natural_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/160_natural_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/160_natural_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/160_natural_raw/worker.json",
+     "original_pcm_sha256": "4e2fd9d454546a11a8534650f2f8a31e91c71a22c41e39568ed32621761573c0",
+     "matrix_shape": [
+      468,
+      31
+     ]
+    },
+    "tts_raw": {
+     "media": "runs/leaptalk_multiset/tts_raw/160.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/160_tts_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/160_tts_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/160_tts_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/160_tts_raw/worker.json",
+     "original_pcm_sha256": "c4dd83e2ca88f589b92f42e663be9515b8d05607ece97185bcb377239f840106",
+     "matrix_shape": [
+      419,
+      31
+     ]
+    }
+   }
+  },
+  {
+   "sample_id": 161,
+   "source_group": "6YKYo00mFAg",
+   "real_video": "data/dataset_samples/lrs3/pretrain/6YKYo00mFAg/00001.mp4",
+   "conditions": {
+    "natural_raw": {
+     "media": "runs/leaptalk_multiset/natural_raw/161.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/161_natural_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/161_natural_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/161_natural_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/161_natural_raw/worker.json",
+     "original_pcm_sha256": "3f3b464cfe311b3b2826422423a0f556307846659214595c71fde42d15974180",
+     "matrix_shape": [
+      101,
+      31
+     ]
+    },
+    "tts_raw": {
+     "media": "runs/leaptalk_multiset/tts_raw/161.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/161_tts_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/161_tts_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/161_tts_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/161_tts_raw/worker.json",
+     "original_pcm_sha256": "3c03abe391eaa3a917c435626b50b9d43346c878f5f734ddf96ccf22c679c856",
+     "matrix_shape": [
+      83,
+      31
+     ]
+    }
+   }
+  },
+  {
+   "sample_id": 162,
+   "source_group": "6ZiN9ZJT294",
+   "real_video": "data/dataset_samples/lrs3/pretrain/6ZiN9ZJT294/00001.mp4",
+   "conditions": {
+    "natural_raw": {
+     "media": "runs/leaptalk_multiset/natural_raw/162.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/162_natural_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/162_natural_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/162_natural_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/162_natural_raw/worker.json",
+     "original_pcm_sha256": "888b88776c4bf33c1012475df4015b91d145303ad83579730bd7ad1ec0630b87",
+     "matrix_shape": [
+      337,
+      31
+     ]
+    },
+    "tts_raw": {
+     "media": "runs/leaptalk_multiset/tts_raw/162.mp4",
+     "crop": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/162_tts_raw/crop.avi",
+     "matrix": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/162_tts_raw.npy",
+     "crop_selection": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/162_tts_raw/crop_selection.json",
+     "worker_result": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/162_tts_raw/worker.json",
+     "original_pcm_sha256": "611d88b7dede6e4790a4b7e0ffd29de0670e9cba3d032d646d752b5eff5e8f10",
+     "matrix_shape": [
+      344,
+      31
+     ]
+    }
+   }
+  }
+ ],
+ "files": [
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/report.md",
+   "sha256": "243a57160203559eab2f33adeb0eabab8f5fdc658d1fc19b4662816047dde4de",
+   "bytes": 4230,
+   "role": "parent_evidence"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/final.json",
+   "sha256": "5a6136e086205ab0dc9915aa3f6554b6719cdebb2f975d725a0bf0a2248e0d40",
+   "bytes": 5073,
+   "role": "parent_evidence"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/validation.json",
+   "sha256": "c67a80fb09290f51fdd5192eb38650d1504fc2764f5077aacc63b2b639f273b4",
+   "bytes": 771,
+   "role": "parent_evidence"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/00_audit/cohort.json",
+   "sha256": "e2b511c3ef9f500739a37232bac139c3110e6ec55b40f1138240098ae22772eb",
+   "bytes": 21438,
+   "role": "parent_evidence"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/manifest.json",
+   "sha256": "11f4bca447c02b54f83a88db4b9de3fcb99df5be6810c535ff0a3fb10434f4fc",
+   "bytes": 459174,
+   "role": "parent_evidence"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/03_analysis/summary.json",
+   "sha256": "8a7c9e1903399ee1d26c5d7fa7ba9b9a71327842500129244c01f4769e00ce31",
+   "bytes": 25098,
+   "role": "parent_evidence"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/03_analysis/endpoints.csv",
+   "sha256": "663f7fe67f50956d0d46dba62232e0e6800a9ef54ee539cdd83b96b3fa1c4b4e",
+   "bytes": 161855,
+   "role": "parent_evidence"
+  },
+  {
+   "path": "data/dataset_samples/video_manifest_250.json",
+   "sha256": "a0ac3e6b6a678fe12963746c238327a90ed0075a0e79049e215a833685805ac0",
+   "bytes": 60712,
+   "role": "original_cohort"
+  },
+  {
+   "path": "third_party/syncnet_python/data/syncnet_v2.model",
+   "sha256": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442",
+   "bytes": 54573114,
+   "role": "syncnet_checkpoint"
+  },
+  {
+   "path": "scripts/experiments/lrs3_tts_gain_mechanism/syncnet_worker.py",
+   "sha256": "3ac90e86af946da57a207f5482725d6a360fdc05a633fd5a65151d8ed556a716",
+   "bytes": 4626,
+   "role": "reference_implementation"
+  },
+  {
+   "path": "data/dataset_samples/lrs3/pretrain/6ORDQFh0Byw/00001.mp4",
+   "sha256": "c3b0b18cdcb17f18df8a0ce377b6bf02b4620ad68dd25f5dd798048d387553f3",
+   "bytes": 1742005,
+   "role": "real_source_video"
+  },
+  {
+   "path": "runs/leaptalk_multiset/natural_raw/151.mp4",
+   "sha256": "ebdc7e73be0d6eaef36f8052739d72f8a01c59b810ce764f2f95dcaf8fcade70",
+   "bytes": 779904,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/151_natural_raw/crop.avi",
+   "sha256": "e845429cecec06dec04c8416fdd08504d9dae6fd3370c279511af4be1473ae8e",
+   "bytes": 943192,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/151_natural_raw.npy",
+   "sha256": "fd0e57cd4e77d2d1c7193b708be3a620b2a2c062840b9241ed3469e09756afe1",
+   "bytes": 87672,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/151_natural_raw/crop_selection.json",
+   "sha256": "a8bdb8cb9b87cee52b45d3933613bf7013d8e870e70aa159d03a2c1114173260",
+   "bytes": 9796,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/151_natural_raw/worker.json",
+   "sha256": "786b06f5675c8adad4f015ed51f8aa8d40f0ea927f1b77d9d81a8f873b6831e5",
+   "bytes": 1500,
+   "role": "worker_result"
+  },
+  {
+   "path": "runs/leaptalk_multiset/tts_raw/151.mp4",
+   "sha256": "32fa292a774c03d1cf49ec9751ad4451c5b0e6b010030cbd66b6bcb340cbfd6d",
+   "bytes": 659046,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/151_tts_raw/crop.avi",
+   "sha256": "bd1a547a19e9e0a0bceaeac7b4b5103de1f76104efec92e823b19ec2fe243153",
+   "bytes": 794950,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/151_tts_raw.npy",
+   "sha256": "83b13d4f47be1f75e4af26b15a75d617a9cc0b0cdc37394e72645bb5e10a9376",
+   "bytes": 74776,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/151_tts_raw/crop_selection.json",
+   "sha256": "1776aaf80e3c23da5f5992d2e89c0305112b6c6792e8c5d304a561d3cf792b57",
+   "bytes": 8628,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/151_tts_raw/worker.json",
+   "sha256": "b803d9414ffff217106c66b0fb7ea9c1835acdec34e12f64dbe7e344e61b956f",
+   "bytes": 1487,
+   "role": "worker_result"
+  },
+  {
+   "path": "data/dataset_samples/lrs3/pretrain/6SdtkXAQq3k/00001.mp4",
+   "sha256": "5fa145a57a68cbbf3d03bcaeb5c09e3aa8d61c389a658f97296421462f8284d3",
+   "bytes": 2247772,
+   "role": "real_source_video"
+  },
+  {
+   "path": "runs/leaptalk_multiset/natural_raw/152.mp4",
+   "sha256": "0f49a7c95faeebeac912ca7f46dd59ea1474e0f4214aaee3567ef8fa2d57ad21",
+   "bytes": 1120273,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/152_natural_raw/crop.avi",
+   "sha256": "7377119905a5a51dba07c290f88d354266df1f05545acf232c480140d508b938",
+   "bytes": 1524380,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/152_natural_raw.npy",
+   "sha256": "0bf384136c570459f3419f60eea6f0fe3f5b77c2384c7f01b97fd4bf94ed09df",
+   "bytes": 131568,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/152_natural_raw/crop_selection.json",
+   "sha256": "1137e408718a58cee33b4fe06ea2c80b68fdeb7cee892afe4f07822df57cfccb",
+   "bytes": 14044,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/152_natural_raw/worker.json",
+   "sha256": "a0bc141ccb3242cb80a965cd941053024645330ad3d550b60bf9942aecd9c9ec",
+   "bytes": 1500,
+   "role": "worker_result"
+  },
+  {
+   "path": "runs/leaptalk_multiset/tts_raw/152.mp4",
+   "sha256": "0f54e466fdb06a7cbf34694f93b0a85b13ce7cf7e2cdd4b44ac8fc2705d3a2af",
+   "bytes": 1057721,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/152_tts_raw/crop.avi",
+   "sha256": "9bbf68b6bf3969324153684b4b1750bcea4293b2c9a4b6300b8bdc88ece4eaa0",
+   "bytes": 1405374,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/152_tts_raw.npy",
+   "sha256": "eb41198c829753a334facc1c7acd8e7fd504b01ef55d3485ca839a9700d989cd",
+   "bytes": 114456,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/152_tts_raw/crop_selection.json",
+   "sha256": "a099827ccd6ed1823ad02eccae7eaa3399acd92b6ace7ea0ab0d479dd2ec98d3",
+   "bytes": 12372,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/152_tts_raw/worker.json",
+   "sha256": "e70a45eb08189d54c326116742165f54d4117290cf631bb769b8f01d6ed5e3a3",
+   "bytes": 1487,
+   "role": "worker_result"
+  },
+  {
+   "path": "data/dataset_samples/lrs3/pretrain/6StqiaPoS2U/00001.mp4",
+   "sha256": "b058c6b9a43a7ffe0dab82ed0a3796e9167d7308d3b5dfea2d91e14009671c75",
+   "bytes": 414508,
+   "role": "real_source_video"
+  },
+  {
+   "path": "runs/leaptalk_multiset/natural_raw/153.mp4",
+   "sha256": "936714cb56ef96ca6305b32177521494c8d59944a08c80b44bbed3d15f2972a1",
+   "bytes": 219335,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/153_natural_raw/crop.avi",
+   "sha256": "266707c9ab9a40fb8ede5eb34e922be0a925a522f7354dfe00cbd46aeb80a293",
+   "bytes": 348218,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/153_natural_raw.npy",
+   "sha256": "8982f8450328460d138e1ecd2da0ec32ed759ede9fb4aa7c02041dca3add79d4",
+   "bytes": 40056,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/153_natural_raw/crop_selection.json",
+   "sha256": "2d9805532bd881247582d8452ad070c27c7cf1b81ae2348eceaade3975004863",
+   "bytes": 5188,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/153_natural_raw/worker.json",
+   "sha256": "541066a2d5cb4115804933df86e1ed28e9f42aad2e550ce8e65d9b863bc68a75",
+   "bytes": 1499,
+   "role": "worker_result"
+  },
+  {
+   "path": "runs/leaptalk_multiset/tts_raw/153.mp4",
+   "sha256": "49fab84555bda0e493fbe9b45562909aba54b703e9b869619365fecdbf7e5ad1",
+   "bytes": 188526,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/153_tts_raw/crop.avi",
+   "sha256": "43e8d8311baa0e87f49ec4e829e63ed94d6e98464a25e4af42938628b5d1af58",
+   "bytes": 290140,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/153_tts_raw.npy",
+   "sha256": "2578d7c4160d006504f21873f4e70b89b036335ee0e8eb46ff19b2b4aba32f8e",
+   "bytes": 33360,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/153_tts_raw/crop_selection.json",
+   "sha256": "a4e9f9c7c6c6d055a2056203834cc5f5afadc0d7c4c92a9e6b53b1f1c82d1424",
+   "bytes": 4548,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/153_tts_raw/worker.json",
+   "sha256": "34fa21c02cd202e4f36c5f9f14eee094f5e4a19d4a2bf64b0b31bf1f37020a5c",
+   "bytes": 1487,
+   "role": "worker_result"
+  },
+  {
+   "path": "data/dataset_samples/lrs3/pretrain/6V6p1tgHfm0/00001.mp4",
+   "sha256": "ae31c34e9775c0438a6cbba41cb48aff275691de0c748585437331830197afc5",
+   "bytes": 2915269,
+   "role": "real_source_video"
+  },
+  {
+   "path": "runs/leaptalk_multiset/natural_raw/154.mp4",
+   "sha256": "249eb3efd198410a69d5b3e860f8ce753c0f0ed20d539a7ba48a3c70e267e709",
+   "bytes": 1190234,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/154_natural_raw/crop.avi",
+   "sha256": "218f3aa37ff5a9a1531ca9d623aa8e527a2dae7a55d096580917f46e7e7bc35e",
+   "bytes": 1489564,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/154_natural_raw.npy",
+   "sha256": "4104cfc2ce2daadf32292590ca30fb7afc4fc78dd1becf30d891f9888ec1d45a",
+   "bytes": 145456,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/154_natural_raw/crop_selection.json",
+   "sha256": "1b2b8d8b282623a337d60c07db7b617fcc9b5be2a9cd2e34ac65b2cd1cc256b9",
+   "bytes": 15388,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/154_natural_raw/worker.json",
+   "sha256": "1babad76209f223dbd1ea24f3d9a67416a4e2e3eb0ff9a66a72bda89d6044253",
+   "bytes": 1500,
+   "role": "worker_result"
+  },
+  {
+   "path": "runs/leaptalk_multiset/tts_raw/154.mp4",
+   "sha256": "2645018bcec0c5d00b4fbba63bdb6e77e50f5194bc73d144d7c37ed35efede7e",
+   "bytes": 987081,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/154_tts_raw/crop.avi",
+   "sha256": "6cd9b56306a92f182837528587ba92bf72f454f34e9c0f6fa289c63fb979da7d",
+   "bytes": 1198798,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/154_tts_raw.npy",
+   "sha256": "3c7fc8d9e5410a3813e0032ab9e3ce305085185a8e0544558dee4463b46fe006",
+   "bytes": 113464,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/154_tts_raw/crop_selection.json",
+   "sha256": "efc81784694447589923c66efc6a93cebf4fb4352da79ff6f610583075dfff6f",
+   "bytes": 12276,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/154_tts_raw/worker.json",
+   "sha256": "b7e913fa1676dfd97cb0fe4e4d671bd42b37e8a61c3189b5d5fa7bc2cb23877a",
+   "bytes": 1487,
+   "role": "worker_result"
+  },
+  {
+   "path": "data/dataset_samples/lrs3/pretrain/6VWPHKABRQA/00001.mp4",
+   "sha256": "5a212bbf118a5c0d298dcc3b17da2f3fb24ab8d079bad48f92cce0d74f898081",
+   "bytes": 345102,
+   "role": "real_source_video"
+  },
+  {
+   "path": "runs/leaptalk_multiset/natural_raw/155.mp4",
+   "sha256": "e4d9c87f1d5ea62db47538345f00ec46e4e94dd6f7679d13d5b0d5cd8e9fb5a9",
+   "bytes": 243960,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/155_natural_raw/crop.avi",
+   "sha256": "1feab18812af17d69f91ad3544ad6abbf1aa0b111a77754a57e13b1eeda329d9",
+   "bytes": 280392,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/155_natural_raw.npy",
+   "sha256": "5a352ba0affaa85051251efb914fa48743f79b30c6a39d9a318e9d83febd542a",
+   "bytes": 23192,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/155_natural_raw/crop_selection.json",
+   "sha256": "cdd92030150502745f26dd75ff15b888fcfc98f6257fd9618ea391129a306725",
+   "bytes": 3556,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/155_natural_raw/worker.json",
+   "sha256": "1a36ef658919e67c908106c698981df8b25ce229f5b50876ff0e2d8b710be9ed",
+   "bytes": 1499,
+   "role": "worker_result"
+  },
+  {
+   "path": "runs/leaptalk_multiset/tts_raw/155.mp4",
+   "sha256": "00f349aaf186eb60fce0c5d4842ef57544250a465a632f62bad055435fa542fe",
+   "bytes": 191439,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/155_tts_raw/crop.avi",
+   "sha256": "bcc742536cb49660bb9f8f3703788d3e07c5eb981838d32bad24cc2214082989",
+   "bytes": 226474,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/155_tts_raw.npy",
+   "sha256": "76b11580729968bf7d6f92ffa7132cb8ec42be97b6c105b13f50c5ee07172cd5",
+   "bytes": 18480,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/155_tts_raw/crop_selection.json",
+   "sha256": "a934dc3b38445752ec08882a778dc013dbdcad3204817601308adb13730ddd92",
+   "bytes": 3144,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/155_tts_raw/worker.json",
+   "sha256": "4d901b8953f66f592607a6b899d9ad2d1f1397d9e0c26b90081736049fc790cd",
+   "bytes": 1486,
+   "role": "worker_result"
+  },
+  {
+   "path": "data/dataset_samples/lrs3/pretrain/6VnKV1sr5VQ/00001.mp4",
+   "sha256": "6f2eb8894805f7d61cf307b59e1715bec5a84f8de91dfc750b9e6ebaf46b7f5e",
+   "bytes": 8244325,
+   "role": "real_source_video"
+  },
+  {
+   "path": "runs/leaptalk_multiset/natural_raw/156.mp4",
+   "sha256": "02ba3e2a94c4b871ee9cfe52d38ce003d31446372c5bcafbe374c3274871791c",
+   "bytes": 4047280,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/156_natural_raw/crop.avi",
+   "sha256": "961128377d239822f3d40e4d1e431fee93187c7d154e9db84204793b1a1d287e",
+   "bytes": 5086486,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/156_natural_raw.npy",
+   "sha256": "6c283d0139ac81481dc57895957d11d038274e3484217597b0fdb9e0106e59bf",
+   "bytes": 483976,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/156_natural_raw/crop_selection.json",
+   "sha256": "b5b900a4defaba72193f59c89d9ef30babb9fa142190c4358946f982074956a5",
+   "bytes": 50064,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/156_natural_raw/worker.json",
+   "sha256": "b86e32dcb5b9fbcdec86c46f1144f9303609a53625e19cefa97cfe9e0d6e6689",
+   "bytes": 1501,
+   "role": "worker_result"
+  },
+  {
+   "path": "runs/leaptalk_multiset/tts_raw/156.mp4",
+   "sha256": "7f7bbf896cd6239ac0e152c20e21be6e54822823d407a1e22e44119ce4596764",
+   "bytes": 3122917,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/156_tts_raw/crop.avi",
+   "sha256": "7538d1a25f3c82016b3354686443e1e3bd1d0d4114159401c58eefa179430a32",
+   "bytes": 3818104,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/156_tts_raw.npy",
+   "sha256": "762098b23d54bf6d080a13bc8c561fb716dc38d1ce498629518871afea0e8d0e",
+   "bytes": 361464,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/156_tts_raw/crop_selection.json",
+   "sha256": "925650a8750be84766d0203957299def9422c75cf99de8e6f1b86707da639903",
+   "bytes": 37204,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/156_tts_raw/worker.json",
+   "sha256": "c2356b7db9580cac955e2748eb85b886d28bd7d9dfcb60631c53984c71f5ae26",
+   "bytes": 1488,
+   "role": "worker_result"
+  },
+  {
+   "path": "data/dataset_samples/lrs3/pretrain/6W2dsnhC18Q/00003.mp4",
+   "sha256": "84b5c76a557fe1ffb7f210ba3d5a99366a9aa79e5ab0f79aeb293590a45417dd",
+   "bytes": 691098,
+   "role": "real_source_video"
+  },
+  {
+   "path": "runs/leaptalk_multiset/natural_raw/157.mp4",
+   "sha256": "7f13cc32ea645925a6200d723b2e7ec7608d83192b4697cd2a30d921ba5a83d7",
+   "bytes": 392768,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/157_natural_raw/crop.avi",
+   "sha256": "f55d9861730cda0cfb60500429e3db64b8584948fe5436a07628ff0416e66c71",
+   "bytes": 430236,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/157_natural_raw.npy",
+   "sha256": "72820988625f4d9c765c0d34783b48f2ae15dc5cf9c41a4b16a69c82192d7139",
+   "bytes": 39560,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/157_natural_raw/crop_selection.json",
+   "sha256": "5e80605792292e32562b935ea55f7b18204438e9fc9cd25199a943f63de35f3c",
+   "bytes": 5140,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/157_natural_raw/worker.json",
+   "sha256": "19c9294441ebe67cda62123104704a7a303d5b60e022588efb6a7adb4470a30d",
+   "bytes": 1499,
+   "role": "worker_result"
+  },
+  {
+   "path": "runs/leaptalk_multiset/tts_raw/157.mp4",
+   "sha256": "1afa83b767b14d4ffd09910ebda1653e2ffae703280211c9137da0c02ab68c2f",
+   "bytes": 403147,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/157_tts_raw/crop.avi",
+   "sha256": "bd302d4e0672ff3b80656daf6c59028f27a86107201a4a9a60f3a1c9787b2c23",
+   "bytes": 423784,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/157_tts_raw.npy",
+   "sha256": "e6be1da23f414458582c02e23d62de5a4bbcca25072cf9694176a3caf346361f",
+   "bytes": 38568,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/157_tts_raw/crop_selection.json",
+   "sha256": "9a15f786f20d9f78f3a50dbfbaf0e50da58df94144650aebec9e01afeda3add8",
+   "bytes": 5028,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/157_tts_raw/worker.json",
+   "sha256": "5110175dff0ab207382d9e361cd5738e5fd3344629e2e58b0054ea95d3ccc7ec",
+   "bytes": 1487,
+   "role": "worker_result"
+  },
+  {
+   "path": "data/dataset_samples/lrs3/pretrain/6WeS1bXRBOk/00001.mp4",
+   "sha256": "93019b8841589cd358b35208f580ee811f0913f2b783c35ecc6f04be3eb53d69",
+   "bytes": 341703,
+   "role": "real_source_video"
+  },
+  {
+   "path": "runs/leaptalk_multiset/natural_raw/158.mp4",
+   "sha256": "c88dfa5a4610e95c610016e77c8f2c17665eb5e703fde0365b90f9362dcf8e67",
+   "bytes": 268040,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/158_natural_raw/crop.avi",
+   "sha256": "7ae0b46a942fcfdf90146e30b97348756bd4d6989ac44098c9758d3b6a8d5787",
+   "bytes": 293768,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/158_natural_raw.npy",
+   "sha256": "6e9e11543706040c62c54a49829d3c3e3efb35bea959c4f13f33fbee9e5efb51",
+   "bytes": 26168,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/158_natural_raw/crop_selection.json",
+   "sha256": "a821fd0173911c8c6e8006daf22514d1430622a66f45d0ddbe55374ede96d9dd",
+   "bytes": 3844,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/158_natural_raw/worker.json",
+   "sha256": "aeac4143b3a36739634a5f61ba9eec3d560e4f693d0834e2d10cd94cd40650ce",
+   "bytes": 1500,
+   "role": "worker_result"
+  },
+  {
+   "path": "runs/leaptalk_multiset/tts_raw/158.mp4",
+   "sha256": "a2b7f0725defc9e94f48bb3084775e1ed12628c7a7e182b136a1605d77905eca",
+   "bytes": 261181,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/158_tts_raw/crop.avi",
+   "sha256": "02d56808ce9810f3995f33b827ade227f8b98d2b6a605c2ceb5a4b5ec01408ff",
+   "bytes": 283204,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/158_tts_raw.npy",
+   "sha256": "c557c17586b248020fb3c737348ef63a192bc9ec362364525ecd269b82f4f39a",
+   "bytes": 24432,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/158_tts_raw/crop_selection.json",
+   "sha256": "f010ddd7f0d63b6bdca894a3963c4d0cb5db7b635567d93698828e86d1437f61",
+   "bytes": 3684,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/158_tts_raw/worker.json",
+   "sha256": "92d785106159017d1e7ada7af65746c76de08a496b7af6278626c537fcf7268e",
+   "bytes": 1486,
+   "role": "worker_result"
+  },
+  {
+   "path": "data/dataset_samples/lrs3/pretrain/6XNrzmh0EVs/00001.mp4",
+   "sha256": "940e60329daea4f38dbb43445fe33996fcef4aea1b00fe5344f87b52013c7d9b",
+   "bytes": 708283,
+   "role": "real_source_video"
+  },
+  {
+   "path": "runs/leaptalk_multiset/natural_raw/159.mp4",
+   "sha256": "f40d51abcd485fcf3818900aeb9386e35f0d8ea2b5f2aea1f6a350ae63bca48f",
+   "bytes": 486046,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/159_natural_raw/crop.avi",
+   "sha256": "8dfc97dd8b61e049f53370b26a50525092488c1ec99fcb648180f70b7c8a7607",
+   "bytes": 567208,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/159_natural_raw.npy",
+   "sha256": "6a932a9bff64e4e52b673c32db2260bfcc41024811fd06700f0319a0dfffab27",
+   "bytes": 53944,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/159_natural_raw/crop_selection.json",
+   "sha256": "55556ff0b370e3972b6b47297f02e0c6ab8388c47931832f7aa3a0ea50ade900",
+   "bytes": 6532,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/159_natural_raw/worker.json",
+   "sha256": "3443a73df76332218ca211204e330d6f4463d4f81518c8c783d78abdca832f8d",
+   "bytes": 1500,
+   "role": "worker_result"
+  },
+  {
+   "path": "runs/leaptalk_multiset/tts_raw/159.mp4",
+   "sha256": "edf2d57986afd3810dc88e8470e36cd5869fe310466380c6046809bc5e81043b",
+   "bytes": 479395,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/159_tts_raw/crop.avi",
+   "sha256": "377d8d2d63e028a66bc4f54bbb6e4c3745bc19e87d597f0cdb9d1bc0c5aa205c",
+   "bytes": 579496,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/159_tts_raw.npy",
+   "sha256": "ec364fd32f2fcfba414cfead56ee0f1e763a0a8320aee4b286587f57d6c495f0",
+   "bytes": 53448,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/159_tts_raw/crop_selection.json",
+   "sha256": "15cc91d7c1e334157735b29759e73c71df1289031585ea19ea78862000c780e7",
+   "bytes": 6468,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/159_tts_raw/worker.json",
+   "sha256": "81a41ee80a2af41adaee3deb5961b5ba88155edffe3870b3b1fedfeb2dce3cc1",
+   "bytes": 1487,
+   "role": "worker_result"
+  },
+  {
+   "path": "data/dataset_samples/lrs3/pretrain/6XS8TA4RBog/00001.mp4",
+   "sha256": "c714a3e4f0f4895915c2d37bd65775e8450f71d7bb79c78dfd194ee043c39a63",
+   "bytes": 2287209,
+   "role": "real_source_video"
+  },
+  {
+   "path": "runs/leaptalk_multiset/natural_raw/160.mp4",
+   "sha256": "1c014b1660f11d46719389e821e4b67824ceeb82fe0e2ce89453b0e6a140ced7",
+   "bytes": 1364591,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/160_natural_raw/crop.avi",
+   "sha256": "e26beb26080b5404f2cf8cbfa66572b82d6bb326bff880803e7447706640b790",
+   "bytes": 1335900,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/160_natural_raw.npy",
+   "sha256": "d7fb056dd2d660f5db8a72b884152e275a44667a2d8e0bc01cc1e53c70c3b26f",
+   "bytes": 116192,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/160_natural_raw/crop_selection.json",
+   "sha256": "07f14368f85accd6d918efba82aea9b5fdba3104240d83a4bd02e6ccd64a899d",
+   "bytes": 12556,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/160_natural_raw/worker.json",
+   "sha256": "d234145dc227c47b99d121a77ee663b219936055a70b3afeacb18b5159cf5797",
+   "bytes": 1500,
+   "role": "worker_result"
+  },
+  {
+   "path": "runs/leaptalk_multiset/tts_raw/160.mp4",
+   "sha256": "42cbf8c0413c50adba4f3a4145f12545406da50302b573a2e8c4e48b8face101",
+   "bytes": 1241208,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/160_tts_raw/crop.avi",
+   "sha256": "908c4a70676d7d46397af39ead67562e7b40a6a0757090fa1b7f5ad2327009f5",
+   "bytes": 1203392,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/160_tts_raw.npy",
+   "sha256": "7b0ed7eb36702b68933c7f1ee500ef27057ac4f11c183e27fcea3ecf4efc2407",
+   "bytes": 104040,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/160_tts_raw/crop_selection.json",
+   "sha256": "88df6f1aaba833c8a7e91a2024d149e730dec1aa3be2799f9304bab0b66e772d",
+   "bytes": 11388,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/160_tts_raw/worker.json",
+   "sha256": "5f301997d18ed1b15d2dd149767004cc35d9a62118237678c7fdd678d598e91d",
+   "bytes": 1487,
+   "role": "worker_result"
+  },
+  {
+   "path": "data/dataset_samples/lrs3/pretrain/6YKYo00mFAg/00001.mp4",
+   "sha256": "ad418f6273467471468d0e859afd5a15fcc613153ede1244beaf721df888cca6",
+   "bytes": 433274,
+   "role": "real_source_video"
+  },
+  {
+   "path": "runs/leaptalk_multiset/natural_raw/161.mp4",
+   "sha256": "309bc7c69717b5e4adf67e9a00bb196d834209e8ac765065aa5b1c51dcd47e25",
+   "bytes": 156293,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/161_natural_raw/crop.avi",
+   "sha256": "f145927140aeb62456175873627535e8ad61fd438dcb91a189027e2e3adeffe2",
+   "bytes": 259960,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/161_natural_raw.npy",
+   "sha256": "503a262613cf445bc44c9690b5c4d5cd0150a54d8af6ccaf58e4da01d2f17d02",
+   "bytes": 25176,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/161_natural_raw/crop_selection.json",
+   "sha256": "286eea06aeebeb4ea73801429774ea4904d025703ff178b71e2727deedbe011c",
+   "bytes": 3748,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/161_natural_raw/worker.json",
+   "sha256": "d3e310d2893453e7d6d6e46be3b903bf0e9d5845aad871d3cf4d7674f1736893",
+   "bytes": 1500,
+   "role": "worker_result"
+  },
+  {
+   "path": "runs/leaptalk_multiset/tts_raw/161.mp4",
+   "sha256": "513def3e1eaaaa73c8118e57dfaa76b4b08bfef3491ca0eb64d19f97f6936d9b",
+   "bytes": 152902,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/161_tts_raw/crop.avi",
+   "sha256": "ac5c27d0896c6e071882817b5d2e92350187ad017ba9d39ec40904ea338dc532",
+   "bytes": 224776,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/161_tts_raw.npy",
+   "sha256": "1f4cd484dc0831b921342e0f05745cbb95df8be90c045ba3e6e85c71a93fc58f",
+   "bytes": 20712,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/161_tts_raw/crop_selection.json",
+   "sha256": "f4b37951ff3b29cb814f3969306d16a97675e6970e2c6046463edbc09f75a54b",
+   "bytes": 3320,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/161_tts_raw/worker.json",
+   "sha256": "501be03ef8acb997a226de5242ac35e13f43b7a2bebb884d8ebac356802b24ae",
+   "bytes": 1487,
+   "role": "worker_result"
+  },
+  {
+   "path": "data/dataset_samples/lrs3/pretrain/6ZiN9ZJT294/00001.mp4",
+   "sha256": "f0a9e471870ff883db1bbb1f58c2b826595f1e69ad084a8b90a6fe5ac11cddda",
+   "bytes": 836386,
+   "role": "real_source_video"
+  },
+  {
+   "path": "runs/leaptalk_multiset/natural_raw/162.mp4",
+   "sha256": "8f29e81045582aaea95f9bd24651745f86085b8efa7f28fe2ba6571965419234",
+   "bytes": 887960,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/162_natural_raw/crop.avi",
+   "sha256": "e33f6a6fe653c934be330081f1a6524fa19e413d833e798e0f2d92c465f8b9e9",
+   "bytes": 963526,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/162_natural_raw.npy",
+   "sha256": "a62edfb209504f9e8b674d1a9847b9e7ad51536b352752de3ff0fb6c494644bd",
+   "bytes": 83704,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/162_natural_raw/crop_selection.json",
+   "sha256": "2c05b4f4e959963885c89fa948426bf32229620b093fd5c949e955e7091bc03f",
+   "bytes": 9412,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/162_natural_raw/worker.json",
+   "sha256": "48172210e424aa3705091314637d47d03c90e2ab1904c9cb5c6bd57ec3cd9141",
+   "bytes": 1499,
+   "role": "worker_result"
+  },
+  {
+   "path": "runs/leaptalk_multiset/tts_raw/162.mp4",
+   "sha256": "3441f7114750a027bce79183f1de76c71fd424f01de73359ba7f4ce2eb9eaa03",
+   "bytes": 934108,
+   "role": "media"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/162_tts_raw/crop.avi",
+   "sha256": "6d5f12c4d4dd9e51ac86a47d19bf7894e66824ecfbbd6e79456d037ff537ca55",
+   "bytes": 1015386,
+   "role": "crop"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/matrices/162_tts_raw.npy",
+   "sha256": "eee06ce1cd33e1176627a5e94c59d2d050cc55a65735edc8715cee886268c9fc",
+   "bytes": 85440,
+   "role": "matrix"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/162_tts_raw/crop_selection.json",
+   "sha256": "476c325597c71aa20ca668de078ddf59b3400755bdaadbb44334ff670095eebc",
+   "bytes": 9588,
+   "role": "crop_selection"
+  },
+  {
+   "path": "runs/lrs3_tts_gain_mechanism_review_v15/02_curves/cells/162_tts_raw/worker.json",
+   "sha256": "5a862f60433c23714668b18471f0b54416ffd41a25b233252c488d38afe546f3",
+   "bytes": 1488,
+   "role": "worker_result"
+  }
+ ],
+ "planned_counts": {
+  "a_scientific_score_cells": 180,
+  "a_control_score_cells": 18,
+  "a_wrong_source_feature_pairs": 396,
+  "b_scientific_videos": 144,
+  "b_repeat_videos": 4,
+  "b_scientific_score_cells": 336,
+  "b_control_score_cells": 8,
+  "human_sync_pairs": 96,
+  "human_quality_pairs": 48
+ },
+ "primary_contrasts": [
+  "A_N_DENOISE_E",
+  "A_T_NOISE_E_HARM",
+  "A_R_DENOISE_E",
+  "B_N_DENOISE_G",
+  "B_T_NOISE_G_HARM",
+  "B_NATIVE_FRESH"
+ ],
+ "generation_seeds": [
+  42,
+  43
+ ],
+ "bootstrap": {
+  "seed": 20260915,
+  "draws": 20000,
+  "groups": 12,
+  "family_size": 6
+ },
+ "not_verified": [
+  "Runnable LeapTalk deployment and checkpoint recovery",
+  "Actual historical TTS generation metadata beyond BM provenance",
+  "Human quality or synchrony labels",
+  "Full model training-data membership"
+ ]
+}

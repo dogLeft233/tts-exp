@@ -48,6 +48,11 @@ def _token_label(token: Mapping[str, Any]) -> tuple[str, bool]:
     return (SILENCE_LABEL if silence else raw.casefold()), silence
 
 
+def _is_true_silence(token: Mapping[str, Any]) -> bool:
+    """Exclude MFA's unknown-speech marker from silence repair decisions."""
+    return not bool(token.get("is_unknown_speech")) and _token_label(token)[1]
+
+
 def frame_owners(
     frame_count: int,
     tokens: Sequence[Mapping[str, Any]],
@@ -233,6 +238,25 @@ def matched_span_map(
     }
 
 
+def unmatched_silence_intervals(
+    natural_tokens: Sequence[Mapping[str, Any]],
+    tts_tokens: Sequence[Mapping[str, Any]],
+    *,
+    min_duration_s: float = 0.1,
+) -> list[tuple[float, float]]:
+    """Natural silence spans with no phone-equal TTS span, in natural time."""
+    if min_duration_s < 0:
+        raise ValueError("min_duration_s must be non-negative")
+    mapping, _ = matched_span_map(natural_tokens, tts_tokens)
+    return [
+        (float(token["start_s"]), float(token["end_s"]))
+        for index, token in enumerate(natural_tokens)
+        if index not in mapping
+        and _is_true_silence(token)
+        and float(token["end_s"]) - float(token["start_s"]) >= min_duration_s
+    ]
+
+
 def mfa_linear_target(
     natural_frame_count: int,
     tts_features: Tensor,
@@ -241,32 +265,65 @@ def mfa_linear_target(
     *,
     frame_stride_samples: int = 320,
     sample_rate: int = 16_000,
+    silence_fallback: str = "global",
 ) -> tuple[Tensor, dict[str, Any]]:
-    """Interpolate corresponding TTS token trajectories onto the natural frame grid."""
+    """Interpolate TTS phones on the natural grid, with an optional silence repair.
+
+    ``global`` retains the historical mapping for reproducibility. ``tts_silence``
+    draws unmatched natural silence from the longest TTS silence span with feature
+    frames; unmatched speech still uses the historical global fallback.
+    """
+    if silence_fallback not in {"global", "tts_silence"}:
+        raise ValueError(f"unsupported silence fallback: {silence_fallback}")
     tts_features = torch.as_tensor(tts_features, dtype=torch.float32)
     natural_owners = frame_owners(
         natural_frame_count, natural_tokens,
         frame_stride_samples=frame_stride_samples, sample_rate=sample_rate,
     )
     # Validate complete TTS alignment coverage independently of interpolation.
-    frame_owners(
+    tts_owners = frame_owners(
         tts_features.shape[0], tts_tokens,
         frame_stride_samples=frame_stride_samples, sample_rate=sample_rate,
     )
     span_mapping, match_stats = matched_span_map(natural_tokens, tts_tokens)
+    silence_span_frames: dict[int, list[int]] = {}
+    for index, owner in enumerate(tts_owners):
+        if _is_true_silence(tts_tokens[owner.span_index]):
+            silence_span_frames.setdefault(owner.span_index, []).append(index)
+    silence_frames = []
+    if silence_fallback == "tts_silence" and silence_span_frames:
+        longest_span = max(
+            silence_span_frames,
+            key=lambda index: (
+                float(tts_tokens[index]["end_s"]) - float(tts_tokens[index]["start_s"]),
+                -index,
+            ),
+        )
+        silence_frames = silence_span_frames[longest_span]
 
     rows: list[Tensor] = []
     matched_frames = 0
     unmatched_frames = 0
+    silence_fallback_frames = 0
+    silence_without_tts_frames = 0
     for owner in natural_owners:
         tts_span_index = span_mapping.get(owner.span_index)
         if tts_span_index is None:
-            # No phone-equal target exists. Use a global-relative TTS frame as an
-            # explicit TTS-only fallback; never inject a natural feature silently.
-            global_position = owner.relative_position if natural_frame_count == 1 else (
-                len(rows) / (natural_frame_count - 1)
-            )
-            tts_position = global_position * (tts_features.shape[0] - 1)
+            if _is_true_silence(natural_tokens[owner.span_index]) and silence_frames:
+                # Match the experimentally tested S arm: traverse the longest
+                # available TTS silence instead of filling a pause with speech.
+                silence_index = min(len(silence_frames) - 1, int(owner.relative_position * len(silence_frames)))
+                tts_position = float(silence_frames[silence_index])
+                silence_fallback_frames += 1
+            else:
+                # No phone-equal target exists. Keep the historical TTS-only
+                # fallback for speech and when TTS has no silence feature frames.
+                global_position = owner.relative_position if natural_frame_count == 1 else (
+                    len(rows) / (natural_frame_count - 1)
+                )
+                tts_position = global_position * (tts_features.shape[0] - 1)
+                if _is_true_silence(natural_tokens[owner.span_index]) and silence_fallback == "tts_silence":
+                    silence_without_tts_frames += 1
             unmatched_frames += 1
         else:
             token = tts_tokens[tts_span_index]
@@ -294,5 +351,8 @@ def mfa_linear_target(
         "matched_frames": matched_frames,
         "coverage": coverage,
         "fallback_frames": unmatched_frames,
+        "silence_fallback": silence_fallback,
+        "silence_fallback_frames": silence_fallback_frames,
+        "silence_without_tts_frames": silence_without_tts_frames,
         "match_stats": match_stats,
     }

@@ -48,6 +48,7 @@ class SiliconFlowProvider(TTSProvider):
         )
         self.speed = self.sub.get("speed", 1.0)
         self.gain = self.sub.get("gain", 0.0)
+        self.sample_rate = self.sub.get("sample_rate")
         self.response_format = self.sub.get("response_format", "wav")
         self._init_registry(repo_root, run_id)
 
@@ -133,6 +134,8 @@ class SiliconFlowProvider(TTSProvider):
             "speed": self.speed,
             "gain": self.gain,
         }
+        if self.sample_rate is not None:
+            payload["sample_rate"] = int(self.sample_rate)
         last_err = None
         for attempt in range(3):
             try:
@@ -140,8 +143,16 @@ class SiliconFlowProvider(TTSProvider):
                     url, json=payload, headers=self._headers(), timeout=120
                 )
                 if r.status_code == 200:
-                    return self._decode_audio(r.content)
-                last_err = f"HTTP {r.status_code}: {r.text[:300]}"
+                    try:
+                        return self._decode_audio(r.content)
+                    except Exception as exc:
+                        # The service can occasionally return a malformed or
+                        # truncated audio body with HTTP 200.  Treat that as a
+                        # transient synthesis failure so the normal retry loop
+                        # can request the audio again.
+                        last_err = f"HTTP 200 audio decode failed: {type(exc).__name__}: {exc}"
+                else:
+                    last_err = f"HTTP {r.status_code}: {r.text[:300]}"
             except requests.RequestException as e:
                 last_err = str(e)
             time.sleep(1.5 * (attempt + 1))

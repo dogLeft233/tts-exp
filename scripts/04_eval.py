@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """04_eval.py - SyncNet evaluation (issue #5).
 
-For each successfully-generated ditto video, run syncnet_python/demo_syncnet.py
-and parse stdout for Confidence (→ Sync-C), Min dist (→ Sync-D), AV offset.
+For each successfully-generated ditto video, run the official SyncNet
+run_pipeline.py and run_syncnet.py stages in order, then parse their scores.
+Different videos can be evaluated concurrently without sharing work directories.
 
 Uses the syncnet conda env for execution (avoids dependency conflicts with ditto env).
 
@@ -10,14 +11,14 @@ Output: runs/<run_id>/04_eval/{condition}/{i}/syncnet.json + eval_meta.json
 """
 
 import argparse
+from concurrent.futures import ThreadPoolExecutor
+from functools import partial
 import json
 import os
 import re
 import subprocess
 import time
 from pathlib import Path
-
-import yaml
 
 from utils import detect_sample_ids, load_config
 
@@ -111,6 +112,61 @@ def run_syncnet_pipeline(
         return None, f"run_syncnet failed: {e.stderr[-300:]}"
 
 
+def evaluate_video(
+    cond: str,
+    sid: int,
+    vpath: Path,
+    *,
+    out_base: Path,
+    syncnet_dir: Path,
+    syncnet_python: str,
+    syncnet_bin: str,
+    syncnet_model: Path,
+    min_track: int,
+    no_cache: bool,
+) -> tuple[dict | None, dict | None, bool]:
+    """Evaluate one isolated video; return (score, failure, cache_hit)."""
+    sample_dir = out_base / cond / str(sid)
+    sample_dir.mkdir(parents=True, exist_ok=True)
+    sync_path = sample_dir / "syncnet.json"
+    if sync_path.exists() and not no_cache:
+        try:
+            cached = json.loads(sync_path.read_text())
+            if cached.get("sync_c") is not None and cached.get("sync_d") is not None:
+                return cached, None, True
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    data_dir = sample_dir / "syncnet_data"
+    data_dir.mkdir(exist_ok=True)
+    reference = f"{cond}_{sid}"
+    last_error = ""
+    for attempt in range(2):
+        try:
+            stdout, stderr = run_syncnet_pipeline(
+                syncnet_dir, syncnet_python, syncnet_bin,
+                vpath, data_dir, reference, syncnet_model,
+                min_track=min_track,
+            )
+            if stdout is None:
+                last_error = stderr
+            else:
+                parsed = parse_syncnet_output(stdout)
+                if parsed is None:
+                    return None, {
+                        "condition": cond, "sample_id": sid,
+                        "error": "parse failed", "stdout": stdout[:500],
+                    }, False
+                sample_out = {"sample_id": sid, "condition": cond, **parsed}
+                sync_path.write_text(json.dumps(sample_out, indent=2))
+                return sample_out, None, False
+        except Exception as exc:
+            last_error = str(exc)
+        if attempt == 0:
+            time.sleep(1)
+    return None, {"condition": cond, "sample_id": sid, "error": last_error}, False
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="SyncNet evaluation")
     ap.add_argument("--run_id", "--run-id", dest="run_id", required=True)
@@ -118,6 +174,7 @@ def main() -> None:
     ap.add_argument("--config", default="")
     ap.add_argument("--no-cache", action="store_true")
     ap.add_argument("--min-track", type=int, default=100)
+    ap.add_argument("--workers", type=int, default=None, help="concurrent videos (default: eval.workers, or 2)")
     args = ap.parse_args()
 
     repo = Path(__file__).resolve().parent.parent
@@ -127,6 +184,9 @@ def main() -> None:
     out_base.mkdir(parents=True, exist_ok=True)
 
     cfg = load_config(repo, args.config or None)
+    workers = args.workers if args.workers is not None else int(cfg.get("eval", {}).get("workers", 2))
+    if workers < 1:
+        ap.error("--workers must be at least 1")
     conditions = cfg.get("ditto", {}).get("conditions", ["natural_raw", "natural_resamp", "tts_raw", "tts_resamp"])
     expected_ids = detect_sample_ids(repo, args.smoke, cfg=cfg)
     syncnet_dir = repo / cfg["paths"]["syncnet_repo"]
@@ -141,66 +201,37 @@ def main() -> None:
     results: dict[str, dict] = {}
     failed: list[dict] = []
 
+    jobs = []
     for cond, sample_videos in videos.items():
         cond_out = out_base / cond
         cond_out.mkdir(exist_ok=True)
         for sid, vpath in sorted(sample_videos.items()):
-            sample_dir = cond_out / str(sid)
-            sample_dir.mkdir(exist_ok=True)
-            sync_path = sample_dir / "syncnet.json"
-            if sync_path.exists() and not args.no_cache:
-                try:
-                    cached = json.loads(sync_path.read_text())
-                    if cached.get("sync_c") is not None and cached.get("sync_d") is not None:
-                        results[f"{cond}:{sid}"] = cached
-                        print(f"[eval] {cond}:{sid} cached")
-                        continue
-                except (json.JSONDecodeError, OSError):
-                    pass
-            data_dir = sample_dir / "syncnet_data"
-            data_dir.mkdir(exist_ok=True)
-            reference = f"{cond}_{sid}"
+            jobs.append((cond, sid, vpath))
 
-            print(f"[eval] {cond}:{sid} ...")
-            for attempt in range(2):
-                try:
-                    stdout, stderr = run_syncnet_pipeline(
-                        syncnet_dir, syncnet_python, syncnet_bin,
-                        vpath, data_dir, reference, syncnet_model,
-                        min_track=args.min_track,
-                    )
-                    if stdout is None:
-                        if attempt == 1:
-                            failed.append({"condition": cond, "sample_id": sid, "error": stderr})
-                        else:
-                            time.sleep(1)
-                        continue
-                    parsed = parse_syncnet_output(stdout)
-                    if parsed:
-                        parsed["sample_id"] = sid
-                        parsed["condition"] = cond
-                        sample_out = {
-                            "sample_id": sid,
-                            "condition": cond,
-                            **parsed,
-                        }
-                        sync_path.write_text(
-                            json.dumps(sample_out, indent=2)
-                        )
-                        results[f"{cond}:{sid}"] = sample_out
-                        c, d = parsed["sync_c"], parsed["sync_d"]
-                        print(f"  -> Sync-C={c:.3f} Sync-D={d:.3f}")
-                        break
-                    else:
-                        failed.append({"condition": cond, "sample_id": sid, "error": "parse failed", "stdout": stdout[:500]})
-                        # Don't retry on parse failure
-                        break
-                except Exception as e:
-                    if attempt == 1:
-                        failed.append({"condition": cond, "sample_id": sid, "error": str(e)})
-                    time.sleep(1)
-            else:
-                print(f"  -> FAILED")
+    worker = partial(
+        evaluate_video,
+        out_base=out_base,
+        syncnet_dir=syncnet_dir,
+        syncnet_python=syncnet_python,
+        syncnet_bin=syncnet_bin,
+        syncnet_model=syncnet_model,
+        min_track=args.min_track,
+        no_cache=args.no_cache,
+    )
+    print(f"[eval] scoring {len(jobs)} videos with {workers} worker(s)")
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        for (cond, sid, _), (score, error, cached) in zip(
+            jobs, pool.map(lambda job: worker(*job), jobs)
+        ):
+            if score is not None:
+                results[f"{cond}:{sid}"] = score
+                if cached:
+                    print(f"[eval] {cond}:{sid} cached")
+                else:
+                    print(f"[eval] {cond}:{sid} -> Sync-C={score['sync_c']:.3f} Sync-D={score['sync_d']:.3f}")
+            elif error is not None:
+                failed.append(error)
+                print(f"[eval] {cond}:{sid} -> FAILED: {error['error']}")
 
     successful_by_condition = {
         condition: sorted(
@@ -219,6 +250,7 @@ def main() -> None:
     incomplete_ids = sorted(set(expected_ids) - set(complete_ids))
     meta = {
         "config_override": args.config or None,
+        "workers": workers,
         "conditions": conditions,
         "expected_sample_ids": expected_ids,
         "successful_by_condition": successful_by_condition,

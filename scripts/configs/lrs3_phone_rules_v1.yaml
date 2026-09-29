@@ -1,0 +1,75 @@
+schema_version: 1
+experiment: lrs3_phone_rules
+protocol_version: 1
+source:
+  manifest: runs/lrs3_data_supplement_20260903/07_final_cohort/manifest.json
+  manifest_sha256: dd109c8dfdbde9419f6cc8eaa11e7b9f78dc5d41ac3d437036c9122d14f97304
+  tokens: runs/lrs3_data_supplement_20260903/07_final_cohort/tokens.json
+  tokens_sha256: ad2a54b0aa6f01323acc7fa7650b38d3508ba7edf4282f87f98d55731ac38509
+  sample_rate: 16000
+  expected_records: 240
+  expected_train_records: 200
+  expected_eval_records: 40
+  expected_train_source_groups: 18
+  expected_eval_source_groups: 40
+models:
+  device: cpu
+  primary:
+    key: hubert
+    model_name: facebook/hubert-base-ls960
+    processor_name: facebook/hubert-base-ls960
+    revision: dba3bb02fda4248b6e082697eee756de8fe8aa8a
+    layer: 6
+  cross_encoder:
+    key: xlsr
+    model_name: facebook/wav2vec2-large-xlsr-53
+    processor_name: facebook/wav2vec2-large-xlsr-53
+    revision: c3f9d884181a224a6ac87bf8885c84d1cff3384f
+    layer: 10
+  diagnostic_layers:
+    hubert: [0, 11]
+    xlsr: []
+probe:
+  min_tokens_per_label: 20
+  min_groups_per_label: 3
+  min_labels_per_pair: 5
+  min_tokens_per_pair_side: 10
+  min_speech_coverage: 0.70
+  min_eval_source_groups: 30
+  stage_a_min_effect: 0.020
+  stage_b_min_effect: 0.010
+  bootstrap_draws: 10000
+  bootstrap_seed: 20260920
+rules:
+  arms: [spectral_drc, spectral_only, drc_only, gain_control, identity]
+  sample_rate: 16000
+  edge_guard_s: 0.010
+  taper_s: 0.005
+  stft:
+    n_fft: 512
+    win_length: 512
+    hop_length: 128
+    window: periodic_hann
+    center: true
+    pad_mode: reflect
+  drc:
+    window_s: 0.020
+    threshold_quantile: 0.75
+    ratio: 1.5
+    max_gain_db: 3.0
+    smoothing_length: 801
+  timing:
+    max_speech_edit_rate: 0.05
+    median_boundary_abs_ms: 20.0
+    p95_boundary_abs_ms: 40.0
+    silence_min_ms: 50.0
+    silence_iou_min: 0.50
+    run_mfa: true
+mfa:
+  executable: mfa
+  dictionary: english_us_mfa
+  acoustic_model: english_mfa
+  staged_input_manifest: runs/lrs3_data_supplement_20260903/05_mfa_alignment/input_manifest.json
+runtime:
+  min_free_disk_gb: 4.0
+  resource_check: true

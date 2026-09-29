@@ -28,10 +28,16 @@ class FasterQwen3TTSProvider(TTSProvider):
         super().__init__(cfg, env)
         self.sub = cfg.get("faster_qwen3", {})
         self.model_id = self.sub.get("model_id", "Qwen/Qwen3-TTS-12Hz-0.6B-Base")
+        self.strict_backend = bool(self.sub.get("strict_backend", False))
         self._model = None
 
     def _ensure_model(self):
         if self._model is None:
+            if self.strict_backend:
+                from faster_qwen3_tts import FasterQwen3TTS
+
+                self._model = FasterQwen3TTS.from_pretrained(self.model_id)
+                return self._model
             try:
                 from faster_qwen3_tts import FasterQwen3TTS
                 self._model = FasterQwen3TTS.from_pretrained(self.model_id)

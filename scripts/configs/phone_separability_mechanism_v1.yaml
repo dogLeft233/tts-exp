@@ -1,0 +1,88 @@
+schema_version: 1
+experiment: phone_separability_mechanism
+protocol_id: phone_separability_mechanism_v1
+protocol_version: 1
+source:
+  manifest: runs/lrs3_data_supplement_20260903/07_final_cohort/manifest.json
+  manifest_sha256: dd109c8dfdbde9419f6cc8eaa11e7b9f78dc5d41ac3d437036c9122d14f97304
+  tokens: runs/lrs3_data_supplement_20260903/07_final_cohort/tokens.json
+  tokens_sha256: ad2a54b0aa6f01323acc7fa7650b38d3508ba7edf4282f87f98d55731ac38509
+  sample_rate: 16000
+splits:
+  fit_groups: 12
+  dev_groups: 6
+  salt: psm-v1-split
+models:
+  device: cuda:0
+  primary:
+    key: hubert
+    model_name: facebook/hubert-base-ls960
+    processor_name: facebook/hubert-base-ls960
+    revision: dba3bb02fda4248b6e082697eee756de8fe8aa8a
+    layer: 6
+  cross_encoder:
+    key: xlsr
+    model_name: facebook/wav2vec2-large-xlsr-53
+    processor_name: facebook/wav2vec2-large-xlsr-53
+    revision: c3f9d884181a224a6ac87bf8885c84d1cff3384f
+    layer: 10
+  diagnostic_layers:
+    hubert: [0, 3, 9, 11]
+    xlsr: [6, 14]
+probe:
+  min_tokens_per_label: 20
+  min_groups_per_label: 3
+  min_labels_per_pair: 5
+  min_tokens_per_pair_side: 10
+  min_speech_coverage: 0.70
+  min_eval_source_groups: 30
+  bootstrap_draws: 10000
+  bootstrap_seed: 20260921
+  abx_triplets_per_group: 20
+audio:
+  sample_rate: 16000
+  n_fft: 512
+  win_length: 512
+  hop_length: 128
+  edge_guard_s: 0.010
+  taper_s: 0.005
+  max_gain_db: 6.0
+  magnitude_floor: 1.0e-5
+runtime:
+  resource_check: true
+  min_free_disk_gib: 4.0
+  min_free_gpu_gib: 8.0
+  min_available_ram_gib: 8.0
+  max_new_artifacts_gib: 6.0
+  max_cpu_workers: 4
+  max_mfa_workers: 4
+  smoke_pairs: 2
+  allow_model_download: true
+  proxy: http://127.0.0.1:7890
+  train_max_steps: 1500
+  train_timeout_s: 7200
+  seeds: [20260921, 20260922, 20260923]
+timing:
+  run_mfa: false
+  max_speech_edit_rate: 0.05
+  min_occurrence_coverage: 0.90
+  median_boundary_abs_ms: 20.0
+  p95_boundary_abs_ms: 40.0
+  pause_min_ms: 50.0
+  pause_iou_min: 0.50
+  edge_error_ms: 20.0
+construction:
+  beta: [0.5, 1.0]
+  max_template_db: 6.0
+  min_template_tokens: 20
+  min_template_groups: 3
+  run_paired_oracle: true
+  run_duration_control: false
+candidate:
+  selection_view: core
+  min_gate_groups: 5
+  min_accuracy_ci_low: 0.0
+  min_margin_ci_low: 0.0
+  min_tts_fraction: 0.50
+  candidate_arms: [N_ID, N_RT, SPECTRAL_DRC, PHONE_SHAPE_BETA05_CORE, PHONE_SHAPE_BETA1_CORE, PHONE_SHAPE_BETA05_SPEECH, PHONE_SHAPE_BETA1_SPEECH, EQ_MATCH, SHUFFLED_LABEL, PAIRED_SHAPE_ORACLE]
+  selectable_arms: [SPECTRAL_DRC, PHONE_SHAPE_BETA05_CORE, PHONE_SHAPE_BETA1_CORE, PHONE_SHAPE_BETA05_SPEECH, PHONE_SHAPE_BETA1_SPEECH, EQ_MATCH]

@@ -1,0 +1,14 @@
+{
+  "speaker_id": "S0007",
+  "publisher_url": "https://huggingface.co/datasets/AISHELL/AISHELL-1/resolve/bbe295d530192a4cd41644b711c9aecd087df653/data_aishell/wav/S0007.tar.gz",
+  "revision": "bbe295d530192a4cd41644b711c9aecd087df653",
+  "path": "data/native_mechanism_holdout_20260926/archives/S0007.tar.gz",
+  "bytes": 43863213,
+  "sha256": "8334cbe4accfdf00fb7d5da0a0775dad526a47c066ff8bf596c80c4fe65e4dbd",
+  "attempts": [
+    {
+      "attempt": 1,
+      "status": "downloaded"
+    }
+  ]
+}

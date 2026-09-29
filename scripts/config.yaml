@@ -85,6 +85,7 @@ ditto:
 
 # 04_eval (Q8: 标准 SyncNet 协议)
 eval:
+  workers: 2                    # 视频级并发，单视频仍运行完整官方 SyncNet 流程
   syncnet_repo: "third_party/syncnet_python"
   syncnet_model: "data/syncnet_v2.model"
   batch_size: 20

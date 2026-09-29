@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-09-10",
+  "meaning": "Planning-time file-byte SHA-256; indirect historical provenance must still be verified using bound parent manifests. Snapshot is not a new experiment result.",
+  "branches": {
+    "A": [
+      {
+        "path": "runs/wav2lip_natural_content_residual_20260908_v2/drivers/manifest.json",
+        "sha256": "4ded4bc6c468cafa4990db92d326d823be63f63e15629b5b858d1986bc565ecf"
+      },
+      {
+        "path": "runs/wav2lip_natural_content_residual_20260908_v2/control_scores/manifest.json",
+        "sha256": "143e7b7e72eb4bc14d10cfa88afa87decb59f87da48eed7581bf93780dfda5b2"
+      },
+      {
+        "path": "runs/wav2lip_natural_content_residual_20260908_v2/static_faces/manifest.json",
+        "sha256": "e57ed01f78f4870998f69ee5ee140e1831b0975bb8195bec2cbb1c7972a4f56e"
+      },
+      {
+        "path": "runs/wav2lip_natural_content_residual_continuation_20260909_v1/protocol.json",
+        "sha256": "41a2f508a01b58001487ccbb20af712bac656458a119893bea722a72cd556996"
+      },
+      {
+        "path": "runs/wav2lip_natural_content_residual_continuation_20260909_v1/final.json",
+        "sha256": "24550b33ec94110b8a8f0585081f964cbe910ac77671f27263172d9267701b2e"
+      },
+      {
+        "path": "runs/wav2lip_natural_content_residual_continuation_20260909_v1/validation.json",
+        "sha256": "97b0c6c03dca773de18bdb24b285f9ea234cca45fd037e47b27fac62de474169"
+      },
+      {
+        "path": "runs/wav2lip_natural_content_residual_continuation_20260909_v1/candidate_scores/manifest.json",
+        "sha256": "1ee531b15b78c21ae29c1482f12511ad403fa3fbdc9d8b9d86cd79dfd869c4de"
+      },
+      {
+        "path": "runs/lrs3_masked_tts_new_confirmation_20260902/00_cohort/manifest.json",
+        "sha256": "8ec7a2ec0d37c6abf51075d57f1467658fc0b3de9574799a1b8f08f9a2bf21b5"
+      },
+      {
+        "path": "runs/lrs3_masked_tts_new_confirmation_20260902/03_data/natural_mels.npz",
+        "sha256": "b48628ee3f09c0e46abc3d121d717bc72af10384cf7f20ea8caa2f5a7aaff44f"
+      },
+      {
+        "path": "runs/lrs3_masked_tts_new_confirmation_20260902/05_drivers/drivers.json",
+        "sha256": "ad5bc9412833ac30a017f27e77499e4a60e1f38eb9c01c02f5db9c909bb92410"
+      },
+      {
+        "path": "runs/lrs3_masked_tts_new_confirmation_20260902/06_renders/box_manifest.json",
+        "sha256": "1a1304633e2eae0b525e5b7f4a06391cf8c28a52668d7ea6e1598fc1f68a17be"
+      },
+      {
+        "path": "runs/wav2lip_historical_shift_rescore_20260908_v7/parity.json",
+        "sha256": "56faf1727b6091e1dec7c2c8f9e37b330007e9fd195fdf151bfaa0e4a10057a5"
+      },
+      {
+        "path": "runs/lrs3_masked_tts_new_confirmation_20260902/03_data/mask_manifest.json",
+        "sha256": "956d7eb5bd7fe6b12a658191ac0ab80a9a8a6af77a0fce2aebcec30be561deec"
+      },
+      {
+        "path": "runs/wav2lip_phone_core_shrinkage_20260910_v1/protocol.json",
+        "sha256": "dfa69b9c1310d68fdadd0a04ab4e597ae6cbeca42cfa3b010e4b45e43fe2a67a"
+      },
+      {
+        "path": "runs/wav2lip_phone_core_shrinkage_20260910_v1/input_audit.json",
+        "sha256": "219a433a3da9b95f5738cb65804fc3528b593e8eb11e444e8e6cc786cf0e9413"
+      },
+      {
+        "path": "runs/wav2lip_phone_core_shrinkage_20260910_v1/drivers/manifest.json",
+        "sha256": "a7e7ed3401a3f48d33026e9ca97c6d1f91939905d184844bc73343196932c982"
+      },
+      {
+        "path": "runs/wav2lip_phone_core_shrinkage_20260910_v1/final.json",
+        "sha256": "ba288b8ed4d317383b154ec168cf8d1972bf7ef2bf7e33e95780414b4da9b6c8"
+      },
+      {
+        "path": "runs/wav2lip_phone_core_shrinkage_20260910_v1/validation.json",
+        "sha256": "4145fcc1ad4025ae8ad5c8442a6938431a396b64457f41d2327ba4567488f022"
+      }
+    ],
+    "B": [
+      {
+        "path": "runs/wav2lip_natural_content_residual_20260908_v2/drivers/manifest.json",
+        "sha256": "4ded4bc6c468cafa4990db92d326d823be63f63e15629b5b858d1986bc565ecf"
+      },
+      {
+        "path": "runs/wav2lip_natural_content_residual_20260908_v2/control_scores/manifest.json",
+        "sha256": "143e7b7e72eb4bc14d10cfa88afa87decb59f87da48eed7581bf93780dfda5b2"
+      },
+      {
+        "path": "runs/wav2lip_natural_content_residual_20260908_v2/static_faces/manifest.json",
+        "sha256": "e57ed01f78f4870998f69ee5ee140e1831b0975bb8195bec2cbb1c7972a4f56e"
+      },
+      {
+        "path": "runs/wav2lip_natural_content_residual_continuation_20260909_v1/protocol.json",
+        "sha256": "41a2f508a01b58001487ccbb20af712bac656458a119893bea722a72cd556996"
+      },
+      {
+        "path": "runs/wav2lip_natural_content_residual_continuation_20260909_v1/final.json",
+        "sha256": "24550b33ec94110b8a8f0585081f964cbe910ac77671f27263172d9267701b2e"
+      },
+      {
+        "path": "runs/wav2lip_natural_content_residual_continuation_20260909_v1/validation.json",
+        "sha256": "97b0c6c03dca773de18bdb24b285f9ea234cca45fd037e47b27fac62de474169"
+      },
+      {
+        "path": "runs/wav2lip_natural_content_residual_continuation_20260909_v1/candidate_scores/manifest.json",
+        "sha256": "1ee531b15b78c21ae29c1482f12511ad403fa3fbdc9d8b9d86cd79dfd869c4de"
+      },
+      {
+        "path": "runs/lrs3_masked_tts_new_confirmation_20260902/00_cohort/manifest.json",
+        "sha256": "8ec7a2ec0d37c6abf51075d57f1467658fc0b3de9574799a1b8f08f9a2bf21b5"
+      },
+      {
+        "path": "runs/lrs3_masked_tts_new_confirmation_20260902/03_data/natural_mels.npz",
+        "sha256": "b48628ee3f09c0e46abc3d121d717bc72af10384cf7f20ea8caa2f5a7aaff44f"
+      },
+      {
+        "path": "runs/lrs3_masked_tts_new_confirmation_20260902/05_drivers/drivers.json",
+        "sha256": "ad5bc9412833ac30a017f27e77499e4a60e1f38eb9c01c02f5db9c909bb92410"
+      },
+      {
+        "path": "runs/lrs3_masked_tts_new_confirmation_20260902/06_renders/box_manifest.json",
+        "sha256": "1a1304633e2eae0b525e5b7f4a06391cf8c28a52668d7ea6e1598fc1f68a17be"
+      },
+      {
+        "path": "runs/wav2lip_historical_shift_rescore_20260908_v7/parity.json",
+        "sha256": "56faf1727b6091e1dec7c2c8f9e37b330007e9fd195fdf151bfaa0e4a10057a5"
+      },
+      {
+        "path": "runs/wav2lip_reference_conditioning_interaction_20260909_v1/protocol.json",
+        "sha256": "51231bd182b8555db3c0b81a57a1c5a8cf495f0a186b3584b9f9f8bf99abe6cc"
+      },
+      {
+        "path": "runs/wav2lip_reference_conditioning_interaction_20260909_v1/drivers/manifest.json",
+        "sha256": "f8d8c4184a76848e553558f811db1935a9efbc18d4181c78efe1fae70209a129"
+      },
+      {
+        "path": "runs/wav2lip_reference_conditioning_interaction_20260909_v1/reference_manifest.json",
+        "sha256": "bbd7f121e8b383c308f20f1eb5300c760ae2214a154ff81ec6e1dda654a2c89e"
+      },
+      {
+        "path": "runs/wav2lip_reference_conditioning_interaction_20260909_v1/control_scores/manifest.json",
+        "sha256": "9e5a724d3634054d4328c0d35816f06db0065ccac41368e22bdb71291adc6264"
+      },
+      {
+        "path": "runs/wav2lip_reference_conditioning_interaction_20260909_v1/final.json",
+        "sha256": "5cc7bdaee6d7e21142bf949aef0250a4a3be411ebe19e4890f5d770e6b696f28"
+      },
+      {
+        "path": "runs/wav2lip_reference_conditioning_interaction_20260909_v1/validation.json",
+        "sha256": "74fbdf7865a28bd0264b82ac32688d1ef797225a40673ab2befefbfff0ba9206"
+      }
+    ],
+    "C": [
+      {
+        "path": "runs/lrs3_visual_teacher_missingness_20260909_v1/protocol.json",
+        "sha256": "522c8f565c7e0cc6e18543b474506501e6dd66121c4e4a74c9bb852f85a7e4cc"
+      },
+      {
+        "path": "runs/lrs3_visual_teacher_missingness_20260909_v1/analysis.json",
+        "sha256": "830233ae8e5fa8dc3a58fc7a18d966d50b2ad5cf1a726d353d3335fa1637c638"
+      },
+      {
+        "path": "runs/lrs3_visual_teacher_missingness_20260909_v1/records.json",
+        "sha256": "ab2314835b46a9234965dfad1d77b81308ab9f21c9013476aced7974ab413f9d"
+      },
+      {
+        "path": "runs/lrs3_visual_teacher_missingness_20260909_v1/support_indices.npz",
+        "sha256": "c1bda6c377d43c16385df32b8249922a1e1247fc3b302f44d1501ac9fd4d68a1"
+      },
+      {
+        "path": "runs/lrs3_visual_teacher_missingness_20260909_v1/final.json",
+        "sha256": "9fcb7026e4ff6b9d43da59c4fd5dbe2a73182bb31d71269f7644996b9692570c"
+      },
+      {
+        "path": "runs/lrs3_visual_teacher_missingness_20260909_v1/validation.json",
+        "sha256": "8e47768847ecee74d20982c36bae604bba0f0df590f5ee30a0ab6a6921c3f221"
+      },
+      {
+        "path": "runs/lrs3_tts_visual_control_20260825/01_visual_teacher_audit_retry4/manifest.json",
+        "sha256": "139ab35e89f837de6f32b4f4934c49d94577b0216a622b416cc6523bda6d23be"
+      },
+      {
+        "path": "runs/lrs3_tts_visual_control_20260825/01_visual_teacher_audit_retry4/summary.json",
+        "sha256": "0d080bfb7bc49467d19296aa674ebc2e79a9541ff86c896dcb6acc43c5fef8ff"
+      },
+      {
+        "path": "runs/lrs3_tts_visual_control_20260825/01_visual_teacher_audit_retry4/decision.json",
+        "sha256": "3e82b583937ee655b714f1e19ebca1327d8828c70dfcd229df5129583fd07ba9"
+      },
+      {
+        "path": "runs/lrs3_tts_visual_control_20260825/00_protocol_lock_retry2/manifest.json",
+        "sha256": "e1c970542eb90a2dac787463ebe4e8708ad3f2c4b4f1c4379f22e8382a29ec38"
+      },
+      {
+        "path": "runs/lrs3_tts_visual_control_20260825/00_protocol_lock_retry2/test_lock.json",
+        "sha256": "295ccba71fb50d873a3ddf1b5cfd895418fd5bd95d242ec6441c57ef7e9660d4"
+      },
+      {
+        "path": "_reviews/lrs3_tts_visual_control/01_visual_teacher_audit/artifact_review_retry4.json",
+        "sha256": "8525d2959888bd72ed296ebbce107254a7e1da58c5dbc7b2cc37899e2a489349"
+      }
+    ]
+  }
+}

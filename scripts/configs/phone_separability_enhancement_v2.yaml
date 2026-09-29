@@ -1,0 +1,97 @@
+schema_version: 2
+experiment: phone_separability_enhancement
+protocol_id: phone_separability_enhancement_v2
+measurement_version: signed_margin_fixed_support_v2
+parent_run: runs/phone_separability_mechanism_full_v2_20260921
+source:
+  manifest: runs/lrs3_data_supplement_20260903/07_final_cohort/manifest.json
+  manifest_sha256: dd109c8dfdbde9419f6cc8eaa11e7b9f78dc5d41ac3d437036c9122d14f97304
+  tokens: runs/lrs3_data_supplement_20260903/07_final_cohort/tokens.json
+  tokens_sha256: ad2a54b0aa6f01323acc7fa7650b38d3508ba7edf4282f87f98d55731ac38509
+  sample_rate: 16000
+splits:
+  fit_groups: 12
+  dev_groups: 6
+  salt: psm-v1-split
+pilot:
+  fit_per_group: 2
+  dev_per_group: 4
+models:
+  device: cuda:0
+  primary:
+    key: hubert
+    model_name: facebook/hubert-base-ls960
+    processor_name: facebook/hubert-base-ls960
+    revision: dba3bb02fda4248b6e082697eee756de8fe8aa8a
+    layer: 6
+  cross_encoder:
+    key: xlsr
+    model_name: facebook/wav2vec2-large-xlsr-53
+    processor_name: facebook/wav2vec2-large-xlsr-53
+    revision: c3f9d884181a224a6ac87bf8885c84d1cff3384f
+    layer: 10
+probe:
+  views: [core, full, matched_1frame]
+  core_fraction: [0.20, 0.80]
+  min_tokens_per_label: 20
+  min_groups_per_label: 3
+  min_labels_per_pair: 5
+  min_tokens_per_pair_side: 10
+  min_speech_coverage: 0.70
+  bootstrap_draws: 10000
+  bootstrap_seed: 20260921
+  abx_triplets_per_group: 20
+audio:
+  sample_rate: 16000
+  n_fft: 512
+  win_length: 512
+  hop_length: 128
+  n_bands: 24
+  max_gain_db: [3.0, 6.0]
+  edge_guard_s: 0.010
+  taper_s: 0.005
+  max_residual_energy_ratio: 0.01
+  min_snr_db: 20.0
+  max_rms_change_db: 1.0
+runtime:
+  resource_check: true
+  min_free_disk_gib: 4.0
+  min_free_gpu_gib: 12.0
+  min_available_ram_gib: 8.0
+  max_new_artifacts_gib: 3.0
+  max_cpu_workers: 2
+  smoke_pairs: 2
+  allow_model_download: true
+  proxy: http://127.0.0.1:7890
+  optimize_steps: 120
+  optimize_timeout_s: 120
+  train_max_steps: 1500
+  train_timeout_s: 7200
+  seeds: [20260921, 20260922]
+  device: cuda:0
+optimization:
+  arms: [N_ID, STFT_RT, OPT_STATIC_3, OPT_STATIC_6, OPT_DYNAMIC_3, OPT_DYNAMIC_6, LABEL_PERM_6]
+  trainable_arms: [OPT_STATIC_3, OPT_STATIC_6, OPT_DYNAMIC_3, OPT_DYNAMIC_6]
+  lr: 0.05
+  target_margin: 0.05
+  temperature: 0.1
+  keep_weight: 1.0
+  tv_weight: 0.01
+  dynamic_node_ms: 80.0
+  checkpoints: [0, 25, 50, 75, 100, 120]
+quality:
+  run_mfa: false
+  run_asr: false
+  max_speech_edit_rate: 0.05
+  min_occurrence_coverage: 0.90
+  median_boundary_abs_ms: 20.0
+  p95_boundary_abs_ms: 40.0
+  pause_min_ms: 50.0
+  pause_iou_min: 0.50
+  edge_error_ms: 20.0
+mechanisms:
+  dynamic_ablation_scales: [0.0, 0.25, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 4.0]
+  codec_enabled: true
+  dac_tag: 0.0.5
+  dac_source_commit: 408235a9dcd2983684c87615a1bc2a8954f6eb47
+  dac_checkpoint_sha256: 95ab7176b67137d4d4c6c54b8d6ef3cea797faec228cb03ad084badcad570b4d

@@ -1,0 +1,24 @@
+{
+  "status": "SPEC_VALIDATED_NOT_IMPLEMENTED",
+  "checked_on": "2026-09-15",
+  "checks": {
+    "openspec_strict": "passed",
+    "bound_file_hashes": 142,
+    "cohort_records": 12,
+    "source_groups": 12,
+    "matrix_count_arithmetic": "passed",
+    "relative_document_links": "passed",
+    "parent_v15_independent_validator": "valid",
+    "new_inference_executed": false
+  },
+  "documents": {
+    "README.md": "ac1373671af7773a7c41c28aaa157d9bfd2a78ef809464b8600bcd11f1334cd9",
+    "design.md": "cf8a9c0799f98cf4ab4cd197a43bc52e9772d460bdb81f855e4d3deb4999570e",
+    "input-bindings.json": "72ae4fcd3e3a4a0d14cba00142edc68c8f40b0ae24ecdae2266f6016318570e2",
+    "proposal.md": "d2d1e35bd95f5c8ce8f61c72106d1d5cff395370a955b267f823d8f1139a27af",
+    "protocol.md": "95218766d20909abe99e8897ab485aae76033326f7ad6b58aa1334034ea4f5ae",
+    "specs/tts-native-gain-attribution/spec.md": "fbd299e0f1f4f6d8c05a3b1c93d5ac1712ba36eb27518fcc17533f49d256023b",
+    "tasks.md": "55c4286604180c8ca1aa58479c37894ee91b4196270aef4369b824bf182fbee0"
+  },
+  "scope": "This validates specification structure, bindings and arithmetic; it does not validate an implementation or establish new scientific results."
+}

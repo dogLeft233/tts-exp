@@ -1,0 +1,75 @@
+schema_version: 1
+protocol: mfa_linear_video_retiming_v1
+sample_ids: ["1", "101", "201"]
+portraits: ["3", "6", "9"]
+paths:
+  mfa_summary: runs/aishell1_mfa_linear_n25_resample_poly_20260814/mfa3_clean_mfa_linear_gate_fix2_20260814/summary.json
+  clean_manifest: runs/aishell1_mfa_linear_n25_resample_poly_20260814/mfa3_clean_gate_20260814/manifest.json
+  mini_manifest: runs/aishell1_mfa_linear_n25_resample_poly_20260814/mfa3_clean_gate_20260814/mini_manifest.json
+  legacy_eval_dir: runs/aishell1_mfa_linear_n25_resample_poly_20260814/mfa3_clean_gate_wav2lip_syncnet_20260814
+  portrait_registry: runs/phone_gain_static_tfg_mfa_repair_20260923_sync_c_v3/00_protocol/registry.json
+  wav2lip_python: /home/wjj/.venvs/wav2lip/bin/python
+  wav2lip_root: third_party/Wav2Lip
+  wav2lip_checkpoint: third_party/Wav2Lip/checkpoints/wav2lip_gan.pth
+  syncnet_python: /home/wjj/.venvs/syncnet/bin/python
+  syncnet_root: third_party/syncnet_python
+  syncnet_model: third_party/syncnet_python/data/syncnet_v2.model
+  ffmpeg: /home/wjj/miniconda3/bin/ffmpeg
+  ffprobe: /home/wjj/miniconda3/bin/ffprobe
+  render_worker: scripts/experiments/static_image_bridge/render_worker.py
+  legacy_score_worker: scripts/experiments/static_image_bridge/score_worker.py
+  official_score_adapter: scripts/experiments/phone_gain_static_tfg_mfa/official_score.py
+  output_root: runs/mfa_linear_video_retiming_v1
+media:
+  fps: 25
+  samples_per_frame: 640
+  channels: 1
+  sample_rate: 16000
+  sample_width_bytes: 2
+  tail_repair_max_frames: 5
+  protected_boundary_frames: 5
+  score_box_size: 224
+models:
+  wav2lip_checkpoint_sha256: ca9ab7b7b812c0e80a6e70a5977c545a1e8a365a6c49d5e533023c034d7ac3d8
+  syncnet_model_sha256: 961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442
+  wav2lip_batch_size: 4
+  syncnet_batch_size: 20
+  seed: 20260923
+  device: cuda
+retiming:
+  max_displacement_frames: 3.0
+  min_speed: 0.5
+  max_speed: 1.5
+  max_knots: 16
+  minimum_knot_gap_frames: 12
+  knot_grid_frames: 0.25
+  maximum_slope_change: 0.5
+  local_window_frames: 25
+search:
+  max_candidates: 256
+  stage_a_max_candidates: 80
+  stage_b_max_candidates: 176
+  max_seconds_per_sample: 1200.0
+  stage_b_steps: [1.0, 0.5, 0.25]
+  rounds_per_step: 2
+  noninferiority_sync_c: 0.05
+  noninferiority_sync_d: 0.05
+  noninferiority_d0: 0.05
+  minimum_sync_c_gain: 0.1
+  minimum_d0_improvement: 0.02
+  maximum_sync_d_worsening: 0.05
+  local_offset_quantile: 0.9
+  local_sync_c_slack: 0.02
+  score_tie_tolerance: 0.000001
+official:
+  min_track: 25
+  vshift: 15
+  batch_size: 20
+  pipeline_timeout_seconds: 900
+  syncnet_timeout_seconds: 600
+budget:
+  total_gpu_seconds: 10800
+  minimum_free_gpu_mib: 5000
+  minimum_available_ram_bytes: 8589934592
+  minimum_free_disk_bytes: 4294967296
+  output_safety_multiplier: 1.2

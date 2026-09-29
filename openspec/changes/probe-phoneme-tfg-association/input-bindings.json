@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "protocol_id": "phoneme_tfg_association_v1",
+  "status": "spec_only",
+  "date": "2026-09-21",
+  "git_head_at_design": "158915603392a2b846cb4bfabe1821e9b4fec900",
+  "dirty_worktree": true,
+  "verified_inventory": {
+    "utterances": 100,
+    "source_groups": 42,
+    "conditions": ["natural", "qwen_cloud", "qwen_local", "index_tts2", "cosyvoice2"],
+    "mfa_completed": 497,
+    "mfa_expected": 500,
+    "mfa_by_condition": {"natural": 100, "qwen_cloud": 100, "qwen_local": 100, "index_tts2": 100, "cosyvoice2": 97},
+    "coarse_eligible_records": 91,
+    "coarse_eligible_source_groups": 41,
+    "coarse_eligibility_only": "five HuBERT L6 sample records; each duration >=3s and valid_token_count >=20; final hashes, labels and face eligibility not audited",
+    "historical_multiset_50_exact_id_overlap": 0,
+    "historical_multiset_50_source_group_overlap": 42,
+    "speaker_id_available": false
+  },
+  "design": {
+    "source_groups": 36,
+    "utterances_per_group": 1,
+    "tts_per_utterance": 2,
+    "pair_types": 6,
+    "blocks_per_pair": 6,
+    "blocks_per_tts": 18,
+    "max_unique_wav2lip_videos": 108,
+    "optional_ditto_source_groups": 12,
+    "max_unique_ditto_videos": 36,
+    "enable_ditto_replication_default": false,
+    "selected_ids_status": "not_selected_until_full_preflight",
+    "primary_feature": "hubert_layer6_phoneme_silhouette",
+    "primary_endpoint": "native_interior_equal_count_sync_c",
+    "primary_unit": "one difference between two assigned TTS arms per source_group",
+    "primary_model": "six pair-type intercepts plus within-utterance silhouette difference divided by 0.1"
+  },
+  "files": [
+    {"path": "runs/lrs3_local_tts_n100_20260921/00_inputs/cohort_n100.json", "sha256": "a8c143651440c5bc2e35b695c6bc45305064a8c68614614cb321f9ae810c7843"},
+    {"path": "runs/lrs3_english_phoneme_transfer_n100_20260921/protocol.json", "sha256": "01f37c8aae038746428bf36c4d4d9d8c4b5b190fc0072733b50231894b75ae15"},
+    {"path": "runs/lrs3_english_phoneme_transfer_n100_20260921/00_inputs/manifest.json", "sha256": "fc1e3a861a32b53de1b529cbaf2df758f6b182ed73bf626bbc69496dea64547c"},
+    {"path": "runs/lrs3_english_phoneme_transfer_n100_20260921/01_mfa/alignment_manifest.json", "sha256": "3ab883c56f24bd8fddc7b73e6455c89cb76d64664c608f6e402f4829dcfe8ebf"},
+    {"path": "runs/lrs3_english_phoneme_transfer_n100_20260921/03_metrics/metrics.json", "sha256": "8c936c4682f2b78ec2d063c483eb7882c8f416efad9a0908ab686879a801f3ef"},
+    {"path": "runs/lrs3_english_phoneme_transfer_n100_20260921/02_embeddings/hubert/feature_meta.json", "sha256": "158912afb0d048f7c6e205a1a37ab7e6896de8fe6534a228d27a7b28695d5109"},
+    {"path": "runs/lrs3_english_phoneme_transfer_n100_20260921/02_embeddings/hubert/pooled_vectors.npz", "sha256": "c7766406e0fe16c876e46f3d698074c1d9418ab7756707f182a3afa2eeac7ddd"},
+    {"path": "runs/lrs3_english_phoneme_transfer_n100_20260921/02_embeddings/hubert/token_records.jsonl", "sha256": "0a2aef2dda9ff4806884c26f69ecb326b896056c50665c50b045f9d5b4513392"},
+    {"path": "runs/lrs3_english_phoneme_transfer_n100_20260921/02_embeddings/hubert/sample_metrics.jsonl", "sha256": "7c2a26c3f1fad787c87a6236fee8e72fa5f0ab41bd045645d9bd2e71175efa0c"},
+    {"path": "runs/lrs3_english_phoneme_transfer_n100_20260921/02_embeddings/xlsr/feature_meta.json", "sha256": "9ec3f8e5c717da6be8585e1e025cea1bf809337a12dad85753728b0ce238e656"},
+    {"path": "runs/lrs3_english_phoneme_transfer_n100_20260921/02_embeddings/xlsr/pooled_vectors.npz", "sha256": "a1e1b73a013a3eeeac389d9951522e585f3370d29930261ed22686c37fbdfc11"},
+    {"path": "runs/lrs3_english_phoneme_transfer_n100_20260921/02_embeddings/xlsr/token_records.jsonl", "sha256": "21b3cf10b2c9877df5ab0e4c267833b09788d56108fe1202ddcdf09068857761"},
+    {"path": "runs/lrs3_english_phoneme_transfer_n100_20260921/02_embeddings/xlsr/sample_metrics.jsonl", "sha256": "0149931931add94855c12fdd1bf34db576f1a63becc0555c04f210bc1201b8ae"},
+    {"path": "data/dataset_samples/video_manifest_250.json", "sha256": "a0ac3e6b6a678fe12963746c238327a90ed0075a0e79049e215a833685805ac0"},
+    {"path": "/home/wjj/miniconda3/envs/autoavsr/lib/python3.8/site-packages/mediapipe/modules/face_detection/face_detection_full_range_sparse.tflite", "sha256": "2c3728e6da56f21e21a320433396fb06d40d9088f2247c05e5635a688d45dfe1"}
+  ],
+  "unresolved_before_execution": [
+    "final five-arm label support and face eligibility",
+    "actual file and PCM hashes for every selected source arm",
+    "source-specific reference crop and checkpoint/environment receipts",
+    "within-pair predictor variance, runtime, and power grid",
+    "optional Ditto deployment availability"
+  ]
+}
