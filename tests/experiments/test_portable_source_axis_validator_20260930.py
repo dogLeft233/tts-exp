@@ -15,6 +15,7 @@ from scripts.experiments.portable_source_axis_20260930.independent_validator imp
     recompute_four_cell_summary,
     row_unit_geometry,
     validate_common_support,
+    validate_cross_embedding_artifacts,
     validate_intervention,
     validate_random_dose,
     validate_random_direction,
@@ -175,6 +176,38 @@ def test_numpy_distance_frontend_retains_syncnet_epsilon() -> None:
     assert np.all(matrix[1:3, 1] > 0)
     assert np.isclose(matrix[1, 1], expected_equal, atol=1e-12)
     assert matrix.dtype == np.float32
+
+
+def test_full_cross_distance_audit_rebuilds_raw_unit_and_zero_arrays() -> None:
+    lip = np.asarray([[0.2, -0.3, 0.5], [0.9, 0.1, -0.4]], dtype=np.float32)
+    audio = np.asarray([[0.1, -0.2, 0.6], [-0.5, 0.4, 0.2], [0.0, 0.0, 0.0]], dtype=np.float32)
+
+    def pairwise(x: np.ndarray, y: np.ndarray) -> np.ndarray:
+        out = np.empty((len(x), len(y)), dtype=np.float32)
+        for i, left in enumerate(x):
+            for j, right in enumerate(y):
+                difference = (left - right).astype(np.float32)
+                difference += np.float32(1e-6)
+                out[i, j] = np.sqrt(np.sum(difference * difference, dtype=np.float32)).astype(np.float32)
+        return out
+
+    raw = pairwise(lip, audio)
+    unit_lip = row_unit_geometry(lip)
+    unit_audio = row_unit_geometry(audio)
+    unit = pairwise(unit_lip, unit_audio)
+    raw_zero = pairwise(lip, np.zeros((1, lip.shape[1]), dtype=np.float32))[:, 0]
+    unit_zero = pairwise(unit_lip, np.zeros((1, lip.shape[1]), dtype=np.float32))[:, 0]
+    report = validate_cross_embedding_artifacts(lip, audio, raw, unit, raw_zero, unit_zero, block_rows=1)
+
+    assert report["valid"] is True
+    assert report["visual_rows"] == 2
+    assert report["audio_rows"] == 3
+    assert max(value for key, value in report.items() if key.endswith("max_abs_error")) == 0.0
+
+    corrupted = raw.copy()
+    corrupted[0, 1] += np.float32(0.01)
+    with pytest.raises(ValidationError, match="raw_cross"):
+        validate_cross_embedding_artifacts(lip, audio, corrupted, unit, raw_zero, unit_zero)
 
 
 def test_unit_geometry_and_four_cell_closure_use_identical_support() -> None:

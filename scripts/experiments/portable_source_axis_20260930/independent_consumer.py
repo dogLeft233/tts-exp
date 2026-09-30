@@ -28,6 +28,7 @@ from .independent_validator import (
     curve_summary,
     reduce_two_clip_speaker_effects,
     validate_calibration_artifacts,
+    validate_cross_embedding_artifacts,
     validate_intervention,
     validate_random_direction,
     validate_random_dose,
@@ -653,6 +654,9 @@ def consume_evaluation_run(
     axis_values: dict[tuple[str, str, str, str], dict[str, float]] = defaultdict(dict)
     score_paths: dict[str, Path] = {}
     cached_parity_rows: list[dict[str, Any]] = []
+    cross_pair_parity: dict[tuple[str, str], dict[str, Any]] = {}
+    cross_parity_row_count = 0
+    cross_pair_use_count: dict[tuple[str, str], int] = defaultdict(int)
     row_validation_count = 0
     context_errors: list[dict[str, Any]] = []
 
@@ -765,6 +769,31 @@ def consume_evaluation_run(
 
             metric_payload, score_arrays = _read_score_artifact(root, plan, result, anchor_column)
             score_path_for_row = _safe_artifact_path(root, str(plan["score_npz"]))
+            lip_sha = _array_sha256(lip)
+            audio_sha = _array_sha256(audio)
+            cross_pair_key = (lip_sha, audio_sha)
+            cross_array_keys = (
+                "cross_distance_raw_float32", "cross_distance_unit_float32",
+                "cross_distance_to_zero_raw_float32", "cross_distance_to_zero_unit_float32",
+            )
+            cross_array_hashes = {key: _array_sha256(score_arrays[key]) for key in cross_array_keys}
+            if cross_pair_key not in cross_pair_parity:
+                full_matrix_parity = validate_cross_embedding_artifacts(
+                    lip, audio,
+                    score_arrays["cross_distance_raw_float32"],
+                    score_arrays["cross_distance_unit_float32"],
+                    score_arrays["cross_distance_to_zero_raw_float32"],
+                    score_arrays["cross_distance_to_zero_unit_float32"],
+                )
+                cross_pair_parity[cross_pair_key] = {
+                    "first_row_id": row_id,
+                    "lip_embedding_sha256": lip_sha,
+                    "audio_embedding_sha256": audio_sha,
+                    "cross_artifact_sha256": cross_array_hashes,
+                    **full_matrix_parity,
+                }
+            elif cross_pair_parity[cross_pair_key]["cross_artifact_sha256"] != cross_array_hashes:
+                raise ConsumerError(f"duplicate cached lip/audio pair has different full cross-distance arrays: {row_id}")
             support_digest = _support_digest(score_arrays)
             if plan["family"] == "source_axis":
                 support_group = (sample_id, str(plan["face_id"]), "source_axis", "natural")
@@ -817,6 +846,8 @@ def consume_evaluation_run(
             if row_parity is not None:
                 cached_parity_rows.append(row_parity)
             row_validation_count += 1
+            cross_parity_row_count += 1
+            cross_pair_use_count[cross_pair_key] += 1
         except Exception as exc:
             row_failures.append({
                 "artifact": "row_validation", "row_id": row_id,
@@ -1216,7 +1247,21 @@ def consume_evaluation_run(
         "support_checks": {"groups_checked": len(score_supports), "failures": support_failures},
         "cached_embedding_parity": {
             "preselected_ordered_indices": [0, 39, 79] if verify_cached_embeddings else [],
-            "validated_rows": len(cached_parity_rows), "rows": cached_parity_rows,
+            "preselected_aligned_lag_rows_validated": len(cached_parity_rows),
+            "preselected_aligned_lag_rows": cached_parity_rows,
+            "full_cross_matrix": {
+                "algorithm": "independent NumPy float32 pairwise L2 with SyncNet eps=1e-6; raw and row-unit geometry",
+                "validated_score_rows": cross_parity_row_count,
+                "expected_score_rows": len(plan_by_id),
+                "unique_lip_audio_embedding_pairs": len(cross_pair_parity),
+                "duplicate_pair_rows_hash_matched": sum(max(0, uses - 1) for uses in cross_pair_use_count.values()),
+                "tolerance_atol": 5e-4,
+                "valid": cross_parity_row_count == len(plan_by_id),
+                "pairs": [
+                    {**record, "score_row_references": cross_pair_use_count[key]}
+                    for key, record in sorted(cross_pair_parity.items())
+                ],
+            },
         },
         "score_support_summaries_by_row": score_support_summaries,
         "four_cell": {"C/B/D and C_anchor G/E/I; clip then speaker weighting": fourcell_contrasts, "T_minus_N": t_minus_n},

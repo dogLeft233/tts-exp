@@ -408,6 +408,89 @@ def validate_embedding_distance_artifacts(
     }
 
 
+def _cross_distance_matrix_numpy(
+    lip: np.ndarray,
+    audio: np.ndarray,
+    *,
+    epsilon: float = 1e-6,
+    block_rows: int = 12,
+) -> tuple[np.ndarray, np.ndarray]:
+    """Rebuild SyncNet's full V×A pairwise-distance domain in bounded CPU blocks."""
+
+    visual = np.asarray(lip, dtype=np.float32)
+    sound = np.asarray(audio, dtype=np.float32)
+    if (visual.ndim != 2 or sound.ndim != 2 or visual.shape[1] != sound.shape[1]
+            or not len(visual) or not len(sound) or block_rows < 1
+            or not np.isfinite(visual).all() or not np.isfinite(sound).all()):
+        raise ValidationError("cross-distance inputs must be finite nonempty aligned feature matrices")
+    eps32 = np.float32(epsilon)
+    result = np.empty((len(visual), len(sound)), dtype=np.float32)
+    for start in range(0, len(visual), block_rows):
+        stop = min(start + block_rows, len(visual))
+        difference = (visual[start:stop, None, :] - sound[None, :, :]).astype(np.float32, copy=False)
+        difference += eps32
+        np.multiply(difference, difference, out=difference)
+        squared = np.sum(difference, axis=2, dtype=np.float32)
+        result[start:stop] = np.sqrt(squared).astype(np.float32, copy=False)
+
+    zero_difference = visual.copy()
+    zero_difference += eps32
+    np.multiply(zero_difference, zero_difference, out=zero_difference)
+    distance_to_zero = np.sqrt(np.sum(zero_difference, axis=1, dtype=np.float32)).astype(np.float32, copy=False)
+    return result, distance_to_zero
+
+
+def validate_cross_embedding_artifacts(
+    lip: np.ndarray,
+    audio: np.ndarray,
+    raw_cross: np.ndarray,
+    unit_cross: np.ndarray,
+    raw_to_zero: np.ndarray,
+    unit_to_zero: np.ndarray,
+    *,
+    atol: float = 5e-4,
+    block_rows: int = 12,
+) -> dict[str, Any]:
+    """Rebuild every V×A raw/unit distance and zero-boundary vector from cached embeddings."""
+
+    visual = np.asarray(lip, dtype=np.float32)
+    sound = np.asarray(audio, dtype=np.float32)
+    expected_raw, expected_raw_zero = _cross_distance_matrix_numpy(
+        visual, sound, block_rows=block_rows,
+    )
+    expected_unit, expected_unit_zero = _cross_distance_matrix_numpy(
+        row_unit_geometry(visual), row_unit_geometry(sound), block_rows=block_rows,
+    )
+    actual = {
+        "raw_cross": np.asarray(raw_cross, dtype=np.float32),
+        "unit_cross": np.asarray(unit_cross, dtype=np.float32),
+        "raw_to_zero": np.asarray(raw_to_zero, dtype=np.float32),
+        "unit_to_zero": np.asarray(unit_to_zero, dtype=np.float32),
+    }
+    expected = {
+        "raw_cross": expected_raw,
+        "unit_cross": expected_unit,
+        "raw_to_zero": expected_raw_zero,
+        "unit_to_zero": expected_unit_zero,
+    }
+    errors: dict[str, float] = {}
+    for name, value in actual.items():
+        target = expected[name]
+        if value.shape != target.shape or not np.isfinite(value).all():
+            raise ValidationError(f"saved {name} artifact has a malformed shape or nonfinite value")
+        error = float(np.max(np.abs(value - target)))
+        if error > atol:
+            raise ValidationError(f"saved {name} differs from independent cached-embedding reconstruction")
+        errors[name + "_max_abs_error"] = error
+    return {
+        "visual_rows": int(len(visual)),
+        "audio_rows": int(len(sound)),
+        **errors,
+        "atol": float(atol),
+        "valid": True,
+    }
+
+
 def curve_summary(matrix: np.ndarray, *, anchor_column: int | None = None) -> dict[str, Any]:
     """Recompute SyncNet B, D, C and optional calibration-anchor geometry."""
 
