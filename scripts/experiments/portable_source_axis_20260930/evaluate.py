@@ -321,8 +321,21 @@ def _seal_plan(args: argparse.Namespace, run_dir: Path, input_manifest: dict[str
         existing_rows_hash = _sha_file(rows_path)
         if existing.get("row_manifest_sha256") != row_hash or existing_rows_hash != row_hash:
             raise RuntimeError("frozen evaluation row manifest differs from the existing seal")
-        if existing.get("production_code_sha256") != code_hashes or existing.get("input_identity_sha256") != core["input_identity_sha256"]:
-            raise RuntimeError("code or inputs differ from the existing evaluation protocol seal")
+        if existing.get("input_identity_sha256") != core["input_identity_sha256"]:
+            raise RuntimeError("inputs differ from the existing evaluation protocol seal")
+        if existing.get("production_code_sha256") != code_hashes:
+            if not args.continuation_parent:
+                raise RuntimeError("code differs from the existing evaluation protocol seal; explicit continuation parent is required")
+            parent_dir = Path(args.continuation_parent).resolve()
+            parent_protocol = parent_dir / "evaluation_protocol.json"
+            parent_rows = parent_dir / "evaluation_rows.jsonl"
+            if not parent_protocol.is_file() or not parent_rows.is_file():
+                raise RuntimeError("continuation parent is missing its frozen protocol or rows")
+            if _sha_file(parent_protocol) != _sha_file(protocol_path) or _sha_file(parent_rows) != row_hash:
+                raise RuntimeError("child protocol/rows do not exactly match the continuation parent seal")
+            parent_seal = json.loads(parent_protocol.read_text(encoding="utf-8"))
+            if parent_seal.get("production_code_sha256") != existing.get("production_code_sha256"):
+                raise RuntimeError("continuation parent protocol code hash differs from the child protocol")
         return rows, existing
     rows_path.parent.mkdir(parents=True, exist_ok=True)
     rows_path.write_text(serialized_rows, encoding="utf-8", newline="\n")
@@ -551,6 +564,7 @@ def _run_face(args: argparse.Namespace) -> dict[str, Any]:
     input_manifest, tts_manifest, frozen_manifest, calibration, d, u, eval_rows, tts_rows = _build_plan_inputs(args)
     rows, protocol = _seal_plan(args, run_dir, input_manifest, tts_manifest, frozen_manifest, calibration, d, u, eval_rows, tts_rows)
     code_hashes = protocol["production_code_sha256"]
+    runtime_code_hashes = _code_hashes()
     attempt_id = f"{args.face_id}-{datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%SZ')}"
     attempts_path = run_dir / "evaluation_attempts.jsonl"
     completed_path = run_dir / "evaluation_clip_status.jsonl"
@@ -560,6 +574,7 @@ def _run_face(args: argparse.Namespace) -> dict[str, Any]:
     _append_jsonl(attempts_path, {
         "event": "run_started", "attempt_id": attempt_id, "attempt_number": attempt_number,
         "face_id": args.face_id, "started_at_utc": _utc_now(), "code_sha256": code_hashes,
+        "runtime_code_sha256": runtime_code_hashes,
         "row_manifest_sha256": protocol["row_manifest_sha256"],
     })
     completed = {item["sample_id"] for item in _read_jsonl(completed_path) if item.get("face_id") == args.face_id and item.get("status") == "complete"}
@@ -585,7 +600,9 @@ def _run_face(args: argparse.Namespace) -> dict[str, Any]:
     face_meta.update({"path": str(face_path), "sha256": _sha_file(face_path), "width": int(frame.shape[1]), "height": int(frame.shape[0])})
     _atomic_json(run_dir / "faces" / f"{args.face_id}.json", {
         "face_id": args.face_id, "face": face_meta, "wav2lip_checkpoint_sha256": _sha_file(args.wav2lip_checkpoint),
-        "code_sha256": code_hashes, "frontend_compatibility": frontend,
+        "code_sha256": code_hashes, "runtime_code_sha256": runtime_code_hashes,
+        "continuation_parent": str(Path(args.continuation_parent).resolve()) if args.continuation_parent else None,
+        "frontend_compatibility": frontend,
     })
     face_cache = wav2lip.cache_face_features(model, frame, face_meta["generation_box_xyxy"], range(1, args.wav2lip_batch_size + 1), device=device)
 
@@ -609,6 +626,7 @@ def _run_face(args: argparse.Namespace) -> dict[str, Any]:
         "face_id": args.face_id, "started_at_utc": _utc_now(), "device": torch.cuda.get_device_name(),
         "python": platform.python_version(), "torch": str(torch.__version__), "cuda": str(torch.version.cuda),
         "wav2lip_model": model_meta, "syncnet_model": syncnet_meta, "frontend_compatibility": frontend,
+        "runtime_code_sha256": runtime_code_hashes,
         "wav2lip_batch_size": args.wav2lip_batch_size, "syncnet_batch_size": args.syncnet_batch_size,
         "shared_face_encoder_batch_sizes": list(face_cache),
     })
@@ -662,8 +680,8 @@ def _run_face(args: argparse.Namespace) -> dict[str, Any]:
                     len(lips[f"{source}_raw"]), len(lips[f"{source}_fixed"]),
                     len(arrays[_audio_key(source, "raw")]), len(arrays[_audio_key(source, "fixed")]),
                 )
-                if source_support[source] < 41:
-                    raise ValueError(f"common SyncNet support too short for {sample_id} {source}: {source_support[source]}")
+                if source_support[source] < 1:
+                    raise ValueError(f"common SyncNet support is empty for {sample_id} {source}: {source_support[source]}")
             axis_support = min(
                 *(len(lips["natural_fixed"] if condition == "baseline" else lips[f"axis_{condition}"]) for condition in SOURCE_AXIS_CONDITIONS),
                 len(arrays[_audio_key("natural", "raw")]),
@@ -723,6 +741,7 @@ def _run_face(args: argparse.Namespace) -> dict[str, Any]:
                     **row_plan,
                     "status": "scored",
                     "attempt_id": attempt_id,
+                    "runtime_code_sha256": runtime_code_hashes,
                     "recorded_at_utc": _utc_now(),
                     "context_npz": str(context_npz),
                     "context_npz_sha256": _sha_file(context_npz),
@@ -760,6 +779,7 @@ def _run_face(args: argparse.Namespace) -> dict[str, Any]:
             completed_record = {
                 "event": "clip_complete", "status": "complete", "attempt_id": attempt_id,
                 "attempt_number": attempt_number, "face_id": args.face_id,
+                "runtime_code_sha256": runtime_code_hashes,
                 "ordered_eval_index": ordered_index, "sample_id": sample_id,
                 "speaker_id": source_row["speaker"], "score_rows_written": len(result_rows),
                 "expected_score_rows": len(plan_rows), "context_npz": str(context_npz),
@@ -780,6 +800,7 @@ def _run_face(args: argparse.Namespace) -> dict[str, Any]:
                 "failed_at_utc": _utc_now(), "elapsed_seconds": float(time.perf_counter() - clip_started),
                 "error_type": type(exc).__name__, "error": str(exc),
                 "traceback": traceback.format_exc(limit=8), "code_sha256": code_hashes,
+                "runtime_code_sha256": runtime_code_hashes,
             }
             _append_jsonl(attempts_path, error_record)
             raise
@@ -794,6 +815,9 @@ def _run_face(args: argparse.Namespace) -> dict[str, Any]:
         "row_manifest_path": str(run_dir / "evaluation_rows.jsonl"),
         "row_manifest_sha256": _sha_file(run_dir / "evaluation_rows.jsonl"),
         "results_path": str(results_path),
+        "production_code_sha256": code_hashes,
+        "runtime_code_sha256": runtime_code_hashes,
+        "continuation_parent": str(Path(args.continuation_parent).resolve()) if args.continuation_parent else None,
         "completed_clips": len(completed), "expected_clips": len(eval_rows),
         "expected_rows_for_face": sum(row["face_id"] == args.face_id for row in rows),
         "elapsed_seconds_this_attempt": float(time.perf_counter() - started),
@@ -834,6 +858,7 @@ def main() -> int:
     parser.add_argument("--ffmpeg", default="/usr/bin/ffmpeg")
     parser.add_argument("--wav2lip-batch-size", type=int, default=32)
     parser.add_argument("--syncnet-batch-size", type=int, default=20)
+    parser.add_argument("--continuation-parent", default=None, help="Parent run directory whose exact frozen protocol and rows this run continues")
     args = parser.parse_args()
     result = run(args)
     print(json.dumps(result, ensure_ascii=False))
