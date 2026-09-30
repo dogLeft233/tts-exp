@@ -153,8 +153,10 @@ def verify_core_transfer(
         seen: set[str] = set()
         with tarfile.open(archive_path, mode="r:gz") as tar:
             for info in tar.getmembers():
-                if not info.isfile():
+                if info.isdir():
                     continue
+                if not info.isfile():
+                    raise SealError(f"nonregular core archive member is not allowed: {name}/{info.name}")
                 member = _safe_member(info.name)
                 item = expected_members.get(member)
                 if item is None or member in seen:
