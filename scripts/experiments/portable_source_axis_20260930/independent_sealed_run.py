@@ -23,6 +23,12 @@ EXPECTED_ROW_MANIFEST_SHA256 = "19f805f6935c85475ad28319e17d2694a333a85d055d3e19
 EXPECTED_RECOVERY_CODE_SEAL_SHA256 = "55c1512e35bf72563d0e01623f7e14f77aaa776dd94ee565926d9df9bea90417"
 EXPECTED_CORE_MANIFEST_SHA256 = "98350b737fcb40434da7fb653b9560869adaf4c9d85cc070f6c55939df47dd73"
 EXPECTED_INHERITED_SUMMARY_SHA256 = "0aa21a38aa7b645fb556a589ff132ad71b2083d443df73ecf795f073a522c39c"
+EXPECTED_CALIBRATION_SUMMARY_SHA256 = "34876249bb3463417f903ea49e11da03306b1c0785a28cb6a4f97da92d59f22a"
+EXPECTED_CALIBRATION_AXES_SHA256 = "e71b669a67f435d951742cf67a9683e0385b77f5b97ab7a7408851389ade9244"
+EXPECTED_FACE_RUNTIME_SHA256 = {
+    "primary": "8fc3b06cea5f7f10b81287aeae1905eb988b22eb73d83fecc3ccf54bd491409d",
+    "secondary": "2a5be47e1494bc65b95c97b4a670007a8128c498d73927b46bf3655c8d1f8660",
+}
 EXPECTED_INVENTORY = {
     "items": 6311,
     "archives": 301,
@@ -256,6 +262,49 @@ def _execution_environment() -> dict[str, Any]:
         name: os.environ.get(name, "")
         for name in ("CUDA_VISIBLE_DEVICES", "OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS")
     }
+
+
+def _producer_runtime_provenance(run_dir: str | Path, calibration_dir: str | Path) -> dict[str, Any]:
+    run_root = Path(run_dir).resolve()
+    cal_root = Path(calibration_dir).resolve()
+    calibration_summary_path = cal_root / "calibration_summary.json"
+    calibration_axes_path = cal_root / "calibration_axes.npz"
+    summary_sha = sha256_file(calibration_summary_path)
+    axes_sha = sha256_file(calibration_axes_path)
+    if (summary_sha != EXPECTED_CALIBRATION_SUMMARY_SHA256
+            or axes_sha != EXPECTED_CALIBRATION_AXES_SHA256):
+        raise SealError("CAL summary or axes SHA differs from the frozen input seal")
+    cal_summary = _read_json(calibration_summary_path)
+    calibration_flag = cal_summary.get("method", {}).get("cudnn_benchmark")
+    if calibration_flag is not True:
+        raise SealError("sealed CAL summary does not report the previously observed cuDNN benchmark state")
+
+    faces: dict[str, Any] = {}
+    for face in ("primary", "secondary"):
+        runtime_path = run_root / "faces" / f"{face}_runtime.json"
+        runtime_sha = sha256_file(runtime_path)
+        if runtime_sha != EXPECTED_FACE_RUNTIME_SHA256[face]:
+            raise SealError(f"{face} face runtime metadata differs from its sealed SHA")
+        runtime = _read_json(runtime_path)
+        cudnn_flag = runtime.get("cudnn_benchmark")
+        faces[face] = {
+            "runtime_json_sha256": runtime_sha,
+            "device": runtime.get("device"),
+            "torch": runtime.get("torch"),
+            "cuda": runtime.get("cuda"),
+            "cudnn_benchmark_field": cudnn_flag,
+            "cudnn_forward_state_captured": isinstance(cudnn_flag, bool),
+        }
+    return {
+        "calibration_summary_sha256": summary_sha,
+        "calibration_axes_sha256": axes_sha,
+        "calibration_recorded_cudnn_benchmark": calibration_flag,
+        "evaluation_face_runtime": faces,
+        "evaluation_cudnn_benchmark_forward_claim_supported": all(
+            record["cudnn_forward_state_captured"] for record in faces.values()
+        ),
+        "note": "A calibration runtime flag does not establish evaluation forward state; evaluation metadata must capture the flag after face detection to support that claim.",
+    }
     if flags["CUDA_VISIBLE_DEVICES"] not in ("", "-1"):
         raise SealError("CPU validator requires CUDA_VISIBLE_DEVICES to be empty")
     for name in ("OMP_NUM_THREADS", "OPENBLAS_NUM_THREADS", "MKL_NUM_THREADS"):
@@ -294,6 +343,7 @@ def run_sealed_consumer(
         transfer_dir=transfer_dir,
         inherited_summary_path=inherited_summary_path,
     )
+    producer_runtime = _producer_runtime_provenance(run_dir, calibration_dir)
     preflight_path = output_root / "seal_preflight.json"
     preflight_path.write_text(json.dumps(preflight, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
 
@@ -321,6 +371,7 @@ def run_sealed_consumer(
             "cached_embedding_parity": "full raw/unit V×A matrices plus selected aligned-lag parity",
         },
         "input_seals": preflight,
+        "producer_runtime_provenance": producer_runtime,
         "source_hashes": {
             "independent_sealed_run.py": sha256_file(source_root / "independent_sealed_run.py"),
             "independent_consumer.py": sha256_file(source_root / "independent_consumer.py"),
