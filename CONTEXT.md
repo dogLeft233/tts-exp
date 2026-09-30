@@ -8,6 +8,8 @@
 
 ## 关键结论
 
+> **2026-10-01 机制确认已启动**：新服务器 `root@connect.weste.seetacloud.com:12349` 已通过确定性生成、官方评分前端与已知延迟控制。新 AISHELL 校准20/评估80的 Qwen 自克隆100/100已完成；固定RMS四格、来源表示/level正交干预与独立视觉协议见 `openspec/changes/confirm-tts-source-mechanism-20260930/spec.md`。BM任务“解释 TTS 的 TFG 与 SyncNet 优势”维护主线；正式效果待该run完成。
+
 > **2026-09-26 评价协议修正**：下列历史分数是原协议结果。Ditto 47对审计发现默认音频编码的高频损伤可造成大幅分差；统一源PCM后 ΔC=+0.287 [−0.090,+0.648]。全因子、频带双向干预及12真实视频复核见 `runs/syncnet_codec_mechanism_20260926/report.md` 和同名BM实验笔记。未经无损音轨复核，勿把原生高分升级为嘴型改善或发音动态机制。
 
 > **同日跨队列复核**：Wav2Lip/云Qwen 74对、13说话人统一PCM后仍 +0.935；MFA-linear视频换回自然音为 −0.762，共同ROI及独立音频时间校正未救回。联合等时长与发音窗口控制后原生差仍 +0.482。编码机制不能概括全部队列，自身配对高分不等于自然音频迁移收益；详见 `runs/tts_pcm_residual_20260926/report.md` 与BM同名实验。
@@ -29,6 +31,7 @@
 | 类别 | 项目 | 说明 |
 |------|------|------|
 | TTS 引擎 | `faster_qwen3` (0.6B ICL) | 本地推理，24kHz 输出 |
+| 机制确认 TTS | `qwen3-tts-vc-2026-01-22` | 云端自克隆；保留原24k及独立16k转换 |
 | TFG 模型 | Ditto, Wav2Lip, MuseTalk, LatentSync, JoyVASA, V-Express, EchoMimic V2, IMTalker, StableAvatar | 9 个核心模型 |
 | 评估 | SyncNet V2 | Sync-C (越高越好) + Sync-D (越低越好) |
 | 参考帧预处理 | `38_prepare_frames.py` + `frame_quality.py` + `frame_detectors.py` | 第一帧策略（ADR-002）；mediapipe 检测器；原始分辨率输出 |
@@ -42,7 +45,7 @@
 | EchoMimic V1 | 无 xformers 时 5.6h/样本 |
 | AniPortrait | 256×256 fp16 OOM (11GB) |
 | Hallo2 | CUDA 11.8 硬要求 (服务器 13.0) |
-| `dashscope_vc` (云 API) | 响度归一化抹平 TTS 优势 |
+| 旧 `dashscope_vc` loudnorm 配置 | 旧响度预处理协议；新机制确认使用原始PCM与显式RMS干预 |
 | `trt_online.pkl` | 输出 0.2s 视频 (已损坏) |
 | 旧 1080Ti 集群 (10.1.114.114) | 11GB VRAM 不足 |
 | `aishell1_ldn` loudnorm 实验 | 已是 null result |
@@ -52,7 +55,7 @@
 | 数据集 | 路径 | 说明 |
 |--------|------|------|
 | HDTF 英文原始音频 | `data/hdtf_audio_en/audio/` | 337 个 .m4a 文件（871MB），美国政客演讲录音 |
-| LibriSpeech TTS 音频 | `data/data/audio_en/` | 英文 LibriSpeech subset 的 TTS 生成输出 |
+| LibriSpeech 配对音频 | `data/data/audio_en/` | 自然参考；Qwen3 TTS 在 `data/data/audio_en_qwen3_tts/` |
 | 多语言 TTS 参考音频（旧版） | `data/multilingual_tts/` | 旧版 9 语言、每语言 20 条；CSS10/CML-TTS 存在已知来源重合风险 |
 | 多语言 TTS 参考音频（MDC） | `data/mdc_tts/` | 当前 5 语言 × 20 条 = 100 条；英语/德语/意大利语/西班牙语/韩语已提取，另 4 种 MDC 条款仍返回 403 |
 | TTS 资产目录 | `data/tts/catalog.json` | 本地 TTS 音频索引，支持按 provider/model/language/dataset 检索 |
