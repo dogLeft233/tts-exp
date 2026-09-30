@@ -8,7 +8,11 @@
 
 ## 关键结论
 
-> **2026-10-01 机制确认已启动**：新服务器 `root@connect.weste.seetacloud.com:12349` 已通过确定性生成、官方评分前端与已知延迟控制。新 AISHELL 校准20/评估80的 Qwen 自克隆100/100已完成；固定RMS四格、来源表示/level正交干预与独立视觉协议见 `openspec/changes/confirm-tts-source-mechanism-20260930/spec.md`。BM任务“解释 TTS 的 TFG 与 SyncNet 优势”维护主线；正式效果待该run完成。
+> **2026-10-01 新机制结果**：AISHELL 男性校准20/评估80及女性复核40的 Qwen 自克隆均完成。双脸2560行已独立核验；自然80/40固定RAW评分下，RMS生成端 ΔC=+0.192，99%[+0.111,+0.276]，第二脸和unit也为正。统一CAL来源方向 ΔC=−0.019 [−0.048,+0.011]，四主门未通过；原生优势随支持域/距离几何变化，详见BM“ TTS 来源方向与声学机制确认”和独立secondary补充。
+
+> **正在验证机制**：方向×范数四格80/320已生成封存，独立消费中；WORLD校准参数/波形9060项与能量3810项独立检查零错误，随后执行双向九臂；修正F32随机剂量、女性640、原生视频视觉和mel内部/裁剪边界分区继续。协议在 `openspec/changes/`，BM任务“解释 TTS 的 TFG 与 SyncNet 优势”维护主线。
+
+> **当前服务器**：`root@connect.weste.seetacloud.com:12349`；新输出根 `/root/tts-research-system-20261001/`（0700），旧输入/run保留 `/root/autodl-tmp/tts-research-20260930/`。密码/API key只在运行时；不写公共NFS。部署及空间迁移说明在BM `docs/reference/server-access`。
 
 > **2026-09-26 评价协议修正**：下列历史分数是原协议结果。Ditto 47对审计发现默认音频编码的高频损伤可造成大幅分差；统一源PCM后 ΔC=+0.287 [−0.090,+0.648]。全因子、频带双向干预及12真实视频复核见 `runs/syncnet_codec_mechanism_20260926/report.md` 和同名BM实验笔记。未经无损音轨复核，勿把原生高分升级为嘴型改善或发音动态机制。
 
