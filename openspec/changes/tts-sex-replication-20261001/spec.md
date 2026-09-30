@@ -16,6 +16,19 @@ The labels describe dataset metadata; they are not inferred from voice.
 ## Inputs
 
 - Initial evaluation speakers: S0124-S0143, twenty F-labeled speakers.
+- The pinned publisher HF repository supplies only S0002-S0101 speaker
+  archives; its full speaker metadata identifies the female IDs but does not
+  supply their waveforms. Obtain the missing waveform archives from the full
+  official OpenSLR SLR33 release. Bind the transport URL and full archive
+  hashes before extraction: `data_aishell.tgz` official MD5
+  `2f494334227864a8a8fec932999db9d8`; `resource_aishell.tgz` official MD5
+  `957d480a0fcac85fc18e550756f624e5`, published at
+  `https://www.openslr.org/resources/33/checksum.md5`. A transport mirror is
+  acceptable only after its complete archive matches the publisher checksum;
+  do not infer byte identity from a mirror's description. Also save SHA256,
+  selected inner archive/WAV hashes and text/metadata comparisons to the
+  existing publisher files. This repairs source coverage without changing
+  the predeclared speaker IDs or selection rules.
 - Same first-two-lexicographic utterance rule: mono 16 kHz PCM, 3-10 seconds,
   nonempty publisher text containing only Han characters after whitespace
   removal. Use the same transcript/revision and preserve source archive hashes.
