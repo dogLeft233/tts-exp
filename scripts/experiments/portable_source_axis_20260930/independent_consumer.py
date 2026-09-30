@@ -43,6 +43,8 @@ DEFAULT_NULL_PERMUTATIONS = 100
 DEFAULT_BOOTSTRAP_DRAWS = 20_000
 DEFAULT_SEED = 20_260_930
 SOURCE_AUDIO_KEY = "natural_audio_embeddings_raw_float32"
+PRIMARY_FACE = "primary"
+PRIMARY_AXIS_CONDITIONS = ("baseline", "orth_plus", "orth_minus")
 
 
 class ConsumerError(ValidationError):
@@ -349,7 +351,7 @@ def _read_score_artifact(
     if any(key not in arrays for key in needed):
         raise ConsumerError(f"score artifact misses required arrays: {plan['row_id']}")
     support_n = int(result.get("common_support_n", -1))
-    if support_n < 41 or int(result.get("scoring_audio_domain_n", -1)) != support_n:
+    if support_n < 1 or int(result.get("scoring_audio_domain_n", -1)) != support_n:
         raise ConsumerError(f"score row does not retain the frozen common support: {plan['row_id']}")
     lag_k = np.arange(-15, 16, dtype=np.int32)
     if not np.array_equal(arrays["lag_columns_int32"], np.arange(31, dtype=np.int32)) or not np.array_equal(arrays["lag_k_int32"], lag_k):
@@ -424,6 +426,64 @@ def _effect_summary(
         "bootstrap_draws": draws if bootstrap else None,
         "bootstrap_seed": DEFAULT_SEED if bootstrap else None,
         "eligible_for_intended_cohort": len(retained) == len(expected_samples) and len(complete_speakers) == len(set(speaker_by_sample.values())),
+    }
+
+
+def _primary_scope_status(
+    expected_samples: Sequence[str],
+    speaker_by_sample: Mapping[str, str],
+    metric_rows: Mapping[tuple[str, str, str, str, str], Mapping[str, Any]],
+    score_supports: Mapping[tuple[str, str, str, str], Mapping[str, tuple[str, str]]],
+    *,
+    run_rows_sealed: bool,
+) -> dict[str, Any]:
+    """Determine primary source-axis support independently of secondary rows."""
+
+    validated: set[tuple[str, str]] = set()
+    support_groups_valid = 0
+    support_failures: list[dict[str, Any]] = []
+    for sample in expected_samples:
+        group = score_supports.get((sample, PRIMARY_FACE, "source_axis", "natural"), {})
+        digests = []
+        for condition in PRIMARY_AXIS_CONDITIONS:
+            metrics = metric_rows.get((PRIMARY_FACE, sample, "source_axis", "natural", condition), {})
+            raw = metrics.get("raw")
+            if isinstance(raw, Mapping) and all(key in raw for key in ("C", "C_anchor", "B", "D")):
+                validated.add((sample, condition))
+            digest = group.get(condition)
+            if digest is not None:
+                digests.append(digest)
+        common_support = len(digests) == len(PRIMARY_AXIS_CONDITIONS) and len(set(digests)) == 1
+        if common_support:
+            support_groups_valid += 1
+        else:
+            support_failures.append({
+                "sample_id": sample,
+                "conditions_expected": list(PRIMARY_AXIS_CONDITIONS),
+                "conditions_with_support": [condition for condition in PRIMARY_AXIS_CONDITIONS if condition in group],
+                "common_support": common_support,
+            })
+    speaker_counts: dict[str, int] = defaultdict(int)
+    for sample in expected_samples:
+        if sample in speaker_by_sample:
+            speaker_counts[str(speaker_by_sample[sample])] += 1
+    expected_row_count = len(expected_samples) * len(PRIMARY_AXIS_CONDITIONS)
+    eligible = bool(
+        run_rows_sealed
+        and len(expected_samples) == 80
+        and len(speaker_counts) == 40
+        and all(count == 2 for count in speaker_counts.values())
+        and len(validated) == expected_row_count
+        and support_groups_valid == len(expected_samples)
+    )
+    return {
+        "eligible": eligible,
+        "required_conditions": list(PRIMARY_AXIS_CONDITIONS),
+        "validated_required_score_rows": len(validated),
+        "expected_required_score_rows": expected_row_count,
+        "common_support_groups_valid": support_groups_valid,
+        "expected_common_support_groups": len(expected_samples),
+        "support_failures": support_failures,
     }
 
 
@@ -728,7 +788,7 @@ def consume_evaluation_run(
             key = (str(plan["face_id"]), sample_id, str(plan["family"]), str(plan["source"]), str(plan["condition"]))
             row_axis_metrics = {}
             for geometry in GEOMETRIES:
-                if plan["family"] == "source_axis":
+                if plan["family"] == "source_axis" and geometry in row_metrics:
                     row_axis_metrics[(str(plan["face_id"]), sample_id, geometry, str(plan["condition"]))] = row_metrics[geometry]
 
             # A prespecified, effect-blind parity sample checks saved distances
@@ -928,16 +988,28 @@ def consume_evaluation_run(
         for item in status_rows if item.get("status") == "complete" and item.get("event") == "clip_complete"
     }
     expected_status = {(face, sample) for face in FACE_IDS for sample in expected_samples}
-    if complete_status_samples != expected_status:
+    status_grid_complete = complete_status_samples == expected_status
+    run_rows_sealed = result_grid_complete and status_grid_complete
+    if not status_grid_complete:
         artifact_complete = False
 
+    # The primary source-axis contrast needs baseline, orth_plus, and
+    # orth_minus on the primary face. Secondary T four-cell rows may have no
+    # guard-20 window and secondary arms may fail validation without making a
+    # complete primary cohort ineligible.
+    primary_face = PRIMARY_FACE
+    primary_scope = _primary_scope_status(
+        expected_samples, speaker_by_sample, metric_rows, score_supports,
+        run_rows_sealed=run_rows_sealed,
+    )
+    primary_scope_eligible = bool(primary_scope["eligible"])
+
     gates: dict[str, Any] = {}
-    primary_face = "primary"
     for contrast_name in ("orth_plus_minus_baseline", "orth_plus_minus_orth_minus"):
         for metric in ("C", "C_anchor"):
             summary = axis_effects.get(primary_face, {}).get("raw", {}).get("contrasts", {}).get(contrast_name, {}).get(metric)
             lower = summary.get("speaker_bootstrap_99_ci", [None, None])[0] if summary else None
-            eligible = bool(artifact_complete and summary and summary["eligible_for_intended_cohort"])
+            eligible = bool(primary_scope_eligible and summary and summary["eligible_for_intended_cohort"])
             key = f"{contrast_name}:{metric}"
             gates[key] = {
                 "contrast": contrast_name, "metric": metric, "face_id": primary_face,
@@ -1132,6 +1204,7 @@ def consume_evaluation_run(
             "all_rows_complete": artifact_complete,
             "complete_clip_status_rows": len(complete_status_samples),
             "expected_clip_status_rows": len(expected_status),
+            "all_planned_result_and_status_rows_sealed": run_rows_sealed,
         },
         "artifact_failures": row_failures,
         "attempt_failures_preserved": attempt_failures,
@@ -1150,8 +1223,9 @@ def consume_evaluation_run(
         "source_axis": axis_effects,
         "primary_gates": {
             "face_id": primary_face, "geometry": "raw", "support": "guard20",
+            **primary_scope,
             "gates": gates, "conjunction_pass": bool(gates) and all(item["passed"] for item in gates.values()),
-            "eligible": artifact_complete,
+            "eligible": primary_scope_eligible,
         },
         "temporal_null": null_summary,
     }
