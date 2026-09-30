@@ -24,6 +24,7 @@ import argparse
 import hashlib
 import json
 import math
+import platform
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Mapping, Sequence
@@ -280,6 +281,8 @@ def extract_manifest(
         extract_video_features,
         save_visual_sequence,
     )
+    import cv2
+    import mediapipe as mp
 
     payload = _read_json(input_manifest)
     rows = _manifest_rows(payload)
@@ -319,6 +322,17 @@ def extract_manifest(
         "extractor": "scripts.experiments.lrs3_tts_visual_advantage.video_features",
         "landmarker_asset": str(asset),
         "landmarker_asset_sha256": _sha256_file(asset),
+        "runtime": {
+            "python": platform.python_version(),
+            "numpy": np.__version__,
+            "mediapipe": str(mp.__version__),
+            "opencv": str(cv2.__version__),
+            "device": "CPU",
+        },
+        "producer_code_sha256": {
+            "visual_analysis": _sha256_file(Path(__file__).resolve()),
+            "video_features": _sha256_file(Path(extract_video_features.__code__.co_filename).resolve()),
+        },
         "rows": rows,
     }
     _write_json(output_manifest, result)

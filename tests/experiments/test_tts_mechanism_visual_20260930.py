@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import sys
+import types
 from pathlib import Path
 
 import numpy as np
@@ -220,3 +221,59 @@ def test_primary_estimand_weights_clips_equally_before_speakers(tmp_path: Path) 
     observed = speaker["orth_plus"]["phone_separation"] - speaker["baseline"]["phone_separation"]
     assert observed == pytest.approx(float(np.mean(clip_effects)))
     assert observed != pytest.approx((clip_effects[0] + 2 * clip_effects[1]) / 3)
+
+
+def test_extraction_manifest_records_runtime_asset_and_code_provenance(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    from scripts.experiments.lrs3_tts_visual_advantage import video_features
+
+    class FakeHandle:
+        closed = False
+
+        def close(self) -> None:
+            self.closed = True
+
+    class FakeSequence:
+        valid = np.ones(2, dtype=bool)
+        metadata = {"fps": 25.0}
+
+    asset = tmp_path / "face_landmarker.task"
+    asset.write_bytes(b"fixed-asset")
+    video = tmp_path / "baseline.mkv"
+    video.write_bytes(b"fixed-video")
+    source = tmp_path / "input.json"
+    source.write_text(json.dumps({
+        "schema_version": 1,
+        "rows": [{
+            "id": "sample-1", "speaker": "speaker-1", "split": "calibration", "phones": [],
+            "arms": {"baseline": {"video_path": str(video), "video_sha256": visual._sha256_file(video)}},
+        }],
+    }), encoding="utf-8")
+    handle = FakeHandle()
+    fake_mp = types.ModuleType("mediapipe")
+    fake_mp.__version__ = "1.2.3"
+    fake_cv2 = types.ModuleType("cv2")
+    fake_cv2.__version__ = "5.4.3"
+    monkeypatch.setitem(sys.modules, "mediapipe", fake_mp)
+    monkeypatch.setitem(sys.modules, "cv2", fake_cv2)
+
+    def save_fake(path: str | Path, _sequence: object) -> None:
+        target = Path(path)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(b"features")
+
+    monkeypatch.setattr(video_features, "create_landmarker", lambda _asset: (fake_mp, handle))
+    monkeypatch.setattr(video_features, "extract_video_features", lambda *_a, **_k: FakeSequence())
+    monkeypatch.setattr(video_features, "save_visual_sequence", save_fake)
+
+    output = tmp_path / "features.json"
+    result = visual.extract_manifest(source, output, tmp_path / "tracks", asset)
+    assert handle.closed is True
+    assert result["runtime"]["mediapipe"] == "1.2.3"
+    assert result["runtime"]["opencv"] == "5.4.3"
+    assert result["runtime"]["device"] == "CPU"
+    assert set(result["producer_code_sha256"]) == {"visual_analysis", "video_features"}
+    assert len(result["producer_code_sha256"]["visual_analysis"]) == 64
+    assert len(result["producer_code_sha256"]["video_features"]) == 64
+    assert json.loads(output.read_text(encoding="utf-8"))["runtime"] == result["runtime"]
