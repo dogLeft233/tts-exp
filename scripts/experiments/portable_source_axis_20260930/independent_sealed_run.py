@@ -127,12 +127,14 @@ def verify_core_transfer(
         raise SealError("core package does not contain both complete 1,280-row faces")
 
     by_archive: dict[str, dict[str, Mapping[str, Any]]] = {}
+    item_by_member: dict[str, Mapping[str, Any]] = {}
     for item in items:
         name = str(item.get("archive_name", ""))
         member = _safe_member(str(item.get("archive_path", "")))
-        if not name or member in by_archive.setdefault(name, {}):
+        if not name or member in by_archive.setdefault(name, {}) or member in item_by_member:
             raise SealError(f"duplicate or unbound core archive member: {name}/{member}")
         by_archive[name][member] = item
+        item_by_member[member] = item
     if set(by_archive) != {str(archive.get("name", "")) for archive in archives}:
         raise SealError("core archive names differ between item and archive inventories")
 
@@ -183,33 +185,41 @@ def verify_core_transfer(
         path = run_root / relative
         if not path.is_file() or sha256_file(path) != expected_sha:
             raise SealError(f"run artifact differs from its frozen core SHA: {relative}")
-    result_split = manifest.get("split_files", {}).get("evaluation_results.jsonl")
-    if not isinstance(result_split, Mapping):
+    split_files = manifest.get("split_files", {})
+    result_split = split_files.get("evaluation_results.jsonl") if isinstance(split_files, Mapping) else None
+    if not isinstance(split_files, Mapping) or not isinstance(result_split, Mapping):
         raise SealError("core manifest does not describe the sealed evaluation result split")
-    reconstructed = hashlib.sha256()
-    reconstructed_size = 0
-    for part in result_split.get("parts", []):
-        part_path = _safe_member(str(part.get("archive_path", "")))
-        item = next((candidate for candidate in items if candidate.get("archive_path") == part_path), None)
-        if item is None or item.get("sha256") != part.get("sha256") or int(item.get("size_bytes", -1)) != int(part.get("size_bytes", -2)):
-            raise SealError(f"evaluation result split part is not bound to the core member: {part_path}")
-        archive_path = package_root / str(item["archive_name"])
-        with tarfile.open(archive_path, mode="r:gz") as tar:
-            member_stream = tar.extractfile(part_path)
-            if member_stream is None:
-                raise SealError(f"cannot reconstruct result part: {part_path}")
-            with member_stream:
-                for block in iter(lambda: member_stream.read(1024 * 1024), b""):
-                    reconstructed.update(block)
-                    reconstructed_size += len(block)
-    if (reconstructed_size != int(result_split.get("original_size_bytes", -1))
-            or reconstructed.hexdigest() != result_split.get("original_sha256")):
-        raise SealError("concatenated evaluation result parts differ from the declared complete result log")
-    result_path = run_root / "evaluation_results.jsonl"
-    if (not isinstance(result_split, Mapping) or not result_path.is_file()
-            or result_path.stat().st_size != int(result_split.get("original_size_bytes", -1))
-            or sha256_file(result_path) != result_split.get("original_sha256")):
-        raise SealError("run evaluation_results.jsonl differs from its frozen split-file seal")
+    for logical_name, split in split_files.items():
+        if not isinstance(split, Mapping):
+            raise SealError(f"split-file seal is malformed: {logical_name}")
+        reconstructed = hashlib.sha256()
+        reconstructed_size = 0
+        parts = split.get("parts", [])
+        if not isinstance(parts, list) or not parts:
+            raise SealError(f"split-file seal has no parts: {logical_name}")
+        for part in parts:
+            part_path = _safe_member(str(part.get("archive_path", "")))
+            item = item_by_member.get(part_path)
+            if (item is None or item.get("sha256") != part.get("sha256")
+                    or int(item.get("size_bytes", -1)) != int(part.get("size_bytes", -2))):
+                raise SealError(f"split-file part is not bound to its core member: {part_path}")
+            archive_path = package_root / str(item["archive_name"])
+            with tarfile.open(archive_path, mode="r:gz") as tar:
+                member_stream = tar.extractfile(part_path)
+                if member_stream is None:
+                    raise SealError(f"cannot reconstruct split-file part: {part_path}")
+                with member_stream:
+                    for block in iter(lambda: member_stream.read(1024 * 1024), b""):
+                        reconstructed.update(block)
+                        reconstructed_size += len(block)
+        original_path = _safe_member(str(split.get("original_path", logical_name)))
+        target_path = run_root.joinpath(*PurePosixPath(original_path).parts)
+        expected_size = int(split.get("original_size_bytes", -1))
+        expected_sha = str(split.get("original_sha256", ""))
+        if (reconstructed_size != expected_size or reconstructed.hexdigest() != expected_sha
+                or not target_path.is_file() or target_path.stat().st_size != expected_size
+                or sha256_file(target_path) != expected_sha):
+            raise SealError(f"reconstructed or run split-file differs from its original seal: {logical_name}")
     status_path = run_root / "evaluation_clip_status.jsonl"
     attempts_path = run_root / "evaluation_attempts.jsonl"
     item_hashes = {str(item["archive_path"]): str(item["sha256"]) for item in items}
