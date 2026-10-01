@@ -8,9 +8,9 @@
 
 ## 关键结论
 
-> **2026-10-01 新机制结果**：AISHELL 男性校准20/评估80及女性复核40的 Qwen 自克隆均完成。双脸2560行已独立核验；自然80/40固定RAW评分下，RMS生成端 ΔC=+0.192，99%[+0.111,+0.276]，第二脸和unit也为正。统一CAL来源方向 ΔC=−0.019 [−0.048,+0.011]，方向/范数四格320行亦未达到正增益门槛；原生分差依赖支持域/距离几何。见BM“ TTS 来源方向与声学机制确认”及独立secondary、norm补充。
+> **2026-10-01 新机制结果**：AISHELL 男性评估80/40说话人双脸2560行及女性40/20说话人640行已独立核验。同RAW自然音评分，RMS生成端 ΔC 男性 +0.192，99%[+0.111,+0.276]；女性 +0.250 [+0.117,+0.417]，unit也为正。女性full-A时间置换excess +0.230 [+0.105,+0.385]，各支持域/raw/unit/C_anchor均正；配对原生T/N差距excess缩小 +0.245 [+0.118,+0.388]。统一CAL来源方向未达到baseline增益门槛，secondary raw guard15 plus−minus有条件正响应；旧静态方向范数四格与真实RMS路径分别解释。见BM来源机制、女性复核及边界独立复核。
 
-> **可见运动与内部机制**：原生四格320视频完整提取；80/40视觉配对确认自然固定RMS增大开合/速度、TTS固定RMS减小二者，phone形状端点仅16/17完整speaker且区间跨零。WORLD双向九臂1440主波形、mel 80/320输入已封存，模型响应待执行；真实RAW→FIXED编码轨迹另作方向/范数拆分。修正随机640和女性640继续。协议在 `openspec/changes/`，BM任务“解释 TTS 的 TFG 与 SyncNet 优势”维护主线。
+> **可见运动与内部机制**：原生四格320视频完整提取；80/40视觉配对确认自然固定RMS增大开合/速度、TTS固定RMS减小二者，phone形状端点仅16/17完整speaker且区间跨零。男性full-A主guard20 G excess ΔC=+0.185，99%[+0.108,+0.266]，两脸/raw/unit/四支持域均正。mel独立80/320已完成：guard20 interior ΔC=+0.171 [+0.101,+0.245]、joint+0.190、interior−boundary+0.180，raw/unit及各支持/anchor/null重复为正；真实RMS独立80/320完成：direction ΔC=+0.161 [+0.094,+0.232]、radius+0.020 [−0.006,+0.046]，direction−radius+0.142 [+0.077,+0.212]；方向/joint/方向−范数在16组及时间excess均为正；修正随机80/640独立剂量合格，主guard20来源特异性 +0.005 [−0.016,+0.024]，第二脸部分支持域有条件正响应。WORLD物理160 recipient/1920 WAV与1920 NPZ完整独立重建，九臂GPU已运行且初次13/160contexts零失败；用户最新重点转向音素内谱包络、F0/清浊音、非周期性及局部动态，E能量迁移残差保留。协议在 `openspec/changes/`，BM任务“解释 TTS 的 TFG 与 SyncNet 优势”维护主线。
 
 > **当前服务器**：`root@connect.weste.seetacloud.com:12349`；新输出根 `/root/tts-research-system-20261001/`（0700），旧输入/run保留 `/root/autodl-tmp/tts-research-20260930/`。密码/API key只在运行时；不写公共NFS。部署及空间迁移说明在BM `docs/reference/server-access`。
 

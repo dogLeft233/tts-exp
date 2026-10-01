@@ -1,0 +1,4 @@
+scripts/experiments/*.py text eol=lf
+scripts/experiments/**/*.py text eol=lf
+# This executed figure source is sealed with CRLF bytes; preserve its exact SHA.
+scripts/experiments/plot_sealed_mechanism_effects_20261001.py -text !eol
