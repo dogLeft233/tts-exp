@@ -1,0 +1,1863 @@
+{
+  "evaluation_textgrids_or_endpoints_read": false,
+  "inventory_all_observed_labels": [
+    {
+      "calibration_sample_ids": [
+        "S0055_BAC009S0055W0121"
+      ],
+      "calibration_speaker_count": 1,
+      "calibration_speaker_ids": [
+        "S0055"
+      ],
+      "calibration_utterance_count": 1,
+      "label": "aj˥",
+      "matched_tokens_across_both_directions": 2,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0122",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 4,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0057",
+        "S0058",
+        "S0061"
+      ],
+      "calibration_utterance_count": 4,
+      "label": "aj˥˩",
+      "matched_tokens_across_both_directions": 8,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0122",
+        "S0059_BAC009S0059W0121"
+      ],
+      "calibration_speaker_count": 2,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0059"
+      ],
+      "calibration_utterance_count": 2,
+      "label": "aj˧˥",
+      "matched_tokens_across_both_directions": 4,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0122",
+        "S0056_BAC009S0056W0121",
+        "S0058_BAC009S0058W0121",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123"
+      ],
+      "calibration_speaker_count": 4,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0056",
+        "S0058",
+        "S0060"
+      ],
+      "calibration_utterance_count": 5,
+      "label": "aj˨˩˦",
+      "matched_tokens_across_both_directions": 10,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0122",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0123"
+      ],
+      "calibration_speaker_count": 4,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0054",
+        "S0056",
+        "S0057"
+      ],
+      "calibration_utterance_count": 4,
+      "label": "aw˥",
+      "matched_tokens_across_both_directions": 10,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0056_BAC009S0056W0121",
+        "S0056_BAC009S0056W0122"
+      ],
+      "calibration_speaker_count": 1,
+      "calibration_speaker_ids": [
+        "S0056"
+      ],
+      "calibration_utterance_count": 2,
+      "label": "aw˥˩",
+      "matched_tokens_across_both_directions": 4,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0058_BAC009S0058W0122"
+      ],
+      "calibration_speaker_count": 1,
+      "calibration_speaker_ids": [
+        "S0058"
+      ],
+      "calibration_utterance_count": 1,
+      "label": "aw˧˥",
+      "matched_tokens_across_both_directions": 2,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0055_BAC009S0055W0121",
+        "S0058_BAC009S0058W0122"
+      ],
+      "calibration_speaker_count": 2,
+      "calibration_speaker_ids": [
+        "S0055",
+        "S0058"
+      ],
+      "calibration_utterance_count": 2,
+      "label": "aw˨˩˦",
+      "matched_tokens_across_both_directions": 4,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0055_BAC009S0055W0121",
+        "S0055_BAC009S0055W0122",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0061_BAC009S0061W0121"
+      ],
+      "calibration_speaker_count": 3,
+      "calibration_speaker_ids": [
+        "S0055",
+        "S0059",
+        "S0061"
+      ],
+      "calibration_utterance_count": 5,
+      "label": "a˥",
+      "matched_tokens_across_both_directions": 14,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0121",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0121",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 9,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 12,
+      "label": "a˥˩",
+      "matched_tokens_across_both_directions": 32,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0052_BAC009S0052W0122",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0121",
+        "S0056_BAC009S0056W0122",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0121",
+        "S0060_BAC009S0060W0122"
+      ],
+      "calibration_speaker_count": 7,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0058",
+        "S0059",
+        "S0060"
+      ],
+      "calibration_utterance_count": 9,
+      "label": "a˧˥",
+      "matched_tokens_across_both_directions": 24,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0055_BAC009S0055W0121",
+        "S0058_BAC009S0058W0122",
+        "S0061_BAC009S0061W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 3,
+      "calibration_speaker_ids": [
+        "S0055",
+        "S0058",
+        "S0061"
+      ],
+      "calibration_utterance_count": 4,
+      "label": "a˨˩˦",
+      "matched_tokens_across_both_directions": 10,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 1,
+      "calibration_speaker_ids": [
+        "S0061"
+      ],
+      "calibration_utterance_count": 1,
+      "label": "ej˥",
+      "matched_tokens_across_both_directions": 2,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0055_BAC009S0055W0121",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0123",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 4,
+      "calibration_speaker_ids": [
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0061"
+      ],
+      "calibration_utterance_count": 4,
+      "label": "ej˥˩",
+      "matched_tokens_across_both_directions": 10,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0122",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0121",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0121"
+      ],
+      "calibration_speaker_count": 5,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0058",
+        "S0059",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 6,
+      "label": "ej˧˥",
+      "matched_tokens_across_both_directions": 12,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 2,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0061"
+      ],
+      "calibration_utterance_count": 2,
+      "label": "e˥",
+      "matched_tokens_across_both_directions": 4,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0121",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0121",
+        "S0057_BAC009S0057W0123"
+      ],
+      "calibration_speaker_count": 4,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0056",
+        "S0057"
+      ],
+      "calibration_utterance_count": 6,
+      "label": "e˥˩",
+      "matched_tokens_across_both_directions": 14,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0121",
+        "S0055_BAC009S0055W0121",
+        "S0056_BAC009S0056W0121",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 7,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0058",
+        "S0059",
+        "S0061"
+      ],
+      "calibration_utterance_count": 9,
+      "label": "e˧˥",
+      "matched_tokens_across_both_directions": 28,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0121",
+        "S0056_BAC009S0056W0121",
+        "S0056_BAC009S0056W0122",
+        "S0058_BAC009S0058W0121",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123"
+      ],
+      "calibration_speaker_count": 5,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0056",
+        "S0058",
+        "S0059",
+        "S0060"
+      ],
+      "calibration_utterance_count": 8,
+      "label": "e˨˩˦",
+      "matched_tokens_across_both_directions": 16,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0052_BAC009S0052W0122",
+        "S0055_BAC009S0055W0121",
+        "S0056_BAC009S0056W0122",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0121",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123"
+      ],
+      "calibration_speaker_count": 6,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0055",
+        "S0056",
+        "S0058",
+        "S0059",
+        "S0060"
+      ],
+      "calibration_utterance_count": 8,
+      "label": "f",
+      "matched_tokens_across_both_directions": 24,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0121",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0121",
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0060_BAC009S0060W0122",
+        "S0061_BAC009S0061W0121"
+      ],
+      "calibration_speaker_count": 10,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 13,
+      "label": "i˥",
+      "matched_tokens_across_both_directions": 38,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0122",
+        "S0057_BAC009S0057W0121",
+        "S0058_BAC009S0058W0121",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 9,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 12,
+      "label": "i˥˩",
+      "matched_tokens_across_both_directions": 34,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0121",
+        "S0055_BAC009S0055W0121",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0121",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 8,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0059",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 10,
+      "label": "i˧˥",
+      "matched_tokens_across_both_directions": 20,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0054_BAC009S0054W0122",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 5,
+      "calibration_speaker_ids": [
+        "S0054",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0061"
+      ],
+      "calibration_utterance_count": 6,
+      "label": "i˨˩˦",
+      "matched_tokens_across_both_directions": 12,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0121",
+        "S0054_BAC009S0054W0121",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0121",
+        "S0056_BAC009S0056W0121",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 10,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 15,
+      "label": "j",
+      "matched_tokens_across_both_directions": 48,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122",
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0121",
+        "S0057_BAC009S0057W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0059_BAC009S0059W0121"
+      ],
+      "calibration_speaker_count": 7,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0059"
+      ],
+      "calibration_utterance_count": 9,
+      "label": "k",
+      "matched_tokens_across_both_directions": 22,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0055_BAC009S0055W0121",
+        "S0061_BAC009S0061W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 2,
+      "calibration_speaker_ids": [
+        "S0055",
+        "S0061"
+      ],
+      "calibration_utterance_count": 3,
+      "label": "kʰ",
+      "matched_tokens_across_both_directions": 6,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0056_BAC009S0056W0121",
+        "S0058_BAC009S0058W0121"
+      ],
+      "calibration_speaker_count": 2,
+      "calibration_speaker_ids": [
+        "S0056",
+        "S0058"
+      ],
+      "calibration_utterance_count": 2,
+      "label": "kʷ",
+      "matched_tokens_across_both_directions": 4,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0121",
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0121",
+        "S0058_BAC009S0058W0121"
+      ],
+      "calibration_speaker_count": 5,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0058"
+      ],
+      "calibration_utterance_count": 6,
+      "label": "l",
+      "matched_tokens_across_both_directions": 12,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 1,
+      "calibration_speaker_ids": [
+        "S0061"
+      ],
+      "calibration_utterance_count": 1,
+      "label": "m",
+      "matched_tokens_across_both_directions": 2,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0122",
+        "S0057_BAC009S0057W0121"
+      ],
+      "calibration_speaker_count": 2,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0057"
+      ],
+      "calibration_utterance_count": 2,
+      "label": "mʲ",
+      "matched_tokens_across_both_directions": 4,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0121",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0121",
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0121",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 10,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 20,
+      "label": "n",
+      "matched_tokens_across_both_directions": 130,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0121",
+        "S0056_BAC009S0056W0121",
+        "S0059_BAC009S0059W0121"
+      ],
+      "calibration_speaker_count": 3,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0056",
+        "S0059"
+      ],
+      "calibration_utterance_count": 3,
+      "label": "ow˥",
+      "matched_tokens_across_both_directions": 6,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0121"
+      ],
+      "calibration_speaker_count": 3,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0056",
+        "S0057"
+      ],
+      "calibration_utterance_count": 3,
+      "label": "ow˥˩",
+      "matched_tokens_across_both_directions": 6,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0055_BAC009S0055W0122"
+      ],
+      "calibration_speaker_count": 1,
+      "calibration_speaker_ids": [
+        "S0055"
+      ],
+      "calibration_utterance_count": 1,
+      "label": "ow˧˥",
+      "matched_tokens_across_both_directions": 2,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0057_BAC009S0057W0123"
+      ],
+      "calibration_speaker_count": 2,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0057"
+      ],
+      "calibration_utterance_count": 2,
+      "label": "ow˨˩˦",
+      "matched_tokens_across_both_directions": 6,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0121",
+        "S0057_BAC009S0057W0123",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123"
+      ],
+      "calibration_speaker_count": 3,
+      "calibration_speaker_ids": [
+        "S0056",
+        "S0057",
+        "S0060"
+      ],
+      "calibration_utterance_count": 5,
+      "label": "o˥",
+      "matched_tokens_across_both_directions": 10,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0122",
+        "S0057_BAC009S0057W0121",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 8,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0061"
+      ],
+      "calibration_utterance_count": 10,
+      "label": "o˥˩",
+      "matched_tokens_across_both_directions": 26,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0121",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0121",
+        "S0056_BAC009S0056W0121",
+        "S0057_BAC009S0057W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0059_BAC009S0059W0121"
+      ],
+      "calibration_speaker_count": 8,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0059"
+      ],
+      "calibration_utterance_count": 12,
+      "label": "o˧˥",
+      "matched_tokens_across_both_directions": 32,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0121",
+        "S0056_BAC009S0056W0122",
+        "S0061_BAC009S0061W0121"
+      ],
+      "calibration_speaker_count": 3,
+      "calibration_speaker_ids": [
+        "S0055",
+        "S0056",
+        "S0061"
+      ],
+      "calibration_utterance_count": 4,
+      "label": "o˨˩˦",
+      "matched_tokens_across_both_directions": 8,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122",
+        "S0056_BAC009S0056W0121",
+        "S0057_BAC009S0057W0123",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 5,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0056",
+        "S0057",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 7,
+      "label": "p",
+      "matched_tokens_across_both_directions": 16,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0122",
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0121",
+        "S0058_BAC009S0058W0122"
+      ],
+      "calibration_speaker_count": 5,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058"
+      ],
+      "calibration_utterance_count": 5,
+      "label": "pʰ",
+      "matched_tokens_across_both_directions": 10,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123"
+      ],
+      "calibration_speaker_count": 3,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0059",
+        "S0060"
+      ],
+      "calibration_utterance_count": 5,
+      "label": "pʲ",
+      "matched_tokens_across_both_directions": 12,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0057_BAC009S0057W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0061_BAC009S0061W0121"
+      ],
+      "calibration_speaker_count": 3,
+      "calibration_speaker_ids": [
+        "S0057",
+        "S0058",
+        "S0061"
+      ],
+      "calibration_utterance_count": 4,
+      "label": "pʷ",
+      "matched_tokens_across_both_directions": 10,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0054_BAC009S0054W0121",
+        "S0056_BAC009S0056W0121",
+        "S0057_BAC009S0057W0121",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0060_BAC009S0060W0123"
+      ],
+      "calibration_speaker_count": 5,
+      "calibration_speaker_ids": [
+        "S0054",
+        "S0056",
+        "S0057",
+        "S0059",
+        "S0060"
+      ],
+      "calibration_utterance_count": 6,
+      "label": "s",
+      "matched_tokens_across_both_directions": 14,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0054_BAC009S0054W0121",
+        "S0055_BAC009S0055W0121",
+        "S0056_BAC009S0056W0121",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 9,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 13,
+      "label": "t",
+      "matched_tokens_across_both_directions": 30,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0053_BAC009S0053W0122",
+        "S0055_BAC009S0055W0121",
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0122",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0121"
+      ],
+      "calibration_speaker_count": 8,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 10,
+      "label": "ts",
+      "matched_tokens_across_both_directions": 20,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0058_BAC009S0058W0122"
+      ],
+      "calibration_speaker_count": 1,
+      "calibration_speaker_ids": [
+        "S0058"
+      ],
+      "calibration_utterance_count": 1,
+      "label": "tsʰ",
+      "matched_tokens_across_both_directions": 2,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0121",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0121",
+        "S0056_BAC009S0056W0121",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0059_BAC009S0059W0121",
+        "S0061_BAC009S0061W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 9,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0061"
+      ],
+      "calibration_utterance_count": 14,
+      "label": "tɕ",
+      "matched_tokens_across_both_directions": 54,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0121",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 4,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0054",
+        "S0059",
+        "S0061"
+      ],
+      "calibration_utterance_count": 5,
+      "label": "tɕʰ",
+      "matched_tokens_across_both_directions": 10,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0122",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0121"
+      ],
+      "calibration_speaker_count": 3,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0058",
+        "S0059"
+      ],
+      "calibration_utterance_count": 3,
+      "label": "tɕʷ",
+      "matched_tokens_across_both_directions": 6,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0055_BAC009S0055W0121",
+        "S0056_BAC009S0056W0122"
+      ],
+      "calibration_speaker_count": 2,
+      "calibration_speaker_ids": [
+        "S0055",
+        "S0056"
+      ],
+      "calibration_utterance_count": 2,
+      "label": "tʰ",
+      "matched_tokens_across_both_directions": 4,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 6,
+      "calibration_speaker_ids": [
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0061"
+      ],
+      "calibration_utterance_count": 7,
+      "label": "tʲ",
+      "matched_tokens_across_both_directions": 16,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0054_BAC009S0054W0122",
+        "S0057_BAC009S0057W0121",
+        "S0058_BAC009S0058W0121",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 6,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0054",
+        "S0057",
+        "S0058",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 6,
+      "label": "tʷ",
+      "matched_tokens_across_both_directions": 14,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122",
+        "S0056_BAC009S0056W0121",
+        "S0057_BAC009S0057W0121",
+        "S0058_BAC009S0058W0121"
+      ],
+      "calibration_speaker_count": 5,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0056",
+        "S0057",
+        "S0058"
+      ],
+      "calibration_utterance_count": 6,
+      "label": "u˥",
+      "matched_tokens_across_both_directions": 12,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0054_BAC009S0054W0122",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0121",
+        "S0058_BAC009S0058W0121",
+        "S0059_BAC009S0059W0121",
+        "S0061_BAC009S0061W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 6,
+      "calibration_speaker_ids": [
+        "S0054",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0061"
+      ],
+      "calibration_utterance_count": 7,
+      "label": "u˥˩",
+      "matched_tokens_across_both_directions": 22,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0054_BAC009S0054W0121",
+        "S0055_BAC009S0055W0122",
+        "S0057_BAC009S0057W0121",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123"
+      ],
+      "calibration_speaker_count": 5,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0054",
+        "S0055",
+        "S0057",
+        "S0060"
+      ],
+      "calibration_utterance_count": 6,
+      "label": "u˧˥",
+      "matched_tokens_across_both_directions": 16,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0121",
+        "S0056_BAC009S0056W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 6,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0054",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0061"
+      ],
+      "calibration_utterance_count": 7,
+      "label": "u˨˩˦",
+      "matched_tokens_across_both_directions": 22,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122",
+        "S0055_BAC009S0055W0121",
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0121",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0121",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 8,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 15,
+      "label": "w",
+      "matched_tokens_across_both_directions": 46,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0121",
+        "S0056_BAC009S0056W0122",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 4,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0055",
+        "S0056",
+        "S0061"
+      ],
+      "calibration_utterance_count": 5,
+      "label": "x",
+      "matched_tokens_across_both_directions": 10,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0057_BAC009S0057W0121",
+        "S0058_BAC009S0058W0122",
+        "S0060_BAC009S0060W0122",
+        "S0061_BAC009S0061W0121"
+      ],
+      "calibration_speaker_count": 4,
+      "calibration_speaker_ids": [
+        "S0057",
+        "S0058",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 4,
+      "label": "xʷ",
+      "matched_tokens_across_both_directions": 8,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0055_BAC009S0055W0122"
+      ],
+      "calibration_speaker_count": 2,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0055"
+      ],
+      "calibration_utterance_count": 2,
+      "label": "y˥",
+      "matched_tokens_across_both_directions": 4,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 2,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0061"
+      ],
+      "calibration_utterance_count": 2,
+      "label": "y˥˩",
+      "matched_tokens_across_both_directions": 4,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0059_BAC009S0059W0122"
+      ],
+      "calibration_speaker_count": 1,
+      "calibration_speaker_ids": [
+        "S0059"
+      ],
+      "calibration_utterance_count": 1,
+      "label": "y˧˥",
+      "matched_tokens_across_both_directions": 2,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0055_BAC009S0055W0121",
+        "S0056_BAC009S0056W0121",
+        "S0061_BAC009S0061W0121"
+      ],
+      "calibration_speaker_count": 3,
+      "calibration_speaker_ids": [
+        "S0055",
+        "S0056",
+        "S0061"
+      ],
+      "calibration_utterance_count": 3,
+      "label": "z̩˥",
+      "matched_tokens_across_both_directions": 6,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0054_BAC009S0054W0121",
+        "S0056_BAC009S0056W0121",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0121"
+      ],
+      "calibration_speaker_count": 4,
+      "calibration_speaker_ids": [
+        "S0054",
+        "S0056",
+        "S0058",
+        "S0059"
+      ],
+      "calibration_utterance_count": 4,
+      "label": "z̩˥˩",
+      "matched_tokens_across_both_directions": 8,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0121",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0121",
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0121",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 10,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 20,
+      "label": "ŋ",
+      "matched_tokens_across_both_directions": 110,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0121",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0121",
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0121",
+        "S0057_BAC009S0057W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0122",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 9,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0061"
+      ],
+      "calibration_utterance_count": 13,
+      "label": "ɕ",
+      "matched_tokens_across_both_directions": 32,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0054_BAC009S0054W0121",
+        "S0057_BAC009S0057W0123",
+        "S0059_BAC009S0059W0122",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 4,
+      "calibration_speaker_ids": [
+        "S0054",
+        "S0057",
+        "S0059",
+        "S0061"
+      ],
+      "calibration_utterance_count": 4,
+      "label": "ə",
+      "matched_tokens_across_both_directions": 8,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0054_BAC009S0054W0122",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123"
+      ],
+      "calibration_speaker_count": 2,
+      "calibration_speaker_ids": [
+        "S0054",
+        "S0060"
+      ],
+      "calibration_utterance_count": 3,
+      "label": "ə˥",
+      "matched_tokens_across_both_directions": 6,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0055_BAC009S0055W0122",
+        "S0056_BAC009S0056W0122"
+      ],
+      "calibration_speaker_count": 3,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0055",
+        "S0056"
+      ],
+      "calibration_utterance_count": 3,
+      "label": "ə˥˩",
+      "matched_tokens_across_both_directions": 6,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0058_BAC009S0058W0121"
+      ],
+      "calibration_speaker_count": 1,
+      "calibration_speaker_ids": [
+        "S0058"
+      ],
+      "calibration_utterance_count": 1,
+      "label": "ə˧˥",
+      "matched_tokens_across_both_directions": 2,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0055_BAC009S0055W0122",
+        "S0057_BAC009S0057W0121",
+        "S0057_BAC009S0057W0123",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 3,
+      "calibration_speaker_ids": [
+        "S0055",
+        "S0057",
+        "S0061"
+      ],
+      "calibration_utterance_count": 4,
+      "label": "ə˨˩˦",
+      "matched_tokens_across_both_directions": 8,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122"
+      ],
+      "calibration_speaker_count": 2,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053"
+      ],
+      "calibration_utterance_count": 3,
+      "label": "ɥ",
+      "matched_tokens_across_both_directions": 6,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0121",
+        "S0054_BAC009S0054W0122",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122"
+      ],
+      "calibration_speaker_count": 4,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0059"
+      ],
+      "calibration_utterance_count": 7,
+      "label": "ɻ",
+      "matched_tokens_across_both_directions": 14,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122",
+        "S0055_BAC009S0055W0121",
+        "S0056_BAC009S0056W0121",
+        "S0057_BAC009S0057W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0121",
+        "S0059_BAC009S0059W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 8,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0061"
+      ],
+      "calibration_utterance_count": 10,
+      "label": "ʂ",
+      "matched_tokens_across_both_directions": 40,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0121",
+        "S0054_BAC009S0054W0121",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0121",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0122",
+        "S0059_BAC009S0059W0121",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 8,
+      "calibration_speaker_ids": [
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0057",
+        "S0058",
+        "S0059",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 10,
+      "label": "ʈʂ",
+      "matched_tokens_across_both_directions": 30,
+      "selected": true
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0122",
+        "S0055_BAC009S0055W0121",
+        "S0056_BAC009S0056W0121",
+        "S0056_BAC009S0056W0122",
+        "S0057_BAC009S0057W0123",
+        "S0058_BAC009S0058W0122",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 8,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0056",
+        "S0057",
+        "S0058",
+        "S0061"
+      ],
+      "calibration_utterance_count": 9,
+      "label": "ʈʂʰ",
+      "matched_tokens_across_both_directions": 32,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0055_BAC009S0055W0122",
+        "S0057_BAC009S0057W0121",
+        "S0059_BAC009S0059W0121",
+        "S0059_BAC009S0059W0122",
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123",
+        "S0061_BAC009S0061W0121"
+      ],
+      "calibration_speaker_count": 5,
+      "calibration_speaker_ids": [
+        "S0055",
+        "S0057",
+        "S0059",
+        "S0060",
+        "S0061"
+      ],
+      "calibration_utterance_count": 7,
+      "label": "ʎ",
+      "matched_tokens_across_both_directions": 16,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0121",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0121",
+        "S0055_BAC009S0055W0122",
+        "S0059_BAC009S0059W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 6,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0055",
+        "S0059",
+        "S0061"
+      ],
+      "calibration_utterance_count": 6,
+      "label": "ʐ",
+      "matched_tokens_across_both_directions": 16,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0060_BAC009S0060W0122",
+        "S0060_BAC009S0060W0123"
+      ],
+      "calibration_speaker_count": 1,
+      "calibration_speaker_ids": [
+        "S0060"
+      ],
+      "calibration_utterance_count": 2,
+      "label": "ʐ̩˥",
+      "matched_tokens_across_both_directions": 4,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0122",
+        "S0054_BAC009S0054W0121",
+        "S0056_BAC009S0056W0121",
+        "S0058_BAC009S0058W0121",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 6,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0054",
+        "S0056",
+        "S0058",
+        "S0061"
+      ],
+      "calibration_utterance_count": 6,
+      "label": "ʐ̩˥˩",
+      "matched_tokens_across_both_directions": 14,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0052_BAC009S0052W0122",
+        "S0053_BAC009S0053W0121",
+        "S0053_BAC009S0053W0122",
+        "S0056_BAC009S0056W0121",
+        "S0057_BAC009S0057W0123",
+        "S0061_BAC009S0061W0122"
+      ],
+      "calibration_speaker_count": 5,
+      "calibration_speaker_ids": [
+        "S0052",
+        "S0053",
+        "S0056",
+        "S0057",
+        "S0061"
+      ],
+      "calibration_utterance_count": 6,
+      "label": "ʐ̩˧˥",
+      "matched_tokens_across_both_directions": 12,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0121"
+      ],
+      "calibration_speaker_count": 1,
+      "calibration_speaker_ids": [
+        "S0053"
+      ],
+      "calibration_utterance_count": 1,
+      "label": "ʐ̩˨˩˦",
+      "matched_tokens_across_both_directions": 2,
+      "selected": false
+    },
+    {
+      "calibration_sample_ids": [
+        "S0053_BAC009S0053W0122"
+      ],
+      "calibration_speaker_count": 1,
+      "calibration_speaker_ids": [
+        "S0053"
+      ],
+      "calibration_utterance_count": 1,
+      "label": "ʔ",
+      "matched_tokens_across_both_directions": 2,
+      "selected": false
+    }
+  ],
+  "inventory_sha256": "54a51ff1a9af891271b0eaed797dc0bb7508a338ef7e38f922b8f9292fa40f5d",
+  "rule": {
+    "deduplicate_directions_for_utterance_and_speaker_counts": true,
+    "minimum_distinct_calibration_speakers": 5,
+    "minimum_distinct_calibration_utterances": 10,
+    "tie_break": "Unicode code-point ascending order",
+    "unit": "distinct CAL utterance containing a matched phone token in either frozen transfer direction"
+  },
+  "schema_version": 1,
+  "selected_phone_count": 16,
+  "selected_phone_labels": [
+    "a˥˩",
+    "i˥",
+    "i˥˩",
+    "i˧˥",
+    "j",
+    "n",
+    "o˥˩",
+    "o˧˥",
+    "t",
+    "ts",
+    "tɕ",
+    "w",
+    "ŋ",
+    "ɕ",
+    "ʂ",
+    "ʈʂ"
+  ],
+  "selection_split": "calibration",
+  "source": {
+    "calibration_manifest_embedded_sha256": "75b47f39a7a462753877db6f03e41758335011764b279061d546c3e812cec29c",
+    "calibration_manifest_file_sha256": "297d3c138fc2de75e86f32db43f7d42f94476e3275c9ef9b72235c1880af07cc",
+    "calibration_manifest_path": "E:\\Documents\\tts-exp\\runs\\recovered_20260930\\remote\\world_phone_transfer_20261001_v2\\calibration_review_20261001\\world_phone_transfer_calibration.json",
+    "calibration_qc_path": "E:\\Documents\\tts-exp\\runs\\recovered_20260930\\remote\\world_phone_transfer_20261001_v2\\calibration_review_20261001\\world_phone_transfer_calibration_ap_energy_qc.json",
+    "calibration_qc_sha256": "5ff39cfd82817f56eb9cc348e2d8481432973a09db7fd9a41ed9a280d91301c5",
+    "calibration_record_count": 20,
+    "calibration_speaker_count": 10,
+    "phone_normalization": "world-phone-identity-v1; exact NFC normalized labels; tone/length/aspiration retained"
+  },
+  "status": "FROZEN_CAL_ONLY_PHONE_INVENTORY"
+}
