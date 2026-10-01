@@ -5,3 +5,4 @@ scripts/experiments/plot_sealed_mechanism_effects_20261001.py -text !eol
 # Frozen local-response inputs are identified by their exact file bytes.
 openspec/changes/diagnose-world-local-acoustic-response-20261001/*.md text eol=lf
 openspec/changes/diagnose-world-local-acoustic-response-20261001/cal_phone_inventory.json -text !eol
+openspec/changes/factor-world-phone-shape-mean-dynamics-20261001/*.md text eol=lf
