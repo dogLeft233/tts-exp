@@ -7,3 +7,6 @@ openspec/changes/diagnose-world-local-acoustic-response-20261001/*.md text eol=l
 openspec/changes/diagnose-world-local-acoustic-response-20261001/cal_phone_inventory.json -text !eol
 openspec/changes/factor-world-phone-shape-mean-dynamics-20261001/*.md text eol=lf
 openspec/changes/factor-world-phone-shape-mean-dynamics-20261001/*.json text eol=lf
+# Root-authorized evaluation artifacts bind the exact original CRLF bytes.
+openspec/changes/factor-world-phone-shape-mean-dynamics-20261001/evaluation_plan.json -text !eol whitespace=cr-at-eol
+openspec/changes/factor-world-phone-shape-mean-dynamics-20261001/evaluation_root_freeze.json -text !eol whitespace=cr-at-eol
