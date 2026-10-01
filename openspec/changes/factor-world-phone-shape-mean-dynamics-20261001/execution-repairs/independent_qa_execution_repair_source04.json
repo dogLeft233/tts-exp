@@ -1,0 +1,39 @@
+{
+  "authorized_at_utc": "2026-10-01T18:12:39.140756Z",
+  "evaluation_effects_read": false,
+  "evaluation_inputs_read": true,
+  "evaluation_outcomes_read": false,
+  "gpu_forward_authorized": false,
+  "manifest_sha256": "381e6dfd67e730e42810e71f08c4c4b9b1ebbeddfbd4a03f69ebe95ed1d5800b",
+  "model_forward_authorized": false,
+  "original_analysis_plan": {
+    "path": "/root/tts-research-system-20261001/world_phone_shape_mean_dynamic_eval_20261001_attempt01/control/evaluation_analysis_plan_source04.json",
+    "payload_sha256": "e14d22bef4e9089062ad16f591e945e22c2884903dae7ac15892a458ed6670a5",
+    "raw_sha256": "85b700b3878689c95cf4b6aa8d3e552ea4f0fc789e0957e5b6e1da9fef12fd13"
+  },
+  "original_evaluation_freeze": {
+    "path": "/root/tts-research-system-20261001/world_phone_shape_mean_dynamic_eval_20261001_attempt01/control/evaluation_root_freeze_source04.json",
+    "payload_sha256": "379317c20166da65fb72bb2fc9f9931c17b6cb02a10912ba3882edaeca265bf4",
+    "raw_sha256": "2b5a00f42bd1cc503a6e87530c74699f2a40da33f8a32bd02e1773ee46ae4edd"
+  },
+  "original_qa_source": {
+    "path": "/root/tts-research-system-20261001/world_phone_shape_mean_dynamic_eval_20261001_attempt01/control/code/world_phone_shape_mean_dynamic_eval_independent_qa_20261001_attempt03.py",
+    "raw_sha256": "a77f3f9c4ae76eaef82ebbcbc5590bbe134a704b744c4adce1d715f4cebfbc31"
+  },
+  "repair_changes": [
+    "phone inventory payload binding: compare the recomputed inventory_sha256 with frozen input_bindings.phone_inventory.payload_sha256 and payload_field inventory_sha256",
+    "QA source self-binding: retain the plan-bound QA03 hash; authorize QA04 only through this root-approved repair manifest"
+  ],
+  "repaired_qa_source": {
+    "path": "/root/tts-research-system-20261001/world_phone_shape_mean_dynamic_eval_20261001_attempt01/control/code/world_phone_shape_mean_dynamic_eval_independent_qa_20261001_attempt04.py",
+    "raw_sha256": "0e34b6e5ec47781a61ff9031d282a18592b79b49e17292073adfc0c6efe5dcc2"
+  },
+  "root_review": {
+    "producer_waveforms_regenerated": false,
+    "source03_to_source04_diff_review": "PASS: only declared schema/self-binding repair and report provenance; all numerical reconstruction/cohort/clock/threshold controls unchanged"
+  },
+  "schema": "ROOT_APPROVED_EVAL_QA_EXECUTION_REPAIR_V1",
+  "scientific_controls_changed": false,
+  "scope": "EVAL_PHYSICAL_WAVEFORMS_ONLY",
+  "status": "APPROVED"
+}

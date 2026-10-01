@@ -10,3 +10,5 @@ openspec/changes/factor-world-phone-shape-mean-dynamics-20261001/*.json text eol
 # Root-authorized evaluation artifacts bind the exact original CRLF bytes.
 openspec/changes/factor-world-phone-shape-mean-dynamics-20261001/evaluation_plan.json -text !eol whitespace=cr-at-eol
 openspec/changes/factor-world-phone-shape-mean-dynamics-20261001/evaluation_root_freeze.json -text !eol whitespace=cr-at-eol
+# Execution repairs retain the byte seals of the plans used for production.
+openspec/changes/factor-world-phone-shape-mean-dynamics-20261001/execution-repairs/*.json -text !eol
