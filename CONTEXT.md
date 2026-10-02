@@ -8,9 +8,9 @@
 
 ## 关键结论
 
-> **2026-10-01 新机制结果**：AISHELL 男性评估80/40说话人双脸2560行及女性40/20说话人640行已独立核验。同RAW自然音评分，RMS生成端 ΔC 男性 +0.192，99%[+0.111,+0.276]；女性 +0.250 [+0.117,+0.417]，unit也为正。女性full-A时间置换excess +0.230 [+0.105,+0.385]，各支持域/raw/unit/C_anchor均正；配对原生T/N差距excess缩小 +0.245 [+0.118,+0.388]。统一CAL来源方向未达到baseline增益门槛，secondary raw guard15 plus−minus有条件正响应；旧静态方向范数四格与真实RMS路径分别解释。见BM来源机制、女性复核及边界独立复核。
+> **2026-10-03 机制结论**：AISHELL-1中文、cloud Qwen TTS与Wav2Lip链上已定位增益→log-mel→真实音频编码器方向→生成动作的正向响应。男性40说话人固定A方向 ΔC=+0.161，99%[+0.094,+0.232]；内部mel ΔC=+0.171 [+0.101,+0.245]。男性full-A/raw/guard15原生T−N时间超额从q00 RAW/RAW +0.235到q11 FIXED/FIXED +0.031，配对缩小+0.204 [+0.119,+0.295]，同时改变生成和评分输入；另列固定A男性自然生成G excess+0.185 [+0.108,+0.266]。女性20说话人的paired gap-null变化+0.245 [+0.118,+0.388]，保留不同队列与支持。
 
-> **可见运动与内部机制**：原生四格320视频完整提取；80/40视觉配对确认自然固定RMS增大开合/速度、TTS固定RMS减小二者，phone形状端点仅16/17完整speaker且区间跨零。男性full-A主guard20 G excess ΔC=+0.185，99%[+0.108,+0.266]，两脸/raw/unit/四支持域均正。mel独立80/320已完成：guard20 interior ΔC=+0.171 [+0.101,+0.245]、joint+0.190、interior−boundary+0.180，raw/unit及各支持/anchor/null重复为正；真实RMS独立80/320完成：direction ΔC=+0.161 [+0.094,+0.232]、radius+0.020 [−0.006,+0.046]，direction−radius+0.142 [+0.077,+0.212]；方向/joint/方向−范数在16组及时间excess均为正；修正随机80/640独立剂量合格，主guard20来源特异性 +0.005 [−0.016,+0.024]，第二脸部分支持域有条件正响应。WORLD物理160方向/1920 WAV与1920 NPZ完整独立重建；GPU v6及独立消费者完整160/12160/5760/1600零失败，五flags全forward合格。完整结果已逐字节取回：SP/SP_EM/BOTH生成G各56完整组合的99%点态区间为负；RAW guard15谱形G T→N −0.225、N→T −0.283，生成×评分交互+0.426/+0.482，谱形作用与两流匹配相关。音素均值谱形×内部残差+SELF_GRID五格设计在效应前冻结，CAL200波形完整独立QA与根freeze已通过，EVAL800波形已完整生成并全部独立重合成/root读回PASS，11776联合端点待模型运行；局部16640计划端点已独立复算（14560可估、2080短Tg20保留）：237联合负向、0正向，phone-local定位主要为/n、ŋ/，仅full/valid显著、g15跨零；旧WORLD视觉1600/1600零失败与418统计/全部1600sidecar独立复核通过：T→N SP/SP_EM开口小幅增加，所有干预−85msphone分离跨零，RT桥降低分离（主16/17完整speaker，点态99%）。CAL20/10的局部诊断完整通过：映射T→N后16类音素内部log谱形变化都较低，但各自native时钟仅13/20句T更低；清浊覆盖/平均谱型与内部动态继续用因果干预区分。局部16音素、16640项联合区间家族在EVAL前冻结，E能量残差完整保留。协议在 `openspec/changes/`，BM任务“解释 TTS 的 TFG 与 SyncNet 优势”维护主线。
+> **局部声学机制**：保持recipient F0/AP/清浊音、时钟、逐帧SP功率及全局RMS，mu平均相对频带log比与rho内部时间轨迹干预定位recipient谱比轨迹和发声/时序结构的相容性。自然供体→TTS recipient的rho−SELF_GRID fixed-A/raw/guard15 Cfixed −0.192，联合99%[−0.336,−0.047]；joint−grid两方向均负。FULL35不同局部负端点集中n/ŋ及少量a˥˩/早tɕ，约350ms mel覆盖含共发音，guard15局部区间含0。完整800视频/1600评分/11776声学端点（10304可估/1472短Tg20保留）与54动作端点、完整证据恢复和图QA均已独立通过。54族唯一联合99%非零项为该方向rho−grid平均开口+.001519[+.000086,+.002952]，开口和同步评分分别解释。见[正式报告25](basic-memory/docs/experiments/25-tts-tfg-mechanism.md)及BM任务“解释 TTS 的 TFG 与 SyncNet 优势”。
 
 > **当前服务器**：`root@connect.weste.seetacloud.com:12349`；新输出根 `/root/tts-research-system-20261001/`（0700），旧输入/run保留 `/root/autodl-tmp/tts-research-20260930/`。密码/API key只在运行时；不写公共NFS。部署及空间迁移说明在BM `docs/reference/server-access`。
 
@@ -82,10 +82,10 @@
 CONTEXT.md              ← 你在这里（仓库根，agent 入口）
 basic-memory/docs/
 ├── adr/                ← 架构决策记录
-├── experiments/        ← 实验报告（按阶段编号；索引见 experiments/README.md）
+├── experiments/        ← 实验报告（按阶段编号；当前机制见报告25）
 ├── deployment/         ← 模型部署记录
 ├── results/            ← 评分汇总
 └── reference/          ← 流水线/服务器/部署参考
 ```
 
-实验报告索引：`basic-memory/docs/experiments/README.md`。B 系列（11-15）为 2026-08 的音素/韵律/TFG 深化实验，均经对抗子 agent 审查修复。
+当前机制报告：[报告25](basic-memory/docs/experiments/25-tts-tfg-mechanism.md)。B 系列（11-15）为 2026-08 的音素/韵律/TFG 深化实验，均经对抗子 agent 审查修复。
