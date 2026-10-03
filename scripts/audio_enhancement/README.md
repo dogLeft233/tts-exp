@@ -121,9 +121,24 @@ The fixed-zero-lag v3 candidate has completed 96 historical-fit steps, with
 zero-initialization parity and nonzero gradients and updates independently
 verified. Its reward combines relative zero-lag distance reduction and cosine
 gain against a bounded RMS reference, with visual norm, waveform and mask
-smoothness penalties. Its new development effect is pending. All 100 audio
-items from the five-method run match official AISHELL transcripts under Qwen
-ASR (CER 0); v3 content and cross-model checks remain pending.
+smoothness penalties. The six-method, 360-row development audit is complete:
+relative to fixed RMS, v3 reduces zero-lag distance by 0.264 and raises anchored
+confidence by 0.153, while best-lag Sync-C falls by 0.105. The waveform clock is
+unchanged. Local compression remains the strongest best-lag candidate on this
+Wav2Lip cohort, 0.033 above fixed RMS.
+
+Qwen ASR completed 100 unique waveforms from the five-method run and 20 new v3
+waveforms. Every normalized hypothesis matches the official AISHELL transcript
+(CER 0), and v3 hypotheses also match the cached original-audio hypotheses.
+The 60 new v3 visual trajectories have been paired with the exact original-audio
+Wav2Lip contexts. Independent reconstruction of all 1,440 geometry statistics
+matches exactly. Mean aperture increases by 0.002777 eye-distance units, and
+mean width decreases by 0.001995; these describe motion, not synchronization
+quality. MuseTalk's shared 240-row development run has completed 132 rows with
+33 scored rows per method. Ditto has passed the original-PCM mux and 25 fps
+portrait qualification; its shared launcher is undergoing dependency-path
+repair before the paired experiment.
+These checks do not yet establish a useful shared method across models.
 
 Actual identity CLI I/O validation used a 48 kHz stereo PCM16 source. It emitted
 an exact-identity 16 kHz mono reference and preserved the original 48 kHz stereo

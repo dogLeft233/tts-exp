@@ -73,12 +73,33 @@ compare mel chunks, six-channel face tensors, predictions, pasted pixels and
 original-audio SyncNet embeddings through the official codec path before the
 next learned objective is fitted. The original v3 run remains immutable.
 
+The same-fit RMS diagnostic confirms almost identical official and proxy
+mel/face inputs and model predictions (maximum differences about 1e-6).
+Both center-27-query curves have best lag +2. Re-encoding both branches through
+the same DIVX and official scoring path reduces mean absolute matrix difference
+from 0.419 to 0.185; codec processing contributes substantially, but the remaining
+resize/rounding and generated-frame crop differences require a full-512-portrait
+comparison on that same fit clip. A fit/dev cohort difference is not itself
+evidence of a proxy timing bug. See the actual diagnostic receipts in
+`runs/cross_tfg_audio_head_20261003/proxy_native_diagnostics_readback_attempt01/`.
+
 MuseTalk's corrected common crop/paste geometry, 144-frame 25 fps portrait and
-original-PCM mux have passed engineering readback. Four shared waveform
-methods are being prepared for its fixed development cohort. Ditto's full
-StreamSDK import now passes with isolated Cython/setuptools and Python headers;
-native portrait qualification follows. These engineering results permit actual
-method evaluation; they do not provide cross-model efficacy evidence.
+original-PCM mux have passed engineering readback. Its four-method, 240-row
+development run has started with the fixed cohort. An initial launcher incorrectly
+required a Git checkout for the qualified codeload source; the new control entry
+verifies the existing official-source qualification and file hashes, retaining
+the failed attempt and the identical frozen plan.
+
+Ditto's native portrait now passes the full renderer wrapper: 145 frames at
+25 fps, Torch CUDA rendering and four measured CPU-only ONNX sessions. The
+first completed forward was rejected by a postrun Cython-extension path guard;
+the fresh run pins the actual extension and preserves the failed record.
+Its native AAC mux is retained for provenance. A separate local PCM_F32LE mux
+has now been decoded and matched exactly to the original 92,225 samples, with
+the H.264 elementary stream unchanged and every presentation timestamp equal
+to frame_index/25. The sampled portrait frames have been inspected. These
+engineering results permit shared method
+evaluation; cross-model efficacy awaits the complete paired development rows.
 
 All 300 independent visual/speech-motion guards are complete. Local compression
 raises the equal-speaker zero-lag aperture correlation with original-audio
@@ -86,8 +107,33 @@ raises the equal-speaker zero-lag aperture correlation with original-audio
 methods; larger aperture or velocity is not treated as a quality improvement.
 Qwen ASR completed 100 unique audio requests: every normalized hypothesis
 matches the official AISHELL transcript, giving CER 0 for each method's 20
-clips. These guards cover the five-method development run, not v3 or heldout
-confirmation.
+clips. Twenty additional v3 candidate ASR calls are complete: CER and
+disagreement against the reused natural-audio hypotheses are both zero for all
+20 clips and 10 development speakers. No reference transcript was sent to the
+provider. All 40 candidate/reference PCM16 WAVs in the new ASR archive have
+also been independently bound to the exact ASR inputs and source lengths.
+The 60 v3 visual trajectories have now been paired against the same Wav2Lip
+identity contexts at exact common rational timestamps. All 1,440 geometry
+statistics independently recompute exactly, with complete 20-clip, 10-speaker,
+three-seed support. Equal-speaker mean aperture changes by +0.002777 eye-distance
+units (eight of ten speakers positive), area by +0.002383 squared units, and
+width by -0.001995 units. These are descriptive shape changes. Signed mean
+velocity is near zero and is not a measure of temporal motion strength.
+
+The full 300-row official SyncNet embedding replay has been restored locally
+and all 309 archive members verified. An observed norm/direction decomposition
+uses saved official diagonal matrices and float32 counterfactual cross cells.
+For fit24 versus RMS, equal-speaker FULL best-lag gain is 0.021843, comprising
+0.006375 from the norm term and 0.015469 from the direction term. For fit96 v2,
+the total is -0.016684, with norm -0.003693 and direction -0.012991. Root's
+independent 120-context curve/Shapley reconstruction and seed-to-clip-to-speaker
+aggregation match all 3,510 checked Shapley fields exactly. Canonical float32
+confidence subtraction matters: replacing it with float64 subtraction changes
+some fields by up to 4.768e-7. Saved embeddings reconstructed in NumPy also have
+small reported distance residuals; original official scores are preserved.
+This is descriptive geometry, with no causal mediation claim or development
+confidence interval. GUARD20 retains the planned short clip and incomplete
+speaker rather than promoting the complete subset to the full cohort.
 
 The fit96 head uses the same waveform parameterization and historical eight
 training clips as fit24. It changes both audio context and training duration,
