@@ -1,6 +1,6 @@
 # Cross-TFG natural-audio enhancement head
 
-Status: design and environment inventory; new experiments have not run.
+Status: waveform core implemented; real generation, original-audio mux, fresh scoring and a nonzero GPU optimizer update passed. Twenty fresh development clips are independently sealed. Candidate fitting and multi-model efficacy evaluation are pending.
 
 Develop an external waveform transform `h(x)` that improves videos driven by natural speech while preserving the original natural audio for delivery and scoring. This is the new user-authorized research objective after the mechanism study in report 25.
 
