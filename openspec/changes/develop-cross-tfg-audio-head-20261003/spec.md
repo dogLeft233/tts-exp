@@ -26,11 +26,13 @@ Local mu/rho interventions show recipient-relative spectral/temporal compatibili
 ## Data and model isolation
 
 - Audit actual data availability before freezing sample identities. Use speaker-disjoint fit, development and confirmation sets. Record the ordered sample IDs, speaker/gender/source, input path, natural PCM hash, sample count and split provenance.
-- Exclude the previously inspected CAL S0052-S0061 / EVAL S0062-S0101 cohort from claims of new confirmation. It may be used for interface checks and historical mechanism regression only.
+- Previously inspected data may be explicitly assigned to fitting and method development; its exposed status must be recorded. It cannot support a fresh confirmation claim. Exclude historical male CAL S0052-S0061 / EVAL S0062-S0101, female S0124-S0143 and previously inspected AISHELL test speakers/samples from confirmation. Fit, dev and confirmation speakers still remain disjoint.
 - Aim for at least 40 confirmation speakers / 80 clips if inventory supports it. Final eligibility rules and sample count must be frozen before fitting or reading candidate confirmation effects. Missing data is reported, not silently replaced.
 - Optimize candidates/hyperparameters on fit/dev only. Freeze selected weights/configuration before confirmation. A changed candidate after a failed confirmation requires another untouched confirmation batch for a fresh claim.
 - Validate at least three TFG models spanning different audio frontend families; target five when available. Reserve at least one model from candidate selection as the primary transfer model. Source faces, pose/template clips, model version/checkpoint, seeds, generation settings and model roles are frozen.
 - Wav2Lip, Ditto, MuseTalk, LatentSync and EchoMimic are inventory candidates. Presence of a directory/weight is not execution evidence. Deployed commits and actual frontend normalization decide their roles.
+
+Inventory-derived candidate data allocation, still awaiting row freeze: historical male S0052-S0101 multi-utterance fitting; fifty uninspected official HF speaker packs S0002-S0051 divided into ten development and forty confirmation speakers (two clips per confirmation speaker). Record the immutable dataset revision and gender composition. This supports new-speaker Mandarin confirmation; other genders/languages require separate untouched cohorts.
 
 ## Stages
 
@@ -53,6 +55,8 @@ Evaluate the frozen selected method, original direct drive and RMS baseline on u
 ## Evaluation controls and statistics
 
 - Natural scoring PCM, resampling, timestamps, FPS, crop/ROI policy and score model are identical across paired methods. Verify decoded final-audio PCM and its sample count against the canonical original, including any declared container limitations. A PCM-preserving MKV/MOV validation artifact can accompany a distributable MP4.
+- Canonical float32 PCM is preserved exactly in the validation mux. Official SyncNet's PCM16 conversion is a declared, separately hashed scoring derivative shared by paired methods; it must not be described as bit-exact preservation of arbitrary float input. Bind selected track IDs to the matching crop/video frame mapping. If official native tracking differs across methods, retain its score separately from the frozen common-ROI endpoint.
+- Use one same-seed identity-repeat engineering probe per model outside efficacy rows. For deterministic execution compare exact artifacts; otherwise measure repeat variation on development data and freeze paired-seed/repeat settings before confirmation. Numerical nondeterminism is recorded and controlled rather than used to silently remove a model.
 - Fresh official Sync-C uses `Cbest = median(lag_distance)-min(lag_distance)`. Also retain `Canchor`, B, Dmin, D0, the 31-lag curve, offset and predetermined FULL/guard supports. Per-window distance matrices permit independent reconstruction.
 - Freeze common support from paired valid query windows, and describe each support's denominator. FULL is the primary whole-query result; guard sensitivity is reported. No best-offset audio/video retiming is applied to improve a candidate score.
 - Maintain plan and result rows including all engineering failures and short/unavailable samples. Give planned, complete, incomplete and failed counts by model and method; do not select successful faces/speakers after scoring.
