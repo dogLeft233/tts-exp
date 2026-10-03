@@ -20,11 +20,50 @@ small effect. This is a mechanism hypothesis, not a transfer result.
 
 | Candidate | Role | Actual state |
 |---|---|---|
-| Identity | Paired direct-drive reference | 60 development rows completed; independent reconstruction pending |
-| Fixed RMS | Historical positive control | Same completed development experiment |
-| RMS + local compression | Isolate bounded envelope changes | Same completed development experiment |
-| Spectral head fit24 | First differentiable candidate | 24 actual updates; 60 development rows completed |
-| Fullcontext head fit96 | Correct short-window training support | 96 actual steps completed; new development generation next |
+| Identity | Paired direct-drive reference | 60 development rows and original-PCM independent audit completed |
+| Fixed RMS | Historical positive control | FULL development ΔCbest +0.234 versus identity |
+| RMS + local compression | Isolate bounded envelope changes | FULL ΔCbest +0.267 versus identity, +0.033 versus RMS |
+| Spectral head fit24 | First differentiable candidate | FULL ΔCbest +0.256 versus identity, +0.022 versus RMS |
+| Fullcontext head fit96 | Correct short-window training support | FULL ΔCbest +0.217 versus identity, −0.017 versus RMS; five-method independent audit completed |
+
+These are exploratory Wav2Lip development means over ten new male speakers,
+two clips per speaker and three paired seeds. All nine five-method FULL
+endpoints are complete. GUARD20 retains an incomplete endpoint status because
+one clip has 34 common queries in each seed, below the frozen minimum 41; its
+speaker has only one of two clips estimable on that support. No sample or
+endpoint is removed to change that status. The original four-method audit remains
+in `runs/cross_tfg_audio_head_20261003/stageb_consumer04_actual_evidence_attempt01/`;
+the full five-method ledger and independent audit are in
+`runs/cross_tfg_audio_head_20261003/stageb_joint_attempt02_readback/`.
+
+Independent FULL score decomposition places almost all of fit24's gain over
+RMS in B (+0.021), with D0 effectively unchanged. Local compression additionally
+reduces D0 by 0.018 versus RMS. These evaluator diagnostics motivate fixed-lag
+and unit-normalized-feature objectives for the next candidate; visible-mouth
+and content measurements are evaluated separately. They do not establish transfer
+to another frontend or an untouched confirmation effect.
+
+Fit96 versus RMS changes B by +0.003, Dmin by +0.019, and D0 by +0.057;
+its Canchor falls by 0.054. More fullcontext training on the old median-minus-
+softmin objective did not improve development performance. The next candidate
+uses an RMS-rendered historical-fit reference and directly rewards fixed-zero-
+lag distance and unit-norm cosine, with embedding-norm and normalized waveform
+penalties. No development or confirmation rows enter that reference cache.
+
+The fixed-zero-lag v3 candidate has now completed all 96 historical-fit steps.
+The eight zero-initialization reference comparisons pass, and independent
+reconstruction of all 96 reward/loss decompositions, gradient records and
+checkpoint seals passes. New 60-row development renders and a six-method
+360-row common-support analysis are next.
+
+All 300 independent visual/speech-motion guards are complete. Local compression
+raises the equal-speaker zero-lag aperture correlation with original-audio
+40 ms log RMS by 0.014 versus fixed RMS. Tracking is complete for all five
+methods; larger aperture or velocity is not treated as a quality improvement.
+Qwen ASR completed 100 unique audio requests: every normalized hypothesis
+matches the official AISHELL transcript, giving CER 0 for each method's 20
+clips. These guards cover the five-method development run, not v3 or heldout
+confirmation.
 
 The fit96 head uses the same waveform parameterization and historical eight
 training clips as fit24. It changes both audio context and training duration,

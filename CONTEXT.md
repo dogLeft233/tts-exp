@@ -8,7 +8,7 @@
 
 ## 关键结论
 
-> **2026-10-03 新目标（进行中）**：开发跨 TFG 的自然音频增强头；增强波形仅驱动生成，成片及主评分统一使用原自然 PCM。真实Wav2Lip生成/原F32无损换轨和首个梯度更新已通过，20条新说话人dev音频已独立核验；首个历史fit候选已完成24次参数更新，开始新dev完整视频及多模型比较，尚无新跨模型科学收益结论。默认评分pipeline含MP3中间转换，新主端点改用direct原PCM16/nativeROI，另列默认benchmark（ADR007）。方案：`openspec/changes/develop-cross-tfg-audio-head-20261003/`；BM Task“开发跨 TFG 的自然音频增强头”。
+> **2026-10-03 新目标（进行中）**：开发跨 TFG 自然音增强头，增强音驱动视频，成片/主评分恢复原自然 PCM。五方法300次Wav2Lip开发生成/独立消费完成（10新男声、20clip、3seed）：FULL ΔC固定RMS +0.234、局部压缩+0.267、fit24 +0.256、完整上下文fit96 +0.217；fit96弱于RMS 0.017且D0恶化0.057。九FULL完整，guard20短片保留规划分母。v3固定D0/cos与有界RMS参考/范数/波形约束（ADR008），实际96步fit、零初始化和逐步目标/梯度核验完成，待新60开发渲染。独立运动300完成，local较RMS原音RMS与开口zero-lag相关+0.014；Qwen ASR实际100波形全部匹配官方文本、CER=0。Ditto补filetype后完整入口缺Cython；Muse加载/前向通过但合成尺寸错误，按官方bbox resize修复。多前端/embedding及未读40说话人和heldout确认继续。公共CLI已实际加载头、精确恢复原48k双声道；主direct原PCM16/nativeROI，默认MP3另列（ADR007）。方案：`openspec/changes/develop-cross-tfg-audio-head-20261003/`；BM Task“开发跨 TFG 的自然音频增强头”。
 
 > **2026-10-03 机制结论**：AISHELL-1中文、cloud Qwen TTS与Wav2Lip链上已定位增益→log-mel→真实音频编码器方向→生成动作的正向响应。男性40说话人固定A方向 ΔC=+0.161，99%[+0.094,+0.232]；内部mel ΔC=+0.171 [+0.101,+0.245]。男性full-A/raw/guard15原生T−N时间超额从q00 RAW/RAW +0.235到q11 FIXED/FIXED +0.031，配对缩小+0.204 [+0.119,+0.295]，同时改变生成和评分输入；另列固定A男性自然生成G excess+0.185 [+0.108,+0.266]。女性20说话人的paired gap-null变化+0.245 [+0.118,+0.388]，保留不同队列与支持。
 

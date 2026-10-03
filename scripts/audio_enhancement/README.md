@@ -105,11 +105,25 @@ audio is discarded, and the mux report records the original-WAV and canonical
 
 The first historical-fit candidate completed 24 optimizer steps with nonzero
 gradients and parameter updates. Its four-method development run completed all
-240 planned generation/mux/scoring rows; independent effect reconstruction is
-pending. A second candidate completed 96 steps using full historical audio
-context. Both checkpoints remain experimental candidates. Cross-model
+240 planned generation/mux/scoring rows. The independent five-method audit now
+includes 300 rows over 10 new male speakers, two clips each and three paired
+seeds. FULL original-audio ΔSync-C versus identity is +0.234 for fixed RMS,
++0.267 for local compression, +0.256 for fit24, and +0.217 for fit96. GUARD20
+remains incomplete because one clip has 34 queries below its frozen minimum 41;
+its planned denominator is retained. These are exploratory development means.
+A second candidate completed 96 steps using full historical audio context,
+but was 0.017 below fixed RMS on this development cohort. Both checkpoints
+remain experimental candidates. Cross-model
 usefulness will be selected from actual generated videos scored against the
 original natural audio, followed by untouched-speaker/model confirmation.
+
+The fixed-zero-lag v3 candidate has completed 96 historical-fit steps, with
+zero-initialization parity and nonzero gradients and updates independently
+verified. Its reward combines relative zero-lag distance reduction and cosine
+gain against a bounded RMS reference, with visual norm, waveform and mask
+smoothness penalties. Its new development effect is pending. All 100 audio
+items from the five-method run match official AISHELL transcripts under Qwen
+ASR (CER 0); v3 content and cross-model checks remain pending.
 
 Actual identity CLI I/O validation used a 48 kHz stereo PCM16 source. It emitted
 an exact-identity 16 kHz mono reference and preserved the original 48 kHz stereo
