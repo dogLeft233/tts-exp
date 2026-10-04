@@ -143,6 +143,54 @@ results, fit a matching-step/fullcontext control before attributing the cause.
 
 ## Decisions driven by development results
 
+### Shared candidates frozen after complete fit qualification
+
+The completed Wav2Lip/MuseTalk/Ditto v3 development contrasts against RMS
+are −0.105/−0.013/−0.170 in FULL Cbest. A zero-lag improvement did not make
+v3 a useful shared best-confidence head. Ditto's complete240-row raw-array
+audit is qualified; GUARD20 retains its predeclared short-clip incompleteness.
+
+The twelve recipient-local spectral profiles and three controls completed360
+fit rows on eight historical clips, three paired seeds, and three frontends.
+Independent reconstruction validates2520 arrays, exact common clocks/support,
+float32 curves and selector utility. The frozen fit-only shortlist is:
+
+1. `local_r090_accent015_tilt_p025`
+2. `local_r090_flatten015_tilt_m025`
+3. `local_r090_accent_0.30_tilt0`
+
+The first profile's fit Cbest gains against RMS are +0.010/+0.051/+0.096;
+its Wav2Lip zero-lag distance slightly worsens. These eight-clip fitting
+descriptions do not establish development or confirmation efficacy. All twelve
+profile results remain available. The utility, tie rule, equal-model weighting,
+worst-model penalty, controls and three-profile limit remain those in ADR009;
+the shortlist is fixed before new development renders.
+
+The candidate-only540-row dev plan uses the same20 clips, ten speakers,
+three paired seeds and three native models. Root metadata QC validates every
+row against the base natural/score/face/source-clock bindings and the exact
+fit method configurations/model records. Controls will be reused only after
+exact completed-result qualification; they are not declared complete by the
+metadata plan. Plan SHA is
+`43e5f45a987153219bc423afbb86512f441ff12db20c3cb56dfb776e14e567df`.
+Its artifacts and independent receipt are under
+`runs/cross_tfg_audio_head_20261003/shared_profile_shortlist_dev_attempt03/`.
+
+Native v4 uses the frozen96-step checkpoint and best-confidence/far-lag
+reward with distance/anchor regression penalties. Its180-row dev run is
+ongoing. CPU-only staging qualified20 unique candidate waveforms with exact
+production-transform replay, bounded masks, no active peak cap and fixed-RMS
+error below3.25e−9. Qwen ASR then completed20 new candidate calls: all match
+the official text and natural-audio hypotheses. The final content guard must
+still bind those ASR input hashes to each generated-video ledger waveform;
+audio staging or an earlier candidate's CER cannot replace that join.
+
+LatentSync's native identity/RMS video and original-audio score paths now pass
+single historical-fit engineering qualification; this has not opened heldout
+candidate selection. SadTalker is undergoing a narrowly pinned scalar shape
+compatibility repair. Confirmation audio/effects and its seed family remain
+unopened until the candidate/configuration and evaluation family are frozen.
+
 1. Independently reconstruct the completed four-method raw distance matrices,
    including common source-clock windows, failures and planned denominators.
 2. Apply fit96 in a new candidate-only run. A new joint analysis derives
