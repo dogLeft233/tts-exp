@@ -8,7 +8,7 @@
 
 ## 关键结论
 
-> **2026-10-04 新目标（进行中）**：跨TFG自然音增强头h(x)只驱动生成，播放/主SyncNet恢复原音。W2L360开发v3−RMS Cbest−0.105，Muse240全部PASS/ROOT原始矩阵复核，v3−RMS−0.013，均继续迭代。共享12频谱候选三模型360历史fit最新149PASS/0FAIL；Ditto retry04最新208/240运行，完整fit后才按ADR009选择。全512历史8样本CPU视觉校准实际COMPLETE/全部控制PASS，ROOT曲线重算通过；precodec与正式链最佳延迟均值2.875/0.500帧，正在定位抽帧/裁剪时间映射，再冻结v4 lag-contrast训练。完整102MB数组分段恢复中。Latent源码70/六包安装及8项导入通过，追加Kornia已实际启动资格检查，官方UNet内存FP16派生尚未执行；SadTalker第五架构117源码实际提取通过，依赖/四资产部署继续。40未见/heldout、内容与独立视觉guards、权重/CLI/报告26待完成。入口 openspec/changes/develop-cross-tfg-audio-head-20261003/；最新BM Task“开发跨 TFG 的自然音频增强头”及checkpoint CG。
+> **2026-10-04 新目标（进行中）**：跨TFG自然音增强头h(x)只驱动生成，播放/主SyncNet恢复原音。完整开发W2L v3−RMS Cbest−0.105、Muse−0.013，继续共享谱候选与native v4。共享旧360行174PASS/186ENOSPC；新精确恢复05已实际180/360全PASS，174旧PASS及1098文件引用/NPZ核验、6新Muse生成评分exit0；Ditto旧240行239PASS/1ENOSPC与repeat生成失败待补。UV清理恢复root6.271GB，两份本地全恢复归档释放684MB。CPU8全数组ROOT复核PASS；clock03/mapper04全8定位评估AVI时戳/CFR JPEG重复，31帧窗口j→source j−2、早段DP模糊保留；核对正式交付并修正代理，原音主评分不移位。Latent RAM07官方5.072GB SHA→1246 FP16参数→2.536GB文件及reload核验完成，尚缺InsightFace/实际推理；Sad四官方权重1.184GB独立SHA PASS，默认CLI无需PyTorch3D，真实最小闭包继续。40未见/heldout、内容与独立视觉guards、权重/CLI/报告26待完成。入口 openspec/changes/develop-cross-tfg-audio-head-20261003/；BM Task28/Experiment27及checkpoint CJ。
 
 > **2026-10-03 机制结论**：AISHELL-1中文、cloud Qwen TTS与Wav2Lip链上已定位增益→log-mel→真实音频编码器方向→生成动作的正向响应。男性40说话人固定A方向 ΔC=+0.161，99%[+0.094,+0.232]；内部mel ΔC=+0.171 [+0.101,+0.245]。男性full-A/raw/guard15原生T−N时间超额从q00 RAW/RAW +0.235到q11 FIXED/FIXED +0.031，配对缩小+0.204 [+0.119,+0.295]，同时改变生成和评分输入；另列固定A男性自然生成G excess+0.185 [+0.108,+0.266]。女性20说话人的paired gap-null变化+0.245 [+0.118,+0.388]，保留不同队列与支持。
 
@@ -91,3 +91,4 @@ basic-memory/docs/
 ```
 
 当前机制报告：[报告25](basic-memory/docs/experiments/25-tts-tfg-mechanism.md)。B 系列（11-15）为 2026-08 的音素/韵律/TFG 深化实验，均经对抗子 agent 审查修复。
+
