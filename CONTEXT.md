@@ -8,7 +8,7 @@
 
 ## 关键结论
 
-> **2026-10-04 新目标（进行中）**：跨TFG自然音增强头h(x)只驱动生成，播放/主SyncNet恢复原音。完整开发W2L v3−RMS Cbest−0.105、Muse−0.013，继续共享谱候选与native v4。共享旧360行174PASS/186ENOSPC；新精确恢复05已实际217/360全PASS，174旧PASS及1098文件引用/NPZ核验；Ditto旧240行239PASS/1ENOSPC与repeat生成失败待补。UV清理恢复root6.271GB，两份本地全恢复归档释放684MB。CPU8全数组ROOT复核PASS；八条fit窗口j→source j−2、早段DP模糊保留。正式H264 clock03实际PASS，85→87帧、82query，crop重放/保存编码MAE2.833，35/82完整窗口映射−2，余下存在像素对应模糊；不泛化精确全局shift，原音时钟不移位。40个历史full512/tracks/PCM绑定仍逐文件SHA PASS，供v4原生context使用。Latent RAM07官方5.072GB SHA→1246 FP16参数→2.536GB文件及reload完成，InsightFace真实编译/native模块import PASS，模型key-shape与推理继续；Sad四官方权重1.184GB独立SHA PASS，默认CLI无需PyTorch3D，最小闭包继续。40未见/heldout、内容与独立视觉guards、权重/CLI/报告26待完成。入口 openspec/changes/develop-cross-tfg-audio-head-20261003/；BM Task28/Experiment27及checkpoint CK。
+> **2026-10-04 新目标（进行中）**：跨TFG自然音增强头h(x)驱动生成，播放/主SyncNet恢复原音。完整开发W2L v3−RMS Cbest−0.105、Muse−0.013，继续共享谱候选和native v4。共享旧360行174PASS/186ENOSPC；fresh恢复05实际293/360全PASS，完整后选择。Ditto恢复05完整240/240 PASS、补跑行和新repeat QC PASS，待独立全数组复核。v4逐片原生映射/全图crop/固定原音时钟与96步目标已审核提交236c201，首次preflight导入缓存失败，窄修复中，尚未训练。正式W2L clock03实际重放85→87帧/82query，35/82完整窗口映射−2，余下静态对应模糊，不泛化精确全局shift。40个fit源资产实际SHA PASS。Latent官方5.072GB→1246有限FP16→2.536GB派生及reload PASS，InsightFace真实编译/导入PASS；CPU04原生UNet1246/1246 key/shape和1.0numel覆盖PASS，FaceAnalysis仅下载断线，正本地取得官方文件；尚无native推理。Sad四官方资产1.184GB SHA PASS、native import04的17必需模块及官方CLI PASS，实际fit-only推理包准备中。UV缓存清理释放6.271GB、已恢复本地归档684MB、unused Muse training SyncNet精确清理1.488GB，SHM3.315GB。候选另做Qwen ASR/独立视觉guards，封存40未见speaker/80clip与heldout仍关闭；权重配置/CLI/时延/报告26继续。入口openspec/changes/develop-cross-tfg-audio-head-20261003/；BM Task31/Experiment30、checkpoint CM。
 
 > **2026-10-03 机制结论**：AISHELL-1中文、cloud Qwen TTS与Wav2Lip链上已定位增益→log-mel→真实音频编码器方向→生成动作的正向响应。男性40说话人固定A方向 ΔC=+0.161，99%[+0.094,+0.232]；内部mel ΔC=+0.171 [+0.101,+0.245]。男性full-A/raw/guard15原生T−N时间超额从q00 RAW/RAW +0.235到q11 FIXED/FIXED +0.031，配对缩小+0.204 [+0.119,+0.295]，同时改变生成和评分输入；另列固定A男性自然生成G excess+0.185 [+0.108,+0.266]。女性20说话人的paired gap-null变化+0.245 [+0.118,+0.388]，保留不同队列与支持。
 
@@ -91,4 +91,3 @@ basic-memory/docs/
 ```
 
 当前机制报告：[报告25](basic-memory/docs/experiments/25-tts-tfg-mechanism.md)。B 系列（11-15）为 2026-08 的音素/韵律/TFG 深化实验，均经对抗子 agent 审查修复。
-
