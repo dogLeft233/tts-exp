@@ -378,6 +378,45 @@ step04 is a CPU preflight; step05 produces candidate WAVs. The60-unit ASR
 guard must bind those actual generator files, retain unavailable units and
 check every distinct available model/seed PCM reference before API calls.
 
+## Measured frontend response on historical fit8
+
+The CPU probe actually ran against the deployed Transformers 4.39.2 Whisper
+feature extractor, the official Wav2Lip mel path and the qualified Ditto fixed
+input affine. Eight frozen fit clips, four gain conditions and three frontends
+produced 384 time curves and 96 summary cells. Original source PCM and clock
+were preserved; no encoder forward, generated video or confirmation input was
+used. Root independently recomputed 640 numeric checks, including Ditto frame
+RMS directly from the archived PCM. Maximum summary-versus-curve error was
+2.657e-8. The first output verifier used an absent summary field; its fresh
+roster-only repair passed without changing or rerunning scientific outputs.
+
+Whisper's log-power normalization predicts a common feature offset of gain
+in dB divided by 40. The measured equal-clip offsets for minus/plus6 dB were
+-0.150000013/+0.149999997, with centered shape RMS changes of approximately
+5.6e-7. Wav2Lip's unclamped normalization predicts minus/plus0.480; its fixed
+lower floor instead yields mean offsets -0.359316/+0.412290 and centered shape
+changes 0.098804/0.083135. Thus even a global waveform gain can alter local
+frequency directions through a fixed floor. Whisper's relative floor moves
+with the input, preserving centered shape in these measured inputs.
+
+Ditto's fixed input affine carries the gain into the first convolution. Its
+frame-RMS temporal correlation remains near one under gain, and values above
+absolute one are not clipped by that affine. These findings distinguish
+frontend input behavior; they do not establish learned-encoder invariance.
+The next mechanism probe compares identity, RMS and the three shared profiles
+using actual encoded trajectories. Local spectral/transition controls remain
+the working candidate family, with actual original-audio video scoring and
+the RMS comparison determining whether they transfer.
+
+Evidence: `runs/cross_tfg_audio_head_20261003/frontend_gain_feature_probe_attempt03_readback/`
+contains summary SHA256 `6af5b7a66a73f8a40138fb3cac2d98adcb33751327cce4bc5c75b8d77eaad888`
+and curves SHA256 `143daf5014c15ff4f59157744b809592f5dcfbbe4f70b8fef2bcb6c902232665`.
+Independent receipt: `.codex/scratch/root_frontend_probe_numeric_qc_attempt01.json`,
+SHA256 `ecbc5e0d37a84fe2012dde7d301a7fb5d486b7dff8ecba047226b188cfd61a96`.
+These run/scratch artifacts are local evidence. Fields named
+`centered_relative_rms_change` and `frame_rms_relative_change` in the frozen
+probe are absolute RMS differences, not dimensionless relative ratios.
+
 ## Delivery boundary
 
 A runnable checkpoint and exact original-audio mux are necessary engineering
