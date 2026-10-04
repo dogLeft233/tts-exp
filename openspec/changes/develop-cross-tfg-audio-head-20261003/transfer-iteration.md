@@ -214,8 +214,8 @@ PCM40ms log-RMS association has zero-lag aperture Pearson r0.348833 versus
 0.349786, and onset-velocity r0.022574 versus0.020315. Root independently
 recomputed34264 fields over all31 sensitivity lags (maximum difference7.78e−16).
 Neither a larger mouth nor these descriptive correlations establish quality.
-An audio-only frozen-weight diagnostic will separate mean log-mask μ(f) from
-its temporal residual δ(t,f), with dev20 and historical-fit8 kept separate.
+The frozen-weight audio-only diagnostic below separates mean log-mask μ(f)
+from its temporal residual δ(t,f), with dev20 and historical-fit8 kept separate.
 
 Authoritative local score and independent reduction evidence are in
 `runs/cross_tfg_audio_head_20261003/v4_cross_frontend_score_evidence_readback_attempt01/`
@@ -226,8 +226,10 @@ LatentSync's native identity/RMS video and original-audio score paths now pass
 single historical-fit engineering qualification; its complete92×31 paired
 matrices, original PCM16 and source clocks have passed independent readback.
 This has not opened heldout candidate selection. SadTalker's narrowly pinned
-scalar shape compatibility repair completed both engineering arms; its correct
-attempt06 raw evidence still needs retrieval. Confirmation audio/effects and its seed family remain
+scalar shape compatibility repair completed both engineering arms; attempt06
+has now passed strict local restoration and root raw-matrix/clock reduction.
+Its single historical-fit pair has RMS-minus-identity Cbest −0.044 and serves
+only as engineering qualification. Confirmation audio/effects and its seed family remain
 unopened until the candidate/configuration and evaluation family are frozen.
 
 Shared540 generation awaits5 GiB free SHM. The first old fit output is fully
@@ -238,8 +240,20 @@ The first exact run output has now been retired after that audit; its task
 code/control/ditto_control, frozen plan/rows, inputs/weights and first remote
 archive remain. The other three outputs use sequential archives in the existing
 manifest format and restoration on F. MuseTalk's source-preserving packer has
-completed a sealed 517,027,505-byte archive. Transfer to C is running; the F
-mirror and strict restoration follow that verified transfer. A combined new format would require more than the available
+completed a sealed 517,027,505-byte archive. C/F whole-file hashes and strict F
+restoration of all9,644 files passed; a fresh full-tree/dependency audit and
+guarded exact-run retirement released683,323,392 allocated bytes. The actual
+2,819-byte retirement receipt is sealed as SHA256
+`087b7278b43caafe81c0ac164d1dac4b7bc64cdabf2ce513f1181b1dc64923fe`.
+The temporary remote Muse tar passed a separate fourteen-protected-path and
+live-reference gate, then exact-file removal; its1,790-byte receipt is sealed
+as SHA256 `dafc818359b4cc281d441d3b4d704840bd53a52e18aca84903bd14390ca62cc8`.
+The pack controls and C/F archives remain. The failed-fit archive's second
+attempt stopped at its1GiB reserve and preserved its source; fresh attempt03
+uses allocated bytes plus1GiB as its conservative admission budget and has
+actually completed a1,291,222,198-byte source-preserving archive (SHA256
+`234006a3cc5efef762f1a943b79529fe4443751fad7f56a76cf718579e888638`).
+Its C/F transfer and strict restoration are next. A combined new format would require more than the available
 root space for only15% deduplication. The qualified score archive now removes
 the active analysis dependency on the MuseTalk/Ditto source trees; each still
 requires verified archives and restoration before its exact run is retired.
@@ -247,8 +261,9 @@ requires verified archives and restoration before its exact run is retired.
 1. Complete recoverable space release and run the frozen540 native development
    renders for the shared spectral/local profiles. Reuse controls only with
    exact source/model/config/seed and artifact bindings.
-2. Complete the frozen V4 audio-only μ/δ diagnostic. Any subsequent video
-   ablation uses the common scale in ADR011 and a new frozen plan.
+2. Use the completed frozen V4 audio-only μ/δ/a/r diagnostic to define a small
+   local spectral-gate family. Any subsequent video ablation uses the common
+   scale in ADR011 and a new frozen plan.
 3. Inspect B, Dmin, D0, offsets and independent mouth motion for every shared
    candidate. Preserve FULL/GUARD20 failures and planned denominators.
 4. If the small historical fit set is unstable, expand within the already
@@ -259,6 +274,57 @@ requires verified archives and restoration before its exact run is retired.
    speaker and reserved-model confirmation, component ablations and delivery.
    Calibrated backend presets remain separately named modes with costs.
 
+## Local spectral structure qualified from actual waveforms
+
+The actual CPU diagnostic covers20 development clips from10 speakers and8
+historical-fit clips from4 speakers. All20 development transforms reproduce
+the production V4 waveform exactly. Root recovered the complete46,753,644-byte
+NPZ (SHA256 `69925e7659e8a3e2defd5acb55a7aab5e6b92660fcbd8f9fc377aa9c1e1982be`),
+verified all196 arrays, and independently reconstructed180 decomposition
+fields with maximum error2.13e−14. An alternative NumPy STFT and manual Pearson
+reduction from the28 hash-bound original PCM WAVs verified340 association
+fields with maximum error1.33e−15. These are descriptive frozen-weight
+measurements; no new render, ASR call, training or confirmation read occurred.
+
+For each log-mask, remove its time mean μ(f), then write the temporal residual
+as δ(f,t)=a(t)+r(f,t), where a is the arithmetic frequency mean and r has zero
+arithmetic frequency mean. The table uses clip means followed by speaker
+means; each speaker has equal weight within its own cohort.
+
+| Measurement | Development20 /10 speakers | Historical fit8 /4 speakers |
+|---|---:|---:|
+| Centered static μ RMS, dB | 0.386 | 0.378 |
+| Dynamic δ RMS, dB | 0.771 | 0.765 |
+| Common-frequency a share of δ squared log-mask norm | 29.658% | 30.135% |
+| Residual-frequency r share of δ squared log-mask norm | 70.342% | 69.865% |
+| a RMS / r RMS, dB | 0.420 /0.644 | 0.422 /0.637 |
+| Pearson a vs original local logRMS | −0.082 | −0.087 |
+| Pearson a vs positive local logmag flux | +0.434 | +0.487 |
+
+The centered static profile suppresses0–300Hz by about1.200dB and300–1000Hz
+by0.508dB on development clips, while3–6kHz rises0.212dB; fit profiles are
+similar. The dynamic residual also has opposing low/high band trajectories.
+The zero-frequency-mean definition itself induces some opposition, so that
+pattern alone does not establish a speech-articulation mechanism. Likewise,
+the activity proxy marks98.793% of dev frames active and only0.702% quiet;
+18/20 clips have no quiet frame. It is not a phoneme or VAD annotation and
+does not support a quiet/silence rule.
+
+These quantities are unweighted log-mask squared norms, not waveform power.
+A zero-mean dB residual can still change physical frame power because the
+source spectrum is uneven and gain is exponential. ADR011 therefore requires
+the shared κ and explicit frame-power controls for causal μ/δ/a/r ablations.
+The global DC gain cancels after exact RMS matching when the peak cap is
+inactive. The local common gain's weak RMS association and stronger flux
+association make spectral-change gates a concrete next candidate; they do
+not convert V4's negative comparison with RMS into a useful-method result.
+
+Authoritative analysis is
+`runs/cross_tfg_audio_head_20261003/v4_logmask_delta_common_mode_attempt04/`.
+Its final figure passed root visual review; rows and cohort statistics are
+unchanged from the prior data-qualified version. Raw-array and original-PCM
+independent receipts are retained alongside their corresponding readbacks.
+
 ## Delivery boundary
 
 A runnable checkpoint and exact original-audio mux are necessary engineering
@@ -266,3 +332,26 @@ evidence. Useful-method evidence additionally requires transfer across the
 declared frontends, a comparison with RMS, content/visual checks, and the frozen
 untouched-speaker/model evaluation. LatentSync remains excluded from candidate
 selection until the shared method is frozen.
+
+## Implementation resource appendix
+
+The timings below are engineering-only single-input measurements used for
+capacity planning. They are not throughput guarantees: each measurement covers
+one historical-fit utterance and one fixed portrait, and includes a different
+amount of model startup, admission wait, tracking, scoring and file handling.
+No development or confirmation effect is inferred from these measurements.
+
+| Frontend | Qualified implementation | Measured engineering input and time | Model assets / staging size |
+|---|---|---|---|
+| SadTalker | Official `v0.0.2-rc` source commit `28b8dfc2ebed9a00238090e5d46329cb77643207`; 256-pixel crop, 25 fps, enhancer off; Python 3.10.12, Torch 2.5.1+cu124, NumPy 1.26.4. | One 22,400-sample 16 kHz mono F32 crop, 35 output frames per arm. Native inference took 12.25 s (identity) and 11.94 s (RMS); the two-arm wrapper run took 186.98 s overall, including setup/admission and downstream work. | Four official assets total 1,183,756,176 B. The paired engineering archive is 3,085,913 B (260 regular files); this small result archive is not a full-run storage estimate. Strict readback: `runs/cross_tfg_audio_head_20261003/sadtalker_fit_smoke_attempt06_readback_attempt03/independent_local_qc_attempt03.json`. |
+| LatentSync | Pinned native inference profile, 20 steps, guidance 1.5, DeepCache off; CUDA UNet and CPU face-detection sessions. | One 62,639-sample 16 kHz input (3.915 s), 128-frame 25 fps static source, 99 generated frames per arm. UNet inference took 222.725 s (identity) and 215.480 s (RMS); complete arm runs took 255.969 s and 272.349 s. | Official UNet 5,072,222,488 B; derived FP16 runtime UNet 2,536,318,892 B; VAE 334,707,217 B; Whisper 75,572,083 B; face assets 16,923,827 B and 5,030,888 B. Keeping both the original UNet and runtime derivative requires at least 7,608,541,380 B for those two files alone, before source, environment, cache or outputs. Paired engineering archive: `runs/cross_tfg_audio_head_20261003/latentsync_fit_pair_raw92_attempt07_readback/latentsync_fit_pair_raw92_attempt07.tar.gz`. |
+
+For scale only, multiplying the LatentSync one-input inference time by 240
+render rows gives roughly 14.6 GPU-hours of model inference; multiplying the
+observed complete-arm time gives about 17.6 serialized render hours. This is a
+rough planning scenario for similarly short inputs, not a frozen runtime SLA.
+Longer audio, startup, GPU admission, tracking, scoring, retries and storage
+can change wall time. SadTalker's one short pair is too small a sample for a
+stable full-cohort wall-time estimate. The shared-run launch policy separately
+requires at least 18 GiB free GPU memory at admission; that is a scheduler
+headroom rule, not a measured minimum model allocation.
