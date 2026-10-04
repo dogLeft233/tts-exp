@@ -253,7 +253,22 @@ attempt stopped at its1GiB reserve and preserved its source; fresh attempt03
 uses allocated bytes plus1GiB as its conservative admission budget and has
 actually completed a1,291,222,198-byte source-preserving archive (SHA256
 `234006a3cc5efef762f1a943b79529fe4443751fad7f56a76cf718579e888638`).
-Its C/F transfer and strict restoration are next. A combined new format would require more than the available
+Its C/F whole-file transfer and strict restoration of all46,089 files now pass;
+root independently rehashed all323 C ranges and the F archive and result files.
+The strict restoration receipt is52551 B, SHA256
+`e4ea0cef5056e92b5f1e1455d0183ce66a530e8af107228ac951c5f34cd65302`.
+The source run and temporary remote tar remain pending separate exact retirement.
+The first read-only audit failed on a presumed `TASK_ROOT/code` directory;
+actual inventory locates code in `TASK_ROOT/scripts` and root source files,
+with controls under `job_control/shared_frequency_profiles_fit_attempt03`.
+The fresh audit protects those actual paths and preserves the failed receipt.
+Its actual21,769-byte receipt is SHA256
+`4fc41b5b2878461a040a45b9c6696b275abe9405da501a87d06943cddaf86f7a`.
+All nine gates pass, with zero active or unresolved queued references. Root
+independently read the F archive's sealed member manifest and reproduced the
+50,635-record canonical digest, matching the freshly rehashed source tree.
+Old Ditto's actual target is `stageb_ditto_attempt03_retry04/run`, independently
+bound to its existing plan and controls. A combined new format would require more than the available
 root space for only15% deduplication. The qualified score archive now removes
 the active analysis dependency on the MuseTalk/Ditto source trees; each still
 requires verified archives and restoration before its exact run is retired.
@@ -324,6 +339,44 @@ Authoritative analysis is
 Its final figure passed root visual review; rows and cohort statistics are
 unchanged from the prior data-qualified version. Raw-array and original-PCM
 independent receipts are retained alongside their corresponding readbacks.
+
+## Qualified expanded fit inputs and deployed input normalization
+
+ADR013's canonical expanded subset is now backed by actual audio, rather than
+only roster metadata. Root independently rehashed20 official AISHELL archives
+(728,484,140 B), inspected6,944 WAV headers, reconstructed all320 original
+floor-mapped slots, and verified the40 unique j=0/15 endpoint PCM16 and
+canonical F32 payloads. The20 speakers remain disjoint from dev and sealed
+confirmation, with no replacement clips. The scanner's non-endpoint payload
+status label is ambiguous; the qualified result is the canonical mapping and
+40 endpoint payloads. The member report is183,939 B, SHA256
+`1b4fd8472842c9c30c4611aa760b3c2b2d9f01193d3aaf7f487f5f8096b0a140`.
+The maximum six new candidates, speaker folds and960 native-row budget in
+ADR013 are unchanged. This is data qualification, not a new fit or effect.
+
+The deployed Ditto HuBERT ONNX has now passed exact raw-input constant
+inspection. Full-model SHA256 was independently recomputed before reading the
+two scalar TensorProto payloads. Constant nodes410 and412 feed Sub411 and
+Div413, giving the fixed affine preprocessing
+`(x - 2.586069967946969e-05) / 0.20523720979690552`.
+These are fixed float32 constants, not statistics recomputed for each input
+clip. Root downloaded the original audit and receipt and independently
+re-encoded both scalar values, reproducing their payload hashes. The audit
+is4,647 B, SHA256
+`873d525f1b1b4669594b9fbfb50fa3421f5c537da70cf967e5b3ee88ac74d449`.
+Collector attempt04 failed before graph parsing because it assumed the wrong
+report field; attempt05 binds the actual `source_and_weights.weights` table
+and exact source commit/path/size/hash. No audio or inference was involved.
+Later convolution, LayerNorm and encoder responses require the bounded
+frontend probe and native generation; this affine path alone does not establish
+encoder gain invariance or explain the complete transfer effect.
+
+The900-row analysis bundle is actually staged after four bridge parts of at
+most5 MiB, whole-ZIP hash verification and extraction of its eight payloads.
+The analysis still awaits the540 candidate terminal rows. Execution packet07
+step04 is a CPU preflight; step05 produces candidate WAVs. The60-unit ASR
+guard must bind those actual generator files, retain unavailable units and
+check every distinct available model/seed PCM reference before API calls.
 
 ## Delivery boundary
 
