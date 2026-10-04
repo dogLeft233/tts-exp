@@ -151,7 +151,7 @@ v3 a useful shared best-confidence head. Ditto's complete240-row raw-array
 audit is qualified; GUARD20 retains its predeclared short-clip incompleteness.
 
 The twelve recipient-local spectral profiles and three controls completed360
-fit rows on eight historical clips, three paired seeds, and three frontends.
+fit rows on eight historical clips, one shared seed (20261003), and three frontends.
 Independent reconstruction validates2520 arrays, exact common clocks/support,
 float32 curves and selector utility. The frozen fit-only shortlist is:
 
@@ -177,41 +177,87 @@ Its artifacts and independent receipt are under
 `runs/cross_tfg_audio_head_20261003/shared_profile_shortlist_dev_attempt03/`.
 
 Native v4 uses the frozen96-step checkpoint and best-confidence/far-lag
-reward with distance/anchor regression penalties. Its180-row dev run is
-ongoing. CPU-only staging qualified20 unique candidate waveforms with exact
+reward with distance/anchor regression penalties. Its180-row native dev run
+completed180/180 PASS. CPU-only staging qualified20 unique candidate waveforms with exact
 production-transform replay, bounded masks, no active peak cap and fixed-RMS
 error below3.25e−9. Qwen ASR then completed20 new candidate calls: all match
-the official text and natural-audio hypotheses. The final content guard must
-still bind those ASR input hashes to each generated-video ledger waveform;
-audio staging or an earlier candidate's CER cannot replace that join.
+the official text and natural-audio hypotheses. Independent checks qualified
+all80 WAVs and20 real API requests, with0 errors across297 annotated characters.
+The actual180-row render join then matched the enhanced generator PCM to
+those ASR input hashes and preserved natural score PCM/source clocks. Content
+has20 independent waveform units. Independent visual extraction completed
+240 MuseTalk/Ditto baseline rows and180 V4 rows; the V4 archive's189 members,
+180 trajectory NPZs and2520 arrays passed root verification. The completed
+joint evidence archive binds540 rows,1700 assets and1721 regular members.
+Root independently reconstructed42171 numeric fields and every nine-way query
+support, with maximum float32 reduction difference5.72e−6 under declared1e−5
+tolerance. All10 speakers per model are complete on FULL support:
+
+| Model | V4 minus identity Cbest | V4 minus RMS Cbest |
+|---|---:|---:|
+| Wav2Lip | +0.194 | −0.040 |
+| MuseTalk | +0.024 | −0.029 |
+| Ditto | +0.110 | −0.064 |
+| Model-equal | +0.109 | −0.044 |
+
+These are development means. V4 remains below RMS on every model and does not
+meet the useful-method target. Relative to RMS, model-equal B rises0.016 while
+Dmin rises0.060 and D0 rises0.036; Canchor falls0.021. GUARD20 keeps513 eligible
+and27 ineligible planned rows. S0022 has only one eligible clip, so its complete
+ten-speaker endpoint is null. The separate common nine-complete-speaker subset
+has model-equal V4-minus-RMS Cbest−0.023; it does not replace FULL.
+
+The common visual summary completes540 rows and180 contexts; root recomputed
+8640 fields with zero difference. Mean normalized aperture is0.072927 for V4
+and0.071474 for RMS; velocity RMS is0.474874 and0.474698 respectively. Original
+PCM40ms log-RMS association has zero-lag aperture Pearson r0.348833 versus
+0.349786, and onset-velocity r0.022574 versus0.020315. Root independently
+recomputed34264 fields over all31 sensitivity lags (maximum difference7.78e−16).
+Neither a larger mouth nor these descriptive correlations establish quality.
+An audio-only frozen-weight diagnostic will separate mean log-mask μ(f) from
+its temporal residual δ(t,f), with dev20 and historical-fit8 kept separate.
+
+Authoritative local score and independent reduction evidence are in
+`runs/cross_tfg_audio_head_20261003/v4_cross_frontend_score_evidence_readback_attempt01/`
+and `v4_join_root_independent_readback_attempt01/`. The native candidate,
+baseline matrices and failed/unexecuted repairs remain immutable.
 
 LatentSync's native identity/RMS video and original-audio score paths now pass
-single historical-fit engineering qualification; this has not opened heldout
-candidate selection. SadTalker is undergoing a narrowly pinned scalar shape
-compatibility repair. Confirmation audio/effects and its seed family remain
+single historical-fit engineering qualification; its complete92×31 paired
+matrices, original PCM16 and source clocks have passed independent readback.
+This has not opened heldout candidate selection. SadTalker's narrowly pinned
+scalar shape compatibility repair completed both engineering arms; its correct
+attempt06 raw evidence still needs retrieval. Confirmation audio/effects and its seed family remain
 unopened until the candidate/configuration and evaluation family are frozen.
 
-1. Independently reconstruct the completed four-method raw distance matrices,
-   including common source-clock windows, failures and planned denominators.
-2. Apply fit96 in a new candidate-only run. A new joint analysis derives
-   five-method support summaries from original immutable matrices; unchanged
-   generator controls are reused only with exact source/model/config/seed and
-   artifact bindings. Preserve the original four-method analysis separately.
-3. Evaluate the same waveform candidates in actual Ditto and MuseTalk
-   generation. The shared mode uses one configuration/weight set. Calibrated
-   backend presets are separate methods with explicit calibration costs.
-4. When a head raises C by changing background distance or embedding norm,
-   inspect B, Dmin, D0, offset, unit-norm cosine diagnostics, and independent
-   mouth motion. Do not silently substitute a convenient score definition.
-5. When a learned head fails transfer, evaluate a small fit-only family of
-   bounded frequency profiles and local compression parameters with the same
-   RMS/peak policy. Select a shared controller using model-equal and per-model
-   fit objectives, then verify it on the fixed development cohort. Candidate
-   families and comparisons are frozen before their new renders.
-6. If the small historical fit set is unstable, expand within the already
+Shared540 generation awaits5 GiB free SHM. The first old fit output is fully
+archived on C and F with identical SHA and strict restoration of all47,105
+files. A later full hash disagreed for the B mount, so ADR012 uses the verified
+C/F mirrors plus restoration and a fresh exact activity/input-reference audit.
+The first exact run output has now been retired after that audit; its task
+code/control/ditto_control, frozen plan/rows, inputs/weights and first remote
+archive remain. The other three outputs use sequential archives in the existing
+manifest format and restoration on F. MuseTalk's source-preserving packer has
+completed a sealed 517,027,505-byte archive. Transfer to C is running; the F
+mirror and strict restoration follow that verified transfer. A combined new format would require more than the available
+root space for only15% deduplication. The qualified score archive now removes
+the active analysis dependency on the MuseTalk/Ditto source trees; each still
+requires verified archives and restoration before its exact run is retired.
+
+1. Complete recoverable space release and run the frozen540 native development
+   renders for the shared spectral/local profiles. Reuse controls only with
+   exact source/model/config/seed and artifact bindings.
+2. Complete the frozen V4 audio-only μ/δ diagnostic. Any subsequent video
+   ablation uses the common scale in ADR011 and a new frozen plan.
+3. Inspect B, Dmin, D0, offsets and independent mouth motion for every shared
+   candidate. Preserve FULL/GUARD20 failures and planned denominators.
+4. If the small historical fit set is unstable, expand within the already
    designated historical fitting speakers. Keep development selection and
    untouched confirmation separate. A failed candidate remains in the method
    table and informs the next training or control change.
+5. Freeze the selected shared configuration/weights and complete untouched
+   speaker and reserved-model confirmation, component ablations and delivery.
+   Calibrated backend presets remain separately named modes with costs.
 
 ## Delivery boundary
 
