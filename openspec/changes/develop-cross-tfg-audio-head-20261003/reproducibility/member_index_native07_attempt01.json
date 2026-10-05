@@ -1,0 +1,38 @@
+{
+  "schema": "cross_tfg_native07_raw_executed_bindings_bundle_index_v1",
+  "status": "PASS_RAW_EXECUTED_SOURCE_CONFIG_QC_PRESERVED",
+  "archive_name": "v3-native07-executed-bindings-attempt01.zip",
+  "archive_bytes": 134405,
+  "archive_sha256": "db3643bfebe9b15c3c37f5252dd86154d0313ded5939794e216aae0362d1f5d3",
+  "members": [
+    {
+      "path": "source/v3-native07-same-cpu-source-attempt01.zip",
+      "bytes": 129617,
+      "sha256": "da9249b85cb46c05a90c6e3d1d5cf21420157485a42e90f08d0e2f0c7db8bb60"
+    },
+    {
+      "path": "source/native07_source_manifest_attempt01.json",
+      "bytes": 4469,
+      "sha256": "f6e33851466b66240c010d5441a5289301b35f8705d05af03d799f801bb718aa"
+    },
+    {
+      "path": "binding/native07_qualification_config_attempt07.json",
+      "bytes": 11467,
+      "sha256": "6ed9b441eee67913fd904f881d9a3dc3d85b29d8a1d1048ce1c7e837ad38c1bd"
+    },
+    {
+      "path": "evidence/native07_root_arrays_qc_attempt01.json",
+      "bytes": 2274,
+      "sha256": "3d09002f87b38df3b5ebc9dd2339f8843bf9cc5b210333238085cfb6f7a02a70"
+    }
+  ],
+  "actual_full_result_archive_sha256": "de770fc8accacea4a977029043c2291d3482099234973e3e069be3efc3234d36",
+  "actual_result_manifest_sha256": "949e7446be2eaab09869aaf342360d6397cab291844d016a7ad83807533c59d2",
+  "source_files_in_nested_zip": 19,
+  "old_cross_device_failure_preserved": true,
+  "optimizer_steps": 0,
+  "trained_weights": false,
+  "effect_claim": false,
+  "contains_original_audio": false,
+  "usage": "Restore raw outer binding and nested source ZIP; fresh outputs and rebound asset paths need new explicit versioned config, never overwrite executed config."
+}
