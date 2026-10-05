@@ -291,6 +291,35 @@ requires verified archives and restoration before its exact run is retired.
 
 ## Local spectral structure qualified from actual waveforms
 
+### Completed shared-profile development
+
+All 540 new candidate renders and 360 qualified reused control rows now have
+a complete, locally restored 900-row evidence archive. Independent CPU replay
+uses the producer's Torch 2.5.1 float32 reductions and exactly reproduces all
+1,755 eligible curves and metrics across 1,800 FULL/GUARD20 scopes. The earlier
+NumPy tolerance failure and Torch digest failure are retained as engineering
+failures. Root separately reconstructs seed-to-clip-to-speaker means and equal
+model weights; all 384 stored report comparisons agree within 5.55e-17.
+
+| Profile | Wav2Lip minus RMS Cbest | MuseTalk minus RMS Cbest | Ditto minus RMS Cbest | Model-equal |
+|---|---:|---:|---:|---:|
+| accent0.15, tilt+0.25 | -0.016 | +0.002 | -0.008 | -0.008 |
+| accent0.30, tilt0 | +0.011 | -0.009 | +0.013 | +0.005 |
+| flatten0.15, tilt-0.25 | +0.031 | -0.063 | -0.047 | -0.026 |
+
+No profile meets three positive models and model-equal +0.050 over RMS.
+Accent0.30 gains +0.159 over identity, so the RMS comparator absorbs most of
+that apparent benefit. FULL retains all 900 rows. GUARD20 keeps 855 eligible
+and 45 planned short-support rows for S0022/W0123; its full ten-speaker endpoint
+remains null and its nine-speaker sensitivity does not replace FULL.
+
+The three manual profiles are concluded below the shared-selection criterion.
+The independent historical fit40, nine-parameter local spectral-change route
+continues with fixed RMS, same-GPU zero/RMS qualification and 120 fixed updates.
+No learned weights, configuration selection or confirmation effect is claimed.
+The authoritative full-precision root contrasts are in
+`runs/cross_tfg_audio_head_20261003/shared_profile_900row_join_attempt07_readback_attempt01/root_whole_archive_attempt01/root_full_paired_metrics_attempt01.json`.
+
 The actual CPU diagnostic covers20 development clips from10 speakers and8
 historical-fit clips from4 speakers. All20 development transforms reproduce
 the production V4 waveform exactly. Root recovered the complete46,753,644-byte
