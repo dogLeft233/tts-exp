@@ -1,0 +1,118 @@
+{
+  "schema": "cross_tfg_rms_baseline_config_v1",
+  "config_name": "rms_baseline_v1",
+  "role": "fixed_positive_control",
+  "method_id": "rms_fixed",
+  "method": "rms",
+  "sample_rate_hz": 16000,
+  "target_rms": 0.0376838172675746,
+  "peak_ceiling": null,
+  "input_contract": {
+    "container": "little-endian RIFF/WAVE",
+    "accepted_encodings": ["PCM", "IEEE_FLOAT"],
+    "canonical_channels": 1,
+    "canonical_sample_rate_hz": 16000,
+    "downmix": "arithmetic channel mean",
+    "resampler": "deterministic pinned NumPy windowed-sinc",
+    "sample_clock": "no intentional time warp; output length equals canonical input length"
+  },
+  "output_contract": {
+    "encoding": "IEEE_FLOAT_32_LE",
+    "channels": 1,
+    "sample_rate_hz": 16000,
+    "sample_count": "exact canonical input sample count",
+    "limiter": "none",
+    "hard_clipping": false,
+    "overwrite": false
+  },
+  "runtime_source_pins": {
+    "package_initializer": {
+      "path": "scripts/audio_enhancement/__init__.py",
+      "bytes": 1503,
+      "sha256": "db520f7b04343682e6df4ba53b22503de806287e70f2b8e41e84f16912d361fc"
+    },
+    "audio_decoder_writer": {
+      "path": "scripts/audio_enhancement/audio_io.py",
+      "bytes": 14294,
+      "sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004"
+    },
+    "rms_implementation": {
+      "path": "scripts/audio_enhancement/baselines.py",
+      "bytes": 15123,
+      "sha256": "7d161970381cc7e6770a4a53063f91b2606c05490945b2b86ab41c7de4d0a3e2"
+    },
+    "transform_dispatch": {
+      "path": "scripts/audio_enhancement/pipeline.py",
+      "bytes": 5975,
+      "sha256": "b40ddce9b09ea42d56945eb66acca3326be6784acb6c1e6ab134b1b2899fb6c3"
+    },
+    "command_line": {
+      "path": "scripts/audio_enhancement/cli.py",
+      "bytes": 14999,
+      "sha256": "0c8cfed85032d070f21c41cd6df7213a489c42ac1bb5afe0e559fb77dfe07803"
+    }
+  },
+  "qualification_evidence": {
+    "zero_theta_engineering": {
+      "status": "COMPLETE_ENGINEERING_DIAGNOSTICS",
+      "comparison": "zero-parameter V3 output was bitwise equal to apply_global_rms on all 40 historical fit WAVs",
+      "source_pins": {
+        "v3_cli": {
+          "path": "scripts/audio_enhancement/enhance_v3_attempt02.py",
+          "bytes": 42653,
+          "sha256": "7a560332ce86a82ffede4254b015cabf5f10176e6f601bfc172a331f7bb885e6"
+        },
+        "v3_head": {
+          "path": "scripts/audio_enhancement/shared_recipient_transition_head_v3.py",
+          "bytes": 32233,
+          "sha256": "77acdff03cca22261852f48364cbc75263db58a14cb565c08aa0d268afca6e87"
+        },
+        "qualification_worker": {
+          "path": "scripts/experiments/cross_tfg_audio_head_20261003/qualify_shared_recipient_transition_head_v3_cpu_attempt02.py",
+          "bytes": 55636,
+          "sha256": "4f5a1d272eb57fa331241a2063bbb25e8c91b28b61d826487ec80a24d1cf9eb3"
+        }
+      },
+      "source_qualification_config": {
+        "path": "runs/cross_tfg_audio_head_20261003/shared_recipient_transition_head_v3_cpu_qualification_attempt02/qualification_config.json",
+        "bytes": 10721,
+        "sha256": "0abfbb9797a84254e6d0a6e72266862a079e5066f2fec394e0796b0c2664d2f5"
+      },
+      "summary": {
+        "path": "runs/cross_tfg_audio_head_20261003/shared_recipient_transition_head_v3_cpu_qualification_attempt02_readback_attempt01/files/summary.json",
+        "bytes": 12330,
+        "sha256": "48559809f4473c84054f61c36ae6c724b6d2ad189172c3087a61fa47fd1d3012"
+      },
+      "manifest": {
+        "path": "runs/cross_tfg_audio_head_20261003/shared_recipient_transition_head_v3_cpu_qualification_attempt02_readback_attempt01/files/result_manifest.json",
+        "bytes": 1076,
+        "sha256": "d6e3641557d65819295146623d47502ff2edc0097afa23e1b3fc9bd5336f986d"
+      },
+      "head_or_checkpoint_required_for_this_baseline": false
+    },
+    "cross_frontend_full_dev_control": {
+      "status": "COMPLETE_FULL_SUPPORT_DESCRIPTIVE_DEV",
+      "comparison": "rms_fixed minus identity, Cbest, equal-speaker within model",
+      "archive": {
+        "path": "runs/cross_tfg_audio_head_20261003/shared_profile_900row_join_attempt07_readback_attempt01/root_whole_archive_attempt01/shared_profile_900row_joint_evidence.tar.gz",
+        "bytes": 47938337,
+        "sha256": "ad01790e24138a1d0c062f23c753b26856d66448f3dc0f715f5e86b4615c68d0"
+      },
+      "aggregate_receipt": {
+        "path": "runs/cross_tfg_audio_head_20261003/shared_profile_900row_join_attempt07_readback_attempt01/root_whole_archive_attempt01/root_full_paired_metrics_attempt01.json",
+        "bytes": 43965,
+        "sha256": "486acd54b442033b74e56487dda2be98d0709afe6972d3de50edd41d210add4c"
+      },
+      "contexts_per_frontend": 60,
+      "speakers_per_frontend": 10,
+      "complete_speakers_per_frontend": 10,
+      "delta_cbest_vs_identity": {
+        "wav2lip_gan_bac9a81e": 0.23413574695587167,
+        "musetalk_fixed_portrait_attempt16": 0.05330069065093994,
+        "ditto_hubert_fixed_portrait_attempt18": 0.17336996396382648,
+        "equal_model_mean": 0.15360213385687935
+      },
+      "scope_note": "Descriptive development evidence; this is a positive control, not a trained or selected enhancement head."
+    }
+  }
+}
