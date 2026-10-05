@@ -8,7 +8,7 @@
 
 ## 关键结论
 
-> **2026-10-05 增强头（🔄进行中）**：增强PCM驱动生成，成片恢复精确自然PCM/clock。完整shared900归档、1755可估曲线/指标精确Torch复算、384配对比较及60ASR/540视觉结构保护独立PASS。RMS相对identity的FULL Cbest W/M/D +0.234/+0.053/+0.173，已提供[可用配置](scripts/audio_enhancement/configs/rms_baseline_v1.zh-CN.md)，3条CLI及13配置证据pin独立核验通过。三局部profile相对RMS等权ΔC=−0.008/+0.005/−0.026，均未达到共享标准，继续九参数可学习谱变化头。FULL900保留；guard20=855可估/45短支持，完整十speaker端点null。fit120的21成员源码已stage，40cache/geometry与同GPU门控/120步训练待空间准入。native168实际Wav2Lip/Muse各56PASS，Ditto因旧HuBERT路径缺失0/56，修复中。V4完整本地tar与49,297成员独立PASS，Windows恢复换行转换失败已保留，二进制恢复后精确退休。无训练权重；确认80/40未见speaker及LatentSync封存。详见[协议](openspec/changes/develop-cross-tfg-audio-head-20261003/transfer-iteration.md)、[交接](HANDOFF.md)、BM Task66/Experiment65及checkpoint EE。
+> **2026-10-05 增强头（🔄进行中）**：增强PCM驱动生成，成片恢复精确自然PCM/clock。FULL900、1755可估曲线精确复算及60ASR/540视觉结构保护独立PASS；RMS−identity FULL Cbest W/M/D +0.234/+0.053/+0.173，已有[可用基线](scripts/audio_enhancement/configs/rms_baseline_v1.zh-CN.md)。三局部profile增量不足，继续九参数局部谱时间头。W/M112数组的224配对显示Muse整体gain近不变但局部轨迹响应较强；仅fit8编码证据。完整V4 C备份/严格恢复及native153成员恢复合格，V4/native精确输出退休已完成。fit40首次资源准入通过，实际首行SyncNet AVI/JPEG计数错误导致0/40工程失败，正在fresh修复；120更新未run。末步独立rescore26成员源码已部署。无训练权重；Confirm80/40未见speaker与LatentSync封存。见[协议](openspec/changes/develop-cross-tfg-audio-head-20261003/transfer-iteration.md)、[交接](HANDOFF.md)、BM Task68/Experiment67及checkpoint EH。
 
 > **2026-10-03 机制结论**：AISHELL-1中文、cloud Qwen TTS与Wav2Lip链上已定位增益→log-mel→真实音频编码器方向→生成动作的正向响应。男性40说话人固定A方向 ΔC=+0.161，99%[+0.094,+0.232]；内部mel ΔC=+0.171 [+0.101,+0.245]。男性full-A/raw/guard15原生T−N时间超额从q00 RAW/RAW +0.235到q11 FIXED/FIXED +0.031，配对缩小+0.204 [+0.119,+0.295]，同时改变生成和评分输入；另列固定A男性自然生成G excess+0.185 [+0.108,+0.266]。女性20说话人的paired gap-null变化+0.245 [+0.118,+0.388]，保留不同队列与支持。
 
