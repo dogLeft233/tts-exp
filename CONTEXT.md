@@ -8,13 +8,13 @@
 
 ## 关键结论
 
-> **2026-10-08 增强头（🔄进行中）**：增强PCM只驱动生成，评分/成片恢复精确原自然PCM/clock。历史FULL900/ASR60/540视觉独立PASS；RMS历史等模型+0.154，[CLI可用](scripts/audio_enhancement/configs/rms_baseline_v1.zh-CN.md)，固定profile额外不足，继续学习九参数局部过渡头。迁移后producer05已真实40/40完成，来源/RMS/1280时钟映射独立PASS，完整NPZ/media解码与287MB持久备份待执行。training09全40零头曲线/视觉原数组精确相等，87文件失败归档已由root完整独立重读PASS。training10反射填充反向失败保留；training11/v7真实完整资格PASS，zero40原数组不变，122项CUDA前向与72项CPU反向重复精确，九个参数梯度非零、更新0。正在准备冻结Fit40/Adam120及终端独立评分。Ditto12固定资产实际PASS；Muse06隔离gdown依赖实际PASS，9资产恢复真实DOWNLOADING。三后端六行重复资格源码已准备，尚未执行；ADR015固定180候选+新GPU360自然/RMS控制。尚无学习权重、新Dev/Confirm；Confirm80/LatentSync封存。见[协议](openspec/changes/develop-cross-tfg-audio-head-20261003/transfer-iteration.md)、[交接](HANDOFF.md)、BM Task86/Experiment85及[服务器记录](basic-memory/docs/reference/server-access.md)。
+> **2026-10-08 增强头（🔄进行中）**：增强PCM只驱动生成，评分/成片恢复精确原自然PCM/clock。历史FULL900/ASR60/540视觉独立PASS；RMS历史等模型+0.154，[CLI可用](scripts/audio_enhancement/configs/rms_baseline_v1.zh-CN.md)，固定profile额外不足，继续九参数局部过渡头。迁移后producer05真实40/40完成，来源/RMS/1280时钟映射独立PASS；4,979文件287MB已持久tar并由root全部成员/wholeSHA独立重读PASS，NPZ/media解码未齐（MKV缺少stream duration，需按实际样本/时戳核对）。training11/v7完整资格PASS，zero40原数组不变，122前向/72反向重复精确、九参数梯度非零；冻结Fit40/20说话人/Adam120真实完成，120条连续步骤，Dev/Confirm未打开。120步账本/参数连续性和末步权重独立核验PASS，最后一步参数独立评分待执行，尚无新Dev效果。Ditto12资产实际PASS；Muse06七资产含unet/VAE/Whisper完成，余两face-parser资产GoogleDrive连接失败，保留已验证字节续恢复。三后端重复资格运行包待派发；ADR015固定新GPU360自然/RMS控制+180候选，Confirm80/LatentSync封存。见[协议](openspec/changes/develop-cross-tfg-audio-head-20261003/transfer-iteration.md)、[交接](HANDOFF.md)、BM Task87/Experiment86及[服务器记录](basic-memory/docs/reference/server-access.md)。
 
 > **2026-10-03 机制结论**：AISHELL-1中文、cloud Qwen TTS与Wav2Lip链上已定位增益→log-mel→真实音频编码器方向→生成动作的正向响应。男性40说话人固定A方向 ΔC=+0.161，99%[+0.094,+0.232]；内部mel ΔC=+0.171 [+0.101,+0.245]。男性full-A/raw/guard15原生T−N时间超额从q00 RAW/RAW +0.235到q11 FIXED/FIXED +0.031，配对缩小+0.204 [+0.119,+0.295]，同时改变生成和评分输入；另列固定A男性自然生成G excess+0.185 [+0.108,+0.266]。女性20说话人的paired gap-null变化+0.245 [+0.118,+0.388]，保留不同队列与支持。
 
 > **局部声学机制**：保持recipient F0/AP/清浊音、时钟、逐帧SP功率及全局RMS，mu平均相对频带log比与rho内部时间轨迹干预定位recipient谱比轨迹和发声/时序结构的相容性。自然供体→TTS recipient的rho−SELF_GRID fixed-A/raw/guard15 Cfixed −0.192，联合99%[−0.336,−0.047]；joint−grid两方向均负。FULL35不同局部负端点集中n/ŋ及少量a˥˩/早tɕ，约350ms mel覆盖含共发音，guard15局部区间含0。完整800视频/1600评分/11776声学端点（10304可估/1472短Tg20保留）与54动作端点、完整证据恢复和图QA均已独立通过。54族唯一联合99%非零项为该方向rho−grid平均开口+.001519[+.000086,+.002952]，开口和同步评分分别解释。见[正式报告25](basic-memory/docs/experiments/25-tts-tfg-mechanism.md)及BM任务“解释 TTS 的 TFG 与 SyncNet 优势”。
 
-> **当前服务器（2026-10-07迁移）**：`root@connect.westd.seetacloud.com:18625`，已实际认证且SSH主机密钥与迁移前一致；新输出根 `/root/tts-research-system-20261001/`（0700），旧输入/run保留 `/root/autodl-tmp/tts-research-20260930/`。持久磁盘保留08源码部署/CPU预检，整个SHM实验命名空间已丢失，新GPU UUID为d09622d0-3535-e662-bb45-3df2b049fcea；现已按原40条设计完成同GPU几何/自然音频缓存，训练确定性反向修复中。旧weste:12349仅为历史入口。密码/API key只在运行时；部署和迁移核验见BM `docs/reference/server-access`。
+> **当前服务器（2026-10-07迁移）**：`root@connect.westd.seetacloud.com:18625`，已实际认证且SSH主机密钥与迁移前一致；新输出根 `/root/tts-research-system-20261001/`（0700），旧输入/run保留 `/root/autodl-tmp/tts-research-20260930/`。持久磁盘保留08源码部署/CPU预检，整个SHM实验命名空间已丢失，新GPU UUID为d09622d0-3535-e662-bb45-3df2b049fcea；现已按原40条设计完成同GPU几何/自然音频缓存，完整严格反向资格与冻结120训练已完成，终端/迁移评分待执行。旧weste:12349仅为历史入口。密码/API key只在运行时；部署和迁移核验见BM `docs/reference/server-access`。
 
 > **2026-09-26 评价协议修正**：下列历史分数是原协议结果。Ditto 47对审计发现默认音频编码的高频损伤可造成大幅分差；统一源PCM后 ΔC=+0.287 [−0.090,+0.648]。全因子、频带双向干预及12真实视频复核见 `runs/syncnet_codec_mechanism_20260926/report.md` 和同名BM实验笔记。未经无损音轨复核，勿把原生高分升级为嘴型改善或发音动态机制。
 
@@ -91,4 +91,3 @@ basic-memory/docs/
 ```
 
 当前机制报告：[报告25](basic-memory/docs/experiments/25-tts-tfg-mechanism.md)。B 系列（11-15）为 2026-08 的音素/韵律/TFG 深化实验，均经对抗子 agent 审查修复。
-
