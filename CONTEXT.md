@@ -8,7 +8,7 @@
 
 ## 关键结论
 
-> **2026-10-07 增强头（🔄进行中）**：增强PCM驱动生成，评分/成片恢复精确原自然PCM/clock。FULL900、ASR60及540视觉结构保护独立PASS；RMS−identity W/M/D +0.234/+0.053/+0.173，[CLI基线可用](scripts/audio_enhancement/configs/rms_baseline_v1.zh-CN.md)。三固定局部profile额外收益不足，继续学习头。三前端168/336/42及861功率独立PASS；11参数局部包络/补偿谱形CPU资格已实际独立PASS（8clip/11坐标全非零、160相位、480功率统计），证据在 `runs/cross_tfg_audio_head_20261003/local_power_signal_qualification_attempt10/`。迁移后40原WAV、模型和08源部署/CPU预检完整，旧SHM缓存丢失、GPU变化。新GPU旧pilot QC05三臂rc0，但identity重复Cbest差+0.106且码流/矩阵不同，正修复控制后新context/40producer，再同GPU零头/固定120更新/末步重评；08部署不覆盖。末步物化、540join、实际Dev180 plan及ASR20适配器已提交；候选180+360控制复用须重新检查迁移兼容性，必要时新GPU重跑控制。尚无终态权重/learned Dev/Confirm。SPSA840仅提案，Fit8只资格、优化用冻结Fit40。Confirm80/LatentSync封存。见[协议](openspec/changes/develop-cross-tfg-audio-head-20261003/transfer-iteration.md)、[交接](HANDOFF.md)、BM Task80/Experiment79及[服务器记录](basic-memory/docs/reference/server-access.md)。
+> **2026-10-07 增强头（🔄进行中）**：增强PCM驱动生成，评分/成片恢复精确原自然PCM/clock。FULL900、ASR60及540视觉结构保护独立PASS；RMS−identity W/M/D +0.234/+0.053/+0.173，[CLI基线可用](scripts/audio_enhancement/configs/rms_baseline_v1.zh-CN.md)。三固定局部profile额外收益不足，继续学习头。三前端168/336/42及861功率独立PASS；11参数局部包络/补偿谱形CPU资格已实际独立PASS（8clip/11坐标全非零、160相位、480功率统计），证据在 `runs/cross_tfg_audio_head_20261003/local_power_signal_qualification_attempt10/`。迁移后40原WAV、模型和08源部署/CPU预检完整，旧SHM缓存丢失、GPU变化。QC05重复波动已定位视频像素，失败保留；QC06同GPU严格确定性三臂rc0，视频/裁剪/轨迹/矩阵精确重复，27项原字节独立PASS并存入 `runs/cross_tfg_audio_head_20261003/newgpu_deterministic_control_qualification_attempt06/`。新context/40producer后推进同GPU零头/固定120更新/末步重评；08部署不覆盖。Dev晚绑定/cgroup与ASR20适配器已提交。ADR015固定180候选+新GPU重跑360自然/RMS对照，旧540仅历史来源。尚无终态权重/learned Dev/Confirm。SPSA840仅提案，Fit8只资格、优化用冻结Fit40。Confirm80/LatentSync封存。见[协议](openspec/changes/develop-cross-tfg-audio-head-20261003/transfer-iteration.md)、[交接](HANDOFF.md)、BM Task80/Experiment79及[服务器记录](basic-memory/docs/reference/server-access.md)。
 
 > **2026-10-03 机制结论**：AISHELL-1中文、cloud Qwen TTS与Wav2Lip链上已定位增益→log-mel→真实音频编码器方向→生成动作的正向响应。男性40说话人固定A方向 ΔC=+0.161，99%[+0.094,+0.232]；内部mel ΔC=+0.171 [+0.101,+0.245]。男性full-A/raw/guard15原生T−N时间超额从q00 RAW/RAW +0.235到q11 FIXED/FIXED +0.031，配对缩小+0.204 [+0.119,+0.295]，同时改变生成和评分输入；另列固定A男性自然生成G excess+0.185 [+0.108,+0.266]。女性20说话人的paired gap-null变化+0.245 [+0.118,+0.388]，保留不同队列与支持。
 
@@ -91,3 +91,4 @@ basic-memory/docs/
 ```
 
 当前机制报告：[报告25](basic-memory/docs/experiments/25-tts-tfg-mechanism.md)。B 系列（11-15）为 2026-08 的音素/韵律/TFG 深化实验，均经对抗子 agent 审查修复。
+
