@@ -37,7 +37,7 @@ EXPECTED_SOURCE_MANIFEST_SHA256 = "0894f33df8504f9db7f3074ea901bcd987de23d533c02
 EXPECTED_V2_RUNTIME_SHA256 = "d086c61cdb993bffa5f9ff7a55bf4b66b1b9127028f8b80eb3b5f1be74464d7b"
 EXPECTED_V4_RUNTIME_SHA256 = "dd751132bd3d8dec5abce288c2f765df78d9b7ef9150cdfb0ccff52ba72ee458"
 EXPECTED_V3_HEAD_SHA256 = "77acdff03cca22261852f48364cbc75263db58a14cb565c08aa0d268afca6e87"
-EXPECTED_V3_V4_ADAPTER_SHA256 = "d52855f3d2ef05fedff8c1fb63cc20e9fe0065d0b55cc61a663d5ffd40682c64"
+EXPECTED_V3_V4_ADAPTER_SHA256 = "3a7e6a8b798a7993fdad9d43bc9675d990a73b6c714a66f22d9d2f01d4ca67fb"
 EXPECTED_AUDIO_IO_SHA256 = "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004"
 EXPECTED_BASELINES_SHA256 = "7d161970381cc7e6770a4a53063f91b2606c05490945b2b86ab41c7de4d0a3e2"
 EXPECTED_HEAD_CONFIG_SHA256 = "0abfbb9797a84254e6d0a6e72266862a079e5066f2fec394e0796b0c2664d2f5"
@@ -623,7 +623,7 @@ def run(args) -> dict[str, Any]:
         from scripts.audio_enhancement import shared_recipient_transition_head_v3 as v3_head
         from scripts.audio_enhancement import wav2lip_fullcontext_fit_runtime_v2_attempt02 as v2
         from scripts.audio_enhancement import wav2lip_fullcontext_fit_runtime_v4_attempt01 as v4
-        from scripts.audio_enhancement import v3_v4_native_runtime_adapter_v5_attempt01 as v3_v4_adapter
+        from scripts.audio_enhancement import v3_v4_native_runtime_adapter_v6_attempt01 as v3_v4_adapter
 
         module_pins = {
             "v2_runtime": {"path": str(Path(v2.__file__).resolve()), "bytes": Path(v2.__file__).stat().st_size, "sha256": _sha_file(Path(v2.__file__).resolve())},
