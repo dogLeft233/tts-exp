@@ -1,0 +1,91 @@
+{
+  "inputs": {
+    "candidate_rebound_plan_attempt12.json": {
+      "bytes": 932236,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_cpu_prepare_attempt01\\downloads_attempt02\\candidate_rebound_plan_attempt12.json",
+      "sha256": "5a01e0ab1d6d4545ba4f6de332aced0ee1920f2001e51f5f552684d8b9926038"
+    },
+    "candidate_rebound_rows_attempt12.jsonl": {
+      "bytes": 606042,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_cpu_prepare_attempt01\\downloads_attempt02\\candidate_rebound_rows_attempt12.jsonl",
+      "sha256": "c9dc6f9bf400aff7f2c25ee24528dfd3a038433c21e80e0177066b8ab3f8a19e"
+    },
+    "controls_plan_attempt09.json": {
+      "bytes": 1781735,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\controls_plan_attempt09.json",
+      "sha256": "8a592cc54dc981bec5e2398108e6873190a54c7c1ed2bb7901cd31aad6cc86eb"
+    },
+    "engineering_qc_oldpilot_attempt06.py": {
+      "bytes": 31789,
+      "path": "E:\\Documents\\tts-exp\\scripts\\experiments\\cross_tfg_audio_head_20261003\\engineering_qc_oldpilot_attempt06.py",
+      "sha256": "cf4d34832ee93bf5a4d2e4be349dad15469e423888c0a1c41bbbdf53f2a4726d"
+    },
+    "plan_manifest_metadata_repair_attempt13.json": {
+      "bytes": 2513,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_manifest_metadata_repair_attempt13\\plan_manifest_metadata_repair_attempt13.json",
+      "sha256": "31d56651e48b6932382d51eedc3b81f96adb87c8c53e16cc8349b776bc22a4a7"
+    },
+    "root_candidate_manifest13_metadata_qc_attempt01.json": {
+      "bytes": 499,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\root_candidate_manifest13_metadata_qc_attempt01.json",
+      "sha256": "3fd7758d40a9ab55c0d3364c43020ead36bb2d6eff667e052788b7ed029642bc"
+    },
+    "run_v3_step120_candidate_samehost_attempt13.py": {
+      "bytes": 35309,
+      "path": "E:\\Documents\\tts-exp\\scripts\\experiments\\cross_tfg_audio_head_20261003\\run_v3_step120_candidate_samehost_attempt13.py",
+      "sha256": "8c3b45f73d420b1dac6db0d5676eaf3343324cbb582d17cad7a3868d27e42708"
+    },
+    "runtime_binding_attempt09.json": {
+      "bytes": 568289,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\runtime_binding_attempt09.json",
+      "sha256": "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5"
+    }
+  },
+  "outputs": {
+    "candidate_manifest14": {
+      "bytes": 2513,
+      "manifest_sha256": "420d73cd5fb95692ded1c8bbd8cd82363ccb40169a064f21121be70f041909e5",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\plan_manifest_metadata_repair_attempt14.json",
+      "sha256": "d25985b666c59946a7acd1c948b834ea8628d0b9c8eef0442419818ea86c0192"
+    },
+    "candidate_plan13": {
+      "bytes": 932236,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\candidate_rebound_plan_attempt13.json",
+      "plan_sha256": "fee2718c0c4b18e5acabf3ca7d7103344bfb3859f3d8a3b93862c1ad4ce7d612",
+      "sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280"
+    },
+    "semantic_diff": {
+      "bytes": 3839,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\plan12_manifest13_to_plan13_manifest14.diff.json",
+      "sha256": "b1b7172eb97d2e27e6587c7d28d5d2f43291c27318cc36f9b8e774c4cb441e15"
+    }
+  },
+  "producer_consumer_evidence": {
+    "actual_generic_child_source": {
+      "bytes": 31789,
+      "path": "E:\\Documents\\tts-exp\\scripts\\experiments\\cross_tfg_audio_head_20261003\\engineering_qc_oldpilot_attempt06.py",
+      "sha256": "cf4d34832ee93bf5a4d2e4be349dad15469e423888c0a1c41bbbdf53f2a4726d"
+    },
+    "baseline_controls_plan09_generic_child_sha256": "cf4d34832ee93bf5a4d2e4be349dad15469e423888c0a1c41bbbdf53f2a4726d",
+    "candidate13_guard": {
+      "bytes": 35309,
+      "path": "E:\\Documents\\tts-exp\\scripts\\experiments\\cross_tfg_audio_head_20261003\\run_v3_step120_candidate_samehost_attempt13.py",
+      "sha256": "8c3b45f73d420b1dac6db0d5676eaf3343324cbb582d17cad7a3868d27e42708"
+    },
+    "candidate13_wav2lip_native_inference_sha256_unchanged": "99662bfce2fdaf17c1cff8e71977ba02cb80c684058cd114c4e0648b12059fc6",
+    "runtime_binding09_generic_child_expected_sha256": "cf4d34832ee93bf5a4d2e4be349dad15469e423888c0a1c41bbbdf53f2a4726d",
+    "runtime_binding09_generic_child_path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/engineering_qc_oldpilot_attempt06.py"
+  },
+  "receipt_sha256": "53da0ec5ad045de402725b6d7c8a219420d16806be66dfc0d7be3878f27d2d04",
+  "schema": "cross_tfg_candidate_plan_generator_child_metadata_repair_receipt_v1",
+  "scope": {
+    "candidate13_source_unchanged": true,
+    "candidate_rows_unchanged": true,
+    "manifest_only_relinks_plan13_and_selfhash_changed": true,
+    "method_model_settings_training_checkpoint_config_and_binding_unchanged": true,
+    "no_gpu_model_or_api": true,
+    "no_remote_upload_preflight_or_execution": true,
+    "only_generic_protocol_generator_child_pin_and_plan_selfhash_changed": true
+  },
+  "status": "PASS_LOCAL_CREATE_ONLY_METADATA_REPAIR"
+}

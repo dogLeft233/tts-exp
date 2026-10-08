@@ -1,0 +1,48 @@
+{
+  "candidate_binding_linker": {
+    "bytes": 31444,
+    "path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_cpu_prepare_attempt02/workers/prepare_candidate_plan_rebind_attempt01.py",
+    "raw_sha256": "56581a77f9868333b4f4813b66a513f3bd8849e130505acc47c1e497490af455"
+  },
+  "candidate_checkpoint_sha256": "8d5eb607f77963291372b33245f13f9b9578ebf71657acf1b43243746c538eb8",
+  "candidate_config_raw_sha256": "aba0dc744b76cfd9f73db547faa80508a4a46437432ef78feaf5b7bfb51f3666",
+  "candidate_runtime_qualification_performed": false,
+  "confirm_audio_read": false,
+  "confirm_effects_read": false,
+  "development_weights_selected": false,
+  "fixed_optimizer_steps": 120,
+  "fresh_baseline_rerender": false,
+  "historical_baseline_archive_used": false,
+  "identity_control_rows": 180,
+  "manifest_sha256": "420d73cd5fb95692ded1c8bbd8cd82363ccb40169a064f21121be70f041909e5",
+  "materialization_receipt_raw_sha256": "c64bfb0d80471c6d2764b6921a993a7c556b9511d4cba283f41eba002cdf8ebd",
+  "materialized_plan_builder_sha256": "b236b73dc570214588200744516dc90732d06ca0c821e368ac253570a76bc633",
+  "method_counts": {
+    "shared_recipient_transition_head_v3_fit40_step120": 180
+  },
+  "model_counts": {
+    "ditto_hubert_fixed_portrait_attempt18": 60,
+    "musetalk_fixed_portrait_attempt16": 60,
+    "wav2lip_gan_bac9a81e": 60
+  },
+  "plan_raw_sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280",
+  "plan_sha256": "fee2718c0c4b18e5acabf3ca7d7103344bfb3859f3d8a3b93862c1ad4ce7d612",
+  "planned_rows": 180,
+  "planned_rows_sha256": "c9dc6f9bf400aff7f2c25ee24528dfd3a038433c21e80e0177066b8ab3f8a19e",
+  "render_seed_family": [
+    20261003,
+    20261004,
+    20261005
+  ],
+  "rms_fixed_control_rows": 180,
+  "run_id": "cross_tfg_audio_head_20261003_v3_fit40_dev180_attempt02",
+  "samehost_controls_plan_manifest_raw_sha256": "ab07ee9bed69d067390b9ffae597200916838f8cca6bdb7ddf376b5d5febc214",
+  "samehost_controls_plan_raw_sha256": "8a592cc54dc981bec5e2398108e6873190a54c7c1ed2bb7901cd31aad6cc86eb",
+  "samehost_controls_plan_sha256": "d689121eab5281dd42111d3004c847f0475801dbb60594f8e12a5e4b677837e1",
+  "samehost_runtime_binding_raw_sha256": "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5",
+  "samehost_runtime_binding_reference_role": "METADATA_ONLY_INPUT_TO_REBIND_NOT_CANDIDATE_RUNTIME_QUALIFICATION",
+  "sample_count": 20,
+  "schema": "cross_tfg_v3_candidate_only_dev_plan_v1",
+  "speaker_count": 10,
+  "status": "FROZEN"
+}

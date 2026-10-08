@@ -1,0 +1,1002 @@
+{
+  "candidate_metadata_preflight": {
+    "bytes": 1951,
+    "confirm_audio_read": false,
+    "execution_performed": false,
+    "gpu_uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea",
+    "live_resource_admission": {
+      "candidate180_required_free_bytes": 11234917832,
+      "gpu_free_mib": 32230,
+      "gpu_index": 0,
+      "gpu_min_free_mib": 18432,
+      "gpu_uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea",
+      "output_free_bytes": 21866180608,
+      "policy_sha256": "196f6b3654f0bf69eed74dbadd6f4948272d52edfcc5101945ba61044ea6f7cc",
+      "ram_available_bytes": 53128445952,
+      "shm_free_bytes": 21866180608
+    },
+    "manifest_pin_evidence_boundary": "The metadata object does not emit the plan-manifest raw SHA; the frozen plan/manifest bytes and manifest14 lineage are separately pinned, then checked again by the launcher.",
+    "metadata_exec_response": {
+      "bytes": 2256,
+      "code": 0,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\01_run_candidate13_metadata_only_preflight.json.response.json",
+      "raw_sha256": "2e71f8e4668c505274f254500dec3dfc86433fab294812a1daa1d02fdf95d9ab",
+      "stdout_sha256": "0ed5dd38a22429c680485ae8afe5baf97e18dd10e1d3ca04953555cf5ad0ade0"
+    },
+    "namespace_response": {
+      "bytes": 590,
+      "code": 0,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\00_create_candidate13_metadata_namespace.json.response.json",
+      "raw_sha256": "3189e9f4823506399e366848ffc90191ef6a34eefbf55d0d0dfbfe0226d9d216",
+      "stdout_sha256": "26e4c64f3f3e67531a87b0d6329f16a8cc693aae567f0c2da188ed6663d4f337"
+    },
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\downloads_attempt01\\candidate13_metadata_preflight_attempt04.json",
+    "plan_raw_sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280",
+    "raw_sha256": "0ed5dd38a22429c680485ae8afe5baf97e18dd10e1d3ca04953555cf5ad0ade0",
+    "readback_response": {
+      "bytes": 457,
+      "download_bytes": 1951,
+      "download_raw_sha256": "0ed5dd38a22429c680485ae8afe5baf97e18dd10e1d3ca04953555cf5ad0ade0",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\02_download_candidate13_metadata_preflight.json.response.json",
+      "raw_sha256": "db930436da0231422ba65859c663cbd1c34699708c93032c05fd894f12bb3e30",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate13_metadata_preflight_attempt04/output/candidate13_metadata_preflight_attempt04.json"
+    },
+    "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate13_metadata_preflight_attempt04/output/candidate13_metadata_preflight_attempt04.json",
+    "request_index": {
+      "bytes": 8115,
+      "index_sha256": "86a7e7064ad4a49ca3e7e9b541a049129f3c54d296bb0360205f6dc7b7043eba",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\request_index_attempt01.json",
+      "raw_sha256": "96938177e8eb3593fd67d535e78cd71d64539bc37b07d5b62a5143cbce68a2ec"
+    },
+    "requests": {
+      "00_create_candidate13_metadata_namespace": {
+        "bytes": 1162,
+        "op": "exec",
+        "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\00_create_candidate13_metadata_namespace.json",
+        "raw_sha256": "45b145c06c5ad823f943bf9725790150eaf946b4e5bbabfb077392115500574a"
+      },
+      "01_run_candidate13_metadata_only_preflight": {
+        "bytes": 2262,
+        "op": "exec",
+        "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\01_run_candidate13_metadata_only_preflight.json",
+        "raw_sha256": "8b16d4784d0cc904fd8a92c61bd832471c7b811ea147fc24a0bbf739804ce8ca"
+      },
+      "02_download_candidate13_metadata_preflight": {
+        "bytes": 405,
+        "op": "download",
+        "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\02_download_candidate13_metadata_preflight.json",
+        "raw_sha256": "f179b2bb0abd858c75f16369a326e12529776469f92468daadb353fab960aa43"
+      }
+    },
+    "runtime_binding_raw_sha256": "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5",
+    "status": "PASS_METADATA_ONLY"
+  },
+  "candidate_run_id": "cross_tfg_audio_head_20261003_v3_fit40_dev180_attempt02",
+  "controls_launch_receipt": {
+    "bytes": 5899,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_detached_status_attempt08\\receipt_readback_attempt01\\controls360_codex_controls360_attempt10_launch01.launch_receipt.json",
+    "pid": 344830,
+    "raw_sha256": "cd5e1fa2c37d615bb3427947fa1e9a2948af56dced57c5d3d1b6e10b404a02b5",
+    "receipt_sha256": "73913c23b748e037889120eb45809355dd521d3bbf3f7c5851fd26099788a1f9",
+    "run_id": "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt10",
+    "stage_id": "controls360",
+    "start_ticks": 329924069
+  },
+  "controls_parent": {
+    "execution_raw_sha256": "dbd54f4f4d08c58930adaafef660887ae6290006e384f64a0440718f82cf2980",
+    "plan_manifest_raw_sha256": "ab07ee9bed69d067390b9ffae597200916838f8cca6bdb7ddf376b5d5febc214",
+    "plan_raw_sha256": "8a592cc54dc981bec5e2398108e6873190a54c7c1ed2bb7901cd31aad6cc86eb",
+    "planned_rows_raw_sha256": "45f1d3130c33c37a513db7b22f76d4107bd821f370a7b3ae2d5ae853894b27c8",
+    "qualification_manifests": {
+      "ditto_hubert_fixed_portrait_attempt18": "4053e74430e900037ca2f528e3678ad4375241e8e9c653367ea3de31ca94c86d",
+      "musetalk_fixed_portrait_attempt16": "4053e74430e900037ca2f528e3678ad4375241e8e9c653367ea3de31ca94c86d",
+      "wav2lip_gan_bac9a81e": "c55b390b6d5189983a4a3e2d181d5ff7606cc191817f125a859800c3e09508d9"
+    },
+    "repeat_qc_raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "result_manifest_raw_sha256": "9bd452de6d73c3f0c31cbbcf3417d0c7de0f6a86e44853bf03e6d7961d95e6c8",
+    "results_raw_sha256": "0ec1d6043f8e3c8ebce4dfdd17c95418239c663bdf8d24a47cdcbfde0e793cb2",
+    "rows": 360,
+    "run_id": "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt10",
+    "status_counts": {
+      "FAILED": 0,
+      "INCOMPLETE": 0,
+      "PASS": 360
+    },
+    "strict_attestation_raw_sha256": "fa95b82248f9013072b8ade4444c45f0545ecb2817d37b95ff396fd96573f492"
+  },
+  "controls_parent_run_id": "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt10",
+  "controls_terminal_inventory": {
+    "artifacts": {
+      "execution_record": {
+        "bytes": 44606,
+        "inventory_name": "execution_record",
+        "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt06\\after_plan_download_attempt01\\transfers_attempt01\\execution_record",
+        "raw_sha256": "dbd54f4f4d08c58930adaafef660887ae6290006e384f64a0440718f82cf2980",
+        "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360.execution.json"
+      },
+      "repeat_qc_ledger": {
+        "bytes": 0,
+        "inventory_name": "generation_repeat_qc_ledger",
+        "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt06\\after_plan_download_attempt01\\transfers_attempt01\\generation_repeat_qc_ledger",
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360/generation_repeat_qc.jsonl"
+      },
+      "result_manifest": {
+        "bytes": 2345,
+        "inventory_name": "result_manifest",
+        "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt06\\after_plan_download_attempt01\\transfers_attempt01\\result_manifest",
+        "raw_sha256": "9bd452de6d73c3f0c31cbbcf3417d0c7de0f6a86e44853bf03e6d7961d95e6c8",
+        "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360/result_manifest.json"
+      },
+      "results_ledger": {
+        "bytes": 11940846,
+        "inventory_name": "results_ledger",
+        "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt09\\verify_output_attempt01\\results.jsonl",
+        "raw_sha256": "0ec1d6043f8e3c8ebce4dfdd17c95418239c663bdf8d24a47cdcbfde0e793cb2",
+        "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360/results.jsonl"
+      },
+      "run_status": {
+        "bytes": 1156,
+        "inventory_name": "run_status",
+        "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt06\\after_plan_download_attempt01\\transfers_attempt01\\run_status",
+        "raw_sha256": "27ca8073c599fea701409f0e30ea55fe433698fdffcff62f174c1e3ae50a6c54",
+        "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360/control/run_status.json"
+      },
+      "strict_attestation": {
+        "bytes": 796745,
+        "inventory_name": "strict_determinism_attestation",
+        "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt06\\after_plan_download_attempt01\\transfers_attempt01\\strict_determinism_attestation",
+        "raw_sha256": "fa95b82248f9013072b8ade4444c45f0545ecb2817d37b95ff396fd96573f492",
+        "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360/runtime_determinism_attestation.json"
+      }
+    },
+    "bytes": 13593,
+    "checks_passed": 15,
+    "inventory_sha256": "e27816df44f4bbe7f21daebb2274d845cc04502309d5e3781e9625e3d55de929",
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt04\\inventory_download_attempt03\\downloads_attempt03\\terminal_inventory_attempt02.json",
+    "pid": 344830,
+    "process_state": "EXITED",
+    "raw_sha256": "3f343b6ff73f35e838fbecdc290ae2112dbb6be8f55f8474469c1c7b52c254ef",
+    "run_id": "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt10",
+    "source_launch_receipt": {
+      "bytes": 5899,
+      "path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_phase2_recovery_attempt09/output/controls360_codex_controls360_attempt10_launch01.launch_receipt.json",
+      "raw_sha256": "cd5e1fa2c37d615bb3427947fa1e9a2948af56dced57c5d3d1b6e10b404a02b5",
+      "role": "launch_receipt"
+    },
+    "stage_id": "controls360",
+    "start_ticks": 329924069
+  },
+  "controls_terminal_inventory_readback": {
+    "download_response": {
+      "bytes": 439,
+      "download_bytes": 13593,
+      "download_raw_sha256": "3f343b6ff73f35e838fbecdc290ae2112dbb6be8f55f8474469c1c7b52c254ef",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt04\\inventory_download_attempt03\\requests_attempt03\\q00_download_terminal_inventory_attempt02.json.response.json",
+      "raw_sha256": "960611a1cedc61e786c88cfc2a1a2bb22291668663dec218434bd21339aa89db",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_terminal_inventory_attempt02/output/terminal_inventory_attempt02.json"
+    },
+    "exec_response": {
+      "bytes": 774,
+      "code": 0,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\requests_attempt02\\q02_read_terminal_file_inventory.json.response.json",
+      "raw_sha256": "0cb96f30dd1591517e11da19ae14f4d74ffb8698079eff68a30b68f7dbee1ee3",
+      "stdout_sha256": "4e878f833d777a35d8d36b1d6b48dc3f952258aaf5d17eeccc2afc19172a0fe9"
+    },
+    "inventory_raw_sha256": "3f343b6ff73f35e838fbecdc290ae2112dbb6be8f55f8474469c1c7b52c254ef",
+    "inventory_sha256": "e27816df44f4bbe7f21daebb2274d845cc04502309d5e3781e9625e3d55de929"
+  },
+  "controls_terminal_summary": {
+    "candidate_manifest14": {
+      "bytes": 2513,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\plan_manifest_metadata_repair_attempt14.json",
+      "raw_sha256": "d25985b666c59946a7acd1c948b834ea8628d0b9c8eef0442419818ea86c0192",
+      "self_sha256": "420d73cd5fb95692ded1c8bbd8cd82363ccb40169a064f21121be70f041909e5"
+    },
+    "candidate_plan": {
+      "bytes": 932236,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\candidate_rebound_plan_attempt13.json",
+      "raw_sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280"
+    },
+    "candidate_rows": {
+      "bytes": 606042,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_cpu_prepare_attempt01\\downloads_attempt02\\candidate_rebound_rows_attempt12.jsonl",
+      "raw_sha256": "c9dc6f9bf400aff7f2c25ee24528dfd3a038433c21e80e0177066b8ab3f8a19e"
+    },
+    "cells": {
+      "ditto_hubert_fixed_portrait_attempt18|identity": 60,
+      "ditto_hubert_fixed_portrait_attempt18|rms_fixed": 60,
+      "musetalk_fixed_portrait_attempt16|identity": 60,
+      "musetalk_fixed_portrait_attempt16|rms_fixed": 60,
+      "wav2lip_gan_bac9a81e|identity": 60,
+      "wav2lip_gan_bac9a81e|rms_fixed": 60
+    },
+    "controls_plan": {
+      "bytes": 1781735,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\controls_plan_attempt09.json",
+      "raw_sha256": "8a592cc54dc981bec5e2398108e6873190a54c7c1ed2bb7901cd31aad6cc86eb"
+    },
+    "controls_plan_manifest": {
+      "bytes": 1438,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\controls_plan_manifest_attempt09.json",
+      "raw_sha256": "ab07ee9bed69d067390b9ffae597200916838f8cca6bdb7ddf376b5d5febc214"
+    },
+    "controls_rows": {
+      "bytes": 878184,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\controls_planned_rows_attempt09.jsonl",
+      "raw_sha256": "45f1d3130c33c37a513db7b22f76d4107bd821f370a7b3ae2d5ae853894b27c8"
+    },
+    "execution_record": {
+      "bytes": 44606,
+      "child_returncode": 0,
+      "raw_sha256": "dbd54f4f4d08c58930adaafef660887ae6290006e384f64a0440718f82cf2980"
+    },
+    "launch_pid": 344830,
+    "launch_start_ticks": 329924069,
+    "models": {
+      "ditto_hubert_fixed_portrait_attempt18": 120,
+      "musetalk_fixed_portrait_attempt16": 120,
+      "wav2lip_gan_bac9a81e": 120
+    },
+    "planned_rows": 360,
+    "qualification_manifests": {
+      "ditto_hubert_fixed_portrait_attempt18": "4053e74430e900037ca2f528e3678ad4375241e8e9c653367ea3de31ca94c86d",
+      "musetalk_fixed_portrait_attempt16": "4053e74430e900037ca2f528e3678ad4375241e8e9c653367ea3de31ca94c86d",
+      "wav2lip_gan_bac9a81e": "c55b390b6d5189983a4a3e2d181d5ff7606cc191817f125a859800c3e09508d9"
+    },
+    "repeat_qc_ledger": {
+      "bytes": 0,
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "status": "NOT_RUN_SUBRUN"
+    },
+    "result_manifest": {
+      "bytes": 2345,
+      "raw_sha256": "9bd452de6d73c3f0c31cbbcf3417d0c7de0f6a86e44853bf03e6d7961d95e6c8"
+    },
+    "results_ledger": {
+      "bytes": 11940846,
+      "raw_sha256": "0ec1d6043f8e3c8ebce4dfdd17c95418239c663bdf8d24a47cdcbfde0e793cb2"
+    },
+    "run_id": "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt10",
+    "run_status": {
+      "bytes": 1156,
+      "raw_sha256": "27ca8073c599fea701409f0e30ea55fe433698fdffcff62f174c1e3ae50a6c54"
+    },
+    "runtime_binding": {
+      "bytes": 568289,
+      "gpu_uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\runtime_binding_attempt09.json",
+      "policy_sha256": "196f6b3654f0bf69eed74dbadd6f4948272d52edfcc5101945ba61044ea6f7cc",
+      "raw_sha256": "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5"
+    },
+    "stage_id": "controls360",
+    "status_counts": {
+      "FAILED": 0,
+      "INCOMPLETE": 0,
+      "PASS": 360
+    },
+    "strict_attestation": {
+      "bytes": 796745,
+      "gpu_uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea",
+      "policy_sha256": "196f6b3654f0bf69eed74dbadd6f4948272d52edfcc5101945ba61044ea6f7cc",
+      "raw_sha256": "fa95b82248f9013072b8ade4444c45f0545ecb2817d37b95ff396fd96573f492",
+      "status": "PASS"
+    }
+  },
+  "execution_policy": {
+    "automatic_retry": false,
+    "builder_executes_requests": false,
+    "candidate_preflight_bytes_sha_derived_from_actual_file": true,
+    "controls_process_identity_source": "actual pinned controls launch receipt, matched against terminal inventory and observer response",
+    "controls_terminal_inventory_exec_and_download_responses_required": true,
+    "cuda_visible_devices_source_field": "runtime_binding_attempt09.json omits top-level cuda_visible_devices; frozen launcher08 resolves binding.get('cuda_visible_devices', '0') to literal '0'",
+    "gpu_or_model_called": false,
+    "launch_is_create_only_single_request": true,
+    "obsolete_fixed_direct_readback_index_used": false,
+    "phase_b_receipt_bytes_sha256": "REQUIRED_FROM_ACTUAL_LAUNCH_RECEIPT; no value prefilled",
+    "six_terminal_artifact_local_paths_are_explicit_inputs": true,
+    "source_dir_is_distinct_from_empty_job07": true,
+    "ssh_or_api_called": false
+  },
+  "index_sha256": "b8ef1c02289ae6c40cceacdc1cbf87cba60a05a480052f841da43d3d3d0192b2",
+  "job_namespace": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_detached_attempt08",
+  "observer_terminal": {
+    "manifest": {
+      "bytes": 6097,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_status_observer_attempt03\\observer_manifest_attempt03.json",
+      "raw_sha256": "968696c3586427b14b546a63686bafb3f5a8b670cfd104e4f3b2a6f46d184f85"
+    },
+    "observation": {
+      "bytes": 4327,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_status_observer_attempt03\\polls\\20261008T125724Z_fb7fb7cc\\observation.json",
+      "raw_sha256": "599419aad34da6cb9005d645105eb574202fc8065a38a33f48c830d6f05c2709"
+    },
+    "pid": 344830,
+    "response": {
+      "bytes": 10199,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_status_observer_attempt03\\polls\\20261008T125724Z_fb7fb7cc\\response.json",
+      "raw_sha256": "c805f04ace5fc784ce4543ac027abd3b2777821f142be490946629b81012a4d9"
+    },
+    "snapshot_status": "TERMINAL_OR_IDENTITY_MISMATCH",
+    "start_ticks": 329924069
+  },
+  "phase": "A_SOURCE_UPLOAD_AND_SINGLE_LAUNCH",
+  "request_id": "codex_candidate180_attempt02_launch01",
+  "requests": [
+    {
+      "bytes": 1264,
+      "name": "00_create_source_packet",
+      "op": "exec",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\00_create_source_packet.json",
+      "raw_sha256": "41eea7ffe75114615a286b8b0c1ab206087b38b2c1d8a4d7e66732484a4538e9",
+      "sha256": "41eea7ffe75114615a286b8b0c1ab206087b38b2c1d8a4d7e66732484a4538e9"
+    },
+    {
+      "bytes": 500,
+      "name": "01_upload_terminal_inventory",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\01_upload_terminal_inventory.json",
+      "raw_sha256": "ce76118bb9f9d8a6b301150fa0e40c82962ecc846a35032c0776efb93fcb96c7",
+      "sha256": "ce76118bb9f9d8a6b301150fa0e40c82962ecc846a35032c0776efb93fcb96c7"
+    },
+    {
+      "bytes": 500,
+      "name": "02_upload_terminal_inventory_exec_response",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\02_upload_terminal_inventory_exec_response.json",
+      "raw_sha256": "ede90874cbe19308642bf1018623215145bdf2e1658b0e64ad707ab08a1118bf",
+      "sha256": "ede90874cbe19308642bf1018623215145bdf2e1658b0e64ad707ab08a1118bf"
+    },
+    {
+      "bytes": 542,
+      "name": "03_upload_terminal_inventory_download_response",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\03_upload_terminal_inventory_download_response.json",
+      "raw_sha256": "34fa4486354e98c3af6cbb38326554db22287543a68fc871e06a4d86f6124473",
+      "sha256": "34fa4486354e98c3af6cbb38326554db22287543a68fc871e06a4d86f6124473"
+    },
+    {
+      "bytes": 514,
+      "name": "04_upload_controls_launch_receipt",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\04_upload_controls_launch_receipt.json",
+      "raw_sha256": "6218dda14621be29e63064082a48f4255da368c62252c1b8ce4a26797ad3719f",
+      "sha256": "6218dda14621be29e63064082a48f4255da368c62252c1b8ce4a26797ad3719f"
+    },
+    {
+      "bytes": 444,
+      "name": "05_upload_observer_manifest",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\05_upload_observer_manifest.json",
+      "raw_sha256": "a9c23362c62be827355027efaaaba302e2cf0bfa791ae5b79d6dde5b929c9745",
+      "sha256": "a9c23362c62be827355027efaaaba302e2cf0bfa791ae5b79d6dde5b929c9745"
+    },
+    {
+      "bytes": 465,
+      "name": "06_upload_observer_observation",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\06_upload_observer_observation.json",
+      "raw_sha256": "8cb4f6418366c9def020343f2f77908e535bcada822f3c78b894847177aeb962",
+      "sha256": "8cb4f6418366c9def020343f2f77908e535bcada822f3c78b894847177aeb962"
+    },
+    {
+      "bytes": 460,
+      "name": "07_upload_observer_response",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\07_upload_observer_response.json",
+      "raw_sha256": "5dd872cdf4132b7311d69f126db839697d05594c13c7db98b91f65b29fb1a6bf",
+      "sha256": "5dd872cdf4132b7311d69f126db839697d05594c13c7db98b91f65b29fb1a6bf"
+    },
+    {
+      "bytes": 470,
+      "name": "08_upload_candidate_metadata_request_index",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\08_upload_candidate_metadata_request_index.json",
+      "raw_sha256": "3bcbf00b3a2c62f5117d352dbb420a7b6325ad723e6b98febdd47cbec25428ef",
+      "sha256": "3bcbf00b3a2c62f5117d352dbb420a7b6325ad723e6b98febdd47cbec25428ef"
+    },
+    {
+      "bytes": 504,
+      "name": "09_upload_candidate_metadata_preflight",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\09_upload_candidate_metadata_preflight.json",
+      "raw_sha256": "067632cd34bc5dbfbb0303967b740e463bd10eed81a88881bc92fe88276dfe56",
+      "sha256": "067632cd34bc5dbfbb0303967b740e463bd10eed81a88881bc92fe88276dfe56"
+    },
+    {
+      "bytes": 519,
+      "name": "10_upload_candidate_metadata_q00_response",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\10_upload_candidate_metadata_q00_response.json",
+      "raw_sha256": "099b7b5f31d27f4e1a5918886763b82b243f43410936e33fae1880d0ba0dde9b",
+      "sha256": "099b7b5f31d27f4e1a5918886763b82b243f43410936e33fae1880d0ba0dde9b"
+    },
+    {
+      "bytes": 522,
+      "name": "11_upload_candidate_metadata_q01_response",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\11_upload_candidate_metadata_q01_response.json",
+      "raw_sha256": "df78064a0b6ebe243dfd1f71644ab89680a0066fb0458701b195b20ced4a0b12",
+      "sha256": "df78064a0b6ebe243dfd1f71644ab89680a0066fb0458701b195b20ced4a0b12"
+    },
+    {
+      "bytes": 521,
+      "name": "12_upload_candidate_metadata_q02_response",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\12_upload_candidate_metadata_q02_response.json",
+      "raw_sha256": "4f9e144a57bb155b6f11c9cfc1b93a8fc150247cafcd27362de8d81dffc5d22e",
+      "sha256": "4f9e144a57bb155b6f11c9cfc1b93a8fc150247cafcd27362de8d81dffc5d22e"
+    },
+    {
+      "bytes": 542,
+      "name": "13_upload_candidate_metadata_request_00_create_candidate13_metadata_namespace",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\13_upload_candidate_metadata_request_00_create_candidate13_metadata_namespace.json",
+      "raw_sha256": "15895c3381360ca14fda8b7ed1cb41a76a10b2db34a39333c8c084b2bba2f721",
+      "sha256": "15895c3381360ca14fda8b7ed1cb41a76a10b2db34a39333c8c084b2bba2f721"
+    },
+    {
+      "bytes": 546,
+      "name": "14_upload_candidate_metadata_request_01_run_candidate13_metadata_only_preflight",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\14_upload_candidate_metadata_request_01_run_candidate13_metadata_only_preflight.json",
+      "raw_sha256": "827200c6d0350e83cb8ea71516c8a2ffcca5727e40e5a5702439626101f4ea74",
+      "sha256": "827200c6d0350e83cb8ea71516c8a2ffcca5727e40e5a5702439626101f4ea74"
+    },
+    {
+      "bytes": 545,
+      "name": "15_upload_candidate_metadata_request_02_download_candidate13_metadata_preflight",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\15_upload_candidate_metadata_request_02_download_candidate13_metadata_preflight.json",
+      "raw_sha256": "4cc9779db533fbdb5929eaca6246f2a03d1f7f7e5867bda4d242d6e67377c651",
+      "sha256": "4cc9779db533fbdb5929eaca6246f2a03d1f7f7e5867bda4d242d6e67377c651"
+    },
+    {
+      "bytes": 468,
+      "name": "16_upload_observer_source_observer",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\16_upload_observer_source_observer.json",
+      "raw_sha256": "be5d0093665c6ad3012e91a8c9e807cfdc794b17c6a7b1df789a55c2956544cd",
+      "sha256": "be5d0093665c6ad3012e91a8c9e807cfdc794b17c6a7b1df789a55c2956544cd"
+    },
+    {
+      "bytes": 381,
+      "name": "17_upload_observer_source_bridge_client",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\17_upload_observer_source_bridge_client.json",
+      "raw_sha256": "46a422a4be95e7b75493a631097a91bd3347111ee2458a11f5d80ffab38cf4fa",
+      "sha256": "46a422a4be95e7b75493a631097a91bd3347111ee2458a11f5d80ffab38cf4fa"
+    },
+    {
+      "bytes": 478,
+      "name": "18_upload_observer_source_status_worker",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\18_upload_observer_source_status_worker.json",
+      "raw_sha256": "b15a484c13394aff7946b2c385555b90b9463d04c9da8cefe07fd0f76ac46f16",
+      "sha256": "b15a484c13394aff7946b2c385555b90b9463d04c9da8cefe07fd0f76ac46f16"
+    },
+    {
+      "bytes": 499,
+      "name": "19_upload_inventory_source_inventory_worker02",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\19_upload_inventory_source_inventory_worker02.json",
+      "raw_sha256": "a33f833a2f194325a764e4b34e2f7aff50e95cf37b966c196675a0c06aeab571",
+      "sha256": "a33f833a2f194325a764e4b34e2f7aff50e95cf37b966c196675a0c06aeab571"
+    },
+    {
+      "bytes": 459,
+      "name": "20_upload_inventory_source_inventory_dispatch_index03",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\20_upload_inventory_source_inventory_dispatch_index03.json",
+      "raw_sha256": "4ea53c89235515fa0519ae3b6d7fc6494e63d74aa76827f173b56693be1d2164",
+      "sha256": "4ea53c89235515fa0519ae3b6d7fc6494e63d74aa76827f173b56693be1d2164"
+    },
+    {
+      "bytes": 493,
+      "name": "21_upload_inventory_source_inventory_packet_index02",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\21_upload_inventory_source_inventory_packet_index02.json",
+      "raw_sha256": "44c98333278588dae5c1538e9f23d4779102b080952c04e3dcd9d1c675c80a28",
+      "sha256": "44c98333278588dae5c1538e9f23d4779102b080952c04e3dcd9d1c675c80a28"
+    },
+    {
+      "bytes": 469,
+      "name": "22_upload_inventory_source_inventory_q00",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\22_upload_inventory_source_inventory_q00.json",
+      "raw_sha256": "1c9e482d1ae72ab1748e451b34c85bf98c450db6fb4e6134a879a4e5d22230cd",
+      "sha256": "1c9e482d1ae72ab1748e451b34c85bf98c450db6fb4e6134a879a4e5d22230cd"
+    },
+    {
+      "bytes": 483,
+      "name": "23_upload_inventory_source_inventory_q01",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\23_upload_inventory_source_inventory_q01.json",
+      "raw_sha256": "249a948637a10b489fb87d17ec6bc3a8eaca2994fba8871787918c663e9520c3",
+      "sha256": "249a948637a10b489fb87d17ec6bc3a8eaca2994fba8871787918c663e9520c3"
+    },
+    {
+      "bytes": 493,
+      "name": "24_upload_inventory_source_inventory_q02",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\24_upload_inventory_source_inventory_q02.json",
+      "raw_sha256": "3f3d013568e8f432e1dd1d3469407019364a1b67c96015779bf49595f9000946",
+      "sha256": "3f3d013568e8f432e1dd1d3469407019364a1b67c96015779bf49595f9000946"
+    },
+    {
+      "bytes": 477,
+      "name": "25_upload_launcher08",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\25_upload_launcher08.json",
+      "raw_sha256": "7b5147584662424e2d2b5dd773140568314b2e95e5a37a5f290433ce0eeef5bd",
+      "sha256": "7b5147584662424e2d2b5dd773140568314b2e95e5a37a5f290433ce0eeef5bd"
+    },
+    {
+      "bytes": 487,
+      "name": "26_upload_status08",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\26_upload_status08.json",
+      "raw_sha256": "d75af5222e117c19293c19b04da74baf56c351ad2359f7cdf1f4f0b7f04febc2",
+      "sha256": "d75af5222e117c19293c19b04da74baf56c351ad2359f7cdf1f4f0b7f04febc2"
+    },
+    {
+      "bytes": 21990,
+      "name": "30_verify_source_packet",
+      "op": "exec",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\30_verify_source_packet.json",
+      "raw_sha256": "fdb58c31fb53945793d0a8a191e0137c062dfdafd7d23f2d278e326be0b8b020",
+      "sha256": "fdb58c31fb53945793d0a8a191e0137c062dfdafd7d23f2d278e326be0b8b020"
+    },
+    {
+      "bytes": 43274,
+      "name": "40_launch_candidate180_once",
+      "op": "exec",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_packet_builder_attempt06\\prepared_launch_attempt01\\requests\\40_launch_candidate180_once.json",
+      "raw_sha256": "b3e5e6eb0c859291ec15192ae2875b1d4408a837109c3f6838e696f18e70007c",
+      "sha256": "b3e5e6eb0c859291ec15192ae2875b1d4408a837109c3f6838e696f18e70007c"
+    }
+  ],
+  "schema": "cross_tfg_candidate180_required_input_dispatch_packet_v1",
+  "source_and_static_pins": {
+    "inventory_source:inventory_dispatch_index03": {
+      "bytes": 12288,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\dispatch_index_attempt03.json",
+      "raw_sha256": "9ea50ae0b7c03c68ab8db4dd4f62afc7822782f284e76074f830514bc4bb0e2b"
+    },
+    "inventory_source:inventory_packet_index02": {
+      "bytes": 11760,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\terminal_inventory_packet_index_attempt02.json",
+      "raw_sha256": "bcf008b6c600bd0a156cc8c1b8a4f28f90f3f1d672168cb44438971830053fb2"
+    },
+    "inventory_source:inventory_q00": {
+      "bytes": 486,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\requests_attempt02\\q00_create_namespace.json",
+      "raw_sha256": "6e6b1cdef0b16b47c4bd2f1c854bba52f2295c22c0b7ee8314b85b6bef5df36f"
+    },
+    "inventory_source:inventory_q01": {
+      "bytes": 483,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\requests_attempt02\\q01_upload_inventory_worker.json",
+      "raw_sha256": "8392d75ff829f514cb6b8b66f173e0ddc679c2d33d43c288ff92126f54c7f187"
+    },
+    "inventory_source:inventory_q02": {
+      "bytes": 361,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\requests_attempt02\\q02_read_terminal_file_inventory.json",
+      "raw_sha256": "dd9760f48fe325213dca43a15866293d6fc88fc88bf64f8eb28aca286d770395"
+    },
+    "inventory_source:inventory_worker02": {
+      "bytes": 34744,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\terminal_inventory_and_chunk_planner_attempt02.py",
+      "raw_sha256": "b03722b3039da1ff8f8f10cf07ce878f2615d4e2f087062faf192876e1ff4652"
+    },
+    "launcher08": {
+      "bytes": 49116,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt08\\launch_candidate180_detached_attempt08.py",
+      "raw_sha256": "7703866b8c7b73f1288fdf54c5b4028fc3b6268fd175366491ce18f2664e9d65",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/launch_candidate180_detached_attempt08.py"
+    },
+    "observer_source:bridge_client": {
+      "bytes": 2706,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\client.py",
+      "raw_sha256": "d0859d2e76cb59d1d4ec7c7a6e0c391e8ff28eababe5ab2058fb158f4866066f"
+    },
+    "observer_source:observer": {
+      "bytes": 22888,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_status_observer_attempt03\\dev360_status_observer_attempt03.py",
+      "raw_sha256": "1f61ee8027c0a5c3f11f66c18201acb846ffabb2974ea16a4b6f613a0e22d118"
+    },
+    "observer_source:status_worker": {
+      "bytes": 21199,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_detached_status_attempt08\\read_dev360_detached_status_attempt08.py",
+      "raw_sha256": "533dd688b752cd976882c374b478f5816cadbcce960fc870976d345f2f14a7f8"
+    },
+    "status08": {
+      "bytes": 46057,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt08\\read_candidate180_detached_status_attempt08.py",
+      "raw_sha256": "b032ff16cbbee7356377f252e8785bf2e46db0ebfe828a0430f45070ee5f053d",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/read_candidate180_detached_status_attempt08.py"
+    }
+  },
+  "source_evidence": {
+    "candidate_metadata_preflight": {
+      "bytes": 1951,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\downloads_attempt01\\candidate13_metadata_preflight_attempt04.json",
+      "sha256": "0ed5dd38a22429c680485ae8afe5baf97e18dd10e1d3ca04953555cf5ad0ade0"
+    },
+    "candidate_metadata_q00_response": {
+      "bytes": 590,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\00_create_candidate13_metadata_namespace.json.response.json",
+      "sha256": "3189e9f4823506399e366848ffc90191ef6a34eefbf55d0d0dfbfe0226d9d216"
+    },
+    "candidate_metadata_q01_response": {
+      "bytes": 2256,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\01_run_candidate13_metadata_only_preflight.json.response.json",
+      "sha256": "2e71f8e4668c505274f254500dec3dfc86433fab294812a1daa1d02fdf95d9ab"
+    },
+    "candidate_metadata_q02_response": {
+      "bytes": 457,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\02_download_candidate13_metadata_preflight.json.response.json",
+      "sha256": "db930436da0231422ba65859c663cbd1c34699708c93032c05fd894f12bb3e30"
+    },
+    "candidate_metadata_request_00_create_candidate13_metadata_namespace": {
+      "bytes": 1162,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\00_create_candidate13_metadata_namespace.json",
+      "sha256": "45b145c06c5ad823f943bf9725790150eaf946b4e5bbabfb077392115500574a"
+    },
+    "candidate_metadata_request_01_run_candidate13_metadata_only_preflight": {
+      "bytes": 2262,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\01_run_candidate13_metadata_only_preflight.json",
+      "sha256": "8b16d4784d0cc904fd8a92c61bd832471c7b811ea147fc24a0bbf739804ce8ca"
+    },
+    "candidate_metadata_request_02_download_candidate13_metadata_preflight": {
+      "bytes": 405,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\02_download_candidate13_metadata_preflight.json",
+      "sha256": "f179b2bb0abd858c75f16369a326e12529776469f92468daadb353fab960aa43"
+    },
+    "candidate_metadata_request_index": {
+      "bytes": 8115,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\request_index_attempt01.json",
+      "sha256": "96938177e8eb3593fd67d535e78cd71d64539bc37b07d5b62a5143cbce68a2ec"
+    },
+    "controls_launch_receipt": {
+      "bytes": 5899,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_detached_status_attempt08\\receipt_readback_attempt01\\controls360_codex_controls360_attempt10_launch01.launch_receipt.json",
+      "sha256": "cd5e1fa2c37d615bb3427947fa1e9a2948af56dced57c5d3d1b6e10b404a02b5"
+    },
+    "fixed_candidate_manifest14": {
+      "bytes": 2513,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\plan_manifest_metadata_repair_attempt14.json",
+      "sha256": "d25985b666c59946a7acd1c948b834ea8628d0b9c8eef0442419818ea86c0192"
+    },
+    "fixed_candidate_plan": {
+      "bytes": 932236,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\candidate_rebound_plan_attempt13.json",
+      "sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280"
+    },
+    "fixed_candidate_rows": {
+      "bytes": 606042,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_cpu_prepare_attempt01\\downloads_attempt02\\candidate_rebound_rows_attempt12.jsonl",
+      "sha256": "c9dc6f9bf400aff7f2c25ee24528dfd3a038433c21e80e0177066b8ab3f8a19e"
+    },
+    "fixed_controls_plan": {
+      "bytes": 1781735,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\controls_plan_attempt09.json",
+      "sha256": "8a592cc54dc981bec5e2398108e6873190a54c7c1ed2bb7901cd31aad6cc86eb"
+    },
+    "fixed_controls_plan_manifest": {
+      "bytes": 1438,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\controls_plan_manifest_attempt09.json",
+      "sha256": "ab07ee9bed69d067390b9ffae597200916838f8cca6bdb7ddf376b5d5febc214"
+    },
+    "fixed_controls_rows": {
+      "bytes": 878184,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\controls_planned_rows_attempt09.jsonl",
+      "sha256": "45f1d3130c33c37a513db7b22f76d4107bd821f370a7b3ae2d5ae853894b27c8"
+    },
+    "fixed_runtime_binding": {
+      "bytes": 568289,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\runtime_binding_attempt09.json",
+      "sha256": "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5"
+    },
+    "inventory_source_inventory_dispatch_index03": {
+      "bytes": 12288,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\dispatch_index_attempt03.json",
+      "sha256": "9ea50ae0b7c03c68ab8db4dd4f62afc7822782f284e76074f830514bc4bb0e2b"
+    },
+    "inventory_source_inventory_packet_index02": {
+      "bytes": 11760,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\terminal_inventory_packet_index_attempt02.json",
+      "sha256": "bcf008b6c600bd0a156cc8c1b8a4f28f90f3f1d672168cb44438971830053fb2"
+    },
+    "inventory_source_inventory_q00": {
+      "bytes": 486,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\requests_attempt02\\q00_create_namespace.json",
+      "sha256": "6e6b1cdef0b16b47c4bd2f1c854bba52f2295c22c0b7ee8314b85b6bef5df36f"
+    },
+    "inventory_source_inventory_q01": {
+      "bytes": 483,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\requests_attempt02\\q01_upload_inventory_worker.json",
+      "sha256": "8392d75ff829f514cb6b8b66f173e0ddc679c2d33d43c288ff92126f54c7f187"
+    },
+    "inventory_source_inventory_q02": {
+      "bytes": 361,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\requests_attempt02\\q02_read_terminal_file_inventory.json",
+      "sha256": "dd9760f48fe325213dca43a15866293d6fc88fc88bf64f8eb28aca286d770395"
+    },
+    "inventory_source_inventory_worker02": {
+      "bytes": 34744,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\terminal_inventory_and_chunk_planner_attempt02.py",
+      "sha256": "b03722b3039da1ff8f8f10cf07ce878f2615d4e2f087062faf192876e1ff4652"
+    },
+    "launcher08": {
+      "bytes": 49116,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt08\\launch_candidate180_detached_attempt08.py",
+      "sha256": "7703866b8c7b73f1288fdf54c5b4028fc3b6268fd175366491ce18f2664e9d65"
+    },
+    "observer_manifest": {
+      "bytes": 6097,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_status_observer_attempt03\\observer_manifest_attempt03.json",
+      "sha256": "968696c3586427b14b546a63686bafb3f5a8b670cfd104e4f3b2a6f46d184f85"
+    },
+    "observer_observation": {
+      "bytes": 4327,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_status_observer_attempt03\\polls\\20261008T125724Z_fb7fb7cc\\observation.json",
+      "sha256": "599419aad34da6cb9005d645105eb574202fc8065a38a33f48c830d6f05c2709"
+    },
+    "observer_response": {
+      "bytes": 10199,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_status_observer_attempt03\\polls\\20261008T125724Z_fb7fb7cc\\response.json",
+      "sha256": "c805f04ace5fc784ce4543ac027abd3b2777821f142be490946629b81012a4d9"
+    },
+    "observer_source_bridge_client": {
+      "bytes": 2706,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\client.py",
+      "sha256": "d0859d2e76cb59d1d4ec7c7a6e0c391e8ff28eababe5ab2058fb158f4866066f"
+    },
+    "observer_source_observer": {
+      "bytes": 22888,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_status_observer_attempt03\\dev360_status_observer_attempt03.py",
+      "sha256": "1f61ee8027c0a5c3f11f66c18201acb846ffabb2974ea16a4b6f613a0e22d118"
+    },
+    "observer_source_status_worker": {
+      "bytes": 21199,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_detached_status_attempt08\\read_dev360_detached_status_attempt08.py",
+      "sha256": "533dd688b752cd976882c374b478f5816cadbcce960fc870976d345f2f14a7f8"
+    },
+    "status08": {
+      "bytes": 46057,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt08\\read_candidate180_detached_status_attempt08.py",
+      "sha256": "b032ff16cbbee7356377f252e8785bf2e46db0ebfe828a0430f45070ee5f053d"
+    },
+    "terminal_execution_record": {
+      "bytes": 44606,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt06\\after_plan_download_attempt01\\transfers_attempt01\\execution_record",
+      "sha256": "dbd54f4f4d08c58930adaafef660887ae6290006e384f64a0440718f82cf2980"
+    },
+    "terminal_inventory": {
+      "bytes": 13593,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt04\\inventory_download_attempt03\\downloads_attempt03\\terminal_inventory_attempt02.json",
+      "sha256": "3f343b6ff73f35e838fbecdc290ae2112dbb6be8f55f8474469c1c7b52c254ef"
+    },
+    "terminal_inventory_download_response": {
+      "bytes": 439,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt04\\inventory_download_attempt03\\requests_attempt03\\q00_download_terminal_inventory_attempt02.json.response.json",
+      "sha256": "960611a1cedc61e786c88cfc2a1a2bb22291668663dec218434bd21339aa89db"
+    },
+    "terminal_inventory_exec_response": {
+      "bytes": 774,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\requests_attempt02\\q02_read_terminal_file_inventory.json.response.json",
+      "sha256": "0cb96f30dd1591517e11da19ae14f4d74ffb8698079eff68a30b68f7dbee1ee3"
+    },
+    "terminal_repeat_qc_ledger": {
+      "bytes": 0,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt06\\after_plan_download_attempt01\\transfers_attempt01\\generation_repeat_qc_ledger",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "terminal_result_manifest": {
+      "bytes": 2345,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt06\\after_plan_download_attempt01\\transfers_attempt01\\result_manifest",
+      "sha256": "9bd452de6d73c3f0c31cbbcf3417d0c7de0f6a86e44853bf03e6d7961d95e6c8"
+    },
+    "terminal_results_ledger": {
+      "bytes": 11940846,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt09\\verify_output_attempt01\\results.jsonl",
+      "sha256": "0ec1d6043f8e3c8ebce4dfdd17c95418239c663bdf8d24a47cdcbfde0e793cb2"
+    },
+    "terminal_run_status": {
+      "bytes": 1156,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt06\\after_plan_download_attempt01\\transfers_attempt01\\run_status",
+      "sha256": "27ca8073c599fea701409f0e30ea55fe433698fdffcff62f174c1e3ae50a6c54"
+    },
+    "terminal_strict_attestation": {
+      "bytes": 796745,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt06\\after_plan_download_attempt01\\transfers_attempt01\\strict_determinism_attestation",
+      "sha256": "fa95b82248f9013072b8ade4444c45f0545ecb2817d37b95ff396fd96573f492"
+    }
+  },
+  "source_packet_namespace": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02",
+  "status": "PREPARED_REQUESTS_ONLY_NOT_DISPATCHED",
+  "uploaded_evidence": [
+    {
+      "bytes": 13593,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt04\\inventory_download_attempt03\\downloads_attempt03\\terminal_inventory_attempt02.json",
+      "raw_sha256": "3f343b6ff73f35e838fbecdc290ae2112dbb6be8f55f8474469c1c7b52c254ef",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/terminal_inventory.json",
+      "role": "terminal_inventory"
+    },
+    {
+      "bytes": 774,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\requests_attempt02\\q02_read_terminal_file_inventory.json.response.json",
+      "raw_sha256": "0cb96f30dd1591517e11da19ae14f4d74ffb8698079eff68a30b68f7dbee1ee3",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/terminal_inventory_exec_response.json",
+      "role": "terminal_inventory_exec_response"
+    },
+    {
+      "bytes": 439,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_transfer_attempt04\\inventory_download_attempt03\\requests_attempt03\\q00_download_terminal_inventory_attempt02.json.response.json",
+      "raw_sha256": "960611a1cedc61e786c88cfc2a1a2bb22291668663dec218434bd21339aa89db",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/terminal_inventory_download_response.json",
+      "role": "terminal_inventory_download_response"
+    },
+    {
+      "bytes": 5899,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_detached_status_attempt08\\receipt_readback_attempt01\\controls360_codex_controls360_attempt10_launch01.launch_receipt.json",
+      "raw_sha256": "cd5e1fa2c37d615bb3427947fa1e9a2948af56dced57c5d3d1b6e10b404a02b5",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/controls_launch_receipt.json",
+      "role": "controls_launch_receipt"
+    },
+    {
+      "bytes": 6097,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_status_observer_attempt03\\observer_manifest_attempt03.json",
+      "raw_sha256": "968696c3586427b14b546a63686bafb3f5a8b670cfd104e4f3b2a6f46d184f85",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/observer_manifest.json",
+      "role": "observer_manifest"
+    },
+    {
+      "bytes": 4327,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_status_observer_attempt03\\polls\\20261008T125724Z_fb7fb7cc\\observation.json",
+      "raw_sha256": "599419aad34da6cb9005d645105eb574202fc8065a38a33f48c830d6f05c2709",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/observer_observation.json",
+      "role": "observer_observation"
+    },
+    {
+      "bytes": 10199,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_status_observer_attempt03\\polls\\20261008T125724Z_fb7fb7cc\\response.json",
+      "raw_sha256": "c805f04ace5fc784ce4543ac027abd3b2777821f142be490946629b81012a4d9",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/observer_response.json",
+      "role": "observer_response"
+    },
+    {
+      "bytes": 8115,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\request_index_attempt01.json",
+      "raw_sha256": "96938177e8eb3593fd67d535e78cd71d64539bc37b07d5b62a5143cbce68a2ec",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/candidate_metadata_request_index.json",
+      "role": "candidate_metadata_request_index"
+    },
+    {
+      "bytes": 1951,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\downloads_attempt01\\candidate13_metadata_preflight_attempt04.json",
+      "raw_sha256": "0ed5dd38a22429c680485ae8afe5baf97e18dd10e1d3ca04953555cf5ad0ade0",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/candidate_metadata_preflight.json",
+      "role": "candidate_metadata_preflight"
+    },
+    {
+      "bytes": 590,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\00_create_candidate13_metadata_namespace.json.response.json",
+      "raw_sha256": "3189e9f4823506399e366848ffc90191ef6a34eefbf55d0d0dfbfe0226d9d216",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/candidate_metadata_q00_response.json",
+      "role": "candidate_metadata_q00_response"
+    },
+    {
+      "bytes": 2256,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\01_run_candidate13_metadata_only_preflight.json.response.json",
+      "raw_sha256": "2e71f8e4668c505274f254500dec3dfc86433fab294812a1daa1d02fdf95d9ab",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/candidate_metadata_q01_response.json",
+      "role": "candidate_metadata_q01_response"
+    },
+    {
+      "bytes": 457,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\02_download_candidate13_metadata_preflight.json.response.json",
+      "raw_sha256": "db930436da0231422ba65859c663cbd1c34699708c93032c05fd894f12bb3e30",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/candidate_metadata_q02_response.json",
+      "role": "candidate_metadata_q02_response"
+    },
+    {
+      "bytes": 1162,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\00_create_candidate13_metadata_namespace.json",
+      "raw_sha256": "45b145c06c5ad823f943bf9725790150eaf946b4e5bbabfb077392115500574a",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/candidate_metadata_request_00_create_candidate13_metadata_namespace.json",
+      "role": "candidate_metadata_request_00_create_candidate13_metadata_namespace"
+    },
+    {
+      "bytes": 2262,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\01_run_candidate13_metadata_only_preflight.json",
+      "raw_sha256": "8b16d4784d0cc904fd8a92c61bd832471c7b811ea147fc24a0bbf739804ce8ca",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/candidate_metadata_request_01_run_candidate13_metadata_only_preflight.json",
+      "role": "candidate_metadata_request_01_run_candidate13_metadata_only_preflight"
+    },
+    {
+      "bytes": 405,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\02_download_candidate13_metadata_preflight.json",
+      "raw_sha256": "f179b2bb0abd858c75f16369a326e12529776469f92468daadb353fab960aa43",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/candidate_metadata_request_02_download_candidate13_metadata_preflight.json",
+      "role": "candidate_metadata_request_02_download_candidate13_metadata_preflight"
+    },
+    {
+      "bytes": 22888,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_status_observer_attempt03\\dev360_status_observer_attempt03.py",
+      "raw_sha256": "1f61ee8027c0a5c3f11f66c18201acb846ffabb2974ea16a4b6f613a0e22d118",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/source/dev360_status_observer_attempt03.py",
+      "role": "observer_source_observer"
+    },
+    {
+      "bytes": 2706,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\client.py",
+      "raw_sha256": "d0859d2e76cb59d1d4ec7c7a6e0c391e8ff28eababe5ab2058fb158f4866066f",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/source/client.py",
+      "role": "observer_source_bridge_client"
+    },
+    {
+      "bytes": 21199,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_detached_status_attempt08\\read_dev360_detached_status_attempt08.py",
+      "raw_sha256": "533dd688b752cd976882c374b478f5816cadbcce960fc870976d345f2f14a7f8",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/source/read_dev360_detached_status_attempt08.py",
+      "role": "observer_source_status_worker"
+    },
+    {
+      "bytes": 34744,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\terminal_inventory_and_chunk_planner_attempt02.py",
+      "raw_sha256": "b03722b3039da1ff8f8f10cf07ce878f2615d4e2f087062faf192876e1ff4652",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/source/terminal_inventory_and_chunk_planner_attempt02.py",
+      "role": "inventory_source_inventory_worker02"
+    },
+    {
+      "bytes": 12288,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\dispatch_index_attempt03.json",
+      "raw_sha256": "9ea50ae0b7c03c68ab8db4dd4f62afc7822782f284e76074f830514bc4bb0e2b",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/source/dispatch_index_attempt03.json",
+      "role": "inventory_source_inventory_dispatch_index03"
+    },
+    {
+      "bytes": 11760,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\terminal_inventory_packet_index_attempt02.json",
+      "raw_sha256": "bcf008b6c600bd0a156cc8c1b8a4f28f90f3f1d672168cb44438971830053fb2",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/source/terminal_inventory_packet_index_attempt02.json",
+      "role": "inventory_source_inventory_packet_index02"
+    },
+    {
+      "bytes": 486,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\requests_attempt02\\q00_create_namespace.json",
+      "raw_sha256": "6e6b1cdef0b16b47c4bd2f1c854bba52f2295c22c0b7ee8314b85b6bef5df36f",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/source/q00_create_namespace.json",
+      "role": "inventory_source_inventory_q00"
+    },
+    {
+      "bytes": 483,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\requests_attempt02\\q01_upload_inventory_worker.json",
+      "raw_sha256": "8392d75ff829f514cb6b8b66f173e0ddc679c2d33d43c288ff92126f54c7f187",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/source/q01_upload_inventory_worker.json",
+      "role": "inventory_source_inventory_q01"
+    },
+    {
+      "bytes": 361,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_terminal_inventory_attempt02\\requests_attempt02\\q02_read_terminal_file_inventory.json",
+      "raw_sha256": "dd9760f48fe325213dca43a15866293d6fc88fc88bf64f8eb28aca286d770395",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/evidence/source/q02_read_terminal_file_inventory.json",
+      "role": "inventory_source_inventory_q02"
+    },
+    {
+      "bytes": 49116,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt08\\launch_candidate180_detached_attempt08.py",
+      "raw_sha256": "7703866b8c7b73f1288fdf54c5b4028fc3b6268fd175366491ce18f2664e9d65",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/launch_candidate180_detached_attempt08.py",
+      "role": "launcher08"
+    },
+    {
+      "bytes": 46057,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt08\\read_candidate180_detached_status_attempt08.py",
+      "raw_sha256": "b032ff16cbbee7356377f252e8785bf2e46db0ebfe828a0430f45070ee5f053d",
+      "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_source_packet_attempt02/read_candidate180_detached_status_attempt08.py",
+      "role": "status08"
+    }
+  ]
+}

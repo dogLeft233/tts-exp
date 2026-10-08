@@ -75,3 +75,9 @@ openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls3
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_actual_observer_poll09_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_actual_observer_poll10_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/proof_copy_manifest.json -text !eol whitespace=cr-at-eol
+
+# Byte-preserved actual complete controls and prelaunch failure evidence.
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt10_terminal_and_candidate_metadata04/*.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt10_terminal_and_candidate_metadata04/*.jsonl -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt10_terminal_and_candidate_metadata04/**/*.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt10_terminal_and_candidate_metadata04/sources/*.py -text !eol whitespace=cr-at-eol

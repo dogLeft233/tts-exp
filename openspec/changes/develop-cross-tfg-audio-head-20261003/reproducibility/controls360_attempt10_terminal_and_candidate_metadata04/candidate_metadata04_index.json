@@ -1,0 +1,138 @@
+{
+  "candidate_cli_mode": "metadata-only: --execute-candidate omitted",
+  "candidate_manifest": {
+    "bytes": 2513,
+    "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/rebound_plan_attempt12/plan_manifest_metadata_repair_attempt14.json",
+    "raw_sha256": "d25985b666c59946a7acd1c948b834ea8628d0b9c8eef0442419818ea86c0192",
+    "self_sha256": "420d73cd5fb95692ded1c8bbd8cd82363ccb40169a064f21121be70f041909e5",
+    "status": "FROZEN"
+  },
+  "candidate_metadata_output": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate13_metadata_preflight_attempt04/output/candidate13_metadata_preflight_attempt04.json",
+  "candidate_output_leaf": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180",
+  "candidate_output_leaf_created": false,
+  "candidate_plan": {
+    "bytes": 932236,
+    "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/rebound_plan_attempt12/candidate_rebound_plan_attempt13.json",
+    "raw_sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280",
+    "self_sha256": "fee2718c0c4b18e5acabf3ca7d7103344bfb3859f3d8a3b93862c1ad4ce7d612"
+  },
+  "candidate_rows": {
+    "bytes": 606042,
+    "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/rebound_plan_attempt12/planned_rows.jsonl",
+    "raw_sha256": "c9dc6f9bf400aff7f2c25ee24528dfd3a038433c21e80e0177066b8ab3f8a19e"
+  },
+  "candidate_run_id": "cross_tfg_audio_head_20261003_v3_fit40_dev180_attempt02",
+  "control_root": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate13_metadata_preflight_attempt04",
+  "controls_run_id": "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt10",
+  "detached_launch": {
+    "candidate_output_leaf": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180",
+    "execute_flag": "--execute-candidate",
+    "future_launch_request_created": false,
+    "future_preflight_or_execution_hashes_filled": false,
+    "status": "DEFERRED_UNTIL_CONTROLS_TERMINAL_AND_ACTUAL_PREFLIGHT_READBACK"
+  },
+  "dispatch_gate": "Upload/read back plan13 and manifest14 exact bytes first; then ROOT reviews live resource/GPU and actual metadata-only preflight readback before any separate launcher request.",
+  "expected_preflight_result": {
+    "candidate_rows": 180,
+    "candidate_runtime_qualification_performed": false,
+    "confirm_audio_read": false,
+    "execution_performed": false,
+    "status": "PASS_METADATA_ONLY"
+  },
+  "index_sha256": "86a7e7064ad4a49ca3e7e9b541a049129f3c54d296bb0360205f6dc7b7043eba",
+  "project_root": "/root/tts-research-system-20261001",
+  "purpose": "Fresh metadata-only candidate13 preflight using the additive plan13 generic generator-child source pin and FROZEN manifest14; preserves all planned rows12 and method/settings.",
+  "python_executable": "/root/autodl-tmp/wav2lip-syncnet/envs/wav2lip/bin/python",
+  "requests": [
+    {
+      "bytes": 1162,
+      "name": "00_create_candidate13_metadata_namespace",
+      "op": "exec",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\00_create_candidate13_metadata_namespace.json",
+      "sha256": "45b145c06c5ad823f943bf9725790150eaf946b4e5bbabfb077392115500574a"
+    },
+    {
+      "bytes": 2262,
+      "name": "01_run_candidate13_metadata_only_preflight",
+      "op": "exec",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\01_run_candidate13_metadata_only_preflight.json",
+      "sha256": "8b16d4784d0cc904fd8a92c61bd832471c7b811ea147fc24a0bbf739804ce8ca"
+    },
+    {
+      "bytes": 405,
+      "name": "02_download_candidate13_metadata_preflight",
+      "op": "download",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate13_metadata_preflight_attempt04\\requests_attempt01\\02_download_candidate13_metadata_preflight.json",
+      "sha256": "f179b2bb0abd858c75f16369a326e12529776469f92468daadb353fab960aa43"
+    }
+  ],
+  "runtime_binding": {
+    "bytes": 568289,
+    "gpu_uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea",
+    "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/runtime_binding_attempt09.json",
+    "raw_sha256": "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5"
+  },
+  "schema": "cross_tfg_candidate13_metadata_preflight_attempt04_request_index_v1",
+  "scope": {
+    "candidate_audio_opened_or_decoded": false,
+    "candidate_output_leaf_created": false,
+    "confirmation_read": false,
+    "future_preflight_result_sha_guessed": false,
+    "gpu_or_model_execution_performed": false,
+    "preflight_dispatched": false,
+    "remote_upload_or_readback_performed": false,
+    "scores_or_selection_performed": false
+  },
+  "source_evidence": {
+    "baseline_controls_plan09": {
+      "bytes": 1781735,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\controls_plan_attempt09.json",
+      "sha256": "8a592cc54dc981bec5e2398108e6873190a54c7c1ed2bb7901cd31aad6cc86eb"
+    },
+    "candidate13_guard": {
+      "bytes": 35309,
+      "path": "E:\\Documents\\tts-exp\\scripts\\experiments\\cross_tfg_audio_head_20261003\\run_v3_step120_candidate_samehost_attempt13.py",
+      "sha256": "8c3b45f73d420b1dac6db0d5676eaf3343324cbb582d17cad7a3868d27e42708"
+    },
+    "candidate_dispatcher07": {
+      "bytes": 12824,
+      "path": "E:\\Documents\\tts-exp\\scripts\\experiments\\cross_tfg_audio_head_20261003\\run_cross_frontend_v3_candidate_attempt07.py",
+      "sha256": "f6844b51183b6cf3b57f6a62d0b1b9bd70c3a0d496480fe8cad70313907c16e3"
+    },
+    "candidate_manifest14": {
+      "bytes": 2513,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\plan_manifest_metadata_repair_attempt14.json",
+      "sha256": "d25985b666c59946a7acd1c948b834ea8628d0b9c8eef0442419818ea86c0192"
+    },
+    "candidate_plan13": {
+      "bytes": 932236,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\candidate_rebound_plan_attempt13.json",
+      "sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280"
+    },
+    "candidate_rows12": {
+      "bytes": 606042,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_cpu_prepare_attempt01\\downloads_attempt02\\candidate_rebound_rows_attempt12.jsonl",
+      "sha256": "c9dc6f9bf400aff7f2c25ee24528dfd3a038433c21e80e0177066b8ab3f8a19e"
+    },
+    "generator_pin_repair_receipt": {
+      "bytes": 5346,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\repair_receipt_attempt01.json",
+      "sha256": "803b1d6a2b4ef2ea690454292b4fd5f96fb2dd8f69cc661e571282e2e430e4df"
+    },
+    "remote_upload_readback_request_index": {
+      "bytes": 7180,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\request_index_attempt01.json",
+      "sha256": "a0dc5ff40a2388710207a30de0570b7f3342083bdf4bb5bcd81ac154e642d79b"
+    },
+    "runtime_binding09": {
+      "bytes": 568289,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\runtime_binding_attempt09.json",
+      "sha256": "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5"
+    },
+    "stagea_core06": {
+      "bytes": 79475,
+      "path": "E:\\Documents\\tts-exp\\scripts\\experiments\\cross_tfg_audio_head_20261003\\run_stagea_dev_attempt06.py",
+      "sha256": "291f8b5cd48d8ebc63aafd814dcd37450eecba949fab98283cf20a27c6335483"
+    }
+  }
+}
