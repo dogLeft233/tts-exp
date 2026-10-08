@@ -1,0 +1,44 @@
+{
+  "independent_agent_graph_review_pass": true,
+  "fresh_cpu_preflight_performed": false,
+  "source_diffs_full_reviewed": true,
+  "local_pin_records_verified": 61,
+  "frozen_protocol_unchanged": true,
+  "status": "PASS_SOURCE_GRAPH_ONLY",
+  "fresh_run": {
+    "run_id": "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt10",
+    "output_namespace": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10",
+    "controls_leaf": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360",
+    "candidate_leaf": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180",
+    "launch_gate": "WAIT_FOR_ATTEMPT09_PID_AND_START_TICKS_EXIT_AND_TERMINAL_360_ROW_LEDGER"
+  },
+  "scientific_dev_result": null,
+  "source_snapshot": {
+    "path": ".codex/scratch/dev360_musetalk_ditto_context_wiring_attempt03/source_snapshot_attempt07.json",
+    "sha256": "f3429fc863854f52ccaad49fa275d02e3d96bb23e213b43cca0dcf4c78d8e844",
+    "bytes": 21753
+  },
+  "schema": "root_dev360_repaired_source_graph_qc_v1",
+  "source_changes": "Only M/D adapter env wiring; Wav2Lip function exact unchanged; coherent source selectors and explicit binding pins; joiner08 uses adapter06.",
+  "launch_requires_old_attempt09_terminal360_and_exact_pid_ticks_exit": true,
+  "remote_only_pins": [
+    {
+      "availability": "target_root_expected",
+      "bytes": 72121,
+      "path": "runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/dev20_native_frame_binding_attempt03_w2l_expected_frames.json",
+      "receipt_sha256": "b3099fdcd15a5ab3b32faafba71f9e26f7ffc5fa2aea9914c5bf27f8a95e3adb",
+      "role": "samehost_w2l_native_frame_probe",
+      "sha256": "ca1ec73328a2c22eee4260d3890a29d87d394dae6a3d97bba61482993d302223",
+      "verification": "Root/fit08 actual readback and independent frame-count QC; target must confirm path before builder."
+    },
+    {
+      "availability": "target_root_expected",
+      "bytes": 57746,
+      "path": "cross_tfg_audio_head_20261003/job_control/dev360_resource_footprint_probe_attempt01/output/resource_footprint_receipt_attempt01.json",
+      "role": "samehost_pilot_footprint_receipt",
+      "sha256": "164bff9e05094428af4de0901e4d38e1139754cbfcfa7e693a80251be5479bf7",
+      "verification": "Root actual resource/pilot footprint receipt readback; target must confirm path before builder."
+    }
+  ],
+  "gpu_execution_performed": false
+}

@@ -20,3 +20,8 @@ openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_sa
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_cpu_ready_summary_attempt07.json -text !eol
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_binding_plan08_root_qc_attempt01.json -text !eol
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_actual_launch_attempt17_launch01.json -text !eol
+
+# Repaired renderer context and source-only audit retain exact evidence bytes.
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_repaired_source_snapshot_attempt07.json -text !eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_repaired_source_graph_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_attempt09_partial_failure_root_qc_attempt01.json -text !eol

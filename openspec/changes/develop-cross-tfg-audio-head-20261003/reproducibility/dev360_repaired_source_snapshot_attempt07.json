@@ -1,0 +1,410 @@
+{
+  "capacity_policy": {
+    "basis": "MEASURED_PILOT_WITH_EXPLICIT_SCENARIO_AND_LIVE_GATES",
+    "full_initial_admission_bytes": 22972800792,
+    "hard_bound": false,
+    "media_bytes_estimated": true,
+    "output_root": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10",
+    "policy_reserve_bytes": 5368709120,
+    "scenario_required_bytes": 17604091672
+  },
+  "fresh_source_diffs": [
+    {
+      "bytes": 3186,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_native_receipt_fix_attempt01\\diffs_attempt02\\controls16_to_17.diff",
+      "sha256": "a3d22d3a1a2015d3f7aff4c86abf3315fc7db15c9e5e7c3f444d65358771a8c8"
+    },
+    {
+      "bytes": 3281,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_native_receipt_fix_attempt01\\diffs_attempt02\\builder15_to_16.diff",
+      "sha256": "cad2faa51bac9022225676332e3a69eeddc114a826ba5261f820dfe04b27dfc9"
+    },
+    {
+      "bytes": 965,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_native_receipt_fix_attempt01\\diffs_attempt02\\collector09_to_10.diff",
+      "sha256": "ff6fee2fe41605f0f9c3dabb354e43cc135eb994a61ceb6650e0a7791a0bc524"
+    },
+    {
+      "bytes": 715,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_native_receipt_fix_attempt01\\diffs_attempt02\\candidate11_to_12.diff",
+      "sha256": "83fad17ca0b4946b1f1da725f5c5616d01e596644198f6d8203bf750202d618e"
+    },
+    {
+      "bytes": 543,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_native_receipt_fix_attempt01\\diffs_attempt02\\rebinder10_to_11.diff",
+      "sha256": "456227ab55cc62649dfd3c00cc50776d7ad770d37fc9d134d65bc0d8a7a892c8"
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_musetalk_ditto_context_wiring_attempt02\\diffs_attempt02\\run_cross_frontend_dev_attempt08_to_run_cross_frontend_dev_attempt09.diff",
+      "bytes": 3937,
+      "sha256": "e6eb32c0ed032a8addc1e1240f91d60146faba9dc8881302b2ddda9ffc5d3bfa"
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_musetalk_ditto_context_wiring_attempt02\\diffs_attempt02\\run_cross_frontend_samehost_dev_attempt06_to_run_cross_frontend_samehost_dev_attempt07.diff",
+      "bytes": 1545,
+      "sha256": "244415760903850086f3eb822b13fdbbeacfa74e3a15d089ab23e36cae78a25a"
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_musetalk_ditto_context_wiring_attempt02\\diffs_attempt02\\collect_v3_samehost_runtime_binding_attempt10_to_collect_v3_samehost_runtime_binding_attempt11.diff",
+      "bytes": 8756,
+      "sha256": "9dc8cb311fcc64509eca2fefdcc9279be98be1a915705b9be26714ea6c597af6"
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_musetalk_ditto_context_wiring_attempt03\\diffs_attempt03\\plan16_to_17_final.diff",
+      "bytes": 8221,
+      "sha256": "f07de4cda0443739acb0b4a03a2a57fa06ecf049fde37032d5cd5ed467b4d30f"
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_musetalk_ditto_context_wiring_attempt03\\diffs_attempt03\\controls17_to_18_final.diff",
+      "bytes": 5266,
+      "sha256": "784061b2868275b41bd5cf7b79f983be1941b2ad2a18da4b72bce598a480b82d"
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_musetalk_ditto_context_wiring_attempt02\\diffs_attempt02\\build_v3_candidate_samehost_controls_adapter_attempt05_to_build_v3_candidate_samehost_controls_adapter_attempt06.diff",
+      "bytes": 1257,
+      "sha256": "4d0dab524d21f3cbe7ffa3d66f2ebab501eeeebfebfdc60d38259fbbe8853976"
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_musetalk_ditto_context_wiring_attempt02\\diffs_attempt02\\run_cross_frontend_v3_candidate_attempt06_to_run_cross_frontend_v3_candidate_attempt07.diff",
+      "bytes": 997,
+      "sha256": "c6b2d73cf3469f00cc884ac4661d23a059a6f96a91f35932e203875554db0b3a"
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_musetalk_ditto_context_wiring_attempt02\\diffs_attempt02\\run_v3_step120_candidate_samehost_attempt12_to_run_v3_step120_candidate_samehost_attempt13.diff",
+      "bytes": 1479,
+      "sha256": "e1735f1375c19e0a8517134e09f50b51fe624934e0b5a287cb3e38a702e089fd"
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_musetalk_ditto_context_wiring_attempt02\\diffs_attempt02\\rebind_v3_step120_candidate_plan_samehost_attempt11_to_rebind_v3_step120_candidate_plan_samehost_attempt12.diff",
+      "bytes": 1313,
+      "sha256": "e51e80c5a9310155041b836b434f29408cca2b9986b2564ca860e77da45d4ce0"
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_musetalk_ditto_context_wiring_attempt03\\diffs_attempt03\\joiner07_to_08.diff",
+      "bytes": 1041,
+      "sha256": "eef23c1f244099fca67c8e99a46001ee34265101c36edeed1f227d938b1c4c2c"
+    }
+  ],
+  "reviewed_workflow_sources": [
+    {
+      "bytes": 79475,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_stagea_dev_attempt06.py",
+      "sha256": "291f8b5cd48d8ebc63aafd814dcd37450eecba949fab98283cf20a27c6335483"
+    },
+    {
+      "bytes": 20951,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_dev_attempt08.py",
+      "sha256": "29d0fd69795b1c43c99c31f10e3d6861c15b304338d800ec29dbc511922859df"
+    },
+    {
+      "bytes": 3010,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_samehost_dev_attempt06.py",
+      "sha256": "4732000d474978afc8dd234fec311e4320394184b6db251f5400fdf17fde776e"
+    },
+    {
+      "bytes": 12824,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_v3_candidate_attempt06.py",
+      "sha256": "0fda60a8a500a8a007f1e1fe6ab7f1c715e1d786faf8ca1b073d2e5b7fee550e"
+    },
+    {
+      "bytes": 47404,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/build_v3_candidate_samehost_controls_adapter_attempt05.py",
+      "sha256": "74d2448612334211002c803991f0813a31e58b1d10caa13cd6e6d3ececd4f6cd"
+    },
+    {
+      "bytes": 84574,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/join_v3_candidate_540_samehost_controls_attempt07.py",
+      "sha256": "2421fad5dcbd7d87bfb6e591602b89a0dde5d20297963ee25eeba70fc410146c"
+    },
+    {
+      "bytes": 77755,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_v3_samehost_dev360_controls_attempt16.py",
+      "sha256": "4c667ef56217fa3a19166ca3563e907333488c1eccd58c55a448db9a821ac5bb"
+    },
+    {
+      "bytes": 83151,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/collect_v3_samehost_runtime_binding_attempt09.py",
+      "sha256": "734cabbd3cadf65a5b79dcac74e38b87def40f0c27d7b54357d6ba62c889ca53"
+    },
+    {
+      "bytes": 37195,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/build_v3_samehost_dev360_controls_plan_attempt15.py",
+      "sha256": "87e8a2620851a011704e958610c4c973d31a05a0b8c944a7e2fcbdf91506d990"
+    },
+    {
+      "bytes": 22374,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/rebind_v3_step120_candidate_plan_samehost_attempt10.py",
+      "sha256": "2ce22e290be8418dc8b7ca4a2c27c061f21991442e342f2e18ffbafcd23e7b4f"
+    },
+    {
+      "bytes": 35309,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_v3_step120_candidate_samehost_attempt11.py",
+      "sha256": "04c600b55f177075caa3a6cbe4897fba6bab44bc191b23ad99220297f9e69c73"
+    },
+    {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/build_v3_samehost_dev360_controls_plan_attempt17.py",
+      "bytes": 37675,
+      "sha256": "965dc911856045eb2806665c7fe05a1e2e1b38259e8a002ec2088edc33c23fd6"
+    },
+    {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_v3_samehost_dev360_controls_attempt18.py",
+      "bytes": 78172,
+      "sha256": "30381ee8deb6d0e7880379fc91a042e1e2bb3cca375dd05423319259fd9e8756"
+    },
+    {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_dev_attempt09.py",
+      "bytes": 23249,
+      "sha256": "04adf397a2edc45c6e3bc1e67d2265ea1c6ad2fcdac3df268b290938e5bf74df"
+    },
+    {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_samehost_dev_attempt07.py",
+      "bytes": 3010,
+      "sha256": "a3a0f5f4fec8cddd708cce80b385817d4ca0cf7a5c779acf863674671f775b28"
+    },
+    {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/collect_v3_samehost_runtime_binding_attempt11.py",
+      "bytes": 84826,
+      "sha256": "9139e734f6aa1c7d610de0eb995f44dbbe5823cb31b9071b7ab2658b06e2e585"
+    },
+    {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/build_v3_candidate_samehost_controls_adapter_attempt06.py",
+      "bytes": 47404,
+      "sha256": "0a61f1c33099f7cd36ce497495b10eb70edc43f49ab911eaaa6e568bb4b32933"
+    },
+    {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/rebind_v3_step120_candidate_plan_samehost_attempt12.py",
+      "bytes": 22374,
+      "sha256": "31a43a802bc2b5d46adb3850e37375d91e6f83bbb6bb02c304ae25eff0b4eb46"
+    },
+    {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_v3_candidate_attempt07.py",
+      "bytes": 12824,
+      "sha256": "f6844b51183b6cf3b57f6a62d0b1b9bd70c3a0d496480fe8cad70313907c16e3"
+    },
+    {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_v3_step120_candidate_samehost_attempt13.py",
+      "bytes": 35309,
+      "sha256": "8c3b45f73d420b1dac6db0d5676eaf3343324cbb582d17cad7a3868d27e42708"
+    },
+    {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/join_v3_candidate_540_samehost_controls_attempt08.py",
+      "bytes": 84574,
+      "sha256": "7af975b83d8149b6b98c293500449f897aa8df380800324a7198cbc158ac797a"
+    }
+  ],
+  "schema": "cross_tfg_dev360_final_source_snapshot_attempt01_v1",
+  "scope": "Fresh controls attempt10 source graph after actual attempt09 diagnostics confirmed that qualified MuseTalk/Ditto renderer shims were invoked without their required row-local native-entry/control-directory environment. Frontend09 reasserts those bindings only for the existing M/D adapter route; Wav2Lip generation code remains byte-for-byte unchanged from frontend08. New dispatcher, binding collector/template, controls plan/launcher, candidate reader/dispatcher/guard/rebinder are cross-pinned as one source graph. The active attempt09 process and outputs remain untouched; no GPU execution is included in this snapshot. Joiner08 is pinned to candidate baseline reader adapter06, so its backend lineage accepts the same frontend09 controls/candidate source graph.",
+  "source_chain": [
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 37675,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/build_v3_samehost_dev360_controls_plan_attempt17.py",
+      "role": "samehost_dev360_plan_builder",
+      "sha256": "965dc911856045eb2806665c7fe05a1e2e1b38259e8a002ec2088edc33c23fd6"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 78172,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_v3_samehost_dev360_controls_attempt18.py",
+      "role": "samehost_dev360_guarded_launcher",
+      "sha256": "30381ee8deb6d0e7880379fc91a042e1e2bb3cca375dd05423319259fd9e8756"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 79475,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_stagea_dev_attempt06.py",
+      "role": "samehost_stagea_core",
+      "sha256": "291f8b5cd48d8ebc63aafd814dcd37450eecba949fab98283cf20a27c6335483"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 23249,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_dev_attempt09.py",
+      "role": "samehost_cross_frontend_adapter",
+      "sha256": "04adf397a2edc45c6e3bc1e67d2265ea1c6ad2fcdac3df268b290938e5bf74df"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 3010,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_samehost_dev_attempt07.py",
+      "role": "samehost_stagea_dispatcher",
+      "sha256": "a3a0f5f4fec8cddd708cce80b385817d4ca0cf7a5c779acf863674671f775b28"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 84826,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/collect_v3_samehost_runtime_binding_attempt11.py",
+      "role": "samehost_runtime_binding_collector",
+      "sha256": "9139e734f6aa1c7d610de0eb995f44dbbe5823cb31b9071b7ab2658b06e2e585"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 24475,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/collect_v3_samehost_dev360_controls_evidence_attempt03.py",
+      "role": "samehost_dev360_evidence_collector",
+      "sha256": "aef8399b2c9fac925941ed73e0a201faedcf494ba97766f16be20e3876fbf17a"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 43476,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/collect_v3_stagea_raw_media_evidence_attempt03.py",
+      "role": "samehost_dev360_raw_media_collector",
+      "sha256": "244c79a513f90f280e159087dbe211c8df0b8469cb2858d9cf5169428151f329"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 47404,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/build_v3_candidate_samehost_controls_adapter_attempt06.py",
+      "role": "samehost_v3_baseline_reader_adapter",
+      "sha256": "0a61f1c33099f7cd36ce497495b10eb70edc43f49ab911eaaa6e568bb4b32933"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 84574,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/join_v3_candidate_540_samehost_controls_attempt08.py",
+      "role": "samehost_dynamic_540_joiner",
+      "sha256": "7af975b83d8149b6b98c293500449f897aa8df380800324a7198cbc158ac797a"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 41074,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/wav2lip_runtime_compat_attempt04/sitecustomize.py",
+      "role": "samehost_w2l_runtime_sitecustomize",
+      "sha256": "462884a2534f73d93eb09cd05c87fefda677e3647366360fb81a9622fa7592ca"
+    },
+    {
+      "availability": "target_root_expected",
+      "bytes": 72121,
+      "path": "runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/dev20_native_frame_binding_attempt03_w2l_expected_frames.json",
+      "receipt_sha256": "b3099fdcd15a5ab3b32faafba71f9e26f7ffc5fa2aea9914c5bf27f8a95e3adb",
+      "role": "samehost_w2l_native_frame_probe",
+      "sha256": "ca1ec73328a2c22eee4260d3890a29d87d394dae6a3d97bba61482993d302223",
+      "verification": "Root/fit08 actual readback and independent frame-count QC; target must confirm path before builder."
+    },
+    {
+      "availability": "target_root_expected",
+      "bytes": 57746,
+      "path": "cross_tfg_audio_head_20261003/job_control/dev360_resource_footprint_probe_attempt01/output/resource_footprint_receipt_attempt01.json",
+      "role": "samehost_pilot_footprint_receipt",
+      "sha256": "164bff9e05094428af4de0901e4d38e1139754cbfcfa7e693a80251be5479bf7",
+      "verification": "Root actual resource/pilot footprint receipt readback; target must confirm path before builder."
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 19072,
+      "path": "runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/capacity_evidence/capacity_analysis_attempt01.json",
+      "role": "samehost_capacity_analysis",
+      "sha256": "0e8de8f39ff72ada8e61ebab6950604020c6674a5bb9c61e0ede221fe0745315"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 12837,
+      "path": "runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/capacity_evidence/core06_vs_core05.diff",
+      "role": "samehost_capacity_core_retention_diff",
+      "sha256": "57955e90bfeb96ef5827b8ad7da8418b311dfa391916688e91b2a8e8d7d00d3f"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 9525,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+      "role": "samehost_strict_determinism_bootstrap",
+      "sha256": "3099c4b2e1c650f7aa46c31145cc2c88ccda9f085288ab039c6ffed85007ab65"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 25103,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/musetalk_five_arg_shim_attempt07.py",
+      "role": "samehost_muse_strict_runtime_shim",
+      "sha256": "39d75863cdbd94fc8942c395a2ebf16cacbff74e13bed5dbc8cbd62b74239d14"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 20529,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/ditto_five_arg_shim_attempt06.py",
+      "role": "samehost_ditto_strict_runtime_shim",
+      "sha256": "7522e08402dab6dc6386f20e4ef667e97fe6ea62febc232e49953ba99b74ddda"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 20956,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/materialize_v3_step120_method_candidate_attempt02.py",
+      "role": "step120_method_materializer",
+      "sha256": "3f5ee524d9b796fe041ef95ad31d5efec12df282f0ae157c6aa17f75cb2021b3"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 22374,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/rebind_v3_step120_candidate_plan_samehost_attempt12.py",
+      "role": "step120_samehost_plan_rebinder",
+      "sha256": "31a43a802bc2b5d46adb3850e37375d91e6f83bbb6bb02c304ae25eff0b4eb46"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 47404,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/build_v3_candidate_samehost_controls_adapter_attempt06.py",
+      "role": "step120_candidate_controls_adapter",
+      "sha256": "0a61f1c33099f7cd36ce497495b10eb70edc43f49ab911eaaa6e568bb4b32933"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 12824,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_v3_candidate_attempt07.py",
+      "role": "step120_candidate_dispatcher",
+      "sha256": "f6844b51183b6cf3b57f6a62d0b1b9bd70c3a0d496480fe8cad70313907c16e3"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 35309,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_v3_step120_candidate_samehost_attempt13.py",
+      "role": "step120_candidate_guarded_launcher",
+      "sha256": "8c3b45f73d420b1dac6db0d5676eaf3343324cbb582d17cad7a3868d27e42708"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 62830,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/v3_dev180_newhost_latebind_packet_attempt02.py",
+      "role": "step120_latebind_packet",
+      "sha256": "406f95e4a262fb62bb02bc67249f3e6a7bf211b803a014622e042329d772fdf7"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 19072,
+      "path": "runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/capacity_evidence/capacity_analysis_attempt01.json",
+      "role": "capacity_evidence:capacity_analysis_attempt01.json",
+      "sha256": "0e8de8f39ff72ada8e61ebab6950604020c6674a5bb9c61e0ede221fe0745315"
+    },
+    {
+      "availability": "local_shared_workspace",
+      "bytes": 12837,
+      "path": "runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/capacity_evidence/core06_vs_core05.diff",
+      "role": "capacity_evidence:core06_vs_core05.diff",
+      "sha256": "57955e90bfeb96ef5827b8ad7da8418b311dfa391916688e91b2a8e8d7d00d3f"
+    },
+    {
+      "role": "cross_frontend_adapter_runner",
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_dev_attempt09.py",
+      "bytes": 23249,
+      "sha256": "04adf397a2edc45c6e3bc1e67d2265ea1c6ad2fcdac3df268b290938e5bf74df",
+      "availability": "local_shared_workspace"
+    }
+  ],
+  "static_checks": {
+    "frontend09_scope": "PASS: source diff changes only _adapter_generator; W2L generator function is unchanged from attempt08",
+    "musetalk_ditto_context": "PASS source review: renderer path/SHA and row-local strict receipt/control directory are reasserted after descriptor env overlay",
+    "source_graph_cross_pins": "PASS: collector11, plan17, controls18, adapter06, dispatchers, guard13, rebinder12, and joiner08 resolve to the exact pinned paths and hashes; joiner08 pins adapter06.",
+    "source_syntax": "PASS AST parse of 10 changed Python source files; no model execution, scoring, tests, or GPU dispatch",
+    "attempt09_preservation": "PASS fresh revision writes only new source filenames and output namespace; current attempt09 files are unchanged",
+    "gpu_execution_performed": false,
+    "confirm_opened": false
+  },
+  "status": "SOURCE_SNAPSHOT_STATIC_GRAPH_AUDIT_PASS",
+  "supersedes": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_musetalk_ditto_context_wiring_attempt02\\source_snapshot_attempt06.json",
+  "workspace": "E:/Documents/tts-exp",
+  "fresh_run": {
+    "run_id": "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt10",
+    "output_namespace": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10",
+    "controls_leaf": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360",
+    "candidate_leaf": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180",
+    "launch_gate": "WAIT_FOR_ATTEMPT09_PID_AND_START_TICKS_EXIT_AND_TERMINAL_360_ROW_LEDGER"
+  }
+}
