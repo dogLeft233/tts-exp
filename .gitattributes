@@ -12,3 +12,6 @@ openspec/changes/factor-world-phone-shape-mean-dynamics-20261001/evaluation_plan
 openspec/changes/factor-world-phone-shape-mean-dynamics-20261001/evaluation_root_freeze.json -text !eol whitespace=cr-at-eol
 # Execution repairs retain the byte seals of the plans used for production.
 openspec/changes/factor-world-phone-shape-mean-dynamics-20261001/execution-repairs/*.json -text !eol
+# The installed Dev source snapshot identifies these artifacts by exact bytes.
+scripts/experiments/cross_tfg_audio_head_20261003/run_stagea_dev_attempt06.py -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_samehost_source_snapshot_attempt01.json -text !eol
