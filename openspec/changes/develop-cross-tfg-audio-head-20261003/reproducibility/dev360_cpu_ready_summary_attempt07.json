@@ -1,0 +1,67 @@
+{
+  "controls_plan": {
+    "manifest_bytes": 1438,
+    "manifest_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls_plan_attempt08/plan_manifest.json",
+    "manifest_raw_sha256": "d96b738dcd9f2157daabd7dd7e01a1e149cbdd823e2ce96041bcfb2e55216f9f",
+    "plan_bytes": 1781477,
+    "plan_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls_plan_attempt08/plan.json",
+    "plan_raw_sha256": "a5cb43fc0f86de4642e40beef263d461a880d7dd948387b74fbd5f0498b0a6c9",
+    "plan_sha256": "ebed77d162e4a7c41e93171a60f1b38d8ff37251973a5bc901d72f499a01851c",
+    "planned_rows": 360,
+    "planned_rows_bytes": 878184,
+    "planned_rows_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls_plan_attempt08/planned_rows.jsonl",
+    "planned_rows_raw_sha256": "45f1d3130c33c37a513db7b22f76d4107bd821f370a7b3ae2d5ae853894b27c8"
+  },
+  "input_restore_probe": {
+    "bytes": 12117,
+    "exact_match_files": 22,
+    "path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_input_restore_probe_attempt02/output/input_restore_probe_attempt02.json",
+    "planned_files": 22,
+    "raw_sha256": "5f162dc906d614b72037592ae4707a3808b7c88d94f3e1489d21ebf8fccb91de",
+    "report_sha256": "9451e856d4f3780e4f7285beab340d85009f2b8af92b84cb32974ca16ff93090",
+    "status": "PASS_EXACT_ORIGINAL_VIDEO_RESTORED_AND_22_INPUTS_MATCH",
+    "video_bytes": 175827,
+    "video_path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/source/static_portrait_reference_25fps.mp4",
+    "video_sha256": "c76617141188acfea5f4c122513b982997ec45ebaa35a2b6ed9f67101e9c40de"
+  },
+  "output_root": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360",
+  "preflight": {
+    "attestation_sha256": "2aaa776c4343f409911f7c4c9640c3d473a36c8a3899ea2a0a46c4715b0a4967",
+    "bytes": 41393,
+    "path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_phase2_recovery_attempt07/output/controls360_preflight_attempt08.json",
+    "raw_sha256": "f0d8b070466ef4b0b431e7ea26406c369be0387313bf94cfcba49dd7cab3e5ef",
+    "status": "PASS_METADATA_ONLY"
+  },
+  "project_root": "/root/tts-research-system-20261001",
+  "run_id": "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt09",
+  "runtime_binding": {
+    "binding_sha256": "d0f396fb6c04eb5e02396e114834017b29c588c999f18118945d65b271b016b5",
+    "bytes": 566509,
+    "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/runtime_binding_attempt08.json",
+    "raw_sha256": "f00934e4384aa0df490cbf577db4a4b3079d38e203caaac147609c380c98a7ac"
+  },
+  "schema": "cross_tfg_dev360_phase2_cpu_recovery_v1",
+  "scope": {
+    "candidate_selection_performed": false,
+    "confirmation_audio_opened": false,
+    "development_audio_opened": false,
+    "model_execution_performed": false,
+    "rendering_or_scoring_performed": false,
+    "training_performed": false
+  },
+  "source_pins": {
+    "binder_sha256": "02a4eeb60fb5a2219a6e6b35411b20d3589b4448c9512ff55723967a53b9cb82",
+    "builder_sha256": "da34c1fe663d21dc30b69f1a4e715546e4b896587c60f4b1c6f62df98eb6f9bd",
+    "preflight_runner_sha256": "762f009e8edd6a24e91ac0185ad44855dc39711e1464ca9851bfb0586c3e43f3",
+    "worker_sha256": "553d57c42b459a1f3e339afcc95d29da28b97031026430384935370efe278759"
+  },
+  "source_restore": {
+    "files_verified": 9,
+    "path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_common_source_restore_attempt02/output/install_summary_attempt02.json",
+    "raw_sha256": "458f7b2cf3e8f12900d062d08b8be1ab216b616ea0bdcc1459bfe2f0b9a92a4a",
+    "receipt_sha256": "a9ec715d03b0dbb59dbed6fef4f147670b2f1649ca3c62786fa92972187bc851"
+  },
+  "stage_id": "controls360",
+  "status": "PASS_CONTROLS360_CPU_BIND_PLAN_PREFLIGHT_READY",
+  "summary_sha256": "504752dfb0db25abc328f8de12a4697091bf430419af6c88fe1a883f225b59e0"
+}

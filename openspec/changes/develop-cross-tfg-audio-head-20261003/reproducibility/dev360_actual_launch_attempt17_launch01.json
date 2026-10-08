@@ -1,0 +1,120 @@
+{
+  "command": [
+    "/usr/bin/python3",
+    "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/run_v3_samehost_dev360_controls_attempt17.py",
+    "--mode",
+    "run",
+    "--execute-controls",
+    "--project-root",
+    "/root/tts-research-system-20261001",
+    "--plan",
+    "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls_plan_attempt08/plan.json",
+    "--plan-raw-sha256",
+    "a5cb43fc0f86de4642e40beef263d461a880d7dd948387b74fbd5f0498b0a6c9",
+    "--plan-manifest",
+    "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls_plan_attempt08/plan_manifest.json",
+    "--plan-manifest-raw-sha256",
+    "d96b738dcd9f2157daabd7dd7e01a1e149cbdd823e2ce96041bcfb2e55216f9f",
+    "--planned-rows",
+    "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls_plan_attempt08/planned_rows.jsonl",
+    "--planned-rows-raw-sha256",
+    "45f1d3130c33c37a513db7b22f76d4107bd821f370a7b3ae2d5ae853894b27c8",
+    "--runtime-binding",
+    "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/runtime_binding_attempt08.json",
+    "--runtime-binding-raw-sha256",
+    "f00934e4384aa0df490cbf577db4a4b3079d38e203caaac147609c380c98a7ac",
+    "--preflight-receipt",
+    "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_phase2_recovery_attempt07/output/controls360_preflight_attempt08.json",
+    "--preflight-receipt-raw-sha256",
+    "f0d8b070466ef4b0b431e7ea26406c369be0387313bf94cfcba49dd7cab3e5ef"
+  ],
+  "launch_receipt_path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_phase2_recovery_attempt07/output/controls360_fit08_controls360_attempt17_launch01.launch_receipt.json",
+  "output_root": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360",
+  "phase2_summary": {
+    "bytes": 4106,
+    "path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_phase2_recovery_attempt07/output/phase2_summary_attempt07.json",
+    "raw_sha256": "6484dfde2791ea7dbdd651200f764544f2fc63364249a95809a910e2eee12c7d",
+    "summary_sha256": "504752dfb0db25abc328f8de12a4697091bf430419af6c88fe1a883f225b59e0"
+  },
+  "pid": 105669,
+  "plan_manifest_raw_sha256": "d96b738dcd9f2157daabd7dd7e01a1e149cbdd823e2ce96041bcfb2e55216f9f",
+  "plan_raw_sha256": "a5cb43fc0f86de4642e40beef263d461a880d7dd948387b74fbd5f0498b0a6c9",
+  "planned_rows_raw_sha256": "45f1d3130c33c37a513db7b22f76d4107bd821f370a7b3ae2d5ae853894b27c8",
+  "preflight_receipt_raw_sha256": "f0d8b070466ef4b0b431e7ea26406c369be0387313bf94cfcba49dd7cab3e5ef",
+  "receipt_sha256": "331dcbe6416455196abe9d32f2f12f51cb3ce3a57a272b4b6bea926335c23393",
+  "request_id": "fit08_controls360_attempt17_launch01",
+  "resource_recheck": {
+    "capacity_admission": {
+      "basis_status": "MEASURED_PILOT_WITH_EXPLICIT_SCENARIO_AND_LIVE_GATES",
+      "media_bytes_estimated": true,
+      "remaining_scenario_bytes": 11732417424,
+      "required_free_bytes": 17101126544,
+      "scenario_is_hard_bound": false,
+      "separate_policy_reserve_bytes": 5368709120,
+      "stage": "controls360"
+    },
+    "gpus": [
+      {
+        "index": 0,
+        "memory_free_mib": 32230,
+        "memory_total_mib": 32760,
+        "name": "NVIDIA GeForce RTX 4080 SUPER",
+        "uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea"
+      }
+    ],
+    "host": "autodl-container-v6l4us903l-21144e17",
+    "output_disk": {
+      "available_bytes": 26444668928,
+      "existing_ancestor": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360",
+      "filesystem": "tmpfs",
+      "requested_output_root": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360/controls360",
+      "target": "/dev/shm",
+      "total_bytes": 33285996544
+    },
+    "ram": {
+      "available_bytes": 58348924928,
+      "cgroup": {
+        "available_bytes": 58348924928,
+        "current_bytes": 8223068160,
+        "finite_limit": true,
+        "identity": {
+          "finite_limit": true,
+          "leaf_path": "/sys/fs/cgroup",
+          "limit_bytes": 66571993088,
+          "membership_path": "/",
+          "mount_root": "/",
+          "mount_target": "/sys/fs/cgroup",
+          "version": "v2"
+        },
+        "limit_bytes": 66571993088,
+        "version": "v2"
+      },
+      "host_available_bytes": 498208296960,
+      "total_bytes": 540646064128
+    },
+    "shm": {
+      "available_bytes": 26444668928,
+      "total_bytes": 33285996544
+    },
+    "thresholds": {
+      "min_gpu_free_mib": 18432,
+      "min_output_free_bytes": 17101126544,
+      "min_ram_available_bytes": 17179869184,
+      "min_shm_free_bytes": 0
+    }
+  },
+  "run_id": "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt09",
+  "runtime_binding_raw_sha256": "f00934e4384aa0df490cbf577db4a4b3079d38e203caaac147609c380c98a7ac",
+  "schema": "cross_tfg_dev360_detached_launch_receipt_v1",
+  "scope": {
+    "confirmation_audio_opened_by_launcher": false,
+    "detached_process_started": true,
+    "development_audio_opened_by_launcher": false,
+    "rendering_or_scoring_performed_by_launcher": false
+  },
+  "stage_id": "controls360",
+  "start_ticks": 329309991,
+  "status": "STARTED_DETACHED",
+  "stderr_path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_phase2_recovery_attempt07/output/controls360_fit08_controls360_attempt17_launch01.stderr.log",
+  "stdout_path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_phase2_recovery_attempt07/output/controls360_fit08_controls360_attempt17_launch01.stdout.log"
+}
