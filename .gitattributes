@@ -52,3 +52,26 @@ openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_actual_observer_poll04_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_failed_controls17_media_archive_attempt03_failure_receipt.json -text !eol whitespace=cr-at-eol
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_failed_controls17_media_archive_attempt03_launch_receipt.json -text !eol whitespace=cr-at-eol
+
+# Actual full archive and mounted B copy byte-preserved evidence.
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/archive_receipt_attempt04.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/chunk_manifest_attempt04.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/worker_state_attempt04.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/artifact_readback_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/root_actual_archive04_artifacts_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/q09_read_archive_receipt_attempt04.response.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/q10_read_chunk_manifest_attempt04.response.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/q11_read_worker_state_attempt04.response.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/root_download104_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/F_existing_archive_verification_qc_attempt03.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/root_full_tar_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/archive_launch_receipt_attempt04.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/terminal_and_launch_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/compact_snapshot_receipt_attempt02.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/B_copy_readback_receipt_attempt05.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/root_actual_Bcopy05_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/root_Bcopy05_source_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/archive_restore_bundle_manifest_attempt05.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_actual_observer_poll09_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_actual_observer_poll10_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt17_failedterminal_media_complement_attempt04/proof_copy_manifest.json -text !eol whitespace=cr-at-eol

@@ -59,5 +59,7 @@ CLI 回执：[实际隔离运行](v3_step120_actual_isolated_cli_response_attemp
 - [实际候选计划准备](candidate180_actual_metadata_rebind_summary_attempt01.json)及[独立绑定 QC](candidate180_actual_metadata_independent_qc_attempt01.json)记录当前服务器的180条有序候选、360个不同对照引用、三前端与60条Wav2Lip帧映射。仅元数据准备，尚未候选GPU生成或运行资格验收。
 - [实际 ASR 静态部署](candidate180_actual_asr_static_stage_summary_attempt01.json)、[独立读回](candidate180_actual_asr_static_stage_independent_qc_attempt01.json)及[ROOT 联合复核](candidate180_actual_metadata_and_asr_static_root_qc_attempt01.json)记录32个逐文件SHA核对的静态成员；尚未API内容检查。实际generator输入PCM须在候选完成后单独检查。
 - [对照161行实际快照 QC](dev360_actual_observer_poll04_root_qc_attempt01.json)核对原始回包、PID、自哈希及六单元完整计数；[旧媒体归档启动](dev360_failed_controls17_media_archive_attempt03_launch_receipt.json)与[容量失败回执](dev360_failed_controls17_media_archive_attempt03_failure_receipt.json)保留真实失败。该归档未产生tar或成功回执，后续采用一份持久tar和独立SHM传输分块修复容量。
+- [对照251行实际快照 QC](dev360_actual_observer_poll10_root_qc_attempt01.json)及[此前238行 QC](dev360_actual_observer_poll09_root_qc_attempt01.json)均为运行中的全PASS观察点，完整360行终端仍待完成。
+- [归档04实际证据](controls360_attempt17_failedterminal_media_complement_attempt04/README.md)保存服务器归档、104分块下载、F盘26331成员检查和B挂载副本12文件的双重整文件读回证明。完整旧120PASS/240FAILED分母保留；云端同步未确认，完整重建仍需单独保留的compact blobs。
 
 所有这些 JSON 和 ZIP 都保留实际原始字节；大型 run 数据仍由运行目录与持久快照提供。旧失败批次及其完整失败分母保留。
