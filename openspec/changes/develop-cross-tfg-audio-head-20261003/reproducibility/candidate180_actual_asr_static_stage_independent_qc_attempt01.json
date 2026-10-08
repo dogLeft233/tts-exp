@@ -1,0 +1,177 @@
+{
+  "archive_bytes": 73096,
+  "archive_sha256": "94db1b60bddd981c5a74f667603af028a66217bab2210e657500361ee379f240",
+  "checks": [
+    {
+      "check": "summary_raw_pin",
+      "detail": {
+        "bytes": 7257,
+        "sha256": "41a13a7fddc55e33acf9683223db472570cf26314aa2e5a59b4f3c587cf29d99"
+      },
+      "pass": true
+    },
+    {
+      "check": "summary_self_hash",
+      "detail": {
+        "claimed": "f0a164fb511ba6107e1f9b8fe9f3f6fcf24bc994b93a68e6b4643c32949a514b",
+        "computed": "f0a164fb511ba6107e1f9b8fe9f3f6fcf24bc994b93a68e6b4643c32949a514b"
+      },
+      "pass": true
+    },
+    {
+      "check": "manifest_raw_pin",
+      "detail": {
+        "bytes": 5939,
+        "sha256": "3e1e254cab8ae5325d9126af8c089453b89fcaf3a55071ebaa3b61268766546d"
+      },
+      "pass": true
+    },
+    {
+      "check": "manifest_self_hash",
+      "detail": {
+        "claimed": "7f9523d652c5657e4c2184da2f284afff3b1a6485669359146a83ecfc4a4f631",
+        "computed": "7f9523d652c5657e4c2184da2f284afff3b1a6485669359146a83ecfc4a4f631"
+      },
+      "pass": true
+    },
+    {
+      "check": "zip_pin",
+      "detail": {
+        "bytes": 73096,
+        "sha256": "94db1b60bddd981c5a74f667603af028a66217bab2210e657500361ee379f240"
+      },
+      "pass": true
+    },
+    {
+      "check": "member_count",
+      "detail": {
+        "manifest": 32,
+        "summary": 32
+      },
+      "pass": true
+    },
+    {
+      "check": "summary_members_equal_manifest_files",
+      "detail": {
+        "member_count": 32
+      },
+      "pass": true
+    },
+    {
+      "check": "summary_schema_status",
+      "detail": {
+        "schema": "cross_tfg_step120_asr_static_project_stage_v1",
+        "status": "PASS_STATIC_PROJECT_CREATED"
+      },
+      "pass": true
+    },
+    {
+      "check": "manifest_schema_status",
+      "detail": {
+        "schema": "cross_tfg_step120_asr_private_static_project_manifest_v1",
+        "status": "PREPARED_NOT_EXECUTED"
+      },
+      "pass": true
+    },
+    {
+      "check": "remote_paths",
+      "detail": {
+        "control_root": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/step120_asr_private_launch_attempt01",
+        "project_root": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/step120_asr_private_launch_attempt01/static_project",
+        "project_root_relative": "runs/cross_tfg_audio_head_20261003/step120_asr_private_launch_attempt01/static_project"
+      },
+      "pass": true
+    },
+    {
+      "check": "all_scope_flags_false",
+      "detail": {
+        "api_called": false,
+        "candidate_audio_read": false,
+        "candidate_runtime_executed": false,
+        "credentials_read": false,
+        "gpu_used": false
+      },
+      "pass": true
+    },
+    {
+      "check": "manifest_scope",
+      "detail": {
+        "api_called": false,
+        "candidate_terminal_hashes": "DYNAMIC_ONLY_AFTER_COMPLETED_CANDIDATE_TERMINAL",
+        "content_scope": {
+          "candidate_method": "shared_recipient_transition_head_v3_fit40_step120",
+          "clips": 20,
+          "confirm_opened": false,
+          "models": 3,
+          "planned_candidate_rows": 180,
+          "seeds": 3,
+          "speakers": 10,
+          "transcript_text_sent_to_provider": false
+        },
+        "credentials_included": false
+      },
+      "pass": true
+    },
+    {
+      "check": "zip_entries_unique",
+      "detail": {
+        "entries": 32,
+        "unique_names": 32
+      },
+      "pass": true
+    },
+    {
+      "check": "zip_members_exact_manifest",
+      "detail": {
+        "extra": [],
+        "manifest_count": 32,
+        "missing": [],
+        "zip_count": 32
+      },
+      "pass": true
+    },
+    {
+      "check": "all_32_zip_members_path_type_size_sha",
+      "detail": {
+        "checked": 32,
+        "errors": []
+      },
+      "pass": true
+    },
+    {
+      "check": "q04_envelope_complete_success",
+      "detail": {
+        "code": 0,
+        "incomplete_stream": false,
+        "ok": true,
+        "response_raw_sha256": "429fba3f8dbf34c51d6f04a4e606c16ddbb25a1ccd2c227e8948d982393f3aa7",
+        "stderr": "",
+        "stream_error": null,
+        "timed_out": false,
+        "truncated": {
+          "stderr": false,
+          "stdout": false
+        }
+      },
+      "pass": true
+    },
+    {
+      "check": "q04_stdout_matches_downloaded_summary",
+      "detail": {
+        "parsed": true,
+        "response_raw_sha256": "429fba3f8dbf34c51d6f04a4e606c16ddbb25a1ccd2c227e8948d982393f3aa7"
+      },
+      "pass": true
+    }
+  ],
+  "manifest_bytes": 5939,
+  "manifest_raw_sha256": "3e1e254cab8ae5325d9126af8c089453b89fcaf3a55071ebaa3b61268766546d",
+  "manifest_sha256": "7f9523d652c5657e4c2184da2f284afff3b1a6485669359146a83ecfc4a4f631",
+  "response_bytes": 6607,
+  "response_raw_sha256": "429fba3f8dbf34c51d6f04a4e606c16ddbb25a1ccd2c227e8948d982393f3aa7",
+  "schema": "cross_tfg_step120_asr_static_stage_independent_readback_v1",
+  "status": "PASS",
+  "summary_bytes": 7257,
+  "summary_raw_sha256": "41a13a7fddc55e33acf9683223db472570cf26314aa2e5a59b4f3c587cf29d99",
+  "summary_sha256": "f0a164fb511ba6107e1f9b8fe9f3f6fcf24bc994b93a68e6b4643c32949a514b"
+}

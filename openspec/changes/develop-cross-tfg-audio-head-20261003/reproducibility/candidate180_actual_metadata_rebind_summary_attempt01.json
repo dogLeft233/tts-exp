@@ -1,0 +1,351 @@
+{
+  "candidate_output_leaf_created": false,
+  "candidate_rendering_or_scoring_performed": false,
+  "candidate_run_id": "cross_tfg_audio_head_20261003_v3_fit40_dev180_attempt02",
+  "candidate_runtime_qualification_performed": false,
+  "candidate_sibling_output_leaf_for_later_execution_only": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180",
+  "candidate_source_plan": {
+    "bytes": 719031,
+    "manifest_raw_sha256": "f9896b11c37986f08a39753057b4366569882527a37efd0cdd5dd2af248915d6",
+    "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/materialized_candidate_dev180_plan_attempt03/plan.json",
+    "plan_sha256": "00bd6e2bc67a26fa86b8147fd8d67ff36b53dccbd3b6bc785f3f7afb6086e1f6",
+    "raw_sha256": "c37a87374f58b5bfa61a85a55027c591a099c50e3d529a90a7ed799c5d4bb00d",
+    "rows_raw_sha256": "c61fc0f5a9e475672e67e22c3ef154343fdfb259fd56a60d1be1e94ef2231291"
+  },
+  "controls09": {
+    "binding_bytes": 568289,
+    "binding_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/runtime_binding_attempt09.json",
+    "binding_raw_sha256": "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5",
+    "binding_sha256": "0864dbca97e0c565ff5dd93acbc190cc6b79a7b5f31f716e6bd167e271474677",
+    "gpu_uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea",
+    "manifest_bytes": 1438,
+    "manifest_raw_sha256": "ab07ee9bed69d067390b9ffae597200916838f8cca6bdb7ddf376b5d5febc214",
+    "plan_bytes": 1781735,
+    "plan_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls_plan_attempt09/plan.json",
+    "plan_raw_sha256": "8a592cc54dc981bec5e2398108e6873190a54c7c1ed2bb7901cd31aad6cc86eb",
+    "plan_sha256": "d689121eab5281dd42111d3004c847f0475801dbb60594f8e12a5e4b677837e1",
+    "rows_bytes": 878184,
+    "rows_raw_sha256": "45f1d3130c33c37a513db7b22f76d4107bd821f370a7b3ae2d5ae853894b27c8"
+  },
+  "controls_run_id": "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt10",
+  "link_role": "METADATA_ONLY_INPUT_TO_REBIND_NOT_CANDIDATE_RUNTIME_QUALIFICATION",
+  "metadata_outputs": {
+    "linked_reference_manifest_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/linked_for_rebind/plan_manifest.json",
+    "linked_reference_manifest_raw_sha256": "19e1c828f71574a657e5d6b1d79d99dbcbdae9a02265dbc180ec3a85642b16b0",
+    "linked_reference_plan_bytes": 720559,
+    "linked_reference_plan_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/linked_for_rebind/plan.json",
+    "linked_reference_plan_raw_sha256": "4a5ca3494befd5225efa3acf54a426ffc9af3d229feff5442a0405fa14fdfd08",
+    "linked_reference_rows_bytes": 549618,
+    "linked_reference_rows_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/linked_for_rebind/planned_rows.jsonl",
+    "linked_reference_rows_raw_sha256": "c61fc0f5a9e475672e67e22c3ef154343fdfb259fd56a60d1be1e94ef2231291",
+    "rebind12_summary": {
+      "confirm_audio_read": false,
+      "confirm_effects_read": false,
+      "controls_rows": 360,
+      "controls_run_id": "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt10",
+      "development_audio_opened_by_rebinder": false,
+      "gpu_uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea",
+      "historical_baseline_archive_used": false,
+      "plan_raw_sha256": "5a01e0ab1d6d4545ba4f6de332aced0ee1920f2001e51f5f552684d8b9926038",
+      "planned_rows": 180,
+      "planned_rows_sha256": "c9dc6f9bf400aff7f2c25ee24528dfd3a038433c21e80e0177066b8ab3f8a19e",
+      "run_id": "cross_tfg_audio_head_20261003_v3_fit40_dev180_attempt02",
+      "runtime_binding_raw_sha256": "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5",
+      "status": "FROZEN"
+    },
+    "rebound_manifest_bytes": 2491,
+    "rebound_manifest_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/rebound_plan_attempt12/plan_manifest.json",
+    "rebound_manifest_raw_sha256": "9f1c878e2efbfd7fa3cdab47c57c4b6e58eaf1553cc99c577e15482765121c5f",
+    "rebound_plan_bytes": 932236,
+    "rebound_plan_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/rebound_plan_attempt12/plan.json",
+    "rebound_plan_raw_sha256": "5a01e0ab1d6d4545ba4f6de332aced0ee1920f2001e51f5f552684d8b9926038",
+    "rebound_plan_sha256": "00a5f585ae6d0f19a005a4efc971d0367dcc115f607305ef6777c11e85f0a306",
+    "rebound_rows_bytes": 606042,
+    "rebound_rows_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/rebound_plan_attempt12/planned_rows.jsonl",
+    "rebound_rows_raw_sha256": "c9dc6f9bf400aff7f2c25ee24528dfd3a038433c21e80e0177066b8ab3f8a19e"
+  },
+  "original_dev_input_identities": [
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "d55225a22076b9fb25884fba8776a602f49b92025de9be148917657bd7f2190f",
+      "natural_pcm_sha256": "bce584f82bad71ea2501a976a512471e0dacbdc24a4b8c047e6981c747aa2a8e",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0005/BAC009S0005W0121.wav",
+      "sample_count": 56320,
+      "sample_id": "BAC009S0005W0121",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0005",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "82dfa2b5b7f62ed3c5428e6b6a9deec1f4f4f69868fdf9e9ab40c42d17c273e8",
+      "natural_pcm_sha256": "581a6fbd322c6ad5304ba5a225f724e46f7bd3ecc4221b1c7644cc45785361ad",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0005/BAC009S0005W0123.wav",
+      "sample_count": 55729,
+      "sample_id": "BAC009S0005W0123",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0005",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "f481b9868b0b7a5fa50af395d2d3ba6e7ca7943dc8f322548de6328d1728bdad",
+      "natural_pcm_sha256": "e010442e47d00c985b02a025d70fad0ab12bfa8b5b87e90425bfab4697b78a7d",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0022/BAC009S0022W0122.wav",
+      "sample_count": 60464,
+      "sample_id": "BAC009S0022W0122",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0022",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "105168bcc0c61b98c437c4341028d4f4d119edfbd21bd5621038b3606efa6965",
+      "natural_pcm_sha256": "5ba7a92a3480a1ebda7cb48b62efc4d54d77d239b8121710b82f89b1c4b357a8",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0022/BAC009S0022W0123.wav",
+      "sample_count": 51376,
+      "sample_id": "BAC009S0022W0123",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0022",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "9cf79f9accf91b1525d315fec592bdd9e4c5f128b99c8f72a86c2e749286ec1e",
+      "natural_pcm_sha256": "275becd20bbf3b7d27d7ce33a78b8622f63ef171557d3a9248ca9f219a814899",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0024/BAC009S0024W0121.wav",
+      "sample_count": 61376,
+      "sample_id": "BAC009S0024W0121",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0024",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "ea3b2cdb8893d0fdff2def6abca2e32f35b952c1103011d9b0347a22f7815d3e",
+      "natural_pcm_sha256": "2d4a5fba237e150297ed6560a41068dc57eeb583ffca093086e075176a17a3d0",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0024/BAC009S0024W0122.wav",
+      "sample_count": 56561,
+      "sample_id": "BAC009S0024W0122",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0024",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "7a5f271c8e42cd975c1fecf70acb9433f254026614f5ea7927c035db25bcc6fc",
+      "natural_pcm_sha256": "4b9d066267386ffc1a7b261fe3f53ac6519b236c3ed4c439d3c5c55dee683302",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0037/BAC009S0037W0121.wav",
+      "sample_count": 74977,
+      "sample_id": "BAC009S0037W0121",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0037",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "f1bc706278816ebb8c6503d87294fb615677aa821ec822f16b153d07c6bdeb56",
+      "natural_pcm_sha256": "8cff4471cb60dd2159cabeb7eda1da07158bf6a1d3c2fc05efb960b6fb72db94",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0037/BAC009S0037W0122.wav",
+      "sample_count": 66416,
+      "sample_id": "BAC009S0037W0122",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0037",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "67252538dc1b6ae66ad99b75f10d88385698e073ed83f837058c908d4b7d6779",
+      "natural_pcm_sha256": "70a8a768d3984c59314298c1ae2fb17ba7966801fddb4f4358a1edd4b94d18c8",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0038/BAC009S0038W0121.wav",
+      "sample_count": 103615,
+      "sample_id": "BAC009S0038W0121",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0038",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "141302a45ca489f3b230755a88b24fd8df3cb34ddaedd091000a6e5d1a068bda",
+      "natural_pcm_sha256": "41c461c8a1209bd426c30814628978589f76e041f267f7a0858736d3e9150623",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0038/BAC009S0038W0122.wav",
+      "sample_count": 56401,
+      "sample_id": "BAC009S0038W0122",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0038",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "2be29a4db50ea5ab66296cfec9e5149811a4bb39b3d6f04ef48ec7778b6d600d",
+      "natural_pcm_sha256": "48cc6e22b0fadb7f11ed8be52a2d2c7833c37c15eba9b63a0ed7f4a721e87679",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0039/BAC009S0039W0121.wav",
+      "sample_count": 83105,
+      "sample_id": "BAC009S0039W0121",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0039",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "a99a341102a69ad08c5d191f795450aca3fa41e883119beec797d23fc046d34b",
+      "natural_pcm_sha256": "d7167e8895b25a97d8ab403f7c288ec3cc00235ab4c1f166da62d6e1e577cfeb",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0039/BAC009S0039W0123.wav",
+      "sample_count": 76880,
+      "sample_id": "BAC009S0039W0123",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0039",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "61d2478876d1426c22869e0ae42d062ef955099c36d9a124772738f8abed2a93",
+      "natural_pcm_sha256": "eaf53d20692f36c69e3db7c97fd478e301ab574335da56345825571d38208a44",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0041/BAC009S0041W0121.wav",
+      "sample_count": 69456,
+      "sample_id": "BAC009S0041W0121",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0041",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "e0db5deba70785c132214422124bd9c4a9fe5d973f5e238da32643232987ddf5",
+      "natural_pcm_sha256": "df71af1755aaeec87dd2daeb15dbbe70d0635462e105e3d2899b4cfb54898587",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0041/BAC009S0041W0122.wav",
+      "sample_count": 95744,
+      "sample_id": "BAC009S0041W0122",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0041",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "4492e4f3c83363e9e6102d5b630f499ba50fd77206d2aa9a991c672335168e0e",
+      "natural_pcm_sha256": "c6fb5eea63502bffca5735d3a6a8b95fbcd6c79c5fe5c9974a4dc16617118233",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0044/BAC009S0044W0121.wav",
+      "sample_count": 68241,
+      "sample_id": "BAC009S0044W0121",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0044",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "993f2fa6473186e77c4f2f9258b237c30ca479375500bf8c6ad47b38de294d9e",
+      "natural_pcm_sha256": "d1901f4990119c659e158751e711a9d9fcae00ff6c3e5fb59e4629fa834930db",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0044/BAC009S0044W0122.wav",
+      "sample_count": 56607,
+      "sample_id": "BAC009S0044W0122",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0044",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "a7cb6fc808ab8d831ace62ca77f64db2ded6098f854824afe3bb16705e59a0e5",
+      "natural_pcm_sha256": "cdb860f669425afb6f909b2fc07ba5466804958da4443182bb8505c68a6beed4",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0049/BAC009S0049W0121.wav",
+      "sample_count": 66272,
+      "sample_id": "BAC009S0049W0121",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0049",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "e67799bec15d78e93d764fee5878bc912d6d85042ea4d38e24e463e7e0c07dc9",
+      "natural_pcm_sha256": "1623966fe0b8c4b3d053e1e5bcde2053b2671c3ee34035033f1654979bd795d3",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0049/BAC009S0049W0122.wav",
+      "sample_count": 75120,
+      "sample_id": "BAC009S0049W0122",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0049",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "efa6c75da0cf24bf8130a94a092df8c1d4db615b72160f9c3d97ca7706bc7385",
+      "natural_pcm_sha256": "53e9f767364c247f3a1c7c871018b194cd547de961c9c68daf829c481de39b56",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0050/BAC009S0050W0121.wav",
+      "sample_count": 66192,
+      "sample_id": "BAC009S0050W0121",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0050",
+      "subtype": "IEEE_FLOAT_32_LE"
+    },
+    {
+      "channels": 1,
+      "natural_audio_file_sha256": "c83fad357ce07ab0d0e0cf7506479209e3c0566c6b489dd6298d6b1666e022f9",
+      "natural_pcm_sha256": "a7ed6bef8aecebdb54af3bf9e2c98e58790cb5fe470e59ae6de15330b86c5ebc",
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0050/BAC009S0050W0122.wav",
+      "sample_count": 65312,
+      "sample_id": "BAC009S0050W0122",
+      "sample_rate_hz": 16000,
+      "speaker_id": "S0050",
+      "subtype": "IEEE_FLOAT_32_LE"
+    }
+  ],
+  "project_root": "/root/tts-research-system-20261001",
+  "schema": "cross_tfg_step120_candidate_metadata_rebind_preparation_v1",
+  "scope": {
+    "audio_opened_or_decoded": false,
+    "confirm_read": false,
+    "controls_terminal_evidence_read": false,
+    "model_or_renderer_run": false,
+    "score_or_candidate_selection_performed": false
+  },
+  "source_pins": {
+    "linker": {
+      "bytes": 31444,
+      "path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_cpu_prepare_attempt02/workers/prepare_candidate_plan_rebind_attempt01.py",
+      "raw_sha256": "56581a77f9868333b4f4813b66a513f3bd8849e130505acc47c1e497490af455"
+    },
+    "rebind12": {
+      "bytes": 22374,
+      "path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/rebind_v3_step120_candidate_plan_samehost_attempt12.py",
+      "raw_sha256": "31a43a802bc2b5d46adb3850e37375d91e6f83bbb6bb02c304ae25eff0b4eb46"
+    },
+    "verified_current_execution_sources": {
+      "scripts/experiments/cross_tfg_audio_head_20261003/build_v3_candidate_only_dev_plan_attempt03.py": {
+        "bytes": 47301,
+        "raw_sha256": "94c786591f4bb59f69abd15f5400116fc0b4c0e06655907f20ef7e4ef50282c2"
+      },
+      "scripts/experiments/cross_tfg_audio_head_20261003/build_v3_materialized_dev180_plan_attempt01.py": {
+        "bytes": 17392,
+        "raw_sha256": "b236b73dc570214588200744516dc90732d06ca0c821e368ac253570a76bc633"
+      },
+      "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_dev_attempt09.py": {
+        "bytes": 23249,
+        "raw_sha256": "04adf397a2edc45c6e3bc1e67d2265ea1c6ad2fcdac3df268b290938e5bf74df"
+      },
+      "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_v3_candidate_attempt07.py": {
+        "bytes": 12824,
+        "raw_sha256": "f6844b51183b6cf3b57f6a62d0b1b9bd70c3a0d496480fe8cad70313907c16e3"
+      },
+      "scripts/experiments/cross_tfg_audio_head_20261003/run_stagea_dev_attempt06.py": {
+        "bytes": 79475,
+        "raw_sha256": "291f8b5cd48d8ebc63aafd814dcd37450eecba949fab98283cf20a27c6335483"
+      },
+      "scripts/experiments/cross_tfg_audio_head_20261003/run_v3_step120_candidate_samehost_attempt13.py": {
+        "bytes": 35309,
+        "raw_sha256": "8c3b45f73d420b1dac6db0d5676eaf3343324cbb582d17cad7a3868d27e42708"
+      }
+    }
+  },
+  "status": "PASS_METADATA_ONLY_CANDIDATE_PLAN_REBOUND_NOT_RUNTIME_QUALIFICATION",
+  "step120_materialization": {
+    "checkpoint_sha256": "8d5eb607f77963291372b33245f13f9b9578ebf71657acf1b43243746c538eb8",
+    "config_bytes": 5240,
+    "config_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/v3_method_candidate_config.json",
+    "config_raw_sha256": "aba0dc744b76cfd9f73db547faa80508a4a46437432ef78feaf5b7bfb51f3666",
+    "optimizer_steps": 120,
+    "receipt_bytes": 3965,
+    "receipt_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/materialization_receipt.json",
+    "receipt_raw_sha256": "c64bfb0d80471c6d2764b6921a993a7c556b9511d4cba283f41eba002cdf8ebd",
+    "receipt_status": "MATERIALIZED_FIXED_STEP120_METHOD_CANDIDATE",
+    "selection_record_sha256": "db4ede1f315909b8e8d410d4ab519ee8745035233dc910333a2b409c0a2328fc",
+    "training_record_sha256": "c2ed183ae5894bd3c42dc56c0242539f1f8290df1230d7b1aa4df8b7584a7e67"
+  },
+  "summary_sha256": "f94f07ac78b4515cb484f319b76290ece9b1998898c2091bb342433e2f152d1d"
+}

@@ -43,3 +43,12 @@ openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_fa
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_failed_controls17_compact_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_failed_controls17_compact_independent_qc_attempt01.json -text !eol whitespace=cr-at-eol
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_actual_snapshot04_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
+# Actual candidate metadata, static ASR staging, and failed archive evidence.
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate180_actual_metadata_rebind_summary_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate180_actual_metadata_independent_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate180_actual_metadata_and_asr_static_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate180_actual_asr_static_stage_summary_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate180_actual_asr_static_stage_independent_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_actual_observer_poll04_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_failed_controls17_media_archive_attempt03_failure_receipt.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_failed_controls17_media_archive_attempt03_launch_receipt.json -text !eol whitespace=cr-at-eol
