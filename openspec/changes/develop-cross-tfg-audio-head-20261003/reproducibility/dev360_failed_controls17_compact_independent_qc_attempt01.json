@@ -1,0 +1,75 @@
+{
+  "aliases": {
+    "included_source_path_count": 5073,
+    "logical_alias_bytes": 410638383,
+    "logical_alias_count": 5413
+  },
+  "cohort": {
+    "planned_rows": 360,
+    "result_manifest_status": "INCOMPLETE",
+    "row_status_counts": {
+      "FAILED": 240,
+      "PASS": 120
+    },
+    "run_status": "COMPLETE_WITH_FAILURES",
+    "stage_id": "controls360"
+  },
+  "excluded": {
+    "by_class": {
+      "frame_images_bytes": 493604901,
+      "frame_images_files": 25368,
+      "non_track_pickle_or_cache_bytes": 968616,
+      "non_track_pickle_or_cache_files": 240,
+      "rendered_or_generator_video_media_bytes": 188278029,
+      "rendered_or_generator_video_media_files": 720
+    },
+    "complete_run_recoverability_claim": false,
+    "full_media_archive_included": false,
+    "stage_logical_bytes": 682851546,
+    "stage_path_count": 26328
+  },
+  "inputs": {
+    "copier_response": {
+      "bytes": 1139,
+      "sha256": "5e9e01efdb4529ff00756799ac3eabb3628d64cd4565c9d92673f1776337fbc6",
+      "status": "PASS_COMPACT_STAGE_SNAPSHOT_SEALED"
+    },
+    "receipt_download_response": {
+      "bytes": 429,
+      "downloaded_bytes": 30906,
+      "receipt_sha256": "f157efe2eec739ae448836bcd33019fd3a6ba6e4aca432a3978d22d26f63c062",
+      "sha256": "12739684d4396f02eb5207a8dbbc7d40ec70f5d6058298d7c5ac1efd0a31fff1"
+    },
+    "receipt_payload_sha256": "6a49b6ebda7959ac3b142c8d840449c31bb8b0a009b4b7969d48412f7bde50d5",
+    "source_index": {
+      "bytes": 6430409,
+      "payload_sha256": "17bca9e8ab0f517c610dee04651f9ee0ade3d7fc50bed0a046fbc7894b6f6b0a",
+      "sha256": "2817fc317971a7404b8014a1b5fb56d6d9ad0f281196cfbb460ad3c7a98fe675"
+    },
+    "whole_target_readback_response": {
+      "bytes": 381703,
+      "sha256": "a0a0955a37f6866d7bb87d4ec3d18d5fcd3a6e39fff01ee0d4b5fece31439032",
+      "status": "PASS_INDEPENDENT_WHOLE_DESTINATION_READBACK",
+      "stdout_bytes": 361816
+    }
+  },
+  "schema": "cross_tfg_dev360_compact_snapshot_independent_local_qc_v1",
+  "scope": {
+    "candidate_selected": false,
+    "compact_stage_snapshot_only": true,
+    "confirm_opened": false,
+    "excluded_files_deleted": false,
+    "full_run_archive_pending": true,
+    "source_stage_modified": false
+  },
+  "snapshot": {
+    "all_manifest_paths_bytes_sha_match_index_receipt": true,
+    "copier_destination_full_rereads_verified": 1969,
+    "destination_root": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/durability_snapshots/controls360_attempt17_failedterminal_compact_attempt02",
+    "physical_file_bytes": 86484624,
+    "physical_file_count": 1968,
+    "unique_blob_bytes": 80023309,
+    "unique_blob_count": 1966
+  },
+  "status": "PASS_LOCAL_RECEIPT_INDEX_AND_WHOLE_TARGET_MANIFEST_CROSSCHECK"
+}

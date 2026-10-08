@@ -1,0 +1,26 @@
+{
+  "candidate_selected": false,
+  "channels": 1,
+  "cross_tfg_effect_claim": false,
+  "metadata_raw_sha256": "2aab5bfecf4a6d5ce6e916cc0fe1b3e453b216afc238e508904704a51999db76",
+  "pcm_float32_sha256": "ef72ce37b21878436a7f38888bff04a71446d71a4d2e7ebf85bb84fec6cd2f6c",
+  "peak": 0.41301605105400085,
+  "rms": 0.037683818052197386,
+  "runtime": {
+    "cuda_initialized": false,
+    "device": "cpu",
+    "numpy_version": "1.26.4",
+    "python_version": [
+      3,
+      10,
+      12
+    ],
+    "torch_interop_threads": 1,
+    "torch_intraop_threads": 1,
+    "torch_version": "2.5.1+cu124"
+  },
+  "sample_count": 62639,
+  "sample_rate_hz": 16000,
+  "status": "PASS_ROOT_ACTUAL_WAV_RIFF_F32_PCM_METADATA_CLOCK_AND_FROZEN_INPUT",
+  "wav_raw_sha256": "9cf46db4c5caf7f058bda52b290ab5a79405fddf97ad541bfd9dc72624b6bfa0"
+}

@@ -1,0 +1,23 @@
+{
+  "config_runtime": {
+    "device": "cpu",
+    "numpy_version": "1.26.4",
+    "python_version": [
+      3,
+      10,
+      12
+    ],
+    "require_mkl": false,
+    "torch_interop_threads": 1,
+    "torch_intraop_threads": 1,
+    "torch_version": "2.5.1+cu124"
+  },
+  "manifest_self_sha256": "881a2fe91023b42b89d80fa28aa952ebdf7e3fab0297d16d3ccf90609662c8f3",
+  "members": 13,
+  "original_payloads": 11,
+  "schema": "root_v3_step120_bundle_independent_bytes_qc_v1",
+  "scope": "byte/source/provenance verification; isolated runtime smoke pending; no cross-TFG scientific effect claim",
+  "status": "PASS_ACTUAL_ZIP_13_MEMBERS_ALL_ORIGINAL_PAYLOADS_CONFIG_PROVENANCE_CLOSURE",
+  "zip_bytes": 44326,
+  "zip_sha256": "32145ea20d18602d2fda2b66ca6fcc7256c215ad9fd70ca23da5a91534a33700"
+}

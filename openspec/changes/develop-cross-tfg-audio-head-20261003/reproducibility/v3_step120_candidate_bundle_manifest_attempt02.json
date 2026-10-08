@@ -1,0 +1,138 @@
+{
+  "bundle_id": "v3_step120_fit_candidate_offline_bundle_attempt02",
+  "candidate_scope": {
+    "confirmation_audio_opened": false,
+    "development_audio_opened": false,
+    "fit_rows": 40,
+    "fit_speakers": 20,
+    "generalization_claim": false,
+    "multitfg_dev_status": "IN_PROGRESS_NOT_YET_QUALIFIED",
+    "optimizer_steps": 120,
+    "profile_role": "METHOD_CANDIDATE",
+    "selection_rule": "fixed_terminal_optimizer_step_120_no_development_selection",
+    "selection_status": "NOT_SELECTED"
+  },
+  "config_bundle_path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/v3_method_candidate_config.json",
+  "construction": {
+    "candidate_checkpoint_included": true,
+    "fit_dev_or_confirmation_audio_included": false,
+    "payload_bytes_rewritten": false,
+    "runtime_wheels_included": false,
+    "source_and_scientific_algorithm_changed": false,
+    "tfg_or_syncnet_weights_included": false
+  },
+  "files": [
+    {
+      "bundle_path": "scripts/audio_enhancement/audio_io.py",
+      "bytes": 14294,
+      "exact_original_bytes": true,
+      "original_path": "scripts/audio_enhancement/audio_io.py",
+      "role": "canonical_audio_decoder",
+      "sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004"
+    },
+    {
+      "bundle_path": "scripts/audio_enhancement/enhance_v3_attempt02.py",
+      "bytes": 42653,
+      "exact_original_bytes": true,
+      "original_path": "scripts/audio_enhancement/enhance_v3_attempt02.py",
+      "role": "cli",
+      "sha256": "7a560332ce86a82ffede4254b015cabf5f10176e6f601bfc172a331f7bb885e6"
+    },
+    {
+      "bundle_path": "scripts/audio_enhancement/shared_recipient_transition_head_v3.py",
+      "bytes": 32233,
+      "exact_original_bytes": true,
+      "original_path": "scripts/audio_enhancement/shared_recipient_transition_head_v3.py",
+      "role": "head_v3",
+      "sha256": "77acdff03cca22261852f48364cbc75263db58a14cb565c08aa0d268afca6e87"
+    },
+    {
+      "bundle_path": "scripts/audio_enhancement/overdub.py",
+      "bytes": 12002,
+      "exact_original_bytes": true,
+      "original_path": "scripts/audio_enhancement/overdub.py",
+      "role": "original_pcm_overdub_boundary",
+      "sha256": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6"
+    },
+    {
+      "bundle_path": "scripts/audio_enhancement/__init__.py",
+      "bytes": 1503,
+      "exact_original_bytes": true,
+      "original_path": "scripts/audio_enhancement/__init__.py",
+      "role": "package_initializer",
+      "sha256": "db520f7b04343682e6df4ba53b22503de806287e70f2b8e41e84f16912d361fc"
+    },
+    {
+      "bundle_path": "scripts/audio_enhancement/baselines.py",
+      "bytes": 15123,
+      "exact_original_bytes": true,
+      "original_path": "scripts/audio_enhancement/baselines.py",
+      "role": "rms_baseline",
+      "sha256": "7d161970381cc7e6770a4a53063f91b2606c05490945b2b86ab41c7de4d0a3e2"
+    },
+    {
+      "bundle_path": "scripts/audio_enhancement/pipeline.py",
+      "bytes": 5975,
+      "exact_original_bytes": true,
+      "original_path": "scripts/audio_enhancement/pipeline.py",
+      "role": "transform_pipeline",
+      "sha256": "b40ddce9b09ea42d56945eb66acca3326be6784acb6c1e6ab134b1b2899fb6c3"
+    },
+    {
+      "bundle_path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/v3_method_candidate_config.json",
+      "bytes": 5240,
+      "exact_original_bytes": true,
+      "original_path": ".codex/scratch/root_candidate_original_metadata_readback_attempt01/candidate_config.json",
+      "role": "method_config",
+      "sha256": "aba0dc744b76cfd9f73db547faa80508a4a46437432ef78feaf5b7bfb51f3666"
+    },
+    {
+      "bundle_path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/candidate_provenance/checkpoint.json",
+      "bytes": 1802,
+      "exact_original_bytes": true,
+      "original_path": ".codex/scratch/root_candidate_original_metadata_readback_attempt01/checkpoint.json",
+      "role": "checkpoint",
+      "sha256": "8d5eb607f77963291372b33245f13f9b9578ebf71657acf1b43243746c538eb8"
+    },
+    {
+      "bundle_path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/candidate_provenance/selection_record.json",
+      "bytes": 566,
+      "exact_original_bytes": true,
+      "original_path": ".codex/scratch/root_candidate_original_metadata_readback_attempt01/selection_record.json",
+      "role": "selection_record",
+      "sha256": "db4ede1f315909b8e8d410d4ab519ee8745035233dc910333a2b409c0a2328fc"
+    },
+    {
+      "bundle_path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/candidate_provenance/training_record.json",
+      "bytes": 5628,
+      "exact_original_bytes": true,
+      "original_path": ".codex/scratch/root_candidate_original_metadata_readback_attempt01/training_record.json",
+      "role": "training_record",
+      "sha256": "c2ed183ae5894bd3c42dc56c0242539f1f8290df1230d7b1aa4df8b7584a7e67"
+    }
+  ],
+  "manifest_sha256": "881a2fe91023b42b89d80fa28aa952ebdf7e3fab0297d16d3ccf90609662c8f3",
+  "metadata_files": {
+    "README.md": {
+      "bytes": 2683,
+      "sha256": "3dec995da6a984038ae94e6827eb4252785728f8696cafce075fc7cf2ef32a77"
+    }
+  },
+  "payload_file_count": 11,
+  "payload_scope": "seven exact source-pin files plus canonical config and three candidate provenance JSONs",
+  "runtime": {
+    "device": "cpu",
+    "numpy_version": "1.26.4",
+    "python_version": [
+      3,
+      10,
+      12
+    ],
+    "require_mkl": false,
+    "torch_interop_threads": 1,
+    "torch_intraop_threads": 1,
+    "torch_version": "2.5.1+cu124"
+  },
+  "schema": "cross_tfg_v3_step120_portable_method_bundle_v1",
+  "status": "PREPARED_BYTE_PRESERVING_CANDIDATE_BUNDLE_NOT_CROSS_TFG_QUALIFIED"
+}

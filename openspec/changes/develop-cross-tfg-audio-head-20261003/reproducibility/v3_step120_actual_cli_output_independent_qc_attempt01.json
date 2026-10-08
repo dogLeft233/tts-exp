@@ -1,0 +1,96 @@
+{
+  "comparisons": {
+    "downloaded_actual_wav_and_metadata_match_actual_q03_pins": true,
+    "reported_original_wav_sha256_equal": true,
+    "reported_stable_metadata_projection_equal": true
+  },
+  "downloaded_artifacts": {
+    "cli_metadata": {
+      "bytes": 12233,
+      "download_response_bytes": 412,
+      "download_response_sha256": "e9ffa38193c3ea8a587277f813531091b5ba51d7c7c0c30df94f5c42c71df0ad",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\v3_step120_bundle_cpu_repro_attempt04\\downloads\\cli_metadata.json",
+      "sha256": "2aab5bfecf4a6d5ce6e916cc0fe1b3e453b216afc238e508904704a51999db76"
+    },
+    "enhanced_wav": {
+      "bytes": 250600,
+      "download_response_bytes": 403,
+      "download_response_sha256": "b387e95ec806228e7dc1e864d1433c0ef4aa22cfa2744c10f0d34c683e48b38c",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\v3_step120_bundle_cpu_repro_attempt04\\downloads\\enhanced.wav",
+      "sha256": "9cf46db4c5caf7f058bda52b290ab5a79405fddf97ad541bfd9dc72624b6bfa0"
+    }
+  },
+  "metadata": {
+    "bytes": 12233,
+    "candidate_steps": 120,
+    "cli_source_sha256": "7a560332ce86a82ffede4254b015cabf5f10176e6f601bfc172a331f7bb885e6",
+    "config_sha256": "aba0dc744b76cfd9f73db547faa80508a4a46437432ef78feaf5b7bfb51f3666",
+    "final_mux_policy": "use the exact original input file as delivery/scoring audio",
+    "method_selection_status": "NOT_SELECTED",
+    "output_pcm_sha256": "ef72ce37b21878436a7f38888bff04a71446d71a4d2e7ebf85bb84fec6cd2f6c",
+    "profile_role": "METHOD_CANDIDATE",
+    "readback_bit_identical": true,
+    "runtime": {
+      "cuda_initialized": false,
+      "device": "cpu",
+      "numpy_version": "1.26.4",
+      "python_version": [
+        3,
+        10,
+        12
+      ],
+      "torch_interop_threads": 1,
+      "torch_intraop_threads": 1,
+      "torch_version": "2.5.1+cu124"
+    },
+    "schema": "cross_tfg_v3_enhancement_cli_result_v1",
+    "sha256": "2aab5bfecf4a6d5ce6e916cc0fe1b3e453b216afc238e508904704a51999db76",
+    "source_pcm_sha256": "f4e611e9f816665ad7c4dce4980f461c4d9af4fe6fe9678c8f756bd03fa6b36c",
+    "status": "PASS"
+  },
+  "schema": "cross_tfg_v3_portable_bundle_independent_download_readback_qc_v1",
+  "scope": {
+    "candidate_selected": false,
+    "cli_rerun": false,
+    "cross_model_qualification": "PENDING",
+    "dev_or_confirm_opened": false,
+    "gpu_used": false,
+    "read_only_local_artifact_qc": true,
+    "scores_computed": false,
+    "tfg_or_syncnet_called": false
+  },
+  "source_execution_response": {
+    "bytes": 5461,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\v3_step120_bundle_cpu_repro_attempt03\\requests_attempt03\\03_extract_and_run_fit_only_cpu_cli_attempt03.json.response.json",
+    "receipt_sha256": "cc5f47ee51a0b05601809c4441b3b37ee2ef1a53774b1c3cab596b38a0d11d29",
+    "sha256": "27a295f78011f27f77a739ad04b2fadc6f1a4e2dbdde94de89c9da3b83fcd3c3"
+  },
+  "status": "PASS_INDEPENDENT_RIFF_PCM_METADATA_READBACK",
+  "wav": {
+    "bits_per_sample": 32,
+    "block_align": 4,
+    "byte_rate": 64000,
+    "channels": 1,
+    "chunks": [
+      {
+        "bytes": 16,
+        "id": "fmt "
+      },
+      {
+        "bytes": 250556,
+        "id": "data"
+      }
+    ],
+    "encoding": "IEEE_FLOAT_32_LE",
+    "file_bytes": 250600,
+    "file_sha256": "9cf46db4c5caf7f058bda52b290ab5a79405fddf97ad541bfd9dc72624b6bfa0",
+    "format_tag": 3,
+    "pcm_float32_sha256": "ef72ce37b21878436a7f38888bff04a71446d71a4d2e7ebf85bb84fec6cd2f6c",
+    "pcm_payload_bytes": 250556,
+    "peak_abs_recomputed": 0.41301605105400085,
+    "riff": "RIFF/WAVE",
+    "rms_recomputed": 0.037683818052197386,
+    "sample_count": 62639,
+    "sample_rate_hz": 16000
+  }
+}

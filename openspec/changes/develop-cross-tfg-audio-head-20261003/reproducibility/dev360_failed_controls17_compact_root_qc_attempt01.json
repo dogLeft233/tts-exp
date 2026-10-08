@@ -1,0 +1,17 @@
+{
+  "blob_bytes": 80023309,
+  "full_media_archive_included": false,
+  "npz_numerical_recomputation": false,
+  "physical_bytes": 86484624,
+  "physical_files": 1968,
+  "planned_rows": 360,
+  "readback_response_raw_sha256": "a0a0955a37f6866d7bb87d4ec3d18d5fcd3a6e39fff01ee0d4b5fece31439032",
+  "receipt_raw_sha256": "f157efe2eec739ae448836bcd33019fd3a6ba6e4aca432a3978d22d26f63c062",
+  "row_status_counts": {
+    "FAILED": 240,
+    "PASS": 120
+  },
+  "source_index_raw_sha256": "2817fc317971a7404b8014a1b5fb56d6d9ad0f281196cfbb460ad3c7a98fe675",
+  "status": "PASS_ROOT_ALL_1968_DESTINATION_RECORDS_RAW_SELF_LINKS_FULL_FAILED_DENOMINATOR",
+  "unique_blobs": 1966
+}

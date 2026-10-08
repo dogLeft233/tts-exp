@@ -1,0 +1,115 @@
+{
+  "bundle_manifest_canonical_self_sha256": "881a2fe91023b42b89d80fa28aa952ebdf7e3fab0297d16d3ccf90609662c8f3",
+  "bundle_manifest_raw_sha256": "67b65add82b066da82b2ef6aaa27b566c70b2246b5e1dd07de12d250aea6e552",
+  "checks": {
+    "all_eleven_payloads_match_bundle_manifest": true,
+    "all_member_content_sha256_and_sizes_recomputed_after_archive_read": true,
+    "all_names_normalized_relative_posix_paths": true,
+    "member_names_unique_and_exact_bundle_inventory": true,
+    "no_symlink_or_nonregular_entries": true,
+    "qc_script_included_in_zip": false,
+    "readme_matches_bundle_manifest": true
+  },
+  "expected_members": 13,
+  "members": [
+    {
+      "bytes": 5870,
+      "path": "BUNDLE_MANIFEST.json",
+      "regular_file": true,
+      "sha256": "67b65add82b066da82b2ef6aaa27b566c70b2246b5e1dd07de12d250aea6e552",
+      "symlink": false
+    },
+    {
+      "bytes": 2683,
+      "path": "README.md",
+      "regular_file": true,
+      "sha256": "3dec995da6a984038ae94e6827eb4252785728f8696cafce075fc7cf2ef32a77",
+      "symlink": false
+    },
+    {
+      "bytes": 1802,
+      "path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/candidate_provenance/checkpoint.json",
+      "regular_file": true,
+      "sha256": "8d5eb607f77963291372b33245f13f9b9578ebf71657acf1b43243746c538eb8",
+      "symlink": false
+    },
+    {
+      "bytes": 566,
+      "path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/candidate_provenance/selection_record.json",
+      "regular_file": true,
+      "sha256": "db4ede1f315909b8e8d410d4ab519ee8745035233dc910333a2b409c0a2328fc",
+      "symlink": false
+    },
+    {
+      "bytes": 5628,
+      "path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/candidate_provenance/training_record.json",
+      "regular_file": true,
+      "sha256": "c2ed183ae5894bd3c42dc56c0242539f1f8290df1230d7b1aa4df8b7584a7e67",
+      "symlink": false
+    },
+    {
+      "bytes": 5240,
+      "path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/v3_method_candidate_config.json",
+      "regular_file": true,
+      "sha256": "aba0dc744b76cfd9f73db547faa80508a4a46437432ef78feaf5b7bfb51f3666",
+      "symlink": false
+    },
+    {
+      "bytes": 1503,
+      "path": "scripts/audio_enhancement/__init__.py",
+      "regular_file": true,
+      "sha256": "db520f7b04343682e6df4ba53b22503de806287e70f2b8e41e84f16912d361fc",
+      "symlink": false
+    },
+    {
+      "bytes": 14294,
+      "path": "scripts/audio_enhancement/audio_io.py",
+      "regular_file": true,
+      "sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+      "symlink": false
+    },
+    {
+      "bytes": 15123,
+      "path": "scripts/audio_enhancement/baselines.py",
+      "regular_file": true,
+      "sha256": "7d161970381cc7e6770a4a53063f91b2606c05490945b2b86ab41c7de4d0a3e2",
+      "symlink": false
+    },
+    {
+      "bytes": 42653,
+      "path": "scripts/audio_enhancement/enhance_v3_attempt02.py",
+      "regular_file": true,
+      "sha256": "7a560332ce86a82ffede4254b015cabf5f10176e6f601bfc172a331f7bb885e6",
+      "symlink": false
+    },
+    {
+      "bytes": 12002,
+      "path": "scripts/audio_enhancement/overdub.py",
+      "regular_file": true,
+      "sha256": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6",
+      "symlink": false
+    },
+    {
+      "bytes": 5975,
+      "path": "scripts/audio_enhancement/pipeline.py",
+      "regular_file": true,
+      "sha256": "b40ddce9b09ea42d56945eb66acca3326be6784acb6c1e6ab134b1b2899fb6c3",
+      "symlink": false
+    },
+    {
+      "bytes": 32233,
+      "path": "scripts/audio_enhancement/shared_recipient_transition_head_v3.py",
+      "regular_file": true,
+      "sha256": "77acdff03cca22261852f48364cbc75263db58a14cb565c08aa0d268afca6e87",
+      "symlink": false
+    }
+  ],
+  "payload_bytes": 137019,
+  "payload_count": 11,
+  "receipt_sha256": "41854d2ce1dd664c5ce6ab34c58057733bd59a19ab8531ada56d4858b2198acc",
+  "schema": "cross_tfg_v3_portable_bundle_zip_readback_v1",
+  "status": "PASS_13_MEMBER_ZIP_FULL_READBACK_SAFE_PATHS_NO_SYMLINKS_EXACT_SHA",
+  "zip_bytes": 44326,
+  "zip_path": ".codex/scratch/v3_step120_portable_method_bundle_attempt02.zip",
+  "zip_sha256": "32145ea20d18602d2fda2b66ca6fcc7256c215ad9fd70ca23da5a91534a33700"
+}

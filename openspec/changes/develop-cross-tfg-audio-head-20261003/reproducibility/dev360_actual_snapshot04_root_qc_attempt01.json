@@ -1,0 +1,30 @@
+{
+  "counts_by_model_method": {
+    "ditto_hubert_fixed_portrait_attempt18|identity": {
+      "PASS": 15
+    },
+    "ditto_hubert_fixed_portrait_attempt18|rms_fixed": {
+      "PASS": 14
+    },
+    "musetalk_fixed_portrait_attempt16|identity": {
+      "PASS": 15
+    },
+    "musetalk_fixed_portrait_attempt16|rms_fixed": {
+      "PASS": 15
+    },
+    "wav2lip_gan_bac9a81e|identity": {
+      "PASS": 15
+    },
+    "wav2lip_gan_bac9a81e|rms_fixed": {
+      "PASS": 15
+    }
+  },
+  "media_numeric_effect_qc": false,
+  "observed_unix": 1791448658.943217,
+  "planned_rows": 360,
+  "response_bytes": 8554,
+  "response_raw_sha256": "84d05ea25597f072135a68a905810dd49d8fef9f077782ade20995162039b665",
+  "result_rows": 89,
+  "snapshot_self_sha256": "feabdaa5090d39b2e548fe4a109ad5c42abea5aab7cc37773b049fad1f411b3e",
+  "status": "PASS_ROOT_RUNNING_89_OF_360_ALL_ENGINEERING_ROWS"
+}

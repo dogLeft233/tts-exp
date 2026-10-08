@@ -25,3 +25,21 @@ openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_ac
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_repaired_source_snapshot_attempt07.json -text !eol
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_repaired_source_graph_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_attempt09_partial_failure_root_qc_attempt01.json -text !eol
+
+# Actual repaired CPU/launch and portable Fit candidate evidence retain exact bytes.
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_cpu_ready_summary_attempt09.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_binding_plan09_root_qc_attempt05.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_cpu09_independent_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_actual_controls18_launch07_receipt_attempt10.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_actual_controls18_launch_root_qc_attempt02.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/v3_step120_candidate_bundle_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/v3_step120_candidate_bundle_manifest_attempt02.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/v3_step120_candidate_bundle_zip_readback_receipt_attempt02.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/v3_step120_actual_isolated_cli_response_attempt02.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/v3_step120_actual_isolated_cli_metadata_attempt02.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/v3_step120_actual_cli_output_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/v3_step120_actual_cli_output_independent_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_failed_controls17_compact_snapshot_receipt_attempt02.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_failed_controls17_compact_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_failed_controls17_compact_independent_qc_attempt01.json -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/dev360_actual_snapshot04_root_qc_attempt01.json -text !eol whitespace=cr-at-eol
