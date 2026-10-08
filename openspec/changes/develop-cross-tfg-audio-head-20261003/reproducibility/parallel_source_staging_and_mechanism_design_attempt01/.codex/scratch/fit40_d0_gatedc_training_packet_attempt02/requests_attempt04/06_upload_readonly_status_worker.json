@@ -1,0 +1,8 @@
+{
+  "expected_bytes": 15888,
+  "expected_sha256": "c7c44fe65c9a1ac1f38e9fab0af8fe3641f4246a9ce1c10d1de535f00dcc4b7a",
+  "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\fit40_d0_gatedc_training_packet_attempt02\\read_fit40_d0_gatedc_status_attempt02.py",
+  "op": "upload",
+  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/fit40_d0_gatedc_training_attempt02/workers/read_fit40_d0_gatedc_status_attempt02.py",
+  "timeout": 600
+}

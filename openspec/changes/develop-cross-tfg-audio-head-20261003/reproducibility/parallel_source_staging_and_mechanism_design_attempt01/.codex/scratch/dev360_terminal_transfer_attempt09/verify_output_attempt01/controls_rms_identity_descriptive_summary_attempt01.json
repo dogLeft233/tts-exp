@@ -1,0 +1,116 @@
+{
+  "input_results_ledger": {
+    "bytes": 11940846,
+    "path": ".codex\\scratch\\dev360_terminal_transfer_attempt09\\verify_output_attempt01\\results.jsonl",
+    "raw_sha256": "0ec1d6043f8e3c8ebce4dfdd17c95418239c663bdf8d24a47cdcbfde0e793cb2",
+    "rows": 360
+  },
+  "input_terminal_qc": {
+    "bytes": 9659,
+    "path": ".codex\\scratch\\dev360_terminal_transfer_attempt09\\verify_output_attempt01\\terminal_content_qc_attempt01.json",
+    "raw_sha256": "0733a4c0c30e3cc938e0d065e00fbe8394ad7e5a114094dd1bab9e02aae6c09c",
+    "self_sha256": "8add14ca98f07a9113c2fd8194acc97e5f8e42a4d709c46e4169f9d79858897e",
+    "status": "PASS_INDEPENDENT_360_TERMINAL_READBACK"
+  },
+  "interpretation": {
+    "automatic_science_pass_inference": false,
+    "candidate_effect_or_selection_inference": false,
+    "method": "For each model, pair identity and rms_fixed on the same sample_id+seed. Compute full-support Cbest row values and average unrounded paired (rms_fixed - identity) differences; format display fields to 3 decimals.",
+    "p_values_computed": false
+  },
+  "matrix": {
+    "cell_counts": [
+      {
+        "method_id": "identity",
+        "model_id": "ditto_hubert_fixed_portrait_attempt18",
+        "rows": 60
+      },
+      {
+        "method_id": "rms_fixed",
+        "model_id": "ditto_hubert_fixed_portrait_attempt18",
+        "rows": 60
+      },
+      {
+        "method_id": "identity",
+        "model_id": "musetalk_fixed_portrait_attempt16",
+        "rows": 60
+      },
+      {
+        "method_id": "rms_fixed",
+        "model_id": "musetalk_fixed_portrait_attempt16",
+        "rows": 60
+      },
+      {
+        "method_id": "identity",
+        "model_id": "wav2lip_gan_bac9a81e",
+        "rows": 60
+      },
+      {
+        "method_id": "rms_fixed",
+        "model_id": "wav2lip_gan_bac9a81e",
+        "rows": 60
+      }
+    ],
+    "methods": [
+      "identity",
+      "rms_fixed"
+    ],
+    "models": [
+      "ditto_hubert_fixed_portrait_attempt18",
+      "musetalk_fixed_portrait_attempt16",
+      "wav2lip_gan_bac9a81e"
+    ],
+    "rows": 360,
+    "sample_count": 20,
+    "seed_count": 3,
+    "seed_values": [
+      20261003,
+      20261004,
+      20261005
+    ]
+  },
+  "per_model": [
+    {
+      "display_3dp": {
+        "identity_mean_cbest": "5.529",
+        "mean_unrounded_pair_delta_cbest_rms_minus_identity": "0.165",
+        "rms_fixed_mean_cbest": "5.695"
+      },
+      "identity_mean_cbest": 5.529491718610128,
+      "mean_unrounded_pair_delta_cbest_rms_minus_identity": 0.16546136538187664,
+      "metric": "score.metrics_by_support.full.Cbest",
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "pair_count": 60,
+      "rms_fixed_mean_cbest": 5.694953083992004
+    },
+    {
+      "display_3dp": {
+        "identity_mean_cbest": "5.043",
+        "mean_unrounded_pair_delta_cbest_rms_minus_identity": "0.053",
+        "rms_fixed_mean_cbest": "5.096"
+      },
+      "identity_mean_cbest": 5.043275650342306,
+      "mean_unrounded_pair_delta_cbest_rms_minus_identity": 0.05250473022460937,
+      "metric": "score.metrics_by_support.full.Cbest",
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "pair_count": 60,
+      "rms_fixed_mean_cbest": 5.095780380566915
+    },
+    {
+      "display_3dp": {
+        "identity_mean_cbest": "6.713",
+        "mean_unrounded_pair_delta_cbest_rms_minus_identity": "0.238",
+        "rms_fixed_mean_cbest": "6.951"
+      },
+      "identity_mean_cbest": 6.712874722480774,
+      "mean_unrounded_pair_delta_cbest_rms_minus_identity": 0.23816919326782227,
+      "metric": "score.metrics_by_support.full.Cbest",
+      "model_id": "wav2lip_gan_bac9a81e",
+      "pair_count": 60,
+      "rms_fixed_mean_cbest": 6.951043915748596
+    }
+  ],
+  "receipt_sha256": "4a8001e9c44e1614999c49ba6f93046e1935fd01f16535db87cfb26536188630",
+  "schema": "cross_tfg_dev360_controls_rms_identity_descriptive_summary_v1",
+  "status": "PASS_DESCRIPTIVE_MATRIX_SUMMARY_ONLY"
+}

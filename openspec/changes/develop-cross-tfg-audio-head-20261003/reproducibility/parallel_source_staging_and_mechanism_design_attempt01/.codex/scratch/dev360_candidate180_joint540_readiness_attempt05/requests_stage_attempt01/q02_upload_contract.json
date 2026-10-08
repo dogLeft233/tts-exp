@@ -1,0 +1,8 @@
+{
+  "op": "upload",
+  "timeout": 180,
+  "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_terminal_contract_attempt05\\candidate180_terminal_transfer_contract_attempt07.json",
+  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_terminal_readiness_attempt04/inputs/candidate180_terminal_transfer_contract_attempt07.json",
+  "expected_bytes": 14494,
+  "expected_sha256": "0e6ce53078d1470695234fa0d30ef0220de3c37837fd173d4a6651f583fb7238"
+}

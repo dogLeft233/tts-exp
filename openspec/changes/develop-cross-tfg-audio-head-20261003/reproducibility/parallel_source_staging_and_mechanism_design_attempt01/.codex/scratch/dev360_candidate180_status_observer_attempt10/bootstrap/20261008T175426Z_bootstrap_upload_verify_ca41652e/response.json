@@ -1,0 +1,1 @@
+{"ok":true,"stdout":"{\"bytes\": 51011, \"sha256\": \"982e2172571786d524f6f1dd5e95ee5605e1f47f29ad6fcbdd3e8987e72a484c\", \"status\": \"PASS_STATUS_WORKER_UPLOAD\"}\n","stderr":"","code":0,"timed_out":false,"incomplete_stream":false,"stream_error":null,"truncated":{"stdout":false,"stderr":false}}

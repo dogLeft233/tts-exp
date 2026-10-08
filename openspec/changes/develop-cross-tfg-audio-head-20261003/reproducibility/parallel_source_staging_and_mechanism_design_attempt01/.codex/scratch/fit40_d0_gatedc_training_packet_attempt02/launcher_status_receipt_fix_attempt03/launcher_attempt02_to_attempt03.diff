@@ -1,0 +1,11 @@
+--- launch_fit40_d0_gatedc_detached_attempt02.py
++++ launch_fit40_d0_gatedc_detached_attempt03.py
+@@ -429,7 +429,7 @@
+         receipt = {
+             "schema": "fit40_d0_gatedc_detached_launch_receipt_v1", "status": "STARTED_DETACHED",
+             "manifest": {"path": str(args.manifest), "bytes": len(raw), "sha256": sha256(raw)},
+-            "supervisor": {"pid": int(proc.pid), "start_ticks": proc_start_ticks(proc.pid), "argv": argv, "cwd": str(PROJECT_ROOT), "started_unix_seconds": time.time()},
++            "supervisor": {"pid": int(proc.pid), "start_ticks": proc_start_ticks(proc.pid), "argv": argv, "cwd": str(CODE_ROOT), "started_unix_seconds": time.time()},
+             "runner": {"path": str(CODE_ROOT / manifest["runner"]["relative_path"]), "argv": runner_argv(manifest), "output_root": str(OUTPUT_ROOT), "status_path": str(OUTPUT_ROOT / "status.json"), "completion_path": str(OUTPUT_ROOT / "completion.json"), "failure_path": str(OUTPUT_ROOT / "failure.json")},
+             "inputs": input_pins, "source_pins_verified": len(manifest["file_pins"]), "source_stage_receipt": source_stage_pin, "staged_code_root": str(CODE_ROOT),
+             "gpu_prelaunch_snapshot": gpu, "shm_free_bytes": int(shm_free), "minimum_shm_reserve_bytes": MIN_SHM_FREE_BYTES,

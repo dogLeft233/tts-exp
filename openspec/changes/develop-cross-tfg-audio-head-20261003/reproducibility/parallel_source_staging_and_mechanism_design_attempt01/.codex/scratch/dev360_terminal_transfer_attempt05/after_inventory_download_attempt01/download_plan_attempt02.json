@@ -1,0 +1,88 @@
+{
+  "automatic_science_pass_inference": false,
+  "bridge_max_bytes_per_file": 8388608,
+  "chunk_bytes_staged": 11940846,
+  "chunk_root": "/dev/shm/cross_tfg_audio_head_20261003/terminal_chunks_controls_attempt10_inventory02",
+  "chunk_size_bytes": 6291456,
+  "download_items": [
+    {
+      "bytes": 2345,
+      "name": "result_manifest",
+      "parts": [],
+      "raw_sha256": "9bd452de6d73c3f0c31cbbcf3417d0c7de0f6a86e44853bf03e6d7961d95e6c8",
+      "source_path": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360/result_manifest.json",
+      "status": "DIRECT_DOWNLOAD"
+    },
+    {
+      "bytes": 11940846,
+      "chunk_size_bytes": 6291456,
+      "name": "results_ledger",
+      "parts": [
+        {
+          "bytes": 6291456,
+          "offset": 0,
+          "part_index": 0,
+          "path": "/dev/shm/cross_tfg_audio_head_20261003/terminal_chunks_controls_attempt10_inventory02/results_ledger/part0000.bin",
+          "raw_sha256": "fd1035c9a85f533616da73087177a44fc0c4ffbb1896c5a9ddf28ab580e9f13a"
+        },
+        {
+          "bytes": 5649390,
+          "offset": 6291456,
+          "part_index": 1,
+          "path": "/dev/shm/cross_tfg_audio_head_20261003/terminal_chunks_controls_attempt10_inventory02/results_ledger/part0001.bin",
+          "raw_sha256": "825c2666ba5f485b51a829be613857393c32546a3ea465f1dd0fbaef2a170684"
+        }
+      ],
+      "raw_sha256": "0ec1d6043f8e3c8ebce4dfdd17c95418239c663bdf8d24a47cdcbfde0e793cb2",
+      "source_path": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360/results.jsonl",
+      "status": "CHUNKED_DOWNLOAD"
+    },
+    {
+      "bytes": 1156,
+      "name": "run_status",
+      "parts": [],
+      "raw_sha256": "27ca8073c599fea701409f0e30ea55fe433698fdffcff62f174c1e3ae50a6c54",
+      "source_path": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360/control/run_status.json",
+      "status": "DIRECT_DOWNLOAD"
+    },
+    {
+      "bytes": 44606,
+      "name": "execution_record",
+      "parts": [],
+      "raw_sha256": "dbd54f4f4d08c58930adaafef660887ae6290006e384f64a0440718f82cf2980",
+      "source_path": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360.execution.json",
+      "status": "DIRECT_DOWNLOAD"
+    },
+    {
+      "bytes": 796745,
+      "name": "strict_determinism_attestation",
+      "parts": [],
+      "raw_sha256": "fa95b82248f9013072b8ade4444c45f0545ecb2817d37b95ff396fd96573f492",
+      "source_path": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360/runtime_determinism_attestation.json",
+      "status": "DIRECT_DOWNLOAD"
+    },
+    {
+      "bytes": 0,
+      "name": "generation_repeat_qc_ledger",
+      "parts": [],
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_path": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360/generation_repeat_qc.jsonl",
+      "status": "DIRECT_DOWNLOAD"
+    }
+  ],
+  "inventory_bytes": 13593,
+  "inventory_path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_terminal_inventory_attempt02/output/terminal_inventory_attempt02.json",
+  "inventory_raw_sha256": "3f343b6ff73f35e838fbecdc290ae2112dbb6be8f55f8474469c1c7b52c254ef",
+  "inventory_sha256": "e27816df44f4bbe7f21daebb2274d845cc04502309d5e3781e9625e3d55de929",
+  "missing_terminal_artifacts": [],
+  "plan_sha256": "50cedbd5e2e32324ab393467af34a09a09afc662b78ca2d8fcf4e2f0f6597528",
+  "run_id": "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt10",
+  "schema": "cross_tfg_dev360_terminal_download_plan_v1",
+  "separate_free_space_reserve_bytes": 5368709120,
+  "shm_available_after_bytes": 21866180608,
+  "shm_available_before_bytes": 21878124544,
+  "source_terminal_files_deleted": false,
+  "source_terminal_files_modified": false,
+  "stage_id": "controls360",
+  "status": "DOWNLOAD_PLAN_READY"
+}

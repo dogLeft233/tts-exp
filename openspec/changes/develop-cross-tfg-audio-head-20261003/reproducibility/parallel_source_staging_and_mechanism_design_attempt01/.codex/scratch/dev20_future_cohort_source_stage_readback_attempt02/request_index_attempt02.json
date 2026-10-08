@@ -1,0 +1,307 @@
+{
+  "download_target": {
+    "currently_absent": true,
+    "must_be_absent_before_dispatch": true,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_source_stage_readback_attempt02\\downloads_attempt02\\source_stage_qc_attempt01.json"
+  },
+  "independent_qc_contract": {
+    "asr_scores_model_gpu_or_remote_operation_by_this_builder": false,
+    "verify_all_20_ordered_manifest_rows_and_sample_clocks": true,
+    "verify_all_seven_evidence_output_hashes_against_zip_manifest_and_local_evidence": true,
+    "verify_download_bytes_against_advertised_q04_receipt_bytes_sha256": true,
+    "verify_each_wav_and_f32_pin_against_local_manifest_bundle_and_root_local_raw_f32_qc": true,
+    "verify_exactly_48_written_output_pins": {
+      "canonical_float32": 20,
+      "evidence": 7,
+      "source_manifest": 1,
+      "source_wav": 20
+    },
+    "verify_receipt_json_self_hash": true
+  },
+  "receipt_expectation": {
+    "advertised_by_request": {
+      "bytes": 1411,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\04_extract_and_full_raw_f32_qc.json",
+      "sha256": "9dbfc0973e27fa116df39c32678481dfaab207c619cea6b3f58093eeb01e48eb"
+    },
+    "advertised_by_response": {
+      "bytes": 624,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\04_extract_and_full_raw_f32_qc.json.response.json",
+      "sha256": "0dcd23dc245acc9eb95862e60f25413873f01cf4af58fc0c65af03519bf77a24"
+    },
+    "bytes": 25886,
+    "remote_path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/dev20_future_cohort_source_attempt01/source_stage_attempt01/source_stage_qc_attempt01.json",
+    "sha256": "0896932659649d3328d9986329c9bddfa4fd73f3b7b3c6f4268dba44441ff379",
+    "summary_status": "ALL_20_SOURCE_AND_RAW_F32_VERIFIED_CREATE_ONLY"
+  },
+  "remote_download_dispatched": false,
+  "remote_stage_root": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/dev20_future_cohort_source_attempt01/source_stage_attempt01",
+  "requests": [
+    {
+      "bytes": 372,
+      "name": "00_download_source_stage_qc_receipt",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_source_stage_readback_attempt02\\requests_attempt02\\00_download_source_stage_qc_receipt.json",
+      "sha256": "6265a070c82aebf62ab6f5411f666bcaa47df80f884d5eff45cdb21c2048b17c"
+    }
+  ],
+  "schema": "aishell_future_dev20_source_stage_receipt_readback_attempt02_v1",
+  "self_sha256": "e6b24ccbf27f01a5307436cd401ca458887a8c6ea258742f95b8f25dcba49414",
+  "source_evidence": {
+    "audio_io_reader_source": {
+      "bytes": 14294,
+      "path": "E:\\Documents\\tts-exp\\scripts\\audio_enhancement\\audio_io.py",
+      "sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004"
+    },
+    "current_readback_packet_builder": {
+      "bytes": 15166,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_source_stage_readback_attempt02\\build_source_stage_readback_packet_attempt02.py",
+      "sha256": "9f15523dd3f7977fcddd82ff55e140f477b90d02762fd0fb8c83bd58016aadd2"
+    },
+    "fit40_lfs_reconciliation_receipt": {
+      "bytes": 24814,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_metadata_attempt06\\fit40_existing_source_hash_reconciliation_attempt01.json",
+      "sha256": "b8a810049b48a256b45a38073249412baece0070b87f857719c73e4bb79dc581"
+    },
+    "frozen_cohort_metadata_plan": {
+      "bytes": 21067,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_metadata_attempt02\\dev20_future_cohort_metadata_plan_attempt02.json",
+      "sha256": "13d235da287a5576027a5bb6bf4d71f4f7a18df8b76c57c58d8033b3c1393e9d"
+    },
+    "independent_local_pcm_f32_qc_receipt": {
+      "bytes": 33237,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_independent_qc_attempt01\\dev20_full_independent_pcm_f32_qc_attempt01.json",
+      "sha256": "2e386b124857ead67ac441803675aaaec57983857f8267c824c508eb540e462e"
+    },
+    "independent_local_pcm_f32_qc_source": {
+      "bytes": 23234,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_independent_qc_attempt01\\reconstruct_verify_dev20_pcm_attempt01.py",
+      "sha256": "f722362e58ab48bd9169f144d3ec0e282c3eee6f2b1bcceae21e7eee9a84d35c"
+    },
+    "packet03_q00_failed_response": {
+      "bytes": 155,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt03\\00_create_remote_source_directory.json.response.json",
+      "sha256": "6871dd195bee936026acf01789227ae1c77da60b4833bd1cb2a199f0c4d5f6d3"
+    },
+    "packet04_independent_review_receipt": {
+      "bytes": 2680,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_review_attempt02\\packet04_source_review_attempt01.json",
+      "sha256": "c5b7868d4d1d7bf97815c1145f2c682a7aa4ad0ce74798aaeff63cce4e36f418"
+    },
+    "packet04_request_00_create_remote_source_directory": {
+      "bytes": 2100,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\00_create_remote_source_directory.json",
+      "sha256": "5bb9bc5916691123952bc9545bad1322c6d6cffad6b93d08deb1e61fbc12ae83"
+    },
+    "packet04_request_01_upload_source_bundle": {
+      "bytes": 451,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\01_upload_source_bundle.json",
+      "sha256": "219863bee9846b184d8b7f2dfaec577693007204ed5985aed55d10a6bc861a8d"
+    },
+    "packet04_request_02_upload_portable_manifest": {
+      "bytes": 472,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\02_upload_portable_manifest.json",
+      "sha256": "530b4f49af57b7052f9fd21678b74537648e35ca8d515ff34ea2815d68ae4abd"
+    },
+    "packet04_request_03_upload_stage_qc_worker": {
+      "bytes": 465,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\03_upload_stage_qc_worker.json",
+      "sha256": "15e62f5d11027d4b3aaca6fd26e5d36b98545d927f01f617fcb61375047c73c9"
+    },
+    "packet04_request_04_extract_and_full_raw_f32_qc": {
+      "bytes": 1411,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\04_extract_and_full_raw_f32_qc.json",
+      "sha256": "9dbfc0973e27fa116df39c32678481dfaab207c619cea6b3f58093eeb01e48eb"
+    },
+    "packet04_response_00_create_remote_source_directory": {
+      "bytes": 1056,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\00_create_remote_source_directory.json.response.json",
+      "sha256": "5994ee9e3dc752d2c59b71dc2e462925afea20486566c8993cde1c2fd0dccf1f"
+    },
+    "packet04_response_01_upload_source_bundle": {
+      "bytes": 390,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\01_upload_source_bundle.json.response.json",
+      "sha256": "0a1074ba032a710305bb17f5f260ae701f8026eb965edf7588a0ee4e07f73bd3"
+    },
+    "packet04_response_02_upload_portable_manifest": {
+      "bytes": 412,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\02_upload_portable_manifest.json.response.json",
+      "sha256": "5096430f65ac7e78484f6106b4e576bf0513465959ddb75058aa0a088c63674a"
+    },
+    "packet04_response_03_upload_stage_qc_worker": {
+      "bytes": 405,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\03_upload_stage_qc_worker.json.response.json",
+      "sha256": "41dbd9fa7bb0ad421e595b2030e36c4f91262e6e006c27ede62cbd55b4ce7523"
+    },
+    "packet04_response_04_extract_and_full_raw_f32_qc": {
+      "bytes": 624,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\04_extract_and_full_raw_f32_qc.json.response.json",
+      "sha256": "0dcd23dc245acc9eb95862e60f25413873f01cf4af58fc0c65af03519bf77a24"
+    },
+    "pinned_source_readme": {
+      "bytes": 2567,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_metadata_attempt06\\pinned_README_attempt01.md",
+      "sha256": "36fb96cb273f3433dd4393df6cf9d9a3dab1b2e6c20a45ea11fc33647ae92c5c"
+    },
+    "portable_bundle_builder_source": {
+      "bytes": 16452,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_metadata_attempt06\\build_dev20_portable_source_bundle_attempt02.py",
+      "sha256": "3a32d3d9474b910af49b01246c12c102f8a243984d02514767ac7278ca67ac6e"
+    },
+    "portable_source_bundle": {
+      "bytes": 3548546,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_metadata_attempt06\\future_dev20_source_bundle_attempt02.zip",
+      "sha256": "6f9de4953da6fd52a4e916604c21b0fd187ab145fefc92ea47cd8e274a460d9a"
+    },
+    "portable_source_manifest": {
+      "bytes": 24072,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_metadata_attempt06\\future_dev20_portable_source_manifest_attempt02.json",
+      "sha256": "fff18619b7be8f992002f99c33121ef3eb25acce6aa3caa3da55f398eb3faffa"
+    },
+    "previous_readback_builder_attempt01": {
+      "bytes": 14065,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_source_stage_readback_attempt01\\build_source_stage_readback_packet_attempt01.py",
+      "sha256": "01112024da23708867aae957547be49a37ef8aa2b2102ce16ab30150dd13a49b"
+    },
+    "root_local_pcm_f32_qc_receipt": {
+      "bytes": 8064,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\root_future_dev20_full_pcm_qc_attempt01.json",
+      "sha256": "cf72e292e0adfe33e1e75c6a384c97ae52414f92a250c2e4ee6063da670fb244"
+    },
+    "source_bundle_build_receipt": {
+      "bytes": 1034,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_metadata_attempt06\\future_dev20_source_bundle_build_receipt_attempt02.json",
+      "sha256": "44d2eeda0bb6fca664e8824142852b20a2c4c2ca89de34f7c130c26d73cbffd9"
+    },
+    "source_download_plan": {
+      "bytes": 19954,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_metadata_attempt06\\aishell_future_dev20_exact_source_download_plan_attempt01.json",
+      "sha256": "cd14d1c3f80fa7ee542d9b4d6b79c5403a7bc8635f5a6dfca71683a69ded32d3"
+    },
+    "source_download_readback_receipt": {
+      "bytes": 43199,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_metadata_attempt06\\aishell_future_dev20_download_readback_attempt01.json",
+      "sha256": "584060fe7544f06bae2bd88b609aa2b4d2b3c7a95f8848d37581d59e3c50bb42"
+    },
+    "source_header_selection_receipt": {
+      "bytes": 120119,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_metadata_attempt06\\aishell_future_dev20_header_eligibility_attempt01.json",
+      "sha256": "73cafa7f0ca370a4183f09d0afb3bf5104e0dcfa61d3aca704ea065a70ab09dd"
+    },
+    "source_wav_BAC009S0102W0121": {
+      "bytes": 189838,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0102\\BAC009S0102W0121.wav",
+      "sha256": "2f979b61bea349720905d6e8970f9558311ade1bd6b45ae70c970821d8a82e84"
+    },
+    "source_wav_BAC009S0102W0122": {
+      "bytes": 186316,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0102\\BAC009S0102W0122.wav",
+      "sha256": "97c8186857c2d0ed0be575a3ae8a38e4e6d420b6645e0285d9684f4e3be5264b"
+    },
+    "source_wav_BAC009S0103W0121": {
+      "bytes": 147916,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0103\\BAC009S0103W0121.wav",
+      "sha256": "ff17f3ffc1cd994fa83c9ebea1840fc92a6fab1958c977fa664664eba08d4e8c"
+    },
+    "source_wav_BAC009S0103W0122": {
+      "bytes": 147180,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0103\\BAC009S0103W0122.wav",
+      "sha256": "9eecfc78bb0ee33bd3bb04b0e94320488344ff703084a0ce39c8c0c4b373f932"
+    },
+    "source_wav_BAC009S0104W0122": {
+      "bytes": 151436,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0104\\BAC009S0104W0122.wav",
+      "sha256": "0f0a072666beeced03e34f85d23724665838bc09609da0ca57a39763dda1f1a7"
+    },
+    "source_wav_BAC009S0104W0123": {
+      "bytes": 157036,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0104\\BAC009S0104W0123.wav",
+      "sha256": "fd66ce59e9c23ae3521c01e80792ab49ffc5ec4cb39f035fd4b2aa509f5ed684"
+    },
+    "source_wav_BAC009S0105W0121": {
+      "bytes": 158604,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0105\\BAC009S0105W0121.wav",
+      "sha256": "828e182d284498739ec36d0ad9ae6d26e9df66799d971160bf07359c0c7e8530"
+    },
+    "source_wav_BAC009S0105W0122": {
+      "bytes": 235980,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0105\\BAC009S0105W0122.wav",
+      "sha256": "3b708c293cb8c2ccd82eb63943de82c211a563b1fb8707ea5a583b75dd3f93d8"
+    },
+    "source_wav_BAC009S0106W0121": {
+      "bytes": 129324,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0106\\BAC009S0106W0121.wav",
+      "sha256": "304aca5bd5c28c488257f9adb7b0616dff557368bbe7a26fc794463c66acb6b8"
+    },
+    "source_wav_BAC009S0106W0123": {
+      "bytes": 129740,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0106\\BAC009S0106W0123.wav",
+      "sha256": "ae52528ce122b6c4ee854321c0c6f4185425214419e3b1933ae8c9370865d938"
+    },
+    "source_wav_BAC009S0107W0121": {
+      "bytes": 201004,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0107\\BAC009S0107W0121.wav",
+      "sha256": "f7ead0e0b1401c0d3623370ad01b0c8693193f61d13b07a58b204eeceaf604f2"
+    },
+    "source_wav_BAC009S0107W0122": {
+      "bytes": 164812,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0107\\BAC009S0107W0122.wav",
+      "sha256": "f0584158fceba1d04e7c0d7a1db9611e0f0ea091c5bbc37898cac6632b5b938d"
+    },
+    "source_wav_BAC009S0108W0121": {
+      "bytes": 130924,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0108\\BAC009S0108W0121.wav",
+      "sha256": "b90975a822297499cd4f8613264c25cc0f1d74123e4caf3a616c067e26e8b826"
+    },
+    "source_wav_BAC009S0108W0122": {
+      "bytes": 216142,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0108\\BAC009S0108W0122.wav",
+      "sha256": "c8b1ce3924943293829f5f370e883d6a80cb8fd7e892131dbdfed4d9b8500d02"
+    },
+    "source_wav_BAC009S0109W0121": {
+      "bytes": 129804,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0109\\BAC009S0109W0121.wav",
+      "sha256": "b2ad6ad2bb1c6822e5ee819a940071e10f179cf4d9bfc5160c3ea949d721532f"
+    },
+    "source_wav_BAC009S0109W0123": {
+      "bytes": 135948,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0109\\BAC009S0109W0123.wav",
+      "sha256": "4cbd786f8ad8598aeeefe588a739f1bd13760b0055a08b7c46f515536ba9e3c3"
+    },
+    "source_wav_BAC009S0110W0122": {
+      "bytes": 209868,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0110\\BAC009S0110W0122.wav",
+      "sha256": "554d486888a59dbb0076d63b0dbd1acfe54dcdd1714a39451251adb4c901039c"
+    },
+    "source_wav_BAC009S0110W0127": {
+      "bytes": 147468,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0110\\BAC009S0110W0127.wav",
+      "sha256": "dda4da33d5a8ec7010c1ca810916ccf634a2dafa06c4e05703bf4a4441fd32a0"
+    },
+    "source_wav_BAC009S0111W0121": {
+      "bytes": 148556,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0111\\BAC009S0111W0121.wav",
+      "sha256": "b060461c258164dacd99e881c01c85bafedbb44e739485b94a1a705a1ae5bb89"
+    },
+    "source_wav_BAC009S0111W0125": {
+      "bytes": 156172,
+      "path": "\\\\CloudDrive\\CloudDrive\\tts-exp-project\\datasets\\aishell_future_dev20_mirror_attempt01\\train\\S0111\\BAC009S0111W0125.wav",
+      "sha256": "93c5ebfac856794614bb103e6b9bf07066ed2aca02682852e78ce8495a127f9c"
+    },
+    "upload_packet04_builder": {
+      "bytes": 12683,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\build_dev20_upload_packet_attempt04.py",
+      "sha256": "6d5119dd6a31eb0b1c85a9fb6d9595454e164fe272a88f917cf1acc08495d8ac"
+    },
+    "upload_packet04_index": {
+      "bytes": 16262,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\request_index_attempt04.json",
+      "sha256": "07bb3a91253eff356f24e9b123205c997e300b909ca9fce7e78eacd60a9ac26f"
+    },
+    "upload_packet04_worker02": {
+      "bytes": 12657,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev20_future_cohort_upload_packet_attempt04\\extract_and_qc_dev20_source_stage_attempt02.py",
+      "sha256": "573320243b7aa52ba192b8b12d850652cf79eecc71ca31b49b2c108f997b1ebb"
+    }
+  },
+  "status": "READY_FOR_ROOT_DISPATCH_NOT_DISPATCHED"
+}

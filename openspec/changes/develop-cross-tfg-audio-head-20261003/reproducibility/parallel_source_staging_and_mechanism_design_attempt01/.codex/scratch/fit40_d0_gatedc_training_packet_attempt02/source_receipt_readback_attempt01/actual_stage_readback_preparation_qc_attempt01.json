@@ -1,0 +1,58 @@
+{
+  "schema": "fit40_d0_gatedc_actual_stage_readback_preparation_qc_v1",
+  "status": "PASS_Q10_Q11_ACTUAL_RESPONSES_PINNED_RECEIPT_DOWNLOAD_NOT_DISPATCHED",
+  "q10_actual_response": {
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\fit40_d0_gatedc_training_packet_attempt02\\requests_attempt05\\10_stage_exact_geometry_manifest_create_or_identical_attempt02.json.response.json",
+    "bytes": 730,
+    "sha256": "0a9a8c1d68f560f200cb31cd90c0c9223de3a2ccbaf155a8544234ab87e00152"
+  },
+  "q10_request": {
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\fit40_d0_gatedc_training_packet_attempt02\\requests_attempt05\\10_stage_exact_geometry_manifest_create_or_identical_attempt02.json",
+    "bytes": 3220,
+    "sha256": "956743969b81100e1fec624a8e2ee0cfcba2fa63ce1aed9b1112a0636e421b2d"
+  },
+  "geometry": {
+    "action": "CREATED",
+    "destination": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/fit40_d0_gatedc_training_attempt02/inputs/fit40_geometry_manifest_attempt05.json",
+    "bytes": 1421429,
+    "sha256": "efa5b0bfba926e6769bcc2d1b2fae2300a7c7e50fdb7dcb5ded56e58552c9208",
+    "training_started": false
+  },
+  "q11_actual_response": {
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\fit40_d0_gatedc_training_packet_attempt02\\requests_attempt04\\11_extract_and_verify_pinned_source_closure.json.response.json",
+    "bytes": 665,
+    "sha256": "0f220c0d838e78d74cab0e780d6c59a1fa5fb3c86b938b8a6280bba8a81b9f87"
+  },
+  "q11_request": {
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\fit40_d0_gatedc_training_packet_attempt02\\requests_attempt04\\11_extract_and_verify_pinned_source_closure.json",
+    "bytes": 1296,
+    "sha256": "5596a934e3cf5ff3b0c5ba2522b929f55e4f5267865215564ee94426e70e5835"
+  },
+  "source_stage": {
+    "schema": "fit40_d0_gatedc_source_stage_receipt_attempt02_v1",
+    "status": "PASS_SOURCE_CLOSURE_EXTRACTED_NO_MODEL_OR_GPU",
+    "member_count": 23,
+    "receipt_remote_path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/fit40_d0_gatedc_training_attempt02/output/source_stage_receipt_attempt02.json",
+    "receipt_expected_bytes": 9594,
+    "receipt_expected_sha256": "d4a2a5d8e6b8c4edd9c57e13f53bee6d727d77b518bea1311ad8be87896c5161",
+    "receipt_expected_self_sha256": "18f5bafa11c926e8468873bd354417a2b614dd3d2a46986c92930cc018a5b69e"
+  },
+  "receipt_download_request": {
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\fit40_d0_gatedc_training_packet_attempt02\\source_receipt_readback_attempt01\\requests_attempt01\\00_download_actual_source_stage_receipt_attempt02.json",
+    "bytes": 400,
+    "sha256": "a211cd7b53f5558865db085a6174c2eaca96e3ccbad0efcaaa82f29375f1481c"
+  },
+  "receipt_download_index": {
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\fit40_d0_gatedc_training_packet_attempt02\\source_receipt_readback_attempt01\\request_index_attempt01.json",
+    "bytes": 9385,
+    "sha256": "2083f721cc2a2be24d4df5c50d346b27736fb0b68d5f5a89c67c1f4e2d8c3818"
+  },
+  "future_q12_launch_index": {
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\fit40_d0_gatedc_training_packet_attempt02\\request_index_launch_only_recovery_attempt04.json",
+    "bytes": 15208,
+    "sha256": "6f9423ac18b3efc3713b89ff5536e0ee87b3ab886b4b136ff71bb58af93c68ba"
+  },
+  "download_response": "ABSENT_NOT_DISPATCHED",
+  "gpu_or_model_started": false,
+  "self_sha256": "a81d78ffc9d859112bd77d0382ebf41c3002ca2d129813377c6871e5d43e6ba1"
+}

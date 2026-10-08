@@ -1,0 +1,57 @@
+{
+  "schema": "cross_tfg_candidate180_terminal_readiness_source_manifest_v1",
+  "status": "SOURCE_PINNED_STAGE_ONLY_NOT_DISPATCHED",
+  "parent_worker": {
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_joint540_readiness_attempt03\\candidate180_terminal_readiness_probe_attempt03.py",
+    "bytes": 48404,
+    "sha256": "c7dd00c4e25ea02ebca56f2bb32c8f01696dd620bfefe7908b034d864183de6a"
+  },
+  "worker": {
+    "automatic_source_install": false,
+    "bytes": 48559,
+    "mode": "inventory",
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_joint540_readiness_attempt04\\candidate180_terminal_readiness_probe_attempt04.py",
+    "remote_path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_terminal_readiness_attempt04/workers/candidate180_terminal_readiness_probe_attempt04.py",
+    "sha256": "4653562f18fdd2dd221859efd6e2587046e21524e2da00e7faa150a4c8865481",
+    "uses_models_or_scorers": false,
+    "writes_archive_or_chunks": false,
+    "writes_candidate_outputs": false
+  },
+  "contract": {
+    "bytes": 14494,
+    "contract_sha256": "fef349d1d8e51f1562647e8aa3fb002fa98d67a29f72ef50489e2a0cbe6fc43e",
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_terminal_contract_attempt05\\candidate180_terminal_transfer_contract_attempt07.json",
+    "raw_sha256": "0e6ce53078d1470695234fa0d30ef0220de3c37837fd173d4a6651f583fb7238",
+    "remote_path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_terminal_readiness_attempt04/inputs/candidate180_terminal_transfer_contract_attempt07.json"
+  },
+  "diff": {
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_joint540_readiness_attempt04\\attempt03_to_attempt04.diff",
+    "bytes": 2234,
+    "sha256": "91a57f226b9fbf8b8911dc4033f794c9e5078a50d5cd2e5bc6dc7804c677d64b"
+  },
+  "requests": [
+    {
+      "request_id": "q00",
+      "op": "exec",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_joint540_readiness_attempt05\\requests_stage_attempt01\\q00_create_namespace.json",
+      "bytes": 569,
+      "sha256": "c3cb072e1e2d98d6a77f2063723f830bcebaf695fc70477639d6c1baaa64bce9"
+    },
+    {
+      "request_id": "q01",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_joint540_readiness_attempt05\\requests_stage_attempt01\\q01_upload_worker.json",
+      "bytes": 511,
+      "sha256": "edb9735046113034442df695f8e435770a8a3240842d2cf1723605f8373145e4"
+    },
+    {
+      "request_id": "q02",
+      "op": "upload",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_joint540_readiness_attempt05\\requests_stage_attempt01\\q02_upload_contract.json",
+      "bytes": 517,
+      "sha256": "dc619ae443742df4781f8438c2f8ec2885fe8d5baa3f604b1dae5b528885efbf"
+    }
+  ],
+  "source_evidence_count": 33,
+  "manifest_sha256": "2bdb873365adac53fdfec1b96c8c43c734a177cc0b6010bcd307fcee21b3e651"
+}

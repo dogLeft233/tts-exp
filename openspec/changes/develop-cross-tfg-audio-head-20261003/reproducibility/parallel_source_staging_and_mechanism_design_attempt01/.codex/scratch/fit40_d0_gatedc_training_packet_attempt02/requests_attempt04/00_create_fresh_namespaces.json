@@ -1,0 +1,5 @@
+{
+  "command": "set -euo pipefail; CONTROL='/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/fit40_d0_gatedc_training_attempt02'; TASK='/dev/shm/cross_tfg_audio_head_20261003/fit40_d0_gatedc_training_attempt02'; test ! -e \"$CONTROL\"; test ! -L \"$CONTROL\"; test ! -e \"$TASK\"; test ! -L \"$TASK\"; mkdir -m 700 -p \"$CONTROL/workers\" \"$CONTROL/inputs\" \"$CONTROL/output\" \"$CONTROL/logs\" \"$CONTROL/transport\" \"$TASK\"; printf '%s\\n' '{\"status\":\"PASS_FRESH_FIT40_D0_GATEDC_NAMESPACES_CREATED\",\"control_root\":\"/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/fit40_d0_gatedc_training_attempt02\",\"task_root\":\"/dev/shm/cross_tfg_audio_head_20261003/fit40_d0_gatedc_training_attempt02\",\"output_root_created\":false,\"source_code_created\":false,\"training_started\":false}'",
+  "op": "exec",
+  "timeout": 180
+}

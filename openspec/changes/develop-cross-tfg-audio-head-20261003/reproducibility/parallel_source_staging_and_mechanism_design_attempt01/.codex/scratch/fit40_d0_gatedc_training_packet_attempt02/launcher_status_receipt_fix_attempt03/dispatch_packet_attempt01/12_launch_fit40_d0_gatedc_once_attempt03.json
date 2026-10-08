@@ -1,0 +1,5 @@
+{
+  "command": "set -euo pipefail\nexport PYTHONDONTWRITEBYTECODE=1\n\"/root/autodl-tmp/wav2lip-syncnet/envs/wav2lip/bin/python\" -B \"/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/fit40_d0_gatedc_training_attempt02/workers/launch_fit40_d0_gatedc_detached_attempt03.py\" --manifest \"/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/fit40_d0_gatedc_training_attempt02/inputs/launch_manifest_attempt02.json\" --expected-manifest-sha256 \"b31d24ce234936a5c90ebb49fa3b11094fb0aa318ba06be487823be12866c42d\"",
+  "op": "exec",
+  "timeout": 60
+}

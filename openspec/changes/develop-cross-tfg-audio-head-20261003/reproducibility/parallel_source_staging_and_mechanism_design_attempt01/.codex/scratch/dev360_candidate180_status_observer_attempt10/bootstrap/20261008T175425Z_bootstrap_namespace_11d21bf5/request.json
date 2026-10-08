@@ -1,0 +1,1 @@
+{"command":"set -eu; CONTROL='/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_status_observer_attempt10'; test ! -e \"$CONTROL\"; mkdir -m 700 -- \"$CONTROL\"; mkdir -m 700 -- \"$CONTROL/workers\"; printf '%s\\n' '{\"status\":\"PASS_EMPTY_STATUS_NAMESPACE_CREATED\"}'","op":"exec","timeout":45}

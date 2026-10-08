@@ -1,0 +1,6 @@
+{
+  "op": "download",
+  "timeout": 30,
+  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/fit40_d0_gatedc_training_attempt02/output/source_stage_receipt_attempt02.json",
+  "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\fit40_d0_gatedc_training_packet_attempt02\\source_receipt_readback_attempt01\\downloads_attempt01\\source_stage_receipt_attempt02.json"
+}

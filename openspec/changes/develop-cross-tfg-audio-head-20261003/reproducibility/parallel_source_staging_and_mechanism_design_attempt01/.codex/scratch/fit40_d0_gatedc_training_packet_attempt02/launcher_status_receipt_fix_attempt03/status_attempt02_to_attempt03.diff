@@ -1,0 +1,18 @@
+--- read_fit40_d0_gatedc_status_attempt02.py
++++ read_fit40_d0_gatedc_status_attempt03.py
+@@ -143,8 +143,13 @@
+             lineage_errors.append("process-exit PID/start ticks differ from child receipt")
+         if exit_record.get("manifest_raw_sha256") != child.get("manifest_raw_sha256"):
+             lineage_errors.append("process-exit manifest SHA differs from child receipt")
+-    if isinstance(exit_record, dict) and child_pin is not None:
+-        if exit_record.get("child_process_receipt") != child_pin:
++    if isinstance(exit_record, dict) and child_pin is not None and isinstance(child, dict):
++        # The launcher records the full write_json_exclusive() pin, including
++        # self_sha256; file_pin() above intentionally reports only raw bytes/SHA.
++        # Reconstruct the writer's exact four-field identity from the validated
++        # child contents so the raw lineage check remains strict.
++        expected_child_receipt_pin = {**child_pin, "self_sha256": child.get("self_sha256")}
++        if exit_record.get("child_process_receipt") != expected_child_receipt_pin:
+             lineage_errors.append("process-exit child-receipt pin differs")
+     status_obj, status_pin, status_error = read_json(task / "run/status.json", 1024**2)
+     completion, completion_pin, completion_error = read_json(task / "run/completion.json")

@@ -1,0 +1,13 @@
+--- watch_fit40_d0_gatedc_status_attempt02.py
++++ watch_fit40_d0_gatedc_status_attempt03.py
+@@ -24,8 +24,8 @@
+ TASK_ROOT = pathlib.Path("/dev/shm/cross_tfg_audio_head_20261003/fit40_d0_gatedc_training_attempt02")
+ LAUNCH_RECEIPT = CONTROL_ROOT / "output/launch_receipt.json"
+ LAUNCH_MANIFEST = CONTROL_ROOT / "inputs/launch_manifest_attempt02.json"
+-OBSERVATION_ROOT = CONTROL_ROOT / "output/readonly_status_watch_attempt01"
+-STATUS_WORKER_SHA256 = "c7c44fe65c9a1ac1f38e9fab0af8fe3641f4246a9ce1c10d1de535f00dcc4b7a"
++OBSERVATION_ROOT = CONTROL_ROOT / "output/readonly_status_watch_attempt02"
++STATUS_WORKER_SHA256 = "d1b8b3da59b57ca50db68fd289211224d41d32a33ad20e9fbfd4225f510d0e09"
+ STATUS_WORKER_MAX_BYTES = 64 * 1024
+ STATUS_OUTPUT_MAX_BYTES = 32 * 1024**2
+ DEFAULT_INTERVAL_SECONDS = 60

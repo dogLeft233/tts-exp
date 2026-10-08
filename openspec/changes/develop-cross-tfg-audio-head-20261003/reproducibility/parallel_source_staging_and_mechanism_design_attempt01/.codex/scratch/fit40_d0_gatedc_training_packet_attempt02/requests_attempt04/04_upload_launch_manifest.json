@@ -1,0 +1,8 @@
+{
+  "expected_bytes": 35682,
+  "expected_sha256": "b31d24ce234936a5c90ebb49fa3b11094fb0aa318ba06be487823be12866c42d",
+  "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\fit40_d0_gatedc_training_packet_attempt02\\launch_manifest_attempt02.json",
+  "op": "upload",
+  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/fit40_d0_gatedc_training_attempt02/inputs/launch_manifest_attempt02.json",
+  "timeout": 600
+}

@@ -1,0 +1,154 @@
+{
+  "attempt": 2,
+  "member_count": 23,
+  "members": [
+    {
+      "archive_path": "payload/scripts/audio_enhancement/__init__.py",
+      "bytes": 1503,
+      "relative_path": "scripts/audio_enhancement/__init__.py",
+      "sha256": "db520f7b04343682e6df4ba53b22503de806287e70f2b8e41e84f16912d361fc"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/audio_io.py",
+      "bytes": 14294,
+      "relative_path": "scripts/audio_enhancement/audio_io.py",
+      "sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/baselines.py",
+      "bytes": 15123,
+      "relative_path": "scripts/audio_enhancement/baselines.py",
+      "sha256": "7d161970381cc7e6770a4a53063f91b2606c05490945b2b86ab41c7de4d0a3e2"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/differentiable_adapter.py",
+      "bytes": 24851,
+      "relative_path": "scripts/audio_enhancement/differentiable_adapter.py",
+      "sha256": "834cd9b91a119874745a3ca42aa90f53fe7481d99d8202810902af89e563d928"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/differentiable_native_crop.py",
+      "bytes": 14464,
+      "relative_path": "scripts/audio_enhancement/differentiable_native_crop.py",
+      "sha256": "1e89da5bdf2bee83938b717a084b55a699f1902925be3290d23317bfa562fa27"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/enhance_v3_attempt02.py",
+      "bytes": 42653,
+      "relative_path": "scripts/audio_enhancement/enhance_v3_attempt02.py",
+      "sha256": "7a560332ce86a82ffede4254b015cabf5f10176e6f601bfc172a331f7bb885e6"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/heads.py",
+      "bytes": 15942,
+      "relative_path": "scripts/audio_enhancement/heads.py",
+      "sha256": "4a738ce96a062b31c50ec136112fe8679e011f01310af450de317884c8041dd7"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/overdub.py",
+      "bytes": 12002,
+      "relative_path": "scripts/audio_enhancement/overdub.py",
+      "sha256": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/pipeline.py",
+      "bytes": 5975,
+      "relative_path": "scripts/audio_enhancement/pipeline.py",
+      "sha256": "b40ddce9b09ea42d56945eb66acca3326be6784acb6c1e6ab134b1b2899fb6c3"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/shared_frequency_profile_v1.py",
+      "bytes": 10404,
+      "relative_path": "scripts/audio_enhancement/shared_frequency_profile_v1.py",
+      "sha256": "fd7303f513fdbada80da50e5dd395e9441142f1658544765d7523f1618f55253"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/shared_recipient_transition_head_v3_d0_gatedc_attempt01.py",
+      "bytes": 33497,
+      "relative_path": "scripts/audio_enhancement/shared_recipient_transition_head_v3_d0_gatedc_attempt01.py",
+      "sha256": "1835213f4e05e03f6921b4f822535c3ea177433e5512e01ce8959eca272f22ee"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/training.py",
+      "bytes": 8143,
+      "relative_path": "scripts/audio_enhancement/training.py",
+      "sha256": "0b39386174bdfacf77abd16e0c2d1506efa6ed9abe06d8b0433776b80af7423a"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/v3_v4_native_runtime_adapter_attempt03.py",
+      "bytes": 6892,
+      "relative_path": "scripts/audio_enhancement/v3_v4_native_runtime_adapter_attempt03.py",
+      "sha256": "4f4f6f496bd15e073268694673b8df5678404e672aafa625ff9a6abc135248aa"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/v3_v4_native_runtime_adapter_attempt04.py",
+      "bytes": 7613,
+      "relative_path": "scripts/audio_enhancement/v3_v4_native_runtime_adapter_attempt04.py",
+      "sha256": "7d0bc03c039e22d1c84dc5472973c47af959f60bf5946d40b88ca70a50760e07"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/v3_v4_native_runtime_adapter_v9_attempt01.py",
+      "bytes": 36120,
+      "relative_path": "scripts/audio_enhancement/v3_v4_native_runtime_adapter_v9_attempt01.py",
+      "sha256": "a9596ac2dd53b446123f9057540d025922a369c69d80d3ec7a094833800173cf"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/wav2lip_fit_runtime.py",
+      "bytes": 20085,
+      "relative_path": "scripts/audio_enhancement/wav2lip_fit_runtime.py",
+      "sha256": "7903fbd9dfebf95bcb388add26a1967bc39ad855d3d995a4730d316dd0e806c4"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/wav2lip_frontend.py",
+      "bytes": 18570,
+      "relative_path": "scripts/audio_enhancement/wav2lip_frontend.py",
+      "sha256": "3480087daecf8dc295f4a3b20703f393bada2690e1f5ce7839ba1dc4fbdec8ef"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/wav2lip_fullcontext_fit_runtime_v2_attempt02.py",
+      "bytes": 45820,
+      "relative_path": "scripts/audio_enhancement/wav2lip_fullcontext_fit_runtime_v2_attempt02.py",
+      "sha256": "d086c61cdb993bffa5f9ff7a55bf4b66b1b9127028f8b80eb3b5f1be74464d7b"
+    },
+    {
+      "archive_path": "payload/scripts/audio_enhancement/wav2lip_fullcontext_fit_runtime_v4_attempt01.py",
+      "bytes": 59835,
+      "relative_path": "scripts/audio_enhancement/wav2lip_fullcontext_fit_runtime_v4_attempt01.py",
+      "sha256": "dd751132bd3d8dec5abce288c2f765df78d9b7ef9150cdfb0ccff52ba72ee458"
+    },
+    {
+      "archive_path": "payload/scripts/experiments/cross_tfg_audio_head_20261003/build_fit40_natural_cache_rms_geometry_attempt05.py",
+      "bytes": 63227,
+      "relative_path": "scripts/experiments/cross_tfg_audio_head_20261003/build_fit40_natural_cache_rms_geometry_attempt05.py",
+      "sha256": "3438935a4cdfcfc4487f25308ce53e102d247dd77540185b14ed2b70cae26600"
+    },
+    {
+      "archive_path": "payload/scripts/experiments/cross_tfg_audio_head_20261003/native_encoder_probe_attempt02.py",
+      "bytes": 44757,
+      "relative_path": "scripts/experiments/cross_tfg_audio_head_20261003/native_encoder_probe_attempt02.py",
+      "sha256": "4ded47e2e163bbb21734ec26c79f910ecf8ae2c2b44c188cb2eeaf6c7336d34c"
+    },
+    {
+      "archive_path": "payload/scripts/experiments/cross_tfg_audio_head_20261003/native_encoder_probe_contract_v2.md",
+      "bytes": 5132,
+      "relative_path": "scripts/experiments/cross_tfg_audio_head_20261003/native_encoder_probe_contract_v2.md",
+      "sha256": "9329b5fd60a7a8047a89a4bd1ff3855812d211a5e427ce51ecb81984aaa51205"
+    },
+    {
+      "archive_path": "payload/scripts/experiments/cross_tfg_audio_head_20261003/run_fit40_native_transition_head_v3_d0_direction_gatedc_attempt02.py",
+      "bytes": 99177,
+      "relative_path": "scripts/experiments/cross_tfg_audio_head_20261003/run_fit40_native_transition_head_v3_d0_direction_gatedc_attempt02.py",
+      "sha256": "a13c652da3ef3072deeccdd364a4a450e27247e42f0ce9ec94f4245a969cd1f7"
+    }
+  ],
+  "schema": "fit40_d0_gatedc_source_bundle_attempt02_v1",
+  "scope": "pinned source closure only; no model import, CUDA initialization, optimizer update, render, score, or dev/confirmation access",
+  "self_sha256": "79e5c4b6335d3086e6b5c66d35666a0c00d0a8476d89da4528f3c393ee8d771d",
+  "source_contract_manifest": {
+    "bytes": 4565,
+    "canonical_payload_sha256": "ac2e508457562cd821997885a2836180b2d4fe71d276f1b6c69de3768e06dea1",
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\fit40_d0_direction_gate_dc_source_contract_attempt02\\source_contract_manifest_attempt02.json",
+    "sha256": "241af571ac4cca0ae10a1b5a0f611fbb6703422626315d2f427c8c4ac8579180"
+  },
+  "total_uncompressed_bytes": 606079
+}

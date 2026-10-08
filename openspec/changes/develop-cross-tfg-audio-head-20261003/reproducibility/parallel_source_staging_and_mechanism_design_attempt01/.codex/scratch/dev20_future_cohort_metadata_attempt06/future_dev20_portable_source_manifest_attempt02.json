@@ -1,0 +1,580 @@
+{
+  "canonicalization": {
+    "output": "mono IEEE float32",
+    "reader_archive_path": "evidence/audio_io.py",
+    "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+    "resampling": "none",
+    "source_channels": 1,
+    "source_encoding": "PCM_16",
+    "source_rate_hz": 16000,
+    "source_sample_count_preserved": true
+  },
+  "cohort_role": "future Dev20 development validation only",
+  "evidence": [
+    {
+      "archive_path": "evidence/source_download_plan.json",
+      "bytes": 19954,
+      "sha256": "cd14d1c3f80fa7ee542d9b4d6b79c5403a7bc8635f5a6dfca71683a69ded32d3"
+    },
+    {
+      "archive_path": "evidence/frozen_cohort_plan.json",
+      "bytes": 21067,
+      "sha256": "13d235da287a5576027a5bb6bf4d71f4f7a18df8b76c57c58d8033b3c1393e9d"
+    },
+    {
+      "archive_path": "evidence/header_selection_receipt.json",
+      "bytes": 120119,
+      "sha256": "73cafa7f0ca370a4183f09d0afb3bf5104e0dcfa61d3aca704ea065a70ab09dd"
+    },
+    {
+      "archive_path": "evidence/download_readback_receipt.json",
+      "bytes": 43199,
+      "sha256": "584060fe7544f06bae2bd88b609aa2b4d2b3c7a95f8848d37581d59e3c50bb42"
+    },
+    {
+      "archive_path": "evidence/fit40_lfs_reconciliation_receipt.json",
+      "bytes": 24814,
+      "sha256": "b8a810049b48a256b45a38073249412baece0070b87f857719c73e4bb79dc581"
+    },
+    {
+      "archive_path": "evidence/pinned_source_README.md",
+      "bytes": 2567,
+      "sha256": "36fb96cb273f3433dd4393df6cf9d9a3dab1b2e6c20a45ea11fc33647ae92c5c"
+    },
+    {
+      "archive_path": "evidence/audio_io.py",
+      "bytes": 14294,
+      "sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004"
+    }
+  ],
+  "gates": {
+    "asr_or_score_run": false,
+    "canonical_float32_finite": true,
+    "canonical_sample_clock_preserved": true,
+    "local_final_file_readback_verified": true,
+    "model_or_gpu_run": false,
+    "source_file_bytes_sha256_verified": true
+  },
+  "rows": [
+    {
+      "basename": "BAC009S0102W0121.wav",
+      "bundle_path": "source_wav/train/S0102/BAC009S0102W0121.wav",
+      "bytes": 189838,
+      "canonical_float32": {
+        "pcm_sha256": "5fcd29c680815b54f6d3d43101678b828119d3c371d7b84a7522bef62a66489c",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 94897,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 94897,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0102W0121",
+      "sha256": "2f979b61bea349720905d6e8970f9558311ade1bd6b45ae70c970821d8a82e84",
+      "source_path": "data_aishell/wav/train/S0102/BAC009S0102W0121.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0102/BAC009S0102W0121.wav",
+      "speaker_id": "S0102"
+    },
+    {
+      "basename": "BAC009S0102W0122.wav",
+      "bundle_path": "source_wav/train/S0102/BAC009S0102W0122.wav",
+      "bytes": 186316,
+      "canonical_float32": {
+        "pcm_sha256": "544232369788986a8256f45e5d08924d3edc4bfd6cd897e698de16efb0afcdc3",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 93136,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 93136,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0102W0122",
+      "sha256": "97c8186857c2d0ed0be575a3ae8a38e4e6d420b6645e0285d9684f4e3be5264b",
+      "source_path": "data_aishell/wav/train/S0102/BAC009S0102W0122.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0102/BAC009S0102W0122.wav",
+      "speaker_id": "S0102"
+    },
+    {
+      "basename": "BAC009S0103W0121.wav",
+      "bundle_path": "source_wav/train/S0103/BAC009S0103W0121.wav",
+      "bytes": 147916,
+      "canonical_float32": {
+        "pcm_sha256": "aa6e0fea2822a9c74e335c81184e7d20c423c4783793ccb980526760660132a8",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 73936,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 73936,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0103W0121",
+      "sha256": "ff17f3ffc1cd994fa83c9ebea1840fc92a6fab1958c977fa664664eba08d4e8c",
+      "source_path": "data_aishell/wav/train/S0103/BAC009S0103W0121.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0103/BAC009S0103W0121.wav",
+      "speaker_id": "S0103"
+    },
+    {
+      "basename": "BAC009S0103W0122.wav",
+      "bundle_path": "source_wav/train/S0103/BAC009S0103W0122.wav",
+      "bytes": 147180,
+      "canonical_float32": {
+        "pcm_sha256": "4497877578d640927d406020dd35db6d4d52c46f57003b2bf13f3edbbed56c2d",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 73568,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 73568,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0103W0122",
+      "sha256": "9eecfc78bb0ee33bd3bb04b0e94320488344ff703084a0ce39c8c0c4b373f932",
+      "source_path": "data_aishell/wav/train/S0103/BAC009S0103W0122.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0103/BAC009S0103W0122.wav",
+      "speaker_id": "S0103"
+    },
+    {
+      "basename": "BAC009S0104W0122.wav",
+      "bundle_path": "source_wav/train/S0104/BAC009S0104W0122.wav",
+      "bytes": 151436,
+      "canonical_float32": {
+        "pcm_sha256": "b5b3611d6848456135d532bdec47d98111aa9fe0d31630c25f36128955f6a605",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 75696,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 75696,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0104W0122",
+      "sha256": "0f0a072666beeced03e34f85d23724665838bc09609da0ca57a39763dda1f1a7",
+      "source_path": "data_aishell/wav/train/S0104/BAC009S0104W0122.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0104/BAC009S0104W0122.wav",
+      "speaker_id": "S0104"
+    },
+    {
+      "basename": "BAC009S0104W0123.wav",
+      "bundle_path": "source_wav/train/S0104/BAC009S0104W0123.wav",
+      "bytes": 157036,
+      "canonical_float32": {
+        "pcm_sha256": "9ed974b5693216d876ea809543bd130d8078de77d77d13886094ffb051564d62",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 78496,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 78496,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0104W0123",
+      "sha256": "fd66ce59e9c23ae3521c01e80792ab49ffc5ec4cb39f035fd4b2aa509f5ed684",
+      "source_path": "data_aishell/wav/train/S0104/BAC009S0104W0123.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0104/BAC009S0104W0123.wav",
+      "speaker_id": "S0104"
+    },
+    {
+      "basename": "BAC009S0105W0121.wav",
+      "bundle_path": "source_wav/train/S0105/BAC009S0105W0121.wav",
+      "bytes": 158604,
+      "canonical_float32": {
+        "pcm_sha256": "c25728170c8f998e94dc081705718a65eae13ce3a68fc548907dc1aa5155a857",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 79280,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 79280,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0105W0121",
+      "sha256": "828e182d284498739ec36d0ad9ae6d26e9df66799d971160bf07359c0c7e8530",
+      "source_path": "data_aishell/wav/train/S0105/BAC009S0105W0121.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0105/BAC009S0105W0121.wav",
+      "speaker_id": "S0105"
+    },
+    {
+      "basename": "BAC009S0105W0122.wav",
+      "bundle_path": "source_wav/train/S0105/BAC009S0105W0122.wav",
+      "bytes": 235980,
+      "canonical_float32": {
+        "pcm_sha256": "a684796d221c9d5ff85655d609d78f2e9621cb9a1c2248a15b42f027c7f2290a",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 117968,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 117968,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0105W0122",
+      "sha256": "3b708c293cb8c2ccd82eb63943de82c211a563b1fb8707ea5a583b75dd3f93d8",
+      "source_path": "data_aishell/wav/train/S0105/BAC009S0105W0122.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0105/BAC009S0105W0122.wav",
+      "speaker_id": "S0105"
+    },
+    {
+      "basename": "BAC009S0106W0121.wav",
+      "bundle_path": "source_wav/train/S0106/BAC009S0106W0121.wav",
+      "bytes": 129324,
+      "canonical_float32": {
+        "pcm_sha256": "1ed650884486287ecb67c739e25e109aaa77d2cf557ffd1ffa813953e82ecd31",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 64640,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 64640,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0106W0121",
+      "sha256": "304aca5bd5c28c488257f9adb7b0616dff557368bbe7a26fc794463c66acb6b8",
+      "source_path": "data_aishell/wav/train/S0106/BAC009S0106W0121.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0106/BAC009S0106W0121.wav",
+      "speaker_id": "S0106"
+    },
+    {
+      "basename": "BAC009S0106W0123.wav",
+      "bundle_path": "source_wav/train/S0106/BAC009S0106W0123.wav",
+      "bytes": 129740,
+      "canonical_float32": {
+        "pcm_sha256": "db384b1fa5b1a99d33bf8bd8f799446dc8f92ac7cd5dce39ead64f3478573a77",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 64848,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 64848,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0106W0123",
+      "sha256": "ae52528ce122b6c4ee854321c0c6f4185425214419e3b1933ae8c9370865d938",
+      "source_path": "data_aishell/wav/train/S0106/BAC009S0106W0123.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0106/BAC009S0106W0123.wav",
+      "speaker_id": "S0106"
+    },
+    {
+      "basename": "BAC009S0107W0121.wav",
+      "bundle_path": "source_wav/train/S0107/BAC009S0107W0121.wav",
+      "bytes": 201004,
+      "canonical_float32": {
+        "pcm_sha256": "6d015a97e0135ab649a242781778326b1c0dcb1ca644652d0dd769225dd83734",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 100480,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 100480,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0107W0121",
+      "sha256": "f7ead0e0b1401c0d3623370ad01b0c8693193f61d13b07a58b204eeceaf604f2",
+      "source_path": "data_aishell/wav/train/S0107/BAC009S0107W0121.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0107/BAC009S0107W0121.wav",
+      "speaker_id": "S0107"
+    },
+    {
+      "basename": "BAC009S0107W0122.wav",
+      "bundle_path": "source_wav/train/S0107/BAC009S0107W0122.wav",
+      "bytes": 164812,
+      "canonical_float32": {
+        "pcm_sha256": "94f94a01122376e45a8ace9573dbe10a2e51274776c4d02f93076e416c8f1b54",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 82384,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 82384,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0107W0122",
+      "sha256": "f0584158fceba1d04e7c0d7a1db9611e0f0ea091c5bbc37898cac6632b5b938d",
+      "source_path": "data_aishell/wav/train/S0107/BAC009S0107W0122.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0107/BAC009S0107W0122.wav",
+      "speaker_id": "S0107"
+    },
+    {
+      "basename": "BAC009S0108W0121.wav",
+      "bundle_path": "source_wav/train/S0108/BAC009S0108W0121.wav",
+      "bytes": 130924,
+      "canonical_float32": {
+        "pcm_sha256": "95069821036e29e907ea97f52e266ea97e09801fb9ddb32a321ae7a45d0943b3",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 65440,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 65440,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0108W0121",
+      "sha256": "b90975a822297499cd4f8613264c25cc0f1d74123e4caf3a616c067e26e8b826",
+      "source_path": "data_aishell/wav/train/S0108/BAC009S0108W0121.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0108/BAC009S0108W0121.wav",
+      "speaker_id": "S0108"
+    },
+    {
+      "basename": "BAC009S0108W0122.wav",
+      "bundle_path": "source_wav/train/S0108/BAC009S0108W0122.wav",
+      "bytes": 216142,
+      "canonical_float32": {
+        "pcm_sha256": "c880a9e266ce6dcde3e8626aea1081e68ab57d4a370e1af1b5b61644a66059f6",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 108049,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 108049,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0108W0122",
+      "sha256": "c8b1ce3924943293829f5f370e883d6a80cb8fd7e892131dbdfed4d9b8500d02",
+      "source_path": "data_aishell/wav/train/S0108/BAC009S0108W0122.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0108/BAC009S0108W0122.wav",
+      "speaker_id": "S0108"
+    },
+    {
+      "basename": "BAC009S0109W0121.wav",
+      "bundle_path": "source_wav/train/S0109/BAC009S0109W0121.wav",
+      "bytes": 129804,
+      "canonical_float32": {
+        "pcm_sha256": "58391246396c71cafc9f0516af93565a390e81de12a00d50d9acd637cf573918",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 64880,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 64880,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0109W0121",
+      "sha256": "b2ad6ad2bb1c6822e5ee819a940071e10f179cf4d9bfc5160c3ea949d721532f",
+      "source_path": "data_aishell/wav/train/S0109/BAC009S0109W0121.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0109/BAC009S0109W0121.wav",
+      "speaker_id": "S0109"
+    },
+    {
+      "basename": "BAC009S0109W0123.wav",
+      "bundle_path": "source_wav/train/S0109/BAC009S0109W0123.wav",
+      "bytes": 135948,
+      "canonical_float32": {
+        "pcm_sha256": "6b8cb79b8c4b920e537d5aeb28567599ad5ebb086fa9f44d500819fac8918dc3",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 67952,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 67952,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0109W0123",
+      "sha256": "4cbd786f8ad8598aeeefe588a739f1bd13760b0055a08b7c46f515536ba9e3c3",
+      "source_path": "data_aishell/wav/train/S0109/BAC009S0109W0123.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0109/BAC009S0109W0123.wav",
+      "speaker_id": "S0109"
+    },
+    {
+      "basename": "BAC009S0110W0122.wav",
+      "bundle_path": "source_wav/train/S0110/BAC009S0110W0122.wav",
+      "bytes": 209868,
+      "canonical_float32": {
+        "pcm_sha256": "691e46d2bfb6b31959fbe5c3f2df93d15a0f55b3f832a1d604a0f377306c5a74",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 104912,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 104912,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0110W0122",
+      "sha256": "554d486888a59dbb0076d63b0dbd1acfe54dcdd1714a39451251adb4c901039c",
+      "source_path": "data_aishell/wav/train/S0110/BAC009S0110W0122.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0110/BAC009S0110W0122.wav",
+      "speaker_id": "S0110"
+    },
+    {
+      "basename": "BAC009S0110W0127.wav",
+      "bundle_path": "source_wav/train/S0110/BAC009S0110W0127.wav",
+      "bytes": 147468,
+      "canonical_float32": {
+        "pcm_sha256": "565148c2f1fb7be3c475221079d5968b7b70edfcd3eb460d089240a6f0777764",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 73712,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 73712,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0110W0127",
+      "sha256": "dda4da33d5a8ec7010c1ca810916ccf634a2dafa06c4e05703bf4a4441fd32a0",
+      "source_path": "data_aishell/wav/train/S0110/BAC009S0110W0127.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0110/BAC009S0110W0127.wav",
+      "speaker_id": "S0110"
+    },
+    {
+      "basename": "BAC009S0111W0121.wav",
+      "bundle_path": "source_wav/train/S0111/BAC009S0111W0121.wav",
+      "bytes": 148556,
+      "canonical_float32": {
+        "pcm_sha256": "99afa3c87a23cce24f03095ff53b5b23d6cdde8290283cbabf119de5e4b140cf",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 74256,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 74256,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0111W0121",
+      "sha256": "b060461c258164dacd99e881c01c85bafedbb44e739485b94a1a705a1ae5bb89",
+      "source_path": "data_aishell/wav/train/S0111/BAC009S0111W0121.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0111/BAC009S0111W0121.wav",
+      "speaker_id": "S0111"
+    },
+    {
+      "basename": "BAC009S0111W0125.wav",
+      "bundle_path": "source_wav/train/S0111/BAC009S0111W0125.wav",
+      "bytes": 156172,
+      "canonical_float32": {
+        "pcm_sha256": "5007c2a1e4dce84794962c76ac388d15672076889661a0d80e2a35cf5192d49a",
+        "reader_source_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+        "resampler": "none",
+        "sample_count": 78064,
+        "sample_rate_hz": 16000
+      },
+      "riff": {
+        "bits_per_sample": 16,
+        "channels": 1,
+        "format_code": 1,
+        "sample_count": 78064,
+        "sample_rate_hz": 16000
+      },
+      "sample_id": "BAC009S0111W0125",
+      "sha256": "93c5ebfac856794614bb103e6b9bf07066ed2aca02682852e78ce8495a127f9c",
+      "source_path": "data_aishell/wav/train/S0111/BAC009S0111W0125.wav",
+      "source_url": "https://huggingface.co/datasets/shenyunhang/AISHELL-1/resolve/2724409d538167445e43ebf846990319f12a1cbf/data_aishell/wav/train/S0111/BAC009S0111W0125.wav",
+      "speaker_id": "S0111"
+    }
+  ],
+  "schema": "aishell_future_dev20_portable_source_manifest_attempt02_v1",
+  "selection": {
+    "confirm_audio_or_scores_accessed": false,
+    "performance_or_score_selection": false,
+    "requirements": {
+      "bits_per_sample": 16,
+      "channels": 1,
+      "container": "RIFF/WAVE",
+      "format_code": 1,
+      "sample_count_max_inclusive": 128000,
+      "sample_count_min_inclusive": 64000,
+      "sample_rate_hz": 16000
+    },
+    "rows_per_speaker": 2,
+    "selected_speakers": [
+      "S0102",
+      "S0103",
+      "S0104",
+      "S0105",
+      "S0106",
+      "S0107",
+      "S0108",
+      "S0109",
+      "S0110",
+      "S0111"
+    ],
+    "speaker_order": "ascending canonical SNNNN IDs after frozen exclusion union",
+    "within_speaker_order": "first two lexicographic WAV basenames satisfying RIFF header gate"
+  },
+  "self_sha256": "ad151b990fd8aee6f8aca7b63458231adeaf88713ecbbde5fa36549ef856ae88",
+  "source": {
+    "classification": "third-party Hugging Face mirror; README declares OpenSLR33 source",
+    "local_fit40_lfs_metadata_checked": 40,
+    "local_fit40_lfs_metadata_matches": 40,
+    "mirror_license_claim": "Apache-2.0",
+    "repo_id": "shenyunhang/AISHELL-1",
+    "revision": "2724409d538167445e43ebf846990319f12a1cbf",
+    "upstream_claim": "OpenSLR33 AISHELL-1, as stated by this third-party mirror README"
+  },
+  "status": "SEALED_SOURCE_ONLY_FUTURE_DEV20"
+}

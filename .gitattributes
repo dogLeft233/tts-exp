@@ -96,3 +96,7 @@ openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/cpu03_act
 # Preserve actual candidate03 metadata and live launch evidence bytes.
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate03_metadata_and_live_launch_attempt01/** -text !eol whitespace=cr-at-eol
 scripts/experiments/cross_tfg_audio_head_20261003/run_v3_step120_candidate_samehost_attempt15.py -text !eol whitespace=cr-at-eol
+
+# Preserve source preparation and actual independent staging evidence bytes.
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/parallel_source_staging_and_mechanism_design_attempt01/** -text !eol whitespace=cr-at-eol
+openspec/changes/develop-cross-tfg-audio-head-20261003/future-dev20-admission-policy-attempt01.md -text !eol whitespace=cr-at-eol

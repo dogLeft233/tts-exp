@@ -1,0 +1,13 @@
+{
+  "canonical_f32_total_bytes": 6546376,
+  "full_remote_media_downloaded": false,
+  "ordered_rows": 20,
+  "receipt_bytes": 25886,
+  "receipt_raw_sha256": "0896932659649d3328d9986329c9bddfa4fd73f3b7b3c6f4268dba44441ff379",
+  "receipt_self_sha256": "848778e568a8018bba15dbe36491da38e5d0c57139cd158b8e49eb6ef90e4320",
+  "scope": "ROOT independently verified full actual producer receipt against all local ROOT PCM rows, portable ZIP and pinned metadata; remote WAV/F32 bodies were verified/read back by producer, not downloaded again by ROOT",
+  "source_sha256": "d0bb211d819aef1702302a1a3bb2727eedcc87a6f6040288cd620fb24da39b35",
+  "source_total_bytes": 3274068,
+  "status": "PASS_ACTUAL_RECEIPT_ALL20_ROWS_AND48_OUTPUT_PINS",
+  "written_outputs": 48
+}

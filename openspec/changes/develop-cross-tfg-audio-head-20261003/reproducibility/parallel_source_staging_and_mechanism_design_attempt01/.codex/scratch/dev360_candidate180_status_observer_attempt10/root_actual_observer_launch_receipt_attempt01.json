@@ -1,0 +1,22 @@
+{
+  "schema": "root_actual_readonly_candidate_observer_launch_v1",
+  "candidate_pid": 164225,
+  "start_time_utc": "2026-10-08T17:54:25.7078721Z",
+  "pid": 117048,
+  "candidate_start_ticks": 333464927,
+  "gpu_or_api_started": false,
+  "arguments": [
+    "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_status_observer_attempt10\\read_candidate180_status_observer_attempt10.py",
+    "--launch-receipt-path",
+    "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_status13_readback_attempt01\\downloads_attempt01\\candidate180_codex_candidate180_cli03_attempt03_launch01.launch_receipt.json",
+    "--launch-receipt-bytes",
+    "11668",
+    "--launch-receipt-raw-sha256",
+    "fe8fc0e82cf15fe971ca8d16d69d4961f5186ea12a93eb157c26845dee36e268"
+  ],
+  "credentials_saved": false,
+  "python": "E:\\Documents\\tts-exp\\.codex\\scratch\\world_v5_archive_runtime\\Scripts\\python.exe",
+  "status": "STARTED_LOCAL_READONLY_OBSERVER",
+  "poll_interval_seconds": 60,
+  "source_sha256": "eeac377ebf928c6cdaa08b1074a3d62f38379a34e0547fed45e5e1ebcec6e305"
+}

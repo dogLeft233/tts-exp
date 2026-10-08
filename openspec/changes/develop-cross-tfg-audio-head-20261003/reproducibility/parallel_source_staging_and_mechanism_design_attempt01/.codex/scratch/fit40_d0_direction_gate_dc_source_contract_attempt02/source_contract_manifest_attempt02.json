@@ -1,0 +1,99 @@
+{
+  "canonical_payload_sha256": "ac2e508457562cd821997885a2836180b2d4fe71d276f1b6c69de3768e06dea1",
+  "checks": {
+    "cohort_exactly_first_two_ids": true,
+    "cohort_exclude_confirmation_audio": true,
+    "cohort_first_ten_canonical_speakers": true,
+    "cohort_minimum_pcm_samples": true,
+    "gradient_nonzero_count_reused_for_recorded_positive_signal": true,
+    "runner_head_pin_matches": true,
+    "runner_objective_weights_equal_strict_objective": true,
+    "runner_strict_adapter_pin_matches": true,
+    "runner_v3_head_adam_created_only_after_zero_and_backward_gates": true,
+    "strict_gradient_must_be_finite_nonzero_3x3": true,
+    "strict_head_pin_matches": true,
+    "strict_objective_pin_matches": true,
+    "v2_loader_optimizer_discarded_without_step_and_wording_is_explicit": true
+  },
+  "contract": {
+    "bytes": 5279,
+    "path": ".codex/scratch/fit40_d0_direction_gate_dc_source_contract_attempt02/fit40_d0_direction_gatedc_source_contract_attempt02.md",
+    "sha256": "956388cfc395da754760f1e31630f909bcde6da054c9af30a0e6f3402f24ddfc"
+  },
+  "diffs": [
+    {
+      "bytes": 2001,
+      "path": ".codex/scratch/fit40_d0_direction_gate_dc_source_contract_attempt02/wrapper_v8_to_v9.diff",
+      "sha256": "8e3b65ffb81ae318b1f76a3d66053183eeb5cdae3ff55ba8793dc8ca37714111"
+    },
+    {
+      "bytes": 5367,
+      "path": ".codex/scratch/fit40_d0_direction_gate_dc_source_contract_attempt02/runner_attempt01_to_attempt02.diff",
+      "sha256": "b4a3b90545922b2794edda667b8dd314ee3980a7d3d6bb0e236db5a1c8341c04"
+    },
+    {
+      "bytes": 4617,
+      "path": ".codex/scratch/fit40_d0_direction_gate_dc_source_contract_attempt02/contract_attempt01_to_attempt02.diff",
+      "sha256": "b3574a82c340836347b625fa8cd610d268fb0808049ff6b155fc918b6e447209"
+    }
+  ],
+  "new_source_pins": [
+    {
+      "bytes": 33497,
+      "path": "scripts/audio_enhancement/shared_recipient_transition_head_v3_d0_gatedc_attempt01.py",
+      "sha256": "1835213f4e05e03f6921b4f822535c3ea177433e5512e01ce8959eca272f22ee"
+    },
+    {
+      "bytes": 7613,
+      "path": "scripts/audio_enhancement/v3_v4_native_runtime_adapter_attempt04.py",
+      "sha256": "7d0bc03c039e22d1c84dc5472973c47af959f60bf5946d40b88ca70a50760e07"
+    },
+    {
+      "bytes": 36120,
+      "path": "scripts/audio_enhancement/v3_v4_native_runtime_adapter_v9_attempt01.py",
+      "sha256": "a9596ac2dd53b446123f9057540d025922a369c69d80d3ec7a094833800173cf"
+    },
+    {
+      "bytes": 99177,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_fit40_native_transition_head_v3_d0_direction_gatedc_attempt02.py",
+      "sha256": "a13c652da3ef3072deeccdd364a4a450e27247e42f0ce9ec94f4245a969cd1f7"
+    }
+  ],
+  "parent_manifest": {
+    "bytes": 3090,
+    "path": ".codex/scratch/fit40_d0_direction_gate_dc_source_contract_attempt01/source_contract_manifest_attempt01.json",
+    "sha256": "941d009c0714d8ed903c814bd8ba487d4aa60247f5f718f1b29892e64772a1f6"
+  },
+  "preserved_legacy_source_pins": [
+    {
+      "bytes": 84494,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_fit40_native_transition_head_v3_attempt11.py",
+      "sha256": "3da9c6a1800c4c023a04b5885632efa2ca58d09ab5a8033939fdaa0f4b391219"
+    },
+    {
+      "bytes": 32233,
+      "path": "scripts/audio_enhancement/shared_recipient_transition_head_v3.py",
+      "sha256": "77acdff03cca22261852f48364cbc75263db58a14cb565c08aa0d268afca6e87"
+    },
+    {
+      "bytes": 6892,
+      "path": "scripts/audio_enhancement/v3_v4_native_runtime_adapter_attempt03.py",
+      "sha256": "4f4f6f496bd15e073268694673b8df5678404e672aafa625ff9a6abc135248aa"
+    },
+    {
+      "bytes": 35785,
+      "path": "scripts/audio_enhancement/v3_v4_native_runtime_adapter_v7_attempt01.py",
+      "sha256": "c307d0b7f363fb5a0805ee7466a470f19a416960793452afb704ec9d95bdb51c"
+    }
+  ],
+  "schema": "fit40_d0_direction_gatedc_source_contract_manifest_attempt02",
+  "static_review": {
+    "ast_parse": "PASS for fresh wrapper v9 and runner attempt02 only",
+    "execution_performed": false,
+    "feature_gradient_claim": "none; per-frontend feature audit remains separate and excluded from objective",
+    "gpu_or_api_or_tests_performed": false,
+    "optimizer_scope": "V2 loader creates a legacy optimizer, which the runner discards without stepping; only the V3-head Adam is created after gates",
+    "runner_gate_order": "source-read: all-40 same-GPU zero-head gate; strict full-objective backward qualification with finite nonzero [3,3] gradient; then V3-head Adam"
+  },
+  "status": "SOURCE_ONLY_STATIC_QC_PASS_NO_EXECUTION"
+}

@@ -1,0 +1,13 @@
+{
+  "candidate_scientific_admission": false,
+  "status": "PASS_ALL188_SOURCES_AND180_DESTINATION_BYTE_PINS",
+  "external_references": 8,
+  "copied_entries": 180,
+  "index_bytes": 125723,
+  "copied_bytes": 1920879,
+  "index_sha256": "78f2071dc059d439b9ed4fb5a6cf1382c6a6536975d15181988c948f4cccfe24",
+  "future_dev_executed": false,
+  "checked_at_utc": "2026-10-08T19:31:14.3827811+00:00",
+  "direct_d0_training_executed": false,
+  "source_entries": 188
+}
