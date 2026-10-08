@@ -1,5 +1,7 @@
-# Public project memory
+# Public memory mirror
 
-This directory contains a curated, sanitized subset of the project’s numbered experiment reports. It excludes personal task notes, operational deployment notes, server credentials and private datasets. Local machine paths, private network addresses, cloud endpoints and email addresses are redacted.
+A curated mirror of the project knowledge base for this public GitHub repository. It includes project overviews, experiment and research notes, paper notes, concepts, pitfalls, and project documentation.
 
-These reports are shared for research transparency; consult each report for its scope, limitations and provenance. The private/local `basic-memory/` knowledge base is intentionally not tracked.
+Excluded: private task tracking, agent instructions, handoff notes, credential and server access guides, deployment records, assistant planning/archive files, the Basic Memory database, and non-Markdown files (including PDFs and images).
+
+Before publishing, this mirror redacts credential assignments and token-like strings, account/email addresses, phone numbers, IPv4 addresses, cloud endpoints, and `/home` or `/root` machine paths. The source `basic-memory/` remains local and ignored by Git.
