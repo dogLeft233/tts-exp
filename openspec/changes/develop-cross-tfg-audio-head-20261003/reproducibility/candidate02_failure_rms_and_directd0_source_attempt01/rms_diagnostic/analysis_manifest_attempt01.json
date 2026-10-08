@@ -1,0 +1,152 @@
+{
+  "analysis_id": "dev360_controls360_rms_diagnostic_attempt01",
+  "artifacts": [
+    {
+      "bytes": 6218,
+      "path": ".codex\\scratch\\dev360_controls360_rms_diagnostic_attempt01\\analysis_protocol_attempt01.json",
+      "role": "preanalysis_protocol",
+      "sha256": "b27b6d1fd2ed7e646b4697da209d9f9ebc50838388457e41d5e3b047b459709a"
+    },
+    {
+      "bytes": 22622,
+      "path": ".codex\\scratch\\dev360_controls360_rms_diagnostic_attempt01\\analyze_controls360_rms_diagnostic_attempt01.py",
+      "role": "analysis_code",
+      "sha256": "2d6c880f0b8cf466a7d8496e8c9cb66bb16038081794d9297fdd1c6eeda9e6fa"
+    },
+    {
+      "bytes": 149096,
+      "path": ".codex\\scratch\\dev360_controls360_rms_diagnostic_attempt01\\effects_table_attempt01.json",
+      "role": "effects_table",
+      "sha256": "f4c2e5205d3bbb4c414cec04982a97b53cbdc8551d6ff17bcf410762c4f56be2",
+      "table_self_sha256": "1049eeb4d8a4f8e2108c25cffaea2bf46ca4ce22e6b93ae87378fc095e114885"
+    }
+  ],
+  "bootstrap": {
+    "cluster_unit": "speaker_id",
+    "family_size": 28,
+    "interval_rule": "Observed estimate plus/minus the simultaneous max-t critical value times that estimate's bootstrap standard deviation; no clipping.",
+    "method": "Speaker-cluster bootstrap with replacement, preserving all paired rows within each resampled speaker.",
+    "quantile_rule": "nearest_rank_99th_percentile",
+    "resamples": 100000,
+    "rng": "Python random.Random (MT19937), randrange(10) repeated 10 times per bootstrap replicate.",
+    "seed": 20261003,
+    "simultaneous_max_abs_t_99_critical_value": 3.4416474004008264
+  },
+  "denominator": {
+    "cluster_pair_counts": {
+      "S0005": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0022": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0024": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0037": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0038": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0039": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0041": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0044": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0049": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0050": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      }
+    },
+    "ledger_rows": 360,
+    "methods": {
+      "identity": 180,
+      "rms_fixed": 180
+    },
+    "model_method_cells": {
+      "ditto_hubert_fixed_portrait_attempt18/identity": 60,
+      "ditto_hubert_fixed_portrait_attempt18/rms_fixed": 60,
+      "musetalk_fixed_portrait_attempt16/identity": 60,
+      "musetalk_fixed_portrait_attempt16/rms_fixed": 60,
+      "wav2lip_gan_bac9a81e/identity": 60,
+      "wav2lip_gan_bac9a81e/rms_fixed": 60
+    },
+    "paired_method_rows": 180,
+    "pairs_by_model": {
+      "ditto_hubert_fixed_portrait_attempt18": 60,
+      "musetalk_fixed_portrait_attempt16": 60,
+      "wav2lip_gan_bac9a81e": 60
+    },
+    "pairs_per_speaker_model": 6,
+    "speaker_ids": [
+      "S0005",
+      "S0022",
+      "S0024",
+      "S0037",
+      "S0038",
+      "S0039",
+      "S0041",
+      "S0044",
+      "S0049",
+      "S0050"
+    ]
+  },
+  "manifest_self_sha256": "98be076e77c51e6c407b9228bed65b938e276eaf0f49983f53137f2a8fab8f44",
+  "schema": "controls360_rms_diagnostic_manifest_v1",
+  "self_hash_rule": "manifest_self_sha256 is SHA-256 over canonical JSON with this field omitted.",
+  "source_inputs": {
+    "frozen_controls_producer": {
+      "bytes": 78172,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_v3_samehost_dev360_controls_attempt18.py",
+      "sha256": "30381ee8deb6d0e7880379fc91a042e1e2bb3cca375dd05423319259fd9e8756"
+    },
+    "ledger": {
+      "bytes": 11940846,
+      "path": ".codex/scratch/dev360_terminal_transfer_attempt09/verify_output_attempt01/results.jsonl",
+      "sha256": "0ec1d6043f8e3c8ebce4dfdd17c95418239c663bdf8d24a47cdcbfde0e793cb2"
+    },
+    "metric_definition_source": {
+      "bytes": 79475,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_stagea_dev_attempt06.py",
+      "sha256": "291f8b5cd48d8ebc63aafd814dcd37450eecba949fab98283cf20a27c6335483"
+    },
+    "terminal_content_qc": {
+      "bytes": 9659,
+      "path": ".codex/scratch/dev360_terminal_transfer_attempt09/verify_output_attempt01/terminal_content_qc_attempt01.json",
+      "sha256": "0733a4c0c30e3cc938e0d065e00fbe8394ad7e5a114094dd1bab9e02aae6c09c"
+    },
+    "transfer_reconstruction_receipt": {
+      "bytes": 11165,
+      "path": ".codex/scratch/dev360_terminal_transfer_attempt09/verify_output_attempt01/transfer_reconstruction_receipt_attempt01.json",
+      "sha256": "dc85a1fb0f7e52811ba302fbac1e36ac9d38368a711915a261853659f6b2952d"
+    }
+  },
+  "status": "PASS_DESCRIPTIVE_ANALYSIS"
+}

@@ -81,3 +81,11 @@ openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls3
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt10_terminal_and_candidate_metadata04/*.jsonl -text !eol whitespace=cr-at-eol
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt10_terminal_and_candidate_metadata04/**/*.json -text !eol whitespace=cr-at-eol
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/controls360_attempt10_terminal_and_candidate_metadata04/sources/*.py -text !eol whitespace=cr-at-eol
+
+# Preserve exact candidate failure and frozen method source evidence.
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/** -text !eol whitespace=cr-at-eol
+scripts/audio_enhancement/enhance_v3_attempt03.py -text !eol whitespace=cr-at-eol
+scripts/audio_enhancement/shared_recipient_transition_head_v3_d0_gatedc_attempt01.py -text !eol whitespace=cr-at-eol
+scripts/audio_enhancement/v3_v4_native_runtime_adapter_attempt04.py -text !eol whitespace=cr-at-eol
+scripts/audio_enhancement/v3_v4_native_runtime_adapter_v9_attempt01.py -text !eol whitespace=cr-at-eol
+scripts/experiments/cross_tfg_audio_head_20261003/run_fit40_native_transition_head_v3_d0_direction_gatedc_attempt02.py -text !eol whitespace=cr-at-eol

@@ -1,0 +1,17 @@
+{
+  "candidate_completion_claimed": false,
+  "command_exact": true,
+  "completed_controls360_exact_parent_verified": true,
+  "fresh_preflight_bound": true,
+  "gpu_api_ssh_called_by_qc": false,
+  "observer06_local_source_pins_verified": 13,
+  "ordered180_and_plan_manifest_binding_verified": true,
+  "pid": 160688,
+  "receipt_bytes": 10374,
+  "receipt_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt10\\launch_receipt_readback_attempt01\\candidate180_codex_candidate180_attempt02_launch03.launch_receipt.json",
+  "receipt_raw_sha256": "28f4ef0a14b7d4358b9200cfe45e7a31965d9838f20554f7443e113894790fc8",
+  "receipt_self_sha256": "a3482a81f3d40e769d3ab0505a346da1f869a0651089f72de8415624a0e18ad0",
+  "run_id": "cross_tfg_audio_head_20261003_v3_fit40_dev180_attempt02",
+  "start_ticks": 332743088,
+  "status": "PASS_ROOT_FULL_ACTUAL_CANDIDATE_LAUNCH_RECEIPT"
+}

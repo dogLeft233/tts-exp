@@ -1,0 +1,297 @@
+{
+  "failure_expectations": {
+    "child_returncode": 2,
+    "execution_status": "INCOMPLETE_STRICT_POLICY_RECEIPTS",
+    "failure_reason_histogram": [
+      {
+        "count": 60,
+        "failure_reason": "V3CLIError: cannot establish configured PyTorch interop threads: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called",
+        "model_id": "wav2lip_gan_bac9a81e"
+      },
+      {
+        "count": 60,
+        "failure_reason": "V3CLIError: cannot establish configured PyTorch interop threads: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called",
+        "model_id": "musetalk_fixed_portrait_attempt16"
+      },
+      {
+        "count": 60,
+        "failure_reason": "V3CLIError: cannot establish configured PyTorch interop threads: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called",
+        "model_id": "ditto_hubert_fixed_portrait_attempt18"
+      }
+    ],
+    "ledger_bytes": 817337,
+    "ledger_sha256": "dd19b4996902576b0bedfbf91e0c2fab27815392145f024e610d584e0bb49e84",
+    "model_status_counts": {
+      "ditto_hubert_fixed_portrait_attempt18": {
+        "FAILED": 60,
+        "INCOMPLETE": 0,
+        "PASS": 0
+      },
+      "musetalk_fixed_portrait_attempt16": {
+        "FAILED": 60,
+        "INCOMPLETE": 0,
+        "PASS": 0
+      },
+      "wav2lip_gan_bac9a81e": {
+        "FAILED": 60,
+        "INCOMPLETE": 0,
+        "PASS": 0
+      }
+    },
+    "ordered_identity_fields_match": true,
+    "ordered_row_ids_match": true,
+    "row_count": 180,
+    "status_counts": {
+      "FAILED": 180,
+      "INCOMPLETE": 0,
+      "PASS": 0
+    },
+    "strict_policy_error": "ValueError('candidate render run produced no strict bootstrap receipts')"
+  },
+  "frozen_input": {
+    "candidate_root_remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180",
+    "plan_bytes": 932236,
+    "plan_path_remote": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/rebound_plan_attempt12/candidate_rebound_plan_attempt13.json",
+    "plan_raw_sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280",
+    "planned_rows": 180,
+    "planned_rows_bytes": 606042,
+    "planned_rows_path_remote": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/rebound_plan_attempt12/planned_rows.jsonl",
+    "planned_rows_raw_sha256": "c9dc6f9bf400aff7f2c25ee24528dfd3a038433c21e80e0177066b8ab3f8a19e",
+    "run_id": "cross_tfg_audio_head_20261003_v3_fit40_dev180_attempt02"
+  },
+  "index_sha256": "b9d5e9e103ae06402af3484fea1ae163562c589ca16a2944ecf9e25e897b8dd4",
+  "packet_role": "post_download_qc_only_not_for_dispatch",
+  "parent_packet_index_raw_sha256": "5bd019a179df28840a225f74d22bd55d8b6b17be98ec18eb743c3ca51de0c1d7",
+  "qc_attempt": "attempt04",
+  "qc_manifest_raw_sha256": "a7d3cb7e20268ec8e653bf25689d7e2f11ca1b5efad685b01fb5b01f91a2458a",
+  "repeat_qc": {
+    "bytes": 0,
+    "path": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/generation_repeat_qc.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "NOT_RUN_SUBRUN"
+  },
+  "request_id": "candidate180_attempt02_failure_readback_attempt03",
+  "requests": [
+    {
+      "bytes": 325,
+      "expected_remote_bytes": 817337,
+      "expected_remote_sha256": "dd19b4996902576b0bedfbf91e0c2fab27815392145f024e610d584e0bb49e84",
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\results_ledger",
+      "name": "results_ledger",
+      "op": "download",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\requests_attempt03\\q00_results_ledger.json",
+      "raw_sha256": "88e1024418665673422e6964d1447361db4f8542b80f91f4bb45711613126f4b",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/results.jsonl",
+      "request_id": "q00",
+      "sha256": "88e1024418665673422e6964d1447361db4f8542b80f91f4bb45711613126f4b"
+    },
+    {
+      "bytes": 333,
+      "expected_remote_bytes": 69049,
+      "expected_remote_sha256": "727c6a7dfebdd2184788e89cb3607e46703d0d4063b35c8f013deb5342ad3b99",
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\result_manifest",
+      "name": "result_manifest",
+      "op": "download",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\requests_attempt03\\q01_result_manifest.json",
+      "raw_sha256": "76ca763f26b2139e37195b323ea5fc362d8ea6c0aba8bb2de19560d0d4d4a04c",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/result_manifest.json",
+      "request_id": "q01",
+      "sha256": "76ca763f26b2139e37195b323ea5fc362d8ea6c0aba8bb2de19560d0d4d4a04c"
+    },
+    {
+      "bytes": 331,
+      "expected_remote_bytes": 1258,
+      "expected_remote_sha256": "ab7e1b958418f7dd3ec007bba97902182a0261452020ff7765a8b578dd9c1aab",
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\run_status",
+      "name": "run_status",
+      "op": "download",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\requests_attempt03\\q02_run_status.json",
+      "raw_sha256": "253957455f71de4cde4d71a2bcedfeb323b6f0d230191263f35c0cfbaa22181d",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/control/run_status.json",
+      "request_id": "q02",
+      "sha256": "253957455f71de4cde4d71a2bcedfeb323b6f0d230191263f35c0cfbaa22181d"
+    },
+    {
+      "bytes": 328,
+      "expected_remote_bytes": 6841,
+      "expected_remote_sha256": "fbeeef8d8567aaeceea6cf4cac2e0b7a09bc99859803c2adcfdfb10ae3fb9021",
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\execution_record",
+      "name": "execution_record",
+      "op": "download",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\requests_attempt03\\q03_execution_record.json",
+      "raw_sha256": "fd6eaedc7346949854c4553a03ec5480fe1d1ee2ae4007f3a56d1fd2c2ee080d",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180.execution.json",
+      "request_id": "q03",
+      "sha256": "fd6eaedc7346949854c4553a03ec5480fe1d1ee2ae4007f3a56d1fd2c2ee080d"
+    },
+    {
+      "bytes": 357,
+      "expected_remote_bytes": 770,
+      "expected_remote_sha256": "226ea26ba92bd4137d7a25b86248c9f4ab4409f9a74ea0ad24cbfc426327fb80",
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\startup_policy_receipt",
+      "name": "startup_policy_receipt",
+      "op": "download",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\requests_attempt03\\q04_startup_policy_receipt.json",
+      "raw_sha256": "c85686dc0e30a2e5036747c56b6bcbd3123f14070534f515b46168c32e794d16",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180.candidate_startup_policy_receipt.json",
+      "request_id": "q04",
+      "sha256": "c85686dc0e30a2e5036747c56b6bcbd3123f14070534f515b46168c32e794d16"
+    },
+    {
+      "bytes": 351,
+      "expected_remote_bytes": 0,
+      "expected_remote_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\generation_repeat_qc_ledger",
+      "name": "generation_repeat_qc_ledger",
+      "op": "download",
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\requests_attempt03\\q05_generation_repeat_qc_ledger.json",
+      "raw_sha256": "988bce5ca8a3b1f98b2059b5b39316c0a944c551d0a4b8370943efed85fbec0b",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/generation_repeat_qc.jsonl",
+      "request_id": "q05",
+      "sha256": "988bce5ca8a3b1f98b2059b5b39316c0a944c551d0a4b8370943efed85fbec0b"
+    }
+  ],
+  "run_id": "cross_tfg_audio_head_20261003_v3_fit40_dev180_attempt02",
+  "schema": "cross_tfg_candidate180_failure_terminal_download_packet_v1",
+  "scope": {
+    "all_six_downloads_direct": true,
+    "api_called": false,
+    "automatic_pass_inference": false,
+    "gpu_or_cuda_queried": false,
+    "lineage_checks": "launch receipt, candidate plan/manifest/rows, runtime binding, strict startup receipt, execution argv",
+    "local_packet_prepared_only": true,
+    "local_qc_script_ast_parse": "PASS_SYNTAX_ONLY",
+    "max_ledger_bytes": 8388608,
+    "max_metadata_bytes": 262144,
+    "media_read_or_written": false,
+    "models_or_scorers_imported": false,
+    "remote_dispatch_performed": false,
+    "remote_mutation": false,
+    "scientific_admission": false
+  },
+  "source_evidence": {
+    "actual_launch_receipt": {
+      "bytes": 10374,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt10\\launch_receipt_readback_attempt01\\candidate180_codex_candidate180_attempt02_launch03.launch_receipt.json",
+      "sha256": "28f4ef0a14b7d4358b9200cfe45e7a31965d9838f20554f7443e113894790fc8"
+    },
+    "actual_launch_response": {
+      "bytes": 1200,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt10\\requests_attempt03\\04_40_launch_candidate180_once_attempt03_revision03.json.response.json",
+      "sha256": "819ab4d91c1146e23d33d25209e725b393e30624e4e391b0be86c66205a88a14"
+    },
+    "candidate13_guard": {
+      "bytes": 35309,
+      "path": "E:\\Documents\\tts-exp\\scripts\\experiments\\cross_tfg_audio_head_20261003\\run_v3_step120_candidate_samehost_attempt13.py",
+      "sha256": "8c3b45f73d420b1dac6db0d5676eaf3343324cbb582d17cad7a3868d27e42708"
+    },
+    "candidate_dispatcher07": {
+      "bytes": 12824,
+      "path": "E:\\Documents\\tts-exp\\scripts\\experiments\\cross_tfg_audio_head_20261003\\run_cross_frontend_v3_candidate_attempt07.py",
+      "sha256": "f6844b51183b6cf3b57f6a62d0b1b9bd70c3a0d496480fe8cad70313907c16e3"
+    },
+    "candidate_manifest14": {
+      "bytes": 2513,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\actual_readback_attempt01\\plan_manifest_metadata_repair_attempt14.json",
+      "sha256": "d25985b666c59946a7acd1c948b834ea8628d0b9c8eef0442419818ea86c0192"
+    },
+    "candidate_plan13": {
+      "bytes": 932236,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\actual_readback_attempt01\\candidate_rebound_plan_attempt13.json",
+      "sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280"
+    },
+    "candidate_rows12": {
+      "bytes": 606042,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_cpu_prepare_attempt01\\downloads_attempt02\\candidate_rebound_rows_attempt12.jsonl",
+      "sha256": "c9dc6f9bf400aff7f2c25ee24528dfd3a038433c21e80e0177066b8ab3f8a19e"
+    },
+    "failed_status_response02": {
+      "bytes": 380,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_immediate_status_attempt02\\requests_attempt01\\00_read_candidate180_status10_once.json.response.json",
+      "sha256": "044577339c98ccef94c5fa6e9333ee4f7219a12ec83cec2ee92e6202e0458d71"
+    },
+    "failure_diagnostic_index": {
+      "bytes": 4497,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_diagnostic_attempt01\\request_index_attempt01.json",
+      "sha256": "5772037d6976caa65d56574bc802c2528311dda236ef78961effb1ed3eb7cb95"
+    },
+    "failure_diagnostic_request": {
+      "bytes": 9801,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_diagnostic_attempt01\\requests_attempt01\\00_read_candidate180_failure_histogram_once.json",
+      "sha256": "c260d90482c88de7b3ff6c56f188b05361667aa847b92a689be233d2d44d8b1e"
+    },
+    "failure_diagnostic_response": {
+      "bytes": 75241,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_diagnostic_attempt01\\requests_attempt01\\00_read_candidate180_failure_histogram_once.json.response.json",
+      "sha256": "ed1cf2263658b56574c6dbeb9515040c01ff783a133d9542b3182f9ebffdc85b"
+    },
+    "frontend09": {
+      "bytes": 23249,
+      "path": "E:\\Documents\\tts-exp\\scripts\\experiments\\cross_tfg_audio_head_20261003\\run_cross_frontend_dev_attempt09.py",
+      "sha256": "04adf397a2edc45c6e3bc1e67d2265ea1c6ad2fcdac3df268b290938e5bf74df"
+    },
+    "local_qc_script": {
+      "bytes": 32503,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt04\\qc_candidate180_failure_packet_attempt04.py",
+      "sha256": "f5de4ff3bdaee7f893d1bcf36d710d6297f0de1368b8395106f159a7e6c212e6"
+    },
+    "parent_packet_index03": {
+      "bytes": 15504,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\request_index_attempt03.json",
+      "sha256": "5bd019a179df28840a225f74d22bd55d8b6b17be98ec18eb743c3ca51de0c1d7"
+    },
+    "qc_manifest_attempt04": {
+      "bytes": 7128,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt04\\qc_manifest_attempt04.json",
+      "sha256": "a7d3cb7e20268ec8e653bf25689d7e2f11ca1b5efad685b01fb5b01f91a2458a"
+    },
+    "runtime_binding09": {
+      "bytes": 568289,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\runtime_binding_attempt09.json",
+      "sha256": "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5"
+    },
+    "stagea_core06": {
+      "bytes": 79475,
+      "path": "E:\\Documents\\tts-exp\\scripts\\experiments\\cross_tfg_audio_head_20261003\\run_stagea_dev_attempt06.py",
+      "sha256": "291f8b5cd48d8ebc63aafd814dcd37450eecba949fab98283cf20a27c6335483"
+    },
+    "startup_lineage_diagnostic_response03": {
+      "bytes": 9665,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_startup_diagnostic_attempt03\\requests_attempt01\\00_read_startup_lineage_diagnostic_once.json.response.json",
+      "sha256": "62236bb70f0831263a8cb594512c03a541929d9053a24d9ded5411b6383aee17"
+    },
+    "strict_bootstrap03": {
+      "bytes": 9525,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_cpu_bind_plan_preflight_attempt01\\staging_files\\015\\sitecustomize.py",
+      "sha256": "3099c4b2e1c650f7aa46c31145cc2c88ccda9f085288ab039c6ffed85007ab65"
+    },
+    "superseded_qc_script03": {
+      "bytes": 26848,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\qc_candidate180_failure_packet_attempt03.py",
+      "sha256": "7b4c045376b803b93a94112787efea608dbda8e31f809a5b2b8782fc1104beef"
+    }
+  },
+  "source_refs": {
+    "candidate_guard_key": "candidate13_guard",
+    "candidate_plan_key": "candidate_plan13",
+    "failure_diagnostic_index_key": "failure_diagnostic_index",
+    "failure_diagnostic_request_key": "failure_diagnostic_request",
+    "failure_diagnostic_response_key": "failure_diagnostic_response",
+    "local_qc_script_key": "local_qc_script",
+    "parent_packet_index_key": "parent_packet_index03",
+    "plan_manifest_key": "candidate_manifest14",
+    "planned_rows_key": "candidate_rows12",
+    "qc_manifest_key": "qc_manifest_attempt04",
+    "runtime_binding_key": "runtime_binding09",
+    "stagea_core_key": "stagea_core06",
+    "strict_bootstrap_key": "strict_bootstrap03",
+    "superseded_qc_script_key": "superseded_qc_script03"
+  },
+  "stage_id": "candidate180",
+  "status": "READY_FOR_ROOT_DISPATCH_OF_PINNED_FAILURE_TERMINAL_FILES",
+  "strict_attestation": {
+    "download_request_created": false,
+    "evidence": "execution status is INCOMPLETE_STRICT_POLICY_RECEIPTS and strict_policy_error says no strict bootstrap receipts",
+    "status": "ABSENT_PER_FAILURE_DIAGNOSTIC_NO_DOWNLOAD_REQUEST"
+  }
+}

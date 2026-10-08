@@ -1,0 +1,4488 @@
+{
+  "analysis_code": {
+    "bytes": 22622,
+    "path": ".codex\\scratch\\dev360_controls360_rms_diagnostic_attempt01\\analyze_controls360_rms_diagnostic_attempt01.py",
+    "sha256": "2d6c880f0b8cf466a7d8496e8c9cb66bb16038081794d9297fdd1c6eeda9e6fa"
+  },
+  "analysis_id": "dev360_controls360_rms_diagnostic_attempt01",
+  "analysis_protocol": {
+    "bytes": 6218,
+    "path": ".codex\\scratch\\dev360_controls360_rms_diagnostic_attempt01\\analysis_protocol_attempt01.json",
+    "sha256": "b27b6d1fd2ed7e646b4697da209d9f9ebc50838388457e41d5e3b047b459709a"
+  },
+  "bootstrap": {
+    "cluster_unit": "speaker_id",
+    "family_size": 28,
+    "interval_rule": "Observed estimate plus/minus the simultaneous max-t critical value times that estimate's bootstrap standard deviation; no clipping.",
+    "method": "Speaker-cluster bootstrap with replacement, preserving all paired rows within each resampled speaker.",
+    "quantile_rule": "nearest_rank_99th_percentile",
+    "resamples": 100000,
+    "rng": "Python random.Random (MT19937), randrange(10) repeated 10 times per bootstrap replicate.",
+    "seed": 20261003,
+    "simultaneous_max_abs_t_99_critical_value": 3.4416474004008264
+  },
+  "denominator": {
+    "cluster_pair_counts": {
+      "S0005": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0022": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0024": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0037": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0038": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0039": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0041": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0044": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0049": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      },
+      "S0050": {
+        "ditto_hubert_fixed_portrait_attempt18": 6,
+        "musetalk_fixed_portrait_attempt16": 6,
+        "wav2lip_gan_bac9a81e": 6
+      }
+    },
+    "ledger_rows": 360,
+    "methods": {
+      "identity": 180,
+      "rms_fixed": 180
+    },
+    "model_method_cells": {
+      "ditto_hubert_fixed_portrait_attempt18/identity": 60,
+      "ditto_hubert_fixed_portrait_attempt18/rms_fixed": 60,
+      "musetalk_fixed_portrait_attempt16/identity": 60,
+      "musetalk_fixed_portrait_attempt16/rms_fixed": 60,
+      "wav2lip_gan_bac9a81e/identity": 60,
+      "wav2lip_gan_bac9a81e/rms_fixed": 60
+    },
+    "paired_method_rows": 180,
+    "pairs_by_model": {
+      "ditto_hubert_fixed_portrait_attempt18": 60,
+      "musetalk_fixed_portrait_attempt16": 60,
+      "wav2lip_gan_bac9a81e": 60
+    },
+    "pairs_per_speaker_model": 6,
+    "speaker_ids": [
+      "S0005",
+      "S0022",
+      "S0024",
+      "S0037",
+      "S0038",
+      "S0039",
+      "S0041",
+      "S0044",
+      "S0049",
+      "S0050"
+    ]
+  },
+  "effects_table": [
+    {
+      "cluster_bootstrap_se": 0.08405812001027488,
+      "identity_mean": 6.712874722480774,
+      "metric": "Cbest",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.23816919326782227,
+      "rms_fixed_mean": 6.951043915748596,
+      "simultaneous_99_ci_high": 0.5274676034837655,
+      "simultaneous_99_ci_low": -0.05112921694812095,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "wav2lip_gan_bac9a81e"
+    },
+    {
+      "cluster_bootstrap_se": 0.059760141005775196,
+      "identity_mean": 13.377958965301513,
+      "metric": "B",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.24759197235107422,
+      "rms_fixed_mean": 13.625550937652587,
+      "simultaneous_99_ci_high": 0.4532653062911872,
+      "simultaneous_99_ci_low": 0.04191863841096119,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "wav2lip_gan_bac9a81e"
+    },
+    {
+      "cluster_bootstrap_se": 0.03639302987350152,
+      "identity_mean": 6.66508424282074,
+      "metric": "Dmin",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.009422755241394043,
+      "rms_fixed_mean": 6.674506998062133,
+      "simultaneous_99_ci_high": 0.13467473189824017,
+      "simultaneous_99_ci_low": -0.11582922141545207,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "wav2lip_gan_bac9a81e"
+    },
+    {
+      "cluster_bootstrap_se": 0.03513906864734411,
+      "identity_mean": 6.966834473609924,
+      "metric": "D0",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.024726319313049316,
+      "rms_fixed_mean": 6.991560792922973,
+      "simultaneous_99_ci_high": 0.14566260357568736,
+      "simultaneous_99_ci_low": -0.09620996494958872,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "wav2lip_gan_bac9a81e"
+    },
+    {
+      "cluster_bootstrap_se": 0.08281663693918268,
+      "identity_mean": 6.41112449169159,
+      "metric": "Canchor",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.22286562919616698,
+      "rms_fixed_mean": 6.6339901208877565,
+      "simultaneous_99_ci_high": 0.507891292427844,
+      "simultaneous_99_ci_low": -0.062160034035510126,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "wav2lip_gan_bac9a81e"
+    },
+    {
+      "cluster_bootstrap_se": 0.06350365916147879,
+      "identity_mean": 0.95,
+      "metric": "best_lag_frames",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": -0.1,
+      "rms_fixed_mean": 0.85,
+      "simultaneous_99_ci_high": 0.11855720346904361,
+      "simultaneous_99_ci_low": -0.3185572034690436,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "wav2lip_gan_bac9a81e"
+    },
+    {
+      "cluster_bootstrap_se": 0.06350365916147879,
+      "identity_mean": 0.95,
+      "metric": "abs_best_lag_frames",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": -0.1,
+      "rms_fixed_mean": 0.85,
+      "simultaneous_99_ci_high": 0.11855720346904361,
+      "simultaneous_99_ci_low": -0.3185572034690436,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "wav2lip_gan_bac9a81e"
+    },
+    {
+      "cluster_bootstrap_se": 0.017008171925323324,
+      "identity_mean": 5.043275650342306,
+      "metric": "Cbest",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.05250473022460937,
+      "rms_fixed_mean": 5.095780380566914,
+      "simultaneous_99_ci_high": 0.11104086091696871,
+      "simultaneous_99_ci_low": -0.006031400467749963,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "musetalk_fixed_portrait_attempt16"
+    },
+    {
+      "cluster_bootstrap_se": 0.006134005009070751,
+      "identity_mean": 13.070114135742188,
+      "metric": "B",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.02272372245788574,
+      "rms_fixed_mean": 13.092837858200074,
+      "simultaneous_99_ci_high": 0.043834804851399733,
+      "simultaneous_99_ci_low": 0.001612640064371746,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "musetalk_fixed_portrait_attempt16"
+    },
+    {
+      "cluster_bootstrap_se": 0.016121947641231538,
+      "identity_mean": 8.026838485399882,
+      "metric": "Dmin",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": -0.029781007766723634,
+      "rms_fixed_mean": 7.997057477633159,
+      "simultaneous_99_ci_high": 0.025705051422119124,
+      "simultaneous_99_ci_low": -0.08526706695556639,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "musetalk_fixed_portrait_attempt16"
+    },
+    {
+      "cluster_bootstrap_se": 0.01507795192721988,
+      "identity_mean": 12.763977273305256,
+      "metric": "D0",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.021025880177815755,
+      "rms_fixed_mean": 12.785003153483073,
+      "simultaneous_99_ci_high": 0.07291887423150069,
+      "simultaneous_99_ci_low": -0.030867113875869174,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "musetalk_fixed_portrait_attempt16"
+    },
+    {
+      "cluster_bootstrap_se": 0.015460920771180484,
+      "identity_mean": 0.30613686243693033,
+      "metric": "Canchor",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.0016978422800699867,
+      "rms_fixed_mean": 0.30783470471700036,
+      "simultaneous_99_ci_high": 0.05490888006000644,
+      "simultaneous_99_ci_low": -0.051513195499866465,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "musetalk_fixed_portrait_attempt16"
+    },
+    {
+      "cluster_bootstrap_se": 0.023683372786603755,
+      "identity_mean": -3.8333333333333335,
+      "metric": "best_lag_frames",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.0,
+      "rms_fixed_mean": -3.8333333333333335,
+      "simultaneous_99_ci_high": 0.0815098183837385,
+      "simultaneous_99_ci_low": -0.0815098183837385,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "musetalk_fixed_portrait_attempt16"
+    },
+    {
+      "cluster_bootstrap_se": 0.023683372786603755,
+      "identity_mean": 3.8333333333333335,
+      "metric": "abs_best_lag_frames",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.0,
+      "rms_fixed_mean": 3.8333333333333335,
+      "simultaneous_99_ci_high": 0.0815098183837385,
+      "simultaneous_99_ci_low": -0.0815098183837385,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "musetalk_fixed_portrait_attempt16"
+    },
+    {
+      "cluster_bootstrap_se": 0.0599366304559253,
+      "identity_mean": 5.529491718610128,
+      "metric": "Cbest",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.16546136538187664,
+      "rms_fixed_mean": 5.694953083992004,
+      "simultaneous_99_ci_high": 0.37174211377929695,
+      "simultaneous_99_ci_low": -0.040819383015543664,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "ditto_hubert_fixed_portrait_attempt18"
+    },
+    {
+      "cluster_bootstrap_se": 0.060818893884779346,
+      "identity_mean": 13.524869060516357,
+      "metric": "B",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.19573065439860027,
+      "rms_fixed_mean": 13.720599714914957,
+      "simultaneous_99_ci_high": 0.4050478424324048,
+      "simultaneous_99_ci_low": -0.01358653363520429,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "ditto_hubert_fixed_portrait_attempt18"
+    },
+    {
+      "cluster_bootstrap_se": 0.062339932266347424,
+      "identity_mean": 7.99537734190623,
+      "metric": "Dmin",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.03026927312215169,
+      "rms_fixed_mean": 8.025646615028382,
+      "simultaneous_99_ci_high": 0.2448213389477899,
+      "simultaneous_99_ci_low": -0.18428279270348652,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "ditto_hubert_fixed_portrait_attempt18"
+    },
+    {
+      "cluster_bootstrap_se": 0.05744624866011556,
+      "identity_mean": 12.619663365681966,
+      "metric": "D0",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.11140931447347005,
+      "rms_fixed_mean": 12.731072680155437,
+      "simultaneous_99_ci_high": 0.3091190468373362,
+      "simultaneous_99_ci_low": -0.08630041789039611,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "ditto_hubert_fixed_portrait_attempt18"
+    },
+    {
+      "cluster_bootstrap_se": 0.03925948088432118,
+      "identity_mean": 0.9052056948343912,
+      "metric": "Canchor",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.08432133992513022,
+      "rms_fixed_mean": 0.9895270347595215,
+      "simultaneous_99_ci_high": 0.21943863025174012,
+      "simultaneous_99_ci_low": -0.05079595040147969,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "ditto_hubert_fixed_portrait_attempt18"
+    },
+    {
+      "cluster_bootstrap_se": 0.06333003977265483,
+      "identity_mean": -2.166666666666667,
+      "metric": "best_lag_frames",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.06666666666666667,
+      "rms_fixed_mean": -2.1,
+      "simultaneous_99_ci_high": 0.2846263334175051,
+      "simultaneous_99_ci_low": -0.1512930000841718,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "ditto_hubert_fixed_portrait_attempt18"
+    },
+    {
+      "cluster_bootstrap_se": 0.06333003977265483,
+      "identity_mean": 2.166666666666667,
+      "metric": "abs_best_lag_frames",
+      "pair_count": 60,
+      "paired_delta_mean_rms_fixed_minus_identity": -0.06666666666666667,
+      "rms_fixed_mean": 2.1,
+      "simultaneous_99_ci_high": 0.1512930000841718,
+      "simultaneous_99_ci_low": -0.2846263334175051,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "ditto_hubert_fixed_portrait_attempt18"
+    },
+    {
+      "cluster_bootstrap_se": 0.04348388013528391,
+      "identity_mean": 5.761880697144402,
+      "metric": "Cbest",
+      "pair_count": 180,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.1520450962914361,
+      "rms_fixed_mean": 5.91392579343584,
+      "simultaneous_99_ci_high": 0.3017012793183771,
+      "simultaneous_99_ci_low": 0.002388913264495085,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "equal_model_mean"
+    },
+    {
+      "cluster_bootstrap_se": 0.037983136654359276,
+      "identity_mean": 13.324314053853351,
+      "metric": "B",
+      "pair_count": 180,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.15534878306918673,
+      "rms_fixed_mean": 13.479662836922538,
+      "simultaneous_99_ci_high": 0.2860733465947317,
+      "simultaneous_99_ci_low": 0.024624219543641773,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "equal_model_mean"
+    },
+    {
+      "cluster_bootstrap_se": 0.01707943640259502,
+      "identity_mean": 7.562433356708951,
+      "metric": "Dmin",
+      "pair_count": 180,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.0033036735322740317,
+      "rms_fixed_mean": 7.565737030241224,
+      "simultaneous_99_ci_high": 0.062085071427576424,
+      "simultaneous_99_ci_low": -0.05547772436302836,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "equal_model_mean"
+    },
+    {
+      "cluster_bootstrap_se": 0.01977526346330184,
+      "identity_mean": 10.783491704199049,
+      "metric": "D0",
+      "pair_count": 180,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.052387171321445034,
+      "rms_fixed_mean": 10.835878875520494,
+      "simultaneous_99_ci_high": 0.12044665541215925,
+      "simultaneous_99_ci_low": -0.015672312769269184,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "equal_model_mean"
+    },
+    {
+      "cluster_bootstrap_se": 0.03769620987964956,
+      "identity_mean": 2.5408223496543036,
+      "metric": "Canchor",
+      "pair_count": 180,
+      "paired_delta_mean_rms_fixed_minus_identity": 0.10296160380045574,
+      "rms_fixed_mean": 2.6437839534547596,
+      "simultaneous_99_ci_high": 0.23269866653771562,
+      "simultaneous_99_ci_low": -0.026775458936804136,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "equal_model_mean"
+    },
+    {
+      "cluster_bootstrap_se": 0.033234796267415004,
+      "identity_mean": -1.6833333333333333,
+      "metric": "best_lag_frames",
+      "pair_count": 180,
+      "paired_delta_mean_rms_fixed_minus_identity": -0.01111111111111111,
+      "rms_fixed_mean": -1.6944444444444446,
+      "simultaneous_99_ci_high": 0.10327133906548883,
+      "simultaneous_99_ci_low": -0.12549356128771105,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "equal_model_mean"
+    },
+    {
+      "cluster_bootstrap_se": 0.028369765589382118,
+      "identity_mean": 2.316666666666667,
+      "metric": "abs_best_lag_frames",
+      "pair_count": 180,
+      "paired_delta_mean_rms_fixed_minus_identity": -0.05555555555555556,
+      "rms_fixed_mean": 2.261111111111111,
+      "simultaneous_99_ci_high": 0.042083174435122224,
+      "simultaneous_99_ci_low": -0.15319428554623335,
+      "speaker_cluster_count": 10,
+      "support": "full",
+      "target": "equal_model_mean"
+    }
+  ],
+  "limitations": [
+    "The full-support comparisons are diagnostic summaries of this completed controls ledger, not candidate qualification or method selection.",
+    "The strict attestation QC validates self-hashed per-row references; the six-file transfer QC did not separately download all 360 referenced native receipt files.",
+    "The simultaneous intervals are approximate cluster-bootstrap intervals over ten frozen speaker clusters."
+  ],
+  "runtime": {
+    "implementation": "cpython",
+    "python_version": "3.13.5"
+  },
+  "schema": "controls360_rms_diagnostic_effects_v1",
+  "source_inputs": {
+    "frozen_controls_producer": {
+      "bytes": 78172,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_v3_samehost_dev360_controls_attempt18.py",
+      "sha256": "30381ee8deb6d0e7880379fc91a042e1e2bb3cca375dd05423319259fd9e8756"
+    },
+    "ledger": {
+      "bytes": 11940846,
+      "path": ".codex/scratch/dev360_terminal_transfer_attempt09/verify_output_attempt01/results.jsonl",
+      "sha256": "0ec1d6043f8e3c8ebce4dfdd17c95418239c663bdf8d24a47cdcbfde0e793cb2"
+    },
+    "metric_definition_source": {
+      "bytes": 79475,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_stagea_dev_attempt06.py",
+      "sha256": "291f8b5cd48d8ebc63aafd814dcd37450eecba949fab98283cf20a27c6335483"
+    },
+    "terminal_content_qc": {
+      "bytes": 9659,
+      "path": ".codex/scratch/dev360_terminal_transfer_attempt09/verify_output_attempt01/terminal_content_qc_attempt01.json",
+      "sha256": "0733a4c0c30e3cc938e0d065e00fbe8394ad7e5a114094dd1bab9e02aae6c09c"
+    },
+    "transfer_reconstruction_receipt": {
+      "bytes": 11165,
+      "path": ".codex/scratch/dev360_terminal_transfer_attempt09/verify_output_attempt01/transfer_reconstruction_receipt_attempt01.json",
+      "sha256": "dc85a1fb0f7e52811ba302fbac1e36ac9d38368a711915a261853659f6b2952d"
+    }
+  },
+  "status": "PASS_DESCRIPTIVE_ANALYSIS",
+  "support_availability_by_paired_clip_model_identity": [
+    {
+      "evaluator_video_frame_count": 87,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 85,
+      "sample_id": "BAC009S0005W0121",
+      "seed": 20261003,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0005W0121",
+      "seed": 20261003,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0005W0121",
+      "seed": 20261003,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 87,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 85,
+      "sample_id": "BAC009S0005W0121",
+      "seed": 20261004,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0005W0121",
+      "seed": 20261004,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0005W0121",
+      "seed": 20261004,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 87,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 85,
+      "sample_id": "BAC009S0005W0121",
+      "seed": 20261005,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0005W0121",
+      "seed": 20261005,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0005W0121",
+      "seed": 20261005,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 86,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 81,
+        "support_mask_sha256": "145bd458f023d394de9ba31bf712a3724e2aff6cb2216045d15b98d2207cb96c"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 41,
+        "support_mask_sha256": "06b6ba3e44448f87b43d77f350d9e1fa3d1606c033cd5453d8cc5ac210f34dc0"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 84,
+      "sample_id": "BAC009S0005W0123",
+      "seed": 20261003,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 89,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 87,
+      "sample_id": "BAC009S0005W0123",
+      "seed": 20261003,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0005W0123",
+      "seed": 20261003,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 86,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 81,
+        "support_mask_sha256": "145bd458f023d394de9ba31bf712a3724e2aff6cb2216045d15b98d2207cb96c"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 41,
+        "support_mask_sha256": "06b6ba3e44448f87b43d77f350d9e1fa3d1606c033cd5453d8cc5ac210f34dc0"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 84,
+      "sample_id": "BAC009S0005W0123",
+      "seed": 20261004,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 89,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 87,
+      "sample_id": "BAC009S0005W0123",
+      "seed": 20261004,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0005W0123",
+      "seed": 20261004,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 86,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 81,
+        "support_mask_sha256": "145bd458f023d394de9ba31bf712a3724e2aff6cb2216045d15b98d2207cb96c"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 41,
+        "support_mask_sha256": "06b6ba3e44448f87b43d77f350d9e1fa3d1606c033cd5453d8cc5ac210f34dc0"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 84,
+      "sample_id": "BAC009S0005W0123",
+      "seed": 20261005,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 89,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 87,
+      "sample_id": "BAC009S0005W0123",
+      "seed": 20261005,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0005W0123",
+      "seed": 20261005,
+      "speaker_id": "S0005",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 93,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 88,
+        "support_mask_sha256": "765f547736ad386d51faf33875fc244f64aa193536c25c26269566e20e66eaa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 48,
+        "support_mask_sha256": "c6e730645b8727f71f3d55f1408b3f84e2dff058a826eaee5498784a674aa0b5"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 91,
+      "sample_id": "BAC009S0022W0122",
+      "seed": 20261003,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 96,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 89,
+        "support_mask_sha256": "bddfeb14a4cd1e89f105d714710ccc87c9e109e0658a066693de5ef571f4afab"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 49,
+        "support_mask_sha256": "f268008830ae70fabb9a66893d170637c121de320e071bd831a981fdf283ca29"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 94,
+      "sample_id": "BAC009S0022W0122",
+      "seed": 20261003,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 97,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 89,
+        "support_mask_sha256": "bddfeb14a4cd1e89f105d714710ccc87c9e109e0658a066693de5ef571f4afab"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 49,
+        "support_mask_sha256": "f268008830ae70fabb9a66893d170637c121de320e071bd831a981fdf283ca29"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 95,
+      "sample_id": "BAC009S0022W0122",
+      "seed": 20261003,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 93,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 88,
+        "support_mask_sha256": "765f547736ad386d51faf33875fc244f64aa193536c25c26269566e20e66eaa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 48,
+        "support_mask_sha256": "c6e730645b8727f71f3d55f1408b3f84e2dff058a826eaee5498784a674aa0b5"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 91,
+      "sample_id": "BAC009S0022W0122",
+      "seed": 20261004,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 96,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 89,
+        "support_mask_sha256": "bddfeb14a4cd1e89f105d714710ccc87c9e109e0658a066693de5ef571f4afab"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 49,
+        "support_mask_sha256": "f268008830ae70fabb9a66893d170637c121de320e071bd831a981fdf283ca29"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 94,
+      "sample_id": "BAC009S0022W0122",
+      "seed": 20261004,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 97,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 89,
+        "support_mask_sha256": "bddfeb14a4cd1e89f105d714710ccc87c9e109e0658a066693de5ef571f4afab"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 49,
+        "support_mask_sha256": "f268008830ae70fabb9a66893d170637c121de320e071bd831a981fdf283ca29"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 95,
+      "sample_id": "BAC009S0022W0122",
+      "seed": 20261004,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 93,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 88,
+        "support_mask_sha256": "765f547736ad386d51faf33875fc244f64aa193536c25c26269566e20e66eaa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 48,
+        "support_mask_sha256": "c6e730645b8727f71f3d55f1408b3f84e2dff058a826eaee5498784a674aa0b5"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 91,
+      "sample_id": "BAC009S0022W0122",
+      "seed": 20261005,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 96,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 89,
+        "support_mask_sha256": "bddfeb14a4cd1e89f105d714710ccc87c9e109e0658a066693de5ef571f4afab"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 49,
+        "support_mask_sha256": "f268008830ae70fabb9a66893d170637c121de320e071bd831a981fdf283ca29"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 94,
+      "sample_id": "BAC009S0022W0122",
+      "seed": 20261005,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 97,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 89,
+        "support_mask_sha256": "bddfeb14a4cd1e89f105d714710ccc87c9e109e0658a066693de5ef571f4afab"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 49,
+        "support_mask_sha256": "f268008830ae70fabb9a66893d170637c121de320e071bd831a981fdf283ca29"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 95,
+      "sample_id": "BAC009S0022W0122",
+      "seed": 20261005,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 79,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 74,
+        "support_mask_sha256": "34cd3af912df610755b9aedab14ca334b2ba10a2876c46708a0ac6d0146efd29"
+      },
+      "guard20_support": {
+        "eligible": false,
+        "query_count": 34,
+        "support_mask_sha256": "d742b328e2f1687334d9b25f46b6e6db5051a6880f7aacc3fbbaad795c43912b"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 77,
+      "sample_id": "BAC009S0022W0123",
+      "seed": 20261003,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 82,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 75,
+        "support_mask_sha256": "98dcb0c81d9817265ba8f8fbc9ad015240fcbc7d8580ea944c24062bee16126a"
+      },
+      "guard20_support": {
+        "eligible": false,
+        "query_count": 35,
+        "support_mask_sha256": "9983ca3ff9a145feaa7084762bb28582a8567d320d675d4411382bb1619805f5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 80,
+      "sample_id": "BAC009S0022W0123",
+      "seed": 20261003,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 83,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 75,
+        "support_mask_sha256": "98dcb0c81d9817265ba8f8fbc9ad015240fcbc7d8580ea944c24062bee16126a"
+      },
+      "guard20_support": {
+        "eligible": false,
+        "query_count": 35,
+        "support_mask_sha256": "9983ca3ff9a145feaa7084762bb28582a8567d320d675d4411382bb1619805f5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 81,
+      "sample_id": "BAC009S0022W0123",
+      "seed": 20261003,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 79,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 74,
+        "support_mask_sha256": "34cd3af912df610755b9aedab14ca334b2ba10a2876c46708a0ac6d0146efd29"
+      },
+      "guard20_support": {
+        "eligible": false,
+        "query_count": 34,
+        "support_mask_sha256": "d742b328e2f1687334d9b25f46b6e6db5051a6880f7aacc3fbbaad795c43912b"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 77,
+      "sample_id": "BAC009S0022W0123",
+      "seed": 20261004,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 82,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 75,
+        "support_mask_sha256": "98dcb0c81d9817265ba8f8fbc9ad015240fcbc7d8580ea944c24062bee16126a"
+      },
+      "guard20_support": {
+        "eligible": false,
+        "query_count": 35,
+        "support_mask_sha256": "9983ca3ff9a145feaa7084762bb28582a8567d320d675d4411382bb1619805f5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 80,
+      "sample_id": "BAC009S0022W0123",
+      "seed": 20261004,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 83,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 75,
+        "support_mask_sha256": "98dcb0c81d9817265ba8f8fbc9ad015240fcbc7d8580ea944c24062bee16126a"
+      },
+      "guard20_support": {
+        "eligible": false,
+        "query_count": 35,
+        "support_mask_sha256": "9983ca3ff9a145feaa7084762bb28582a8567d320d675d4411382bb1619805f5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 81,
+      "sample_id": "BAC009S0022W0123",
+      "seed": 20261004,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 79,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 74,
+        "support_mask_sha256": "34cd3af912df610755b9aedab14ca334b2ba10a2876c46708a0ac6d0146efd29"
+      },
+      "guard20_support": {
+        "eligible": false,
+        "query_count": 34,
+        "support_mask_sha256": "d742b328e2f1687334d9b25f46b6e6db5051a6880f7aacc3fbbaad795c43912b"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 77,
+      "sample_id": "BAC009S0022W0123",
+      "seed": 20261005,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 82,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 75,
+        "support_mask_sha256": "98dcb0c81d9817265ba8f8fbc9ad015240fcbc7d8580ea944c24062bee16126a"
+      },
+      "guard20_support": {
+        "eligible": false,
+        "query_count": 35,
+        "support_mask_sha256": "9983ca3ff9a145feaa7084762bb28582a8567d320d675d4411382bb1619805f5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 80,
+      "sample_id": "BAC009S0022W0123",
+      "seed": 20261005,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 83,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 75,
+        "support_mask_sha256": "98dcb0c81d9817265ba8f8fbc9ad015240fcbc7d8580ea944c24062bee16126a"
+      },
+      "guard20_support": {
+        "eligible": false,
+        "query_count": 35,
+        "support_mask_sha256": "9983ca3ff9a145feaa7084762bb28582a8567d320d675d4411382bb1619805f5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 81,
+      "sample_id": "BAC009S0022W0123",
+      "seed": 20261005,
+      "speaker_id": "S0022",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 95,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 90,
+        "support_mask_sha256": "32e1c42dd2c368e80c3dde52235ad06a774eaee48e9adc589b50fbbf76713636"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 50,
+        "support_mask_sha256": "a61620e4538dbce864459bd25c205912d0bcdf719558847cec42e85e63c984b7"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 93,
+      "sample_id": "BAC009S0024W0121",
+      "seed": 20261003,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 97,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 90,
+        "support_mask_sha256": "32e1c42dd2c368e80c3dde52235ad06a774eaee48e9adc589b50fbbf76713636"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 50,
+        "support_mask_sha256": "a61620e4538dbce864459bd25c205912d0bcdf719558847cec42e85e63c984b7"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 95,
+      "sample_id": "BAC009S0024W0121",
+      "seed": 20261003,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 98,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 90,
+        "support_mask_sha256": "32e1c42dd2c368e80c3dde52235ad06a774eaee48e9adc589b50fbbf76713636"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 50,
+        "support_mask_sha256": "a61620e4538dbce864459bd25c205912d0bcdf719558847cec42e85e63c984b7"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 96,
+      "sample_id": "BAC009S0024W0121",
+      "seed": 20261003,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 95,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 90,
+        "support_mask_sha256": "32e1c42dd2c368e80c3dde52235ad06a774eaee48e9adc589b50fbbf76713636"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 50,
+        "support_mask_sha256": "a61620e4538dbce864459bd25c205912d0bcdf719558847cec42e85e63c984b7"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 93,
+      "sample_id": "BAC009S0024W0121",
+      "seed": 20261004,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 97,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 90,
+        "support_mask_sha256": "32e1c42dd2c368e80c3dde52235ad06a774eaee48e9adc589b50fbbf76713636"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 50,
+        "support_mask_sha256": "a61620e4538dbce864459bd25c205912d0bcdf719558847cec42e85e63c984b7"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 95,
+      "sample_id": "BAC009S0024W0121",
+      "seed": 20261004,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 98,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 90,
+        "support_mask_sha256": "32e1c42dd2c368e80c3dde52235ad06a774eaee48e9adc589b50fbbf76713636"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 50,
+        "support_mask_sha256": "a61620e4538dbce864459bd25c205912d0bcdf719558847cec42e85e63c984b7"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 96,
+      "sample_id": "BAC009S0024W0121",
+      "seed": 20261004,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 95,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 90,
+        "support_mask_sha256": "32e1c42dd2c368e80c3dde52235ad06a774eaee48e9adc589b50fbbf76713636"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 50,
+        "support_mask_sha256": "a61620e4538dbce864459bd25c205912d0bcdf719558847cec42e85e63c984b7"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 93,
+      "sample_id": "BAC009S0024W0121",
+      "seed": 20261005,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 97,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 90,
+        "support_mask_sha256": "32e1c42dd2c368e80c3dde52235ad06a774eaee48e9adc589b50fbbf76713636"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 50,
+        "support_mask_sha256": "a61620e4538dbce864459bd25c205912d0bcdf719558847cec42e85e63c984b7"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 95,
+      "sample_id": "BAC009S0024W0121",
+      "seed": 20261005,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 98,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 90,
+        "support_mask_sha256": "32e1c42dd2c368e80c3dde52235ad06a774eaee48e9adc589b50fbbf76713636"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 50,
+        "support_mask_sha256": "a61620e4538dbce864459bd25c205912d0bcdf719558847cec42e85e63c984b7"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 96,
+      "sample_id": "BAC009S0024W0121",
+      "seed": 20261005,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 87,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 85,
+      "sample_id": "BAC009S0024W0122",
+      "seed": 20261003,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0024W0122",
+      "seed": 20261003,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 91,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 89,
+      "sample_id": "BAC009S0024W0122",
+      "seed": 20261003,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 87,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 85,
+      "sample_id": "BAC009S0024W0122",
+      "seed": 20261004,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0024W0122",
+      "seed": 20261004,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 91,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 89,
+      "sample_id": "BAC009S0024W0122",
+      "seed": 20261004,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 87,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 85,
+      "sample_id": "BAC009S0024W0122",
+      "seed": 20261005,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0024W0122",
+      "seed": 20261005,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 91,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 89,
+      "sample_id": "BAC009S0024W0122",
+      "seed": 20261005,
+      "speaker_id": "S0024",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 116,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 111,
+        "support_mask_sha256": "8c8c81b488184338806463b3a04be007f50a63d3b13a34b93dbba8ee609c1a74"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 71,
+        "support_mask_sha256": "454f791bfab0b81e24034b248b2c46f102e18d9ac9b7029618d71b5da621e44c"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 114,
+      "sample_id": "BAC009S0037W0121",
+      "seed": 20261003,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 119,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 112,
+        "support_mask_sha256": "ec1c53f939ed2e18b2f21bd7617d523d9f0530d192edfb3a5c15a8710d399dfd"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 72,
+        "support_mask_sha256": "c19ec9174c44bca3b3c3a6e2dd950a12e227fc728c14fbf2e68716b628547935"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 117,
+      "sample_id": "BAC009S0037W0121",
+      "seed": 20261003,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 120,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 112,
+        "support_mask_sha256": "ec1c53f939ed2e18b2f21bd7617d523d9f0530d192edfb3a5c15a8710d399dfd"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 72,
+        "support_mask_sha256": "c19ec9174c44bca3b3c3a6e2dd950a12e227fc728c14fbf2e68716b628547935"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 118,
+      "sample_id": "BAC009S0037W0121",
+      "seed": 20261003,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 116,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 111,
+        "support_mask_sha256": "8c8c81b488184338806463b3a04be007f50a63d3b13a34b93dbba8ee609c1a74"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 71,
+        "support_mask_sha256": "454f791bfab0b81e24034b248b2c46f102e18d9ac9b7029618d71b5da621e44c"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 114,
+      "sample_id": "BAC009S0037W0121",
+      "seed": 20261004,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 119,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 112,
+        "support_mask_sha256": "ec1c53f939ed2e18b2f21bd7617d523d9f0530d192edfb3a5c15a8710d399dfd"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 72,
+        "support_mask_sha256": "c19ec9174c44bca3b3c3a6e2dd950a12e227fc728c14fbf2e68716b628547935"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 117,
+      "sample_id": "BAC009S0037W0121",
+      "seed": 20261004,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 120,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 112,
+        "support_mask_sha256": "ec1c53f939ed2e18b2f21bd7617d523d9f0530d192edfb3a5c15a8710d399dfd"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 72,
+        "support_mask_sha256": "c19ec9174c44bca3b3c3a6e2dd950a12e227fc728c14fbf2e68716b628547935"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 118,
+      "sample_id": "BAC009S0037W0121",
+      "seed": 20261004,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 116,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 111,
+        "support_mask_sha256": "8c8c81b488184338806463b3a04be007f50a63d3b13a34b93dbba8ee609c1a74"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 71,
+        "support_mask_sha256": "454f791bfab0b81e24034b248b2c46f102e18d9ac9b7029618d71b5da621e44c"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 114,
+      "sample_id": "BAC009S0037W0121",
+      "seed": 20261005,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 119,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 112,
+        "support_mask_sha256": "ec1c53f939ed2e18b2f21bd7617d523d9f0530d192edfb3a5c15a8710d399dfd"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 72,
+        "support_mask_sha256": "c19ec9174c44bca3b3c3a6e2dd950a12e227fc728c14fbf2e68716b628547935"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 117,
+      "sample_id": "BAC009S0037W0121",
+      "seed": 20261005,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 120,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 112,
+        "support_mask_sha256": "ec1c53f939ed2e18b2f21bd7617d523d9f0530d192edfb3a5c15a8710d399dfd"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 72,
+        "support_mask_sha256": "c19ec9174c44bca3b3c3a6e2dd950a12e227fc728c14fbf2e68716b628547935"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 118,
+      "sample_id": "BAC009S0037W0121",
+      "seed": 20261005,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 103,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 101,
+      "sample_id": "BAC009S0037W0122",
+      "seed": 20261003,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 105,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 103,
+      "sample_id": "BAC009S0037W0122",
+      "seed": 20261003,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 106,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 104,
+      "sample_id": "BAC009S0037W0122",
+      "seed": 20261003,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 103,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 101,
+      "sample_id": "BAC009S0037W0122",
+      "seed": 20261004,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 105,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 103,
+      "sample_id": "BAC009S0037W0122",
+      "seed": 20261004,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 106,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 104,
+      "sample_id": "BAC009S0037W0122",
+      "seed": 20261004,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 103,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 101,
+      "sample_id": "BAC009S0037W0122",
+      "seed": 20261005,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 105,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 103,
+      "sample_id": "BAC009S0037W0122",
+      "seed": 20261005,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 106,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 104,
+      "sample_id": "BAC009S0037W0122",
+      "seed": 20261005,
+      "speaker_id": "S0037",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 161,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 156,
+        "support_mask_sha256": "e586519016a8205f11c40b4a422f49c10733e296e3bb5fa36efa85eca21f8161"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 116,
+        "support_mask_sha256": "91281ff4850d648b6a45964ca20f1a61802059290f909e0afa719de224429051"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 159,
+      "sample_id": "BAC009S0038W0121",
+      "seed": 20261003,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 163,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 156,
+        "support_mask_sha256": "e586519016a8205f11c40b4a422f49c10733e296e3bb5fa36efa85eca21f8161"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 116,
+        "support_mask_sha256": "91281ff4850d648b6a45964ca20f1a61802059290f909e0afa719de224429051"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 161,
+      "sample_id": "BAC009S0038W0121",
+      "seed": 20261003,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 164,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 156,
+        "support_mask_sha256": "e586519016a8205f11c40b4a422f49c10733e296e3bb5fa36efa85eca21f8161"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 116,
+        "support_mask_sha256": "91281ff4850d648b6a45964ca20f1a61802059290f909e0afa719de224429051"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 162,
+      "sample_id": "BAC009S0038W0121",
+      "seed": 20261003,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 161,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 156,
+        "support_mask_sha256": "e586519016a8205f11c40b4a422f49c10733e296e3bb5fa36efa85eca21f8161"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 116,
+        "support_mask_sha256": "91281ff4850d648b6a45964ca20f1a61802059290f909e0afa719de224429051"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 159,
+      "sample_id": "BAC009S0038W0121",
+      "seed": 20261004,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 163,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 156,
+        "support_mask_sha256": "e586519016a8205f11c40b4a422f49c10733e296e3bb5fa36efa85eca21f8161"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 116,
+        "support_mask_sha256": "91281ff4850d648b6a45964ca20f1a61802059290f909e0afa719de224429051"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 161,
+      "sample_id": "BAC009S0038W0121",
+      "seed": 20261004,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 164,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 156,
+        "support_mask_sha256": "e586519016a8205f11c40b4a422f49c10733e296e3bb5fa36efa85eca21f8161"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 116,
+        "support_mask_sha256": "91281ff4850d648b6a45964ca20f1a61802059290f909e0afa719de224429051"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 162,
+      "sample_id": "BAC009S0038W0121",
+      "seed": 20261004,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 161,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 156,
+        "support_mask_sha256": "e586519016a8205f11c40b4a422f49c10733e296e3bb5fa36efa85eca21f8161"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 116,
+        "support_mask_sha256": "91281ff4850d648b6a45964ca20f1a61802059290f909e0afa719de224429051"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 159,
+      "sample_id": "BAC009S0038W0121",
+      "seed": 20261005,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 163,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 156,
+        "support_mask_sha256": "e586519016a8205f11c40b4a422f49c10733e296e3bb5fa36efa85eca21f8161"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 116,
+        "support_mask_sha256": "91281ff4850d648b6a45964ca20f1a61802059290f909e0afa719de224429051"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 161,
+      "sample_id": "BAC009S0038W0121",
+      "seed": 20261005,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 164,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 156,
+        "support_mask_sha256": "e586519016a8205f11c40b4a422f49c10733e296e3bb5fa36efa85eca21f8161"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 116,
+        "support_mask_sha256": "91281ff4850d648b6a45964ca20f1a61802059290f909e0afa719de224429051"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 162,
+      "sample_id": "BAC009S0038W0121",
+      "seed": 20261005,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 87,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 85,
+      "sample_id": "BAC009S0038W0122",
+      "seed": 20261003,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0038W0122",
+      "seed": 20261003,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 91,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 89,
+      "sample_id": "BAC009S0038W0122",
+      "seed": 20261003,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 87,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 85,
+      "sample_id": "BAC009S0038W0122",
+      "seed": 20261004,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0038W0122",
+      "seed": 20261004,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 91,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 89,
+      "sample_id": "BAC009S0038W0122",
+      "seed": 20261004,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 87,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 82,
+        "support_mask_sha256": "4b6cbf4ccbfc07d8dcdf30612017b6eeb9ae01703304c9defd8ba3b0e4a05840"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 42,
+        "support_mask_sha256": "5dee09958a0ae6bdb977fc28019c534a049a1f5cf508cb85b28820c1425b9892"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 85,
+      "sample_id": "BAC009S0038W0122",
+      "seed": 20261005,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0038W0122",
+      "seed": 20261005,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 91,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 89,
+      "sample_id": "BAC009S0038W0122",
+      "seed": 20261005,
+      "speaker_id": "S0038",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 129,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 124,
+        "support_mask_sha256": "4b01c8ca09eb0373b156200a03edda483bacdecd40f5d3cb85df033f0803adbf"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 84,
+        "support_mask_sha256": "619a5303203d9a2611ca5bb0522ecfd4dca9543b0fb7599a153f90a8799efb2d"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 127,
+      "sample_id": "BAC009S0039W0121",
+      "seed": 20261003,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 131,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 124,
+        "support_mask_sha256": "4b01c8ca09eb0373b156200a03edda483bacdecd40f5d3cb85df033f0803adbf"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 84,
+        "support_mask_sha256": "619a5303203d9a2611ca5bb0522ecfd4dca9543b0fb7599a153f90a8799efb2d"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 129,
+      "sample_id": "BAC009S0039W0121",
+      "seed": 20261003,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 132,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 124,
+        "support_mask_sha256": "4b01c8ca09eb0373b156200a03edda483bacdecd40f5d3cb85df033f0803adbf"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 84,
+        "support_mask_sha256": "619a5303203d9a2611ca5bb0522ecfd4dca9543b0fb7599a153f90a8799efb2d"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 130,
+      "sample_id": "BAC009S0039W0121",
+      "seed": 20261003,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 129,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 124,
+        "support_mask_sha256": "4b01c8ca09eb0373b156200a03edda483bacdecd40f5d3cb85df033f0803adbf"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 84,
+        "support_mask_sha256": "619a5303203d9a2611ca5bb0522ecfd4dca9543b0fb7599a153f90a8799efb2d"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 127,
+      "sample_id": "BAC009S0039W0121",
+      "seed": 20261004,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 131,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 124,
+        "support_mask_sha256": "4b01c8ca09eb0373b156200a03edda483bacdecd40f5d3cb85df033f0803adbf"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 84,
+        "support_mask_sha256": "619a5303203d9a2611ca5bb0522ecfd4dca9543b0fb7599a153f90a8799efb2d"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 129,
+      "sample_id": "BAC009S0039W0121",
+      "seed": 20261004,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 132,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 124,
+        "support_mask_sha256": "4b01c8ca09eb0373b156200a03edda483bacdecd40f5d3cb85df033f0803adbf"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 84,
+        "support_mask_sha256": "619a5303203d9a2611ca5bb0522ecfd4dca9543b0fb7599a153f90a8799efb2d"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 130,
+      "sample_id": "BAC009S0039W0121",
+      "seed": 20261004,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 129,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 124,
+        "support_mask_sha256": "4b01c8ca09eb0373b156200a03edda483bacdecd40f5d3cb85df033f0803adbf"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 84,
+        "support_mask_sha256": "619a5303203d9a2611ca5bb0522ecfd4dca9543b0fb7599a153f90a8799efb2d"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 127,
+      "sample_id": "BAC009S0039W0121",
+      "seed": 20261005,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 131,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 124,
+        "support_mask_sha256": "4b01c8ca09eb0373b156200a03edda483bacdecd40f5d3cb85df033f0803adbf"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 84,
+        "support_mask_sha256": "619a5303203d9a2611ca5bb0522ecfd4dca9543b0fb7599a153f90a8799efb2d"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 129,
+      "sample_id": "BAC009S0039W0121",
+      "seed": 20261005,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 132,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 124,
+        "support_mask_sha256": "4b01c8ca09eb0373b156200a03edda483bacdecd40f5d3cb85df033f0803adbf"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 84,
+        "support_mask_sha256": "619a5303203d9a2611ca5bb0522ecfd4dca9543b0fb7599a153f90a8799efb2d"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 130,
+      "sample_id": "BAC009S0039W0121",
+      "seed": 20261005,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 119,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 114,
+        "support_mask_sha256": "25bf7dec20f5e286b4fad4e487fea67a84cacc2528067250197fb44c315dd7ee"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 74,
+        "support_mask_sha256": "1690abe962773ddd8e15dcdbf53083b253ca3e8b726c8341c1c95eef9fe4bb72"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 117,
+      "sample_id": "BAC009S0039W0123",
+      "seed": 20261003,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 122,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 115,
+        "support_mask_sha256": "c811bcd351ff1f3c41993a2897b3f1a329b9124f3439712b13624d4a83fb2d92"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 75,
+        "support_mask_sha256": "292ee267badb86f120178a3c71a2cde59c2771052f66ab33e8d34e96ada2b89d"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 120,
+      "sample_id": "BAC009S0039W0123",
+      "seed": 20261003,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 123,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 115,
+        "support_mask_sha256": "c811bcd351ff1f3c41993a2897b3f1a329b9124f3439712b13624d4a83fb2d92"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 75,
+        "support_mask_sha256": "292ee267badb86f120178a3c71a2cde59c2771052f66ab33e8d34e96ada2b89d"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 121,
+      "sample_id": "BAC009S0039W0123",
+      "seed": 20261003,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 119,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 114,
+        "support_mask_sha256": "25bf7dec20f5e286b4fad4e487fea67a84cacc2528067250197fb44c315dd7ee"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 74,
+        "support_mask_sha256": "1690abe962773ddd8e15dcdbf53083b253ca3e8b726c8341c1c95eef9fe4bb72"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 117,
+      "sample_id": "BAC009S0039W0123",
+      "seed": 20261004,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 122,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 115,
+        "support_mask_sha256": "c811bcd351ff1f3c41993a2897b3f1a329b9124f3439712b13624d4a83fb2d92"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 75,
+        "support_mask_sha256": "292ee267badb86f120178a3c71a2cde59c2771052f66ab33e8d34e96ada2b89d"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 120,
+      "sample_id": "BAC009S0039W0123",
+      "seed": 20261004,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 123,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 115,
+        "support_mask_sha256": "c811bcd351ff1f3c41993a2897b3f1a329b9124f3439712b13624d4a83fb2d92"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 75,
+        "support_mask_sha256": "292ee267badb86f120178a3c71a2cde59c2771052f66ab33e8d34e96ada2b89d"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 121,
+      "sample_id": "BAC009S0039W0123",
+      "seed": 20261004,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 119,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 114,
+        "support_mask_sha256": "25bf7dec20f5e286b4fad4e487fea67a84cacc2528067250197fb44c315dd7ee"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 74,
+        "support_mask_sha256": "1690abe962773ddd8e15dcdbf53083b253ca3e8b726c8341c1c95eef9fe4bb72"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 117,
+      "sample_id": "BAC009S0039W0123",
+      "seed": 20261005,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 122,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 115,
+        "support_mask_sha256": "c811bcd351ff1f3c41993a2897b3f1a329b9124f3439712b13624d4a83fb2d92"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 75,
+        "support_mask_sha256": "292ee267badb86f120178a3c71a2cde59c2771052f66ab33e8d34e96ada2b89d"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 120,
+      "sample_id": "BAC009S0039W0123",
+      "seed": 20261005,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 123,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 115,
+        "support_mask_sha256": "c811bcd351ff1f3c41993a2897b3f1a329b9124f3439712b13624d4a83fb2d92"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 75,
+        "support_mask_sha256": "292ee267badb86f120178a3c71a2cde59c2771052f66ab33e8d34e96ada2b89d"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 121,
+      "sample_id": "BAC009S0039W0123",
+      "seed": 20261005,
+      "speaker_id": "S0039",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 108,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 103,
+        "support_mask_sha256": "58d17a0f449da2253750fc6c1dde869fc278a1672bce6ccd40ea7bf6601bffa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 63,
+        "support_mask_sha256": "36c351f3fb7aa6811807ed9f80cdd47d59af912b2c397c429224d3e23ab3ac02"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 106,
+      "sample_id": "BAC009S0041W0121",
+      "seed": 20261003,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 110,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 103,
+        "support_mask_sha256": "58d17a0f449da2253750fc6c1dde869fc278a1672bce6ccd40ea7bf6601bffa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 63,
+        "support_mask_sha256": "36c351f3fb7aa6811807ed9f80cdd47d59af912b2c397c429224d3e23ab3ac02"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 108,
+      "sample_id": "BAC009S0041W0121",
+      "seed": 20261003,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 111,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 103,
+        "support_mask_sha256": "58d17a0f449da2253750fc6c1dde869fc278a1672bce6ccd40ea7bf6601bffa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 63,
+        "support_mask_sha256": "36c351f3fb7aa6811807ed9f80cdd47d59af912b2c397c429224d3e23ab3ac02"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 109,
+      "sample_id": "BAC009S0041W0121",
+      "seed": 20261003,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 108,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 103,
+        "support_mask_sha256": "58d17a0f449da2253750fc6c1dde869fc278a1672bce6ccd40ea7bf6601bffa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 63,
+        "support_mask_sha256": "36c351f3fb7aa6811807ed9f80cdd47d59af912b2c397c429224d3e23ab3ac02"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 106,
+      "sample_id": "BAC009S0041W0121",
+      "seed": 20261004,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 110,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 103,
+        "support_mask_sha256": "58d17a0f449da2253750fc6c1dde869fc278a1672bce6ccd40ea7bf6601bffa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 63,
+        "support_mask_sha256": "36c351f3fb7aa6811807ed9f80cdd47d59af912b2c397c429224d3e23ab3ac02"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 108,
+      "sample_id": "BAC009S0041W0121",
+      "seed": 20261004,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 111,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 103,
+        "support_mask_sha256": "58d17a0f449da2253750fc6c1dde869fc278a1672bce6ccd40ea7bf6601bffa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 63,
+        "support_mask_sha256": "36c351f3fb7aa6811807ed9f80cdd47d59af912b2c397c429224d3e23ab3ac02"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 109,
+      "sample_id": "BAC009S0041W0121",
+      "seed": 20261004,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 108,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 103,
+        "support_mask_sha256": "58d17a0f449da2253750fc6c1dde869fc278a1672bce6ccd40ea7bf6601bffa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 63,
+        "support_mask_sha256": "36c351f3fb7aa6811807ed9f80cdd47d59af912b2c397c429224d3e23ab3ac02"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 106,
+      "sample_id": "BAC009S0041W0121",
+      "seed": 20261005,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 110,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 103,
+        "support_mask_sha256": "58d17a0f449da2253750fc6c1dde869fc278a1672bce6ccd40ea7bf6601bffa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 63,
+        "support_mask_sha256": "36c351f3fb7aa6811807ed9f80cdd47d59af912b2c397c429224d3e23ab3ac02"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 108,
+      "sample_id": "BAC009S0041W0121",
+      "seed": 20261005,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 111,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 103,
+        "support_mask_sha256": "58d17a0f449da2253750fc6c1dde869fc278a1672bce6ccd40ea7bf6601bffa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 63,
+        "support_mask_sha256": "36c351f3fb7aa6811807ed9f80cdd47d59af912b2c397c429224d3e23ab3ac02"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 109,
+      "sample_id": "BAC009S0041W0121",
+      "seed": 20261005,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 148,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 143,
+        "support_mask_sha256": "88a38e26e0ac2f204b0e6303ee23552e3aae0a27008aeb0279c7243b3f1d5eb7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 103,
+        "support_mask_sha256": "ec93c417442bc817fd6aee77e2d4d41da1abcd733ca035aa989c9f5aee72b93c"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 146,
+      "sample_id": "BAC009S0041W0122",
+      "seed": 20261003,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 151,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 144,
+        "support_mask_sha256": "797269036eb9773fd5089ebef8dc2ab210ec229a24f8c95e61490ac8d6dea58a"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 104,
+        "support_mask_sha256": "c2d4d4f0d6407f28b661af4641e0317f929240ed04949caaeb4c4ab1129f3383"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 149,
+      "sample_id": "BAC009S0041W0122",
+      "seed": 20261003,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 152,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 144,
+        "support_mask_sha256": "797269036eb9773fd5089ebef8dc2ab210ec229a24f8c95e61490ac8d6dea58a"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 104,
+        "support_mask_sha256": "c2d4d4f0d6407f28b661af4641e0317f929240ed04949caaeb4c4ab1129f3383"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 150,
+      "sample_id": "BAC009S0041W0122",
+      "seed": 20261003,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 148,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 143,
+        "support_mask_sha256": "88a38e26e0ac2f204b0e6303ee23552e3aae0a27008aeb0279c7243b3f1d5eb7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 103,
+        "support_mask_sha256": "ec93c417442bc817fd6aee77e2d4d41da1abcd733ca035aa989c9f5aee72b93c"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 146,
+      "sample_id": "BAC009S0041W0122",
+      "seed": 20261004,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 151,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 144,
+        "support_mask_sha256": "797269036eb9773fd5089ebef8dc2ab210ec229a24f8c95e61490ac8d6dea58a"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 104,
+        "support_mask_sha256": "c2d4d4f0d6407f28b661af4641e0317f929240ed04949caaeb4c4ab1129f3383"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 149,
+      "sample_id": "BAC009S0041W0122",
+      "seed": 20261004,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 152,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 144,
+        "support_mask_sha256": "797269036eb9773fd5089ebef8dc2ab210ec229a24f8c95e61490ac8d6dea58a"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 104,
+        "support_mask_sha256": "c2d4d4f0d6407f28b661af4641e0317f929240ed04949caaeb4c4ab1129f3383"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 150,
+      "sample_id": "BAC009S0041W0122",
+      "seed": 20261004,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 148,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 143,
+        "support_mask_sha256": "88a38e26e0ac2f204b0e6303ee23552e3aae0a27008aeb0279c7243b3f1d5eb7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 103,
+        "support_mask_sha256": "ec93c417442bc817fd6aee77e2d4d41da1abcd733ca035aa989c9f5aee72b93c"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 146,
+      "sample_id": "BAC009S0041W0122",
+      "seed": 20261005,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 151,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 144,
+        "support_mask_sha256": "797269036eb9773fd5089ebef8dc2ab210ec229a24f8c95e61490ac8d6dea58a"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 104,
+        "support_mask_sha256": "c2d4d4f0d6407f28b661af4641e0317f929240ed04949caaeb4c4ab1129f3383"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 149,
+      "sample_id": "BAC009S0041W0122",
+      "seed": 20261005,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 152,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 144,
+        "support_mask_sha256": "797269036eb9773fd5089ebef8dc2ab210ec229a24f8c95e61490ac8d6dea58a"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 104,
+        "support_mask_sha256": "c2d4d4f0d6407f28b661af4641e0317f929240ed04949caaeb4c4ab1129f3383"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 150,
+      "sample_id": "BAC009S0041W0122",
+      "seed": 20261005,
+      "speaker_id": "S0041",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 106,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 101,
+        "support_mask_sha256": "bf55a0133289efcfeaef46c679005cd5760b51736ce141d8b93c2d64fa881d0f"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 61,
+        "support_mask_sha256": "becbbd72a8ed8cfba97525dd7b841cfa72891201120cf7fdeb9788e9e7befb81"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 104,
+      "sample_id": "BAC009S0044W0121",
+      "seed": 20261003,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 108,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 101,
+        "support_mask_sha256": "bf55a0133289efcfeaef46c679005cd5760b51736ce141d8b93c2d64fa881d0f"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 61,
+        "support_mask_sha256": "becbbd72a8ed8cfba97525dd7b841cfa72891201120cf7fdeb9788e9e7befb81"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 106,
+      "sample_id": "BAC009S0044W0121",
+      "seed": 20261003,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 109,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 101,
+        "support_mask_sha256": "bf55a0133289efcfeaef46c679005cd5760b51736ce141d8b93c2d64fa881d0f"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 61,
+        "support_mask_sha256": "becbbd72a8ed8cfba97525dd7b841cfa72891201120cf7fdeb9788e9e7befb81"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 107,
+      "sample_id": "BAC009S0044W0121",
+      "seed": 20261003,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 106,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 101,
+        "support_mask_sha256": "bf55a0133289efcfeaef46c679005cd5760b51736ce141d8b93c2d64fa881d0f"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 61,
+        "support_mask_sha256": "becbbd72a8ed8cfba97525dd7b841cfa72891201120cf7fdeb9788e9e7befb81"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 104,
+      "sample_id": "BAC009S0044W0121",
+      "seed": 20261004,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 108,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 101,
+        "support_mask_sha256": "bf55a0133289efcfeaef46c679005cd5760b51736ce141d8b93c2d64fa881d0f"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 61,
+        "support_mask_sha256": "becbbd72a8ed8cfba97525dd7b841cfa72891201120cf7fdeb9788e9e7befb81"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 106,
+      "sample_id": "BAC009S0044W0121",
+      "seed": 20261004,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 109,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 101,
+        "support_mask_sha256": "bf55a0133289efcfeaef46c679005cd5760b51736ce141d8b93c2d64fa881d0f"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 61,
+        "support_mask_sha256": "becbbd72a8ed8cfba97525dd7b841cfa72891201120cf7fdeb9788e9e7befb81"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 107,
+      "sample_id": "BAC009S0044W0121",
+      "seed": 20261004,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 106,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 101,
+        "support_mask_sha256": "bf55a0133289efcfeaef46c679005cd5760b51736ce141d8b93c2d64fa881d0f"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 61,
+        "support_mask_sha256": "becbbd72a8ed8cfba97525dd7b841cfa72891201120cf7fdeb9788e9e7befb81"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 104,
+      "sample_id": "BAC009S0044W0121",
+      "seed": 20261005,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 108,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 101,
+        "support_mask_sha256": "bf55a0133289efcfeaef46c679005cd5760b51736ce141d8b93c2d64fa881d0f"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 61,
+        "support_mask_sha256": "becbbd72a8ed8cfba97525dd7b841cfa72891201120cf7fdeb9788e9e7befb81"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 106,
+      "sample_id": "BAC009S0044W0121",
+      "seed": 20261005,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 109,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 101,
+        "support_mask_sha256": "bf55a0133289efcfeaef46c679005cd5760b51736ce141d8b93c2d64fa881d0f"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 61,
+        "support_mask_sha256": "becbbd72a8ed8cfba97525dd7b841cfa72891201120cf7fdeb9788e9e7befb81"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 107,
+      "sample_id": "BAC009S0044W0121",
+      "seed": 20261005,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 88,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 86,
+      "sample_id": "BAC009S0044W0122",
+      "seed": 20261003,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0044W0122",
+      "seed": 20261003,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 91,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 89,
+      "sample_id": "BAC009S0044W0122",
+      "seed": 20261003,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 88,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 86,
+      "sample_id": "BAC009S0044W0122",
+      "seed": 20261004,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0044W0122",
+      "seed": 20261004,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 91,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 89,
+      "sample_id": "BAC009S0044W0122",
+      "seed": 20261004,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 88,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 86,
+      "sample_id": "BAC009S0044W0122",
+      "seed": 20261005,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 90,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 88,
+      "sample_id": "BAC009S0044W0122",
+      "seed": 20261005,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 91,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 83,
+        "support_mask_sha256": "4380230e7e7718c0c10dbec54cfe7d27226bbed7fd87c28a2744ba950bb5df68"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 43,
+        "support_mask_sha256": "89ef77363c1dd26921540de8a0216bd4915ddafc5f3ee5229f50775990d09ca5"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 89,
+      "sample_id": "BAC009S0044W0122",
+      "seed": 20261005,
+      "speaker_id": "S0044",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 103,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 101,
+      "sample_id": "BAC009S0049W0121",
+      "seed": 20261003,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 105,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 103,
+      "sample_id": "BAC009S0049W0121",
+      "seed": 20261003,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 106,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 104,
+      "sample_id": "BAC009S0049W0121",
+      "seed": 20261003,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 103,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 101,
+      "sample_id": "BAC009S0049W0121",
+      "seed": 20261004,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 105,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 103,
+      "sample_id": "BAC009S0049W0121",
+      "seed": 20261004,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 106,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 104,
+      "sample_id": "BAC009S0049W0121",
+      "seed": 20261004,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 103,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 101,
+      "sample_id": "BAC009S0049W0121",
+      "seed": 20261005,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 105,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 103,
+      "sample_id": "BAC009S0049W0121",
+      "seed": 20261005,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 106,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 104,
+      "sample_id": "BAC009S0049W0121",
+      "seed": 20261005,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 116,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 111,
+        "support_mask_sha256": "8c8c81b488184338806463b3a04be007f50a63d3b13a34b93dbba8ee609c1a74"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 71,
+        "support_mask_sha256": "454f791bfab0b81e24034b248b2c46f102e18d9ac9b7029618d71b5da621e44c"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 114,
+      "sample_id": "BAC009S0049W0122",
+      "seed": 20261003,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 119,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 112,
+        "support_mask_sha256": "ec1c53f939ed2e18b2f21bd7617d523d9f0530d192edfb3a5c15a8710d399dfd"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 72,
+        "support_mask_sha256": "c19ec9174c44bca3b3c3a6e2dd950a12e227fc728c14fbf2e68716b628547935"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 117,
+      "sample_id": "BAC009S0049W0122",
+      "seed": 20261003,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 120,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 112,
+        "support_mask_sha256": "ec1c53f939ed2e18b2f21bd7617d523d9f0530d192edfb3a5c15a8710d399dfd"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 72,
+        "support_mask_sha256": "c19ec9174c44bca3b3c3a6e2dd950a12e227fc728c14fbf2e68716b628547935"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 118,
+      "sample_id": "BAC009S0049W0122",
+      "seed": 20261003,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 116,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 111,
+        "support_mask_sha256": "8c8c81b488184338806463b3a04be007f50a63d3b13a34b93dbba8ee609c1a74"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 71,
+        "support_mask_sha256": "454f791bfab0b81e24034b248b2c46f102e18d9ac9b7029618d71b5da621e44c"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 114,
+      "sample_id": "BAC009S0049W0122",
+      "seed": 20261004,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 119,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 112,
+        "support_mask_sha256": "ec1c53f939ed2e18b2f21bd7617d523d9f0530d192edfb3a5c15a8710d399dfd"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 72,
+        "support_mask_sha256": "c19ec9174c44bca3b3c3a6e2dd950a12e227fc728c14fbf2e68716b628547935"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 117,
+      "sample_id": "BAC009S0049W0122",
+      "seed": 20261004,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 120,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 112,
+        "support_mask_sha256": "ec1c53f939ed2e18b2f21bd7617d523d9f0530d192edfb3a5c15a8710d399dfd"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 72,
+        "support_mask_sha256": "c19ec9174c44bca3b3c3a6e2dd950a12e227fc728c14fbf2e68716b628547935"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 118,
+      "sample_id": "BAC009S0049W0122",
+      "seed": 20261004,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 116,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 111,
+        "support_mask_sha256": "8c8c81b488184338806463b3a04be007f50a63d3b13a34b93dbba8ee609c1a74"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 71,
+        "support_mask_sha256": "454f791bfab0b81e24034b248b2c46f102e18d9ac9b7029618d71b5da621e44c"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 114,
+      "sample_id": "BAC009S0049W0122",
+      "seed": 20261005,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 119,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 112,
+        "support_mask_sha256": "ec1c53f939ed2e18b2f21bd7617d523d9f0530d192edfb3a5c15a8710d399dfd"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 72,
+        "support_mask_sha256": "c19ec9174c44bca3b3c3a6e2dd950a12e227fc728c14fbf2e68716b628547935"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 117,
+      "sample_id": "BAC009S0049W0122",
+      "seed": 20261005,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 120,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 112,
+        "support_mask_sha256": "ec1c53f939ed2e18b2f21bd7617d523d9f0530d192edfb3a5c15a8710d399dfd"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 72,
+        "support_mask_sha256": "c19ec9174c44bca3b3c3a6e2dd950a12e227fc728c14fbf2e68716b628547935"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 118,
+      "sample_id": "BAC009S0049W0122",
+      "seed": 20261005,
+      "speaker_id": "S0049",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 102,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 97,
+        "support_mask_sha256": "741092d2478aca1a57226202a2fa0ace5cb22511a7a59f0c87ca8d15b6313aa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 57,
+        "support_mask_sha256": "5ff174e4a19cac2550daa44390e917b56e36929616d82e9a30e5133403bcd2d8"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 100,
+      "sample_id": "BAC009S0050W0121",
+      "seed": 20261003,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 105,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 103,
+      "sample_id": "BAC009S0050W0121",
+      "seed": 20261003,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 106,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 104,
+      "sample_id": "BAC009S0050W0121",
+      "seed": 20261003,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 102,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 97,
+        "support_mask_sha256": "741092d2478aca1a57226202a2fa0ace5cb22511a7a59f0c87ca8d15b6313aa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 57,
+        "support_mask_sha256": "5ff174e4a19cac2550daa44390e917b56e36929616d82e9a30e5133403bcd2d8"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 100,
+      "sample_id": "BAC009S0050W0121",
+      "seed": 20261004,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 105,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 103,
+      "sample_id": "BAC009S0050W0121",
+      "seed": 20261004,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 106,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 104,
+      "sample_id": "BAC009S0050W0121",
+      "seed": 20261004,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 102,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 97,
+        "support_mask_sha256": "741092d2478aca1a57226202a2fa0ace5cb22511a7a59f0c87ca8d15b6313aa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 57,
+        "support_mask_sha256": "5ff174e4a19cac2550daa44390e917b56e36929616d82e9a30e5133403bcd2d8"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 100,
+      "sample_id": "BAC009S0050W0121",
+      "seed": 20261005,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 105,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 103,
+      "sample_id": "BAC009S0050W0121",
+      "seed": 20261005,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 106,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 98,
+        "support_mask_sha256": "7b00491321ab4cf3e61f469352c88d17000c170fa42a8cf6e8b35facc324eed7"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 58,
+        "support_mask_sha256": "2883036b4ec06e0f796cf50c8a57bdf3303577a07dc0afddf00b789c4b237f5a"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 104,
+      "sample_id": "BAC009S0050W0121",
+      "seed": 20261005,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 101,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 96,
+        "support_mask_sha256": "4f577b89edc26ffc23f7aff62a4f0a4d350a59f87002549a2673855107872376"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 56,
+        "support_mask_sha256": "739cb30bcc445967031203e990a3b8bbaf13ad0067dd9cc30e9822351a66bfd7"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 99,
+      "sample_id": "BAC009S0050W0122",
+      "seed": 20261003,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 104,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 97,
+        "support_mask_sha256": "741092d2478aca1a57226202a2fa0ace5cb22511a7a59f0c87ca8d15b6313aa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 57,
+        "support_mask_sha256": "5ff174e4a19cac2550daa44390e917b56e36929616d82e9a30e5133403bcd2d8"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 102,
+      "sample_id": "BAC009S0050W0122",
+      "seed": 20261003,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 105,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 97,
+        "support_mask_sha256": "741092d2478aca1a57226202a2fa0ace5cb22511a7a59f0c87ca8d15b6313aa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 57,
+        "support_mask_sha256": "5ff174e4a19cac2550daa44390e917b56e36929616d82e9a30e5133403bcd2d8"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 103,
+      "sample_id": "BAC009S0050W0122",
+      "seed": 20261003,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 101,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 96,
+        "support_mask_sha256": "4f577b89edc26ffc23f7aff62a4f0a4d350a59f87002549a2673855107872376"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 56,
+        "support_mask_sha256": "739cb30bcc445967031203e990a3b8bbaf13ad0067dd9cc30e9822351a66bfd7"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 99,
+      "sample_id": "BAC009S0050W0122",
+      "seed": 20261004,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 104,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 97,
+        "support_mask_sha256": "741092d2478aca1a57226202a2fa0ace5cb22511a7a59f0c87ca8d15b6313aa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 57,
+        "support_mask_sha256": "5ff174e4a19cac2550daa44390e917b56e36929616d82e9a30e5133403bcd2d8"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 102,
+      "sample_id": "BAC009S0050W0122",
+      "seed": 20261004,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 105,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 97,
+        "support_mask_sha256": "741092d2478aca1a57226202a2fa0ace5cb22511a7a59f0c87ca8d15b6313aa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 57,
+        "support_mask_sha256": "5ff174e4a19cac2550daa44390e917b56e36929616d82e9a30e5133403bcd2d8"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 103,
+      "sample_id": "BAC009S0050W0122",
+      "seed": 20261004,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 101,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 96,
+        "support_mask_sha256": "4f577b89edc26ffc23f7aff62a4f0a4d350a59f87002549a2673855107872376"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 56,
+        "support_mask_sha256": "739cb30bcc445967031203e990a3b8bbaf13ad0067dd9cc30e9822351a66bfd7"
+      },
+      "model_id": "wav2lip_gan_bac9a81e",
+      "render_frame_count": 99,
+      "sample_id": "BAC009S0050W0122",
+      "seed": 20261005,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 104,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 97,
+        "support_mask_sha256": "741092d2478aca1a57226202a2fa0ace5cb22511a7a59f0c87ca8d15b6313aa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 57,
+        "support_mask_sha256": "5ff174e4a19cac2550daa44390e917b56e36929616d82e9a30e5133403bcd2d8"
+      },
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "render_frame_count": 102,
+      "sample_id": "BAC009S0050W0122",
+      "seed": 20261005,
+      "speaker_id": "S0050",
+      "split": "dev"
+    },
+    {
+      "evaluator_video_frame_count": 105,
+      "face_id": "primary_face_static_portrait_v1",
+      "full_support": {
+        "eligible": true,
+        "query_count": 97,
+        "support_mask_sha256": "741092d2478aca1a57226202a2fa0ace5cb22511a7a59f0c87ca8d15b6313aa4"
+      },
+      "guard20_support": {
+        "eligible": true,
+        "query_count": 57,
+        "support_mask_sha256": "5ff174e4a19cac2550daa44390e917b56e36929616d82e9a30e5133403bcd2d8"
+      },
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "render_frame_count": 103,
+      "sample_id": "BAC009S0050W0122",
+      "seed": 20261005,
+      "speaker_id": "S0050",
+      "split": "dev"
+    }
+  ],
+  "support_availability_summary": {
+    "all_pairs": {
+      "evaluator_video_frame_count_histogram": {
+        "101": 3,
+        "102": 3,
+        "103": 6,
+        "104": 3,
+        "105": 12,
+        "106": 12,
+        "108": 6,
+        "109": 3,
+        "110": 3,
+        "111": 3,
+        "116": 6,
+        "119": 9,
+        "120": 6,
+        "122": 3,
+        "123": 3,
+        "129": 3,
+        "131": 3,
+        "132": 3,
+        "148": 3,
+        "151": 3,
+        "152": 3,
+        "161": 3,
+        "163": 3,
+        "164": 3,
+        "79": 3,
+        "82": 3,
+        "83": 3,
+        "86": 3,
+        "87": 9,
+        "88": 3,
+        "89": 3,
+        "90": 18,
+        "91": 9,
+        "93": 3,
+        "95": 3,
+        "96": 3,
+        "97": 6,
+        "98": 3
+      },
+      "full_eligible_count": 180,
+      "full_query_count_histogram": {
+        "101": 9,
+        "103": 9,
+        "111": 6,
+        "112": 12,
+        "114": 3,
+        "115": 6,
+        "124": 9,
+        "143": 3,
+        "144": 6,
+        "156": 9,
+        "74": 3,
+        "75": 6,
+        "81": 3,
+        "82": 15,
+        "83": 27,
+        "88": 3,
+        "89": 6,
+        "90": 9,
+        "96": 3,
+        "97": 9,
+        "98": 24
+      },
+      "guard20_eligible_count": 171,
+      "guard20_ineligible_count": 9,
+      "guard20_query_count_histogram": {
+        "103": 3,
+        "104": 6,
+        "116": 9,
+        "34": 3,
+        "35": 6,
+        "41": 3,
+        "42": 15,
+        "43": 27,
+        "48": 3,
+        "49": 6,
+        "50": 9,
+        "56": 3,
+        "57": 9,
+        "58": 24,
+        "61": 9,
+        "63": 9,
+        "71": 6,
+        "72": 12,
+        "74": 3,
+        "75": 6,
+        "84": 9
+      },
+      "paired_clip_model_identity_count": 180,
+      "render_frame_count_histogram": {
+        "100": 3,
+        "101": 6,
+        "102": 3,
+        "103": 12,
+        "104": 12,
+        "106": 6,
+        "107": 3,
+        "108": 3,
+        "109": 3,
+        "114": 6,
+        "117": 9,
+        "118": 6,
+        "120": 3,
+        "121": 3,
+        "127": 3,
+        "129": 3,
+        "130": 3,
+        "146": 3,
+        "149": 3,
+        "150": 3,
+        "159": 3,
+        "161": 3,
+        "162": 3,
+        "77": 3,
+        "80": 3,
+        "81": 3,
+        "84": 3,
+        "85": 9,
+        "86": 3,
+        "87": 3,
+        "88": 18,
+        "89": 9,
+        "91": 3,
+        "93": 3,
+        "94": 3,
+        "95": 6,
+        "96": 3,
+        "99": 3
+      }
+    },
+    "by_model": {
+      "ditto_hubert_fixed_portrait_attempt18": {
+        "evaluator_video_frame_count_histogram": {
+          "105": 3,
+          "106": 9,
+          "109": 3,
+          "111": 3,
+          "120": 6,
+          "123": 3,
+          "132": 3,
+          "152": 3,
+          "164": 3,
+          "83": 3,
+          "90": 6,
+          "91": 9,
+          "97": 3,
+          "98": 3
+        },
+        "full_eligible_count": 60,
+        "full_query_count_histogram": {
+          "101": 3,
+          "103": 3,
+          "112": 6,
+          "115": 3,
+          "124": 3,
+          "144": 3,
+          "156": 3,
+          "75": 3,
+          "82": 3,
+          "83": 12,
+          "89": 3,
+          "90": 3,
+          "97": 3,
+          "98": 9
+        },
+        "guard20_eligible_count": 57,
+        "guard20_ineligible_count": 3,
+        "guard20_query_count_histogram": {
+          "104": 3,
+          "116": 3,
+          "35": 3,
+          "42": 3,
+          "43": 12,
+          "49": 3,
+          "50": 3,
+          "57": 3,
+          "58": 9,
+          "61": 3,
+          "63": 3,
+          "72": 6,
+          "75": 3,
+          "84": 3
+        },
+        "paired_clip_model_identity_count": 60,
+        "render_frame_count_histogram": {
+          "103": 3,
+          "104": 9,
+          "107": 3,
+          "109": 3,
+          "118": 6,
+          "121": 3,
+          "130": 3,
+          "150": 3,
+          "162": 3,
+          "81": 3,
+          "88": 6,
+          "89": 9,
+          "95": 3,
+          "96": 3
+        }
+      },
+      "musetalk_fixed_portrait_attempt16": {
+        "evaluator_video_frame_count_histogram": {
+          "104": 3,
+          "105": 9,
+          "108": 3,
+          "110": 3,
+          "119": 6,
+          "122": 3,
+          "131": 3,
+          "151": 3,
+          "163": 3,
+          "82": 3,
+          "89": 3,
+          "90": 12,
+          "96": 3,
+          "97": 3
+        },
+        "full_eligible_count": 60,
+        "full_query_count_histogram": {
+          "101": 3,
+          "103": 3,
+          "112": 6,
+          "115": 3,
+          "124": 3,
+          "144": 3,
+          "156": 3,
+          "75": 3,
+          "82": 3,
+          "83": 12,
+          "89": 3,
+          "90": 3,
+          "97": 3,
+          "98": 9
+        },
+        "guard20_eligible_count": 57,
+        "guard20_ineligible_count": 3,
+        "guard20_query_count_histogram": {
+          "104": 3,
+          "116": 3,
+          "35": 3,
+          "42": 3,
+          "43": 12,
+          "49": 3,
+          "50": 3,
+          "57": 3,
+          "58": 9,
+          "61": 3,
+          "63": 3,
+          "72": 6,
+          "75": 3,
+          "84": 3
+        },
+        "paired_clip_model_identity_count": 60,
+        "render_frame_count_histogram": {
+          "102": 3,
+          "103": 9,
+          "106": 3,
+          "108": 3,
+          "117": 6,
+          "120": 3,
+          "129": 3,
+          "149": 3,
+          "161": 3,
+          "80": 3,
+          "87": 3,
+          "88": 12,
+          "94": 3,
+          "95": 3
+        }
+      },
+      "wav2lip_gan_bac9a81e": {
+        "evaluator_video_frame_count_histogram": {
+          "101": 3,
+          "102": 3,
+          "103": 6,
+          "106": 3,
+          "108": 3,
+          "116": 6,
+          "119": 3,
+          "129": 3,
+          "148": 3,
+          "161": 3,
+          "79": 3,
+          "86": 3,
+          "87": 9,
+          "88": 3,
+          "93": 3,
+          "95": 3
+        },
+        "full_eligible_count": 60,
+        "full_query_count_histogram": {
+          "101": 3,
+          "103": 3,
+          "111": 6,
+          "114": 3,
+          "124": 3,
+          "143": 3,
+          "156": 3,
+          "74": 3,
+          "81": 3,
+          "82": 9,
+          "83": 3,
+          "88": 3,
+          "90": 3,
+          "96": 3,
+          "97": 3,
+          "98": 6
+        },
+        "guard20_eligible_count": 57,
+        "guard20_ineligible_count": 3,
+        "guard20_query_count_histogram": {
+          "103": 3,
+          "116": 3,
+          "34": 3,
+          "41": 3,
+          "42": 9,
+          "43": 3,
+          "48": 3,
+          "50": 3,
+          "56": 3,
+          "57": 3,
+          "58": 6,
+          "61": 3,
+          "63": 3,
+          "71": 6,
+          "74": 3,
+          "84": 3
+        },
+        "paired_clip_model_identity_count": 60,
+        "render_frame_count_histogram": {
+          "100": 3,
+          "101": 6,
+          "104": 3,
+          "106": 3,
+          "114": 6,
+          "117": 3,
+          "127": 3,
+          "146": 3,
+          "159": 3,
+          "77": 3,
+          "84": 3,
+          "85": 9,
+          "86": 3,
+          "91": 3,
+          "93": 3,
+          "99": 3
+        }
+      }
+    },
+    "guard20_interpretation": "Actual emitted support_by_support.guard20 fields; eligibility was not inferred from the support label. Query counts are scored query positions, not video frame counts."
+  },
+  "table_self_sha256": "1049eeb4d8a4f8e2108c25cffaea2bf46ca4ce22e6b93ae87378fc095e114885",
+  "terminal_readback_context": {
+    "child_returncode": 0,
+    "empty_repeat_ledger_bytes": 0,
+    "manifest_status": "PASS",
+    "native_receipt_download_scope": "The downloaded attestation's self-hashed per-row references are checked; the 360 referenced receipt files are not separately downloaded by this six-file QC.",
+    "planned_and_result_rows": 360,
+    "repeat_policy": "NOT_RUN_SUBRUN; all 360 original result rows remain present",
+    "run_status": "COMPLETE",
+    "status": "PASS_INDEPENDENT_360_TERMINAL_READBACK",
+    "status_counts": {
+      "FAILED": 0,
+      "INCOMPLETE": 0,
+      "PASS": 360
+    },
+    "strict_attestation_status": "PASS"
+  }
+}

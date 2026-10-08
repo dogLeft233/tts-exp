@@ -1,0 +1,29 @@
+--- scripts/audio_enhancement/enhance_v3_attempt02.py
++++ scripts/audio_enhancement/enhance_v3_attempt03.py
+@@ -321,15 +321,21 @@
+         raise V3CLIError("runtime.device must be cpu or an explicit cuda[:index] device")
+     intra = runtime.get("torch_intraop_threads")
+     inter = runtime.get("torch_interop_threads")
+     if type(intra) is not int or intra < 1 or type(inter) is not int or inter < 1:
+         raise V3CLIError("runtime thread counts must be positive integers")
+-    torch.set_num_threads(intra)
+-    try:
+-        torch.set_num_interop_threads(inter)
+-    except RuntimeError as exc:
+-        raise V3CLIError(f"cannot establish configured PyTorch interop threads: {exc}") from exc
++    # The strict startup gate establishes these values before the candidate
++    # dispatcher runs. PyTorch forbids changing interop threads after parallel
++    # work has started, so only invoke the setter when the configured value
++    # differs; the equality check below remains the fail-closed policy gate.
++    if torch.get_num_threads() != intra:
++        torch.set_num_threads(intra)
++    if torch.get_num_interop_threads() != inter:
++        try:
++            torch.set_num_interop_threads(inter)
++        except RuntimeError as exc:
++            raise V3CLIError(f"cannot establish configured PyTorch interop threads: {exc}") from exc
+     if torch.get_num_threads() != intra or torch.get_num_interop_threads() != inter:
+         raise V3CLIError("PyTorch thread settings did not match the configuration")
+     if device != "cpu" and not torch.cuda.is_available():
+         raise V3CLIError(f"configured CUDA device {device} is unavailable; no automatic CPU fallback is allowed")
+     if runtime.get("require_mkl", False):

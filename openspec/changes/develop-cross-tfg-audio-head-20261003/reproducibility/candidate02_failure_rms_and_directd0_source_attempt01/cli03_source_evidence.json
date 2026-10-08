@@ -1,0 +1,101 @@
+{
+  "config_change": {
+    "cli_pin": {
+      "bytes": 43071,
+      "path": "scripts/audio_enhancement/enhance_v3_attempt03.py",
+      "sha256": "2cf5fc0f73d7c8d5aabbbc457672e487de2f8a88e683976bb58698325a80fdfd"
+    },
+    "only_changed_fields": [
+      "source_pins.cli.bytes",
+      "source_pins.cli.path",
+      "source_pins.cli.sha256"
+    ],
+    "other_config_fields_unchanged": true,
+    "prepared": {
+      "bytes": 5240,
+      "intended_remote_path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/v3_method_candidate_config_attempt03.json",
+      "path": ".codex/scratch/candidate_v3_interop_thread_repair_attempt03/v3_method_candidate_config_attempt03.json",
+      "sha256": "fd2ce3509c457e40e618818828f6040ab65641315d40efe8f48e5dc3c5c3d1df"
+    },
+    "source": {
+      "bytes": 5240,
+      "path": ".codex/scratch/root_candidate_original_metadata_readback_attempt01/candidate_config.json",
+      "sha256": "aba0dc744b76cfd9f73db547faa80508a4a46437432ef78feaf5b7bfb51f3666"
+    }
+  },
+  "evidence_sha256": "ac522fae69c1e4bbaaec305bb09e8357c832fb8ab69f1d3a172bb065d5c065b7",
+  "failure_evidence": {
+    "bytes": 75241,
+    "candidate_run_id": "cross_tfg_audio_head_20261003_v3_fit40_dev180_attempt02",
+    "failure_reason_histogram": [
+      {
+        "count": 60,
+        "failure_reason": "V3CLIError: cannot establish configured PyTorch interop threads: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called",
+        "model_id": "wav2lip_gan_bac9a81e"
+      },
+      {
+        "count": 60,
+        "failure_reason": "V3CLIError: cannot establish configured PyTorch interop threads: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called",
+        "model_id": "musetalk_fixed_portrait_attempt16"
+      },
+      {
+        "count": 60,
+        "failure_reason": "V3CLIError: cannot establish configured PyTorch interop threads: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called",
+        "model_id": "ditto_hubert_fixed_portrait_attempt18"
+      }
+    ],
+    "ledger_bytes": 817337,
+    "ledger_path": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/results.jsonl",
+    "ledger_raw_sha256": "dd19b4996902576b0bedfbf91e0c2fab27815392145f024e610d584e0bb49e84",
+    "malformed_line_count": 0,
+    "path": ".codex/scratch/dev360_candidate180_failure_diagnostic_attempt01/requests_attempt01/00_read_candidate180_failure_histogram_once.json.response.json",
+    "raw_sha256": "ed1cf2263658b56574c6dbeb9515040c01ff783a133d9542b3182f9ebffdc85b",
+    "result_manifest_bytes": 69049,
+    "result_manifest_path": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/result_manifest.json",
+    "result_manifest_raw_sha256": "727c6a7dfebdd2184788e89cb3607e46703d0d4063b35c8f013deb5342ad3b99",
+    "rows": 180,
+    "status_counts": {
+      "FAILED": 180,
+      "INCOMPLETE": 0,
+      "PASS": 0
+    }
+  },
+  "plan_state": {
+    "fresh_output_root": null,
+    "fresh_plan": null,
+    "prior_plan_path": ".codex/scratch/dev360_candidate_generator_pin_repair_attempt02/candidate_rebound_plan_attempt13.json",
+    "prior_plan_payload_sha256": "fee2718c0c4b18e5acabf3ca7d7103344bfb3859f3d8a3b93862c1ad4ce7d612",
+    "prior_plan_raw_sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280",
+    "runtime_qualification": "NOT_PERFORMED"
+  },
+  "schema": "cross_tfg_v3_cli_interop_repair_source_evidence_v1",
+  "scope": {
+    "candidate_execution": false,
+    "frozen_attempt02_changed": false,
+    "gpu_or_cuda_queried": false,
+    "remote_mutation": false
+  },
+  "source_change": {
+    "diff": {
+      "bytes": 1736,
+      "path": ".codex/scratch/candidate_v3_interop_thread_repair_attempt03/enhance_v3_attempt02_to_attempt03.diff",
+      "sha256": "49e925fea4ba80e7c8f657a91a72b474ed3e32a02841d512aceb23e4780c1ec7"
+    },
+    "from": {
+      "bytes": 42653,
+      "path": "scripts/audio_enhancement/enhance_v3_attempt02.py",
+      "sha256": "7a560332ce86a82ffede4254b015cabf5f10176e6f601bfc172a331f7bb885e6"
+    },
+    "static_checks": {
+      "only_validate_runtime_ast_changed": true,
+      "policy": "only call thread setters when actual count differs; retain fail-closed mismatch handling",
+      "postcondition_retained": "torch.get_num_threads() == intra and torch.get_num_interop_threads() == inter"
+    },
+    "to": {
+      "bytes": 43071,
+      "path": "scripts/audio_enhancement/enhance_v3_attempt03.py",
+      "sha256": "2cf5fc0f73d7c8d5aabbbc457672e487de2f8a88e683976bb58698325a80fdfd"
+    }
+  },
+  "status": "SOURCE_ONLY_REPAIR_PREPARED"
+}

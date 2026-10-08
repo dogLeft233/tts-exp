@@ -1,0 +1,35 @@
+--- scripts/audio_enhancement/v3_v4_native_runtime_adapter_v8_attempt01.py
++++ scripts/audio_enhancement/v3_v4_native_runtime_adapter_v9_attempt01.py
+@@ -20,7 +20,7 @@
+ from scripts.audio_enhancement import v3_v4_native_runtime_adapter_attempt04 as _objective
+ 
+ 
+-SCHEMA = "cross_tfg_v3_v4_native_runtime_adapter_v8_attempt01"
++SCHEMA = "cross_tfg_v3_v4_native_runtime_adapter_v9_attempt01"
+ PREPARATION_ONLY = True
+ STRICT_DETERMINISM_REQUIRED = True
+ EXPECTED_FROZEN_OBJECTIVE_SHA256 = "7d0bc03c039e22d1c84dc5472973c47af959f60bf5946d40b88ca70a50760e07"
+@@ -689,6 +689,9 @@
+         raise FloatingPointError("whole-objective backward qualification loss is non-finite or non-scalar")
+     if gradient is None or tuple(gradient.shape) != (3, 3) or not torch.isfinite(gradient).all().item():
+         raise FloatingPointError("whole-objective backward qualification gradient is absent or invalid")
++    gradient_nonzero_scalar_count = int(torch.count_nonzero(gradient).item())
++    if gradient_nonzero_scalar_count <= 0:
++        raise RuntimeError("whole-objective backward qualification gradient has no nonzero signal")
+     theta_unchanged = torch.equal(theta_before, theta_after)
+     if not theta_unchanged:
+         raise RuntimeError("whole-objective qualification mutated the frozen zero-initialized transition head")
+@@ -735,10 +738,11 @@
+         "loss_float32": float(loss.detach().item()),
+         "gradient_shape": [3, 3],
+         "gradient_dtype": "float32; no cast",
+-        "gradient_nonzero_scalar_count": int(torch.count_nonzero(gradient).item()),
++        "gradient_nonzero_scalar_count": gradient_nonzero_scalar_count,
++        "gradient_positive_signal": gradient_nonzero_scalar_count > 0,
+         "gradient_sha256": _sha(gradient_bytes),
+         "zero_head_unchanged": theta_unchanged,
+-        "optimizer_created": False,
++        "v3_head_adam_created": False,
+         "optimizer_updates": 0,
+         "strict_deterministic_algorithms": True,
+         "warn_only": False,

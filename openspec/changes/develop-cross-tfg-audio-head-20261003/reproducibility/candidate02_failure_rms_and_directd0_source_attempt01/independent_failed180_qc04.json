@@ -1,0 +1,191 @@
+{
+  "actual_artifact_pins": [
+    {
+      "bytes": 817337,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\results_ledger",
+      "name": "results_ledger",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/results.jsonl",
+      "sha256": "dd19b4996902576b0bedfbf91e0c2fab27815392145f024e610d584e0bb49e84"
+    },
+    {
+      "bytes": 69049,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\result_manifest",
+      "name": "result_manifest",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/result_manifest.json",
+      "sha256": "727c6a7dfebdd2184788e89cb3607e46703d0d4063b35c8f013deb5342ad3b99"
+    },
+    {
+      "bytes": 1258,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\run_status",
+      "name": "run_status",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/control/run_status.json",
+      "sha256": "ab7e1b958418f7dd3ec007bba97902182a0261452020ff7765a8b578dd9c1aab"
+    },
+    {
+      "bytes": 6841,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\execution_record",
+      "name": "execution_record",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180.execution.json",
+      "sha256": "fbeeef8d8567aaeceea6cf4cac2e0b7a09bc99859803c2adcfdfb10ae3fb9021"
+    },
+    {
+      "bytes": 770,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\startup_policy_receipt",
+      "name": "startup_policy_receipt",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180.candidate_startup_policy_receipt.json",
+      "sha256": "226ea26ba92bd4137d7a25b86248c9f4ab4409f9a74ea0ad24cbfc426327fb80"
+    },
+    {
+      "bytes": 0,
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\generation_repeat_qc_ledger",
+      "name": "generation_repeat_qc_ledger",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/generation_repeat_qc.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "packet_index": {
+    "bytes": 16847,
+    "index_sha256": "b9d5e9e103ae06402af3484fea1ae163562c589ca16a2944ecf9e25e897b8dd4",
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt04\\request_index_attempt04.json",
+    "sha256": "a3e702bf23c57a2ff5f451ad8fddff7d78517c40137582109c62029b4143162c"
+  },
+  "parent_packet_index": {
+    "bytes": 15504,
+    "index_sha256": "73d6efff346e90f477ff6230a3752941088d1b42ed1fb82a84c8f254f0b2dddc",
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\request_index_attempt03.json",
+    "sha256": "5bd019a179df28840a225f74d22bd55d8b6b17be98ec18eb743c3ca51de0c1d7"
+  },
+  "qc_manifest": {
+    "bytes": 7128,
+    "manifest_sha256": "3f25270b9a8f61712a10567099c79a03cc9530dc954152660e2b1c408e6a802f",
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt04\\qc_manifest_attempt04.json",
+    "sha256": "a7d3cb7e20268ec8e653bf25689d7e2f11ca1b5efad685b01fb5b01f91a2458a"
+  },
+  "run_id": "cross_tfg_audio_head_20261003_v3_fit40_dev180_attempt02",
+  "schema": "cross_tfg_candidate180_failure_readback_qc_attempt04_v1",
+  "scope": {
+    "api_called": false,
+    "gpu_or_cuda_queried": false,
+    "local_read_only": true,
+    "media_read_or_written": false,
+    "models_or_scorers_imported": false,
+    "remote_dispatch_performed": false,
+    "scientific_admission": false
+  },
+  "source_pins_verified": [
+    "actual_launch_receipt",
+    "actual_launch_response",
+    "candidate13_guard",
+    "candidate_dispatcher07",
+    "candidate_manifest14",
+    "candidate_plan13",
+    "candidate_rows12",
+    "failed_status_response02",
+    "failure_diagnostic_index",
+    "failure_diagnostic_request",
+    "failure_diagnostic_response",
+    "frontend09",
+    "local_qc_script",
+    "parent_packet_index03",
+    "qc_manifest_attempt04",
+    "runtime_binding09",
+    "stagea_core06",
+    "startup_lineage_diagnostic_response03",
+    "strict_bootstrap03",
+    "superseded_qc_script03"
+  ],
+  "status": "FAILURE_TERMINAL_READBACK_QC04_PASS_NO_SCIENTIFIC_ADMISSION",
+  "terminal": {
+    "all_identity_rows_match_plan": true,
+    "child_returncode": 2,
+    "execution_status": "INCOMPLETE_STRICT_POLICY_RECEIPTS",
+    "full_failure_reason_histogram": [
+      {
+        "count": 60,
+        "failure_reason": "V3CLIError: cannot establish configured PyTorch interop threads: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called",
+        "model_id": "ditto_hubert_fixed_portrait_attempt18"
+      },
+      {
+        "count": 60,
+        "failure_reason": "V3CLIError: cannot establish configured PyTorch interop threads: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called",
+        "model_id": "musetalk_fixed_portrait_attempt16"
+      },
+      {
+        "count": 60,
+        "failure_reason": "V3CLIError: cannot establish configured PyTorch interop threads: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called",
+        "model_id": "wav2lip_gan_bac9a81e"
+      }
+    ],
+    "ledger_rows": 180,
+    "manifest_status": "INCOMPLETE",
+    "model_seed_counts": {
+      "ditto_hubert_fixed_portrait_attempt18": {
+        "20261003": 20,
+        "20261004": 20,
+        "20261005": 20
+      },
+      "musetalk_fixed_portrait_attempt16": {
+        "20261003": 20,
+        "20261004": 20,
+        "20261005": 20
+      },
+      "wav2lip_gan_bac9a81e": {
+        "20261003": 20,
+        "20261004": 20,
+        "20261005": 20
+      }
+    },
+    "model_status_counts": {
+      "ditto_hubert_fixed_portrait_attempt18": {
+        "FAILED": 60,
+        "INCOMPLETE": 0,
+        "PASS": 0
+      },
+      "musetalk_fixed_portrait_attempt16": {
+        "FAILED": 60,
+        "INCOMPLETE": 0,
+        "PASS": 0
+      },
+      "wav2lip_gan_bac9a81e": {
+        "FAILED": 60,
+        "INCOMPLETE": 0,
+        "PASS": 0
+      }
+    },
+    "ordered_identity_field_count": 12,
+    "ordered_identity_fields": [
+      "row_id",
+      "split",
+      "sample_id",
+      "speaker_id",
+      "model_id",
+      "audio_frontend",
+      "model_role",
+      "face_id",
+      "seed",
+      "method_id",
+      "method_config_sha256",
+      "checkpoint_sha256"
+    ],
+    "planned_rows": 180,
+    "repeat_qc_bytes": 0,
+    "repeat_qc_rows": 0,
+    "repeat_qc_status": "NOT_RUN_SUBRUN",
+    "run_status": "COMPLETE_WITH_FAILURES",
+    "seed_counts": {
+      "20261003": 60,
+      "20261004": 60,
+      "20261005": 60
+    },
+    "seed_roster": [
+      20261003,
+      20261004,
+      20261005
+    ],
+    "strict_attestation": {
+      "downloaded": false,
+      "status": "ABSENT_AS_RECORDED"
+    },
+    "strict_policy_error": "ValueError('candidate render run produced no strict bootstrap receipts')"
+  }
+}

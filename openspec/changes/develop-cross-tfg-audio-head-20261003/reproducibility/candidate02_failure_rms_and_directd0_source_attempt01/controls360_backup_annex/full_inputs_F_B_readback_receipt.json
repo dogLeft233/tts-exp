@@ -1,0 +1,22 @@
+{
+  "cloud_sync_confirmed": false,
+  "controls_rows": 360,
+  "copies": [
+    {
+      "files": 14,
+      "full_readback_scans": 2,
+      "manifest_raw_sha256": "c43a42bb2c6c6652af76599b7337241d08cd5bd05dd26eb4c81925f3ac48042c",
+      "path": "F:\\tts-exp-archive-transfer\\controls360_attempt10_terminal_full_inputs_attempt01",
+      "total_bytes": 16044666
+    },
+    {
+      "files": 14,
+      "full_readback_scans": 2,
+      "manifest_raw_sha256": "c43a42bb2c6c6652af76599b7337241d08cd5bd05dd26eb4c81925f3ac48042c",
+      "path": "B:\\tts-exp-archives\\controls360_attempt10_terminal_full_inputs_attempt01",
+      "total_bytes": 16044666
+    }
+  ],
+  "media_included": false,
+  "status": "PASS_F_AND_MOUNTED_B_FULL_BYTE_READBACK"
+}

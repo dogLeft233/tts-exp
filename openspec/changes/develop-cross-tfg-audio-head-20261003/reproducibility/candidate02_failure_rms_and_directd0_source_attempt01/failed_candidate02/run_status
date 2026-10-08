@@ -1,0 +1,21 @@
+{
+  "completed_rows": 180,
+  "ended_unix": 1791472525.3086028,
+  "pid": 160701,
+  "plan_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/rebound_plan_attempt12/candidate_rebound_plan_attempt13.json",
+  "plan_raw_sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280",
+  "planned_rows": 180,
+  "planned_rows_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/rebound_plan_attempt12/planned_rows.jsonl",
+  "planned_rows_sha256": "c9dc6f9bf400aff7f2c25ee24528dfd3a038433c21e80e0177066b8ab3f8a19e",
+  "repeat_qc_status": "NOT_RUN_SUBRUN",
+  "result_manifest_path": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/result_manifest.json",
+  "result_manifest_sha256": "727c6a7dfebdd2184788e89cb3607e46703d0d4063b35c8f013deb5342ad3b99",
+  "run_id": "cross_tfg_audio_head_20261003_v3_fit40_dev180_attempt02",
+  "schema_version": "cross_tfg_audio_head_stagea_v1",
+  "status": "COMPLETE_WITH_FAILURES",
+  "status_counts": {
+    "FAILED": 180,
+    "INCOMPLETE": 0,
+    "PASS": 0
+  }
+}

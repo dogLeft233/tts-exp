@@ -1,0 +1,118 @@
+{
+  "schema": "controls360_rms_diagnostic_preanalysis_v1",
+  "analysis_id": "dev360_controls360_rms_diagnostic_attempt01",
+  "status": "PRECOMPUTE_LOCKED",
+  "purpose": "Descriptive paired comparison of rms_fixed against identity on the completed controls360 ledger; no model selection, candidate update, GPU, API, SSH, or rerun.",
+  "source_inputs": {
+    "ledger": {
+      "path": ".codex/scratch/dev360_terminal_transfer_attempt09/verify_output_attempt01/results.jsonl",
+      "bytes": 11940846,
+      "sha256": "0ec1d6043f8e3c8ebce4dfdd17c95418239c663bdf8d24a47cdcbfde0e793cb2"
+    },
+    "terminal_content_qc": {
+      "path": ".codex/scratch/dev360_terminal_transfer_attempt09/verify_output_attempt01/terminal_content_qc_attempt01.json",
+      "bytes": 9659,
+      "sha256": "0733a4c0c30e3cc938e0d065e00fbe8394ad7e5a114094dd1bab9e02aae6c09c"
+    },
+    "transfer_reconstruction_receipt": {
+      "path": ".codex/scratch/dev360_terminal_transfer_attempt09/verify_output_attempt01/transfer_reconstruction_receipt_attempt01.json",
+      "bytes": 11165,
+      "sha256": "dc85a1fb0f7e52811ba302fbac1e36ac9d38368a711915a261853659f6b2952d"
+    },
+    "metric_definition_source": {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_stagea_dev_attempt06.py",
+      "bytes": 79475,
+      "sha256": "291f8b5cd48d8ebc63aafd814dcd37450eecba949fab98283cf20a27c6335483"
+    },
+    "frozen_controls_producer": {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_v3_samehost_dev360_controls_attempt18.py",
+      "bytes": 78172,
+      "sha256": "30381ee8deb6d0e7880379fc91a042e1e2bb3cca375dd05423319259fd9e8756"
+    }
+  },
+  "population_and_pairing": {
+    "ledger_rows": 360,
+    "expected_row_status": "PASS",
+    "methods": ["identity", "rms_fixed"],
+    "rows_per_method": 180,
+    "models": [
+      "wav2lip_gan_bac9a81e",
+      "musetalk_fixed_portrait_attempt16",
+      "ditto_hubert_fixed_portrait_attempt18"
+    ],
+    "rows_per_model_method": 60,
+    "speakers": ["S0005", "S0022", "S0024", "S0037", "S0038", "S0039", "S0041", "S0044", "S0049", "S0050"],
+    "speaker_cluster_count": 10,
+    "paired_identity_fields": ["split", "sample_id", "speaker_id", "model_id", "face_id", "seed"],
+    "pairing_rule": "Require exactly one identity and one rms_fixed row per paired_identity_fields tuple; retain every complete pair."
+  },
+  "primary_support": {
+    "support_id": "full",
+    "metric_source": "score.metrics_by_support.full",
+    "eligibility_source": "score.support_by_support.full",
+    "rule": "Use the exact full-support scores already emitted by the frozen scorer. Do not recompute scores and do not use guard20 metrics in the primary estimand."
+  },
+  "estimands": {
+    "contrast": "rms_fixed minus identity within exact paired identity; average pair differences within speaker and model; average ten speaker means for each model.",
+    "equal_model_target": "Arithmetic mean of the three model-specific estimates; in every bootstrap draw, compute each model's speaker-clustered estimate, then average the three model estimates.",
+    "metric_family": [
+      {
+        "name": "Cbest",
+        "source_field": "Cbest",
+        "definition": "Median over the 31-lag mean-distance curve minus its minimum."
+      },
+      {
+        "name": "B",
+        "source_field": "B",
+        "definition": "Median over the 31-lag mean-distance curve."
+      },
+      {
+        "name": "Dmin",
+        "source_field": "Dmin",
+        "definition": "Minimum over the 31-lag mean-distance curve."
+      },
+      {
+        "name": "D0",
+        "source_field": "D0",
+        "definition": "Distance at column 15, the scorer's declared zero-lag column."
+      },
+      {
+        "name": "Canchor",
+        "source_field": "Canchor",
+        "definition": "Median over the 31-lag mean-distance curve minus distance at the fixed anchor column; validate anchor_column equals zero_lag_column for every row."
+      },
+      {
+        "name": "best_lag_frames",
+        "source_field": "best_lag_frames",
+        "definition": "Signed lag-frame location of the minimum of the 31-lag mean-distance curve; also report a derived absolute-distance estimand."
+      },
+      {
+        "name": "abs_best_lag_frames",
+        "source_fields": ["best_lag_frames"],
+        "definition": "Absolute signed best_lag_frames; paired contrast is abs(rms_fixed best lag) minus abs(identity best lag), so a negative contrast is closer to zero/fixed clock."
+      }
+    ],
+    "target_family": [
+      "wav2lip_gan_bac9a81e",
+      "musetalk_fixed_portrait_attempt16",
+      "ditto_hubert_fixed_portrait_attempt18",
+      "equal_model_mean"
+    ],
+    "simultaneous_family_size": 28
+  },
+  "uncertainty": {
+    "method": "Speaker-cluster bootstrap with replacement, preserving all paired rows within each resampled speaker.",
+    "cluster_unit": "speaker_id",
+    "resamples": 100000,
+    "seed": 20261003,
+    "rng": "Python random.Random (MT19937), randrange(10) repeated 10 times per bootstrap replicate.",
+    "studentization": "For each of 28 family estimates, divide centered bootstrap deviations (bootstrap estimate minus observed estimate) by the bootstrap sample standard deviation; use the 0.99 nearest-rank quantile of the replicate-wise maximum absolute studentized deviation.",
+    "interval": "Observed estimate plus/minus the simultaneous max-t critical value times that estimate's bootstrap standard deviation; no clipping.",
+    "scope_note": "Approximate cluster-bootstrap intervals over the ten frozen speakers; they do not change the terminal result or qualify a candidate."
+  },
+  "support_coverage_reporting": {
+    "guard20": "Report actual score.support_by_support.guard20 eligible and query_count for every unique paired clip/model identity; do not infer eligibility from the support name or substitute it for full support.",
+    "frame_counts": "Report emitted render.frame_count and official_evaluator.receipt.video_frame_count for each unique paired clip/model identity as separate counts, not as guard query counts.",
+    "pair_consistency": "Require both method rows in each pair to have identical full and guard20 support records and equal render/evaluator frame counts."
+  }
+}

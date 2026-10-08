@@ -1,0 +1,81 @@
+{
+  "all180_failed_before_render": true,
+  "artifact_pins": [
+    {
+      "expected_remote_bytes": 817337,
+      "expected_remote_sha256": "dd19b4996902576b0bedfbf91e0c2fab27815392145f024e610d584e0bb49e84",
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\results_ledger",
+      "name": "results_ledger",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/results.jsonl"
+    },
+    {
+      "expected_remote_bytes": 69049,
+      "expected_remote_sha256": "727c6a7dfebdd2184788e89cb3607e46703d0d4063b35c8f013deb5342ad3b99",
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\result_manifest",
+      "name": "result_manifest",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/result_manifest.json"
+    },
+    {
+      "expected_remote_bytes": 1258,
+      "expected_remote_sha256": "ab7e1b958418f7dd3ec007bba97902182a0261452020ff7765a8b578dd9c1aab",
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\run_status",
+      "name": "run_status",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/control/run_status.json"
+    },
+    {
+      "expected_remote_bytes": 6841,
+      "expected_remote_sha256": "fbeeef8d8567aaeceea6cf4cac2e0b7a09bc99859803c2adcfdfb10ae3fb9021",
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\execution_record",
+      "name": "execution_record",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180.execution.json"
+    },
+    {
+      "expected_remote_bytes": 770,
+      "expected_remote_sha256": "226ea26ba92bd4137d7a25b86248c9f4ab4409f9a74ea0ad24cbfc426327fb80",
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\startup_policy_receipt",
+      "name": "startup_policy_receipt",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180.candidate_startup_policy_receipt.json"
+    },
+    {
+      "expected_remote_bytes": 0,
+      "expected_remote_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_failure_readback_attempt03\\downloads_attempt03\\generation_repeat_qc_ledger",
+      "name": "generation_repeat_qc_ledger",
+      "remote": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180/generation_repeat_qc.jsonl"
+    }
+  ],
+  "duration_seconds": 25.732628345489502,
+  "failure_reason": "V3CLIError: cannot establish configured PyTorch interop threads: Error: cannot set number of interop threads after parallel work has started or set_num_interop_threads called",
+  "identity_fields_checked": [
+    "row_id",
+    "split",
+    "sample_id",
+    "speaker_id",
+    "model_id",
+    "audio_frontend",
+    "model_role",
+    "face_id",
+    "seed",
+    "method_id",
+    "method_config_sha256",
+    "checkpoint_sha256"
+  ],
+  "model_counts": {
+    "ditto_hubert_fixed_portrait_attempt18": 60,
+    "musetalk_fixed_portrait_attempt16": 60,
+    "wav2lip_gan_bac9a81e": 60
+  },
+  "producer_child_returncode": 2,
+  "remote_gpu_api_or_replay": false,
+  "rows": 180,
+  "samples": 20,
+  "science_admission": false,
+  "seed_counts": {
+    "20261003": 60,
+    "20261004": 60,
+    "20261005": 60
+  },
+  "speakers": 10,
+  "status": "PASS_ROOT_FULL_FAILED180_READBACK",
+  "strict_native_attestation": "ABSENT"
+}
