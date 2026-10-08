@@ -1,0 +1,8 @@
+{
+  "op": "upload",
+  "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cli03_runtime_repair_attempt03\\metadata_output_attempt03\\candidate_planned_rows_attempt14.jsonl",
+  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/candidate_v3_cli03_metadata_preflight_attempt04/inputs/candidate_rows14.bin",
+  "expected_bytes": 606042,
+  "expected_sha256": "d781268d02c7495fd35c3bf314848863d57673eeef044a0c5edb19f9e8797f48",
+  "timeout": 180
+}

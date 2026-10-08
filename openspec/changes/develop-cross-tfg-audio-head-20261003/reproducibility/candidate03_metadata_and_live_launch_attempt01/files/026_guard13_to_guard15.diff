@@ -1,0 +1,268 @@
+--- scripts/experiments/cross_tfg_audio_head_20261003/run_v3_step120_candidate_samehost_attempt13.py
++++ scripts/experiments/cross_tfg_audio_head_20261003/run_v3_step120_candidate_samehost_attempt15.py
+@@ -8,9 +8,11 @@
+ from __future__ import annotations
+ 
+ import argparse
++import copy
+ import hashlib
+ import importlib.util
+ import json
++import math
+ import os
+ import platform
+ import subprocess
+@@ -25,6 +27,8 @@
+ CANDIDATE_DISPATCHER_REL = "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_v3_candidate_attempt07.py"
+ EXPECTED_ROWS = 180
+ METHOD_CANDIDATE = "shared_recipient_transition_head_v3_fit40_step120"
++EXPECTED_CANDIDATE_RUN_ID = "cross_tfg_audio_head_20261003_v3_fit40_dev180_cli03_runtime_repair_attempt03"
++REPAIR_BINDING_SCHEMA = "cross_tfg_v3_candidate_runtime_repair_binding_v1"
+ W2L_NATIVE_ENTRY = "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/inference.py"
+ W2L_NATIVE_ENTRY_SHA256 = "99662bfce2fdaf17c1cff8e71977ba02cb80c684058cd114c4e0648b12059fc6"
+ W2L_RUNTIME_COMPAT_SHA256 = "462884a2534f73d93eb09cd05c87fefda677e3647366360fb81a9622fa7592ca"
+@@ -87,6 +91,8 @@
+     path = project_root / GUARD_REL
+     raw = path.read_bytes()
+     closure = None
++    import sys
++    sys.dont_write_bytecode = True
+     spec = importlib.util.spec_from_file_location("samehost_dev360_guard_for_step120", path)
+     if spec is None or spec.loader is None:
+         raise RuntimeError("cannot load the frozen same-host runtime guard")
+@@ -188,6 +194,155 @@
+             or method_config.get("v3_cli_config_sha256") != config_ref.get("raw_sha256")):
+         raise ValueError("candidate method config path/SHA differs from its plan source reference")
+     return plan, plan_raw, manifest, manifest_raw, rows_raw
++
++
++def validate_candidate_runtime_repair(plan: Mapping[str, Any], plan_raw: bytes,
++                                       manifest_raw: bytes, runtime: Mapping[str, Any],
++                                       runtime_raw: bytes, repair_path: Path,
++                                       repair_sha256: str, config_path: Path,
++                                       config_sha256: str, guard: Any) -> tuple[dict[str, Any], bytes]:
++    """Bind the CLI03 CPU preflight and fresh candidate namespace to frozen plan13/runtime09.
++
++    This receipt supplements the collector-produced controls runtime binding. It does not
++    rewrite or supersede that binding and does not constitute candidate GPU qualification.
++    """
++    repair, repair_raw = guard.read_json(repair_path, "candidate runtime repair binding",
++                                         repair_sha256, 2 * 1024 * 1024)
++    plan_ref = plan.get("execution", {}).get("candidate_runtime_repair_binding", {})
++    if (repair.get("schema") != REPAIR_BINDING_SCHEMA
++            or repair.get("status") != "PASS_CPU_PREFLIGHT_CANDIDATE_RUNTIME_BINDING_ONLY"
++            or repair.get("repair_binding_sha256") != payload_sha(repair, "repair_binding_sha256")
++            or repair.get("run_id") != EXPECTED_CANDIDATE_RUN_ID
++            or plan.get("run_id") != EXPECTED_CANDIDATE_RUN_ID
++            or plan_ref.get("path") != str(repair_path)
++            or plan_ref.get("raw_sha256") != sha_bytes(repair_raw)
++            or plan_ref.get("bytes") != len(repair_raw)
++            or repair.get("runtime_binding_raw_sha256") != sha_bytes(runtime_raw)
++            or repair.get("candidate_config", {}).get("path") != str(config_path)
++            or repair.get("candidate_config", {}).get("raw_sha256") != config_sha256
++            or repair.get("candidate_method_context_sha256") != candidate_method_context_sha256(plan)):
++        raise ValueError("supplemental candidate runtime repair binding differs from the exact plan/runtime/config lineage")
++    config_ref = plan.get("source_reference_plans", {}).get("v3_cli_config", {})
++    if (config_ref.get("path") != repair.get("candidate_config", {}).get("project_relative_path")
++            or config_ref.get("raw_sha256") != config_sha256):
++        raise ValueError("candidate plan V3 CLI config ref differs from the supplemental repair binding")
++    cpu_ref = repair.get("cpu_preflight_receipt")
++    if not isinstance(cpu_ref, dict):
++        raise ValueError("supplemental runtime repair binding lacks the actual CPU preflight receipt")
++    cpu_path = Path(str(cpu_ref.get("path", "")))
++    cpu_obj, cpu_raw = guard.read_json(cpu_path, "actual candidate CLI03 CPU preflight receipt",
++                                       cpu_ref.get("raw_sha256"), 2 * 1024 * 1024)
++    if (len(cpu_raw) != cpu_ref.get("bytes")
++            or cpu_obj.get("schema") != "cross_tfg_v3_candidate_cpu_preflight_v1"
++            or cpu_obj.get("status") != "PASS_CPU_PREFLIGHT"
++            or cpu_obj.get("receipt_sha256") != repair.get("cpu_preflight_receipt_sha256")
++            or cpu_obj.get("receipt_sha256") != payload_sha(cpu_obj, "receipt_sha256")):
++        raise ValueError("actual CPU preflight receipt failed raw/self/status binding")
++    inputs = cpu_obj.get("inputs", {})
++    if (inputs.get("plan", {}).get("sha256") != repair.get("predecessor_plan_raw_sha256")
++            or inputs.get("plan", {}).get("plan_sha256") != repair.get("predecessor_plan_payload_sha256")
++            or inputs.get("plan_manifest", {}).get("sha256") != repair.get("predecessor_manifest_raw_sha256")
++            or inputs.get("candidate_config_cli03", {}).get("sha256") != config_sha256
++            or inputs.get("candidate_config_cli03", {}).get("bytes") != repair.get("candidate_config", {}).get("bytes")):
++        raise ValueError("CPU preflight did not consume the exact frozen predecessor plan/config")
++    scope = cpu_obj.get("scope", {})
++    runtime_info = cpu_obj.get("runtime", {})
++    candidate_rows = [item for item in cpu_obj.get("candidate_rows", []) if item.get("kind") == "candidate_dev"]
++    references = [item for item in cpu_obj.get("candidate_rows", []) if item.get("kind") == "same_profile_reference"]
++    if (scope.get("candidate_audio_rows_completed") != 20
++            or scope.get("candidate_audio_rows_expected") != 20
++            or scope.get("same_profile_reference_rows_completed") != 1
++            or scope.get("same_profile_reference_rows_expected") != 1
++            or scope.get("candidate_full180_started") is not False
++            or scope.get("cuda_initialized") is not False
++            or scope.get("gpu_used") is not False
++            or scope.get("video_rendered") is not False
++            or scope.get("scorer_called") is not False
++            or scope.get("confirm_audio_read") is not False
++            or scope.get("confirm_effects_read") is not False
++            or runtime_info.get("rows_reused_one_torch_process") is not True
++            or runtime_info.get("strict_process_count") != 1
++            or runtime_info.get("torch_cuda_initialized_before_rows") is not False
++            or runtime_info.get("device") != "cpu"
++            or runtime_info.get("python_version") != [3, 10, 12]
++            or runtime_info.get("torch_version") != "2.5.1+cu124"
++            or runtime_info.get("numpy_version") != "1.26.4"
++            or runtime_info.get("bootstrap", {}).get("sha256") != guard.STRICT_BOOTSTRAP_SHA256
++            or runtime_info.get("sys_executable") != runtime.get("execution_bindings", {}).get("stagea_python")
++            or len(candidate_rows) != 20 or len(references) != 1):
++        raise ValueError("CPU preflight did not pass the exact non-rendering 20-row scope")
++    expected_by_sample = {}
++    for row in plan.get("rows", []):
++        if row.get("model_id") == guard.MODELS[0]:
++            sample = row["sample_id"]
++            current = (row.get("natural_pcm", {}).get("pcm_sha256"),
++                       row.get("natural_pcm", {}).get("sample_count"),
++                       row.get("natural_pcm", {}).get("sample_rate_hz"),
++                       row.get("natural_pcm", {}).get("channels"),
++                       row.get("wav2lip_native_frame_binding", {}).get("expected_inference_frame_count"))
++            if sample in expected_by_sample and expected_by_sample[sample] != current:
++                raise ValueError("candidate plan has inconsistent repeated Wav2Lip sample bindings")
++            expected_by_sample[sample] = current
++    if set(expected_by_sample) != {row.get("sample_id") for row in candidate_rows}:
++        raise ValueError("CPU preflight sample set differs from planned Wav2Lip sample set")
++    for item in candidate_rows:
++        sample = item.get("sample_id")
++        natural_sha, count, rate, channels, frames = expected_by_sample[sample]
++        input_ref = item.get("input", {})
++        if ((input_ref.get("pcm_float32_sha256"), input_ref.get("sample_count"),
++             input_ref.get("sample_rate_hz"), input_ref.get("channels")) !=
++                (natural_sha, count, rate, channels)
++                or input_ref.get("sha256") != next(
++                    row.get("natural_pcm", {}).get("file_sha256")
++                    for row in plan["rows"] if row.get("model_id") == guard.MODELS[0]
++                    and row.get("sample_id") == sample)
++                or item.get("output_sample_count") != count
++                or item.get("output_sample_rate_hz") != rate
++                or item.get("output_channels") != channels
++                or item.get("native_expected_frame_count") != frames
++                or item.get("strict_policy_preserved") is not True
++                or item.get("cuda_initialized_after_row") is not False
++                or not isinstance(item.get("output_pcm_float32_sha256"), str)
++                or not isinstance(item.get("output_rms"), (int, float))
++                or not math.isfinite(item["output_rms"])
++                or not isinstance(item.get("output_peak"), (int, float))
++                or not math.isfinite(item["output_peak"])):
++            raise ValueError(f"CPU preflight sample input/output/frame binding mismatch: {sample}")
++    output_namespace = repair.get("candidate_output_namespace")
++    original_namespace = runtime.get("execution_bindings", {}).get("output_root")
++    controls_parent_leaf = repair.get("controls_parent_output_leaf")
++    if (repair.get("original_runtime_output_namespace") != original_namespace
++            or not isinstance(controls_parent_leaf, str)
++            or controls_parent_leaf != str(Path(original_namespace) / "controls360")
++            or output_namespace == original_namespace):
++        raise ValueError("candidate repair binding lost the original controls namespace or names an overlapping output namespace")
++    output_leaf = repair.get("candidate_output_leaf")
++    if (not isinstance(output_namespace, str) or not output_namespace.startswith("/dev/shm/")
++            or not isinstance(output_leaf, str) or output_leaf != str(Path(output_namespace) / "candidate180")):
++        raise ValueError("supplemental runtime repair does not name a fresh candidate leaf under /dev/shm")
++    if repair.get("candidate_rows_context_sha256") != candidate_rows_context_sha256(plan):
++        raise ValueError("candidate row context changed beyond the pinned CLI config repair")
++    return repair, repair_raw
++
++
++def candidate_rows_context_sha256(plan: Mapping[str, Any]) -> str:
++    contexts = []
++    for source in plan.get("rows", []):
++        row = copy.deepcopy(source)
++        row.pop("method_config_sha256", None)
++        row.get("generation_settings", {}).pop("v3_cli_config_sha256", None)
++        contexts.append(row)
++    return sha_bytes(canonical(contexts))
++
++
++def candidate_method_context_sha256(plan: Mapping[str, Any]) -> str:
++    methods = copy.deepcopy(plan.get("methods", []))
++    for method in methods:
++        method.pop("config_sha256", None)
++        config = method.get("config", {})
++        config.pop("v3_cli_config_path", None)
++        config.pop("v3_cli_config_sha256", None)
++    return sha_bytes(canonical(methods))
+ 
+ 
+ def strict_receipts(plan: Mapping[str, Any], binding: Mapping[str, Any], receipt_dir: Path,
+@@ -368,6 +523,8 @@
+     parser.add_argument("--plan-manifest-raw-sha256", required=True)
+     parser.add_argument("--runtime-binding", type=Path, required=True)
+     parser.add_argument("--runtime-binding-raw-sha256", required=True)
++    parser.add_argument("--candidate-repair-binding", type=Path, required=True)
++    parser.add_argument("--candidate-repair-binding-raw-sha256", required=True)
+     parser.add_argument("--execute-candidate", action="store_true")
+     args = parser.parse_args(argv)
+ 
+@@ -383,10 +540,48 @@
+         raise ValueError("same-host runtime guard source differs from the candidate source closure")
+     if runtime.get("status") != "PASS":
+         raise ValueError("same-host runtime binding is not a PASS receipt")
++    repair_obj, repair_raw = guard.read_json(args.candidate_repair_binding,
++                                             "candidate runtime repair binding",
++                                             args.candidate_repair_binding_raw_sha256,
++                                             2 * 1024 * 1024)
++    config_ref = repair_obj.get("candidate_config", {})
++    config_path = exact_project_source(project_root, config_ref.get("project_relative_path"),
++                                      config_ref.get("raw_sha256"), "candidate CLI03 config")
++    config_raw = guard.safe_regular(config_path, "candidate CLI03 config", 2 * 1024 * 1024)[1]
++    if len(config_raw) != config_ref.get("bytes") or sha_bytes(config_raw) != config_ref.get("raw_sha256"):
++        raise ValueError("candidate CLI03 config size/raw SHA differs from the repair binding")
++    repair, repair_raw = validate_candidate_runtime_repair(
++        plan, plan_raw, manifest_raw, runtime, runtime_raw, args.candidate_repair_binding,
++        args.candidate_repair_binding_raw_sha256.lower(), config_path,
++        str(config_ref.get("raw_sha256", "")).lower(), guard)
+     tools = runtime.get("execution_bindings", {})
+-    output = guard.subrun_output_root(runtime, "candidate180")
++    output = Path(repair["candidate_output_leaf"])
++    namespace = Path(repair["candidate_output_namespace"])
++    if namespace.is_symlink() or getattr(namespace, "is_junction", lambda: False)():
++        raise ValueError("candidate runtime repair namespace must not be a symlink/junction")
++    if namespace.exists() and (not namespace.is_dir() or any(namespace.iterdir())):
++        raise FileExistsError("candidate runtime repair namespace must be new or empty")
++    runtime_overlay = copy.deepcopy(runtime)
++    runtime_overlay_execution = runtime_overlay.get("execution_bindings")
++    if not isinstance(runtime_overlay_execution, dict):
++        raise ValueError("runtime binding lacks execution bindings for the recorded validation overlay")
++    original_namespace = runtime_overlay_execution.get("output_root")
++    runtime_overlay_execution["output_root"] = repair["candidate_output_namespace"]
++    overlay_record = {
++        "schema": "cross_tfg_v3_candidate_runtime_validation_overlay_v1",
++        "purpose": "candidate180 fresh namespace live-resource validation; original controls runtime binding remains immutable",
++        "parent_runtime_binding_path": str(args.runtime_binding.resolve(strict=True)),
++        "parent_runtime_binding_bytes": len(runtime_raw),
++        "parent_runtime_binding_raw_sha256": sha_bytes(runtime_raw),
++        "original_output_namespace": original_namespace,
++        "candidate_output_namespace": repair["candidate_output_namespace"],
++        "changed_fields": ["execution_bindings.output_root"],
++        "overlay_execution_bindings": runtime_overlay_execution,
++        "overlay_canonical_sha256": sha_bytes(canonical(runtime_overlay)),
++        "overlay_is_persisted_as_runtime_binding": False,
++    }
+     helper = guard.load_resource_helper(project_root)
+-    live, identities = guard.validate_bindings(project_root, plan, runtime, helper, output,
++    live, identities = guard.validate_bindings(project_root, plan, runtime_overlay, helper, output,
+                                                 capacity_stage="candidate180")
+     if output.exists() and (not output.is_dir() or any(output.iterdir())):
+         raise FileExistsError("candidate Stage-A output root must be new or empty")
+@@ -394,6 +589,8 @@
+         print(json.dumps({"status": "PASS_METADATA_ONLY", "candidate_rows": EXPECTED_ROWS,
+                           "plan_raw_sha256": sha_bytes(plan_raw),
+                           "runtime_binding_raw_sha256": sha_bytes(runtime_raw),
++                          "candidate_repair_binding_raw_sha256": sha_bytes(repair_raw),
++                          "runtime_validation_overlay": overlay_record,
+                           "gpu_uuid": runtime.get("gpu_uuid"), "live_resource_probe": live,
+                           "execution_performed": False, "confirm_audio_read": False},
+                          sort_keys=True, ensure_ascii=False))
+@@ -461,6 +658,10 @@
+     record = {"schema": "cross_tfg_v3_step120_candidate_execution_v1", "status": "RUNNING",
+               "plan_raw_sha256": sha_bytes(plan_raw), "plan_manifest_raw_sha256": sha_bytes(manifest_raw),
+               "planned_rows_raw_sha256": sha_bytes(rows_raw), "runtime_binding_raw_sha256": sha_bytes(runtime_raw),
++              "candidate_repair_binding_raw_sha256": sha_bytes(repair_raw),
++              "candidate_repair_binding_self_sha256": repair.get("repair_binding_sha256"),
++              "candidate_output_namespace": repair["candidate_output_namespace"],
++              "runtime_validation_overlay": overlay_record,
+               "command": command, "started_unix": time.time(), "host": platform.node(),
+               "gpu_uuid": runtime.get("gpu_uuid"), "confirm_audio_read": False}
+     execution_record.parent.mkdir(parents=True, exist_ok=True)

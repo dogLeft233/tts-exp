@@ -92,3 +92,7 @@ scripts/experiments/cross_tfg_audio_head_20261003/run_fit40_native_transition_he
 
 # Preserve actual strict CPU preflight evidence.
 openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/cpu03_actual_strict_preflight_attempt01/** -text !eol whitespace=cr-at-eol
+
+# Preserve actual candidate03 metadata and live launch evidence bytes.
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate03_metadata_and_live_launch_attempt01/** -text !eol whitespace=cr-at-eol
+scripts/experiments/cross_tfg_audio_head_20261003/run_v3_step120_candidate_samehost_attempt15.py -text !eol whitespace=cr-at-eol

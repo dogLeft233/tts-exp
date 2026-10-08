@@ -1,0 +1,11 @@
+--- .codex\scratch\dev360_candidate180_detached_launch_attempt12\read_candidate180_detached_status_attempt12.py
++++ .codex\scratch\dev360_candidate180_detached_launch_attempt12\read_candidate180_detached_status_attempt13.py
+@@ -270,8 +270,6 @@
+         "--plan": str(PLAN), "--planned-rows": str(ROWS),
+         "--expected-plan-raw-sha256": plan_raw_sha, "--output-root": str(CANDIDATE_ROOT),
+         "--project-root": str(ROOT),
+-        "--candidate-repair-binding": str(CANDIDATE_REPAIR_BINDING),
+-        "--candidate-repair-binding-raw-sha256": REPAIR_BINDING_SHA256,
+     }
+     for flag, expected in required.items():
+         if flag_value(command, flag) != expected:

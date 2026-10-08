@@ -1,0 +1,85 @@
+{
+  "actual_metadata_preflight": {
+    "bytes": 4776,
+    "candidate_output_namespace": "/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cli03_runtime_repair_attempt03",
+    "candidate_repair_binding_raw_sha256": "4d50fcb6e6fd7a6fcd6a4a59515f7e92c9cbb43250e22ac97994d5558bb84ba8",
+    "candidate_rows": 180,
+    "capacity": {
+      "basis_status": "MEASURED_PILOT_WITH_EXPLICIT_SCENARIO_AND_LIVE_GATES",
+      "media_bytes_estimated": true,
+      "remaining_scenario_bytes": 5866208712,
+      "required_free_bytes": 11234917832,
+      "scenario_is_hard_bound": false,
+      "separate_policy_reserve_bytes": 5368709120,
+      "stage": "candidate180"
+    },
+    "confirm_audio_read": false,
+    "execution_performed": false,
+    "gpu_uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea",
+    "observed_gpu_free_mib": 32230,
+    "observed_shm_free_bytes": 21858340864,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt02\\downloads_attempt01\\candidate_runtime_metadata_preflight_attempt03.json",
+    "plan_raw_sha256": "1a6c8ae99c4b8a1141c6f65748d426ba88034c14badf5ecec497ffc11d62bc60",
+    "raw_sha256": "3c51e9c3b7f4e1d4ff7e0d92d44c2e702fe70393210448a5d277c38415bafea5",
+    "runtime_binding_raw_sha256": "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5",
+    "status": "PASS_METADATA_ONLY"
+  },
+  "contracts": {
+    "controls_physical_leaf_explicit": true,
+    "execution_remains_explicit_flag": true,
+    "launcher_and_status_same_candidate_namespace": true,
+    "launcher_and_status_same_job": true,
+    "launcher_metadata_path_composes_expected_remote": true,
+    "metadata_cli_hash_args": true,
+    "metadata_preflight_exact_plan": true,
+    "metadata_preflight_exact_repair": true,
+    "metadata_preflight_exact_runtime": true,
+    "metadata_preflight_exact_status": true,
+    "metadata_preflight_no_execution": true,
+    "python_sources_parse": true,
+    "resolved_metadata_remote_path_matches": true,
+    "status_metadata_path_composes_expected_remote": true
+  },
+  "differentials": {
+    "launcher_diff": {
+      "bytes": 26975,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\attempt10_to_attempt12.diff",
+      "sha256": "8cc79906587044fbf9c3c49c7813047b1f35968aca609df1799c8e5997a08e4f"
+    },
+    "launcher_parent": {
+      "bytes": 51722,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt10\\launch_candidate180_detached_attempt10.py",
+      "sha256": "1391ceb1a6b206359d16ddbbbbb7511e70260c69c7a9cdfc0e1d07a1a56cb133"
+    },
+    "status_diff": {
+      "bytes": 18761,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\status11_to_status12.diff",
+      "sha256": "5e28f75e380593c3371d4d7b741cf66fc77a9aefbc3c82cc92a95e118668a1ea"
+    },
+    "status_parent": {
+      "bytes": 46099,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt11\\read_candidate180_detached_status_attempt11.py",
+      "sha256": "ec5b9fb326edd50db69bd5462f1a24b0714144fdaf47d6bf09244cd973e23ba1"
+    }
+  },
+  "receipt_sha256": "6766aa8abbe874525bd464a1d09b2c384ee3289f12819909fd02664dd6d6bab8",
+  "schema": "candidate180_cli03_launch12_source_review_v1",
+  "scope": {
+    "candidate_generation_started": false,
+    "gpu_or_model_run_by_this_qc": false,
+    "remote_request_dispatched": false
+  },
+  "source_files": {
+    "launcher12": {
+      "bytes": 59387,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\launch_candidate180_detached_attempt12.py",
+      "sha256": "3307c890e6ee20eee7c0bcaf1e18d560adbf83f72fe282092c8f5e4df82ef688"
+    },
+    "status12": {
+      "bytes": 51152,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\read_candidate180_detached_status_attempt12.py",
+      "sha256": "72f484280fe44d28891be492e24d8016dae1d7dcff11130d8b0cc96f0061812a"
+    }
+  },
+  "status": "PASS_SOURCE_AND_ACTUAL_METADATA_BINDING"
+}

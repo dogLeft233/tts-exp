@@ -1,0 +1,2504 @@
+{
+  "backend_qualifications": {
+    "ditto_hubert_fixed_portrait_attempt18": {
+      "model_id": "ditto_hubert_fixed_portrait_attempt18",
+      "reason": "backend_not_selected_in_this_engineering_dispatch",
+      "schema": "cross_tfg_backend_strict_determinism_qualification_v1",
+      "status": "NOT_RUN"
+    },
+    "musetalk_fixed_portrait_attempt16": {
+      "model_id": "musetalk_fixed_portrait_attempt16",
+      "reason": "backend_not_selected_in_this_engineering_dispatch",
+      "schema": "cross_tfg_backend_strict_determinism_qualification_v1",
+      "status": "NOT_RUN"
+    },
+    "wav2lip_gan_bac9a81e": {
+      "determinism_policy_sha256": "196f6b3654f0bf69eed74dbadd6f4948272d52edfcc5101945ba61044ea6f7cc",
+      "gpu_uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea",
+      "input_context_sha256": "b346ab823031015754c45607831a4bc4d4743ca37531ee6cbc10828493817fa0",
+      "model_id": "wav2lip_gan_bac9a81e",
+      "policy_values": {
+        "cublas_workspace_config": ":4096:8",
+        "mkl_num_threads": "1",
+        "numexpr_num_threads": "1",
+        "omp_num_threads": "1",
+        "openblas_num_threads": "1",
+        "pythonhashseed": "20261003",
+        "torch_allow_tf32": false,
+        "torch_cudnn_benchmark": false,
+        "torch_cudnn_deterministic": true,
+        "torch_num_interop_threads": 1,
+        "torch_num_threads": 1,
+        "torch_use_deterministic_algorithms": true
+      },
+      "receipt": {
+        "bytes": 125550,
+        "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/backend_qualifications/wav2lip_gan_bac9a81e.qualification.json",
+        "sha256": "d1b778e4a85ae7861f68683dfa1959abb030c6f0962271ed10ff80c70542645a"
+      },
+      "repeat_gate": {
+        "crop_video_sha256": [
+          [
+            "8af8c9103292bc2306ef5ccf32c0e34479b0e73dfe03b4c5574dba546094f43e"
+          ],
+          [
+            "8af8c9103292bc2306ef5ccf32c0e34479b0e73dfe03b4c5574dba546094f43e"
+          ]
+        ],
+        "crop_video_sha256_equal": true,
+        "face_bbox_arrays_sha256": [
+          [
+            "f55df0e0bcc10fe641e928a9f7156452d9681a79b4b5ae406592ba595ab461a6"
+          ],
+          [
+            "f55df0e0bcc10fe641e928a9f7156452d9681a79b4b5ae406592ba595ab461a6"
+          ]
+        ],
+        "face_bbox_arrays_sha256_equal": true,
+        "generated_video_elementary_stream_sha256": [
+          "ad4d57c27cd85171240c06f6de7bbccb677fa790c488ddaeecf99ceff30bee89",
+          "ad4d57c27cd85171240c06f6de7bbccb677fa790c488ddaeecf99ceff30bee89"
+        ],
+        "generated_video_elementary_stream_sha256_equal": true,
+        "generated_video_file_sha256": [
+          "4210e52a2251d9180602b5457e801b8f429129f1175d36d32b8127a069f216f8",
+          "4210e52a2251d9180602b5457e801b8f429129f1175d36d32b8127a069f216f8"
+        ],
+        "generated_video_sha256_equal": true,
+        "prewrite_pixel_frame_hash_streams": [
+          [
+            "80a08ceb4c1c98e77a87756ed25a588583accea5c3b947e1e88053bd68842dd3",
+            "b8d478b22bba118efa67dbaf17741e1f0a4b577049167dd6469fcca06eae96ed",
+            "3403363bbae205a5f534dc10341f996791e0f9aca1cfdc7ae7b1cc43b1db16d9",
+            "b5487d993714f1d412ed8dbc7192c910bc5ac6378edc20f31a6bee25e7cebc12",
+            "39a60226c7db76076554fff9d6d70a8829d28fc15147bfac4e03b6390bae788c",
+            "18833487bb504223e678c119fa835609adc02105189f2365f52b1ba11b8cc93a",
+            "e70426bbd6f9e6c025713a281f04d67c05476bf012752c6e97fae66805ef348c",
+            "c74dc9a6b5084bf9613891c49624e6afb81f2e7936f553b327edd71b8e327730",
+            "cc5501712a7944c97d25bdb95fa262c1c9339c02b6481d72170f81c38d125b77",
+            "bea39b257bccc615482f6dfd987b426cc350d01275d28399967acb87421f634d",
+            "df179d331a6535c362beb251e72ca5b9fb8faf0b50526c04c8fb7c6c4b5119e2",
+            "f1c8f839960377f4895ec56ac353d6d1cf8603fad42416428c6f1dc5ebf9ace8",
+            "89cf1b0ddf2d187ec36540ab94751466a1b5ec4c2ab12fb25f10ed1f04ae6eb9",
+            "020e2b5371515d6de18a7019307d1b12c25e5756f2e47a6920d77729f9548031",
+            "11c8c78879a16b758dee5e796de702296203ce8cd9ab51476785667870f83e7b",
+            "8fb66cd1b3bd9567b0ad2e01a8ea28219175cf185b25d7be10d95a6b1cefd88c",
+            "77cb6a9536603dbf71a8f7a2ecf10669a748c4dd18597893a5b8cd85780678ba",
+            "779e16c76cdc206fc95426813468c9bd9cbecba25727e7daef0c8800e13a70de",
+            "37c7de58ca6243f240c1f6d2da61bd797d4a20975837ac54c25eabe9fda68297",
+            "40bdbd4085597d767a8397a01441aa71437e1336cd07ff17b164f13c1ef996cf",
+            "77d278c627f60b29f3893e5936a12dec05bb1f800a30b09d1469aa4c28546016",
+            "02554f743722c926c7ecbb72143d208e803b1fd49cab2dd57dbb26e7db41c764",
+            "0f7c2e1436dbea845f41118b6cbbc27a619226ee3fa7aa700ce395c587f2844d",
+            "baa1dbc99cd1e97f3ff9dcdf09c5081aca32f09c6efc96defa4ecda22fb2dda1",
+            "0cfc61257815f465189a1cef495c1548cb18a0650b5c95d2c5de6f6c98016fcf",
+            "9e83411c6a07dfc9868795c08f081b4a4afa7f0e3c74eb12109170ed6d1b927b",
+            "55830e957414cf9ffc7606af3b7a1505bd1699a8a84262e17e2c9a2a180c5731",
+            "b84035a2c425d759b9dec8f43f9029371b49e482fd941879c37f75289538b680",
+            "e217ac171dd6394c046ab2e26fc3d2428d5fc883f192ec4bfa8764faf43fb1db",
+            "c776f09b684b224b4656aead10801b6503b4a47e555cd00cf1ce164b4c1766e3",
+            "c1d4581888b8e8588eb60e462a558122e8cab51bb07ecaabf91696c8af302ba2",
+            "787cd8a105076b6631faef03151f2205c79829771a8c17cd29f221f66bc4fe9a",
+            "e191551958ac89a9d43fcaf2a609944f6c8f7befeb943b2d49a69aa7687d60c5",
+            "c2f3fb14d7e737e1bc21ecd17e3e0968780d79019f8f1639e1f7079f1839e595",
+            "80c2eaed41dffa133894d66297e7f01e9a76ed878696e790f1ce5af88a7380ae",
+            "464e267549b80d81e6668633707f2831b1a60a096f7304067429f9916ce0be07",
+            "293f4795526aaf28a1b9b5f3f2d964f9340f207234c1766b4175f23d5d7450b8",
+            "c844b290b2eaf846ebc838237ee4056609a6176e2758706ba31cbdd9284aab05",
+            "0f85c913c77f7c44c6907263d3c76b31a0584820c9464dc2e709d6550d67b3c8",
+            "d7ecccbcff5729a3c1fb1bdb792ea5a969ffe54649733c63d594d07d849c7a8b",
+            "b7c872c7b6d9a08ae937669d9841bd36651890710acf1fea61b95fdbd048feea",
+            "ab5a8dc3c84a367715c4d6df4765778ff760460e87a2bdb60c409e81590e36be",
+            "6d48af65664962771665c3e437812cbd2fda1b19173faa3ec1d972e32b621fcd",
+            "2a530d23ac55fd4f92018188a027fa9305a935fc312d3d4ecfc13678a21a8ec6",
+            "ade2bb350a224c506076b0e717d5d0ff15529429e458e30a3c1b26aa4b27aaa5",
+            "a38fcf822ddb025bf1a8ad75059ce310fad44d58e4f806c3380addc283a60b6d",
+            "356f2d6a6f0184458d3699953608b02fddcaf3c14e866314f3da16f192a98deb",
+            "cf0cde8db819c47c591e08bf097a0cc530d6847c24612b0087d5a4e351de8783",
+            "d0fe432a709f2294f42970af0e160d429f99863e2aab4538f3457df4e31c0ff9",
+            "6ec3db378719ab403bb29ce0a1cb76065c82216bd14a844ec7d1607477c83233",
+            "ec90b3b39e0a13e7f84bd95c53336606b0fc1050cde815899bfcf02cd060f6e3",
+            "7ab2fe22b7cea23be2719b58ed05799698a4c150a11a5fbb92560d8b13573aa4",
+            "808f628daeb93d51c7795ab2e51673938ef0af3bb00d036221b830e4d248f5ac",
+            "a61e22461c730a55befee26dfbf3d644ea417078b41a51a5117d9a7137ed3b30",
+            "2abfabe23a202defdd4a9cda8aa2ffa722109f261d576dca62dc5c205019ac52",
+            "a489ed1ff1b84421614f9cb80e8d9126b5446c8a3685159eaa2f8dd0a5742c6d",
+            "2a1586b06bf03634cbba5b2ff932443c0ad66135bf948547cede5b6bbd873943",
+            "2b41db6836cc19ec46e367b0c5ebd7cefe30887ceb0c204c87574074dfb88914",
+            "8606086ee430854605c63b3faa641a43b090e8ae7434937e4a862efe9126089f",
+            "5e910ffe426b862c99c7acbb61aeea06df5aaeeff7bbbd90a9fc5bbcf06b5c2e",
+            "9a139500443c6697713c6772a87fc94cc073df9747b6f4ffcecbb07228776168",
+            "d8c89427beecae917abe97c1d6a81b7a63c02c80e31ccd6b71cfa17906e6a344",
+            "4de3fd6354627ac2c9ebf70a04772a3513e3c0ed0e4e316bdda9ff99c4bf1ea2",
+            "258d446dc60d6330d3f3e8535ccb029ff87e1b290dd768c549c8d5fb4318219b",
+            "a406b843b0808a71bef320387b753da0fc5496899b402bfd409e3005ade06098",
+            "1b4f743ace47f331354499e55a0cc0431f4057052012b88f1bd24874b81094a5",
+            "02630fa4b46f644909dc2b6bcd465839208d710408a56f2af9e5128ddd31492c",
+            "bf095fa2b6bbf12caeb4d46b731fe309feb757533f4b567e3ef37cd61cf35615",
+            "a3175399ca0fb468c7509478c7e18934aa29ec2909f10a881da22c0f56135cdd",
+            "2cfee9755a5f5c7f0b13dbc873b64ad2dcf0a2e5c848d8e4fc6b80595d8ae32b",
+            "6612c4fddfb6aad4255e22b95acbd137f4754ae04bd0bae79033497501a629df",
+            "0ae533f39ee14dcdc45afa7375b458a00e6d1e6d3231d4aa372bfccd2f391b0d",
+            "3a8fdec550af8fee1ba5557e8cf1b06165514f167650893f614501601ac37e24",
+            "3bfc6303ea2e30eccce58f377e67bc14ca36e9efe56e28d37d01b1b25c778f09",
+            "044445763498c6fe63986a83173dab56919354c67ab4d6804f08b062de660a43",
+            "7a760ddd9a987b0c9a1017937020f801449b75e632205ac94fb1e5768e71c740",
+            "cce1c61912ca70599320bd7abd43bc958c4d73f054b56cf675d5f5c5012aab8c",
+            "2640219c55f33267479258aee055aa2f13a8d105f9f5c3ec1030d79fad461980",
+            "dffccae68c290aba26d8c1a909160e092ea4ae82aa882ba86c0c336d8ba57106",
+            "8e6df5e5aecaa8562791198621d5ad1a65a43ed04833aed2b5d271220a99d0aa",
+            "8e73e6778f5034152157d188ca558488036d451f60f864d0166c5f0f4d0e4a24",
+            "495e8f27c39f7e45637e754f2ae87e932290b66e84ed6109083b6f84ca4b9f9d",
+            "b0c2784245341bb2390e4cc2282ad42184b2bd8872e8b0b44524815651d2db1a",
+            "771e009e0fc9dd29d4f2ff3d9004b896634bb56fc5cd11edc9779ed27176daab",
+            "87ba1853def3c510f8107d05fddd68dbc27492adb130c2937e657be34060a320",
+            "16e9dbcc1c947ea2ed5f29024c80adc81fbd301bec66fc092eb0a42750f26cd2",
+            "0580786b9040fddba10df93467bfb0a5212383d25b098f168da0fdd14d93ba40",
+            "2216ad5a6712f4172b6216d047cdd9a6cfc0bb49d20508612c341a30a1f35785",
+            "20b9698662b2c5fa5dd3c2506b5a4def77e0b961c97adccadc810631046532c3",
+            "d85e0c1790c4be137d3d45302374a1a34f43d980763ab220df6c0bce248ee6c0",
+            "aa9fd603e71228a7158ccd8b618d4acbf21e9858f4b45717755c14a25356e28b",
+            "bc7167f3d3209b51cae63c690273b30bcc3274226b2a89f3fa195e85833622a9",
+            "d4150f3aa65255f7255d15bfd1043b47632deb7ed9409b05857559f4b8632ffd",
+            "94c099ab4ae8537cc3f5de77b0ea5201b8c0651e6e224515db69a4c2f9918b73",
+            "05ea4401213f8c6b13749d7be194b5b8733f644bc8cb9185d516a45dfeb70fb9",
+            "fba3431369c1467410f4f36307325211dcc5c462185283f0f10624f3f5ac63ad",
+            "a01f702f83c5e36f8cfa449624598ce7cf1f34ab70048828aa84ccbdad658970",
+            "0609ea03bc04f907ddbff8ed2cb10740fc20ff2f2582d1ee4dc338b9ac27455e",
+            "4b6e8edc39379c7771183d74ab5239911a4baae5d7e5d5d9358ad49903f8294a",
+            "4de270ced9dbe4d20c4d017a2b09d5a4571e2b7d56ae0d611a163ef7575aeba8",
+            "845924aa3cdeb7ab7b2d657a3e2eccf2fabb9e6980b1652ad9a1c205d98a8b3e",
+            "e04860e3c883de0f1168f42c9cc571d8c861a358aaa2cffacaff463cc2f5dd7e",
+            "232afd0f050736a109b87798dba95f692c6329c1c06d3388510baacea0d01ac2",
+            "0eb2da5bca37ec70c60ddb31462d5d61cc1e67a37ad32c487f675ac02194bbf1",
+            "823fa8cbc0051465b70200ca67df700727313e4dc1fe2658326dc00f00e63664",
+            "e0e4c3d16651a169c76d5bc02a2b646a7d7b05f5eb62225d7360dd3db24fdff5",
+            "99fe1e48818b45b347042531d5c35f9828e17f2ae76ae80dff0ef79dd7a59744",
+            "7ae41ad062d603532635f4e008ba342ccfff9a71129e0f2f47fd0adf02740536",
+            "0699b5e873f0721c4e6e60a3bb98049d90e5639f80ca955ee9819e4e7f70d002",
+            "0d3765c377984af871d8a4264cdc74b11ada154c62ab7188c024012b109e72ab",
+            "165e86ef585018fc393d50e391f3f65265c6cf4e47ae483bbd382ffd48d3a45d",
+            "cc90c537b491612a05a429e0fd0c4fbf1cf3d5b41d229d1f74e956b2af9b9fd3",
+            "63c89e35dd4c32a5a52531d2608d63a5927b992686a7454da66518bb263653f2",
+            "a0155a272db1c829811c2ca11071494301e73f145abcc43b32ac2eb720ae37f7",
+            "a1c1da9068bb386af7589e82b4b9e6ee89541f6609ce03b80fee8b8511a8ad00",
+            "4ccaac61bd71f2de5941153cb3a5768b3b809f8cbe020e37526c6e6d4ba28e4f",
+            "0332a7a5f679daf68a8bc251f2f9c1c48753dae22ffac8d2efd88e3c2119c04e",
+            "db19832be186a60793b1e4a9f23d5f84d9f35ac4bbb21701a89bc22fa784a077",
+            "d8ed0cdbedff83d7b5ae922f2560e249ac9a849c568eb2034e420a01bf7cdbdf",
+            "9fbe53d68e788c478c68f165ce739c54549dce8954ca546c8e528b496c223d60",
+            "dece51fe04c1afc9204ea34d16fa262979e94e9badb186431e66766f711a01ac",
+            "bda2c1310aadf7a78d4a4e0b47f40393597a08ffc12d71a1b6c708eb00507e21",
+            "6deaa2dd63f9305b8ea78563de4ba41e82d7e354fc8be2704650636bf961afe7",
+            "3a90de39898630182c5fe9e19b4d90341b1334ab726ece6a8a9fcde44deea06a",
+            "9dc81eb0aedf364ffbce92bbd4b7f3e97017565dee0f37e44e7407d9abb0e6ef",
+            "50cb94b92b0e1c066d6be5860284c8fa50440113c97f4f9734c61d72e462e344",
+            "08df4d290af343e396a713c06523b5872d67dab46a317a284b3ef61b9ab71248",
+            "a37e7fd4869d49281cfeebe1c6268fdd668485312a9d58e332905443474a3a26",
+            "944b039e4e63b5fd74d50af116319c98454ffd393cf5028cdd621cb7f0109d78",
+            "37126ecc5850ef28b8138eaf4f7a66bd1a53ac50a62909a2a20617636bd7a9f3",
+            "bb22e064225209fd6007e64de4b01ce40a0d645f7b5b23483c8092253bcda820",
+            "534fa706b3eb38678b2bb46082ef988249c5d469f9188699da8e5d6de944cfc2",
+            "672b3f022302fc805aac9c619764a035403bc8872990d3bf2ff28affd76043b0",
+            "4cfcd0cf4a728eb7619ceaf7f2f4e9817ca6e1e23027f013ea7d88f40beda38e",
+            "b88695a121ac04dc68195c97c18520c86f2e773f7c185eebc9eaa467d8ef715e",
+            "581df262b9e3249625043cc84484535b5ab2466d720007412d047bfbcb9b05a1",
+            "6e3d417ce17eb807a1050f56c1df4e39e33cb363f22e02a37ebf2bc7812fad2e",
+            "750d6e57c54f9cd61090474c82e34cad19518fb497fdc94aca6753ff04335883",
+            "cb69cd36872c3568f3593cb77e7db915513cc1fa97fe79ec08cb35e2e0e39f9e",
+            "e0238186c298cb30405568ace98c097ab677b0a9a89838914afab5fa7e38bb08",
+            "4d33d87fd294251fc8b95e03143b88cc8e36c5cec757f20af099198e12131dda"
+          ],
+          [
+            "80a08ceb4c1c98e77a87756ed25a588583accea5c3b947e1e88053bd68842dd3",
+            "b8d478b22bba118efa67dbaf17741e1f0a4b577049167dd6469fcca06eae96ed",
+            "3403363bbae205a5f534dc10341f996791e0f9aca1cfdc7ae7b1cc43b1db16d9",
+            "b5487d993714f1d412ed8dbc7192c910bc5ac6378edc20f31a6bee25e7cebc12",
+            "39a60226c7db76076554fff9d6d70a8829d28fc15147bfac4e03b6390bae788c",
+            "18833487bb504223e678c119fa835609adc02105189f2365f52b1ba11b8cc93a",
+            "e70426bbd6f9e6c025713a281f04d67c05476bf012752c6e97fae66805ef348c",
+            "c74dc9a6b5084bf9613891c49624e6afb81f2e7936f553b327edd71b8e327730",
+            "cc5501712a7944c97d25bdb95fa262c1c9339c02b6481d72170f81c38d125b77",
+            "bea39b257bccc615482f6dfd987b426cc350d01275d28399967acb87421f634d",
+            "df179d331a6535c362beb251e72ca5b9fb8faf0b50526c04c8fb7c6c4b5119e2",
+            "f1c8f839960377f4895ec56ac353d6d1cf8603fad42416428c6f1dc5ebf9ace8",
+            "89cf1b0ddf2d187ec36540ab94751466a1b5ec4c2ab12fb25f10ed1f04ae6eb9",
+            "020e2b5371515d6de18a7019307d1b12c25e5756f2e47a6920d77729f9548031",
+            "11c8c78879a16b758dee5e796de702296203ce8cd9ab51476785667870f83e7b",
+            "8fb66cd1b3bd9567b0ad2e01a8ea28219175cf185b25d7be10d95a6b1cefd88c",
+            "77cb6a9536603dbf71a8f7a2ecf10669a748c4dd18597893a5b8cd85780678ba",
+            "779e16c76cdc206fc95426813468c9bd9cbecba25727e7daef0c8800e13a70de",
+            "37c7de58ca6243f240c1f6d2da61bd797d4a20975837ac54c25eabe9fda68297",
+            "40bdbd4085597d767a8397a01441aa71437e1336cd07ff17b164f13c1ef996cf",
+            "77d278c627f60b29f3893e5936a12dec05bb1f800a30b09d1469aa4c28546016",
+            "02554f743722c926c7ecbb72143d208e803b1fd49cab2dd57dbb26e7db41c764",
+            "0f7c2e1436dbea845f41118b6cbbc27a619226ee3fa7aa700ce395c587f2844d",
+            "baa1dbc99cd1e97f3ff9dcdf09c5081aca32f09c6efc96defa4ecda22fb2dda1",
+            "0cfc61257815f465189a1cef495c1548cb18a0650b5c95d2c5de6f6c98016fcf",
+            "9e83411c6a07dfc9868795c08f081b4a4afa7f0e3c74eb12109170ed6d1b927b",
+            "55830e957414cf9ffc7606af3b7a1505bd1699a8a84262e17e2c9a2a180c5731",
+            "b84035a2c425d759b9dec8f43f9029371b49e482fd941879c37f75289538b680",
+            "e217ac171dd6394c046ab2e26fc3d2428d5fc883f192ec4bfa8764faf43fb1db",
+            "c776f09b684b224b4656aead10801b6503b4a47e555cd00cf1ce164b4c1766e3",
+            "c1d4581888b8e8588eb60e462a558122e8cab51bb07ecaabf91696c8af302ba2",
+            "787cd8a105076b6631faef03151f2205c79829771a8c17cd29f221f66bc4fe9a",
+            "e191551958ac89a9d43fcaf2a609944f6c8f7befeb943b2d49a69aa7687d60c5",
+            "c2f3fb14d7e737e1bc21ecd17e3e0968780d79019f8f1639e1f7079f1839e595",
+            "80c2eaed41dffa133894d66297e7f01e9a76ed878696e790f1ce5af88a7380ae",
+            "464e267549b80d81e6668633707f2831b1a60a096f7304067429f9916ce0be07",
+            "293f4795526aaf28a1b9b5f3f2d964f9340f207234c1766b4175f23d5d7450b8",
+            "c844b290b2eaf846ebc838237ee4056609a6176e2758706ba31cbdd9284aab05",
+            "0f85c913c77f7c44c6907263d3c76b31a0584820c9464dc2e709d6550d67b3c8",
+            "d7ecccbcff5729a3c1fb1bdb792ea5a969ffe54649733c63d594d07d849c7a8b",
+            "b7c872c7b6d9a08ae937669d9841bd36651890710acf1fea61b95fdbd048feea",
+            "ab5a8dc3c84a367715c4d6df4765778ff760460e87a2bdb60c409e81590e36be",
+            "6d48af65664962771665c3e437812cbd2fda1b19173faa3ec1d972e32b621fcd",
+            "2a530d23ac55fd4f92018188a027fa9305a935fc312d3d4ecfc13678a21a8ec6",
+            "ade2bb350a224c506076b0e717d5d0ff15529429e458e30a3c1b26aa4b27aaa5",
+            "a38fcf822ddb025bf1a8ad75059ce310fad44d58e4f806c3380addc283a60b6d",
+            "356f2d6a6f0184458d3699953608b02fddcaf3c14e866314f3da16f192a98deb",
+            "cf0cde8db819c47c591e08bf097a0cc530d6847c24612b0087d5a4e351de8783",
+            "d0fe432a709f2294f42970af0e160d429f99863e2aab4538f3457df4e31c0ff9",
+            "6ec3db378719ab403bb29ce0a1cb76065c82216bd14a844ec7d1607477c83233",
+            "ec90b3b39e0a13e7f84bd95c53336606b0fc1050cde815899bfcf02cd060f6e3",
+            "7ab2fe22b7cea23be2719b58ed05799698a4c150a11a5fbb92560d8b13573aa4",
+            "808f628daeb93d51c7795ab2e51673938ef0af3bb00d036221b830e4d248f5ac",
+            "a61e22461c730a55befee26dfbf3d644ea417078b41a51a5117d9a7137ed3b30",
+            "2abfabe23a202defdd4a9cda8aa2ffa722109f261d576dca62dc5c205019ac52",
+            "a489ed1ff1b84421614f9cb80e8d9126b5446c8a3685159eaa2f8dd0a5742c6d",
+            "2a1586b06bf03634cbba5b2ff932443c0ad66135bf948547cede5b6bbd873943",
+            "2b41db6836cc19ec46e367b0c5ebd7cefe30887ceb0c204c87574074dfb88914",
+            "8606086ee430854605c63b3faa641a43b090e8ae7434937e4a862efe9126089f",
+            "5e910ffe426b862c99c7acbb61aeea06df5aaeeff7bbbd90a9fc5bbcf06b5c2e",
+            "9a139500443c6697713c6772a87fc94cc073df9747b6f4ffcecbb07228776168",
+            "d8c89427beecae917abe97c1d6a81b7a63c02c80e31ccd6b71cfa17906e6a344",
+            "4de3fd6354627ac2c9ebf70a04772a3513e3c0ed0e4e316bdda9ff99c4bf1ea2",
+            "258d446dc60d6330d3f3e8535ccb029ff87e1b290dd768c549c8d5fb4318219b",
+            "a406b843b0808a71bef320387b753da0fc5496899b402bfd409e3005ade06098",
+            "1b4f743ace47f331354499e55a0cc0431f4057052012b88f1bd24874b81094a5",
+            "02630fa4b46f644909dc2b6bcd465839208d710408a56f2af9e5128ddd31492c",
+            "bf095fa2b6bbf12caeb4d46b731fe309feb757533f4b567e3ef37cd61cf35615",
+            "a3175399ca0fb468c7509478c7e18934aa29ec2909f10a881da22c0f56135cdd",
+            "2cfee9755a5f5c7f0b13dbc873b64ad2dcf0a2e5c848d8e4fc6b80595d8ae32b",
+            "6612c4fddfb6aad4255e22b95acbd137f4754ae04bd0bae79033497501a629df",
+            "0ae533f39ee14dcdc45afa7375b458a00e6d1e6d3231d4aa372bfccd2f391b0d",
+            "3a8fdec550af8fee1ba5557e8cf1b06165514f167650893f614501601ac37e24",
+            "3bfc6303ea2e30eccce58f377e67bc14ca36e9efe56e28d37d01b1b25c778f09",
+            "044445763498c6fe63986a83173dab56919354c67ab4d6804f08b062de660a43",
+            "7a760ddd9a987b0c9a1017937020f801449b75e632205ac94fb1e5768e71c740",
+            "cce1c61912ca70599320bd7abd43bc958c4d73f054b56cf675d5f5c5012aab8c",
+            "2640219c55f33267479258aee055aa2f13a8d105f9f5c3ec1030d79fad461980",
+            "dffccae68c290aba26d8c1a909160e092ea4ae82aa882ba86c0c336d8ba57106",
+            "8e6df5e5aecaa8562791198621d5ad1a65a43ed04833aed2b5d271220a99d0aa",
+            "8e73e6778f5034152157d188ca558488036d451f60f864d0166c5f0f4d0e4a24",
+            "495e8f27c39f7e45637e754f2ae87e932290b66e84ed6109083b6f84ca4b9f9d",
+            "b0c2784245341bb2390e4cc2282ad42184b2bd8872e8b0b44524815651d2db1a",
+            "771e009e0fc9dd29d4f2ff3d9004b896634bb56fc5cd11edc9779ed27176daab",
+            "87ba1853def3c510f8107d05fddd68dbc27492adb130c2937e657be34060a320",
+            "16e9dbcc1c947ea2ed5f29024c80adc81fbd301bec66fc092eb0a42750f26cd2",
+            "0580786b9040fddba10df93467bfb0a5212383d25b098f168da0fdd14d93ba40",
+            "2216ad5a6712f4172b6216d047cdd9a6cfc0bb49d20508612c341a30a1f35785",
+            "20b9698662b2c5fa5dd3c2506b5a4def77e0b961c97adccadc810631046532c3",
+            "d85e0c1790c4be137d3d45302374a1a34f43d980763ab220df6c0bce248ee6c0",
+            "aa9fd603e71228a7158ccd8b618d4acbf21e9858f4b45717755c14a25356e28b",
+            "bc7167f3d3209b51cae63c690273b30bcc3274226b2a89f3fa195e85833622a9",
+            "d4150f3aa65255f7255d15bfd1043b47632deb7ed9409b05857559f4b8632ffd",
+            "94c099ab4ae8537cc3f5de77b0ea5201b8c0651e6e224515db69a4c2f9918b73",
+            "05ea4401213f8c6b13749d7be194b5b8733f644bc8cb9185d516a45dfeb70fb9",
+            "fba3431369c1467410f4f36307325211dcc5c462185283f0f10624f3f5ac63ad",
+            "a01f702f83c5e36f8cfa449624598ce7cf1f34ab70048828aa84ccbdad658970",
+            "0609ea03bc04f907ddbff8ed2cb10740fc20ff2f2582d1ee4dc338b9ac27455e",
+            "4b6e8edc39379c7771183d74ab5239911a4baae5d7e5d5d9358ad49903f8294a",
+            "4de270ced9dbe4d20c4d017a2b09d5a4571e2b7d56ae0d611a163ef7575aeba8",
+            "845924aa3cdeb7ab7b2d657a3e2eccf2fabb9e6980b1652ad9a1c205d98a8b3e",
+            "e04860e3c883de0f1168f42c9cc571d8c861a358aaa2cffacaff463cc2f5dd7e",
+            "232afd0f050736a109b87798dba95f692c6329c1c06d3388510baacea0d01ac2",
+            "0eb2da5bca37ec70c60ddb31462d5d61cc1e67a37ad32c487f675ac02194bbf1",
+            "823fa8cbc0051465b70200ca67df700727313e4dc1fe2658326dc00f00e63664",
+            "e0e4c3d16651a169c76d5bc02a2b646a7d7b05f5eb62225d7360dd3db24fdff5",
+            "99fe1e48818b45b347042531d5c35f9828e17f2ae76ae80dff0ef79dd7a59744",
+            "7ae41ad062d603532635f4e008ba342ccfff9a71129e0f2f47fd0adf02740536",
+            "0699b5e873f0721c4e6e60a3bb98049d90e5639f80ca955ee9819e4e7f70d002",
+            "0d3765c377984af871d8a4264cdc74b11ada154c62ab7188c024012b109e72ab",
+            "165e86ef585018fc393d50e391f3f65265c6cf4e47ae483bbd382ffd48d3a45d",
+            "cc90c537b491612a05a429e0fd0c4fbf1cf3d5b41d229d1f74e956b2af9b9fd3",
+            "63c89e35dd4c32a5a52531d2608d63a5927b992686a7454da66518bb263653f2",
+            "a0155a272db1c829811c2ca11071494301e73f145abcc43b32ac2eb720ae37f7",
+            "a1c1da9068bb386af7589e82b4b9e6ee89541f6609ce03b80fee8b8511a8ad00",
+            "4ccaac61bd71f2de5941153cb3a5768b3b809f8cbe020e37526c6e6d4ba28e4f",
+            "0332a7a5f679daf68a8bc251f2f9c1c48753dae22ffac8d2efd88e3c2119c04e",
+            "db19832be186a60793b1e4a9f23d5f84d9f35ac4bbb21701a89bc22fa784a077",
+            "d8ed0cdbedff83d7b5ae922f2560e249ac9a849c568eb2034e420a01bf7cdbdf",
+            "9fbe53d68e788c478c68f165ce739c54549dce8954ca546c8e528b496c223d60",
+            "dece51fe04c1afc9204ea34d16fa262979e94e9badb186431e66766f711a01ac",
+            "bda2c1310aadf7a78d4a4e0b47f40393597a08ffc12d71a1b6c708eb00507e21",
+            "6deaa2dd63f9305b8ea78563de4ba41e82d7e354fc8be2704650636bf961afe7",
+            "3a90de39898630182c5fe9e19b4d90341b1334ab726ece6a8a9fcde44deea06a",
+            "9dc81eb0aedf364ffbce92bbd4b7f3e97017565dee0f37e44e7407d9abb0e6ef",
+            "50cb94b92b0e1c066d6be5860284c8fa50440113c97f4f9734c61d72e462e344",
+            "08df4d290af343e396a713c06523b5872d67dab46a317a284b3ef61b9ab71248",
+            "a37e7fd4869d49281cfeebe1c6268fdd668485312a9d58e332905443474a3a26",
+            "944b039e4e63b5fd74d50af116319c98454ffd393cf5028cdd621cb7f0109d78",
+            "37126ecc5850ef28b8138eaf4f7a66bd1a53ac50a62909a2a20617636bd7a9f3",
+            "bb22e064225209fd6007e64de4b01ce40a0d645f7b5b23483c8092253bcda820",
+            "534fa706b3eb38678b2bb46082ef988249c5d469f9188699da8e5d6de944cfc2",
+            "672b3f022302fc805aac9c619764a035403bc8872990d3bf2ff28affd76043b0",
+            "4cfcd0cf4a728eb7619ceaf7f2f4e9817ca6e1e23027f013ea7d88f40beda38e",
+            "b88695a121ac04dc68195c97c18520c86f2e773f7c185eebc9eaa467d8ef715e",
+            "581df262b9e3249625043cc84484535b5ab2466d720007412d047bfbcb9b05a1",
+            "6e3d417ce17eb807a1050f56c1df4e39e33cb363f22e02a37ebf2bc7812fad2e",
+            "750d6e57c54f9cd61090474c82e34cad19518fb497fdc94aca6753ff04335883",
+            "cb69cd36872c3568f3593cb77e7db915513cc1fa97fe79ec08cb35e2e0e39f9e",
+            "e0238186c298cb30405568ace98c097ab677b0a9a89838914afab5fa7e38bb08",
+            "4d33d87fd294251fc8b95e03143b88cc8e36c5cec757f20af099198e12131dda"
+          ]
+        ],
+        "prewrite_pixel_frame_hash_streams_equal": true,
+        "prewrite_pixel_frame_stream_sha256": [
+          "ba3e265c9f79d419475db42ff68eb3ed1d16b704f42be7aa6be4e071b7d46ada",
+          "ba3e265c9f79d419475db42ff68eb3ed1d16b704f42be7aa6be4e071b7d46ada"
+        ],
+        "repeat_row_ids": [
+          "strictrepeat_wav2lip_gan_bac9a81e_01",
+          "strictrepeat_wav2lip_gan_bac9a81e_02"
+        ],
+        "score_npz_sha256": [
+          "a389c83d95f616efacba82d404e34bd8e179dfae24176858b6f6e3777bf70e4a",
+          "a389c83d95f616efacba82d404e34bd8e179dfae24176858b6f6e3777bf70e4a"
+        ],
+        "score_npz_sha256_equal": true,
+        "status": "PASS_EXACT_MATCH",
+        "syncnet_distance_array_sha256": [
+          [
+            "7b5f9a42307e2072c865262e2531d4fa3724cd4716f96059c0db3ed4aad27705"
+          ],
+          [
+            "7b5f9a42307e2072c865262e2531d4fa3724cd4716f96059c0db3ed4aad27705"
+          ]
+        ],
+        "syncnet_query_distance_arrays_sha256_equal": true,
+        "tracks_pickle_sha256": [
+          "d5ec6ce33880d3fe156a00f0282a7b11e476e6419cfb7d6e842116fba6eb844d",
+          "d5ec6ce33880d3fe156a00f0282a7b11e476e6419cfb7d6e842116fba6eb844d"
+        ],
+        "tracks_pickle_sha256_equal": true
+      },
+      "schema": "cross_tfg_backend_strict_determinism_qualification_v1",
+      "status": "PASS_EXACT_MATCH"
+    }
+  },
+  "canonical_qc06_audio": {
+    "channels": 1,
+    "file_sha256": "d12ced7d44e7d70713a7e201abe47ff60ec190af20e9cd447cba5d325c11caa4",
+    "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/input/natural_1_official_load_f32.wav",
+    "pcm_sha256": "b9a24dd67fd557e012e58339ebe5b1d22655240cf13dd3e31ae7173f3bd0d15a",
+    "sample_count": 92225,
+    "sample_rate_hz": 16000
+  },
+  "completed_rows": 2,
+  "dependency_template": {
+    "bytes": 48942,
+    "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/runtime_binding_template_attempt05.json",
+    "resolved_in_memory": {
+      "bytes": 47601,
+      "project_root": "/root/tts-research-system-20261001",
+      "replacement_count": 17,
+      "replacement_map_sha256": "48a213ed5b2ce492126bc6acb35552a6a3317259847aeaedb2e37442fed64522",
+      "replacements": [
+        {
+          "pointer": "$/backends/ditto_hubert_fixed_portrait_attempt18/dependencies/17/expected_legacy_path",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/ditto_five_arg_shim_attempt06.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/ditto_five_arg_shim_attempt06.py"
+        },
+        {
+          "pointer": "$/backends/ditto_hubert_fixed_portrait_attempt18/dependencies/17/path",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/ditto_five_arg_shim_attempt06.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/ditto_five_arg_shim_attempt06.py"
+        },
+        {
+          "pointer": "$/backends/ditto_hubert_fixed_portrait_attempt18/dependencies/18/expected_legacy_path",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py"
+        },
+        {
+          "pointer": "$/backends/ditto_hubert_fixed_portrait_attempt18/dependencies/18/path",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py"
+        },
+        {
+          "pointer": "$/backends/ditto_hubert_fixed_portrait_attempt18/generator/adapter_path",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/ditto_five_arg_shim_attempt06.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/ditto_five_arg_shim_attempt06.py"
+        },
+        {
+          "pointer": "$/backends/musetalk_fixed_portrait_attempt16/dependencies/22/expected_legacy_path",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/musetalk_five_arg_shim_attempt07.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/musetalk_five_arg_shim_attempt07.py"
+        },
+        {
+          "pointer": "$/backends/musetalk_fixed_portrait_attempt16/dependencies/22/path",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/musetalk_five_arg_shim_attempt07.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/musetalk_five_arg_shim_attempt07.py"
+        },
+        {
+          "pointer": "$/backends/musetalk_fixed_portrait_attempt16/dependencies/23/expected_legacy_path",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py"
+        },
+        {
+          "pointer": "$/backends/musetalk_fixed_portrait_attempt16/dependencies/23/path",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py"
+        },
+        {
+          "pointer": "$/backends/musetalk_fixed_portrait_attempt16/generator/adapter_path",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/musetalk_five_arg_shim_attempt07.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/musetalk_five_arg_shim_attempt07.py"
+        },
+        {
+          "pointer": "$/backends/wav2lip_gan_bac9a81e/dependencies/5/expected_legacy_path",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py"
+        },
+        {
+          "pointer": "$/backends/wav2lip_gan_bac9a81e/dependencies/5/path",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py"
+        },
+        {
+          "pointer": "$/execution_bindings/generator_child",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/engineering_qc_oldpilot_attempt06.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/engineering_qc_oldpilot_attempt06.py"
+        },
+        {
+          "pointer": "$/execution_bindings/pcm16_lineage",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/stagea_pcm16_lineage.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/stagea_pcm16_lineage.py"
+        },
+        {
+          "pointer": "$/execution_bindings/strict_determinism_bootstrap",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py"
+        },
+        {
+          "pointer": "$/execution_bindings/syncnet_evaluator",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/stagea_syncnet_evaluator.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/stagea_syncnet_evaluator.py"
+        },
+        {
+          "pointer": "$/strict_determinism_bootstrap/path",
+          "resolved_value": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+          "template_value": "@PROJECT_ROOT@/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py"
+        }
+      ],
+      "sha256": "94ad27b1dcd3272341868a42ee70b6625aa3015dfd1ca6c20edee9eee9bb955c",
+      "token": "@PROJECT_ROOT@",
+      "written_to_disk": false
+    },
+    "sha256": "226acf9169d9d9e55734c4199cee01581fbc415aef01dae107c9a6fb376eeeab"
+  },
+  "determinism_policy_sha256": "196f6b3654f0bf69eed74dbadd6f4948272d52edfcc5101945ba61044ea6f7cc",
+  "dev_or_confirm_media_read": false,
+  "ended_unix": 1791423973.3621368,
+  "engineering_only": true,
+  "failures": [],
+  "input_paths": {
+    "face": "/root/autodl-tmp/tts-research-20260930/portable_source_axis_20260930/inputs/primary_face.png",
+    "source": "/root/autodl-tmp/tts-research-20260930/portable_source_axis_20260930/inputs/pilot/natural_1.wav"
+  },
+  "manifest_sha256": "66ab3f18dee5ab7b261678f225851a1d50c5dc2084e538fce58268b086bb23ee",
+  "models": [
+    "wav2lip_gan_bac9a81e",
+    "musetalk_fixed_portrait_attempt16",
+    "ditto_hubert_fixed_portrait_attempt18"
+  ],
+  "planned_rows": 6,
+  "policy_values": {
+    "cublas_workspace_config": ":4096:8",
+    "mkl_num_threads": "1",
+    "numexpr_num_threads": "1",
+    "omp_num_threads": "1",
+    "openblas_num_threads": "1",
+    "pythonhashseed": "20261003",
+    "torch_allow_tf32": false,
+    "torch_cudnn_benchmark": false,
+    "torch_cudnn_deterministic": true,
+    "torch_num_interop_threads": 1,
+    "torch_num_threads": 1,
+    "torch_use_deterministic_algorithms": true
+  },
+  "qc06_engineering_manifest_sha256": "f09cc4f339c43e96ea532cdaac4f9818fc42caec6ba7b212dcfe7ae4dc2c5436",
+  "requested_models": [
+    "wav2lip_gan_bac9a81e"
+  ],
+  "requested_render_rows": 2,
+  "requested_row_ids": [
+    "strictrepeat_wav2lip_gan_bac9a81e_01",
+    "strictrepeat_wav2lip_gan_bac9a81e_02"
+  ],
+  "resource_after": {
+    "cgroup_memory": {
+      "available_bytes": 57654689792,
+      "controller": "cgroup_v2",
+      "current_bytes": 8917303296,
+      "identity": {
+        "controller": "cgroup_v2",
+        "inode": 139156,
+        "limit_bytes": 66571993088,
+        "relative_path": ""
+      },
+      "limit_bytes": 66571993088,
+      "path": "/sys/fs/cgroup"
+    },
+    "effective_ram_available_bytes": 57654689792,
+    "gpus": [
+      {
+        "driver_version": "595.91.07",
+        "memory_free_mib": 32230,
+        "memory_total_mib": 32760,
+        "uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea"
+      }
+    ],
+    "host": "autodl-container-v6l4us903l-21144e17",
+    "host_mem_available_bytes": 506211262464,
+    "observed_unix": 1791423973.3615966,
+    "output_filesystem": {
+      "available_bytes": 7021744128,
+      "block_size": 4096,
+      "device": 88,
+      "existing_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12",
+      "requested_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12",
+      "total_bytes": 32212254720
+    },
+    "python_executable": "/usr/bin/python3.10",
+    "python_version": "3.10.12",
+    "shm": {
+      "available_bytes": 26444845056,
+      "block_size": 4096,
+      "device": 95,
+      "existing_path": "/dev/shm",
+      "requested_path": "/dev/shm",
+      "total_bytes": 33285996544
+    }
+  },
+  "resource_before": {
+    "cgroup_memory": {
+      "available_bytes": 57940381696,
+      "controller": "cgroup_v2",
+      "current_bytes": 8631611392,
+      "identity": {
+        "controller": "cgroup_v2",
+        "inode": 139156,
+        "limit_bytes": 66571993088,
+        "relative_path": ""
+      },
+      "limit_bytes": 66571993088,
+      "path": "/sys/fs/cgroup"
+    },
+    "effective_ram_available_bytes": 57940381696,
+    "gpus": [
+      {
+        "driver_version": "595.91.07",
+        "memory_free_mib": 32230,
+        "memory_total_mib": 32760,
+        "uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea"
+      }
+    ],
+    "host": "autodl-container-v6l4us903l-21144e17",
+    "host_mem_available_bytes": 506941779968,
+    "observed_unix": 1791423925.0926387,
+    "output_filesystem": {
+      "available_bytes": 7040434176,
+      "block_size": 4096,
+      "device": 88,
+      "existing_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01",
+      "requested_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12",
+      "total_bytes": 32212254720
+    },
+    "python_executable": "/usr/bin/python3.10",
+    "python_version": "3.10.12",
+    "shm": {
+      "available_bytes": 26444845056,
+      "block_size": 4096,
+      "device": 95,
+      "existing_path": "/dev/shm",
+      "requested_path": "/dev/shm",
+      "total_bytes": 33285996544
+    }
+  },
+  "row_ids": [
+    "strictrepeat_wav2lip_gan_bac9a81e_01",
+    "strictrepeat_wav2lip_gan_bac9a81e_02",
+    "strictrepeat_musetalk_fixed_portrait_attempt16_01",
+    "strictrepeat_musetalk_fixed_portrait_attempt16_02",
+    "strictrepeat_ditto_hubert_fixed_portrait_attempt18_01",
+    "strictrepeat_ditto_hubert_fixed_portrait_attempt18_02"
+  ],
+  "rows": [
+    {
+      "audio_frontend": "wav2lip_official_16k_float32_mel",
+      "fresh_syncnet": {
+        "activesd_pickle_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/syncnet_strictrepeat_wav2lip_gan_bac9a81e_01/pywork/oldpilot_strictrepeat_wav2lip_gan_bac9a81e_01/activesd.pckl",
+        "activesd_pickle_sha256": "e3940b0c8dc10ec98e25977f3b9df461f1ba7af400515a7b7251abe4d6e1f4a3",
+        "anchor_column": 15,
+        "best_lag_definition": "lag_offsets_frames[best_column]",
+        "determinism_bootstrap_sha256": "bc89c871396d34543fb8f83b87b5bc51e23b9d4e76796b0fda0fbc8c60933da7",
+        "distance_npz_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/syncnet/strictrepeat_wav2lip_gan_bac9a81e_01_distance_by_query_lag.npz",
+        "distance_npz_sha256": "a389c83d95f616efacba82d404e34bd8e179dfae24176858b6f6e3777bf70e4a",
+        "official_offset_definition": "negative_best_lag_frames",
+        "pipeline_run": {
+          "argv": [
+            "/root/autodl-tmp/wav2lip-syncnet/envs/syncnet/bin/python",
+            "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/deterministic_torch_bootstrap_attempt06.py",
+            "/root/autodl-tmp/wav2lip-syncnet/syncnet_python/run_pipeline.py",
+            "--videofile",
+            "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/original_pcm_f32_mux.mkv",
+            "--reference",
+            "oldpilot_strictrepeat_wav2lip_gan_bac9a81e_01",
+            "--data_dir",
+            "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/syncnet_strictrepeat_wav2lip_gan_bac9a81e_01",
+            "--facedet_scale",
+            "0.25",
+            "--crop_scale",
+            "0.40",
+            "--min_track",
+            "5",
+            "--frame_rate",
+            "25",
+            "--num_failed_det",
+            "25",
+            "--min_face_size",
+            "100",
+            "--overwrite"
+          ],
+          "cwd": "/root/autodl-tmp/wav2lip-syncnet/syncnet_python",
+          "ended_unix": 1791423946.635687,
+          "returncode": 0,
+          "started_unix": 1791423937.2927206,
+          "stderr_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/logs/syncnet_pipeline_strictrepeat_wav2lip_gan_bac9a81e_01.stderr.log",
+          "stderr_sha256": "a453ea1618ec1a08ea61e2121932c4da731d32b29fbe2f916a1e173d2c0c7c93",
+          "stdout_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/logs/syncnet_pipeline_strictrepeat_wav2lip_gan_bac9a81e_01.stdout.log",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "protocol": "official_wav2lip_syncnet_run_pipeline_plus_run_syncnet",
+        "score_reduction": {
+          "backend": "pytorch_cpu",
+          "contrast_dtype": "float32",
+          "curve_operation": "torch.mean(torch.stack(query_distance_vectors, dim=1), dim=1)",
+          "matrix_layout": "query_by_lag_float32",
+          "median_operation": "torch.median(curve)",
+          "median_semantics": "lower_middle_order_statistic",
+          "minimum_operation": "torch.min(curve, dim=0)",
+          "num_threads": 1,
+          "stacked_layout": "lag_by_query_contiguous_float32",
+          "torch_version": "2.5.1+cu124"
+        },
+        "score_run": {
+          "argv": [
+            "/root/autodl-tmp/wav2lip-syncnet/envs/syncnet/bin/python",
+            "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/deterministic_torch_bootstrap_attempt06.py",
+            "/root/autodl-tmp/wav2lip-syncnet/syncnet_python/run_syncnet.py",
+            "--data_dir",
+            "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/syncnet_strictrepeat_wav2lip_gan_bac9a81e_01",
+            "--reference",
+            "oldpilot_strictrepeat_wav2lip_gan_bac9a81e_01",
+            "--initial_model",
+            "/root/autodl-tmp/wav2lip-syncnet/syncnet_python/data/syncnet_v2.model",
+            "--batch_size",
+            "20",
+            "--vshift",
+            "15"
+          ],
+          "cwd": "/root/autodl-tmp/wav2lip-syncnet/syncnet_python",
+          "ended_unix": 1791423950.661994,
+          "returncode": 0,
+          "started_unix": 1791423946.6364892,
+          "stderr_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/logs/syncnet_score_strictrepeat_wav2lip_gan_bac9a81e_01.stderr.log",
+          "stderr_sha256": "2431923e1c72e6b49b29e4e2634a417ebbd152017efc4e9635d3b45cbc1059cf",
+          "stdout_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/logs/syncnet_score_strictrepeat_wav2lip_gan_bac9a81e_01.stdout.log",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "source_file_sha256": {
+          "SyncNetInstance.py": "bd722bf844700d6a923dec2f10d7cacd65c0c6b22d09aa5d44d2509660e900d6",
+          "SyncNetModel.py": "41b85aed0006546cb2d6dc9180c5bc3dac737ab80eff643022e397a349c30c22",
+          "run_pipeline.py": "3654a3cf22c74cb3071fca6fb97ca9fb7dd1a5943fe864169ff8c0b57eb80acf",
+          "run_syncnet.py": "c78fe9f75665aa9e7a2bb523e4e7e3734a857137ff70b29c88a7b4893c422ded"
+        },
+        "syncnet_git_head": "907c0b579c2e2d83f0eae1b2ac9e720cde4e5623",
+        "syncnet_root": "/root/autodl-tmp/wav2lip-syncnet/syncnet_python",
+        "tracking_artifacts": {
+          "crop_videos": [
+            {
+              "bytes": 313148,
+              "name": "00000.avi",
+              "sha256": "8af8c9103292bc2306ef5ccf32c0e34479b0e73dfe03b4c5574dba546094f43e"
+            }
+          ],
+          "numeric_tracks": [
+            {
+              "bbox_sha256": "f55df0e0bcc10fe641e928a9f7156452d9681a79b4b5ae406592ba595ab461a6",
+              "frame_count": 143,
+              "frame_sha256": "f1ba9d7d18ee95dd86cae24b78b9324322fdd8c4f745189a4f2f60fe20e45f34",
+              "track_index": 0
+            }
+          ],
+          "tracks_pickle_bytes": 9534,
+          "tracks_pickle_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/syncnet_strictrepeat_wav2lip_gan_bac9a81e_01/pywork/oldpilot_strictrepeat_wav2lip_gan_bac9a81e_01/tracks.pckl",
+          "tracks_pickle_sha256": "d5ec6ce33880d3fe156a00f0282a7b11e476e6419cfb7d6e842116fba6eb844d"
+        },
+        "tracking_settings": {
+          "crop_scale": 0.4,
+          "facedet_scale": 0.25,
+          "frame_rate": 25,
+          "min_face_size": 100,
+          "min_track": 5,
+          "num_failed_det": 25
+        },
+        "tracks": [
+          {
+            "B": 13.769689559936523,
+            "Canchor": 0.4109916687011719,
+            "Cbest": 6.22917366027832,
+            "D0": 13.358697891235352,
+            "Dmin": 7.540515899658203,
+            "anchor_column": 15,
+            "best_lag_definition": "lag_offsets_frames[best_column]",
+            "best_lag_frames": 2,
+            "distance_by_query_lag_sha256": "7b5f9a42307e2072c865262e2531d4fa3724cd4716f96059c0db3ed4aad27705",
+            "distance_by_query_lag_shape": [
+              138,
+              31
+            ],
+            "fixed_anchor_status": "NOT_FROZEN_FOR_ENGINEERING_QC",
+            "lag_distance_mean_float32": [
+              13.707804679870605,
+              13.730242729187012,
+              13.769689559936523,
+              13.712119102478027,
+              13.767439842224121,
+              13.791382789611816,
+              14.027483940124512,
+              14.51611328125,
+              15.014007568359375,
+              14.64811897277832,
+              13.455595970153809,
+              12.651399612426758,
+              13.25339126586914,
+              14.315169334411621,
+              14.611026763916016,
+              13.358697891235352,
+              10.524530410766602,
+              7.540515899658203,
+              8.296670913696289,
+              11.655474662780762,
+              14.006752014160156,
+              14.593070983886719,
+              13.947338104248047,
+              13.099515914916992,
+              13.11510181427002,
+              13.954090118408203,
+              14.791058540344238,
+              14.8169584274292,
+              14.247883796691895,
+              13.828115463256836,
+              13.661067962646484
+            ],
+            "lag_offsets_frames": [
+              -15,
+              -14,
+              -13,
+              -12,
+              -11,
+              -10,
+              -9,
+              -8,
+              -7,
+              -6,
+              -5,
+              -4,
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "official_av_offset_frames": -2,
+            "official_offset_definition": "negative_best_lag_frames",
+            "offset_frames": -2,
+            "query_count": 138,
+            "track_index": 0,
+            "zero_lag_column": 15
+          }
+        ],
+        "weight_path": "/root/autodl-tmp/wav2lip-syncnet/syncnet_python/data/syncnet_v2.model",
+        "weight_sha256": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442",
+        "zero_lag_column": 15
+      },
+      "generated_video_bytes": 135059,
+      "generated_video_elementary_stream_sha256": "ad4d57c27cd85171240c06f6de7bbccb677fa790c488ddaeecf99ceff30bee89",
+      "generated_video_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/render/generated_video.mp4",
+      "generated_video_sha256": "4210e52a2251d9180602b5457e801b8f429129f1175d36d32b8127a069f216f8",
+      "model_id": "wav2lip_gan_bac9a81e",
+      "mux_command": {
+        "argv": [
+          "/usr/bin/ffmpeg",
+          "-v",
+          "error",
+          "-nostdin",
+          "-y",
+          "-i",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/silent_video.mkv",
+          "-i",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/input/natural_1_official_load_f32.wav",
+          "-map",
+          "0:v:0",
+          "-map",
+          "1:a:0",
+          "-c:v",
+          "copy",
+          "-c:a",
+          "copy",
+          "-map_metadata",
+          "0",
+          "-f",
+          "matroska",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/original_pcm_f32_mux.mkv"
+        ],
+        "cwd": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01",
+        "ended_unix": 1791423937.1132586,
+        "returncode": 0,
+        "started_unix": 1791423936.997967,
+        "stderr_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/logs/mux_original_pcm.stderr.log",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/logs/mux_original_pcm.stdout.log",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "muxed_original_pcm_readback": {
+        "channels": 1,
+        "matches_qc06_input": true,
+        "pcm_float32_sha256": "b9a24dd67fd557e012e58339ebe5b1d22655240cf13dd3e31ae7173f3bd0d15a",
+        "sample_count": 92225,
+        "sample_rate_hz": 16000
+      },
+      "muxed_video_bytes": 451342,
+      "muxed_video_elementary_stream_sha256": "ad4d57c27cd85171240c06f6de7bbccb677fa790c488ddaeecf99ceff30bee89",
+      "muxed_video_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/original_pcm_f32_mux.mkv",
+      "muxed_video_sha256": "97ce12dedc2fe159b3377ad29e1c94d20a2959387ea02ab8f4d8d5bc98dbbea5",
+      "muxed_video_stream": {
+        "avg_frame_rate": "25/1",
+        "bits_per_raw_sample": "8",
+        "chroma_location": "left",
+        "closed_captions": 0,
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "codec_name": "h264",
+        "codec_tag": "0x0000",
+        "codec_tag_string": "[0][0][0][0]",
+        "codec_type": "video",
+        "coded_height": 512,
+        "coded_width": 512,
+        "display_aspect_ratio": "1:1",
+        "disposition": {
+          "attached_pic": 0,
+          "clean_effects": 0,
+          "comment": 0,
+          "default": 1,
+          "dub": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "karaoke": 0,
+          "lyrics": 0,
+          "original": 0,
+          "timed_thumbnails": 0,
+          "visual_impaired": 0
+        },
+        "field_order": "progressive",
+        "has_b_frames": 2,
+        "height": 512,
+        "index": 0,
+        "is_avc": "true",
+        "level": 30,
+        "nal_length_size": "4",
+        "pix_fmt": "yuv420p",
+        "profile": "High",
+        "r_frame_rate": "25/1",
+        "refs": 1,
+        "sample_aspect_ratio": "1:1",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "tags": {
+          "DURATION": "00:00:05.640000000"
+        },
+        "time_base": "1/1000",
+        "width": 512
+      },
+      "native_adapter_receipt": null,
+      "renderer_command": {
+        "argv": [
+          "/root/autodl-tmp/wav2lip-syncnet/envs/wav2lip/bin/python",
+          "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/inference.py",
+          "--checkpoint_path",
+          "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/checkpoints/wav2lip_gan.pth",
+          "--face",
+          "/root/autodl-tmp/tts-research-20260930/portable_source_axis_20260930/inputs/primary_face.png",
+          "--audio",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/input/natural_1_official_load_f32.wav",
+          "--outfile",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/render/generated_video.mp4",
+          "--static",
+          "True",
+          "--fps",
+          "25",
+          "--pads",
+          "0",
+          "10",
+          "0",
+          "0"
+        ],
+        "cwd": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/generator_cwd",
+        "ended_unix": 1791423935.238998,
+        "returncode": 0,
+        "started_unix": 1791423927.1863518,
+        "stderr_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/logs/renderer.stderr.log",
+        "stderr_sha256": "51439fe08f37dfe3225354128d01d57c12f9961ddffa95e2f1a28f8eb33b852b",
+        "stdout_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/logs/renderer.stdout.log",
+        "stdout_sha256": "58e88c1309ea58c77f1cf36ba16edf161c28be9978a7f46e3d55ee8982188880"
+      },
+      "resource_after": {
+        "cgroup_memory": {
+          "available_bytes": 57864159232,
+          "controller": "cgroup_v2",
+          "current_bytes": 8707833856,
+          "identity": {
+            "controller": "cgroup_v2",
+            "inode": 139156,
+            "limit_bytes": 66571993088,
+            "relative_path": ""
+          },
+          "limit_bytes": 66571993088,
+          "path": "/sys/fs/cgroup"
+        },
+        "effective_ram_available_bytes": 57864159232,
+        "gpus": [
+          {
+            "driver_version": "595.91.07",
+            "memory_free_mib": 32230,
+            "memory_total_mib": 32760,
+            "uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea"
+          }
+        ],
+        "host": "autodl-container-v6l4us903l-21144e17",
+        "host_mem_available_bytes": 506907299840,
+        "observed_unix": 1791423935.2963097,
+        "output_filesystem": {
+          "available_bytes": 7039242240,
+          "block_size": 4096,
+          "device": 88,
+          "existing_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01",
+          "requested_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01",
+          "total_bytes": 32212254720
+        },
+        "python_executable": "/usr/bin/python3.10",
+        "python_version": "3.10.12",
+        "shm": {
+          "available_bytes": 26444845056,
+          "block_size": 4096,
+          "device": 95,
+          "existing_path": "/dev/shm",
+          "requested_path": "/dev/shm",
+          "total_bytes": 33285996544
+        }
+      },
+      "resource_before": {
+        "cgroup_memory": {
+          "available_bytes": 57866031104,
+          "controller": "cgroup_v2",
+          "current_bytes": 8705961984,
+          "identity": {
+            "controller": "cgroup_v2",
+            "inode": 139156,
+            "limit_bytes": 66571993088,
+            "relative_path": ""
+          },
+          "limit_bytes": 66571993088,
+          "path": "/sys/fs/cgroup"
+        },
+        "effective_ram_available_bytes": 57866031104,
+        "gpus": [
+          {
+            "driver_version": "595.91.07",
+            "memory_free_mib": 32230,
+            "memory_total_mib": 32760,
+            "uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea"
+          }
+        ],
+        "host": "autodl-container-v6l4us903l-21144e17",
+        "host_mem_available_bytes": 506899714048,
+        "observed_unix": 1791423927.1853569,
+        "output_filesystem": {
+          "available_bytes": 7040016384,
+          "block_size": 4096,
+          "device": 88,
+          "existing_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01",
+          "requested_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01",
+          "total_bytes": 32212254720
+        },
+        "python_executable": "/usr/bin/python3.10",
+        "python_version": "3.10.12",
+        "shm": {
+          "available_bytes": 26444845056,
+          "block_size": 4096,
+          "device": 95,
+          "existing_path": "/dev/shm",
+          "requested_path": "/dev/shm",
+          "total_bytes": 33285996544
+        }
+      },
+      "row_id": "strictrepeat_wav2lip_gan_bac9a81e_01",
+      "seed": 20261003,
+      "silent_video_bytes": 81666,
+      "silent_video_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/silent_video.mkv",
+      "silent_video_sha256": "0c7144cf169e0e07341aae88a166042d4af27b3bf56fcd31e30810e21a696347",
+      "source_audio_file_sha256": "d12ced7d44e7d70713a7e201abe47ff60ec190af20e9cd447cba5d325c11caa4",
+      "source_audio_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/input/natural_1_official_load_f32.wav",
+      "source_face_path": "/root/autodl-tmp/tts-research-20260930/portable_source_axis_20260930/inputs/primary_face.png",
+      "source_face_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6",
+      "status": "PASS",
+      "strict_startup_process_receipts": [
+        {
+          "bytes": 2116,
+          "entry_matches_backend": true,
+          "entry_path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/inference.py",
+          "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/strict_startup_receipts/96600.json",
+          "pid": 96600,
+          "policy": {
+            "cublas_workspace_config": ":4096:8",
+            "mkl_num_threads": "1",
+            "numexpr_num_threads": "1",
+            "omp_num_threads": "1",
+            "openblas_num_threads": "1",
+            "pythonhashseed": "20261003",
+            "torch_allow_tf32": false,
+            "torch_cudnn_benchmark": false,
+            "torch_cudnn_deterministic": true,
+            "torch_num_interop_threads": 1,
+            "torch_num_threads": 1,
+            "torch_use_deterministic_algorithms": true
+          },
+          "policy_payload_sha256": "54d853a6b6ce09cc8c757297f9617b5ecf4e0d01458a0b2e33dcf0316a4417f5",
+          "renderer_compatibility": {
+            "id": "wav2lip_librosa_filters_mel_positional_sr_n_fft_to_keywords_v1",
+            "installed_before_renderer_import": true,
+            "librosa_version": "0.10.2.post1",
+            "original_signature": "(*, sr: float, n_fft: int, n_mels: int = 128, fmin: float = 0.0, fmax: Optional[float] = None, htk: bool = False, norm: Union[Literal['slaney'], float, NoneType] = 'slaney', dtype: Union[numpy.dtype[Any], NoneType, type[Any], numpy._typing._dtype_like._SupportsDType[numpy.dtype[Any]], str, tuple[Any, int], tuple[Any, Union[SupportsIndex, collections.abc.Sequence[SupportsIndex]]], list[Any], numpy._typing._dtype_like._DTypeDict, tuple[Any, Any]] = <class 'numpy.float32'>) -> numpy.ndarray",
+            "shim": "positional sr,n_fft mapped to keyword arguments; remaining defaults unchanged"
+          },
+          "sha256": "087cf41eb09b269eed1f06cf05ae872cfdb662e1b898b2617a35dd2d5c9d24a0"
+        }
+      ],
+      "strip_command": {
+        "argv": [
+          "/usr/bin/ffmpeg",
+          "-v",
+          "error",
+          "-nostdin",
+          "-y",
+          "-i",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/render/generated_video.mp4",
+          "-map",
+          "0:v:0",
+          "-c:v",
+          "copy",
+          "-an",
+          "-map_metadata",
+          "-1",
+          "-f",
+          "matroska",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/silent_video.mkv"
+        ],
+        "cwd": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01",
+        "ended_unix": 1791423936.997276,
+        "returncode": 0,
+        "started_unix": 1791423936.882464,
+        "stderr_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/logs/strip_audio.stderr.log",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/logs/strip_audio.stdout.log",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "syncnet_python_identity": {
+        "numpy": "2.2.6",
+        "python": "/root/autodl-tmp/wav2lip-syncnet/envs/syncnet/bin/python",
+        "torch": "2.5.1+cu124"
+      },
+      "wav2lip_runtime_compatibility_receipts": {
+        "actual_forward_policy_receipt": {
+          "bytes": 10332,
+          "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/control/w2l_actual_forward_policy_receipt.json",
+          "sfd_forward_count": 1,
+          "sha256": "591d5be3442d9ba5136a429e4af8fb54186838d09d084626b7833305dbb64307",
+          "wav2lip_forward_count": 2
+        },
+        "constructor_policy_receipt": {
+          "bytes": 6944,
+          "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/control/w2l_facealignment_policy_01.json",
+          "sha256": "e6c1207d4326cac88eae76b18d8ed5c881d078660c18b460e5993c3b2814839b"
+        },
+        "prewrite_pixel_array_receipt": {
+          "bytes": 51326,
+          "frame_pixel_array_sha256s": [
+            "80a08ceb4c1c98e77a87756ed25a588583accea5c3b947e1e88053bd68842dd3",
+            "b8d478b22bba118efa67dbaf17741e1f0a4b577049167dd6469fcca06eae96ed",
+            "3403363bbae205a5f534dc10341f996791e0f9aca1cfdc7ae7b1cc43b1db16d9",
+            "b5487d993714f1d412ed8dbc7192c910bc5ac6378edc20f31a6bee25e7cebc12",
+            "39a60226c7db76076554fff9d6d70a8829d28fc15147bfac4e03b6390bae788c",
+            "18833487bb504223e678c119fa835609adc02105189f2365f52b1ba11b8cc93a",
+            "e70426bbd6f9e6c025713a281f04d67c05476bf012752c6e97fae66805ef348c",
+            "c74dc9a6b5084bf9613891c49624e6afb81f2e7936f553b327edd71b8e327730",
+            "cc5501712a7944c97d25bdb95fa262c1c9339c02b6481d72170f81c38d125b77",
+            "bea39b257bccc615482f6dfd987b426cc350d01275d28399967acb87421f634d",
+            "df179d331a6535c362beb251e72ca5b9fb8faf0b50526c04c8fb7c6c4b5119e2",
+            "f1c8f839960377f4895ec56ac353d6d1cf8603fad42416428c6f1dc5ebf9ace8",
+            "89cf1b0ddf2d187ec36540ab94751466a1b5ec4c2ab12fb25f10ed1f04ae6eb9",
+            "020e2b5371515d6de18a7019307d1b12c25e5756f2e47a6920d77729f9548031",
+            "11c8c78879a16b758dee5e796de702296203ce8cd9ab51476785667870f83e7b",
+            "8fb66cd1b3bd9567b0ad2e01a8ea28219175cf185b25d7be10d95a6b1cefd88c",
+            "77cb6a9536603dbf71a8f7a2ecf10669a748c4dd18597893a5b8cd85780678ba",
+            "779e16c76cdc206fc95426813468c9bd9cbecba25727e7daef0c8800e13a70de",
+            "37c7de58ca6243f240c1f6d2da61bd797d4a20975837ac54c25eabe9fda68297",
+            "40bdbd4085597d767a8397a01441aa71437e1336cd07ff17b164f13c1ef996cf",
+            "77d278c627f60b29f3893e5936a12dec05bb1f800a30b09d1469aa4c28546016",
+            "02554f743722c926c7ecbb72143d208e803b1fd49cab2dd57dbb26e7db41c764",
+            "0f7c2e1436dbea845f41118b6cbbc27a619226ee3fa7aa700ce395c587f2844d",
+            "baa1dbc99cd1e97f3ff9dcdf09c5081aca32f09c6efc96defa4ecda22fb2dda1",
+            "0cfc61257815f465189a1cef495c1548cb18a0650b5c95d2c5de6f6c98016fcf",
+            "9e83411c6a07dfc9868795c08f081b4a4afa7f0e3c74eb12109170ed6d1b927b",
+            "55830e957414cf9ffc7606af3b7a1505bd1699a8a84262e17e2c9a2a180c5731",
+            "b84035a2c425d759b9dec8f43f9029371b49e482fd941879c37f75289538b680",
+            "e217ac171dd6394c046ab2e26fc3d2428d5fc883f192ec4bfa8764faf43fb1db",
+            "c776f09b684b224b4656aead10801b6503b4a47e555cd00cf1ce164b4c1766e3",
+            "c1d4581888b8e8588eb60e462a558122e8cab51bb07ecaabf91696c8af302ba2",
+            "787cd8a105076b6631faef03151f2205c79829771a8c17cd29f221f66bc4fe9a",
+            "e191551958ac89a9d43fcaf2a609944f6c8f7befeb943b2d49a69aa7687d60c5",
+            "c2f3fb14d7e737e1bc21ecd17e3e0968780d79019f8f1639e1f7079f1839e595",
+            "80c2eaed41dffa133894d66297e7f01e9a76ed878696e790f1ce5af88a7380ae",
+            "464e267549b80d81e6668633707f2831b1a60a096f7304067429f9916ce0be07",
+            "293f4795526aaf28a1b9b5f3f2d964f9340f207234c1766b4175f23d5d7450b8",
+            "c844b290b2eaf846ebc838237ee4056609a6176e2758706ba31cbdd9284aab05",
+            "0f85c913c77f7c44c6907263d3c76b31a0584820c9464dc2e709d6550d67b3c8",
+            "d7ecccbcff5729a3c1fb1bdb792ea5a969ffe54649733c63d594d07d849c7a8b",
+            "b7c872c7b6d9a08ae937669d9841bd36651890710acf1fea61b95fdbd048feea",
+            "ab5a8dc3c84a367715c4d6df4765778ff760460e87a2bdb60c409e81590e36be",
+            "6d48af65664962771665c3e437812cbd2fda1b19173faa3ec1d972e32b621fcd",
+            "2a530d23ac55fd4f92018188a027fa9305a935fc312d3d4ecfc13678a21a8ec6",
+            "ade2bb350a224c506076b0e717d5d0ff15529429e458e30a3c1b26aa4b27aaa5",
+            "a38fcf822ddb025bf1a8ad75059ce310fad44d58e4f806c3380addc283a60b6d",
+            "356f2d6a6f0184458d3699953608b02fddcaf3c14e866314f3da16f192a98deb",
+            "cf0cde8db819c47c591e08bf097a0cc530d6847c24612b0087d5a4e351de8783",
+            "d0fe432a709f2294f42970af0e160d429f99863e2aab4538f3457df4e31c0ff9",
+            "6ec3db378719ab403bb29ce0a1cb76065c82216bd14a844ec7d1607477c83233",
+            "ec90b3b39e0a13e7f84bd95c53336606b0fc1050cde815899bfcf02cd060f6e3",
+            "7ab2fe22b7cea23be2719b58ed05799698a4c150a11a5fbb92560d8b13573aa4",
+            "808f628daeb93d51c7795ab2e51673938ef0af3bb00d036221b830e4d248f5ac",
+            "a61e22461c730a55befee26dfbf3d644ea417078b41a51a5117d9a7137ed3b30",
+            "2abfabe23a202defdd4a9cda8aa2ffa722109f261d576dca62dc5c205019ac52",
+            "a489ed1ff1b84421614f9cb80e8d9126b5446c8a3685159eaa2f8dd0a5742c6d",
+            "2a1586b06bf03634cbba5b2ff932443c0ad66135bf948547cede5b6bbd873943",
+            "2b41db6836cc19ec46e367b0c5ebd7cefe30887ceb0c204c87574074dfb88914",
+            "8606086ee430854605c63b3faa641a43b090e8ae7434937e4a862efe9126089f",
+            "5e910ffe426b862c99c7acbb61aeea06df5aaeeff7bbbd90a9fc5bbcf06b5c2e",
+            "9a139500443c6697713c6772a87fc94cc073df9747b6f4ffcecbb07228776168",
+            "d8c89427beecae917abe97c1d6a81b7a63c02c80e31ccd6b71cfa17906e6a344",
+            "4de3fd6354627ac2c9ebf70a04772a3513e3c0ed0e4e316bdda9ff99c4bf1ea2",
+            "258d446dc60d6330d3f3e8535ccb029ff87e1b290dd768c549c8d5fb4318219b",
+            "a406b843b0808a71bef320387b753da0fc5496899b402bfd409e3005ade06098",
+            "1b4f743ace47f331354499e55a0cc0431f4057052012b88f1bd24874b81094a5",
+            "02630fa4b46f644909dc2b6bcd465839208d710408a56f2af9e5128ddd31492c",
+            "bf095fa2b6bbf12caeb4d46b731fe309feb757533f4b567e3ef37cd61cf35615",
+            "a3175399ca0fb468c7509478c7e18934aa29ec2909f10a881da22c0f56135cdd",
+            "2cfee9755a5f5c7f0b13dbc873b64ad2dcf0a2e5c848d8e4fc6b80595d8ae32b",
+            "6612c4fddfb6aad4255e22b95acbd137f4754ae04bd0bae79033497501a629df",
+            "0ae533f39ee14dcdc45afa7375b458a00e6d1e6d3231d4aa372bfccd2f391b0d",
+            "3a8fdec550af8fee1ba5557e8cf1b06165514f167650893f614501601ac37e24",
+            "3bfc6303ea2e30eccce58f377e67bc14ca36e9efe56e28d37d01b1b25c778f09",
+            "044445763498c6fe63986a83173dab56919354c67ab4d6804f08b062de660a43",
+            "7a760ddd9a987b0c9a1017937020f801449b75e632205ac94fb1e5768e71c740",
+            "cce1c61912ca70599320bd7abd43bc958c4d73f054b56cf675d5f5c5012aab8c",
+            "2640219c55f33267479258aee055aa2f13a8d105f9f5c3ec1030d79fad461980",
+            "dffccae68c290aba26d8c1a909160e092ea4ae82aa882ba86c0c336d8ba57106",
+            "8e6df5e5aecaa8562791198621d5ad1a65a43ed04833aed2b5d271220a99d0aa",
+            "8e73e6778f5034152157d188ca558488036d451f60f864d0166c5f0f4d0e4a24",
+            "495e8f27c39f7e45637e754f2ae87e932290b66e84ed6109083b6f84ca4b9f9d",
+            "b0c2784245341bb2390e4cc2282ad42184b2bd8872e8b0b44524815651d2db1a",
+            "771e009e0fc9dd29d4f2ff3d9004b896634bb56fc5cd11edc9779ed27176daab",
+            "87ba1853def3c510f8107d05fddd68dbc27492adb130c2937e657be34060a320",
+            "16e9dbcc1c947ea2ed5f29024c80adc81fbd301bec66fc092eb0a42750f26cd2",
+            "0580786b9040fddba10df93467bfb0a5212383d25b098f168da0fdd14d93ba40",
+            "2216ad5a6712f4172b6216d047cdd9a6cfc0bb49d20508612c341a30a1f35785",
+            "20b9698662b2c5fa5dd3c2506b5a4def77e0b961c97adccadc810631046532c3",
+            "d85e0c1790c4be137d3d45302374a1a34f43d980763ab220df6c0bce248ee6c0",
+            "aa9fd603e71228a7158ccd8b618d4acbf21e9858f4b45717755c14a25356e28b",
+            "bc7167f3d3209b51cae63c690273b30bcc3274226b2a89f3fa195e85833622a9",
+            "d4150f3aa65255f7255d15bfd1043b47632deb7ed9409b05857559f4b8632ffd",
+            "94c099ab4ae8537cc3f5de77b0ea5201b8c0651e6e224515db69a4c2f9918b73",
+            "05ea4401213f8c6b13749d7be194b5b8733f644bc8cb9185d516a45dfeb70fb9",
+            "fba3431369c1467410f4f36307325211dcc5c462185283f0f10624f3f5ac63ad",
+            "a01f702f83c5e36f8cfa449624598ce7cf1f34ab70048828aa84ccbdad658970",
+            "0609ea03bc04f907ddbff8ed2cb10740fc20ff2f2582d1ee4dc338b9ac27455e",
+            "4b6e8edc39379c7771183d74ab5239911a4baae5d7e5d5d9358ad49903f8294a",
+            "4de270ced9dbe4d20c4d017a2b09d5a4571e2b7d56ae0d611a163ef7575aeba8",
+            "845924aa3cdeb7ab7b2d657a3e2eccf2fabb9e6980b1652ad9a1c205d98a8b3e",
+            "e04860e3c883de0f1168f42c9cc571d8c861a358aaa2cffacaff463cc2f5dd7e",
+            "232afd0f050736a109b87798dba95f692c6329c1c06d3388510baacea0d01ac2",
+            "0eb2da5bca37ec70c60ddb31462d5d61cc1e67a37ad32c487f675ac02194bbf1",
+            "823fa8cbc0051465b70200ca67df700727313e4dc1fe2658326dc00f00e63664",
+            "e0e4c3d16651a169c76d5bc02a2b646a7d7b05f5eb62225d7360dd3db24fdff5",
+            "99fe1e48818b45b347042531d5c35f9828e17f2ae76ae80dff0ef79dd7a59744",
+            "7ae41ad062d603532635f4e008ba342ccfff9a71129e0f2f47fd0adf02740536",
+            "0699b5e873f0721c4e6e60a3bb98049d90e5639f80ca955ee9819e4e7f70d002",
+            "0d3765c377984af871d8a4264cdc74b11ada154c62ab7188c024012b109e72ab",
+            "165e86ef585018fc393d50e391f3f65265c6cf4e47ae483bbd382ffd48d3a45d",
+            "cc90c537b491612a05a429e0fd0c4fbf1cf3d5b41d229d1f74e956b2af9b9fd3",
+            "63c89e35dd4c32a5a52531d2608d63a5927b992686a7454da66518bb263653f2",
+            "a0155a272db1c829811c2ca11071494301e73f145abcc43b32ac2eb720ae37f7",
+            "a1c1da9068bb386af7589e82b4b9e6ee89541f6609ce03b80fee8b8511a8ad00",
+            "4ccaac61bd71f2de5941153cb3a5768b3b809f8cbe020e37526c6e6d4ba28e4f",
+            "0332a7a5f679daf68a8bc251f2f9c1c48753dae22ffac8d2efd88e3c2119c04e",
+            "db19832be186a60793b1e4a9f23d5f84d9f35ac4bbb21701a89bc22fa784a077",
+            "d8ed0cdbedff83d7b5ae922f2560e249ac9a849c568eb2034e420a01bf7cdbdf",
+            "9fbe53d68e788c478c68f165ce739c54549dce8954ca546c8e528b496c223d60",
+            "dece51fe04c1afc9204ea34d16fa262979e94e9badb186431e66766f711a01ac",
+            "bda2c1310aadf7a78d4a4e0b47f40393597a08ffc12d71a1b6c708eb00507e21",
+            "6deaa2dd63f9305b8ea78563de4ba41e82d7e354fc8be2704650636bf961afe7",
+            "3a90de39898630182c5fe9e19b4d90341b1334ab726ece6a8a9fcde44deea06a",
+            "9dc81eb0aedf364ffbce92bbd4b7f3e97017565dee0f37e44e7407d9abb0e6ef",
+            "50cb94b92b0e1c066d6be5860284c8fa50440113c97f4f9734c61d72e462e344",
+            "08df4d290af343e396a713c06523b5872d67dab46a317a284b3ef61b9ab71248",
+            "a37e7fd4869d49281cfeebe1c6268fdd668485312a9d58e332905443474a3a26",
+            "944b039e4e63b5fd74d50af116319c98454ffd393cf5028cdd621cb7f0109d78",
+            "37126ecc5850ef28b8138eaf4f7a66bd1a53ac50a62909a2a20617636bd7a9f3",
+            "bb22e064225209fd6007e64de4b01ce40a0d645f7b5b23483c8092253bcda820",
+            "534fa706b3eb38678b2bb46082ef988249c5d469f9188699da8e5d6de944cfc2",
+            "672b3f022302fc805aac9c619764a035403bc8872990d3bf2ff28affd76043b0",
+            "4cfcd0cf4a728eb7619ceaf7f2f4e9817ca6e1e23027f013ea7d88f40beda38e",
+            "b88695a121ac04dc68195c97c18520c86f2e773f7c185eebc9eaa467d8ef715e",
+            "581df262b9e3249625043cc84484535b5ab2466d720007412d047bfbcb9b05a1",
+            "6e3d417ce17eb807a1050f56c1df4e39e33cb363f22e02a37ebf2bc7812fad2e",
+            "750d6e57c54f9cd61090474c82e34cad19518fb497fdc94aca6753ff04335883",
+            "cb69cd36872c3568f3593cb77e7db915513cc1fa97fe79ec08cb35e2e0e39f9e",
+            "e0238186c298cb30405568ace98c097ab677b0a9a89838914afab5fa7e38bb08",
+            "4d33d87fd294251fc8b95e03143b88cc8e36c5cec757f20af099198e12131dda"
+          ],
+          "ordered_frame_hashes_sha256": "ba3e265c9f79d419475db42ff68eb3ed1d16b704f42be7aa6be4e071b7d46ada",
+          "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_01/control/w2l_prewrite_pixel_arrays.json",
+          "sha256": "3be585876a270612565f294d425e3ae0b7e551a2dc11076eea047358341e0f28"
+        }
+      }
+    },
+    {
+      "audio_frontend": "wav2lip_official_16k_float32_mel",
+      "fresh_syncnet": {
+        "activesd_pickle_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/syncnet_strictrepeat_wav2lip_gan_bac9a81e_02/pywork/oldpilot_strictrepeat_wav2lip_gan_bac9a81e_02/activesd.pckl",
+        "activesd_pickle_sha256": "e3940b0c8dc10ec98e25977f3b9df461f1ba7af400515a7b7251abe4d6e1f4a3",
+        "anchor_column": 15,
+        "best_lag_definition": "lag_offsets_frames[best_column]",
+        "determinism_bootstrap_sha256": "bc89c871396d34543fb8f83b87b5bc51e23b9d4e76796b0fda0fbc8c60933da7",
+        "distance_npz_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/syncnet/strictrepeat_wav2lip_gan_bac9a81e_02_distance_by_query_lag.npz",
+        "distance_npz_sha256": "a389c83d95f616efacba82d404e34bd8e179dfae24176858b6f6e3777bf70e4a",
+        "official_offset_definition": "negative_best_lag_frames",
+        "pipeline_run": {
+          "argv": [
+            "/root/autodl-tmp/wav2lip-syncnet/envs/syncnet/bin/python",
+            "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/deterministic_torch_bootstrap_attempt06.py",
+            "/root/autodl-tmp/wav2lip-syncnet/syncnet_python/run_pipeline.py",
+            "--videofile",
+            "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/original_pcm_f32_mux.mkv",
+            "--reference",
+            "oldpilot_strictrepeat_wav2lip_gan_bac9a81e_02",
+            "--data_dir",
+            "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/syncnet_strictrepeat_wav2lip_gan_bac9a81e_02",
+            "--facedet_scale",
+            "0.25",
+            "--crop_scale",
+            "0.40",
+            "--min_track",
+            "5",
+            "--frame_rate",
+            "25",
+            "--num_failed_det",
+            "25",
+            "--min_face_size",
+            "100",
+            "--overwrite"
+          ],
+          "cwd": "/root/autodl-tmp/wav2lip-syncnet/syncnet_python",
+          "ended_unix": 1791423967.3423157,
+          "returncode": 0,
+          "started_unix": 1791423957.9009535,
+          "stderr_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/logs/syncnet_pipeline_strictrepeat_wav2lip_gan_bac9a81e_02.stderr.log",
+          "stderr_sha256": "2b710909e42511fa2022586b6b9074692c8726aab59881033c781b13d3a90347",
+          "stdout_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/logs/syncnet_pipeline_strictrepeat_wav2lip_gan_bac9a81e_02.stdout.log",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "protocol": "official_wav2lip_syncnet_run_pipeline_plus_run_syncnet",
+        "score_reduction": {
+          "backend": "pytorch_cpu",
+          "contrast_dtype": "float32",
+          "curve_operation": "torch.mean(torch.stack(query_distance_vectors, dim=1), dim=1)",
+          "matrix_layout": "query_by_lag_float32",
+          "median_operation": "torch.median(curve)",
+          "median_semantics": "lower_middle_order_statistic",
+          "minimum_operation": "torch.min(curve, dim=0)",
+          "num_threads": 1,
+          "stacked_layout": "lag_by_query_contiguous_float32",
+          "torch_version": "2.5.1+cu124"
+        },
+        "score_run": {
+          "argv": [
+            "/root/autodl-tmp/wav2lip-syncnet/envs/syncnet/bin/python",
+            "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/deterministic_torch_bootstrap_attempt06.py",
+            "/root/autodl-tmp/wav2lip-syncnet/syncnet_python/run_syncnet.py",
+            "--data_dir",
+            "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/syncnet_strictrepeat_wav2lip_gan_bac9a81e_02",
+            "--reference",
+            "oldpilot_strictrepeat_wav2lip_gan_bac9a81e_02",
+            "--initial_model",
+            "/root/autodl-tmp/wav2lip-syncnet/syncnet_python/data/syncnet_v2.model",
+            "--batch_size",
+            "20",
+            "--vshift",
+            "15"
+          ],
+          "cwd": "/root/autodl-tmp/wav2lip-syncnet/syncnet_python",
+          "ended_unix": 1791423973.0755243,
+          "returncode": 0,
+          "started_unix": 1791423967.343149,
+          "stderr_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/logs/syncnet_score_strictrepeat_wav2lip_gan_bac9a81e_02.stderr.log",
+          "stderr_sha256": "2af126ae92cf40836bd63d70e82d9e1031e75021a4788ae7fc332d6136a51d51",
+          "stdout_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/logs/syncnet_score_strictrepeat_wav2lip_gan_bac9a81e_02.stdout.log",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "source_file_sha256": {
+          "SyncNetInstance.py": "bd722bf844700d6a923dec2f10d7cacd65c0c6b22d09aa5d44d2509660e900d6",
+          "SyncNetModel.py": "41b85aed0006546cb2d6dc9180c5bc3dac737ab80eff643022e397a349c30c22",
+          "run_pipeline.py": "3654a3cf22c74cb3071fca6fb97ca9fb7dd1a5943fe864169ff8c0b57eb80acf",
+          "run_syncnet.py": "c78fe9f75665aa9e7a2bb523e4e7e3734a857137ff70b29c88a7b4893c422ded"
+        },
+        "syncnet_git_head": "907c0b579c2e2d83f0eae1b2ac9e720cde4e5623",
+        "syncnet_root": "/root/autodl-tmp/wav2lip-syncnet/syncnet_python",
+        "tracking_artifacts": {
+          "crop_videos": [
+            {
+              "bytes": 313148,
+              "name": "00000.avi",
+              "sha256": "8af8c9103292bc2306ef5ccf32c0e34479b0e73dfe03b4c5574dba546094f43e"
+            }
+          ],
+          "numeric_tracks": [
+            {
+              "bbox_sha256": "f55df0e0bcc10fe641e928a9f7156452d9681a79b4b5ae406592ba595ab461a6",
+              "frame_count": 143,
+              "frame_sha256": "f1ba9d7d18ee95dd86cae24b78b9324322fdd8c4f745189a4f2f60fe20e45f34",
+              "track_index": 0
+            }
+          ],
+          "tracks_pickle_bytes": 9534,
+          "tracks_pickle_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/syncnet_strictrepeat_wav2lip_gan_bac9a81e_02/pywork/oldpilot_strictrepeat_wav2lip_gan_bac9a81e_02/tracks.pckl",
+          "tracks_pickle_sha256": "d5ec6ce33880d3fe156a00f0282a7b11e476e6419cfb7d6e842116fba6eb844d"
+        },
+        "tracking_settings": {
+          "crop_scale": 0.4,
+          "facedet_scale": 0.25,
+          "frame_rate": 25,
+          "min_face_size": 100,
+          "min_track": 5,
+          "num_failed_det": 25
+        },
+        "tracks": [
+          {
+            "B": 13.769689559936523,
+            "Canchor": 0.4109916687011719,
+            "Cbest": 6.22917366027832,
+            "D0": 13.358697891235352,
+            "Dmin": 7.540515899658203,
+            "anchor_column": 15,
+            "best_lag_definition": "lag_offsets_frames[best_column]",
+            "best_lag_frames": 2,
+            "distance_by_query_lag_sha256": "7b5f9a42307e2072c865262e2531d4fa3724cd4716f96059c0db3ed4aad27705",
+            "distance_by_query_lag_shape": [
+              138,
+              31
+            ],
+            "fixed_anchor_status": "NOT_FROZEN_FOR_ENGINEERING_QC",
+            "lag_distance_mean_float32": [
+              13.707804679870605,
+              13.730242729187012,
+              13.769689559936523,
+              13.712119102478027,
+              13.767439842224121,
+              13.791382789611816,
+              14.027483940124512,
+              14.51611328125,
+              15.014007568359375,
+              14.64811897277832,
+              13.455595970153809,
+              12.651399612426758,
+              13.25339126586914,
+              14.315169334411621,
+              14.611026763916016,
+              13.358697891235352,
+              10.524530410766602,
+              7.540515899658203,
+              8.296670913696289,
+              11.655474662780762,
+              14.006752014160156,
+              14.593070983886719,
+              13.947338104248047,
+              13.099515914916992,
+              13.11510181427002,
+              13.954090118408203,
+              14.791058540344238,
+              14.8169584274292,
+              14.247883796691895,
+              13.828115463256836,
+              13.661067962646484
+            ],
+            "lag_offsets_frames": [
+              -15,
+              -14,
+              -13,
+              -12,
+              -11,
+              -10,
+              -9,
+              -8,
+              -7,
+              -6,
+              -5,
+              -4,
+              -3,
+              -2,
+              -1,
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15
+            ],
+            "official_av_offset_frames": -2,
+            "official_offset_definition": "negative_best_lag_frames",
+            "offset_frames": -2,
+            "query_count": 138,
+            "track_index": 0,
+            "zero_lag_column": 15
+          }
+        ],
+        "weight_path": "/root/autodl-tmp/wav2lip-syncnet/syncnet_python/data/syncnet_v2.model",
+        "weight_sha256": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442",
+        "zero_lag_column": 15
+      },
+      "generated_video_bytes": 135059,
+      "generated_video_elementary_stream_sha256": "ad4d57c27cd85171240c06f6de7bbccb677fa790c488ddaeecf99ceff30bee89",
+      "generated_video_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/render/generated_video.mp4",
+      "generated_video_sha256": "4210e52a2251d9180602b5457e801b8f429129f1175d36d32b8127a069f216f8",
+      "model_id": "wav2lip_gan_bac9a81e",
+      "mux_command": {
+        "argv": [
+          "/usr/bin/ffmpeg",
+          "-v",
+          "error",
+          "-nostdin",
+          "-y",
+          "-i",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/silent_video.mkv",
+          "-i",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/input/natural_1_official_load_f32.wav",
+          "-map",
+          "0:v:0",
+          "-map",
+          "1:a:0",
+          "-c:v",
+          "copy",
+          "-c:a",
+          "copy",
+          "-map_metadata",
+          "0",
+          "-f",
+          "matroska",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/original_pcm_f32_mux.mkv"
+        ],
+        "cwd": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02",
+        "ended_unix": 1791423957.732855,
+        "returncode": 0,
+        "started_unix": 1791423957.617455,
+        "stderr_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/logs/mux_original_pcm.stderr.log",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/logs/mux_original_pcm.stdout.log",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "muxed_original_pcm_readback": {
+        "channels": 1,
+        "matches_qc06_input": true,
+        "pcm_float32_sha256": "b9a24dd67fd557e012e58339ebe5b1d22655240cf13dd3e31ae7173f3bd0d15a",
+        "sample_count": 92225,
+        "sample_rate_hz": 16000
+      },
+      "muxed_video_bytes": 451342,
+      "muxed_video_elementary_stream_sha256": "ad4d57c27cd85171240c06f6de7bbccb677fa790c488ddaeecf99ceff30bee89",
+      "muxed_video_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/original_pcm_f32_mux.mkv",
+      "muxed_video_sha256": "4f9ecc362ebdbb9990737f45fac17ddb5cfdb8d5b19d525839ce8d01cf854630",
+      "muxed_video_stream": {
+        "avg_frame_rate": "25/1",
+        "bits_per_raw_sample": "8",
+        "chroma_location": "left",
+        "closed_captions": 0,
+        "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+        "codec_name": "h264",
+        "codec_tag": "0x0000",
+        "codec_tag_string": "[0][0][0][0]",
+        "codec_type": "video",
+        "coded_height": 512,
+        "coded_width": 512,
+        "display_aspect_ratio": "1:1",
+        "disposition": {
+          "attached_pic": 0,
+          "clean_effects": 0,
+          "comment": 0,
+          "default": 1,
+          "dub": 0,
+          "forced": 0,
+          "hearing_impaired": 0,
+          "karaoke": 0,
+          "lyrics": 0,
+          "original": 0,
+          "timed_thumbnails": 0,
+          "visual_impaired": 0
+        },
+        "field_order": "progressive",
+        "has_b_frames": 2,
+        "height": 512,
+        "index": 0,
+        "is_avc": "true",
+        "level": 30,
+        "nal_length_size": "4",
+        "pix_fmt": "yuv420p",
+        "profile": "High",
+        "r_frame_rate": "25/1",
+        "refs": 1,
+        "sample_aspect_ratio": "1:1",
+        "start_pts": 0,
+        "start_time": "0.000000",
+        "tags": {
+          "DURATION": "00:00:05.640000000"
+        },
+        "time_base": "1/1000",
+        "width": 512
+      },
+      "native_adapter_receipt": null,
+      "renderer_command": {
+        "argv": [
+          "/root/autodl-tmp/wav2lip-syncnet/envs/wav2lip/bin/python",
+          "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/inference.py",
+          "--checkpoint_path",
+          "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/checkpoints/wav2lip_gan.pth",
+          "--face",
+          "/root/autodl-tmp/tts-research-20260930/portable_source_axis_20260930/inputs/primary_face.png",
+          "--audio",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/input/natural_1_official_load_f32.wav",
+          "--outfile",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/render/generated_video.mp4",
+          "--static",
+          "True",
+          "--fps",
+          "25",
+          "--pads",
+          "0",
+          "10",
+          "0",
+          "0"
+        ],
+        "cwd": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/generator_cwd",
+        "ended_unix": 1791423957.3872771,
+        "returncode": 0,
+        "started_unix": 1791423950.9363256,
+        "stderr_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/logs/renderer.stderr.log",
+        "stderr_sha256": "744d93019837f30a81e1b6a0fe92633b5cf90516fca2518415f817859551f2fc",
+        "stdout_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/logs/renderer.stdout.log",
+        "stdout_sha256": "58e88c1309ea58c77f1cf36ba16edf161c28be9978a7f46e3d55ee8982188880"
+      },
+      "resource_after": {
+        "cgroup_memory": {
+          "available_bytes": 57664434176,
+          "controller": "cgroup_v2",
+          "current_bytes": 8907558912,
+          "identity": {
+            "controller": "cgroup_v2",
+            "inode": 139156,
+            "limit_bytes": 66571993088,
+            "relative_path": ""
+          },
+          "limit_bytes": 66571993088,
+          "path": "/sys/fs/cgroup"
+        },
+        "effective_ram_available_bytes": 57664434176,
+        "gpus": [
+          {
+            "driver_version": "595.91.07",
+            "memory_free_mib": 32230,
+            "memory_total_mib": 32760,
+            "uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea"
+          }
+        ],
+        "host": "autodl-container-v6l4us903l-21144e17",
+        "host_mem_available_bytes": 506717192192,
+        "observed_unix": 1791423957.4613128,
+        "output_filesystem": {
+          "available_bytes": 7030304768,
+          "block_size": 4096,
+          "device": 88,
+          "existing_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02",
+          "requested_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02",
+          "total_bytes": 32212254720
+        },
+        "python_executable": "/usr/bin/python3.10",
+        "python_version": "3.10.12",
+        "shm": {
+          "available_bytes": 26444845056,
+          "block_size": 4096,
+          "device": 95,
+          "existing_path": "/dev/shm",
+          "requested_path": "/dev/shm",
+          "total_bytes": 33285996544
+        }
+      },
+      "resource_before": {
+        "cgroup_memory": {
+          "available_bytes": 57663979520,
+          "controller": "cgroup_v2",
+          "current_bytes": 8908013568,
+          "identity": {
+            "controller": "cgroup_v2",
+            "inode": 139156,
+            "limit_bytes": 66571993088,
+            "relative_path": ""
+          },
+          "limit_bytes": 66571993088,
+          "path": "/sys/fs/cgroup"
+        },
+        "effective_ram_available_bytes": 57663979520,
+        "gpus": [
+          {
+            "driver_version": "595.91.07",
+            "memory_free_mib": 32230,
+            "memory_total_mib": 32760,
+            "uuid": "GPU-d09622d0-3535-e662-bb45-3df2b049fcea"
+          }
+        ],
+        "host": "autodl-container-v6l4us903l-21144e17",
+        "host_mem_available_bytes": 506707693568,
+        "observed_unix": 1791423950.935542,
+        "output_filesystem": {
+          "available_bytes": 7030996992,
+          "block_size": 4096,
+          "device": 88,
+          "existing_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02",
+          "requested_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02",
+          "total_bytes": 32212254720
+        },
+        "python_executable": "/usr/bin/python3.10",
+        "python_version": "3.10.12",
+        "shm": {
+          "available_bytes": 26444845056,
+          "block_size": 4096,
+          "device": 95,
+          "existing_path": "/dev/shm",
+          "requested_path": "/dev/shm",
+          "total_bytes": 33285996544
+        }
+      },
+      "row_id": "strictrepeat_wav2lip_gan_bac9a81e_02",
+      "seed": 20261003,
+      "silent_video_bytes": 81666,
+      "silent_video_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/silent_video.mkv",
+      "silent_video_sha256": "cbd2a4f8bb7d21a0648bcc637477772df5e763d25b440b5564ba649653a375f6",
+      "source_audio_file_sha256": "d12ced7d44e7d70713a7e201abe47ff60ec190af20e9cd447cba5d325c11caa4",
+      "source_audio_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/input/natural_1_official_load_f32.wav",
+      "source_face_path": "/root/autodl-tmp/tts-research-20260930/portable_source_axis_20260930/inputs/primary_face.png",
+      "source_face_sha256": "e3a695edf22a89cac40184453131019874a65e15592593d5be30e7f71373d9c6",
+      "status": "PASS",
+      "strict_startup_process_receipts": [
+        {
+          "bytes": 2116,
+          "entry_matches_backend": true,
+          "entry_path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/inference.py",
+          "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/strict_startup_receipts/98216.json",
+          "pid": 98216,
+          "policy": {
+            "cublas_workspace_config": ":4096:8",
+            "mkl_num_threads": "1",
+            "numexpr_num_threads": "1",
+            "omp_num_threads": "1",
+            "openblas_num_threads": "1",
+            "pythonhashseed": "20261003",
+            "torch_allow_tf32": false,
+            "torch_cudnn_benchmark": false,
+            "torch_cudnn_deterministic": true,
+            "torch_num_interop_threads": 1,
+            "torch_num_threads": 1,
+            "torch_use_deterministic_algorithms": true
+          },
+          "policy_payload_sha256": "54d853a6b6ce09cc8c757297f9617b5ecf4e0d01458a0b2e33dcf0316a4417f5",
+          "renderer_compatibility": {
+            "id": "wav2lip_librosa_filters_mel_positional_sr_n_fft_to_keywords_v1",
+            "installed_before_renderer_import": true,
+            "librosa_version": "0.10.2.post1",
+            "original_signature": "(*, sr: float, n_fft: int, n_mels: int = 128, fmin: float = 0.0, fmax: Optional[float] = None, htk: bool = False, norm: Union[Literal['slaney'], float, NoneType] = 'slaney', dtype: Union[numpy.dtype[Any], NoneType, type[Any], numpy._typing._dtype_like._SupportsDType[numpy.dtype[Any]], str, tuple[Any, int], tuple[Any, Union[SupportsIndex, collections.abc.Sequence[SupportsIndex]]], list[Any], numpy._typing._dtype_like._DTypeDict, tuple[Any, Any]] = <class 'numpy.float32'>) -> numpy.ndarray",
+            "shim": "positional sr,n_fft mapped to keyword arguments; remaining defaults unchanged"
+          },
+          "sha256": "93bd742ea332b020ad60725b2f77d3bf6da816fbf3b1232b479917113b6a3ebf"
+        }
+      ],
+      "strip_command": {
+        "argv": [
+          "/usr/bin/ffmpeg",
+          "-v",
+          "error",
+          "-nostdin",
+          "-y",
+          "-i",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/render/generated_video.mp4",
+          "-map",
+          "0:v:0",
+          "-c:v",
+          "copy",
+          "-an",
+          "-map_metadata",
+          "-1",
+          "-f",
+          "matroska",
+          "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/silent_video.mkv"
+        ],
+        "cwd": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02",
+        "ended_unix": 1791423957.6168046,
+        "returncode": 0,
+        "started_unix": 1791423957.551658,
+        "stderr_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/logs/strip_audio.stderr.log",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdout_path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/logs/strip_audio.stdout.log",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "syncnet_python_identity": {
+        "numpy": "2.2.6",
+        "python": "/root/autodl-tmp/wav2lip-syncnet/envs/syncnet/bin/python",
+        "torch": "2.5.1+cu124"
+      },
+      "wav2lip_runtime_compatibility_receipts": {
+        "actual_forward_policy_receipt": {
+          "bytes": 10332,
+          "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/control/w2l_actual_forward_policy_receipt.json",
+          "sfd_forward_count": 1,
+          "sha256": "e44517b54af6e82b6e73402b42201d9bda606b16d32f67aec353f33b8422daf3",
+          "wav2lip_forward_count": 2
+        },
+        "constructor_policy_receipt": {
+          "bytes": 6944,
+          "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/control/w2l_facealignment_policy_01.json",
+          "sha256": "244ab72cb5845f731925bbd8c5fd8bf9a3576fa0aa8ff99527d3c569947d72bf"
+        },
+        "prewrite_pixel_array_receipt": {
+          "bytes": 51326,
+          "frame_pixel_array_sha256s": [
+            "80a08ceb4c1c98e77a87756ed25a588583accea5c3b947e1e88053bd68842dd3",
+            "b8d478b22bba118efa67dbaf17741e1f0a4b577049167dd6469fcca06eae96ed",
+            "3403363bbae205a5f534dc10341f996791e0f9aca1cfdc7ae7b1cc43b1db16d9",
+            "b5487d993714f1d412ed8dbc7192c910bc5ac6378edc20f31a6bee25e7cebc12",
+            "39a60226c7db76076554fff9d6d70a8829d28fc15147bfac4e03b6390bae788c",
+            "18833487bb504223e678c119fa835609adc02105189f2365f52b1ba11b8cc93a",
+            "e70426bbd6f9e6c025713a281f04d67c05476bf012752c6e97fae66805ef348c",
+            "c74dc9a6b5084bf9613891c49624e6afb81f2e7936f553b327edd71b8e327730",
+            "cc5501712a7944c97d25bdb95fa262c1c9339c02b6481d72170f81c38d125b77",
+            "bea39b257bccc615482f6dfd987b426cc350d01275d28399967acb87421f634d",
+            "df179d331a6535c362beb251e72ca5b9fb8faf0b50526c04c8fb7c6c4b5119e2",
+            "f1c8f839960377f4895ec56ac353d6d1cf8603fad42416428c6f1dc5ebf9ace8",
+            "89cf1b0ddf2d187ec36540ab94751466a1b5ec4c2ab12fb25f10ed1f04ae6eb9",
+            "020e2b5371515d6de18a7019307d1b12c25e5756f2e47a6920d77729f9548031",
+            "11c8c78879a16b758dee5e796de702296203ce8cd9ab51476785667870f83e7b",
+            "8fb66cd1b3bd9567b0ad2e01a8ea28219175cf185b25d7be10d95a6b1cefd88c",
+            "77cb6a9536603dbf71a8f7a2ecf10669a748c4dd18597893a5b8cd85780678ba",
+            "779e16c76cdc206fc95426813468c9bd9cbecba25727e7daef0c8800e13a70de",
+            "37c7de58ca6243f240c1f6d2da61bd797d4a20975837ac54c25eabe9fda68297",
+            "40bdbd4085597d767a8397a01441aa71437e1336cd07ff17b164f13c1ef996cf",
+            "77d278c627f60b29f3893e5936a12dec05bb1f800a30b09d1469aa4c28546016",
+            "02554f743722c926c7ecbb72143d208e803b1fd49cab2dd57dbb26e7db41c764",
+            "0f7c2e1436dbea845f41118b6cbbc27a619226ee3fa7aa700ce395c587f2844d",
+            "baa1dbc99cd1e97f3ff9dcdf09c5081aca32f09c6efc96defa4ecda22fb2dda1",
+            "0cfc61257815f465189a1cef495c1548cb18a0650b5c95d2c5de6f6c98016fcf",
+            "9e83411c6a07dfc9868795c08f081b4a4afa7f0e3c74eb12109170ed6d1b927b",
+            "55830e957414cf9ffc7606af3b7a1505bd1699a8a84262e17e2c9a2a180c5731",
+            "b84035a2c425d759b9dec8f43f9029371b49e482fd941879c37f75289538b680",
+            "e217ac171dd6394c046ab2e26fc3d2428d5fc883f192ec4bfa8764faf43fb1db",
+            "c776f09b684b224b4656aead10801b6503b4a47e555cd00cf1ce164b4c1766e3",
+            "c1d4581888b8e8588eb60e462a558122e8cab51bb07ecaabf91696c8af302ba2",
+            "787cd8a105076b6631faef03151f2205c79829771a8c17cd29f221f66bc4fe9a",
+            "e191551958ac89a9d43fcaf2a609944f6c8f7befeb943b2d49a69aa7687d60c5",
+            "c2f3fb14d7e737e1bc21ecd17e3e0968780d79019f8f1639e1f7079f1839e595",
+            "80c2eaed41dffa133894d66297e7f01e9a76ed878696e790f1ce5af88a7380ae",
+            "464e267549b80d81e6668633707f2831b1a60a096f7304067429f9916ce0be07",
+            "293f4795526aaf28a1b9b5f3f2d964f9340f207234c1766b4175f23d5d7450b8",
+            "c844b290b2eaf846ebc838237ee4056609a6176e2758706ba31cbdd9284aab05",
+            "0f85c913c77f7c44c6907263d3c76b31a0584820c9464dc2e709d6550d67b3c8",
+            "d7ecccbcff5729a3c1fb1bdb792ea5a969ffe54649733c63d594d07d849c7a8b",
+            "b7c872c7b6d9a08ae937669d9841bd36651890710acf1fea61b95fdbd048feea",
+            "ab5a8dc3c84a367715c4d6df4765778ff760460e87a2bdb60c409e81590e36be",
+            "6d48af65664962771665c3e437812cbd2fda1b19173faa3ec1d972e32b621fcd",
+            "2a530d23ac55fd4f92018188a027fa9305a935fc312d3d4ecfc13678a21a8ec6",
+            "ade2bb350a224c506076b0e717d5d0ff15529429e458e30a3c1b26aa4b27aaa5",
+            "a38fcf822ddb025bf1a8ad75059ce310fad44d58e4f806c3380addc283a60b6d",
+            "356f2d6a6f0184458d3699953608b02fddcaf3c14e866314f3da16f192a98deb",
+            "cf0cde8db819c47c591e08bf097a0cc530d6847c24612b0087d5a4e351de8783",
+            "d0fe432a709f2294f42970af0e160d429f99863e2aab4538f3457df4e31c0ff9",
+            "6ec3db378719ab403bb29ce0a1cb76065c82216bd14a844ec7d1607477c83233",
+            "ec90b3b39e0a13e7f84bd95c53336606b0fc1050cde815899bfcf02cd060f6e3",
+            "7ab2fe22b7cea23be2719b58ed05799698a4c150a11a5fbb92560d8b13573aa4",
+            "808f628daeb93d51c7795ab2e51673938ef0af3bb00d036221b830e4d248f5ac",
+            "a61e22461c730a55befee26dfbf3d644ea417078b41a51a5117d9a7137ed3b30",
+            "2abfabe23a202defdd4a9cda8aa2ffa722109f261d576dca62dc5c205019ac52",
+            "a489ed1ff1b84421614f9cb80e8d9126b5446c8a3685159eaa2f8dd0a5742c6d",
+            "2a1586b06bf03634cbba5b2ff932443c0ad66135bf948547cede5b6bbd873943",
+            "2b41db6836cc19ec46e367b0c5ebd7cefe30887ceb0c204c87574074dfb88914",
+            "8606086ee430854605c63b3faa641a43b090e8ae7434937e4a862efe9126089f",
+            "5e910ffe426b862c99c7acbb61aeea06df5aaeeff7bbbd90a9fc5bbcf06b5c2e",
+            "9a139500443c6697713c6772a87fc94cc073df9747b6f4ffcecbb07228776168",
+            "d8c89427beecae917abe97c1d6a81b7a63c02c80e31ccd6b71cfa17906e6a344",
+            "4de3fd6354627ac2c9ebf70a04772a3513e3c0ed0e4e316bdda9ff99c4bf1ea2",
+            "258d446dc60d6330d3f3e8535ccb029ff87e1b290dd768c549c8d5fb4318219b",
+            "a406b843b0808a71bef320387b753da0fc5496899b402bfd409e3005ade06098",
+            "1b4f743ace47f331354499e55a0cc0431f4057052012b88f1bd24874b81094a5",
+            "02630fa4b46f644909dc2b6bcd465839208d710408a56f2af9e5128ddd31492c",
+            "bf095fa2b6bbf12caeb4d46b731fe309feb757533f4b567e3ef37cd61cf35615",
+            "a3175399ca0fb468c7509478c7e18934aa29ec2909f10a881da22c0f56135cdd",
+            "2cfee9755a5f5c7f0b13dbc873b64ad2dcf0a2e5c848d8e4fc6b80595d8ae32b",
+            "6612c4fddfb6aad4255e22b95acbd137f4754ae04bd0bae79033497501a629df",
+            "0ae533f39ee14dcdc45afa7375b458a00e6d1e6d3231d4aa372bfccd2f391b0d",
+            "3a8fdec550af8fee1ba5557e8cf1b06165514f167650893f614501601ac37e24",
+            "3bfc6303ea2e30eccce58f377e67bc14ca36e9efe56e28d37d01b1b25c778f09",
+            "044445763498c6fe63986a83173dab56919354c67ab4d6804f08b062de660a43",
+            "7a760ddd9a987b0c9a1017937020f801449b75e632205ac94fb1e5768e71c740",
+            "cce1c61912ca70599320bd7abd43bc958c4d73f054b56cf675d5f5c5012aab8c",
+            "2640219c55f33267479258aee055aa2f13a8d105f9f5c3ec1030d79fad461980",
+            "dffccae68c290aba26d8c1a909160e092ea4ae82aa882ba86c0c336d8ba57106",
+            "8e6df5e5aecaa8562791198621d5ad1a65a43ed04833aed2b5d271220a99d0aa",
+            "8e73e6778f5034152157d188ca558488036d451f60f864d0166c5f0f4d0e4a24",
+            "495e8f27c39f7e45637e754f2ae87e932290b66e84ed6109083b6f84ca4b9f9d",
+            "b0c2784245341bb2390e4cc2282ad42184b2bd8872e8b0b44524815651d2db1a",
+            "771e009e0fc9dd29d4f2ff3d9004b896634bb56fc5cd11edc9779ed27176daab",
+            "87ba1853def3c510f8107d05fddd68dbc27492adb130c2937e657be34060a320",
+            "16e9dbcc1c947ea2ed5f29024c80adc81fbd301bec66fc092eb0a42750f26cd2",
+            "0580786b9040fddba10df93467bfb0a5212383d25b098f168da0fdd14d93ba40",
+            "2216ad5a6712f4172b6216d047cdd9a6cfc0bb49d20508612c341a30a1f35785",
+            "20b9698662b2c5fa5dd3c2506b5a4def77e0b961c97adccadc810631046532c3",
+            "d85e0c1790c4be137d3d45302374a1a34f43d980763ab220df6c0bce248ee6c0",
+            "aa9fd603e71228a7158ccd8b618d4acbf21e9858f4b45717755c14a25356e28b",
+            "bc7167f3d3209b51cae63c690273b30bcc3274226b2a89f3fa195e85833622a9",
+            "d4150f3aa65255f7255d15bfd1043b47632deb7ed9409b05857559f4b8632ffd",
+            "94c099ab4ae8537cc3f5de77b0ea5201b8c0651e6e224515db69a4c2f9918b73",
+            "05ea4401213f8c6b13749d7be194b5b8733f644bc8cb9185d516a45dfeb70fb9",
+            "fba3431369c1467410f4f36307325211dcc5c462185283f0f10624f3f5ac63ad",
+            "a01f702f83c5e36f8cfa449624598ce7cf1f34ab70048828aa84ccbdad658970",
+            "0609ea03bc04f907ddbff8ed2cb10740fc20ff2f2582d1ee4dc338b9ac27455e",
+            "4b6e8edc39379c7771183d74ab5239911a4baae5d7e5d5d9358ad49903f8294a",
+            "4de270ced9dbe4d20c4d017a2b09d5a4571e2b7d56ae0d611a163ef7575aeba8",
+            "845924aa3cdeb7ab7b2d657a3e2eccf2fabb9e6980b1652ad9a1c205d98a8b3e",
+            "e04860e3c883de0f1168f42c9cc571d8c861a358aaa2cffacaff463cc2f5dd7e",
+            "232afd0f050736a109b87798dba95f692c6329c1c06d3388510baacea0d01ac2",
+            "0eb2da5bca37ec70c60ddb31462d5d61cc1e67a37ad32c487f675ac02194bbf1",
+            "823fa8cbc0051465b70200ca67df700727313e4dc1fe2658326dc00f00e63664",
+            "e0e4c3d16651a169c76d5bc02a2b646a7d7b05f5eb62225d7360dd3db24fdff5",
+            "99fe1e48818b45b347042531d5c35f9828e17f2ae76ae80dff0ef79dd7a59744",
+            "7ae41ad062d603532635f4e008ba342ccfff9a71129e0f2f47fd0adf02740536",
+            "0699b5e873f0721c4e6e60a3bb98049d90e5639f80ca955ee9819e4e7f70d002",
+            "0d3765c377984af871d8a4264cdc74b11ada154c62ab7188c024012b109e72ab",
+            "165e86ef585018fc393d50e391f3f65265c6cf4e47ae483bbd382ffd48d3a45d",
+            "cc90c537b491612a05a429e0fd0c4fbf1cf3d5b41d229d1f74e956b2af9b9fd3",
+            "63c89e35dd4c32a5a52531d2608d63a5927b992686a7454da66518bb263653f2",
+            "a0155a272db1c829811c2ca11071494301e73f145abcc43b32ac2eb720ae37f7",
+            "a1c1da9068bb386af7589e82b4b9e6ee89541f6609ce03b80fee8b8511a8ad00",
+            "4ccaac61bd71f2de5941153cb3a5768b3b809f8cbe020e37526c6e6d4ba28e4f",
+            "0332a7a5f679daf68a8bc251f2f9c1c48753dae22ffac8d2efd88e3c2119c04e",
+            "db19832be186a60793b1e4a9f23d5f84d9f35ac4bbb21701a89bc22fa784a077",
+            "d8ed0cdbedff83d7b5ae922f2560e249ac9a849c568eb2034e420a01bf7cdbdf",
+            "9fbe53d68e788c478c68f165ce739c54549dce8954ca546c8e528b496c223d60",
+            "dece51fe04c1afc9204ea34d16fa262979e94e9badb186431e66766f711a01ac",
+            "bda2c1310aadf7a78d4a4e0b47f40393597a08ffc12d71a1b6c708eb00507e21",
+            "6deaa2dd63f9305b8ea78563de4ba41e82d7e354fc8be2704650636bf961afe7",
+            "3a90de39898630182c5fe9e19b4d90341b1334ab726ece6a8a9fcde44deea06a",
+            "9dc81eb0aedf364ffbce92bbd4b7f3e97017565dee0f37e44e7407d9abb0e6ef",
+            "50cb94b92b0e1c066d6be5860284c8fa50440113c97f4f9734c61d72e462e344",
+            "08df4d290af343e396a713c06523b5872d67dab46a317a284b3ef61b9ab71248",
+            "a37e7fd4869d49281cfeebe1c6268fdd668485312a9d58e332905443474a3a26",
+            "944b039e4e63b5fd74d50af116319c98454ffd393cf5028cdd621cb7f0109d78",
+            "37126ecc5850ef28b8138eaf4f7a66bd1a53ac50a62909a2a20617636bd7a9f3",
+            "bb22e064225209fd6007e64de4b01ce40a0d645f7b5b23483c8092253bcda820",
+            "534fa706b3eb38678b2bb46082ef988249c5d469f9188699da8e5d6de944cfc2",
+            "672b3f022302fc805aac9c619764a035403bc8872990d3bf2ff28affd76043b0",
+            "4cfcd0cf4a728eb7619ceaf7f2f4e9817ca6e1e23027f013ea7d88f40beda38e",
+            "b88695a121ac04dc68195c97c18520c86f2e773f7c185eebc9eaa467d8ef715e",
+            "581df262b9e3249625043cc84484535b5ab2466d720007412d047bfbcb9b05a1",
+            "6e3d417ce17eb807a1050f56c1df4e39e33cb363f22e02a37ebf2bc7812fad2e",
+            "750d6e57c54f9cd61090474c82e34cad19518fb497fdc94aca6753ff04335883",
+            "cb69cd36872c3568f3593cb77e7db915513cc1fa97fe79ec08cb35e2e0e39f9e",
+            "e0238186c298cb30405568ace98c097ab677b0a9a89838914afab5fa7e38bb08",
+            "4d33d87fd294251fc8b95e03143b88cc8e36c5cec757f20af099198e12131dda"
+          ],
+          "ordered_frame_hashes_sha256": "ba3e265c9f79d419475db42ff68eb3ed1d16b704f42be7aa6be4e071b7d46ada",
+          "path": "/root/tts-research-system-20261001/runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/backend_strict_repeat_attempt12/models/wav2lip_gan_bac9a81e/strictrepeat_wav2lip_gan_bac9a81e_02/control/w2l_prewrite_pixel_arrays.json",
+          "sha256": "680332af9dae0689848614313f1eda8bceea57111688abd1bc80b6400a2569b6"
+        }
+      }
+    }
+  ],
+  "run_id": "cross_tfg_backend_strict_repeat_20261008_attempt12",
+  "runtime_identity": {
+    "backend_dependencies": {
+      "wav2lip_gan_bac9a81e": [
+        {
+          "approved_symlink_chain": [],
+          "bytes": 4499,
+          "inventory_id": "bb747fcd57852b03f55c5f830d9430f929827b28a49f71cf98b36575ff0a01d3",
+          "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/audio.py",
+          "resolved_path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/audio.py",
+          "role": "backend_source",
+          "sha256": "71d5e927cac3d0b7103e7671a43b82b41b6a56398a092bbfa2e96d3041249c4c"
+        },
+        {
+          "approved_symlink_chain": [],
+          "bytes": 435801865,
+          "inventory_id": "67d0db43ebe83a86a828a4caddb561fe1d4d72e8ac051d8e4ea493ffa549f901",
+          "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/checkpoints/wav2lip_gan.pth",
+          "resolved_path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/checkpoints/wav2lip_gan.pth",
+          "role": "backend_checkpoint",
+          "sha256": "ca9ab7b7b812c0e80a6e70a5977c545a1e8a365a6c49d5e533023c034d7ac3d8"
+        },
+        {
+          "approved_symlink_chain": [],
+          "bytes": 3556,
+          "inventory_id": "78f31b2f1ea1c1bc92fbd205fab0ebf36095db65454aa8ea6283cb6fcdb9c084",
+          "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/hparams.py",
+          "resolved_path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/hparams.py",
+          "role": "backend_source",
+          "sha256": "4a4c31dc51ebd8140da18ac24841e582b2472389f7c65e7f0a6b4447fc0c71cf"
+        },
+        {
+          "approved_symlink_chain": [],
+          "bytes": 9750,
+          "inventory_id": "46b40c63563293952453e442fa9846c72a3936150aa7fb8a66aeec199d645a3f",
+          "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/inference.py",
+          "resolved_path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/inference.py",
+          "role": "backend_source",
+          "sha256": "99662bfce2fdaf17c1cff8e71977ba02cb80c684058cd114c4e0648b12059fc6"
+        },
+        {
+          "approved_symlink_chain": [],
+          "bytes": 8579,
+          "inventory_id": "9f669e39c19b3b5a8ae597d08535e9bceef9337692dc9f81d3e99d8633303fa5",
+          "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/models/wav2lip.py",
+          "resolved_path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/models/wav2lip.py",
+          "role": "backend_source",
+          "sha256": "a02b54288f8200332ee4f0ea0c8013bca542b94d8149e514ac25a742a7a70e66"
+        },
+        {
+          "approved_symlink_chain": [],
+          "bytes": 9525,
+          "inventory_id": "strict-bootstrap:wav2lip_gan_bac9a81e",
+          "path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+          "resolved_path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+          "role": "strict_determinism_bootstrap",
+          "sha256": "3099c4b2e1c650f7aa46c31145cc2c88ccda9f085288ab039c6ffed85007ab65"
+        }
+      ]
+    },
+    "backend_identity": {
+      "wav2lip_gan_bac9a81e": {
+        "generator": {
+          "checkpoint": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/checkpoints/wav2lip_gan.pth",
+          "checkpoint_sha256": "ca9ab7b7b812c0e80a6e70a5977c545a1e8a365a6c49d5e533023c034d7ac3d8",
+          "child_script_sha256": "cf4d34832ee93bf5a4d2e4be349dad15469e423888c0a1c41bbbdf53f2a4726d",
+          "face_path": "/root/autodl-tmp/tts-research-20260930/portable_source_axis_20260930/inputs/primary_face.png",
+          "fps_den": 1,
+          "fps_num": 25,
+          "implementation": "official Wav2Lip inference.py child; seeded Python/NumPy/Torch; static primary_face",
+          "python": "/root/autodl-tmp/wav2lip-syncnet/envs/wav2lip/bin/python",
+          "repo": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip",
+          "runner_sha256": "d12c863ffcd5eacde7b0d09b0abc097429d0318ccea3b059d022d5b2e52e2a94"
+        },
+        "model_binding": {
+          "audio_frontend": "wav2lip_official_16k_float32_mel",
+          "fps_den": 1,
+          "fps_num": 25,
+          "generator_audio_preprocessing_sha256": "b25801439c687a704d123667a24f6f9c85b737727eb87cd2717b77b73313cc1f",
+          "model_id": "wav2lip_gan_bac9a81e",
+          "model_sha256": "ca9ab7b7b812c0e80a6e70a5977c545a1e8a365a6c49d5e533023c034d7ac3d8",
+          "preprocessing_sha256": "2b4e0aaa6d43cca007ddcd6fee750baf96a4e8b9861152768ad2f4890f8ffe64",
+          "score_model_sha256": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442"
+        },
+        "source_dependency_count": 6,
+        "source_dependency_manifest_sha256": "9e5817591534c8516cfeb8a570158e9fefa7eef535feb1efacf8db78fc3e277b",
+        "source_model_dependencies": [
+          {
+            "approved_symlink_chain": [],
+            "bytes": 4499,
+            "inventory_id": "bb747fcd57852b03f55c5f830d9430f929827b28a49f71cf98b36575ff0a01d3",
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/audio.py",
+            "resolved_path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/audio.py",
+            "role": "backend_source",
+            "sha256": "71d5e927cac3d0b7103e7671a43b82b41b6a56398a092bbfa2e96d3041249c4c"
+          },
+          {
+            "approved_symlink_chain": [],
+            "bytes": 435801865,
+            "inventory_id": "67d0db43ebe83a86a828a4caddb561fe1d4d72e8ac051d8e4ea493ffa549f901",
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/checkpoints/wav2lip_gan.pth",
+            "resolved_path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/checkpoints/wav2lip_gan.pth",
+            "role": "backend_checkpoint",
+            "sha256": "ca9ab7b7b812c0e80a6e70a5977c545a1e8a365a6c49d5e533023c034d7ac3d8"
+          },
+          {
+            "approved_symlink_chain": [],
+            "bytes": 3556,
+            "inventory_id": "78f31b2f1ea1c1bc92fbd205fab0ebf36095db65454aa8ea6283cb6fcdb9c084",
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/hparams.py",
+            "resolved_path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/hparams.py",
+            "role": "backend_source",
+            "sha256": "4a4c31dc51ebd8140da18ac24841e582b2472389f7c65e7f0a6b4447fc0c71cf"
+          },
+          {
+            "approved_symlink_chain": [],
+            "bytes": 9750,
+            "inventory_id": "46b40c63563293952453e442fa9846c72a3936150aa7fb8a66aeec199d645a3f",
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/inference.py",
+            "resolved_path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/inference.py",
+            "role": "backend_source",
+            "sha256": "99662bfce2fdaf17c1cff8e71977ba02cb80c684058cd114c4e0648b12059fc6"
+          },
+          {
+            "approved_symlink_chain": [],
+            "bytes": 8579,
+            "inventory_id": "9f669e39c19b3b5a8ae597d08535e9bceef9337692dc9f81d3e99d8633303fa5",
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/models/wav2lip.py",
+            "resolved_path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/models/wav2lip.py",
+            "role": "backend_source",
+            "sha256": "a02b54288f8200332ee4f0ea0c8013bca542b94d8149e514ac25a742a7a70e66"
+          },
+          {
+            "approved_symlink_chain": [],
+            "bytes": 9525,
+            "inventory_id": "strict-bootstrap:wav2lip_gan_bac9a81e",
+            "path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+            "resolved_path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+            "role": "strict_determinism_bootstrap",
+            "sha256": "3099c4b2e1c650f7aa46c31145cc2c88ccda9f085288ab039c6ffed85007ab65"
+          }
+        ],
+        "wav2lip_runtime_compatibility_preflight": {
+          "child_environment_policy": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "credential_environment_forwarded": false,
+            "row_environment_present": false
+          },
+          "preflight_record": {
+            "dotted_module_spec_resolution_may_import_parent_packages": true,
+            "face_detection_sources": [
+              {
+                "bytes": 183,
+                "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/__init__.py",
+                "relative_path": "__init__.py",
+                "sha256": "7215846a10fcb2162dab619cf1cb45bd6c0faac2b7d1a71ed8cc1cc0811db86a"
+              },
+              {
+                "bytes": 2266,
+                "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/api.py",
+                "relative_path": "api.py",
+                "sha256": "c050676db49d8eb5de19f13c171101892b60b992b2a730cfbc8534967e4faeaa"
+              },
+              {
+                "bytes": 30,
+                "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/__init__.py",
+                "relative_path": "detection/__init__.py",
+                "sha256": "1f3233930bfb7ac8b1726e4af8ed9b93925046d16edc640afd218f9d02b6d235"
+              },
+              {
+                "bytes": 4868,
+                "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/core.py",
+                "relative_path": "detection/core.py",
+                "sha256": "ba16a80fac378da9b5bbfc9c190975ab4fe153b13b0d18d892ab5bbfcbb9c71e"
+              },
+              {
+                "bytes": 53,
+                "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/__init__.py",
+                "relative_path": "detection/sfd/__init__.py",
+                "sha256": "6fbfb62eccc1a14de7c0a8cb1ca6f3c59af42479955ac08acbf548f28ec1feed"
+              },
+              {
+                "bytes": 4279,
+                "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/bbox.py",
+                "relative_path": "detection/sfd/bbox.py",
+                "sha256": "3ed1487243bbde8ab47c567f46ee4b177a549e31440db8d71376bffc70a7bd86"
+              },
+              {
+                "bytes": 3769,
+                "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/detect.py",
+                "relative_path": "detection/sfd/detect.py",
+                "sha256": "1848d75a551131c786a5e10d4ffab517dda606af27913e19ab48467c1a779d71"
+              },
+              {
+                "bytes": 5291,
+                "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/net_s3fd.py",
+                "relative_path": "detection/sfd/net_s3fd.py",
+                "sha256": "80960aaefd9fb97a5e9784dc0a48bc38f43bdcaacb268782ede16a959e77a5a9"
+              },
+              {
+                "bytes": 1809,
+                "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/sfd_detector.py",
+                "relative_path": "detection/sfd/sfd_detector.py",
+                "sha256": "155be501e83825f9b0508ee7d596f13047559350adbdbf17fcbf361cfab22e92"
+              },
+              {
+                "bytes": 8619,
+                "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/models.py",
+                "relative_path": "models.py",
+                "sha256": "2cde93a32467b9c5cfd009499c917afe8c89f512622237c2d865ba8fbb8a37e9"
+              },
+              {
+                "bytes": 11808,
+                "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/utils.py",
+                "relative_path": "utils.py",
+                "sha256": "561bfe5ec349a28f086e04efbb2d43cbc45c15fbcac48c311d497cb2bd2efe9a"
+              }
+            ],
+            "filesystem_mutation": false,
+            "media_or_audio_read": false,
+            "model_or_scorer_forward_invoked_directly_by_preflight": false,
+            "model_weight_tensors_loaded_by_preflight": false,
+            "module_spec_origins": {
+              "face_detection": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/__init__.py",
+              "face_detection.api": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/api.py",
+              "face_detection.detection.sfd": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/__init__.py",
+              "face_detection.detection.sfd.net_s3fd": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/net_s3fd.py",
+              "face_detection.detection.sfd.sfd_detector": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/sfd_detector.py",
+              "models": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/models/__init__.py",
+              "models.wav2lip": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/models/wav2lip.py"
+            },
+            "python_executable": "/usr/bin/python3.10",
+            "python_no_user_site": "1",
+            "runtime_distribution_versions": {
+              "librosa": "0.10.2.post1",
+              "numpy": "1.26.4",
+              "opencv-python-headless": "4.9.0.80",
+              "torch": "2.5.1+cu124"
+            },
+            "schema": "cross_tfg_w2l_runtime_compat_preflight_v1",
+            "sfd_checkpoint": {
+              "bytes": 89843225,
+              "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/s3fd.pth",
+              "sha256": "619a31681264d3f7f7fc7a16a42cbbe8b23f31a256f75a366e5a1bcd59b33543"
+            },
+            "sfd_weight_file_hashed_readonly": true,
+            "shared_bootstrap": {
+              "bytes": 9525,
+              "path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+              "sha256": "3099c4b2e1c650f7aa46c31145cc2c88ccda9f085288ab039c6ffed85007ab65"
+            },
+            "shared_bootstrap_policy_payload_sha256": "54d853a6b6ce09cc8c757297f9617b5ecf4e0d01458a0b2e33dcf0316a4417f5",
+            "sitecustomize_origin": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/wav2lip_runtime_compat_attempt04/sitecustomize.py",
+            "status": "PASS_STATIC_CHILD_IMPORT_ROUTE",
+            "torch_cuda_initialized_at_preflight": false,
+            "torch_imported_for_cuda_initialization_check": true,
+            "wav2lip_model_source": {
+              "bytes": 8579,
+              "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/models/wav2lip.py",
+              "sha256": "a02b54288f8200332ee4f0ea0c8013bca542b94d8149e514ac25a742a7a70e66"
+            },
+            "wav2lip_models_package_initializer": {
+              "bytes": 82,
+              "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/models/__init__.py",
+              "sha256": "d6883f7d5c41623280c9cbce4963ad719347b9d4cdac614cadfff7b544535215"
+            }
+          },
+          "python_executable": "/usr/bin/python3.10",
+          "wrapper_source": {
+            "bytes": 41074,
+            "path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/wav2lip_runtime_compat_attempt04/sitecustomize.py",
+            "sha256": "462884a2534f73d93eb09cd05c87fefda677e3647366360fb81a9622fa7592ca"
+          }
+        }
+      }
+    },
+    "ffmpeg": {
+      "bytes": 301544,
+      "path": "/usr/bin/ffmpeg",
+      "sha256": "36d94a605d612e4090d1b8aec889d0c0801c6eafb1593c90f5c0dfd2e2966a45"
+    },
+    "ffprobe": {
+      "bytes": 178832,
+      "path": "/usr/bin/ffprobe",
+      "sha256": "d4f3ef9c12be756793cad83dd2004d89f49c1c4094053bfbbe7e28925c8fa4fd"
+    },
+    "syncnet_checkpoint": {
+      "bytes": 54573114,
+      "path": "/root/autodl-tmp/wav2lip-syncnet/syncnet_python/data/syncnet_v2.model",
+      "sha256": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442"
+    },
+    "syncnet_dependencies": {
+      "SyncNetInstance.py": {
+        "bytes": 6980,
+        "path": "/root/autodl-tmp/wav2lip-syncnet/syncnet_python/SyncNetInstance.py",
+        "sha256": "bd722bf844700d6a923dec2f10d7cacd65c0c6b22d09aa5d44d2509660e900d6"
+      },
+      "SyncNetModel.py": {
+        "bytes": 3342,
+        "path": "/root/autodl-tmp/wav2lip-syncnet/syncnet_python/SyncNetModel.py",
+        "sha256": "41b85aed0006546cb2d6dc9180c5bc3dac737ab80eff643022e397a349c30c22"
+      },
+      "run_pipeline.py": {
+        "bytes": 10426,
+        "path": "/root/autodl-tmp/wav2lip-syncnet/syncnet_python/run_pipeline.py",
+        "sha256": "3654a3cf22c74cb3071fca6fb97ca9fb7dd1a5943fe864169ff8c0b57eb80acf"
+      },
+      "run_syncnet.py": {
+        "bytes": 1727,
+        "path": "/root/autodl-tmp/wav2lip-syncnet/syncnet_python/run_syncnet.py",
+        "sha256": "c78fe9f75665aa9e7a2bb523e4e7e3734a857137ff70b29c88a7b4893c422ded"
+      }
+    },
+    "syncnet_git_head": "907c0b579c2e2d83f0eae1b2ac9e720cde4e5623",
+    "wav2lip_dependencies": {
+      "audio.py": {
+        "bytes": 4499,
+        "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/audio.py",
+        "sha256": "71d5e927cac3d0b7103e7671a43b82b41b6a56398a092bbfa2e96d3041249c4c"
+      },
+      "checkpoints/wav2lip_gan.pth": {
+        "bytes": 435801865,
+        "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/checkpoints/wav2lip_gan.pth",
+        "sha256": "ca9ab7b7b812c0e80a6e70a5977c545a1e8a365a6c49d5e533023c034d7ac3d8"
+      },
+      "hparams.py": {
+        "bytes": 3556,
+        "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/hparams.py",
+        "sha256": "4a4c31dc51ebd8140da18ac24841e582b2472389f7c65e7f0a6b4447fc0c71cf"
+      },
+      "inference.py": {
+        "bytes": 9750,
+        "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/inference.py",
+        "sha256": "99662bfce2fdaf17c1cff8e71977ba02cb80c684058cd114c4e0648b12059fc6"
+      },
+      "models/wav2lip.py": {
+        "bytes": 8579,
+        "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/models/wav2lip.py",
+        "sha256": "a02b54288f8200332ee4f0ea0c8013bca542b94d8149e514ac25a742a7a70e66"
+      }
+    },
+    "wav2lip_git_head": "bac9a81e63ecc153202353372e5724b83d9e6322",
+    "wav2lip_runtime_compatibility_preflight": {
+      "child_environment_policy": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONNOUSERSITE": "1",
+        "credential_environment_forwarded": false,
+        "row_environment_present": false
+      },
+      "preflight_record": {
+        "dotted_module_spec_resolution_may_import_parent_packages": true,
+        "face_detection_sources": [
+          {
+            "bytes": 183,
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/__init__.py",
+            "relative_path": "__init__.py",
+            "sha256": "7215846a10fcb2162dab619cf1cb45bd6c0faac2b7d1a71ed8cc1cc0811db86a"
+          },
+          {
+            "bytes": 2266,
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/api.py",
+            "relative_path": "api.py",
+            "sha256": "c050676db49d8eb5de19f13c171101892b60b992b2a730cfbc8534967e4faeaa"
+          },
+          {
+            "bytes": 30,
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/__init__.py",
+            "relative_path": "detection/__init__.py",
+            "sha256": "1f3233930bfb7ac8b1726e4af8ed9b93925046d16edc640afd218f9d02b6d235"
+          },
+          {
+            "bytes": 4868,
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/core.py",
+            "relative_path": "detection/core.py",
+            "sha256": "ba16a80fac378da9b5bbfc9c190975ab4fe153b13b0d18d892ab5bbfcbb9c71e"
+          },
+          {
+            "bytes": 53,
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/__init__.py",
+            "relative_path": "detection/sfd/__init__.py",
+            "sha256": "6fbfb62eccc1a14de7c0a8cb1ca6f3c59af42479955ac08acbf548f28ec1feed"
+          },
+          {
+            "bytes": 4279,
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/bbox.py",
+            "relative_path": "detection/sfd/bbox.py",
+            "sha256": "3ed1487243bbde8ab47c567f46ee4b177a549e31440db8d71376bffc70a7bd86"
+          },
+          {
+            "bytes": 3769,
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/detect.py",
+            "relative_path": "detection/sfd/detect.py",
+            "sha256": "1848d75a551131c786a5e10d4ffab517dda606af27913e19ab48467c1a779d71"
+          },
+          {
+            "bytes": 5291,
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/net_s3fd.py",
+            "relative_path": "detection/sfd/net_s3fd.py",
+            "sha256": "80960aaefd9fb97a5e9784dc0a48bc38f43bdcaacb268782ede16a959e77a5a9"
+          },
+          {
+            "bytes": 1809,
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/sfd_detector.py",
+            "relative_path": "detection/sfd/sfd_detector.py",
+            "sha256": "155be501e83825f9b0508ee7d596f13047559350adbdbf17fcbf361cfab22e92"
+          },
+          {
+            "bytes": 8619,
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/models.py",
+            "relative_path": "models.py",
+            "sha256": "2cde93a32467b9c5cfd009499c917afe8c89f512622237c2d865ba8fbb8a37e9"
+          },
+          {
+            "bytes": 11808,
+            "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/utils.py",
+            "relative_path": "utils.py",
+            "sha256": "561bfe5ec349a28f086e04efbb2d43cbc45c15fbcac48c311d497cb2bd2efe9a"
+          }
+        ],
+        "filesystem_mutation": false,
+        "media_or_audio_read": false,
+        "model_or_scorer_forward_invoked_directly_by_preflight": false,
+        "model_weight_tensors_loaded_by_preflight": false,
+        "module_spec_origins": {
+          "face_detection": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/__init__.py",
+          "face_detection.api": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/api.py",
+          "face_detection.detection.sfd": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/__init__.py",
+          "face_detection.detection.sfd.net_s3fd": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/net_s3fd.py",
+          "face_detection.detection.sfd.sfd_detector": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/sfd_detector.py",
+          "models": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/models/__init__.py",
+          "models.wav2lip": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/models/wav2lip.py"
+        },
+        "python_executable": "/usr/bin/python3.10",
+        "python_no_user_site": "1",
+        "runtime_distribution_versions": {
+          "librosa": "0.10.2.post1",
+          "numpy": "1.26.4",
+          "opencv-python-headless": "4.9.0.80",
+          "torch": "2.5.1+cu124"
+        },
+        "schema": "cross_tfg_w2l_runtime_compat_preflight_v1",
+        "sfd_checkpoint": {
+          "bytes": 89843225,
+          "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/face_detection/detection/sfd/s3fd.pth",
+          "sha256": "619a31681264d3f7f7fc7a16a42cbbe8b23f31a256f75a366e5a1bcd59b33543"
+        },
+        "sfd_weight_file_hashed_readonly": true,
+        "shared_bootstrap": {
+          "bytes": 9525,
+          "path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+          "sha256": "3099c4b2e1c650f7aa46c31145cc2c88ccda9f085288ab039c6ffed85007ab65"
+        },
+        "shared_bootstrap_policy_payload_sha256": "54d853a6b6ce09cc8c757297f9617b5ecf4e0d01458a0b2e33dcf0316a4417f5",
+        "sitecustomize_origin": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/wav2lip_runtime_compat_attempt04/sitecustomize.py",
+        "status": "PASS_STATIC_CHILD_IMPORT_ROUTE",
+        "torch_cuda_initialized_at_preflight": false,
+        "torch_imported_for_cuda_initialization_check": true,
+        "wav2lip_model_source": {
+          "bytes": 8579,
+          "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/models/wav2lip.py",
+          "sha256": "a02b54288f8200332ee4f0ea0c8013bca542b94d8149e514ac25a742a7a70e66"
+        },
+        "wav2lip_models_package_initializer": {
+          "bytes": 82,
+          "path": "/root/autodl-tmp/wav2lip-syncnet/Wav2Lip/models/__init__.py",
+          "sha256": "d6883f7d5c41623280c9cbce4963ad719347b9d4cdac614cadfff7b544535215"
+        }
+      },
+      "python_executable": "/usr/bin/python3.10",
+      "wrapper_source": {
+        "bytes": 41074,
+        "path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/wav2lip_runtime_compat_attempt04/sitecustomize.py",
+        "sha256": "462884a2534f73d93eb09cd05c87fefda677e3647366360fb81a9622fa7592ca"
+      }
+    },
+    "workspace_sources": {
+      "scripts/experiments/cross_tfg_audio_head_20261003/ditto_five_arg_shim_attempt06.py": {
+        "bytes": 20529,
+        "path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/ditto_five_arg_shim_attempt06.py",
+        "sha256": "7522e08402dab6dc6386f20e4ef667e97fe6ea62febc232e49953ba99b74ddda"
+      },
+      "scripts/experiments/cross_tfg_audio_head_20261003/engineering_qc_oldpilot_attempt06.py": {
+        "bytes": 31789,
+        "path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/engineering_qc_oldpilot_attempt06.py",
+        "sha256": "cf4d34832ee93bf5a4d2e4be349dad15469e423888c0a1c41bbbdf53f2a4726d"
+      },
+      "scripts/experiments/cross_tfg_audio_head_20261003/musetalk_five_arg_shim_attempt07.py": {
+        "bytes": 25103,
+        "path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/musetalk_five_arg_shim_attempt07.py",
+        "sha256": "39d75863cdbd94fc8942c395a2ebf16cacbff74e13bed5dbc8cbd62b74239d14"
+      },
+      "scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py": {
+        "bytes": 9525,
+        "path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/runtime_determinism_attempt03/sitecustomize.py",
+        "sha256": "3099c4b2e1c650f7aa46c31145cc2c88ccda9f085288ab039c6ffed85007ab65"
+      },
+      "scripts/experiments/cross_tfg_audio_head_20261003/wav2lip_runtime_compat_attempt04/sitecustomize.py": {
+        "bytes": 41074,
+        "path": "/root/tts-research-system-20261001/scripts/experiments/cross_tfg_audio_head_20261003/wav2lip_runtime_compat_attempt04/sitecustomize.py",
+        "sha256": "462884a2534f73d93eb09cd05c87fefda677e3647366360fb81a9622fa7592ca"
+      }
+    }
+  },
+  "schema": "cross_tfg_backend_strict_repeat_pilot_manifest_v1",
+  "seed": 20261003,
+  "selection_eligible": false,
+  "started_unix": 1791423925.0935585,
+  "status": "INCOMPLETE_BACKEND_SUBSET_WITH_REQUESTED_BACKENDS_PASS",
+  "strict_policy_payload_sha256": "54d853a6b6ce09cc8c757297f9617b5ecf4e0d01458a0b2e33dcf0316a4417f5",
+  "syncnet_python_identity": {
+    "numpy": "2.2.6",
+    "python": "/root/autodl-tmp/wav2lip-syncnet/envs/syncnet/bin/python",
+    "torch": "2.5.1+cu124"
+  },
+  "wav2lip_python_identity": {
+    "librosa": "0.10.2.post1",
+    "numpy": "1.26.4",
+    "python": "/root/autodl-tmp/wav2lip-syncnet/envs/wav2lip/bin/python",
+    "torch": "2.5.1+cu124"
+  }
+}

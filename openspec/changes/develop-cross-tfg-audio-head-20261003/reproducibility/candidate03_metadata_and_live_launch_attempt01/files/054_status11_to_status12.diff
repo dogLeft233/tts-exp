@@ -1,0 +1,253 @@
+--- .codex\scratch\dev360_candidate180_detached_launch_attempt11\read_candidate180_detached_status_attempt11.py
++++ .codex\scratch\dev360_candidate180_detached_launch_attempt12\read_candidate180_detached_status_attempt12.py
+@@ -17,25 +17,39 @@
+ os.environ["PYTHONDONTWRITEBYTECODE"] = "1"
+ 
+ ROOT = Path("/root/tts-research-system-20261001")
+-JOB = ROOT / "cross_tfg_audio_head_20261003/job_control/dev360_candidate180_detached_attempt10"
+-PLAN = ROOT / "runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cpu_prepare_attempt01/rebound_plan_attempt12/candidate_rebound_plan_attempt13.json"
+-ROWS = PLAN.parent / "planned_rows.jsonl"
++JOB = ROOT / "cross_tfg_audio_head_20261003/job_control/dev360_candidate180_detached_attempt12"
++PREFLIGHT = ROOT / "cross_tfg_audio_head_20261003/job_control/candidate_v3_cli03_metadata_preflight_attempt04/output/candidate_runtime_metadata_preflight_attempt03.json"
++PLAN = ROOT / "runs/cross_tfg_audio_head_20261003/candidate180_cli03_runtime_repair_attempt03/candidate_plan_attempt14.json"
++ROWS = PLAN.parent / "candidate_planned_rows_attempt14.jsonl"
++PLAN_MANIFEST = PLAN.parent / "candidate_plan_manifest_attempt15.json"
+ BINDING = ROOT / "runs/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/runtime_binding_attempt09.json"
+-CANDIDATE_ROOT = Path("/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/candidate180")
+-CONTROL_ROOT = CANDIDATE_ROOT.parent / "controls360"
+-CONTROLS_EXECUTION = CANDIDATE_ROOT.parent / "controls360.execution.json"
+-CANDIDATE_RUNNER = ROOT / "scripts/experiments/cross_tfg_audio_head_20261003/run_v3_step120_candidate_samehost_attempt13.py"
++CANDIDATE_REPAIR_BINDING = ROOT / "runs/cross_tfg_audio_head_20261003/candidate180_cli03_runtime_repair_attempt03/candidate_runtime_repair_binding_attempt10.json"
++CONFIG = ROOT / "runs/cross_tfg_audio_head_20261003/candidate180_cli03_runtime_repair_attempt03/v3_method_candidate_config_attempt03.json"
++CANDIDATE_NAMESPACE = Path("/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/candidate180_cli03_runtime_repair_attempt03")
++CANDIDATE_ROOT = CANDIDATE_NAMESPACE / "candidate180"
++CONTROL_ROOT = Path("/dev/shm/cross_tfg_audio_head_20261003/samehost_dev360_latebind_attempt01/controls360_repair_attempt10/controls360")
++CONTROLS_EXECUTION = CONTROL_ROOT.parent / "controls360.execution.json"
++CANDIDATE_RUNNER = ROOT / "scripts/experiments/cross_tfg_audio_head_20261003/run_v3_step120_candidate_samehost_attempt15.py"
+ CANDIDATE_DISPATCHER = ROOT / "scripts/experiments/cross_tfg_audio_head_20261003/run_cross_frontend_v3_candidate_attempt07.py"
+ WAV2LIP_PYTHON = "/root/autodl-tmp/wav2lip-syncnet/envs/wav2lip/bin/python"
+-CANDIDATE_RUN_ID = "cross_tfg_audio_head_20261003_v3_fit40_dev180_attempt02"
++CANDIDATE_RUN_ID = "cross_tfg_audio_head_20261003_v3_fit40_dev180_cli03_runtime_repair_attempt03"
+ CONTROL_RUN_ID = "cross_tfg_audio_head_20261003_samehost_controls_dev360_attempt10"
+ GPU_UUID = "GPU-d09622d0-3535-e662-bb45-3df2b049fcea"
+-PLAN_BYTES = 932236
+-PLAN_SHA256 = "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280"
++PLAN_BYTES = 934267
++PLAN_SHA256 = "1a6c8ae99c4b8a1141c6f65748d426ba88034c14badf5ecec497ffc11d62bc60"
+ ROWS_BYTES = 606042
+-ROWS_SHA256 = "c9dc6f9bf400aff7f2c25ee24528dfd3a038433c21e80e0177066b8ab3f8a19e"
++ROWS_SHA256 = "d781268d02c7495fd35c3bf314848863d57673eeef044a0c5edb19f9e8797f48"
+ BINDING_BYTES = 568289
+ BINDING_SHA256 = "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5"
++PLAN_MANIFEST_BYTES = 3172
++PLAN_MANIFEST_SHA256 = "cd0aa3e7bca14a7676dab7f82d621b93e1a173e586f04efcdbaf3794b022808c"
++REPAIR_BINDING_BYTES = 8057
++REPAIR_BINDING_SHA256 = "4d50fcb6e6fd7a6fcd6a4a59515f7e92c9cbb43250e22ac97994d5558bb84ba8"
++REPAIR_BINDING_SELF_SHA256 = "7106e528983dd927a031a02934da9dfc9aafe7e7c8a07617f2c1ca3fd47faeec"
++CONFIG_BYTES = 5240
++CONFIG_SHA256 = "fd2ce3509c457e40e618818828f6040ab65641315d40efe8f48e5dc3c5c3d1df"
++CPU_RECEIPT_SHA256 = "8c44b1c80a08e48465f25672ef6b990002653ff7d250ede7369be13dab3a3b09"
++CPU_RECEIPT_BYTES = 45226
+ MAX_RECEIPT = 4 * 1024 * 1024
+ MAX_LEDGER = 64 * 1024 * 1024
+ MAX_ARTIFACT = 32 * 1024 * 1024
+@@ -108,8 +122,8 @@
+ 
+ 
+ def expected_strict_startup_code() -> str:
+-    raw = read_regular(CANDIDATE_RUNNER, "pinned candidate13 source", 2 * 1024 * 1024,
+-                       35309, "8c3b45f73d420b1dac6db0d5676eaf3343324cbb582d17cad7a3868d27e42708")
++    raw = read_regular(CANDIDATE_RUNNER, "pinned candidate15 source", 2 * 1024 * 1024,
++                       49071, "438db8d3cd255b5996d3d0cfe12c5653a2f94d3b647931a8e3ad8dc059070486")
+     tree = ast.parse(raw.decode("utf-8"), filename=str(CANDIDATE_RUNNER))
+     fn = next((node for node in tree.body if isinstance(node, ast.FunctionDef)
+                and node.name == "strict_startup_gate_code"), None)
+@@ -118,10 +132,10 @@
+             and isinstance(body[0].value.value, str):
+         body = body[1:]
+     if fn is None or len(body) != 1 or not isinstance(body[0], ast.Return):
+-        raise ValueError("pinned candidate13 strict-startup source shape changed")
++        raise ValueError("pinned candidate15 strict-startup source shape changed")
+     value = body[0].value
+     if not isinstance(value, ast.Constant) or not isinstance(value.value, str):
+-        raise ValueError("candidate13 strict-startup command is not one pinned literal")
++        raise ValueError("candidate15 strict-startup command is not one pinned literal")
+     return value.value
+ 
+ 
+@@ -256,6 +270,8 @@
+         "--plan": str(PLAN), "--planned-rows": str(ROWS),
+         "--expected-plan-raw-sha256": plan_raw_sha, "--output-root": str(CANDIDATE_ROOT),
+         "--project-root": str(ROOT),
++        "--candidate-repair-binding": str(CANDIDATE_REPAIR_BINDING),
++        "--candidate-repair-binding-raw-sha256": REPAIR_BINDING_SHA256,
+     }
+     for flag, expected in required.items():
+         if flag_value(command, flag) != expected:
+@@ -265,8 +281,11 @@
+     if (execution.get("plan_raw_sha256") != plan_raw_sha
+             or execution.get("plan_manifest_raw_sha256") != manifest_raw_sha
+             or execution.get("planned_rows_raw_sha256") != rows_raw_sha
+-            or execution.get("runtime_binding_raw_sha256") != binding_raw_sha):
+-        raise ValueError("candidate execution record does not bind the exact plan/rows/manifest/runtime binding")
++            or execution.get("runtime_binding_raw_sha256") != binding_raw_sha
++            or execution.get("candidate_repair_binding_raw_sha256") != REPAIR_BINDING_SHA256
++            or execution.get("candidate_repair_binding_self_sha256") != REPAIR_BINDING_SELF_SHA256
++            or execution.get("candidate_output_namespace") != str(CANDIDATE_NAMESPACE)):
++        raise ValueError("candidate execution record does not bind the exact plan/rows/manifest/runtime/repair bindings")
+     return {"status": "INNER_ARGV_AND_INPUT_BINDINGS_MATCH", "interpreter": command[0],
+             "startup_code_sha256": sha_bytes(command[2].encode("utf-8")),
+             "dispatcher_path": command[3], "checked_flags": required}
+@@ -311,20 +330,26 @@
+             or len(control_parent.get("execution_raw_sha256", "")) != 64):
+         raise ValueError("launch receipt does not bind the completed all-PASS controls360 parent")
+     expected_source_pins = {
+-        "candidate13_guard": (35309, "8c3b45f73d420b1dac6db0d5676eaf3343324cbb582d17cad7a3868d27e42708"),
++        "candidate15_guard": (49071, "438db8d3cd255b5996d3d0cfe12c5653a2f94d3b647931a8e3ad8dc059070486"),
++        "candidate_v3_cli03": (43071, "2cf5fc0f73d7c8d5aabbbc457672e487de2f8a88e683976bb58698325a80fdfd"),
+         "candidate_dispatcher07": (12824, "f6844b51183b6cf3b57f6a62d0b1b9bd70c3a0d496480fe8cad70313907c16e3"),
+         "stagea_core06": (79475, "291f8b5cd48d8ebc63aafd814dcd37450eecba949fab98283cf20a27c6335483"),
+         "frontend09": (23249, "04adf397a2edc45c6e3bc1e67d2265ea1c6ad2fcdac3df268b290938e5bf74df"),
+         "strict_bootstrap03": (9525, "3099c4b2e1c650f7aa46c31145cc2c88ccda9f085288ab039c6ffed85007ab65"),
+     }
+     if set(receipt.get("source_pins", {})) != set(expected_source_pins):
+-        raise ValueError("launch receipt does not list the exact five candidate execution source pins")
++        raise ValueError("launch receipt does not list the exact six candidate execution source pins")
+     for name, (size, digest) in expected_source_pins.items():
+         if receipt["source_pins"][name] != {"bytes": size, "raw_sha256": digest}:
+             raise ValueError(f"launch receipt source pin changed: {name}")
+     plan_raw = read_regular(PLAN, "candidate plan", 4 * 1024 * 1024, PLAN_BYTES, PLAN_SHA256)
+     rows_raw = read_regular(ROWS, "candidate ordered rows", MAX_LEDGER, ROWS_BYTES, ROWS_SHA256)
+     binding_raw = read_regular(BINDING, "runtime binding", MAX_ARTIFACT, BINDING_BYTES, BINDING_SHA256)
++    repair_raw = read_regular(CANDIDATE_REPAIR_BINDING, "candidate runtime repair binding", MAX_RECEIPT,
++                              REPAIR_BINDING_BYTES, REPAIR_BINDING_SHA256)
++    repair = json.loads(repair_raw.decode("utf-8"))
++    config_raw = read_regular(CONFIG, "candidate CLI03 config", MAX_RECEIPT, CONFIG_BYTES, CONFIG_SHA256)
++    config = json.loads(config_raw.decode("utf-8"))
+     plan = json.loads(plan_raw.decode("utf-8"))
+     rows = [json.loads(line.decode("utf-8")) for line in rows_raw.splitlines() if line.strip()]
+     if (len(rows) != 180 or rows != plan.get("rows")
+@@ -338,25 +363,59 @@
+             or receipt.get("candidate_rows", {}).get("bytes") != len(rows_raw)
+             or receipt.get("candidate_rows", {}).get("count") != 180
+             or receipt.get("runtime_binding", {}).get("raw_sha256") != sha_bytes(binding_raw)
+-            or receipt.get("runtime_binding", {}).get("bytes") != len(binding_raw)):
++            or receipt.get("runtime_binding", {}).get("bytes") != len(binding_raw)
++            or receipt.get("candidate_runtime_repair_binding", {}).get("path") != str(CANDIDATE_REPAIR_BINDING)
++            or receipt.get("candidate_runtime_repair_binding", {}).get("bytes") != len(repair_raw)
++            or receipt.get("candidate_runtime_repair_binding", {}).get("raw_sha256") != sha_bytes(repair_raw)
++            or receipt.get("candidate_runtime_repair_binding", {}).get("repair_binding_sha256")
++               != REPAIR_BINDING_SELF_SHA256
++            or receipt.get("method_config", {}).get("path") != str(CONFIG)
++            or receipt.get("method_config", {}).get("bytes") != len(config_raw)
++            or receipt.get("method_config", {}).get("raw_sha256") != sha_bytes(config_raw)):
+         raise ValueError("current candidate inputs no longer match the launch receipt")
++    cpu_ref = repair.get("cpu_preflight_receipt", {})
++    cpu_path = Path(cpu_ref.get("path", ""))
++    cpu_raw = read_regular(cpu_path, "actual CLI03 CPU preflight receipt", MAX_RECEIPT,
++                           CPU_RECEIPT_BYTES, CPU_RECEIPT_SHA256)
++    cpu_receipt = json.loads(cpu_raw.decode("utf-8"))
++    if (cpu_receipt.get("schema") != "cross_tfg_v3_candidate_cpu_preflight_v1"
++            or cpu_receipt.get("status") != "PASS_CPU_PREFLIGHT"
++            or cpu_receipt.get("receipt_sha256") != payload_sha(cpu_receipt, "receipt_sha256")):
++        raise ValueError("actual CPU preflight receipt schema/status/self-hash differs")
++    if (repair.get("schema") != "cross_tfg_v3_candidate_runtime_repair_binding_v1"
++            or repair.get("status") != "PASS_CPU_PREFLIGHT_CANDIDATE_RUNTIME_BINDING_ONLY"
++            or repair.get("run_id") != CANDIDATE_RUN_ID
++            or repair.get("repair_binding_sha256") != REPAIR_BINDING_SELF_SHA256
++            or repair.get("repair_binding_sha256") != payload_sha(repair, "repair_binding_sha256")
++            or repair.get("runtime_binding_raw_sha256") != BINDING_SHA256
++            or repair.get("candidate_config", {}).get("raw_sha256") != CONFIG_SHA256
++            or repair.get("candidate_config", {}).get("bytes") != CONFIG_BYTES
++            or cpu_ref.get("path") != "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/candidate_v3_cpu_preflight_attempt03/output/cpu_preflight_receipt_attempt03.json"
++            or cpu_ref.get("bytes") != CPU_RECEIPT_BYTES
++            or cpu_ref.get("raw_sha256") != CPU_RECEIPT_SHA256
++            or repair.get("candidate_output_namespace") != str(CANDIDATE_NAMESPACE)
++            or repair.get("candidate_output_leaf") != str(CANDIDATE_ROOT)
++            or config.get("source_pins", {}).get("cli", {}).get("sha256") != "2cf5fc0f73d7c8d5aabbbc457672e487de2f8a88e683976bb58698325a80fdfd"):
++        raise ValueError("candidate runtime repair binding or CPU/config lineage differs")
+     command = receipt.get("command")
+     outer_expected = [WAV2LIP_PYTHON, "-B", str(CANDIDATE_RUNNER), "--project-root", str(ROOT),
+                       "--candidate-plan", str(PLAN), "--candidate-plan-raw-sha256", sha_bytes(plan_raw),
+                       "--planned-rows", str(ROWS), "--planned-rows-raw-sha256", sha_bytes(rows_raw),
+-                      "--plan-manifest", str(PLAN.parent / "plan_manifest_metadata_repair_attempt14.json"),
++                      "--plan-manifest", str(PLAN_MANIFEST),
+                       "--plan-manifest-raw-sha256", receipt.get("candidate_plan_manifest", {}).get("raw_sha256", ""),
+                       "--runtime-binding", str(BINDING), "--runtime-binding-raw-sha256", sha_bytes(binding_raw),
++                      "--candidate-repair-binding", str(CANDIDATE_REPAIR_BINDING),
++                      "--candidate-repair-binding-raw-sha256", REPAIR_BINDING_SHA256,
+                       "--execute-candidate"]
+     if command != outer_expected:
+-        raise ValueError("launch receipt outer argv differs from the exact guarded candidate13 invocation")
++        raise ValueError("launch receipt outer argv differs from the exact guarded candidate15 invocation")
+ 
+     plan_ref = receipt.get("candidate_plan", {})
+     rows_ref = receipt.get("candidate_rows", {})
+     manifest_ref = receipt.get("candidate_plan_manifest", {})
+     binding_ref = receipt.get("runtime_binding", {})
+     if (plan_ref.get("path") != str(PLAN) or rows_ref.get("path") != str(ROWS)
+-            or manifest_ref.get("path") != str(PLAN.parent / "plan_manifest_metadata_repair_attempt14.json")
++            or manifest_ref.get("path") != str(PLAN_MANIFEST)
+             or binding_ref.get("path") != str(BINDING)):
+         raise ValueError("launch receipt input paths differ from the sealed local plan")
+     if not JOB.is_dir() or JOB.is_symlink():
+@@ -371,11 +430,11 @@
+     if type(pid) is not int or pid <= 0 or type(ticks) is not int or ticks <= 0:
+         raise ValueError("launch receipt process identity is malformed")
+     process = proc_identity(pid, ticks)
+-    namespace = CANDIDATE_ROOT.parent
+-    control_root = namespace / "controls360"
++    namespace = CANDIDATE_NAMESPACE
++    control_root = CONTROL_ROOT
++    if namespace == CONTROL_ROOT.parent or namespace.parent != CONTROL_ROOT.parent.parent:
++        raise ValueError("candidate namespace is not a distinct sibling of the frozen controls namespace")
+     allowed_namespace_entries = {
+-        control_root,
+-        CONTROLS_EXECUTION,
+         CANDIDATE_ROOT,
+         namespace / "candidate180.execution.json",
+         namespace / "candidate180.candidate_startup_policy_receipt.json",
+@@ -391,7 +450,7 @@
+     controls_execution = json.loads(controls_execution_raw.decode("utf-8"))
+     if (controls_execution.get("schema") != "cross_tfg_v3_samehost_dev360_preflight_v1"
+             or controls_execution.get("status") != "PASS_METADATA_ONLY"
+-            or controls_execution.get("execution_output_root") != str(control_root)
++            or controls_execution.get("execution_output_root") != str(CONTROL_ROOT)
+             or controls_execution.get("child_returncode") != 0
+             or controls_execution.get("confirm_audio_opened") is not False
+             or controls_execution.get("plan_raw_sha256") != control_parent.get("plan_raw_sha256")
+@@ -409,7 +468,7 @@
+             or binding.get("gpu_uuid") != GPU_UUID):
+         raise ValueError("current runtime binding self-hash/status/GPU differs")
+     tools = binding.get("execution_bindings", {})
+-    manifest_path = PLAN.parent / "plan_manifest_metadata_repair_attempt14.json"
++    manifest_path = PLAN_MANIFEST
+     manifest_raw = read_regular(manifest_path, "candidate plan manifest", 4 * 1024 * 1024,
+                                 manifest_ref.get("bytes"), manifest_ref.get("raw_sha256"))
+     manifest = json.loads(manifest_raw.decode("utf-8"))
+@@ -420,8 +479,7 @@
+             or receipt.get("candidate_plan_manifest", {}).get("raw_sha256") != sha_bytes(manifest_raw)
+             or receipt.get("candidate_plan_manifest", {}).get("bytes") != len(manifest_raw)):
+         raise ValueError("candidate plan manifest self-hash/input lineage differs")
+-    if (receipt.get("candidate_metadata_preflight_readback", {}).get("path") != str(
+-            ROOT / "cross_tfg_audio_head_20261003/job_control/dev360_candidate13_metadata_preflight_attempt04/output/candidate13_metadata_preflight_attempt04.json")):
++    if receipt.get("candidate_metadata_preflight_readback", {}).get("path") != str(PREFLIGHT):
+         raise ValueError("actual candidate metadata-preflight readback path differs")
+     initial_ref = receipt["candidate_metadata_preflight_readback"]
+     initial_path = Path(initial_ref["path"])
+@@ -431,6 +489,7 @@
+     if (initial_metadata.get("status") != "PASS_METADATA_ONLY"
+             or initial_metadata.get("plan_raw_sha256") != sha_bytes(plan_raw)
+             or initial_metadata.get("runtime_binding_raw_sha256") != sha_bytes(binding_raw)
++            or initial_metadata.get("candidate_repair_binding_raw_sha256") != REPAIR_BINDING_SHA256
+             or initial_metadata.get("execution_performed") is not False):
+         raise ValueError("actual candidate metadata preflight does not bind frozen inputs")
+     execution_path = CANDIDATE_ROOT.parent / "candidate180.execution.json"
+@@ -614,6 +673,7 @@
+     if (fresh_preflight.get("status") != "PASS_METADATA_ONLY"
+             or fresh_preflight.get("plan_raw_sha256") != sha_bytes(plan_raw)
+             or fresh_preflight.get("runtime_binding_raw_sha256") != sha_bytes(binding_raw)
++            or fresh_preflight.get("candidate_repair_binding_raw_sha256") != REPAIR_BINDING_SHA256
+             or fresh_preflight.get("execution_performed") is not False
+             or fresh_preflight.get("gpu_uuid") != binding.get("gpu_uuid")
+             or fresh_ref.get("gpu_uuid") != binding.get("gpu_uuid")):

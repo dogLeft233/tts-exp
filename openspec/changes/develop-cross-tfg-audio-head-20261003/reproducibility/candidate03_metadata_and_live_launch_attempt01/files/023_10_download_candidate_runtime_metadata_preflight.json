@@ -1,0 +1,6 @@
+{
+  "op": "download",
+  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/candidate_v3_cli03_metadata_preflight_attempt04/output/candidate_runtime_metadata_preflight_attempt03.json",
+  "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt02\\downloads_attempt01\\candidate_runtime_metadata_preflight_attempt03.json",
+  "timeout": 180
+}

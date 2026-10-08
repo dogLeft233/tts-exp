@@ -1,0 +1,762 @@
+{
+  "candidate_rows_planned": 180,
+  "confirm_opened": false,
+  "controls360_reused_readonly": true,
+  "created_utc": "2026-10-08T17:26:57.343175+00:00",
+  "entries": [
+    {
+      "bytes": 4776,
+      "copy_path": "files/001_candidate_runtime_metadata_preflight_attempt03.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt02\\downloads_attempt01\\candidate_runtime_metadata_preflight_attempt03.json",
+      "roles": [
+        "actual_download",
+        "source_evidence"
+      ],
+      "sha256": "3c51e9c3b7f4e1d4ff7e0d92d44c2e702fe70393210448a5d277c38415bafea5"
+    },
+    {
+      "bytes": 15026,
+      "copy_path": "files/002_request_index_attempt03.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\request_index_attempt03.json",
+      "roles": [
+        "actual_request_index"
+      ],
+      "sha256": "b52aa7f269ef0e072852d310bacadbe9240cb3e6627c8e3fa2e9f37253488ba6"
+    },
+    {
+      "bytes": 1219,
+      "copy_path": "files/003_00_create_metadata_namespace.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\00_create_metadata_namespace.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "1aeedd090df72e247259e6fb27c65d6b002c12f0ecfcf328e962b724ad535ada"
+    },
+    {
+      "bytes": 408,
+      "copy_path": "files/004_00_create_metadata_namespace.json.response.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\00_create_metadata_namespace.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "14545aa974bb316a73cc60b2788ec6219dcd0c00d8086b18dbea9f488f8954e3"
+    },
+    {
+      "bytes": 420,
+      "copy_path": "files/005_01_upload_candidate_cli03.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_cli03.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "d18fdbb6c601808ada29ee10a6a6d28ba2985d65e716e204cd6ff29f5241d45e"
+    },
+    {
+      "bytes": 351,
+      "copy_path": "files/006_01_upload_candidate_cli03.json.response.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_cli03.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "0a2d840ced49418b7f2ea659701635bab96713ebd1f6b07cbea6921f8abf37e8"
+    },
+    {
+      "bytes": 475,
+      "copy_path": "files/007_01_upload_candidate_config03.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_config03.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "91d9918e3807b9cd33e17af97e7a6f434762a915c8f5b375c87509cb6b3bb470"
+    },
+    {
+      "bytes": 406,
+      "copy_path": "files/008_01_upload_candidate_config03.json.response.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_config03.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "5438562bb5d46f2c5b4cacec93880186dc52fb68a9ad27a42f69731d7ac00579"
+    },
+    {
+      "bytes": 470,
+      "copy_path": "files/009_01_upload_candidate_guard15.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_guard15.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "0921edc087fed9320368c3f01e659463d237977c476a2deb373250399a1a665d"
+    },
+    {
+      "bytes": 401,
+      "copy_path": "files/010_01_upload_candidate_guard15.json.response.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_guard15.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "e55618d7cd9d09d121948f288f0f8bbefb1be5d58aafdf45f7fa5fd9d967ed43"
+    },
+    {
+      "bytes": 500,
+      "copy_path": "files/011_01_upload_candidate_manifest15.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_manifest15.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "b5e22684a85a7b1dc3f27345a4ff184bfbb07000a3ba283f3fdca9aa4c07d6e7"
+    },
+    {
+      "bytes": 431,
+      "copy_path": "files/012_01_upload_candidate_manifest15.json.response.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_manifest15.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "7c21d68867c75e99eb796cb6688ccc28345a86cac8cea37a976b46b2ecc03d8d"
+    },
+    {
+      "bytes": 489,
+      "copy_path": "files/013_01_upload_candidate_plan14.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_plan14.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "45b9914df30845ca865594780086d68d526caf7edbee627fa276ac7680f93729"
+    },
+    {
+      "bytes": 420,
+      "copy_path": "files/014_01_upload_candidate_plan14.json.response.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_plan14.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "57245be0f7f92ad060b61e3aebfadb38eb02ff6d829e1ece607ee4c39d086b3f"
+    },
+    {
+      "bytes": 515,
+      "copy_path": "files/015_01_upload_candidate_repair_binding10.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_repair_binding10.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "34e62a24f7ea0ffe26b4d1620bfd9416bd309e3f01798eb9833ea7652a95c09c"
+    },
+    {
+      "bytes": 446,
+      "copy_path": "files/016_01_upload_candidate_repair_binding10.json.response.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_repair_binding10.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "dea52b10699d1df618ab50b8818fae7d9f78cd6c7a1cbcda2eb5df002d35cc88"
+    },
+    {
+      "bytes": 498,
+      "copy_path": "files/017_01_upload_candidate_rows14.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_rows14.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "9fb7849ce3c678e06e196169c4571601ae30e7692ded9647311cfb21fc4cc08c"
+    },
+    {
+      "bytes": 429,
+      "copy_path": "files/018_01_upload_candidate_rows14.json.response.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\01_upload_candidate_rows14.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "580738625a3676ba4f89400731b8a3ace181bbf4a2a72dabf8f104ccf5e363b6"
+    },
+    {
+      "bytes": 6494,
+      "copy_path": "files/019_08_create_or_identical_stage_candidate_metadata_sources.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\08_create_or_identical_stage_candidate_metadata_sources.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "583c13e5fbe0efa4bba50e1239b0e6a2d6fd9fa5d8ba40137d7f05eca242b33f"
+    },
+    {
+      "bytes": 2456,
+      "copy_path": "files/020_08_create_or_identical_stage_candidate_metadata_sources.json.r.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\08_create_or_identical_stage_candidate_metadata_sources.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "710d79a983622ce9ab24f0351a4ace72c5b3f0cab71aa457092c17d0c4d144ce"
+    },
+    {
+      "bytes": 2656,
+      "copy_path": "files/021_09_run_candidate_runtime_metadata_preflight.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\09_run_candidate_runtime_metadata_preflight.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "9df928078bf9379f1f1b3267168858440153255ab76d2a540d98457b2d26f628"
+    },
+    {
+      "bytes": 5189,
+      "copy_path": "files/022_09_run_candidate_runtime_metadata_preflight.json.response.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\09_run_candidate_runtime_metadata_preflight.json.response.json",
+      "roles": [
+        "actual_response",
+        "source_evidence"
+      ],
+      "sha256": "4fc8d7fb815ee210fd0627e13b0b383d63e2c201d0b94ebc136c3cafe8284c28"
+    },
+    {
+      "bytes": 423,
+      "copy_path": "files/023_10_download_candidate_runtime_metadata_preflight.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\10_download_candidate_runtime_metadata_preflight.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "12d53f66438842cca1ef933728b72feadcc14a8e4ac1f091b1f68de17a6ac65e"
+    },
+    {
+      "bytes": 469,
+      "copy_path": "files/024_10_download_candidate_runtime_metadata_preflight.json.response.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt03\\requests_attempt01\\10_download_candidate_runtime_metadata_preflight.json.response.json",
+      "roles": [
+        "actual_response",
+        "source_evidence"
+      ],
+      "sha256": "ebf285e223ae8304a874de4ee56982e3ba0e17152e82d8234adc882405836c5b"
+    },
+    {
+      "bytes": 29393,
+      "copy_path": "files/025_build_candidate_runtime_repair_metadata_attempt03.py",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_runtime_repair_attempt03\\build_candidate_runtime_repair_metadata_attempt03.py",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "087a6c997df8a4dca31255a4c26cbef19cf2127c0b415cf94b31c74a40e94a43"
+    },
+    {
+      "bytes": 17852,
+      "copy_path": "files/026_guard13_to_guard15.diff",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_runtime_repair_attempt03\\guard13_to_guard15.diff",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "86eb8abf8422d676e3ae55bffde70e91f283c17e5b9f6cbaae88f4abf398dcd1"
+    },
+    {
+      "bytes": 934267,
+      "copy_path": "files/027_candidate_plan_attempt14.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_runtime_repair_attempt03\\metadata_output_attempt03\\candidate_plan_attempt14.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "1a6c8ae99c4b8a1141c6f65748d426ba88034c14badf5ecec497ffc11d62bc60"
+    },
+    {
+      "bytes": 3172,
+      "copy_path": "files/028_candidate_plan_manifest_attempt15.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_runtime_repair_attempt03\\metadata_output_attempt03\\candidate_plan_manifest_attempt15.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "cd0aa3e7bca14a7676dab7f82d621b93e1a173e586f04efcdbaf3794b022808c"
+    },
+    {
+      "bytes": 606042,
+      "copy_path": "files/029_candidate_planned_rows_attempt14.jsonl",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_runtime_repair_attempt03\\metadata_output_attempt03\\candidate_planned_rows_attempt14.jsonl",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "d781268d02c7495fd35c3bf314848863d57673eeef044a0c5edb19f9e8797f48"
+    },
+    {
+      "bytes": 8057,
+      "copy_path": "files/030_candidate_runtime_repair_binding_attempt10.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_runtime_repair_attempt03\\metadata_output_attempt03\\candidate_runtime_repair_binding_attempt10.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "4d50fcb6e6fd7a6fcd6a4a59515f7e92c9cbb43250e22ac97994d5558bb84ba8"
+    },
+    {
+      "bytes": 6866,
+      "copy_path": "files/031_metadata_build_summary_attempt01.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cli03_runtime_repair_attempt03\\metadata_output_attempt03\\metadata_build_summary_attempt01.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "6b820ceab63f0017403ccb37164d913836a92af24b40de820e6daae57f7dd1c2"
+    },
+    {
+      "bytes": 45226,
+      "copy_path": "files/032_cpu_preflight_receipt_attempt03.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cpu_preflight_attempt03\\downloads_attempt02_revision02\\cpu_preflight_receipt_attempt03.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "8c44b1c80a08e48465f25672ef6b990002653ff7d250ede7369be13dab3a3b09"
+    },
+    {
+      "bytes": 429,
+      "copy_path": "files/033_q_download_cpu_preflight_receipt.json.response.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cpu_preflight_attempt03\\requests_attempt02_revision02\\q_download_cpu_preflight_receipt.json.response.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "bbd640f45ca7c5cd7e305cf29b72c328daf79469e06bbf699b32e8343b2ff07b"
+    },
+    {
+      "bytes": 706,
+      "copy_path": "files/034_q_run_strict_cpu_preflight_revision02.json.response.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_cpu_preflight_attempt03\\requests_attempt02_revision02\\q_run_strict_cpu_preflight_revision02.json.response.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "cf064bcba1b20d9567df299110770da673ed21f036ce24abd4a13bd65b8a1b2f"
+    },
+    {
+      "bytes": 1736,
+      "copy_path": "files/035_enhance_v3_attempt02_to_attempt03.diff",
+      "original_project_path": ".codex\\scratch\\candidate_v3_interop_thread_repair_attempt03\\enhance_v3_attempt02_to_attempt03.diff",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "49e925fea4ba80e7c8f657a91a72b474ed3e32a02841d512aceb23e4780c1ec7"
+    },
+    {
+      "bytes": 5240,
+      "copy_path": "files/036_v3_method_candidate_config_attempt03.json",
+      "original_project_path": ".codex\\scratch\\candidate_v3_interop_thread_repair_attempt03\\v3_method_candidate_config_attempt03.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "fd2ce3509c457e40e618818828f6040ab65641315d40efe8f48e5dc3c5c3d1df"
+    },
+    {
+      "bytes": 26975,
+      "copy_path": "files/037_attempt10_to_attempt12.diff",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\attempt10_to_attempt12.diff",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "8cc79906587044fbf9c3c49c7813047b1f35968aca609df1799c8e5997a08e4f"
+    },
+    {
+      "bytes": 4219,
+      "copy_path": "files/038_launch12_source_review_attempt01.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\launch12_source_review_attempt01.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "6587be180a72637d27eab67e6c36201564d515933fc7027e61d66f3be73ccda4"
+    },
+    {
+      "bytes": 2582,
+      "copy_path": "files/039_launch12_status13_source_review_attempt01.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\launch12_status13_source_review_attempt01.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "3a5b6dfca2ebf63b9587a942964a4cfe61dc5e2db4998a53b350ade953e1011e"
+    },
+    {
+      "bytes": 59387,
+      "copy_path": "files/040_launch_candidate180_detached_attempt12.py",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\launch_candidate180_detached_attempt12.py",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "3307c890e6ee20eee7c0bcaf1e18d560adbf83f72fe282092c8f5e4df82ef688"
+    },
+    {
+      "bytes": 51152,
+      "copy_path": "files/041_read_candidate180_detached_status_attempt12.py",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\read_candidate180_detached_status_attempt12.py",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "72f484280fe44d28891be492e24d8016dae1d7dcff11130d8b0cc96f0061812a"
+    },
+    {
+      "bytes": 51011,
+      "copy_path": "files/042_read_candidate180_detached_status_attempt13.py",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\read_candidate180_detached_status_attempt13.py",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "982e2172571786d524f6f1dd5e95ee5605e1f47f29ad6fcbdd3e8987e72a484c"
+    },
+    {
+      "bytes": 14990,
+      "copy_path": "files/043_request_index_attempt03.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\request_index_attempt03.json",
+      "roles": [
+        "actual_request_index",
+        "source_evidence"
+      ],
+      "sha256": "28f7830f3fd4d45a9d1c221f8873609fba737588012dd026aa3597e9bd4c0cef"
+    },
+    {
+      "bytes": 1308,
+      "copy_path": "files/044_00_create_candidate12_launch_namespaces.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\requests_attempt03\\00_create_candidate12_launch_namespaces.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "795542d0d102b39919da2378d98ac7fb61ab994549b2e22b9d8866000cef802c"
+    },
+    {
+      "bytes": 225,
+      "copy_path": "files/045_00_create_candidate12_launch_namespaces.json.response.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\requests_attempt03\\00_create_candidate12_launch_namespaces.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "6ed39d7dea5076fa4da9cc5bb2ca5a2f7a44570bf4b7381da944125f4a2d3c3f"
+    },
+    {
+      "bytes": 439,
+      "copy_path": "files/046_01_upload_launcher12.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\requests_attempt03\\01_upload_launcher12.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "58da2b449ae074121c395bf6dee8ab7a8c9c9a75ab6e5144a05c073f58c66e3a"
+    },
+    {
+      "bytes": 416,
+      "copy_path": "files/047_01_upload_launcher12.json.response.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\requests_attempt03\\01_upload_launcher12.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "1946f910eb1fc4899bfbbef15793c10bad0bf339d379b46e3785f50dd711f4b4"
+    },
+    {
+      "bytes": 449,
+      "copy_path": "files/048_02_upload_status13.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\requests_attempt03\\02_upload_status13.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "f7329277d6f936e50bbe8d09064ecb84af2df6f4a497b8a17a496fd14c18dec0"
+    },
+    {
+      "bytes": 426,
+      "copy_path": "files/049_02_upload_status13.json.response.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\requests_attempt03\\02_upload_status13.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "fb1ebab101979a24ea6be2f4f2ebff35b58b2a4b917423edd8d4060cc1320c85"
+    },
+    {
+      "bytes": 2240,
+      "copy_path": "files/050_03_verify_candidate12_sources_metadata_and_empty_outputs.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\requests_attempt03\\03_verify_candidate12_sources_metadata_and_empty_outputs.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "33515e7f3c09f9f78a0bf4fa8964e1dd50dbc8d15cf3192f6679c4bd15fa8ab4"
+    },
+    {
+      "bytes": 229,
+      "copy_path": "files/051_03_verify_candidate12_sources_metadata_and_empty_outputs.json..json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\requests_attempt03\\03_verify_candidate12_sources_metadata_and_empty_outputs.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "ed6138456c2741c5e37adbb384bfe0d0fba37fd2db1814b614e56de78ed469d7"
+    },
+    {
+      "bytes": 2052,
+      "copy_path": "files/052_40_launch_candidate180_once.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\requests_attempt03\\40_launch_candidate180_once.json",
+      "roles": [
+        "actual_request",
+        "source_evidence"
+      ],
+      "sha256": "53e1c3e18227d2b0c4060c3868f4fdcd366e1cd9f79fe7b315509bdbaa77e474"
+    },
+    {
+      "bytes": 1242,
+      "copy_path": "files/053_40_launch_candidate180_once.json.response.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\requests_attempt03\\40_launch_candidate180_once.json.response.json",
+      "roles": [
+        "actual_response",
+        "source_evidence"
+      ],
+      "sha256": "acb74a2ce6bc90059e1072806cf0f8918e76f61b55bd11add5880bf7728710a4"
+    },
+    {
+      "bytes": 18761,
+      "copy_path": "files/054_status11_to_status12.diff",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\status11_to_status12.diff",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "5e28f75e380593c3371d4d7b741cf66fc77a9aefbc3c82cc92a95e118668a1ea"
+    },
+    {
+      "bytes": 678,
+      "copy_path": "files/055_status12_to_status13.diff",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\status12_to_status13.diff",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "9fc87adc734862477f0c982176bce67caef2cc6b6ebe641b1ea0d8ce79eac744"
+    },
+    {
+      "bytes": 11668,
+      "copy_path": "files/056_candidate180_codex_candidate180_cli03_attempt03_launch01.launc.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_status13_readback_attempt01\\downloads_attempt01\\candidate180_codex_candidate180_cli03_attempt03_launch01.launch_receipt.json",
+      "roles": [
+        "actual_download"
+      ],
+      "sha256": "fe8fc0e82cf15fe971ca8d16d69d4961f5186ea12a93eb157c26845dee36e268"
+    },
+    {
+      "bytes": 12193,
+      "copy_path": "files/057_request_index_attempt01.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_status13_readback_attempt01\\request_index_attempt01.json",
+      "roles": [
+        "actual_request_index"
+      ],
+      "sha256": "40d4e5500ff002dc076d0884a1c3e745c84b956327cda7307ea7b512a3418542"
+    },
+    {
+      "bytes": 528,
+      "copy_path": "files/058_00_download_actual_candidate_launch_receipt.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_status13_readback_attempt01\\requests_attempt01\\00_download_actual_candidate_launch_receipt.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "3ad2f0dfc74b056ea76f4c5128849a78350b1eb16d63a9074264a3d057f0235f"
+    },
+    {
+      "bytes": 504,
+      "copy_path": "files/059_00_download_actual_candidate_launch_receipt.json.response.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_status13_readback_attempt01\\requests_attempt01\\00_download_actual_candidate_launch_receipt.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "0cf30b52018fe5da8df63dba7b7c1a113d71413e500d936c75d893c945edf5d8"
+    },
+    {
+      "bytes": 1041,
+      "copy_path": "files/060_01_read_candidate_status13_once.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_status13_readback_attempt01\\requests_attempt01\\01_read_candidate_status13_once.json",
+      "roles": [
+        "actual_request"
+      ],
+      "sha256": "a9f27ca4873d5625d3e9523455807ff4533b95b6ad29214e4b576261ad2e0b52"
+    },
+    {
+      "bytes": 8581,
+      "copy_path": "files/061_01_read_candidate_status13_once.json.response.json",
+      "original_project_path": ".codex\\scratch\\dev360_candidate180_status13_readback_attempt01\\requests_attempt01\\01_read_candidate_status13_once.json.response.json",
+      "roles": [
+        "actual_response"
+      ],
+      "sha256": "ca39fc2d100e3d928c0d2a569df6855bf6461ebe898fab0ac9fa9f90538173d1"
+    },
+    {
+      "bytes": 1781735,
+      "copy_path": "files/062_controls_plan_attempt09.json",
+      "original_project_path": ".codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\controls_plan_attempt09.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "8a592cc54dc981bec5e2398108e6873190a54c7c1ed2bb7901cd31aad6cc86eb"
+    },
+    {
+      "bytes": 1438,
+      "copy_path": "files/063_controls_plan_manifest_attempt09.json",
+      "original_project_path": ".codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\controls_plan_manifest_attempt09.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "ab07ee9bed69d067390b9ffae597200916838f8cca6bdb7ddf376b5d5febc214"
+    },
+    {
+      "bytes": 878184,
+      "copy_path": "files/064_controls_planned_rows_attempt09.jsonl",
+      "original_project_path": ".codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\controls_planned_rows_attempt09.jsonl",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "45f1d3130c33c37a513db7b22f76d4107bd821f370a7b3ae2d5ae853894b27c8"
+    },
+    {
+      "bytes": 568289,
+      "copy_path": "files/065_runtime_binding_attempt09.json",
+      "original_project_path": ".codex\\scratch\\dev360_phase2_repair_attempt10\\cpu_bind_plan_preflight_attempt02\\downloads\\runtime_binding_attempt09.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5"
+    },
+    {
+      "bytes": 3769,
+      "copy_path": "files/066_root_actual_terminal360_six_files_qc_attempt01.json",
+      "original_project_path": ".codex\\scratch\\root_actual_terminal360_six_files_qc_attempt01.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "786d6f6f47f8eef03631c83a5a9bc93e2b113e583aee7bd538aebdb74da9cc61"
+    },
+    {
+      "bytes": 5950,
+      "copy_path": "files/067_root_candidate_cpu03_actual_receipt_qc_attempt01.json",
+      "original_project_path": ".codex\\scratch\\root_candidate_cpu03_actual_receipt_qc_attempt01.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "aa677f516c14e119e9a219390b4fe8effbfad6b031088a5ae3ace55db331e7ee"
+    },
+    {
+      "bytes": 2631,
+      "copy_path": "files/068_root_candidate_metadata03_actual_preflight_qc_attempt01.json",
+      "original_project_path": ".codex\\scratch\\root_candidate_metadata03_actual_preflight_qc_attempt01.json",
+      "roles": [
+        "root_experiment_evidence_qc"
+      ],
+      "sha256": "145bf510918d0f9efcdca7c85060283ccbacb2714b0bbf089c016b2eb906c9d4"
+    },
+    {
+      "bytes": 3701,
+      "copy_path": "files/069_root_candidate_metadata03_actual_preflight_qc_attempt01.py",
+      "original_project_path": ".codex\\scratch\\root_candidate_metadata03_actual_preflight_qc_attempt01.py",
+      "roles": [
+        "root_experiment_evidence_qc"
+      ],
+      "sha256": "7f1f88f050e92197e3603eaf5c2d349c181ceaa09884aa690b10a38bc098acbc"
+    },
+    {
+      "bytes": 1142,
+      "copy_path": "files/070_root_candidate_metadata03_science_projection_qc_attempt01.json",
+      "original_project_path": ".codex\\scratch\\root_candidate_metadata03_science_projection_qc_attempt01.json",
+      "roles": [
+        "root_experiment_evidence_qc",
+        "source_evidence"
+      ],
+      "sha256": "f57366b362a5fd18f6580ed6318dab1b7f074370190043648b285f9acd9f4359"
+    },
+    {
+      "bytes": 5213,
+      "copy_path": "files/071_root_candidate_metadata03_science_projection_qc_attempt01.py",
+      "original_project_path": ".codex\\scratch\\root_candidate_metadata03_science_projection_qc_attempt01.py",
+      "roles": [
+        "root_experiment_evidence_qc"
+      ],
+      "sha256": "d22236af41e89f41edb2285b97e526837b39980c0641f9d3a94c1dc4e2094c62"
+    },
+    {
+      "bytes": 5240,
+      "copy_path": "files/072_candidate_config.json",
+      "original_project_path": ".codex\\scratch\\root_candidate_original_metadata_readback_attempt01\\candidate_config.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "aba0dc744b76cfd9f73db547faa80508a4a46437432ef78feaf5b7bfb51f3666"
+    },
+    {
+      "bytes": 3965,
+      "copy_path": "files/073_materialization_receipt.json",
+      "original_project_path": ".codex\\scratch\\root_candidate_original_metadata_readback_attempt01\\materialization_receipt.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "c64bfb0d80471c6d2764b6921a993a7c556b9511d4cba283f41eba002cdf8ebd"
+    },
+    {
+      "bytes": 287148,
+      "copy_path": "files/074_pilot_manifest_final.json",
+      "original_project_path": ".codex\\scratch\\root_strict09_terminal_readback_attempt01\\pilot_manifest_final.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "4053e74430e900037ca2f528e3678ad4375241e8e9c653367ea3de31ca94c86d"
+    },
+    {
+      "bytes": 146401,
+      "copy_path": "files/075_pilot_manifest_final.json",
+      "original_project_path": ".codex\\scratch\\root_strict12_original_readback_attempt01\\pilot_manifest_final.json",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "c55b390b6d5189983a4a3e2d181d5ff7606cc191817f125a859800c3e09508d9"
+    },
+    {
+      "bytes": 43071,
+      "copy_path": "files/076_enhance_v3_attempt03.py",
+      "original_project_path": "scripts\\audio_enhancement\\enhance_v3_attempt03.py",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "2cf5fc0f73d7c8d5aabbbc457672e487de2f8a88e683976bb58698325a80fdfd"
+    },
+    {
+      "bytes": 23249,
+      "copy_path": "files/077_run_cross_frontend_dev_attempt09.py",
+      "original_project_path": "scripts\\experiments\\cross_tfg_audio_head_20261003\\run_cross_frontend_dev_attempt09.py",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "04adf397a2edc45c6e3bc1e67d2265ea1c6ad2fcdac3df268b290938e5bf74df"
+    },
+    {
+      "bytes": 12824,
+      "copy_path": "files/078_run_cross_frontend_v3_candidate_attempt07.py",
+      "original_project_path": "scripts\\experiments\\cross_tfg_audio_head_20261003\\run_cross_frontend_v3_candidate_attempt07.py",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "f6844b51183b6cf3b57f6a62d0b1b9bd70c3a0d496480fe8cad70313907c16e3"
+    },
+    {
+      "bytes": 79475,
+      "copy_path": "files/079_run_stagea_dev_attempt06.py",
+      "original_project_path": "scripts\\experiments\\cross_tfg_audio_head_20261003\\run_stagea_dev_attempt06.py",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "291f8b5cd48d8ebc63aafd814dcd37450eecba949fab98283cf20a27c6335483"
+    },
+    {
+      "bytes": 78172,
+      "copy_path": "files/080_run_v3_samehost_dev360_controls_attempt18.py",
+      "original_project_path": "scripts\\experiments\\cross_tfg_audio_head_20261003\\run_v3_samehost_dev360_controls_attempt18.py",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "30381ee8deb6d0e7880379fc91a042e1e2bb3cca375dd05423319259fd9e8756"
+    },
+    {
+      "bytes": 49071,
+      "copy_path": "files/081_run_v3_step120_candidate_samehost_attempt15.py",
+      "original_project_path": "scripts\\experiments\\cross_tfg_audio_head_20261003\\run_v3_step120_candidate_samehost_attempt15.py",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "438db8d3cd255b5996d3d0cfe12c5653a2f94d3b647931a8e3ad8dc059070486"
+    },
+    {
+      "bytes": 9525,
+      "copy_path": "files/082_sitecustomize.py",
+      "original_project_path": "scripts\\experiments\\cross_tfg_audio_head_20261003\\runtime_determinism_attempt03\\sitecustomize.py",
+      "roles": [
+        "source_evidence"
+      ],
+      "sha256": "3099c4b2e1c650f7aa46c31145cc2c88ccda9f085288ab039c6ffed85007ab65"
+    }
+  ],
+  "observed_completed_rows": 5,
+  "observed_pass_rows": 5,
+  "parent_git_sha": "82a77586da5bffc059173ce68d289c46f03735f8",
+  "parent_pid": 164225,
+  "parent_start_ticks": 333464927,
+  "preservation_worker_sha256": "31b2e6d21cd4fbce0582c4d0b7278941924f7f1892afa27f07d5bea43c1d7bb4",
+  "run_id": "cross_tfg_audio_head_20261003_v3_fit40_dev180_cli03_runtime_repair_attempt03",
+  "schema": "candidate03_actual_metadata_and_live_launch_proof_v1",
+  "scope": "actual source/metadata/launch/first-status evidence; not a completed candidate result or scientific method qualification"
+}

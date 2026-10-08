@@ -1,0 +1,73 @@
+{
+  "candidate_config": {
+    "bytes": 5240,
+    "path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/v3_method_candidate_config.json",
+    "sha256": "aba0dc744b76cfd9f73db547faa80508a4a46437432ef78feaf5b7bfb51f3666"
+  },
+  "candidate_provenance": {
+    "checkpoint": {
+      "bytes": 1802,
+      "path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/candidate_provenance/checkpoint.json",
+      "sha256": "8d5eb607f77963291372b33245f13f9b9578ebf71657acf1b43243746c538eb8"
+    },
+    "selection_record": {
+      "bytes": 566,
+      "path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/candidate_provenance/selection_record.json",
+      "sha256": "db4ede1f315909b8e8d410d4ab519ee8745035233dc910333a2b409c0a2328fc"
+    },
+    "training_record": {
+      "bytes": 5628,
+      "path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/candidate_provenance/training_record.json",
+      "sha256": "c2ed183ae5894bd3c42dc56c0242539f1f8290df1230d7b1aa4df8b7584a7e67"
+    }
+  },
+  "confirmation_audio_opened": false,
+  "development_audio_opened": false,
+  "fit_row_count": 40,
+  "fit_speaker_count": 20,
+  "method_selected_using_development": false,
+  "model_execution_performed": false,
+  "optimizer_steps": 120,
+  "profile_role": "METHOD_CANDIDATE",
+  "schema": "cross_tfg_v3_step120_method_candidate_materialization_v1",
+  "source_bindings": {
+    "completion": {
+      "bytes": 3558,
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/fit40_transition_head_v3_attempt11_reflection_pad_training_attempt01/run/completion.json",
+      "sha256": "3535908e79bea9854b1d30c6af214b68735d6db2d20e11d3b2111d07a58f6a1c"
+    },
+    "engineering_template": {
+      "bytes": 3231,
+      "path": "scripts/audio_enhancement/configs/v3_zero_engineering_attempt02.json",
+      "sha256": "6c67d0c86de72ddff104151e779b0e0942763af187d1c6c0cf7638b99d60598a"
+    },
+    "fit_runner": {
+      "bytes": 84494,
+      "repository_source_path": "cross_tfg_audio_head_20261003/fit40_transition_head_v3_attempt11_reflection_pad_qualification03/code/src/scripts/experiments/cross_tfg_audio_head_20261003/run_fit40_native_transition_head_v3_attempt11.py",
+      "runtime_record_path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/fit40_transition_head_v3_attempt11_reflection_pad_qualification03/code/src/scripts/experiments/cross_tfg_audio_head_20261003/run_fit40_native_transition_head_v3_attempt11.py",
+      "sha256": "3da9c6a1800c4c023a04b5885632efa2ca58d09ab5a8033939fdaa0f4b391219"
+    },
+    "fit_runtime_source_pins": {
+      "bytes": 380486,
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/fit40_transition_head_v3_attempt11_reflection_pad_training_attempt01/run/runtime_source_pins.json",
+      "sha256": "0ac2c3a83ccae9414c336bf5c979818d5bef5a4c386f191d1bc5b209fa637dd1"
+    },
+    "materializer": {
+      "bytes": 20956,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/materialize_v3_step120_method_candidate_attempt03.py",
+      "sha256": "a2259b027048279376f13f219f87c49435c8f335811db111b0decde87b027af0"
+    },
+    "original_checkpoint": {
+      "bytes": 1802,
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/fit40_transition_head_v3_attempt11_reflection_pad_training_attempt01/run/shared_recipient_transition_head_v3_checkpoint.json",
+      "sha256": "8d5eb607f77963291372b33245f13f9b9578ebf71657acf1b43243746c538eb8"
+    },
+    "original_training_record": {
+      "bytes": 5628,
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/fit40_transition_head_v3_attempt11_reflection_pad_training_attempt01/run/training_record.json",
+      "sha256": "c2ed183ae5894bd3c42dc56c0242539f1f8290df1230d7b1aa4df8b7584a7e67"
+    }
+  },
+  "status": "MATERIALIZED_FIXED_STEP120_METHOD_CANDIDATE",
+  "zero_head_gate_rows_passed": 40
+}

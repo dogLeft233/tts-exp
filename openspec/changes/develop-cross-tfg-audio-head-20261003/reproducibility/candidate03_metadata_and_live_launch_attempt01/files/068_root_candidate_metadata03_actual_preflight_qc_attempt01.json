@@ -1,0 +1,73 @@
+{
+  "candidate180_execution_started": false,
+  "confirm_audio_read": false,
+  "live_resource_capacity_pass": true,
+  "metadata": {
+    "bytes": 4776,
+    "path": ".codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt02\\downloads_attempt01\\candidate_runtime_metadata_preflight_attempt03.json",
+    "sha256": "3c51e9c3b7f4e1d4ff7e0d92d44c2e702fe70393210448a5d277c38415bafea5"
+  },
+  "original_runtime_binding_changed": false,
+  "overlay_only_output_root": true,
+  "requests_completed": 11,
+  "responses": {
+    "00_create_metadata_namespace": {
+      "bytes": 408,
+      "op": "exec",
+      "sha256": "14545aa974bb316a73cc60b2788ec6219dcd0c00d8086b18dbea9f488f8954e3"
+    },
+    "01_upload_candidate_cli03": {
+      "bytes": 351,
+      "op": "upload",
+      "sha256": "0a2d840ced49418b7f2ea659701635bab96713ebd1f6b07cbea6921f8abf37e8"
+    },
+    "01_upload_candidate_config03": {
+      "bytes": 406,
+      "op": "upload",
+      "sha256": "5438562bb5d46f2c5b4cacec93880186dc52fb68a9ad27a42f69731d7ac00579"
+    },
+    "01_upload_candidate_guard15": {
+      "bytes": 401,
+      "op": "upload",
+      "sha256": "e55618d7cd9d09d121948f288f0f8bbefb1be5d58aafdf45f7fa5fd9d967ed43"
+    },
+    "01_upload_candidate_manifest15": {
+      "bytes": 431,
+      "op": "upload",
+      "sha256": "7c21d68867c75e99eb796cb6688ccc28345a86cac8cea37a976b46b2ecc03d8d"
+    },
+    "01_upload_candidate_plan14": {
+      "bytes": 420,
+      "op": "upload",
+      "sha256": "57245be0f7f92ad060b61e3aebfadb38eb02ff6d829e1ece607ee4c39d086b3f"
+    },
+    "01_upload_candidate_repair_binding10": {
+      "bytes": 446,
+      "op": "upload",
+      "sha256": "dea52b10699d1df618ab50b8818fae7d9f78cd6c7a1cbcda2eb5df002d35cc88"
+    },
+    "01_upload_candidate_rows14": {
+      "bytes": 429,
+      "op": "upload",
+      "sha256": "580738625a3676ba4f89400731b8a3ace181bbf4a2a72dabf8f104ccf5e363b6"
+    },
+    "08_create_or_identical_stage_candidate_metadata_sources": {
+      "bytes": 2456,
+      "op": "exec",
+      "sha256": "710d79a983622ce9ab24f0351a4ace72c5b3f0cab71aa457092c17d0c4d144ce"
+    },
+    "09_run_candidate_runtime_metadata_preflight": {
+      "bytes": 5189,
+      "op": "exec",
+      "sha256": "4fc8d7fb815ee210fd0627e13b0b383d63e2c201d0b94ebc136c3cafe8284c28"
+    },
+    "10_download_candidate_runtime_metadata_preflight": {
+      "bytes": 469,
+      "op": "download",
+      "sha256": "ebf285e223ae8304a874de4ee56982e3ba0e17152e82d8234adc882405836c5b"
+    }
+  },
+  "source_pins_verified": 22,
+  "source_sha256": "7f1f88f050e92197e3603eaf5c2d349c181ceaa09884aa690b10a38bc098acbc",
+  "status": "PASS_ROOT_ACTUAL_CANDIDATE_METADATA_PREFLIGHT"
+}

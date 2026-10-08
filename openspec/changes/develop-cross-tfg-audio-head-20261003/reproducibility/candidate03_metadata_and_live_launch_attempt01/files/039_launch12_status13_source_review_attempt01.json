@@ -1,0 +1,47 @@
+{
+  "actual_metadata_preflight": {
+    "bytes": 4776,
+    "candidate_repair_binding_raw_sha256": "4d50fcb6e6fd7a6fcd6a4a59515f7e92c9cbb43250e22ac97994d5558bb84ba8",
+    "execution_performed": false,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cli03_metadata_preflight_attempt02\\downloads_attempt01\\candidate_runtime_metadata_preflight_attempt03.json",
+    "plan_raw_sha256": "1a6c8ae99c4b8a1141c6f65748d426ba88034c14badf5ecec497ffc11d62bc60",
+    "raw_sha256": "3c51e9c3b7f4e1d4ff7e0d92d44c2e702fe70393210448a5d277c38415bafea5",
+    "runtime_binding_raw_sha256": "dd07fa3d2b3b5940df25fd3521313f7b2c3f1c6b99494b78a688e1ce39e527c5",
+    "status": "PASS_METADATA_ONLY"
+  },
+  "launcher12": {
+    "bytes": 59387,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\launch_candidate180_detached_attempt12.py",
+    "sha256": "3307c890e6ee20eee7c0bcaf1e18d560adbf83f72fe282092c8f5e4df82ef688"
+  },
+  "receipt_sha256": "6a1d5914ef5725333370aba0c73c1c3d5887fcd8860af8941f629214f7433766",
+  "schema": "candidate180_cli03_launch12_status13_source_review_v1",
+  "scope": {
+    "candidate_started": false,
+    "remote_requests_dispatched": false
+  },
+  "source_contract": {
+    "guard15_dispatcher_command_contains_candidate_repair_flags": false,
+    "only_inner_required_dict_repair_flag_entries_removed": true,
+    "outer_launch_command_contains_candidate_repair_flags": true,
+    "status13_retains_execution_record_repair_binding_sha_and_namespace_checks": true,
+    "status13_retains_outer_command_repair_binding_checks": true,
+    "status13_retains_plan_rows_manifest_runtime_and_source_checks": true
+  },
+  "status": "PASS_INNER_ARGV_MATCHES_NATIVE_GUARD_SCHEMA",
+  "status13": {
+    "bytes": 51011,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\read_candidate180_detached_status_attempt13.py",
+    "sha256": "982e2172571786d524f6f1dd5e95ee5605e1f47f29ad6fcbdd3e8987e72a484c"
+  },
+  "status_diff": {
+    "bytes": 678,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\status12_to_status13.diff",
+    "sha256": "9fc87adc734862477f0c982176bce67caef2cc6b6ebe641b1ea0d8ce79eac744"
+  },
+  "status_parent12": {
+    "bytes": 51152,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_detached_launch_attempt12\\read_candidate180_detached_status_attempt12.py",
+    "sha256": "72f484280fe44d28891be492e24d8016dae1d7dcff11130d8b0cc96f0061812a"
+  }
+}

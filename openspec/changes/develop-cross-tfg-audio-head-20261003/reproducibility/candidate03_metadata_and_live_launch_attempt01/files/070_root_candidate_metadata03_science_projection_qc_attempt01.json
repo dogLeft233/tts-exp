@@ -1,0 +1,32 @@
+{
+  "actual_CPU_receipt_and_transport_pins_verified": true,
+  "candidate_GPU_run_performed": false,
+  "candidate_rows": 180,
+  "inputs": {
+    "candidate_plan_attempt14.json": {
+      "bytes": 934267,
+      "sha256": "1a6c8ae99c4b8a1141c6f65748d426ba88034c14badf5ecec497ffc11d62bc60"
+    },
+    "candidate_plan_manifest_attempt15.json": {
+      "bytes": 3172,
+      "sha256": "cd0aa3e7bca14a7676dab7f82d621b93e1a173e586f04efcdbaf3794b022808c"
+    },
+    "candidate_runtime_repair_binding_attempt10.json": {
+      "bytes": 8057,
+      "sha256": "4d50fcb6e6fd7a6fcd6a4a59515f7e92c9cbb43250e22ac97994d5558bb84ba8"
+    }
+  },
+  "models": 3,
+  "namespace_separate_from_controls": true,
+  "ordered_scientific_rows_exact_predecessor": true,
+  "original_runtime09_unchanged": true,
+  "samples": 20,
+  "scientific_method_exact_predecessor": true,
+  "seeds": 3,
+  "source": {
+    "path": ".codex\\scratch\\root_candidate_metadata03_science_projection_qc_attempt01.py",
+    "sha256": "d22236af41e89f41edb2285b97e526837b39980c0641f9d3a94c1dc4e2094c62"
+  },
+  "speakers": 10,
+  "status": "PASS_ROOT_FULL_METADATA03_SCIENTIFIC_ROW_AND_METHOD_PROJECTION"
+}
