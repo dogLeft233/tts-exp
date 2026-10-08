@@ -1,0 +1,8 @@
+{
+  "expected_bytes": 9525,
+  "expected_sha256": "3099c4b2e1c650f7aa46c31145cc2c88ccda9f085288ab039c6ffed85007ab65",
+  "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_cpu_bind_plan_preflight_attempt01\\staging_files\\015\\sitecustomize.py",
+  "op": "upload",
+  "remote": "/dev/shm/cross_tfg_audio_head_20261003/candidate_v3_cpu_preflight_attempt03/bootstrap/sitecustomize.py",
+  "timeout": 120
+}

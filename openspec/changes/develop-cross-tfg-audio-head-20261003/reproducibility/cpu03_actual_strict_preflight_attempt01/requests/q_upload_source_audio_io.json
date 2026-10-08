@@ -1,0 +1,8 @@
+{
+  "expected_bytes": 14294,
+  "expected_sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+  "local": "E:\\Documents\\tts-exp\\scripts\\audio_enhancement\\audio_io.py",
+  "op": "upload",
+  "remote": "/dev/shm/cross_tfg_audio_head_20261003/candidate_v3_cpu_preflight_attempt03/project/scripts/audio_enhancement/audio_io.py",
+  "timeout": 120
+}

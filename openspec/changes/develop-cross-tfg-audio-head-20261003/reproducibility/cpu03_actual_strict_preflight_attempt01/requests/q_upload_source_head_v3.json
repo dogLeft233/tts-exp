@@ -1,0 +1,8 @@
+{
+  "expected_bytes": 32233,
+  "expected_sha256": "77acdff03cca22261852f48364cbc75263db58a14cb565c08aa0d268afca6e87",
+  "local": "E:\\Documents\\tts-exp\\scripts\\audio_enhancement\\shared_recipient_transition_head_v3.py",
+  "op": "upload",
+  "remote": "/dev/shm/cross_tfg_audio_head_20261003/candidate_v3_cpu_preflight_attempt03/project/scripts/audio_enhancement/shared_recipient_transition_head_v3.py",
+  "timeout": 120
+}

@@ -1,0 +1,149 @@
+--- attempt02
++++ attempt03
+@@ -25,14 +25,14 @@
+ 
+ 
+ SCHEMA = "cross_tfg_v3_candidate_cpu_preflight_v1"
+-PREFLIGHT_ATTEMPT = "candidate_v3_cpu_preflight_attempt02"
++PREFLIGHT_ATTEMPT = "candidate_v3_cpu_preflight_attempt03"
+ RESULT_SCHEMA = "cross_tfg_v3_enhancement_cli_result_v1"
+ PLAN_RAW_SHA256 = "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280"
+ PLAN_BYTES = 932236
+ PLAN_SELF_SHA256 = "fee2718c0c4b18e5acabf3ca7d7103344bfb3859f3d8a3b93862c1ad4ce7d612"
+ PLAN_MANIFEST_RAW_SHA256 = "d25985b666c59946a7acd1c948b834ea8628d0b9c8eef0442419818ea86c0192"
+ PLAN_MANIFEST_BYTES = 2513
+-PLAN_MANIFEST_SELF_SHA256 = "6ea4dd85a5f88629f9663d71e284149a33d5749cd4c31f724af19f0d754297ba7"
++PLAN_MANIFEST_SELF_SHA256 = "420d73cd5fb95692ded1c8bbd8cd82363ccb40169a064f21121be70f041909e5"
+ CONFIG03_RAW_SHA256 = "fd2ce3509c457e40e618818828f6040ab65641315d40efe8f48e5dc3c5c3d1df"
+ CONFIG03_BYTES = 5240
+ CONFIG02_RAW_SHA256 = "aba0dc744b76cfd9f73db547faa80508a4a46437432ef78feaf5b7bfb51f3666"
+@@ -169,7 +169,7 @@
+         raise PreflightError(f"create-only write verification failed: {path}")
+ 
+ 
+-def load_plan(plan_path: pathlib.Path, manifest_path: pathlib.Path) -> tuple[dict[str, Any], dict[str, Any], list[dict[str, Any]], dict[str, dict[str, Any]]]:
++def load_plan(plan_path: pathlib.Path, manifest_path: pathlib.Path) -> tuple[dict[str, Any], dict[str, Any], list[dict[str, Any]], dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
+     plan_raw, plan_pin = file_pin(plan_path, expected_bytes=PLAN_BYTES, expected_sha=PLAN_RAW_SHA256, maximum=2 * 1024 * 1024)
+     plan = read_json(plan_raw, "candidate plan", max_bytes=2 * 1024 * 1024)
+     without_key_sha(plan, "plan_sha256")
+@@ -194,6 +194,7 @@
+     if not isinstance(rows, list) or len(rows) != 180:
+         raise PreflightError("frozen candidate plan must contain exactly 180 rows")
+     by_sample: dict[str, dict[str, Any]] = {}
++    native_binding_by_sample: dict[str, dict[str, Any]] = {}
+     frame_count_by_sample: dict[str, int] = {}
+     row_ids: set[str] = set()
+     row_cells: set[tuple[str, str, int, str]] = set()
+@@ -240,20 +241,24 @@
+         if gen.get("training_record_sha256") != EXPECTED_TRAINING or gen.get("seed") != seed or gen.get("generator") != model_id:
+             raise PreflightError(f"row {row_id} training record pin differs")
+         binding = row.get("wav2lip_native_frame_binding")
+-        if not isinstance(binding, dict):
+-            raise PreflightError(f"row {row_id} lacks native frame binding")
+-        if binding.get("sample_id") != sample_id or binding.get("sample_count") != natural.get("sample_count"):
+-            raise PreflightError(f"row {row_id} frame binding sample count differs")
+-        if binding.get("natural_pcm_sha256") != natural.get("pcm_sha256"):
+-            raise PreflightError(f"row {row_id} frame binding PCM identity differs")
+-        if binding.get("fps_num") != 25 or binding.get("fps_den") != 1:
+-            raise PreflightError(f"row {row_id} native frame binding clock differs")
+-        frame_count = binding.get("expected_inference_frame_count")
+-        if type(frame_count) is not int or frame_count < 1:
+-            raise PreflightError(f"row {row_id} native frame count is invalid")
+-        if sample_id in frame_count_by_sample and frame_count_by_sample[sample_id] != frame_count:
+-            raise PreflightError(f"rows for {sample_id} disagree on native emitted-frame count")
+-        frame_count_by_sample[sample_id] = frame_count
++        if model_id == "wav2lip_gan_bac9a81e":
++            if not isinstance(binding, dict):
++                raise PreflightError(f"Wav2Lip row {row_id} lacks native frame binding")
++            if binding.get("sample_id") != sample_id or binding.get("sample_count") != natural.get("sample_count"):
++                raise PreflightError(f"Wav2Lip row {row_id} frame binding sample count differs")
++            if binding.get("natural_pcm_sha256") != natural.get("pcm_sha256"):
++                raise PreflightError(f"Wav2Lip row {row_id} frame binding PCM identity differs")
++            if binding.get("fps_num") != 25 or binding.get("fps_den") != 1:
++                raise PreflightError(f"Wav2Lip row {row_id} native frame binding clock differs")
++            frame_count = binding.get("expected_inference_frame_count")
++            if type(frame_count) is not int or frame_count < 1:
++                raise PreflightError(f"Wav2Lip row {row_id} native frame count is invalid")
++            if sample_id in native_binding_by_sample and native_binding_by_sample[sample_id] != binding:
++                raise PreflightError(f"Wav2Lip rows for {sample_id} disagree on the pinned native frame binding")
++            if sample_id in frame_count_by_sample and frame_count_by_sample[sample_id] != frame_count:
++                raise PreflightError(f"Wav2Lip rows for {sample_id} disagree on native emitted-frame count")
++            native_binding_by_sample[sample_id] = binding
++            frame_count_by_sample[sample_id] = frame_count
+         if sample_id in by_sample and by_sample[sample_id] != natural:
+             raise PreflightError(f"rows for {sample_id} disagree on natural PCM identity")
+         by_sample[sample_id] = natural
+@@ -261,6 +266,8 @@
+         raise PreflightError("candidate plan row/model/method scope is incomplete")
+     if len(by_sample) != 20 or set(by_sample) != set(EXPECTED_DEV_IDS) or tuple(sorted(seeds)) != EXPECTED_SEEDS:
+         raise PreflightError("candidate plan does not match exact frozen 20-sample/3-seed cohort")
++    if set(native_binding_by_sample) != set(EXPECTED_DEV_IDS):
++        raise PreflightError("candidate plan lacks one complete Wav2Lip native frame binding per Dev sample")
+     expected_cells = {
+         (sample_id, model_id, seed, EXPECTED_METHOD)
+         for sample_id in EXPECTED_DEV_IDS
+@@ -271,7 +278,7 @@
+         raise PreflightError("candidate plan is not the exact 20-sample × 3-model × 3-seed matrix")
+     if manifest.get("render_seed_family") != sorted(seeds):
+         raise PreflightError("candidate plan manifest seed family differs from plan rows")
+-    return plan, manifest, rows, by_sample
++    return plan, manifest, rows, by_sample, native_binding_by_sample
+ 
+ 
+ def stage_candidate_provenance(config: dict[str, Any], repo_root: pathlib.Path, code_root: pathlib.Path) -> list[dict[str, Any]]:
+@@ -437,7 +444,7 @@
+         if free_before < MIN_FREE_BYTES:
+             raise PreflightError(f"SHM free space {free_before} is below 5 GiB reserve")
+ 
+-        plan, manifest, rows, inputs_by_sample = load_plan(args.plan, args.plan_manifest)
++        plan, manifest, rows, inputs_by_sample, native_binding_by_sample = load_plan(args.plan, args.plan_manifest)
+         config_raw, config_pin = file_pin(args.config, expected_bytes=CONFIG03_BYTES, expected_sha=CONFIG03_RAW_SHA256)
+         config = read_json(config_raw, "CLI03 config", max_bytes=256 * 1024)
+         old_config_raw, old_config_pin = file_pin(args.predecessor_config, expected_bytes=CONFIG02_BYTES, expected_sha=CONFIG02_RAW_SHA256)
+@@ -564,9 +571,12 @@
+         # First run the exact same-profile reference input, then all twenty Dev
+         # inputs in this same process. The CLI03 interop setter path is thereby
+         # exercised after PyTorch work has already begun.
+-        tasks: list[tuple[str, str, dict[str, Any]]] = [("same_profile_reference", EXPECTED_REFERENCE["sample_id"], EXPECTED_REFERENCE)]
+-        tasks.extend(("candidate_dev", sample_id, pin) for sample_id, pin in sorted(inputs_by_sample.items()))
+-        for task_kind, sample_id, expected in tasks:
++        tasks: list[tuple[str, str, dict[str, Any], int | None]] = [("same_profile_reference", EXPECTED_REFERENCE["sample_id"], EXPECTED_REFERENCE, None)]
++        tasks.extend(
++            ("candidate_dev", sample_id, pin, native_binding_by_sample[sample_id]["expected_inference_frame_count"])
++            for sample_id, pin in sorted(inputs_by_sample.items())
++        )
++        for task_kind, sample_id, expected, native_expected_frame_count in tasks:
+             input_path = pathlib.Path(expected.get("input_path") or expected.get("path"))
+             no_symlink_components(input_path)
+             _raw_input, input_file_pin = file_pin(input_path, expected_bytes=expected["input_bytes"] if "input_bytes" in expected else expected.get("file_bytes"), expected_sha=expected.get("input_file_sha256") or expected.get("file_sha256"), maximum=MAX_INPUT_BYTES)
+@@ -598,8 +608,19 @@
+                 raise PreflightError(f"CLI03 metadata config/profile binding differs for {sample_id}")
+             if cli_meta.get("source_audio", {}).get("file_sha256") != input_file_pin["sha256"]:
+                 raise PreflightError(f"CLI03 did not report the pinned original input for {sample_id}")
+-            if cli_meta.get("source_audio", {}).get("pcm_float32_sha256") != expected_pcm:
+-                raise PreflightError(f"CLI03 reported an unexpected canonical source PCM for {sample_id}")
++            source_meta = cli_meta.get("source_audio", {})
++            canonical_meta = cli_meta.get("canonical_input_pcm", {})
++            if (
++                source_meta.get("sample_count") != expected_count
++                or source_meta.get("sample_rate_hz") != 16000
++                or source_meta.get("channels") != 1
++                or canonical_meta.get("dtype") != "float32-le"
++                or canonical_meta.get("channels") != 1
++                or canonical_meta.get("sample_rate_hz") != 16000
++                or canonical_meta.get("sample_count") != expected_count
++                or canonical_meta.get("pcm_sha256") != expected_pcm
++            ):
++                raise PreflightError(f"CLI03 canonical source PCM/clock differs for {sample_id}")
+             if cli_meta.get("head", {}).get("parameter") != config.get("parameter"):
+                 raise PreflightError(f"CLI03 output metadata parameter differs for {sample_id}")
+             cli_provenance = cli_meta.get("head", {}).get("candidate_provenance", {})
+@@ -637,7 +658,7 @@
+                 "output_channels": 1,
+                 "output_rms": float(output_meta["rms"]),
+                 "output_peak": float(output_meta["peak"]),
+-                "native_expected_frame_count": expected.get("wav2lip_native_frame_binding", {}).get("expected_inference_frame_count") if task_kind == "candidate_dev" else None,
++                "native_expected_frame_count": native_expected_frame_count,
+                 "strict_policy_preserved": True,
+                 "cuda_initialized_after_row": False,
+             }

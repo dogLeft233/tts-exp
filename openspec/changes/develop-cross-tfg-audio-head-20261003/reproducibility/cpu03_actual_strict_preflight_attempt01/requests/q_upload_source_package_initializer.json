@@ -1,0 +1,8 @@
+{
+  "expected_bytes": 1503,
+  "expected_sha256": "db520f7b04343682e6df4ba53b22503de806287e70f2b8e41e84f16912d361fc",
+  "local": "E:\\Documents\\tts-exp\\scripts\\audio_enhancement\\__init__.py",
+  "op": "upload",
+  "remote": "/dev/shm/cross_tfg_audio_head_20261003/candidate_v3_cpu_preflight_attempt03/project/scripts/audio_enhancement/__init__.py",
+  "timeout": 120
+}

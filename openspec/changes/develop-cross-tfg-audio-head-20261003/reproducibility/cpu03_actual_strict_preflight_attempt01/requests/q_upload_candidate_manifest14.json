@@ -1,0 +1,8 @@
+{
+  "expected_bytes": 2513,
+  "expected_sha256": "d25985b666c59946a7acd1c948b834ea8628d0b9c8eef0442419818ea86c0192",
+  "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\actual_readback_attempt01\\plan_manifest_metadata_repair_attempt14.json",
+  "op": "upload",
+  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/candidate_v3_cpu_preflight_attempt03/inputs/plan_manifest_metadata_repair_attempt14.json",
+  "timeout": 120
+}

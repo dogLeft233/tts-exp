@@ -1,0 +1,409 @@
+{
+  "actual_plan_manifest": {
+    "manifest_raw_sha256": "d25985b666c59946a7acd1c948b834ea8628d0b9c8eef0442419818ea86c0192",
+    "manifest_sha256": "420d73cd5fb95692ded1c8bbd8cd82363ccb40169a064f21121be70f041909e5",
+    "plan_raw_sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280",
+    "plan_sha256": "fee2718c0c4b18e5acabf3ca7d7103344bfb3859f3d8a3b93862c1ad4ce7d612"
+  },
+  "attempt": "candidate_v3_cpu_preflight_attempt03",
+  "execution_contract": {
+    "all_outputs_create_only_under_fresh_shm_root": true,
+    "no_confirm_inputs": true,
+    "no_video_render_or_syncnet": true,
+    "old_vs_new_anchor_pcm_equality_is_gate": false,
+    "one_process": true,
+    "rows": [
+      "same-profile trained step120 anchor",
+      "20 distinct frozen Dev natural PCM inputs"
+    ],
+    "strict_policy": {
+      "CROSS_TFG_STRICT_STARTUP_POLICY": "1",
+      "CUBLAS_WORKSPACE_CONFIG": ":4096:8",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONHASHSEED": "20261003",
+      "PYTHONNOUSERSITE": "1"
+    }
+  },
+  "interpreter": {
+    "cuda_initialized_must_remain": false,
+    "cuda_visible_devices": "",
+    "lexical_path": "/root/autodl-tmp/wav2lip-syncnet/envs/wav2lip/bin/python",
+    "numpy": "1.26.4",
+    "python_version": [
+      3,
+      10,
+      12
+    ],
+    "resolved_path": "/usr/bin/python3.10",
+    "strict_bootstrap_sha256": "3099c4b2e1c650f7aa46c31145cc2c88ccda9f085288ab039c6ffed85007ab65",
+    "torch": "2.5.1+cu124"
+  },
+  "local_sealer": {
+    "bytes": 16708,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cpu_preflight_attempt03\\seal_cpu_preflight_packet_attempt03.py",
+    "sha256": "e576a3e9dd02e2f387070bbfe082a6bf07905dc82582df1215e9ecdb7cd4f875"
+  },
+  "manifest_sha256": "9d21a49ad3d1707a24d338a93d678a3af5c7f22c5085e427567749707d04a55f",
+  "metadata_only_load_plan_qc": {
+    "bytes": 1988,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cpu_preflight_attempt03\\load_plan_metadata_qc_attempt01.json",
+    "sha256": "445d785448e503ad8b5458b276c7771c32b1afe387e759521e709d2acaa501de"
+  },
+  "parent_worker": {
+    "bytes": 45899,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cpu_preflight_attempt02\\preflight_candidate_v3_cpu_attempt02.py",
+    "sha256": "31bd396b19bf9dfd35f62d772e7c5b830a209d600cf4f615e60eb5bd9c8c2e0b"
+  },
+  "remote_only_expected_inputs": {
+    "candidate_dev_inputs": {
+      "BAC009S0005W0121": {
+        "channels": 1,
+        "file_sha256": "d55225a22076b9fb25884fba8776a602f49b92025de9be148917657bd7f2190f",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0005/BAC009S0005W0121.wav",
+        "pcm_sha256": "bce584f82bad71ea2501a976a512471e0dacbdc24a4b8c047e6981c747aa2a8e",
+        "sample_count": 56320,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0005W0123": {
+        "channels": 1,
+        "file_sha256": "82dfa2b5b7f62ed3c5428e6b6a9deec1f4f4f69868fdf9e9ab40c42d17c273e8",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0005/BAC009S0005W0123.wav",
+        "pcm_sha256": "581a6fbd322c6ad5304ba5a225f724e46f7bd3ecc4221b1c7644cc45785361ad",
+        "sample_count": 55729,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0022W0122": {
+        "channels": 1,
+        "file_sha256": "f481b9868b0b7a5fa50af395d2d3ba6e7ca7943dc8f322548de6328d1728bdad",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0022/BAC009S0022W0122.wav",
+        "pcm_sha256": "e010442e47d00c985b02a025d70fad0ab12bfa8b5b87e90425bfab4697b78a7d",
+        "sample_count": 60464,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0022W0123": {
+        "channels": 1,
+        "file_sha256": "105168bcc0c61b98c437c4341028d4f4d119edfbd21bd5621038b3606efa6965",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0022/BAC009S0022W0123.wav",
+        "pcm_sha256": "5ba7a92a3480a1ebda7cb48b62efc4d54d77d239b8121710b82f89b1c4b357a8",
+        "sample_count": 51376,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0024W0121": {
+        "channels": 1,
+        "file_sha256": "9cf79f9accf91b1525d315fec592bdd9e4c5f128b99c8f72a86c2e749286ec1e",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0024/BAC009S0024W0121.wav",
+        "pcm_sha256": "275becd20bbf3b7d27d7ce33a78b8622f63ef171557d3a9248ca9f219a814899",
+        "sample_count": 61376,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0024W0122": {
+        "channels": 1,
+        "file_sha256": "ea3b2cdb8893d0fdff2def6abca2e32f35b952c1103011d9b0347a22f7815d3e",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0024/BAC009S0024W0122.wav",
+        "pcm_sha256": "2d4a5fba237e150297ed6560a41068dc57eeb583ffca093086e075176a17a3d0",
+        "sample_count": 56561,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0037W0121": {
+        "channels": 1,
+        "file_sha256": "7a5f271c8e42cd975c1fecf70acb9433f254026614f5ea7927c035db25bcc6fc",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0037/BAC009S0037W0121.wav",
+        "pcm_sha256": "4b9d066267386ffc1a7b261fe3f53ac6519b236c3ed4c439d3c5c55dee683302",
+        "sample_count": 74977,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0037W0122": {
+        "channels": 1,
+        "file_sha256": "f1bc706278816ebb8c6503d87294fb615677aa821ec822f16b153d07c6bdeb56",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0037/BAC009S0037W0122.wav",
+        "pcm_sha256": "8cff4471cb60dd2159cabeb7eda1da07158bf6a1d3c2fc05efb960b6fb72db94",
+        "sample_count": 66416,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0038W0121": {
+        "channels": 1,
+        "file_sha256": "67252538dc1b6ae66ad99b75f10d88385698e073ed83f837058c908d4b7d6779",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0038/BAC009S0038W0121.wav",
+        "pcm_sha256": "70a8a768d3984c59314298c1ae2fb17ba7966801fddb4f4358a1edd4b94d18c8",
+        "sample_count": 103615,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0038W0122": {
+        "channels": 1,
+        "file_sha256": "141302a45ca489f3b230755a88b24fd8df3cb34ddaedd091000a6e5d1a068bda",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0038/BAC009S0038W0122.wav",
+        "pcm_sha256": "41c461c8a1209bd426c30814628978589f76e041f267f7a0858736d3e9150623",
+        "sample_count": 56401,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0039W0121": {
+        "channels": 1,
+        "file_sha256": "2be29a4db50ea5ab66296cfec9e5149811a4bb39b3d6f04ef48ec7778b6d600d",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0039/BAC009S0039W0121.wav",
+        "pcm_sha256": "48cc6e22b0fadb7f11ed8be52a2d2c7833c37c15eba9b63a0ed7f4a721e87679",
+        "sample_count": 83105,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0039W0123": {
+        "channels": 1,
+        "file_sha256": "a99a341102a69ad08c5d191f795450aca3fa41e883119beec797d23fc046d34b",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0039/BAC009S0039W0123.wav",
+        "pcm_sha256": "d7167e8895b25a97d8ab403f7c288ec3cc00235ab4c1f166da62d6e1e577cfeb",
+        "sample_count": 76880,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0041W0121": {
+        "channels": 1,
+        "file_sha256": "61d2478876d1426c22869e0ae42d062ef955099c36d9a124772738f8abed2a93",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0041/BAC009S0041W0121.wav",
+        "pcm_sha256": "eaf53d20692f36c69e3db7c97fd478e301ab574335da56345825571d38208a44",
+        "sample_count": 69456,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0041W0122": {
+        "channels": 1,
+        "file_sha256": "e0db5deba70785c132214422124bd9c4a9fe5d973f5e238da32643232987ddf5",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0041/BAC009S0041W0122.wav",
+        "pcm_sha256": "df71af1755aaeec87dd2daeb15dbbe70d0635462e105e3d2899b4cfb54898587",
+        "sample_count": 95744,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0044W0121": {
+        "channels": 1,
+        "file_sha256": "4492e4f3c83363e9e6102d5b630f499ba50fd77206d2aa9a991c672335168e0e",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0044/BAC009S0044W0121.wav",
+        "pcm_sha256": "c6fb5eea63502bffca5735d3a6a8b95fbcd6c79c5fe5c9974a4dc16617118233",
+        "sample_count": 68241,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0044W0122": {
+        "channels": 1,
+        "file_sha256": "993f2fa6473186e77c4f2f9258b237c30ca479375500bf8c6ad47b38de294d9e",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0044/BAC009S0044W0122.wav",
+        "pcm_sha256": "d1901f4990119c659e158751e711a9d9fcae00ff6c3e5fb59e4629fa834930db",
+        "sample_count": 56607,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0049W0121": {
+        "channels": 1,
+        "file_sha256": "a7cb6fc808ab8d831ace62ca77f64db2ded6098f854824afe3bb16705e59a0e5",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0049/BAC009S0049W0121.wav",
+        "pcm_sha256": "cdb860f669425afb6f909b2fc07ba5466804958da4443182bb8505c68a6beed4",
+        "sample_count": 66272,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0049W0122": {
+        "channels": 1,
+        "file_sha256": "e67799bec15d78e93d764fee5878bc912d6d85042ea4d38e24e463e7e0c07dc9",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0049/BAC009S0049W0122.wav",
+        "pcm_sha256": "1623966fe0b8c4b3d053e1e5bcde2053b2671c3ee34035033f1654979bd795d3",
+        "sample_count": 75120,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0050W0121": {
+        "channels": 1,
+        "file_sha256": "efa6c75da0cf24bf8130a94a092df8c1d4db615b72160f9c3d97ca7706bc7385",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0050/BAC009S0050W0121.wav",
+        "pcm_sha256": "53e9f767364c247f3a1c7c871018b194cd547de961c9c68daf829c481de39b56",
+        "sample_count": 66192,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      },
+      "BAC009S0050W0122": {
+        "channels": 1,
+        "file_sha256": "c83fad357ce07ab0d0e0cf7506479209e3c0566c6b489dd6298d6b1666e022f9",
+        "path": "/dev/shm/cross_tfg_audio_head_20261003/stage_a_plan_attempt01/dev_pcm_rows_attempt01/pcm/S0050/BAC009S0050W0122.wav",
+        "pcm_sha256": "a7ed6bef8aecebdb54af3bf9e2c98e58790cb5fe470e59ae6de15330b86c5ebc",
+        "sample_count": 65312,
+        "sample_rate_hz": 16000,
+        "subtype": "IEEE_FLOAT_32_LE"
+      }
+    },
+    "candidate_provenance_project_files": {
+      "checkpoint": {
+        "bytes": 1802,
+        "path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/candidate_provenance/checkpoint.json",
+        "sha256": "8d5eb607f77963291372b33245f13f9b9578ebf71657acf1b43243746c538eb8"
+      },
+      "selection_record": {
+        "bytes": 566,
+        "path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/candidate_provenance/selection_record.json",
+        "sha256": "db4ede1f315909b8e8d410d4ab519ee8745035233dc910333a2b409c0a2328fc"
+      },
+      "training_record": {
+        "bytes": 5628,
+        "path": "runs/cross_tfg_audio_head_20261003/v3_step120_candidate_materialization_fit120_attempt11_attempt01/candidate_provenance/training_record.json",
+        "sha256": "c2ed183ae5894bd3c42dc56c0242539f1f8290df1230d7b1aa4df8b7584a7e67"
+      }
+    },
+    "same_profile_reference_source_wav": {
+      "bytes": 125322,
+      "path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/v5_fit40_input_stage_attempt03/fit40_source_inputs/source_wav/BAC009S0052W0121.wav",
+      "pcm_float32_sha256": "f4e611e9f816665ad7c4dce4980f461c4d9af4fe6fe9678c8f756bd03fa6b36c",
+      "sample_count": 62639,
+      "sample_rate_hz": 16000,
+      "sha256": "2d45f2b65dec29f77bcd56f05f883b16207a99e7848df3a06a203819a915b261"
+    }
+  },
+  "remote_roots": {
+    "control_root": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/candidate_v3_cpu_preflight_attempt03",
+    "fresh_output_root": "/dev/shm/cross_tfg_audio_head_20261003/candidate_v3_cpu_preflight_attempt03/output",
+    "project_root": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003",
+    "receipt": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/candidate_v3_cpu_preflight_attempt03/output/cpu_preflight_receipt_attempt03.json",
+    "task_root": "/dev/shm/cross_tfg_audio_head_20261003/candidate_v3_cpu_preflight_attempt03"
+  },
+  "request_names": [
+    "q00_create_fresh_cpu_preflight_namespace",
+    "q_upload_worker_attempt03",
+    "q_upload_strict_bootstrap03",
+    "q_upload_candidate_plan13",
+    "q_upload_candidate_manifest14",
+    "q_upload_candidate_config03",
+    "q_upload_candidate_config02_predecessor",
+    "q_upload_reference_enhanced_wav",
+    "q_upload_reference_cli_metadata",
+    "q_upload_source_audio_io",
+    "q_upload_source_candidate_cli03",
+    "q_upload_source_head_v3",
+    "q_upload_source_overdub",
+    "q_upload_source_package_initializer",
+    "q_upload_source_baselines",
+    "q_upload_source_pipeline",
+    "q_run_strict_cpu_preflight",
+    "q_download_cpu_preflight_receipt"
+  ],
+  "schema": "cross_tfg_v3_candidate_cpu_preflight_source_manifest_v1",
+  "scope": {
+    "candidate180_started": false,
+    "confirm_audio_or_effects_read": false,
+    "model_or_gpu_execution_performed": false,
+    "pcm_delta_against_old_anchor_is_non_gating": true,
+    "remote_action_performed": false,
+    "same_profile_anchor_and_20_unique_dev_audios_planned": true
+  },
+  "source_evidence": {
+    "audio_io": {
+      "bytes": 14294,
+      "path": "E:\\Documents\\tts-exp\\scripts\\audio_enhancement\\audio_io.py",
+      "sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004"
+    },
+    "baselines": {
+      "bytes": 15123,
+      "path": "E:\\Documents\\tts-exp\\scripts\\audio_enhancement\\baselines.py",
+      "sha256": "7d161970381cc7e6770a4a53063f91b2606c05490945b2b86ab41c7de4d0a3e2"
+    },
+    "candidate_cli03": {
+      "bytes": 43071,
+      "path": "E:\\Documents\\tts-exp\\scripts\\audio_enhancement\\enhance_v3_attempt03.py",
+      "sha256": "2cf5fc0f73d7c8d5aabbbc457672e487de2f8a88e683976bb58698325a80fdfd"
+    },
+    "candidate_config02_predecessor": {
+      "bytes": 5240,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\root_candidate_original_metadata_readback_attempt01\\candidate_config.json",
+      "sha256": "aba0dc744b76cfd9f73db547faa80508a4a46437432ef78feaf5b7bfb51f3666"
+    },
+    "candidate_config03": {
+      "bytes": 5240,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_interop_thread_repair_attempt03\\v3_method_candidate_config_attempt03.json",
+      "sha256": "fd2ce3509c457e40e618818828f6040ab65641315d40efe8f48e5dc3c5c3d1df"
+    },
+    "candidate_manifest14": {
+      "bytes": 2513,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\actual_readback_attempt01\\plan_manifest_metadata_repair_attempt14.json",
+      "sha256": "d25985b666c59946a7acd1c948b834ea8628d0b9c8eef0442419818ea86c0192"
+    },
+    "candidate_plan13": {
+      "bytes": 932236,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\actual_readback_attempt01\\candidate_rebound_plan_attempt13.json",
+      "sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280"
+    },
+    "head_v3": {
+      "bytes": 32233,
+      "path": "E:\\Documents\\tts-exp\\scripts\\audio_enhancement\\shared_recipient_transition_head_v3.py",
+      "sha256": "77acdff03cca22261852f48364cbc75263db58a14cb565c08aa0d268afca6e87"
+    },
+    "load_plan_metadata_qc": {
+      "bytes": 1988,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cpu_preflight_attempt03\\load_plan_metadata_qc_attempt01.json",
+      "sha256": "445d785448e503ad8b5458b276c7771c32b1afe387e759521e709d2acaa501de"
+    },
+    "overdub": {
+      "bytes": 12002,
+      "path": "E:\\Documents\\tts-exp\\scripts\\audio_enhancement\\overdub.py",
+      "sha256": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6"
+    },
+    "package_initializer": {
+      "bytes": 1503,
+      "path": "E:\\Documents\\tts-exp\\scripts\\audio_enhancement\\__init__.py",
+      "sha256": "db520f7b04343682e6df4ba53b22503de806287e70f2b8e41e84f16912d361fc"
+    },
+    "pipeline": {
+      "bytes": 5975,
+      "path": "E:\\Documents\\tts-exp\\scripts\\audio_enhancement\\pipeline.py",
+      "sha256": "b40ddce9b09ea42d56945eb66acca3326be6784acb6c1e6ab134b1b2899fb6c3"
+    },
+    "reference_cli_metadata": {
+      "bytes": 12233,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\v3_step120_bundle_cpu_repro_attempt04\\downloads\\cli_metadata.json",
+      "sha256": "2aab5bfecf4a6d5ce6e916cc0fe1b3e453b216afc238e508904704a51999db76"
+    },
+    "reference_enhanced_wav": {
+      "bytes": 250600,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\v3_step120_bundle_cpu_repro_attempt04\\downloads\\enhanced.wav",
+      "sha256": "9cf46db4c5caf7f058bda52b290ab5a79405fddf97ad541bfd9dc72624b6bfa0"
+    },
+    "strict_bootstrap03": {
+      "bytes": 9525,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_cpu_bind_plan_preflight_attempt01\\staging_files\\015\\sitecustomize.py",
+      "sha256": "3099c4b2e1c650f7aa46c31145cc2c88ccda9f085288ab039c6ffed85007ab65"
+    },
+    "worker_attempt02_parent": {
+      "bytes": 45899,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cpu_preflight_attempt02\\preflight_candidate_v3_cpu_attempt02.py",
+      "sha256": "31bd396b19bf9dfd35f62d772e7c5b830a209d600cf4f615e60eb5bd9c8c2e0b"
+    },
+    "worker_attempt02_to_attempt03_diff": {
+      "bytes": 10613,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cpu_preflight_attempt03\\attempt02_to_attempt03.diff",
+      "sha256": "3c37089eeca25a6537eb6443cb82f071353a3038eae2a1035dd75cd447086536"
+    },
+    "worker_attempt03": {
+      "bytes": 47253,
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cpu_preflight_attempt03\\preflight_candidate_v3_cpu_attempt03.py",
+      "sha256": "1de5879c3ff81412c494ecf600402eb28f829dc799711a153e59b192fcd1cbac"
+    }
+  },
+  "status": "SOURCE_AND_REQUEST_PACKET_READY_FOR_ROOT_REVIEW_NOT_DISPATCHED",
+  "worker": {
+    "bytes": 47253,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cpu_preflight_attempt03\\preflight_candidate_v3_cpu_attempt03.py",
+    "sha256": "1de5879c3ff81412c494ecf600402eb28f829dc799711a153e59b192fcd1cbac"
+  },
+  "worker_diff": {
+    "bytes": 10613,
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cpu_preflight_attempt03\\attempt02_to_attempt03.diff",
+    "sha256": "3c37089eeca25a6537eb6443cb82f071353a3038eae2a1035dd75cd447086536"
+  }
+}

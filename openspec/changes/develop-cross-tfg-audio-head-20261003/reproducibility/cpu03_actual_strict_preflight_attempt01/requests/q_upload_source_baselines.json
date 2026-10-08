@@ -1,0 +1,8 @@
+{
+  "expected_bytes": 15123,
+  "expected_sha256": "7d161970381cc7e6770a4a53063f91b2606c05490945b2b86ab41c7de4d0a3e2",
+  "local": "E:\\Documents\\tts-exp\\scripts\\audio_enhancement\\baselines.py",
+  "op": "upload",
+  "remote": "/dev/shm/cross_tfg_audio_head_20261003/candidate_v3_cpu_preflight_attempt03/project/scripts/audio_enhancement/baselines.py",
+  "timeout": 120
+}

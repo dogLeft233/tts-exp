@@ -1,0 +1,8 @@
+{
+  "expected_bytes": 5240,
+  "expected_sha256": "aba0dc744b76cfd9f73db547faa80508a4a46437432ef78feaf5b7bfb51f3666",
+  "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\root_candidate_original_metadata_readback_attempt01\\candidate_config.json",
+  "op": "upload",
+  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/candidate_v3_cpu_preflight_attempt03/inputs/candidate_config_cli02.json",
+  "timeout": 120
+}

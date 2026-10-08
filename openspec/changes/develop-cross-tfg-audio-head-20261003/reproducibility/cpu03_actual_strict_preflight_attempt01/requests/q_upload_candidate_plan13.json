@@ -1,0 +1,8 @@
+{
+  "expected_bytes": 932236,
+  "expected_sha256": "8615754443e653fc79203f108fa689205a77e7f6f234930b352204df08b98280",
+  "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate_generator_pin_repair_attempt02\\actual_readback_attempt01\\candidate_rebound_plan_attempt13.json",
+  "op": "upload",
+  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/candidate_v3_cpu_preflight_attempt03/inputs/candidate_rebound_plan_attempt13.json",
+  "timeout": 120
+}

@@ -1,0 +1,271 @@
+{
+  "audio_or_model_execution": false,
+  "checked_exact_paths": 52,
+  "created_utc": "2026-10-08T16:21:58.483387+00:00",
+  "files": [
+    {
+      "bytes": 3963,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/root_failed180_qc.json",
+      "sha256": "7994e8e2d4bda33f452e910f606da8bbb40866be98fb1f532dc3d215d765c028"
+    },
+    {
+      "bytes": 5404,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/sources/root_failed180_qc.py",
+      "sha256": "9cc3563d4cf56eafda550cc697359c624f513365d9572fba8d62bf40e194ba46"
+    },
+    {
+      "bytes": 10374,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/actual_launch_receipt.json",
+      "sha256": "28f4ef0a14b7d4358b9200cfe45e7a31965d9838f20554f7443e113894790fc8"
+    },
+    {
+      "bytes": 902,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/root_actual_launch_qc.json",
+      "sha256": "e802367b143d711adca785efbab141d913d0669fc220a74c6ea31a5c091bcf97"
+    },
+    {
+      "bytes": 75241,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/actual_failure_diagnostic_response.json",
+      "sha256": "ed1cf2263658b56574c6dbeb9515040c01ff783a133d9542b3182f9ebffdc85b"
+    },
+    {
+      "bytes": 15504,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/failed180_transfer_index03.json",
+      "sha256": "5bd019a179df28840a225f74d22bd55d8b6b17be98ec18eb743c3ca51de0c1d7"
+    },
+    {
+      "bytes": 7670,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/independent_failed180_qc04.json",
+      "sha256": "fd787dead3def02be3014fd34e364a466ec95632a1f9cf0bdc917e37fdc464fe"
+    },
+    {
+      "bytes": 7128,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/independent_failed180_qc04_manifest.json",
+      "sha256": "a7d3cb7e20268ec8e653bf25689d7e2f11ca1b5efad685b01fb5b01f91a2458a"
+    },
+    {
+      "bytes": 16847,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/independent_failed180_qc04_index.json",
+      "sha256": "a3e702bf23c57a2ff5f451ad8fddff7d78517c40137582109c62029b4143162c"
+    },
+    {
+      "bytes": 32503,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/sources/independent_failed180_qc04.py",
+      "sha256": "f5de4ff3bdaee7f893d1bcf36d710d6297f0de1368b8395106f159a7e6c212e6"
+    },
+    {
+      "bytes": 4819,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/cli03_source_evidence.json",
+      "sha256": "6448b853b9d2f869e4140c431f1030797bc4be94c1ce76d7c433062287158562"
+    },
+    {
+      "bytes": 1736,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/cli02_to_cli03.diff",
+      "sha256": "49e925fea4ba80e7c8f657a91a72b474ed3e32a02841d512aceb23e4780c1ec7"
+    },
+    {
+      "bytes": 5240,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/v3_method_candidate_config03.json",
+      "sha256": "fd2ce3509c457e40e618818828f6040ab65641315d40efe8f48e5dc3c5c3d1df"
+    },
+    {
+      "bytes": 11496,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/root_rms_independent_numeric_qc.json",
+      "sha256": "b3299d28d6e2085b7ef833fbb600f70d2ad52fb02e9b18957a36b4edf6228b6b"
+    },
+    {
+      "bytes": 6543,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/sources/root_rms_independent_numeric_qc.py",
+      "sha256": "f673741a5b82929e5777f5401606925d2672ce228135c337bac631284d7ab3cb"
+    },
+    {
+      "bytes": 5083,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/rms_concluded_note_snapshot.txt",
+      "sha256": "06c3bbd36945dc43b01e4508b08573b571e3c9af5370bcbff46ce95504334d42"
+    },
+    {
+      "bytes": 5279,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/directd0_contract02.md",
+      "sha256": "956388cfc395da754760f1e31630f909bcde6da054c9af30a0e6f3402f24ddfc"
+    },
+    {
+      "bytes": 4565,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/directd0_source_manifest02.json",
+      "sha256": "241af571ac4cca0ae10a1b5a0f611fbb6703422626315d2f427c8c4ac8579180"
+    },
+    {
+      "bytes": 2001,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/wrapper_v8_to_v9.diff",
+      "sha256": "8e3b65ffb81ae318b1f76a3d66053183eeb5cdae3ff55ba8793dc8ca37714111"
+    },
+    {
+      "bytes": 5367,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/runner_d0_attempt01_to02.diff",
+      "sha256": "b4a3b90545922b2794edda667b8dd314ee3980a7d3d6bb0e236db5a1c8341c04"
+    },
+    {
+      "bytes": 817337,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/failed_candidate02/results_ledger",
+      "sha256": "dd19b4996902576b0bedfbf91e0c2fab27815392145f024e610d584e0bb49e84"
+    },
+    {
+      "bytes": 325,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/transfer_requests/q00_results_ledger.json",
+      "sha256": "88e1024418665673422e6964d1447361db4f8542b80f91f4bb45711613126f4b"
+    },
+    {
+      "bytes": 379,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/transfer_responses/q00_results_ledger.json.response.json",
+      "sha256": "7bf49f4cf5750cbdc8c48cd016eb1c5235484923123b008b12338a79674ae8d9"
+    },
+    {
+      "bytes": 69049,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/failed_candidate02/result_manifest",
+      "sha256": "727c6a7dfebdd2184788e89cb3607e46703d0d4063b35c8f013deb5342ad3b99"
+    },
+    {
+      "bytes": 333,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/transfer_requests/q01_result_manifest.json",
+      "sha256": "76ca763f26b2139e37195b323ea5fc362d8ea6c0aba8bb2de19560d0d4d4a04c"
+    },
+    {
+      "bytes": 386,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/transfer_responses/q01_result_manifest.json.response.json",
+      "sha256": "bd44bb0f912849d0ef055342fac4599bb46ae69dbd90e4d7dcf4f7d9595f8076"
+    },
+    {
+      "bytes": 1258,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/failed_candidate02/run_status",
+      "sha256": "ab7e1b958418f7dd3ec007bba97902182a0261452020ff7765a8b578dd9c1aab"
+    },
+    {
+      "bytes": 331,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/transfer_requests/q02_run_status.json",
+      "sha256": "253957455f71de4cde4d71a2bcedfeb323b6f0d230191263f35c0cfbaa22181d"
+    },
+    {
+      "bytes": 383,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/transfer_responses/q02_run_status.json.response.json",
+      "sha256": "0f8796d842abe4b91399692ded68ca3ac31a5aecb39ab1fcd7b652c669558eb6"
+    },
+    {
+      "bytes": 6841,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/failed_candidate02/execution_record",
+      "sha256": "fbeeef8d8567aaeceea6cf4cac2e0b7a09bc99859803c2adcfdfb10ae3fb9021"
+    },
+    {
+      "bytes": 328,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/transfer_requests/q03_execution_record.json",
+      "sha256": "fd6eaedc7346949854c4553a03ec5480fe1d1ee2ae4007f3a56d1fd2c2ee080d"
+    },
+    {
+      "bytes": 380,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/transfer_responses/q03_execution_record.json.response.json",
+      "sha256": "2effc61917cc41e5945ab6c68d69b363bee7b1c1e5438efa70dc6821b9e59718"
+    },
+    {
+      "bytes": 770,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/failed_candidate02/startup_policy_receipt",
+      "sha256": "226ea26ba92bd4137d7a25b86248c9f4ab4409f9a74ea0ad24cbfc426327fb80"
+    },
+    {
+      "bytes": 357,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/transfer_requests/q04_startup_policy_receipt.json",
+      "sha256": "c85686dc0e30a2e5036747c56b6bcbd3123f14070534f515b46168c32e794d16"
+    },
+    {
+      "bytes": 408,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/transfer_responses/q04_startup_policy_receipt.json.response.json",
+      "sha256": "1cb6ff5e78f930694d7b4cf4a897e8adf720f218168fc6d526ff2c11aef200eb"
+    },
+    {
+      "bytes": 0,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/failed_candidate02/generation_repeat_qc_ledger",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 351,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/transfer_requests/q05_generation_repeat_qc_ledger.json",
+      "sha256": "988bce5ca8a3b1f98b2059b5b39316c0a944c551d0a4b8370943efed85fbec0b"
+    },
+    {
+      "bytes": 400,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/transfer_responses/q05_generation_repeat_qc_ledger.json.response.json",
+      "sha256": "faa9d7fc1ec00287095a0eb889feb5c396de8c8593f0cd3a0d0be78f2941d503"
+    },
+    {
+      "bytes": 5725,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/rms_diagnostic/analysis_manifest_attempt01.json",
+      "sha256": "21a91b0dbe9248ca3fcc2b09e87d16865fee2524505c51e42149073beaf72175"
+    },
+    {
+      "bytes": 6218,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/rms_diagnostic/analysis_protocol_attempt01.json",
+      "sha256": "b27b6d1fd2ed7e646b4697da209d9f9ebc50838388457e41d5e3b047b459709a"
+    },
+    {
+      "bytes": 22622,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/rms_diagnostic/analyze_controls360_rms_diagnostic_attempt01.py",
+      "sha256": "2d6c880f0b8cf466a7d8496e8c9cb66bb16038081794d9297fdd1c6eeda9e6fa"
+    },
+    {
+      "bytes": 149096,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/rms_diagnostic/effects_table_attempt01.json",
+      "sha256": "f4c2e5205d3bbb4c414cec04982a97b53cbdc8551d6ff17bcf410762c4f56be2"
+    },
+    {
+      "bytes": 734,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/controls360_backup_annex/full_inputs_F_B_readback_receipt.json",
+      "sha256": "62418b357513359064c96f6da7c6e83d6179d43679b34ae7df1478820ea5be1c"
+    },
+    {
+      "bytes": 4729,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/controls360_backup_annex/full_inputs_backup_manifest.json",
+      "sha256": "c43a42bb2c6c6652af76599b7337241d08cd5bd05dd26eb4c81925f3ac48042c"
+    },
+    {
+      "bytes": 244,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/controls360_backup_annex/head0d3d675_exact_copy_qc.json",
+      "sha256": "4f2612fab2852c457c616067a7ee5a6487f394394f62a00e33d1abbb9307e377"
+    },
+    {
+      "bytes": 14300,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/proof_copy_manifest.json",
+      "sha256": "7404b695d36126dd936c34ebc10743e6b7b95a132560a04c105b059c92da7eb0"
+    },
+    {
+      "bytes": 1620,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/candidate02_failure_rms_and_directd0_source_attempt01/README.md",
+      "sha256": "407286a6f61e1fa6305cf4a30fe85740cbc11174b9d2cb87d06fd8be2087d231"
+    },
+    {
+      "bytes": 43071,
+      "path": "scripts/audio_enhancement/enhance_v3_attempt03.py",
+      "sha256": "2cf5fc0f73d7c8d5aabbbc457672e487de2f8a88e683976bb58698325a80fdfd"
+    },
+    {
+      "bytes": 33497,
+      "path": "scripts/audio_enhancement/shared_recipient_transition_head_v3_d0_gatedc_attempt01.py",
+      "sha256": "1835213f4e05e03f6921b4f822535c3ea177433e5512e01ce8959eca272f22ee"
+    },
+    {
+      "bytes": 7613,
+      "path": "scripts/audio_enhancement/v3_v4_native_runtime_adapter_attempt04.py",
+      "sha256": "7d0bc03c039e22d1c84dc5472973c47af959f60bf5946d40b88ca70a50760e07"
+    },
+    {
+      "bytes": 36120,
+      "path": "scripts/audio_enhancement/v3_v4_native_runtime_adapter_v9_attempt01.py",
+      "sha256": "a9596ac2dd53b446123f9057540d025922a369c69d80d3ec7a094833800173cf"
+    },
+    {
+      "bytes": 99177,
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/run_fit40_native_transition_head_v3_d0_direction_gatedc_attempt02.py",
+      "sha256": "a13c652da3ef3072deeccdd364a4a450e27247e42f0ce9ec94f4245a969cd1f7"
+    }
+  ],
+  "local_unpushed_head": "29488e1ec07b7f98add3e117e09fe43cf739f636",
+  "manifest_copies": 45,
+  "schema": "root_git_head_exact_copy_qc_v1",
+  "status": "PASS"
+}

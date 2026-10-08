@@ -89,3 +89,6 @@ scripts/audio_enhancement/shared_recipient_transition_head_v3_d0_gatedc_attempt0
 scripts/audio_enhancement/v3_v4_native_runtime_adapter_attempt04.py -text !eol whitespace=cr-at-eol
 scripts/audio_enhancement/v3_v4_native_runtime_adapter_v9_attempt01.py -text !eol whitespace=cr-at-eol
 scripts/experiments/cross_tfg_audio_head_20261003/run_fit40_native_transition_head_v3_d0_direction_gatedc_attempt02.py -text !eol whitespace=cr-at-eol
+
+# Preserve actual strict CPU preflight evidence.
+openspec/changes/develop-cross-tfg-audio-head-20261003/reproducibility/cpu03_actual_strict_preflight_attempt01/** -text !eol whitespace=cr-at-eol

@@ -1,0 +1,8 @@
+{
+  "expected_bytes": 12002,
+  "expected_sha256": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6",
+  "local": "E:\\Documents\\tts-exp\\scripts\\audio_enhancement\\overdub.py",
+  "op": "upload",
+  "remote": "/dev/shm/cross_tfg_audio_head_20261003/candidate_v3_cpu_preflight_attempt03/project/scripts/audio_enhancement/overdub.py",
+  "timeout": 120
+}

@@ -1,0 +1,6 @@
+{
+  "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\candidate_v3_cpu_preflight_attempt03\\downloads_attempt02_revision02\\cpu_preflight_receipt_attempt03.json",
+  "op": "download",
+  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/candidate_v3_cpu_preflight_attempt03/output/cpu_preflight_receipt_attempt03.json",
+  "timeout": 60
+}
