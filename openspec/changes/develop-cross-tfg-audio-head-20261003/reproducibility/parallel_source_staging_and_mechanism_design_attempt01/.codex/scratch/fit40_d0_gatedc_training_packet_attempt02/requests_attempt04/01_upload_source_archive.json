@@ -1,8 +1,0 @@
-{
-  "expected_bytes": 160594,
-  "expected_sha256": "8dcae8fe5412e453d7d00c1ed3c7172702e355e10be2c742c89b378785675e40",
-  "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\fit40_d0_gatedc_training_packet_attempt02\\fit40_d0_gatedc_source_attempt02.zip",
-  "op": "upload",
-  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/fit40_d0_gatedc_training_attempt02/transport/fit40_d0_gatedc_source_attempt02.zip",
-  "timeout": 600
-}

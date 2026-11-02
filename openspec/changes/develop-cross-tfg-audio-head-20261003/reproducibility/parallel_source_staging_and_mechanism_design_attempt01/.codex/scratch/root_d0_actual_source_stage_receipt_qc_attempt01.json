@@ -1,9 +1,0 @@
-{
-  "all_no_gpu_scope_flags_false": true,
-  "member_count": 23,
-  "receipt_bytes": 9594,
-  "receipt_raw_sha256": "d4a2a5d8e6b8c4edd9c57e13f53bee6d727d77b518bea1311ad8be87896c5161",
-  "receipt_self_sha256": "18f5bafa11c926e8468873bd354417a2b614dd3d2a46986c92930cc018a5b69e",
-  "source_sha256": "9871ed1107d34281cce37f77d4bccded161ae83fd7ae5ecd163dba6c14795574",
-  "status": "PASS_ACTUAL_STAGE_RECEIPT_AND_ALL23_SOURCE_BYTES"
-}

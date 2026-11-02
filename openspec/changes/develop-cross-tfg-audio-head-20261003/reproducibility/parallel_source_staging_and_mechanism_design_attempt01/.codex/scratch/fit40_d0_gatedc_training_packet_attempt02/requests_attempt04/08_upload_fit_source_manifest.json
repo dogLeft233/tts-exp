@@ -1,8 +1,0 @@
-{
-  "expected_bytes": 61469,
-  "expected_sha256": "0894f33df8504f9db7f3074ea901bcd987de23d533c029431b9150325e0cd020",
-  "local": "E:\\Documents\\tts-exp\\runs\\cross_tfg_audio_head_20261003\\v5_fit_expansion_preparation_attempt02\\fit40_transfer_bundle_attempt01\\fit40_source_transfer_manifest.json",
-  "op": "upload",
-  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/fit40_d0_gatedc_training_attempt02/inputs/fit40_source_manifest_attempt03.json",
-  "timeout": 600
-}

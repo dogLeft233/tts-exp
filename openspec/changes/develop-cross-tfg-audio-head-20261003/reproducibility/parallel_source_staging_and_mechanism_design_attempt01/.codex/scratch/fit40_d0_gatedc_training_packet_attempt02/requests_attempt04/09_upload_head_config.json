@@ -1,8 +1,0 @@
-{
-  "expected_bytes": 10721,
-  "expected_sha256": "0abfbb9797a84254e6d0a6e72266862a079e5066f2fec394e0796b0c2664d2f5",
-  "local": "E:\\Documents\\tts-exp\\runs\\cross_tfg_audio_head_20261003\\shared_recipient_transition_head_v3_cpu_qualification_attempt02\\qualification_config.json",
-  "op": "upload",
-  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/fit40_d0_gatedc_training_attempt02/inputs/head_config_attempt02.json",
-  "timeout": 600
-}

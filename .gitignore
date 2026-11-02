@@ -67,8 +67,7 @@ experiments_intermediate_results.tar.gz
 # Scratch notes
 data/data/audio/trans.md
 
-# Basic Memory (personal knowledge base)
-basic-memory/
+# Basic Memory project documentation is versioned; local state is excluded below.
 
 # Claude Code ephemeral agent worktrees (never track these)
 .claude/worktrees/
@@ -94,3 +93,80 @@ data/lrs3/
 # Local bundles and repair backups
 /lrs3_tts_gain_mechanism_review_v13_share.zip
 /pre_repair_snapshot/
+
+# HDTF diagnostic subset: retain manifests/provenance, keep media local.
+/data/hdtf_diagnostic20_20261031/audio/
+/data/hdtf_diagnostic20_20261031/clips/
+/data/hdtf_diagnostic20_20261031/images/
+/data/hdtf_diagnostic20_20261031/original_videos/
+
+# Basic Memory: publish project notes and documentation assets.
+!/basic-memory/
+!/basic-memory/**/
+!/basic-memory/**/*.csv
+
+# Personal legacy imports are outside the project handoff.
+/basic-memory/_imported_legacy/personal_global/
+
+# Local BM state, credentials, caches and non-documentation outputs.
+/basic-memory/**/.git/
+/basic-memory/**/.basic-memory/
+/basic-memory/**/.obsidian/
+/basic-memory/**/.env
+/basic-memory/**/.env.*
+/basic-memory/**/__pycache__/
+/basic-memory/**/*.db
+/basic-memory/**/*.sqlite
+/basic-memory/**/*.sqlite3
+/basic-memory/**/*.log
+/basic-memory/**/*.npz
+/basic-memory/**/*.source
+/basic-memory/**/*.wav
+/basic-memory/**/*.mp3
+/basic-memory/**/*.mp4
+/basic-memory/**/*.pt
+/basic-memory/**/*.pth
+/basic-memory/**/*.safetensors
+/basic-memory/**/*.tar
+/basic-memory/**/*.tar.gz
+/basic-memory/**/*.zip
+
+# Machine-specific indexes, credentials and generated caches.
+/.codegraph/
+/.codex/
+/.mcp.json
+/.pytest_cache/
+/.ruff_cache/
+/recovered_media/
+*.inspect.txt
+
+# Repository hygiene: machine state and generated review/dispatch files.
+**/.codex/
+/_reviews/
+/Users/
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Downloaded datasets and model assets stay outside Git; retain text manifests.
+/data/**/*.wav
+/data/**/*.mp3
+/data/**/*.flac
+/data/**/*.m4a
+/data/**/*.mp4
+/data/**/*.png
+/data/**/*.jpg
+/data/**/*.jpeg
+/data/**/*.zip
+/data/**/*.tar
+/data/**/*.tar.gz
+/data/**/*.npz
+/data/**/*.npy
+/data/**/*.model
+/checkpoints/
+
+# Portable source bundles can be recreated from versioned scripts.
+/openspec/**/*.zip
+
+/data/data/audio/r2_audio

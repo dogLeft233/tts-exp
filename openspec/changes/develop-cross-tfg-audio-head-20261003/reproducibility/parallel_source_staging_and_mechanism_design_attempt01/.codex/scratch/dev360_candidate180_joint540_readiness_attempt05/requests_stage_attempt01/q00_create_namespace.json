@@ -1,5 +1,0 @@
-{
-  "op": "exec",
-  "timeout": 45,
-  "command": "set -eu; CONTROL='/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_terminal_readiness_attempt04'; test ! -e \"$CONTROL\"; test ! -L \"$CONTROL\"; mkdir -m 700 -p -- \"$CONTROL/workers\" \"$CONTROL/inputs\" \"$CONTROL/output\"; printf '%s\\n' '{\"status\":\"PASS_EMPTY_CANDIDATE180_TERMINAL_READINESS_NAMESPACE_CREATED\",\"control_root\":\"/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_terminal_readiness_attempt04\"}'"
-}

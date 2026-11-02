@@ -1,8 +1,0 @@
-{
-  "op": "upload",
-  "timeout": 180,
-  "local": "E:\\Documents\\tts-exp\\.codex\\scratch\\dev360_candidate180_joint540_readiness_attempt04\\candidate180_terminal_readiness_probe_attempt04.py",
-  "remote": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/job_control/dev360_candidate180_terminal_readiness_attempt04/workers/candidate180_terminal_readiness_probe_attempt04.py",
-  "expected_bytes": 48559,
-  "expected_sha256": "4653562f18fdd2dd221859efd6e2587046e21524e2da00e7faa150a4c8865481"
-}
