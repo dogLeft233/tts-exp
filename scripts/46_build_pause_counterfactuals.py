@@ -8,6 +8,11 @@ phone boundaries changes. These are diagnostic controls, not training targets.
 
 from __future__ import annotations
 
+try:
+    from .project_paths import resolve_project_path
+except ImportError:
+    from project_paths import resolve_project_path
+
 import argparse
 import hashlib
 import json
@@ -30,7 +35,6 @@ from pnp_feature_controls import reallocate_pause_samples
 REPO = SCRIPT_DIR.parent
 DEFAULT_MANIFEST = REPO / "runs/two_stage_hubert_aishell1_20260810/data_boundary/aishell1_400_raw_mfa_faster_qwen3_heldout.json"
 DEFAULT_OUTPUT = REPO / "runs/rhythm_timing/20260812_pause_counterfactual_valid50"
-LEGACY_ROOT = "/mnt/e/Documents/tts-audio/tts-exp"
 TARGET_SR = 16_000
 VALID_SPEAKER = "S0765"
 SILENCE_LABELS = {"", "sil", "sp", "spn", "<eps>", "h#", "pau", "pause"}
@@ -45,16 +49,10 @@ def sha256_file(path: Path) -> str:
 
 
 def resolve_path(raw_path: str | Path) -> Path:
-    raw = str(raw_path)
-    candidates = [Path(raw)]
-    if raw.startswith(LEGACY_ROOT + "/"):
-        candidates.append(REPO / raw[len(LEGACY_ROOT) + 1 :])
-    elif not Path(raw).is_absolute():
-        candidates.append(REPO / raw)
-    for candidate in candidates:
-        if candidate.exists():
-            return candidate.resolve()
-    raise FileNotFoundError(raw)
+    path = resolve_project_path(raw_path, REPO)
+    if not path.exists():
+        raise FileNotFoundError(path)
+    return path
 
 
 def load_audio(path: Path) -> tuple[np.ndarray, int]:

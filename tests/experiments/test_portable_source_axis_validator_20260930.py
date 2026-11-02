@@ -4,6 +4,9 @@ import numpy as np
 import pytest
 
 from scripts.experiments.portable_source_axis_20260930 import ops
+from scripts.experiments.portable_source_axis_20260930.independent_consumer import (
+    _random_arm_dose_eligible,
+)
 from scripts.experiments.portable_source_axis_20260930.independent_validator import (
     CONDITIONS,
     ValidationError,
@@ -98,6 +101,46 @@ def test_random_match_is_recomputed_after_float32_cast() -> None:
             z, mask, broken, plus, directions[0], u,
             metadata["per_frame_projection_diagnostics"],
         )
+
+
+def test_postcast_random_dose_miss_is_reported_per_arm_without_discarding_source_rows() -> None:
+    z = np.full((2, ops.LATENT_DIM), 0.4, dtype=np.float32)
+    mask = np.asarray([True, True])
+    d = np.zeros(ops.LATENT_DIM, dtype=np.float64)
+    d[0:2] = [0.2, -0.1]
+    u = np.zeros(ops.LATENT_DIM, dtype=np.float64)
+    u[2] = 1.0
+    plus, _ = ops.apply_source_direction(z, mask, d, u, sign=1, level_orthogonal=True)
+    directions, _ = ops.random_control_directions(d, u, seeds=(20260930,))
+
+    # Scale zero is a valid projected random output but deliberately misses
+    # the positive source-arm dose. The audit mode must preserve this failure
+    # as arm-specific metadata rather than raising before source rows can pass.
+    random = z.copy()
+    diagnostics = []
+    for frame in np.flatnonzero(mask):
+        target_norm = float(np.linalg.norm(plus[frame].astype(np.float64) - z[frame].astype(np.float64)))
+        diagnostics.append({
+            "frame_index": int(frame), "target_norm": target_norm, "actual_norm": 0.0,
+            "dose_error": -target_norm, "infeasible": False, "scale": 0.0,
+            "kkt_residual64": 0.0, "float32_constraint_abs": 0.0,
+            "float32_constraint_abs_bound": 0.0,
+        })
+
+    report = validate_random_dose(
+        z, mask, random, plus, directions[0], u, diagnostics,
+        enforce_dose_tolerance=False,
+    )
+    assert report["valid"] is True
+    assert report["dose_match_eligible"] is False
+    assert report["dose_tolerance_miss_count"] == 2
+    assert _random_arm_dose_eligible(
+        {"interventions": {"random1": {"dose": report}}}, "random1"
+    ) is False
+    assert _random_arm_dose_eligible({}, "baseline") is True
+
+    with pytest.raises(ValidationError, match="post-cast random displacement"):
+        validate_random_dose(z, mask, random, plus, directions[0], u, diagnostics)
 
 
 def test_random_direction_is_orthogonal_to_both_axes_and_has_frozen_norm() -> None:

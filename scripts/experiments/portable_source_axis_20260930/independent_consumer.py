@@ -300,6 +300,7 @@ def _compare_sample_context(
                 base, mask, context_arrays[f"axis_z_{condition}_float32"],
                 context_arrays["axis_z_orth_plus_float32"], direction, u,
                 direction_meta.get("per_frame_projection_diagnostics", []),
+                enforce_dose_tolerance=False,
             ),
         }
     checks["interventions"].update(random_checks)
@@ -486,6 +487,16 @@ def _primary_scope_status(
         "expected_common_support_groups": len(expected_samples),
         "support_failures": support_failures,
     }
+
+
+def _random_arm_dose_eligible(context_checks: Mapping[str, Any], condition: str) -> bool:
+    """Return dose-match eligibility for one random arm without gating other arms."""
+
+    if condition not in ("random1", "random2", "random3"):
+        return True
+    intervention = context_checks.get("interventions", {}).get(condition, {})
+    dose = intervention.get("dose", {}) if isinstance(intervention, Mapping) else {}
+    return bool(dose.get("dose_match_eligible", False))
 
 
 def _sample_rows(plan_rows: Sequence[Mapping[str, Any]]) -> tuple[dict[str, str], dict[str, int]]:
@@ -816,8 +827,12 @@ def consume_evaluation_run(
                         row_metrics[geometry] = compact
             key = (str(plan["face_id"]), sample_id, str(plan["family"]), str(plan["source"]), str(plan["condition"]))
             row_axis_metrics = {}
+            random_dose_eligible = _random_arm_dose_eligible(
+                _context_checks, str(plan["condition"])
+            )
             for geometry in GEOMETRIES:
-                if plan["family"] == "source_axis" and geometry in row_metrics:
+                if (plan["family"] == "source_axis" and geometry in row_metrics
+                        and random_dose_eligible):
                     row_axis_metrics[(str(plan["face_id"]), sample_id, geometry, str(plan["condition"]))] = row_metrics[geometry]
 
             # A prespecified, effect-blind parity sample checks saved distances
@@ -1010,6 +1025,51 @@ def consume_evaluation_run(
                         values, speaker_by_sample, expected_samples, draws=bootstrap_draws,
                     )
 
+    random_dose_qualification: dict[str, Any] = {"by_arm": {}, "all_three_arms": {}}
+    for index in (1, 2, 3):
+        condition = f"random{index}"
+        qualified = [
+            sample for sample, checks in context_checks_by_sample.items()
+            if _random_arm_dose_eligible(checks, condition)
+        ]
+        misses = [
+            miss
+            for checks in context_checks_by_sample.values()
+            for miss in checks.get("interventions", {}).get(condition, {}).get("dose", {}).get("dose_tolerance_misses", [])
+        ]
+        random_dose_qualification["by_arm"][condition] = {
+            "dose_match_eligible_clips": len(qualified),
+            "intended_clips": len(expected_samples),
+            "ineligible_clips": sorted(set(expected_samples) - set(qualified)),
+            "postcast_tolerance_miss_frames": len(misses),
+            "max_absolute_error": max((float(row["absolute_error"]) for row in misses), default=0.0),
+            "max_tolerance_ratio": max((float(row["tolerance_ratio"]) for row in misses), default=0.0),
+        }
+    fully_qualified = [
+        sample for sample, checks in context_checks_by_sample.items()
+        if all(_random_arm_dose_eligible(checks, f"random{index}") for index in (1, 2, 3))
+    ]
+    random_dose_qualification["all_three_arms"] = {
+        "dose_match_eligible_clips": len(fully_qualified),
+        "intended_clips": len(expected_samples),
+        "ineligible_clips": sorted(set(expected_samples) - set(fully_qualified)),
+        "eligible_for_80_clip_specificity_confirmation": len(fully_qualified) == len(expected_samples),
+    }
+    for face in FACE_IDS:
+        for geometry in GEOMETRIES:
+            random_contrasts = axis_effects[face][geometry]["contrasts"]
+            for contrast_name in ("orth_plus_minus_random_mean", "random_mean_minus_baseline"):
+                for metric, estimate in random_contrasts[contrast_name].items():
+                    estimate["random_control_qualification"] = {
+                        "status": "eligible_for_intended_cohort" if estimate["eligible_for_intended_cohort"] else "INCOMPLETE_RANDOM_DOSE_SUPPORT",
+                        "eligible_for_80_clip_specificity_confirmation": bool(
+                            estimate["eligible_for_intended_cohort"]
+                            and len(fully_qualified) == len(expected_samples)
+                        ),
+                        "fully_dose_matched_clip_count": len(fully_qualified),
+                        "intended_clip_count": len(expected_samples),
+                    }
+
     # Completeness includes every predeclared row, including the secondary
     # face and secondary arms. Paired estimates above remain visible if not.
     result_grid_complete = len(results_by_id) == len(plan_by_id) and not missing_row_ids
@@ -1039,7 +1099,8 @@ def consume_evaluation_run(
     for contrast_name in ("orth_plus_minus_baseline", "orth_plus_minus_orth_minus"):
         for metric in ("C", "C_anchor"):
             summary = axis_effects.get(primary_face, {}).get("raw", {}).get("contrasts", {}).get(contrast_name, {}).get(metric)
-            lower = summary.get("speaker_bootstrap_99_ci", [None, None])[0] if summary else None
+            ci99 = summary.get("speaker_bootstrap_99_ci") if summary else None
+            lower = ci99[0] if isinstance(ci99, (list, tuple)) and len(ci99) == 2 else None
             eligible = bool(primary_scope_eligible and summary and summary["eligible_for_intended_cohort"])
             key = f"{contrast_name}:{metric}"
             gates[key] = {
@@ -1071,6 +1132,7 @@ def consume_evaluation_run(
             n_a: int | None = None
             hashes: list[str] = []
             face_query_counts: dict[str, int] = {}
+            face_random_dose_eligibility: dict[str, dict[str, bool]] = {}
             staged_null: dict[tuple[str, str, str, str, str], np.ndarray] = {}
             try:
                 sample_context_path = _safe_artifact_path(root, str(first_row["context_npz"]))
@@ -1085,7 +1147,13 @@ def consume_evaluation_run(
                 for face in FACE_IDS:
                     group_n_a = None
                     query_ref: np.ndarray | None = None
+                    face_random_dose_eligibility[face] = {}
                     for condition in CONDITIONS:
+                        dose_eligible = _random_arm_dose_eligible(
+                            context_checks_by_sample.get(sample, {}), condition
+                        )
+                        if condition in ("random1", "random2", "random3"):
+                            face_random_dose_eligibility[face][condition] = dose_eligible
                         planned = source_rows_by_face[face][condition]
                         if planned is None or str(planned["row_id"]) not in score_paths:
                             raise ConsumerError(f"null lacks {face}/{condition} score row")
@@ -1120,19 +1188,21 @@ def consume_evaluation_run(
                                     null_scores[geometry]["search_gain"][p_index] = float(summary["C"])
                             for geometry, observed_matrix in (("raw", observed_raw), ("unit", observed_unit)):
                                 observed_summary = curve_summary(observed_matrix, anchor_column=anchor_column)
-                                for metric in AXIS_METRICS:
-                                    staged_null[(face, geometry, condition, metric, sample)] = null_scores[geometry][metric].copy()
-                                    staged_null[(face, geometry, f"observed:{condition}", metric, sample)] = np.full(
-                                        null_count,
-                                        float(observed_summary["C"] if metric == "search_gain" else observed_summary[metric]),
-                                        dtype=np.float64,
-                                    )
+                                if dose_eligible:
+                                    for metric in AXIS_METRICS:
+                                        staged_null[(face, geometry, condition, metric, sample)] = null_scores[geometry][metric].copy()
+                                        staged_null[(face, geometry, f"observed:{condition}", metric, sample)] = np.full(
+                                            null_count,
+                                            float(observed_summary["C"] if metric == "search_gain" else observed_summary[metric]),
+                                            dtype=np.float64,
+                                        )
                     face_query_counts[face] = int(len(query_ref)) if query_ref is not None else 0
                 null_diag.append({
                     "sample_id": sample, "ordered_eval_index": ordered, "seed": DEFAULT_SEED + ordered,
                     "permutation_domain_n": n_a, "permutation_count": null_count,
                     "permutation_sha256": hashes,
                     "guard20_queries_by_face": face_query_counts,
+                    "random_arm_dose_eligibility_by_face": face_random_dose_eligibility,
                     "same_permutation_across_arms_and_faces": True,
                     "scores_available_for_all_arms_and_faces": True,
                 })
@@ -1244,6 +1314,7 @@ def consume_evaluation_run(
             "errors": context_errors,
             "intervention_checks": {sample: value["interventions"] for sample, value in context_checks_by_sample.items()},
         },
+        "random_dose_qualification": random_dose_qualification,
         "support_checks": {"groups_checked": len(score_supports), "failures": support_failures},
         "cached_embedding_parity": {
             "preselected_ordered_indices": [0, 39, 79] if verify_cached_embeddings else [],

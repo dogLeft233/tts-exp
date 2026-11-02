@@ -32,6 +32,7 @@ ROOT = Path(__file__).resolve().parents[2]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
+from scripts.project_paths import resolve_project_path
 from scripts.experiments import vsr_tts_metrics as legacy_metrics
 from scripts.experiments.vsr_tts_pilot import (
     AVSR_ROOT,
@@ -75,7 +76,6 @@ SYNCNET_MODEL = SYNCNET_ROOT / "data" / "syncnet_v2.model"
 DEFAULT_RUN = ROOT / "runs" / "vsr_ditto50_linkage_v1"
 COHORT_ID = "ditto50_s0765"
 PROTOCOL_ID = "vsr_ditto50_linkage_v1"
-LEGACY_ROOT = "/mnt/e/Documents/tts-audio/tts-exp/"
 SAMPLE_IDS = tuple(range(1, 51))
 SYNCNET_PYTHON_DEFAULT = "/home/wjj/.venvs/syncnet/bin/python"
 SYNCNET_FLOAT = r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?"
@@ -120,14 +120,8 @@ def append_jsonl(path: Path, payload: Mapping[str, Any]) -> None:
 
 
 def _resolve_source(raw: Any) -> Path:
-    value = str(raw)
-    if value.startswith(LEGACY_ROOT):
-        candidate = ROOT / value[len(LEGACY_ROOT):]
-    elif Path(value).is_absolute():
-        candidate = Path(value)
-    else:
-        candidate = ROOT / value
-    return candidate.resolve()
+    path = resolve_project_path(raw, ROOT)
+    return path
 
 
 def _read_wav_duration(path: Path) -> float:

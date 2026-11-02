@@ -1,0 +1,9 @@
+# Optional video-quality suite (scripts/41_video_quality_metrics.py).
+# Unit tests and CPU frame/statistical helpers need only the first three.
+numpy
+scipy
+opencv-python-headless
+torch
+torchvision
+lpips
+pyiqa

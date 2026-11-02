@@ -1,0 +1,74 @@
+{
+  "schema": "root_v3_v4_native07_actual_arrays_qc_v1",
+  "status": "PASS_SAME_CPU_ALL_CURVES_VISUAL_BYTE_PARITY_GRADIENT_RANK_OLD_CROSS_DEVICE_FAILURE_PRESERVED",
+  "archive_sha256": "de770fc8accacea4a977029043c2291d3482099234973e3e069be3efc3234d36",
+  "manifest_sha256": "949e7446be2eaab09869aaf342360d6397cab291844d016a7ad83807533c59d2",
+  "regular_members": 10,
+  "array_pins_finite": 29,
+  "previous_27_arrays_bit_identical": true,
+  "FD_coordinates_recomputed": 9,
+  "checks": {
+    "same_cpu_curve": {
+      "max_abs": 0.0,
+      "pass": true
+    },
+    "same_cpu_visual": {
+      "max_abs": 0.0,
+      "pass": true
+    },
+    "old_gpu_curve": {
+      "max_abs": 5.4836273193359375e-05,
+      "pass": false
+    },
+    "old_gpu_visual": {
+      "max_abs": 7.82310962677002e-05,
+      "pass": false
+    },
+    "projected_waveform_jacobian": {
+      "rank": 9,
+      "condition": 176.27939165161112,
+      "singular_values": [
+        0.839136617275695,
+        0.37870787392177496,
+        0.09733383347876218,
+        0.0838262188917728,
+        0.05060017554056297,
+        0.04310020050381184,
+        0.029551553400466928,
+        0.02337473484244088,
+        0.004760264994186719
+      ]
+    },
+    "v4_pure_reward_gradient_band_contrasts_f32": {
+      "L2": 0.18450824533800791,
+      "nonzero": 9
+    },
+    "v4_loss_gradient_band_contrasts_f32": {
+      "L2": 0.18448425549288494,
+      "nonzero": 9
+    },
+    "v4_pure_reward_waveform_gradient_f32": {
+      "L2": 621.0895674250644,
+      "nonzero": 23000
+    }
+  },
+  "runtime": {
+    "cuda_initialized_after_run": false,
+    "declared_rss_budget_bytes": 8589934592,
+    "declared_wall_budget_seconds": 1800,
+    "device": "cpu",
+    "elapsed_seconds": 79.93445175420493,
+    "frame_batch_size": 1,
+    "numpy": "1.26.4",
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "python_executable": "/root/autodl-tmp/wav2lip-syncnet/envs/wav2lip/bin/python",
+    "resource_budget_within_limits": true,
+    "rss_high_water_bytes": 3231432704,
+    "syncnet_batch_size": 1,
+    "torch": "2.5.1+cu124",
+    "torch_num_threads": 1
+  },
+  "optimizer_steps": 0,
+  "dev_or_confirmation_read": false,
+  "effect_claim": false
+}

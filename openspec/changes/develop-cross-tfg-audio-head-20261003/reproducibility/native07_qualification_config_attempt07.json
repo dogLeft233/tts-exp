@@ -1,0 +1,179 @@
+{
+  "inputs": {
+    "audio_embedding_cache_metadata": {
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/fit_v2_fullcontext_attempt02/audio_embedding_cache/S0052_BAC009S0052W0121__full_natural_context_v2.1a58c56e915b76bc.json",
+      "sha256": "dbd214132a3394924f4ff935e5604a8c1603847e51f7531638a78a83a2dae6a4"
+    },
+    "audio_embedding_cache_npz": {
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/fit_v2_fullcontext_attempt02/audio_embedding_cache/S0052_BAC009S0052W0121__full_natural_context_v2.1a58c56e915b76bc.npz",
+      "sha256": "e59ebe53cbe6b0486c7dbca2a811ba593857979a82e691265ca9c1ff1a739dd5"
+    },
+    "context_metadata": {
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/oldpilot_qc_attempt04/context_export_attempt01/context.json",
+      "sha256": "46bab1ff647cbaabc3eea247dc315431d6ad976ca142a9c5e331ce4e81094450"
+    },
+    "context_npz": {
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/oldpilot_qc_attempt04/context_export_attempt01/context.npz",
+      "sha256": "6616e649412cdf5c5f78ce51fa7d8403364c56528f93777a2e35eb82fc941ec1"
+    },
+    "geometry_manifest": {
+      "path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/fit_v4_native_fullcontext_attempt01/code/geometry_manifest.json",
+      "sha256": "1fd5d97d977bb541ef9ebfdd467d066c9f2e678ae5e0fc5f5d96c8b555aecd43"
+    },
+    "sample_id": "S0052_BAC009S0052W0121",
+    "selected_row_id": "S0052_BAC009S0052W0121__full_natural_context_v2",
+    "source_wav": {
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/fit_v2_fullcontext_attempt02/input/full_audio/S0052_BAC009S0052W0121.wav",
+      "pcm_float32_sha256": "f4e611e9f816665ad7c4dce4980f461c4d9af4fe6fe9678c8f756bd03fa6b36c",
+      "sample_count": 62639,
+      "sha256": "2d45f2b65dec29f77bcd56f05f883b16207a99e7848df3a06a203819a915b261"
+    },
+    "speaker_id": "S0052",
+    "v2_parent_plan": {
+      "path": "/root/autodl-tmp/tts-research-storage-20261001/job_control/cross_tfg_audio_head_20261003_fit_v2_attempt02/plan.json",
+      "payload_sha256": "7200d93801ca0749b472937645d1e955e5b39c730f6a2d1a5e24d3f380f6dce9",
+      "sha256": "e491d0bb210fe78647f4845543a88c629d37cecc09a0823c287560fbb1e71a06"
+    },
+    "v3_cpu_qualification_config": {
+      "path": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/v3_v4_native_cpu_qualification_attempt04/code/v3_cpu_qualification_config_attempt02.json",
+      "sha256": "0abfbb9797a84254e6d0a6e72266862a079e5066f2fec394e0796b0c2664d2f5"
+    },
+    "v4_plan": {
+      "effective_plan_payload_sha256": "d8c383419df73181bd0be342e3554055e4e04107cb8294b4e19dd4bd5bc0514c",
+      "overlay_payload_sha256": "89e43c15f2761232d7fac9970a99dc10c013fbd54dda9f400b29217bd283f4b3",
+      "path": "/root/autodl-tmp/tts-research-storage-20261001/job_control/cross_tfg_audio_head_20261003_fit_v4_native_attempt01/plan.json",
+      "sha256": "b66b0addc25ed6c2b7f7831f8643ba4f35bc227a35ce9e4dd5c4faa0b540801b"
+    },
+    "v4_rms_cache_metadata": {
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/fit_v4_native_fullcontext_attempt01/baseline_cache/S0052_BAC009S0052W0121__full_natural_context_v2.78d3f66d5589bfaf.json",
+      "sha256": "7987936df048720c310c349b15cdb05745718a973eca7fede0c9c95361efb452"
+    },
+    "v4_rms_cache_npz": {
+      "path": "/dev/shm/cross_tfg_audio_head_20261003/fit_v4_native_fullcontext_attempt01/baseline_cache/S0052_BAC009S0052W0121__full_natural_context_v2.78d3f66d5589bfaf.npz",
+      "sha256": "cbd1de399e37e5433fcad9dadb8e29ddf7a55fbde1b89aa0610fdad3fc9bf16e"
+    }
+  },
+  "jacobian": {
+    "absolute_rank_tolerance": 1E-12,
+    "relative_rank_tolerance": 1E-06
+  },
+  "objective": {
+    "weights": {
+      "Canchor_nonworsening_guard": 1.0,
+      "D0_nonworsening_guard": 2.0,
+      "far_lag_contrast_improvement": 0.25,
+      "mask_total_variation": 0.002,
+      "relative_Cbest_improvement": 1.0,
+      "visual_embedding_log_norm_ratio_squared": 0.1,
+      "waveform_relative_mse_to_rms_reference": 0.02
+    }
+  },
+  "outputs": {
+    "output_dir": "/dev/shm/cross_tfg_audio_head_20261003/v3_v4_native_cpu_qualification_attempt06/output",
+    "source_or_candidate_waveform_persisted": false
+  },
+  "parity_tolerances": {
+    "curve_max_abs": 1E-05,
+    "visual_embedding_max_abs": 1E-05,
+    "waveform_byte_exact": true
+  },
+  "purpose": "same-CPU direct canonical-RMS versus zero-parameter V3 reproduction plus the unchanged one-row V3/V4 CPU engineering qualification; no optimizer, dev/confirmation, or waveform persistence",
+  "repo_root": "/root/tts-research-system-20261001/cross_tfg_audio_head_20261003/v3_v4_native_cpu_qualification_attempt05/code/payload/src",
+  "rms_policy": {
+    "peak_ceiling": 0.99,
+    "post_rms_match": "target",
+    "rms_stage_peak_ceiling": 0.99,
+    "target_rms": 0.0376838172675746,
+    "v3_config_peak_ceiling_before_v4_mapping": null
+  },
+  "runtime": {
+    "environment": {
+      "CUDA_VISIBLE_DEVICES": "",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONNOUSERSITE": "1",
+      "CROSS_TFG_PSF_ROOT": "/root/tts-research-system-20261001/deps/python_speech_features_only_attempt05",
+      "PYTHONHASHSEED": "0"
+    },
+    "frame_batch_size": 1,
+    "max_output_bytes": 16777216,
+    "numpy_version": "1.26.4",
+    "python_executable_literal": "/root/autodl-tmp/wav2lip-syncnet/envs/wav2lip/bin/python",
+    "python_version": "3.10.12",
+    "rss_budget_bytes": 8589934592,
+    "syncnet_batch_size": 1,
+    "torch_version": "2.5.1+cu124",
+    "wall_budget_seconds": 1800
+  },
+  "runtime_source_identity": {
+    "adapter_source_relative": "scripts/audio_enhancement/v3_v4_native_runtime_adapter_attempt03.py",
+    "adapter_source_sha256": "4f4f6f496bd15e073268694673b8df5678404e672aafa625ff9a6abc135248aa",
+    "fit_cli_v4_source_relative": "scripts/audio_enhancement/fit_cli_v4_attempt01.py",
+    "fit_cli_v4_source_sha256": "71c70e0a9dfd9b41710a743268f5b565e1c2e2c28920fe7eaddfd7f41112d234",
+    "fit_runtime_source_relative": "scripts/audio_enhancement/wav2lip_fit_runtime.py",
+    "fit_runtime_source_sha256": "7903fbd9dfebf95bcb388add26a1967bc39ad855d3d995a4730d316dd0e806c4",
+    "heads_source_relative": "scripts/audio_enhancement/heads.py",
+    "heads_source_sha256": "4a738ce96a062b31c50ec136112fe8679e011f01310af450de317884c8041dd7",
+    "native_crop_source_relative": "scripts/audio_enhancement/differentiable_native_crop.py",
+    "native_crop_source_sha256": "1e89da5bdf2bee83938b717a084b55a699f1902925be3290d23317bfa562fa27",
+    "training_source_relative": "scripts/audio_enhancement/training.py",
+    "training_source_sha256": "0b39386174bdfacf77abd16e0c2d1506efa6ed9abe06d8b0433776b80af7423a",
+    "v2_runtime_source_relative": "scripts/audio_enhancement/wav2lip_fullcontext_fit_runtime_v2_attempt02.py",
+    "v2_runtime_source_sha256": "d086c61cdb993bffa5f9ff7a55bf4b66b1b9127028f8b80eb3b5f1be74464d7b",
+    "v3_head_source_relative": "scripts/audio_enhancement/shared_recipient_transition_head_v3.py",
+    "v3_head_source_sha256": "77acdff03cca22261852f48364cbc75263db58a14cb565c08aa0d268afca6e87",
+    "v4_runtime_source_relative": "scripts/audio_enhancement/wav2lip_fullcontext_fit_runtime_v4_attempt01.py",
+    "v4_runtime_source_sha256": "dd751132bd3d8dec5abce288c2f765df78d9b7ef9150cdfb0ccff52ba72ee458",
+    "wav2lip_frontend_source_relative": "scripts/audio_enhancement/wav2lip_frontend.py",
+    "wav2lip_frontend_source_sha256": "3480087daecf8dc295f4a3b20703f393bada2690e1f5ce7839ba1dc4fbdec8ef",
+    "worker_source_relative": "scripts/experiments/cross_tfg_audio_head_20261003/qualify_v3_v4_native_cpu_attempt07.py",
+    "worker_source_sha256": "39f7535149cedb42eeb30ca4cea5edda2f507362e5065bd81980a3a7bbc8bcbf"
+  },
+  "schema": "cross_tfg_v3_v4_native_cpu_engineering_qualification_attempt07",
+  "scope": {
+    "api_calls": false,
+    "confirmation_read": false,
+    "cuda_init_or_forward": false,
+    "development_read": false,
+    "historical_fit_only": true,
+    "optimizer_steps": 0,
+    "selected_rows": 1,
+    "source_or_candidate_waveform_persisted": false,
+    "syncnet_forward": true,
+    "video_generation": true
+  },
+  "source_files": {
+    "scripts/audio_enhancement/__init__.py": "db520f7b04343682e6df4ba53b22503de806287e70f2b8e41e84f16912d361fc",
+    "scripts/audio_enhancement/audio_io.py": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004",
+    "scripts/audio_enhancement/baselines.py": "7d161970381cc7e6770a4a53063f91b2606c05490945b2b86ab41c7de4d0a3e2",
+    "scripts/audio_enhancement/differentiable_adapter.py": "834cd9b91a119874745a3ca42aa90f53fe7481d99d8202810902af89e563d928",
+    "scripts/audio_enhancement/differentiable_native_crop.py": "1e89da5bdf2bee83938b717a084b55a699f1902925be3290d23317bfa562fa27",
+    "scripts/audio_enhancement/fit_cli_v4_attempt01.py": "71c70e0a9dfd9b41710a743268f5b565e1c2e2c28920fe7eaddfd7f41112d234",
+    "scripts/audio_enhancement/heads.py": "4a738ce96a062b31c50ec136112fe8679e011f01310af450de317884c8041dd7",
+    "scripts/audio_enhancement/overdub.py": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6",
+    "scripts/audio_enhancement/pipeline.py": "b40ddce9b09ea42d56945eb66acca3326be6784acb6c1e6ab134b1b2899fb6c3",
+    "scripts/audio_enhancement/shared_recipient_transition_head_v3.py": "77acdff03cca22261852f48364cbc75263db58a14cb565c08aa0d268afca6e87",
+    "scripts/audio_enhancement/training.py": "0b39386174bdfacf77abd16e0c2d1506efa6ed9abe06d8b0433776b80af7423a",
+    "scripts/audio_enhancement/v3_v4_native_runtime_adapter_attempt03.py": "4f4f6f496bd15e073268694673b8df5678404e672aafa625ff9a6abc135248aa",
+    "scripts/audio_enhancement/wav2lip_fit_runtime.py": "7903fbd9dfebf95bcb388add26a1967bc39ad855d3d995a4730d316dd0e806c4",
+    "scripts/audio_enhancement/wav2lip_frontend.py": "3480087daecf8dc295f4a3b20703f393bada2690e1f5ce7839ba1dc4fbdec8ef",
+    "scripts/audio_enhancement/wav2lip_fullcontext_fit_runtime_v2_attempt02.py": "d086c61cdb993bffa5f9ff7a55bf4b66b1b9127028f8b80eb3b5f1be74464d7b",
+    "scripts/audio_enhancement/wav2lip_fullcontext_fit_runtime_v4_attempt01.py": "dd751132bd3d8dec5abce288c2f765df78d9b7ef9150cdfb0ccff52ba72ee458",
+    "scripts/experiments/cross_tfg_audio_head_20261003/qualify_v3_v4_native_cpu_attempt05.py": "6c0f45b909fc21f6c3aeb80b7799a46702b95efc8eca4e7c708c299f3dc2c037",
+    "scripts/experiments/cross_tfg_audio_head_20261003/qualify_v3_v4_native_cpu_attempt06.py": "195299402d15e07275309398d2d60b7a292248d57b44695114354b727a3c1c1f",
+    "scripts/experiments/cross_tfg_audio_head_20261003/qualify_v3_v4_native_cpu_attempt07.py": "39f7535149cedb42eeb30ca4cea5edda2f507362e5065bd81980a3a7bbc8bcbf"
+  },
+  "status": "PREPARED_NOT_DISPATCHED",
+  "same_device_control": {
+    "description": "Separate native CPU scoring calls for the sealed canonical RMS waveform and the zero-parameter V3 output, same model instance/device/context/native geometry and frame/SyncNet batches",
+    "device": "cpu",
+    "curve_lag_count": 31,
+    "visual_query_count": 27,
+    "curve_max_abs_tolerance": 1E-05,
+    "visual_embedding_max_abs_tolerance": 1E-05,
+    "waveform_must_be_byte_exact": true,
+    "old_gpu_cache_comparison": "retained as independent strict cross-device diagnostic; failure is not reclassified as same-device failure"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": "cross-tfg-audio-head-content-candidate-registry-v1",
+  "status": "PENDING",
+  "run_id": null,
+  "plan_raw_sha256": null,
+  "selection_scope": "development_only",
+  "candidate_limit": {
+    "learned_v4": 1,
+    "shared_profile_max": 3
+  },
+  "candidates": [],
+  "freeze_requirements": [
+    "Choose exactly one learned_v4 method and zero to three shared_profile methods before ASR calls.",
+    "Bind run_id and exact plan_raw_sha256.",
+    "For each candidate, record method_id, role, config_sha256, and checkpoint_sha256 exactly as present in plan.methods.",
+    "Compute registry_sha256 over canonical JSON with this field omitted, then externally pin the registry file raw SHA256.",
+    "Keep split=dev; confirmation audio, effects, and ASR outcomes stay closed to candidate selection."
+  ]
+}

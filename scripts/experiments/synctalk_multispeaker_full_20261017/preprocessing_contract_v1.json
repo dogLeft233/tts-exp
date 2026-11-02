@@ -1,0 +1,14 @@
+{
+  "status": "PLANNED_BEFORE_POSE_EXECUTION",
+  "training_admitted": false,
+  "identity_and_intrinsics": "Run original official face_tracker.py on 6000 training frames only; freeze its BFM identity and focal for val/test; fit heldout expression and pose with the same official landmark objective and 2000-iteration schedule.",
+  "flow_mask": "Derive three identical uint8 alpha channels as 255 minus G from official parsing/N_face.png. The portrait RGB visualization itself is not a flow mask. Original stage1 face_mask visualization copies are deprecated and never used by flow.",
+  "flow_storage": "Original NeuralNRT/RAFT weights, crop processing and 12 iterations. Store only the reference rigid pixels from the first min(2500,N) frames; execute the verbatim original Laplacian/keypoint selection block; retain exact selected keypoint tracks for all frames, not all dense flow files. Dense/streamed subset parity must pass.",
+  "bundle_training": "Original official bundle_adjustment.py, 500 point fitting plus 8000 joint point/pose iterations.",
+  "bundle_heldout": "First 500 official point fitting iterations at training-calibrated frozen-identity BFM poses. Freeze these points, then refine only per-frame poses for 8000 iterations with the official flow reprojection loss. This deliberate heldout conditioning adaptation prevents arbitrary point/camera gauge drift; it is not default independent identity refitting.",
+  "coordinate_mapping": "Estimate one positive similarity X_bundle=s Q X_BFM+T from training BFM and refined training camera pairs only. Map heldout frozen-identity refined camera poses into this training gauge. No heldout data fits Q/T/s, identity, focal, training background or generator state.",
+  "background": "Original background extraction sees training frames only. Share this training background for supervision construction; heldout original images may supply their own portrait composite and torso/eye/pose conditioning, never training fitted state.",
+  "geometry_gates": {"landmark_rms_px_median_max":5,"landmark_rms_px_p95_max":10,"flow_reprojection_rms_px_median_max":2,"flow_reprojection_rms_px_p95_max":5,"gauge_rotation_error_degrees_p95_max":2,"gauge_camera_translation_error_m_p95_max":0.005,"gauge_condition_max":1000000,"gauge_scale_min":0.25,"gauge_scale_max":4,"heldout_projection_invariance_max_px":0.0001},
+  "loading": "Official --preload 0 is allowed to avoid >44GB float32 preload on a 31GiB host, after exact pixel/ray-input parity against preload 1 on a common subset. Rays, precision, losses, initialization, frame order, epochs and successful-update budget are unchanged. No ray reduction fallback.",
+  "decision_time": "Frozen before any identity/focal/flow/bundle fitting or generator training in this new experiment. Refinement quality gates are data quality checks, never based on SyncNet ranking."
+}

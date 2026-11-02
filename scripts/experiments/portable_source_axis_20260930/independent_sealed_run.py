@@ -46,6 +46,15 @@ class SealError(RuntimeError):
     """The frozen package or continuation lineage failed independent verification."""
 
 
+def _json_default(value: Any) -> Any:
+    """Convert NumPy summary values to JSON without changing analysis arrays."""
+    if isinstance(value, np.ndarray):
+        return value.tolist()
+    if isinstance(value, np.generic):
+        return value.item()
+    raise TypeError(f"Object of type {value.__class__.__name__} is not JSON serializable")
+
+
 def sha256_file(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as stream:
@@ -355,7 +364,10 @@ def run_sealed_consumer(
         bootstrap_draws=20_000,
         verify_cached_embeddings=True,
     )
-    consumer_output.write_text(json.dumps(consumer_result, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    consumer_output.write_text(
+        json.dumps(consumer_result, ensure_ascii=False, indent=2, sort_keys=True, default=_json_default) + "\n",
+        encoding="utf-8",
+    )
     record = {
         "schema_version": 1,
         "status": "complete" if consumer_result.get("status") == "complete" else consumer_result.get("status"),

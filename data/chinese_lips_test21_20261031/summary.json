@@ -1,0 +1,29 @@
+{
+  "speaker_count": 21,
+  "target_count": 105,
+  "reference_count": 21,
+  "target_duration_min": 8.03575,
+  "target_duration_max": 11.957875,
+  "target_duration_mean": 10.134520257142857,
+  "target_duration_total_sec": 1064.1246269999992,
+  "target_raw_saturated": 13,
+  "reference_raw_saturated": 3,
+  "lag_range_ms": [
+    -0.0625,
+    3.5625
+  ],
+  "min_aligned_correlation": 0.9588499665260315,
+  "sha256_files_checked": 504,
+  "failed_hashes": 0,
+  "raw_saturated_by_speaker": {
+    "027": 6,
+    "074": 4,
+    "141": 6
+  },
+  "notes": [
+    "audio/video track correlation does not verify true lip synchrony",
+    "transcripts are dataset annotations; no listening verification",
+    "audio is mono 16k pcm16 without loudness normalization",
+    "source PCM saturation is irreversible; normalization cannot restore it"
+  ]
+}

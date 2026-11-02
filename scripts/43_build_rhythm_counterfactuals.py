@@ -7,6 +7,11 @@ natural waveform length, records transformation metadata, and excludes S0770.
 
 from __future__ import annotations
 
+try:
+    from .project_paths import resolve_project_path
+except ImportError:
+    from project_paths import resolve_project_path
+
 import argparse
 import hashlib
 import json
@@ -48,17 +53,10 @@ def sha256_file(path: Path) -> str:
 
 
 def resolve_path(raw_path: str | Path) -> Path:
-    raw = str(raw_path)
-    candidates = [Path(raw)]
-    prefix = "/mnt/e/Documents/tts-audio/tts-exp/"
-    if raw.startswith(prefix):
-        candidates.append(REPO_ROOT / raw[len(prefix):])
-    elif not Path(raw).is_absolute():
-        candidates.append(REPO_ROOT / raw)
-    for candidate in candidates:
-        if candidate.exists():
-            return candidate.resolve()
-    raise FileNotFoundError(raw)
+    path = resolve_project_path(raw_path, REPO_ROOT)
+    if not path.exists():
+        raise FileNotFoundError(path)
+    return path
 
 
 def load_audio(path: Path) -> np.ndarray:

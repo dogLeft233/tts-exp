@@ -1,0 +1,127 @@
+{
+  "requested": [
+    "WRA_LisaMurkowski0_000.mp4",
+    "WRA_CarlyFiorina_000.mp4",
+    "WDA_KathyCastor_000.mp4",
+    "WDA_BarbaraLee0_000.mp4",
+    "WDA_TammyBaldwin1_000.mp4",
+    "WDA_NancyPelosi1_000.mp4",
+    "WDA_AmyKlobuchar1_002.mp4",
+    "WRA_ShelleyMooreCapito1_000.mp4",
+    "WRA_DianeBlack0_000.mp4",
+    "WDA_PattyMurray0_000.mp4"
+  ],
+  "obtained": [
+    {
+      "file": "WRA_LisaMurkowski0_000.mp4",
+      "duration": 70.022,
+      "crc32": 3850903538,
+      "sha256": "f0e93d9eda60686fa3ee1cdc766f1b9207a6b4e5013ac556203f373a3c0156a0",
+      "frames": [
+        "frames/WRA_LisaMurkowski0_000_t1.png",
+        "frames/WRA_LisaMurkowski0_000_t3.png",
+        "frames/WRA_LisaMurkowski0_000_t5.png"
+      ]
+    },
+    {
+      "file": "WDA_TammyBaldwin1_000.mp4",
+      "duration": 100.022,
+      "crc32": 182560970,
+      "sha256": "15d9cc741b3460eef59db588bd6efed9d4f3ebc4ac4414e69d944ad4acb8ee91",
+      "frames": [
+        "frames/WDA_TammyBaldwin1_000_t1.png",
+        "frames/WDA_TammyBaldwin1_000_t3.png",
+        "frames/WDA_TammyBaldwin1_000_t5.png"
+      ]
+    },
+    {
+      "file": "WDA_BarbaraLee0_000.mp4",
+      "duration": 260.022,
+      "crc32": 3466432336,
+      "sha256": "0e1e08d3ec4132c6aa94832b4fd8984b5219b4e9935af52c4b8996ea08affdcb",
+      "frames": [
+        "frames/WDA_BarbaraLee0_000_t1.png",
+        "frames/WDA_BarbaraLee0_000_t3.png",
+        "frames/WDA_BarbaraLee0_000_t5.png"
+      ]
+    },
+    {
+      "file": "WDA_KathyCastor_000.mp4",
+      "duration": 90.022,
+      "crc32": 908305662,
+      "sha256": "7a5e089217547978222cf80b6e299b9f2551f7c9fdb69b8e887c17231c159130",
+      "frames": [
+        "frames/WDA_KathyCastor_000_t1.png",
+        "frames/WDA_KathyCastor_000_t3.png",
+        "frames/WDA_KathyCastor_000_t5.png"
+      ]
+    },
+    {
+      "file": "WRA_CarlyFiorina_000.mp4",
+      "duration": 76.106,
+      "crc32": 1799396075,
+      "sha256": "ffce4cef24cb1b533eaa7e732d26a0e949c5f559f9c6a6b48bef47a330d34377",
+      "frames": [
+        "frames/WRA_CarlyFiorina_000_t1.png",
+        "frames/WRA_CarlyFiorina_000_t3.png",
+        "frames/WRA_CarlyFiorina_000_t5.png"
+      ]
+    },
+    {
+      "file": "WDA_NancyPelosi1_000.mp4",
+      "duration": 55.022,
+      "crc32": 2248195678,
+      "sha256": "65e490de0194329696885f5efc5fdae3a1ffe276497817cadd484590b15c2cc8",
+      "frames": [
+        "frames/WDA_NancyPelosi1_000_t1.png",
+        "frames/WDA_NancyPelosi1_000_t3.png",
+        "frames/WDA_NancyPelosi1_000_t5.png"
+      ]
+    },
+    {
+      "file": "WDA_AmyKlobuchar1_002.mp4",
+      "duration": 60.0,
+      "crc32": 2931959720,
+      "sha256": "f268c1eb9a21de1c3f594fe4287dc942a6edaafd5cdffcac9acbf78255511198",
+      "frames": [
+        "frames/WDA_AmyKlobuchar1_002_t1.png",
+        "frames/WDA_AmyKlobuchar1_002_t3.png",
+        "frames/WDA_AmyKlobuchar1_002_t5.png"
+      ]
+    },
+    {
+      "file": "WRA_DianeBlack0_000.mp4",
+      "duration": 18.022,
+      "crc32": 3991704658,
+      "sha256": "71e546944a364c3638f2eadfa1fef655ba04fefaff1df9a233d14e3d41cd265f",
+      "frames": [
+        "frames/WRA_DianeBlack0_000_t1.png",
+        "frames/WRA_DianeBlack0_000_t3.png",
+        "frames/WRA_DianeBlack0_000_t5.png"
+      ]
+    },
+    {
+      "file": "WRA_ShelleyMooreCapito1_000.mp4",
+      "duration": 35.022,
+      "crc32": 875804269,
+      "sha256": "d4bdba3929a6bcd2ba81e7e571b680c3a9ef57671dca541a2f96c5f6bb91baf4",
+      "frames": [
+        "frames/WRA_ShelleyMooreCapito1_000_t1.png",
+        "frames/WRA_ShelleyMooreCapito1_000_t3.png",
+        "frames/WRA_ShelleyMooreCapito1_000_t5.png"
+      ]
+    },
+    {
+      "file": "WDA_PattyMurray0_000.mp4",
+      "duration": 145.022,
+      "crc32": 687210848,
+      "sha256": "e2f1825ce8b0990b5480e5ce39efe33007c670206cb9982a0599c928404e3455",
+      "frames": [
+        "frames/WDA_PattyMurray0_000_t1.png",
+        "frames/WDA_PattyMurray0_000_t3.png",
+        "frames/WDA_PattyMurray0_000_t5.png"
+      ]
+    }
+  ],
+  "failures": []
+}

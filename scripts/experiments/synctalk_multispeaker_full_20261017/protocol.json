@@ -1,0 +1,105 @@
+{
+  "schema": "synctalk_multispeaker_full_spec_v1",
+  "scientific_status": "SPEC_ONLY",
+  "run_id": "synctalk_multispeaker_full_20261017",
+  "official_commit": "43079fb3f349675f6cb33031bb07262f7566cdd5",
+  "official_reference": "scripts/train_may.sh and nerf_triplane/{utils,provider}.py at the pinned commit",
+  "target_identities": 4,
+  "new_identity_definition": "not May, never used to train a SyncTalk identity model in these gain experiments; wider project/upstream exposure audited and reported separately",
+  "language": "English; retained from May to avoid adding language as another factor",
+  "natural_material_seconds_per_identity": {
+    "minimum": 360,
+    "target": 420,
+    "maximum": 480
+  },
+  "source_policy": "natural HDTF sources with official original-video URL and timestamps; pinned mirror only as transport; no synthetic supervision",
+  "split_targets": {
+    "train_supervision_frames": 6000,
+    "validation_supervision_frames": 750,
+    "test_supervision_frames": 1500,
+    "fps": 25
+  },
+  "recording_separation": "all test frames/audio MUST come from a distinct original recording from every train/validation source; distinct upload ID alone is insufficient; footage/PCM duplicate and visual/context audit required",
+  "context": "at least one second of audio context outside each supervision block, two-second gap between same-recording training/validation support blocks; no concatenation of audio contexts across recordings",
+  "test_clips": {
+    "count": 6,
+    "seconds_each": 10,
+    "selection": "frozen contiguous segments before training; no score-based exclusions"
+  },
+  "seeds": [
+    42,
+    2026
+  ],
+  "training_gain_db": [
+    -6,
+    0,
+    6
+  ],
+  "driver_gain_db": [
+    -6,
+    0,
+    6
+  ],
+  "evaluation_gain_db": [
+    -6,
+    0,
+    6
+  ],
+  "training_models": 24,
+  "initialization": "one complete random NeRF/condition-module initial state per identity/seed, strict identical load in three arms; no pretrained identity generator; frozen original AVE pretrained weights",
+  "coarse": {
+    "official_iters_argument": 60000,
+    "num_rays": 65536,
+    "max_steps": 16,
+    "patch_size": 1,
+    "finetune_lips": false
+  },
+  "fine": {
+    "official_iters_argument": 100000,
+    "num_rays": 65536,
+    "max_steps": 16,
+    "patch_size": 64,
+    "finetune_lips": true,
+    "resume": "own arm's final full coarse checkpoint, including optimizer/scheduler/scaler/EMA/epoch/global_step"
+  },
+  "official_budget_semantics": "official train() iterates whole epochs; --iters 100000 is cumulative after checkpoint resume, not 100000 extra updates. With 6000 training frames: 10 coarse epochs=60000 attempted steps; final 17 epochs=102000 cumulative attempted steps, fine adds 42000. Exact dataset length must be verified before admission.",
+  "precision": "official -O autocast FP16; log actual AdamW updates and AMP skipped updates, not just global_step. Equal successful-update budget is an admission requirement; unequal skips invalidate a paired block. No silent FP32 or ray reduction fallback.",
+  "randomness": "per-step deterministic RNG domains for image order, actual ray/patch/rectangle sampling, occupancy and perturbation; record actual sampled-index digests; validation must not alter training RNG",
+  "official_loss": "unchanged official train_step; retain official alternating lip/full-patch behavior, LPIPS weight and defaults, LR schedules and EMA semantics",
+  "preprocessing_contract": "preprocessing_contract_v2.json; ADR039 shared fixed training-reference points, original training BA unchanged; ADR038 identity/focal/background/lazy loading retained; v1 gauge failure preserved",
+  "loading": "official --preload 0 after exact pixel/ray-input parity to --preload 1 on shared subset; avoids 44.04GB minimum float32 resident preload, without changing rays/precision/epochs or model updates",
+  "preprocessing": "official face parsing, 68-point landmarks, Basel 3DMM tracking, pose refinement, masks/torso/background and eye coefficients; identity/background/intrinsic fitting must not leak test targets into train state. Across-recording pose coordinate compatibility must pass before training.",
+  "render": "fixed final EMA and official portrait composite; additionally retain raw head reconstruction for diagnostics; optional torso model is not enabled by train_may.sh and is not added",
+  "gain_driving_audio": "float64 scalar gain applied to original decoded waveform per recording, no limiter/normalization/retiming; recompute true AVE features per gain",
+  "evaluation_audio": "0 dB uses exact original PCM16. +/-6 dB use float64(original_PCM16)*10**(dB/20) in PCM numeric units for MFCC, saved as FLOAT64 WAV with explicit unit conversion on read; preserve samples/time and avoid clipping. No float-WAV-to-int16 cast. PCM16 quantized sensitivity only if headroom permits, separate from primary 27 cells.",
+  "evaluation_difference_from_report51": "report51 used rounded PCM16 gained scoring audio. This run uses floating gain without clipping for +/-6; the 0 dB primary reference remains exact. Quantization difference is explicit, not pooled with report51.",
+  "scorer": {
+    "model": "SyncNet V2 strict original weights FP32",
+    "roi": "shared source-owned face track for all gains",
+    "lag_radius_frames": 15,
+    "primary": "guard20",
+    "secondary": "full",
+    "endpoints": [
+      "C",
+      "Dmin",
+      "D0",
+      "B",
+      "offset"
+    ],
+    "aggregation": "clip means within identity/seed, then seed means within identity, then equal mean of four identities"
+  },
+  "outputs": "27 explicit rows (train gain x driver gain x evaluation gain) per identity/seed and a 27-row equal-identity summary; 0dB evaluation slice highlighted; per-clip matrices, C/D/B/offset, learning/validation curves and scorer-path decomposition retained",
+  "science_scope": "n=4 identity replication with two training seeds; descriptive effects and individual heterogeneity, no population significance based on frames/clips; C alone is not perceptual quality",
+  "training_admission": [
+    "four identities each 360-480 unique natural seconds and exact split counts",
+    "same-person independent recording qualified",
+    "source provenance and prior/upstream exposure stated",
+    "audio/video clock, face visibility, no duplicate support and gain operation QA",
+    "official preprocessing dependencies and cross-recording coordinate compatibility",
+    "common initialization and successful-update accounting on official full budget",
+    "persistent space and source backups verified"
+  ],
+  "current_training_runs": 0,
+  "current_generated_video_frames": 0,
+  "preprocessing_contract_sha256": "37f0714cecd41cca0f531bb062b6029bad2e96fe5bc19bd3ad0827d61f3dd005"
+}

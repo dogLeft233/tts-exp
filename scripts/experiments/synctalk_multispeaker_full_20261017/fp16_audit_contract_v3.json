@@ -1,0 +1,14 @@
+{
+  "version": 3,
+  "scope": "FP16 adapter and official environment diagnostic only",
+  "optimizer_attempt_cap": 12004,
+  "zero_update_forward_backward_cap": 24,
+  "zero_update_completed_before_this_contract": 12,
+  "new_cases": "two captured diagnostic states x original scaler loss multiplier or unit multiplier x current or official environment = 8",
+  "training_precision": "original FP16 autocast retained",
+  "optimizer_updates": 0,
+  "scaler_updates": 0,
+  "original_failure_preserved": true,
+  "note": "Unit loss multiplier is a zero-update gradient diagnostic only, not a new training scaler policy. Captured replay states are not original lost failure state.",
+  "source_sha256": "889c91ea21be9a18ad39c69768cd7db60cba2dc330466a25ca4aeab89a1b8a41"
+}

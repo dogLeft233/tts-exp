@@ -1,0 +1,163 @@
+{
+  "schema": "cross_tfg_model_aware_routing_config_v1",
+  "config_name": "model_aware_routing_v1",
+  "status": "FROZEN_PROTOTYPE",
+  "role": "generation_control_route",
+  "description": "Select the frozen natural-audio enhancement route by TFG model. MuseTalk receives the explicit11 anti-symmetric transition-envelope candidate; every other model uses the fixed RMS control.",
+  "selection_policy": {
+    "match_case": "casefold",
+    "match_order": [
+      "musetalk",
+      "wav2lip",
+      "ditto",
+      "default"
+    ],
+    "unknown_model_policy": "rms_fixed",
+    "frozen_before_holdout": true,
+    "no_posthoc_route_change": true,
+    "no_legacy_nine_parameter_or_four_center_route": true
+  },
+  "input_contract": {
+    "sample_rate_hz": 16000,
+    "channels": 1,
+    "dtype": "float32",
+    "sample_clock": "exact canonical input sample count",
+    "scoring_audio": "untouched original natural PCM and original clock"
+  },
+  "routes": {
+    "musetalk": {
+      "model_ids": [
+        "musetalk_fixed_portrait_attempt16"
+      ],
+      "aliases": [
+        "musetalk",
+        "muse_talk"
+      ],
+      "method_id": "exact_k15_shape_env_pos025_neg025",
+      "method_kind": "explicit11_candidate",
+      "candidate": {
+        "profile_id": "anti_symmetric_local_power_spectral_envelope",
+        "provider": "builtin_explicit11_k15_source_conditioned",
+        "implementation_ref": "scripts/audio_enhancement/model_routing.py:apply_model_route",
+        "source_pins": {
+          "shared_recipient_local_power_spectral_head_v1.py": "8f22db628ec84f4b67d01e6e9c1bce12edf9280cca88e52cfc55d32d7b94dcfe",
+          "shared_recipient_transition_head_v3.py": "77acdff03cca22261852f48364cbc75263db58a14cb565c08aa0d268afca6e87",
+          "baselines.py": "7d161970381cc7e6770a4a53063f91b2606c05490945b2b86ab41c7de4d0a3e2"
+        },
+        "shape_coordinate_scale_db": 2.5,
+        "envelope_coordinate_scale_db": 1.0,
+        "shape_coordinates_db": [
+          -1.9704649745953886,
+          -0.5461511499443172,
+          0.15794638612931272,
+          -1.9150009798436092,
+          -0.4170668172408076,
+          0.022760318318793236,
+          -2.0476395544089745,
+          -0.7657045697719349,
+          0.1278175829726642
+        ],
+        "shape_coordinates_sha256": "ed10f39ee8a017d6e607007f7ceb43cf724f34b8749bdfe28d4fac2081d1767d",
+        "positive_flux_envelope_db": 0.25,
+        "negative_flux_envelope_db": -0.25,
+        "static_envelope_db": 0.0,
+        "phase_policy": "preserve_input_phase",
+        "sample_clock_policy": "exact_input_sample_count"
+      },
+      "fallback_method_id": "rms_fixed"
+    },
+    "wav2lip": {
+      "model_ids": [
+        "wav2lip_gan_bac9a81e"
+      ],
+      "aliases": [
+        "wav2lip"
+      ],
+      "method_id": "rms_fixed",
+      "method_kind": "fixed_rms_control",
+      "config_ref": "scripts/audio_enhancement/configs/rms_baseline_v1.json"
+    },
+    "ditto": {
+      "model_ids": [
+        "ditto_hubert_fixed_portrait_attempt18"
+      ],
+      "aliases": [
+        "ditto"
+      ],
+      "method_id": "rms_fixed",
+      "method_kind": "fixed_rms_control",
+      "config_ref": "scripts/audio_enhancement/configs/rms_baseline_v1.json"
+    },
+    "default": {
+      "model_ids": [],
+      "aliases": [],
+      "method_id": "rms_fixed",
+      "method_kind": "fixed_rms_control",
+      "config_ref": "scripts/audio_enhancement/configs/rms_baseline_v1.json",
+      "reason": "Unknown TFG models fail closed to the fixed RMS control."
+    }
+  },
+  "provenance": {
+    "decision_adr": {
+      "path": "basic-memory/docs/adr/Model-aware routing with RMS fallback.md",
+      "sha256": "d977b6e9641e1f1519147ba05c782e9b1cf717297e32e7b13537c113c4610628"
+    },
+    "route_selection_basis": {
+      "path": "basic-memory/docs/adr/Explicit11 routing before another GPU sweep.md",
+      "sha256": "c0d17dad2e9cb4d3e98f2e26eda21b4b8ba3245af9b036abc9718517970c486c"
+    },
+    "explicit11_candidate": {
+      "profile_id": "exact_k15_shape_env_pos025_neg025",
+      "source_run": "/dev/shm/native11_env_pos025_neg025_initial360_attempt02",
+      "profile_sha256": "60f263846f7bfd0a5af9ad750d6629f12b248dca2725e896965c8b2b8541fa9f",
+      "result_sha256": "d34c6a08c2cb6a6a9a440751a31a875723b1953080e14bcd24fd50e0fc946a55",
+      "parameterization": "+0.25 dB on positive flux and -0.25 dB on negative flux",
+      "shape_seed_source": {
+        "path": ".codex/scratch/fit40_full20_math_qa_attempt01/journal_full_readback_attempt01.json",
+        "entry_index_zero_based": 14,
+        "theta_field": "entries[14].tell_result.full_center_spec.theta",
+        "theta_f64_struct_sha256": "ed10f39ee8a017d6e607007f7ceb43cf724f34b8749bdfe28d4fac2081d1767d"
+      }
+    },
+    "holdout": {
+      "dataset_revision": "fresh_aishell_disjoint_ref_target_20260929",
+      "source_bundle_manifest_sha256": "3adeb4f383c368dc10c51ec23dfe47775d28fa5106bb26b11a3b53cee11cd347",
+      "plan_path": "/dev/shm/fit40_queue_remote_package_attempt02/project/holdout_speed_balanced_20261012_attempt01/holdout_plan.json",
+      "plan_file_sha256": "007495aa3b4cf1fc9b20f506c33593da8bb95e54ea1e0914ac56f3d9a21cad3b",
+      "aggregate_path": "/dev/shm/fit40_queue_remote_package_attempt02/project/holdout_speed_balanced_20261012_attempt01/holdout_aggregate_summary.json",
+      "aggregate_sha256": "3c324153cdf7becf73c8c32dd1cec88a528e0de90fbed75b1d5face0f29482c3",
+      "rows": 60,
+      "models": 3,
+      "speakers": 10
+    },
+    "ditto_pin_repair": {
+      "plan_path": "/dev/shm/fit40_queue_remote_package_attempt02/project/holdout_speed_balanced_20261012_attempt01/ditto_pin_fix_attempt01/ditto_holdout_plan.json",
+      "plan_file_sha256": "c71e47e7acc2eb2ec92062b6fc0d4c882c96309af2ff770ef40db7a5144213a5",
+      "aggregate_path": "/dev/shm/fit40_queue_remote_package_attempt02/project/holdout_speed_balanced_20261012_attempt01/ditto_pin_fix_attempt01/ditto_aggregate_summary.json",
+      "aggregate_sha256": "bc6c73d026320ebafeab224ca75649f881afb688e40bd639bb64efd5348b6f21",
+      "results_sha256": "e7b8bb5d2fd79db54037a899e5b16329d93ce8807e1aebc57ad6183dd0a5a09c",
+      "rows": 20,
+      "status": "PASS",
+      "candidate_minus_rms_cbest_full": 0.0,
+      "candidate_minus_rms_cbest_guard20": 0.0
+    },
+    "rms_control_config": {
+      "path": "scripts/audio_enhancement/configs/rms_baseline_v1.json",
+      "sha256": "b46dd614c9b661edd7872090654dbab12fb8e05041178caca31c6d6fd84b7744"
+    },
+    "canonical_audio_sources": {
+      "audio_decoder_writer": {
+        "path": "scripts/audio_enhancement/audio_io.py",
+        "sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004"
+      },
+      "transform_dispatch": {
+        "path": "scripts/audio_enhancement/pipeline.py",
+        "sha256": "b40ddce9b09ea42d56945eb66acca3326be6784acb6c1e6ab134b1b2899fb6c3"
+      },
+      "rms_implementation": {
+        "path": "scripts/audio_enhancement/baselines.py",
+        "sha256": "7d161970381cc7e6770a4a53063f91b2606c05490945b2b86ab41c7de4d0a3e2"
+      }
+    }
+  }
+}

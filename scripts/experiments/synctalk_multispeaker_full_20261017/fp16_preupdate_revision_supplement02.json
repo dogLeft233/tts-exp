@@ -1,0 +1,15 @@
+{
+  "version": "fp16_preupdate_revision_v1_supplement02",
+  "created_utc": "2026-10-18T02:28:15.1342718Z",
+  "sources": {
+    "tests/test_synctalk_fp16_controller_integration_v1.py": "6ef435d16838f41702b63b61b628a9408ce17e4fff54350827ea7c06886f1066",
+    "scripts/experiments/synctalk_multispeaker_full_20261017/controlled_training_fp16_v1.py": "c1f0391d5525fb6daa2a19ecbc0d1a3d4de9f05350bf396f8c3261a6083a6a0d"
+  },
+  "scope": "Original accounting versus guarded version; tiny CUDA fixture 3 attempts (update, skip, update), then guarded inverse-overflow rejection, both environments",
+  "additional_fixture_updates": 8,
+  "total_fixture_updates_after": 24,
+  "fixture_update_cap": 32,
+  "model_cases_after": 32,
+  "model_case_cap": 32,
+  "formal_optimizer_updates": 0
+}

@@ -1,0 +1,47 @@
+{
+  "version": "fp16_other_identities_trial_v1",
+  "created_utc": "2026-10-18T02:51:09.979052+00:00",
+  "user_authorization": "\u5148\u628aPatrick\u3001Chris\u3001Cathy\u7684\u8bad\u7ec3\u8dd1\u4e86\u8bd5\u8bd5",
+  "identities": [
+    "PatrickLeahy",
+    "ChrisVanHollen",
+    "CathyMcMorrisRodgers"
+  ],
+  "seeds": [
+    42
+  ],
+  "gains_db": [
+    0,
+    -6,
+    6
+  ],
+  "phase": "coarse",
+  "epochs": 10,
+  "attempts_per_epoch": 6000,
+  "max_attempts_per_arm": 60000,
+  "max_trial_attempts": 540000,
+  "qualification_fixture_optimizer_update_cap": 4,
+  "precision": "FP16/defaultGradScaler",
+  "num_rays": 65536,
+  "max_steps": 16,
+  "loss_optimizer_ema": "unchanged official",
+  "initialization": "each admitted identity seed42 full common random state, no Brown/May warmstart",
+  "trial_only": true,
+  "counts_toward_original_24_models": false,
+  "qualification_required": true,
+  "stop_rule": "first terminal numeric/job failure stops this identity; preserve all produced bytes; next identity continues; phase end requires original paired actual successful-update equality, no compensation",
+  "no_automatic_retry": true,
+  "first_skip_capture": "first ordinary AMP skip per arm; capture after scaler.update before scheduler/EMA; no numeric change",
+  "terminal_capture": "guard event before further updates, actual current state and gradients; postoptimizer event explicitly reports already occurred",
+  "cache_policy": "full archive/member reverify then exclusive Linux leases and preserve72control images; explicit full restore before any load; no old failure/cache observer restart",
+  "original_admission_sha256": "fc437965bbf097a771f2d952508b688d981c52b65a99e266dadaa68290040a84",
+  "sources": {
+    "other_identities_trial_v1.py": "97933d4938f10355e546e01ed57a8aef65f166515bf27f7d2705527122e34ec3",
+    "other_identities_trial_remote_v1.py": "3e1222746322ea6107e95355dcad032868a1b8912097bbf9f4d069f7ed318eb8",
+    "controlled_training_trial_v1.py": "6cde1471431d4bb3f2c8e6dd35b03939233498a29d93ca55c0f8ae7bd11b86a6",
+    "train_other_identity_epoch_v1.py": "f9326124181b7ef529ba11091e6c0800fcd4419b06b1111e10b7faf1fcc41366",
+    "qualify_other_identities_trial_v1.py": "fdfd3bb35c4cf797485bceac83c43fbe8793bd2de41de3526e126d265549ff65",
+    "fp16_preupdate_guard_v1.py": "f9d05523686e6fd4272f904762add21e5e4dd0c38fc637f199c19b1c7574eb70",
+    "controlled_training_fp16_v1.py": "c1f0391d5525fb6daa2a19ecbc0d1a3d4de9f05350bf396f8c3261a6083a6a0d"
+  }
+}

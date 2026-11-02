@@ -10,7 +10,7 @@ from pathlib import Path
 
 import requests
 
-REPO = Path("/mnt/e/Documents/tts-audio/tts-exp")
+REPO = Path(__file__).resolve().parents[1]
 OUT = REPO / "data/dataset_samples/vfhq/50"
 MIRROR = "https://hf-mirror.com/datasets"
 PROXY = "http://127.0.0.1:7890"

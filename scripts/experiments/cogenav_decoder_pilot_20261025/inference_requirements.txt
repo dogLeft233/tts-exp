@@ -1,0 +1,5 @@
+# Measured teacher-free runtime; full training environment is frozen in the run.
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch==2.5.1+cu121
+numpy==1.26.4
+soundfile==0.14.0

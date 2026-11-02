@@ -1,0 +1,15 @@
+{
+  "version": "fp16_adapter_environment_audit_v1",
+  "authorization": "2026-10-18 user: audit added adapters, compare in original official environment, locate cause, no FP32 change, preserve failure",
+  "status": "DIAGNOSTIC_ONLY",
+  "formal_training_restart": false,
+  "precision": "FP16 with original default GradScaler and original loss/AdamW/EMA; no fallback or tuned scale",
+  "case": {"identity": "SherrodBrown", "seed": 42, "train_gain_db": 6, "checkpoint": "coarse ep4 complete state", "checkpoint_sha256": "0e2223445603b688d6c8feae30e8717bb90dacf66226599bced99306f2eb67f7"},
+  "inputs": "existing qualified train split, full 65536 rays, max_steps16, same per-step sampling domains",
+  "bounds": {"qualification": "two attempts per implementation to check wrapper vs direct original train_step parity", "replays": "at most one full ep5 diagnostic replay per current and original numerical environment", "max_attempts_per_replay": 6000, "max_total_optimizer_attempts": 12004},
+  "outputs": "separate diagnostic namespaces; first scaled-gradient nonfinite, first scale below1 and first nonfinite forward loss capture; input and state SHA; environment and source fingerprints; original prefix comparisons",
+  "stopping": "first nonfinite forward loss captured before backward/optimizer; first infrastructure failure recorded; budget bound",
+  "limitations": "replay begins from ep4 and cannot reconstruct the lost original failing-step state; CUDA differences may prevent bit exact replay; original environment requires declared OS/Python/Torch/CUDA/compiler fingerprints; control failure cannot be called scientific negative",
+  "official_target": {"commit": "43079fb3f349675f6cb33031bb07262f7566cdd5", "python": "3.8.8", "torch": "1.12.1+cu113", "cuda": "11.3", "userspace": "Ubuntu18.04"},
+  "scope_limits": "No FP32 forward/backward, no test-based choice, no new identities or filtering, no resuming old attempt, no changing frozen sources or original receipts; exact original OS unavailable must be disclosed, not relabeled. New diagnostic environment compatibility shim versioned separately."
+}

@@ -1,0 +1,1458 @@
+{
+  "status": "COMPLETE",
+  "mirror": "global-optima-research/HDTF",
+  "revision": "6f9ed465f761b8378c690be4f86f090634281584",
+  "archive_url": "https://huggingface.co/datasets/global-optima-research/HDTF/resolve/6f9ed465f761b8378c690be4f86f090634281584/videos.zip",
+  "archive_size": 5243344849,
+  "upstream_archive_sha256": "482074817bc256351b873f3b1af9aa0f4709a449b0c82ba32210885583c28a23",
+  "whole_archive_sha_verified": false,
+  "member_crc_verified": true,
+  "official_commit": "bbde889bbab954c9a9ebcabe9962885c29f2165e",
+  "selection": "seed20261031; named WDA/WRA identities deduplicated across prefixes/takes; alternating categories; first filename per identity; >=40s; no scores",
+  "audio_processing": "mono16kPCM16; no gain normalization; source videos retained",
+  "window_rule": "10s at floor25fps((source_duration-10)*[.2,.6]); may cut words; not final sentence-level TTS inputs",
+  "strict_unseen": false,
+  "overlap_note": "HDTF used in TalkLikeYou training; diagnostic domain comparison only",
+  "originals": [
+    {
+      "speaker": "DickDurbin",
+      "member": "videos/WDA_DickDurbin_000.mp4",
+      "original": "original_videos/WDA_DickDurbin_000.mp4",
+      "sha256": "f79454769910d45db7e5bd65e857a74bb48345fb7b9de6395b56f8f18142dcd4",
+      "crc32": 3149079366,
+      "duration_s": 253.0,
+      "official_url_line": "DickDurbin https://www.youtube.com/watch?v=iAflkVdacDk",
+      "official_time_line": "DickDurbin.mp4 00:12-04:25",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "PeterRoskam",
+      "member": "videos/WRA_PeterRoskam0_000.mp4",
+      "original": "original_videos/WRA_PeterRoskam0_000.mp4",
+      "sha256": "113169df6ed5bd06632e8adecb2a37e08baa6c830c7b0d27040adcfc8e139d38",
+      "crc32": 3250234000,
+      "duration_s": 40.0,
+      "official_url_line": "PeterRoskam0 https://www.youtube.com/watch?v=8cjXY8iJvu0",
+      "official_time_line": "PeterRoskam0.mp4 03:00-03:40",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "ColinAllred",
+      "member": "videos/WDA_ColinAllred_000.mp4",
+      "original": "original_videos/WDA_ColinAllred_000.mp4",
+      "sha256": "69d9fc8bdf30fcc9c9f51d2ca27a41f8ef0f29055dc9b66fc12f4713437e8eb8",
+      "crc32": 1585612616,
+      "duration_s": 190.0,
+      "official_url_line": "ColinAllred https://www.youtube.com/watch?v=rbIhW8_X2Jw",
+      "official_time_line": "ColinAllred.mp4 00:05-03:15",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "BobCorker",
+      "member": "videos/WRA_BobCorker_000.mp4",
+      "original": "original_videos/WRA_BobCorker_000.mp4",
+      "sha256": "e0d1a3dcf5bbc8dcd8757386bbece792afda423b91029982e736d3e548f5d0e0",
+      "crc32": 799456573,
+      "duration_s": 45.0,
+      "official_url_line": "BobCorker https://www.youtube.com/watch?v=TGll79cC7J4",
+      "official_time_line": "BobCorker.mp4 00:05-00:50",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "PatrickLeahy",
+      "member": "videos/WDA_PatrickLeahy0_000.mp4",
+      "original": "original_videos/WDA_PatrickLeahy0_000.mp4",
+      "sha256": "3823e7fadccf437249b11d700148593b30383e50bd0f2470bfcc80d77b07c2bc",
+      "crc32": 2490022989,
+      "duration_s": 278.0,
+      "official_url_line": "PatrickLeahy0 https://www.youtube.com/watch?v=ICk1rx235Ec",
+      "official_time_line": "PatrickLeahy0.mp4 00:12-04:50",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "MikeThompson",
+      "member": "videos/WDA_MikeThompson0_000.mp4",
+      "original": "original_videos/WDA_MikeThompson0_000.mp4",
+      "sha256": "67bd279db57fa1f1187518cc7fa103d4f2560ec728c20aec0fa3f9600b82ee5c",
+      "crc32": 187202357,
+      "duration_s": 185.0,
+      "official_url_line": "MikeThompson0 https://www.youtube.com/watch?v=2EaLkwmfBG8",
+      "official_time_line": "MikeThompson0.mp4 00:05-03:10",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "AllenWest",
+      "member": "videos/WRA_AllenWest_000.mp4",
+      "original": "original_videos/WRA_AllenWest_000.mp4",
+      "sha256": "15fc59f64b53c33abe8f31fc41a1c9c858abf69ee9df8587ba5bd866fe66a8d6",
+      "crc32": 1183838357,
+      "duration_s": 275.0,
+      "official_url_line": "AllenWest https://www.youtube.com/watch?v=HAVyoVVjBEE",
+      "official_time_line": "AllenWest.mp4 00:20-04:55",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "FrankPallone",
+      "member": "videos/WDA_FrankPallone0_000.mp4",
+      "original": "original_videos/WDA_FrankPallone0_000.mp4",
+      "sha256": "02fad0e4b033acd6eba8f0fb71cd4659ad4970250d1b910c1d33d8c269927313",
+      "crc32": 2389616899,
+      "duration_s": 225.0,
+      "official_url_line": "FrankPallone0 https://www.youtube.com/watch?v=CPSbvarBtO4",
+      "official_time_line": "FrankPallone0.mp4 00:05-03:50",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "JohnBoozman",
+      "member": "videos/WRA_JohnBoozman_000.mp4",
+      "original": "original_videos/WRA_JohnBoozman_000.mp4",
+      "sha256": "4dffa01acb5f277146b10f33a6409cad131ecb9a038c942f1b9bde25a9caf61a",
+      "crc32": 4244709783,
+      "duration_s": 75.0,
+      "official_url_line": "JohnBoozman https://www.youtube.com/watch?v=PT3SRCwoHVA",
+      "official_time_line": "JohnBoozman.mp4 00:05-01:20",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "BenCardin",
+      "member": "videos/WDA_BenCardin1_000.mp4",
+      "original": "original_videos/WDA_BenCardin1_000.mp4",
+      "sha256": "3194ca9481521b7955585f08b99f0d135bdea6aa9cdcb5cd20595af692275ffa",
+      "crc32": 2955122060,
+      "duration_s": 284.0,
+      "official_url_line": "BenCardin1 https://www.youtube.com/watch?v=OTg7ngyHFWw",
+      "official_time_line": "BenCardin1.mp4 00:11-04:55",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "JoeKennedy",
+      "member": "videos/WDA_JoeKennedy_000.mp4",
+      "original": "original_videos/WDA_JoeKennedy_000.mp4",
+      "sha256": "3f802b86c3c1992248bebbaa260cdaecd91fb52d4a2cb1e407d1769e13f64f99",
+      "crc32": 3768676504,
+      "duration_s": 53.0,
+      "official_url_line": "JoeKennedy https://www.youtube.com/watch?v=g9ZTLUvEktA",
+      "official_time_line": "JoeKennedy.mp4 00:12-01:05",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "AndyLevin",
+      "member": "videos/WDA_AndyLevin_000.mp4",
+      "original": "original_videos/WDA_AndyLevin_000.mp4",
+      "sha256": "90e28b38fff9378c150435c9300f0a9f706059dd931ae4a0242079552257fcf3",
+      "crc32": 1461849530,
+      "duration_s": 195.0,
+      "official_url_line": "AndyLevin https://www.youtube.com/watch?v=aMl1jNTqBE8",
+      "official_time_line": "AndyLevin.mp4 00:05-03:20",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "ReneeEllmers",
+      "member": "videos/WRA_ReneeEllmers_000.mp4",
+      "original": "original_videos/WRA_ReneeEllmers_000.mp4",
+      "sha256": "0994fe2141eaab49ccf520c130821cf310aea78f88e945d2279146573ce88c44",
+      "crc32": 4101557421,
+      "duration_s": 94.0,
+      "official_url_line": "ReneeEllmers https://www.youtube.com/watch?v=Biic3WA57IA",
+      "official_time_line": "ReneeEllmers.mp4 00:01-01:35",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "ChrisCoons",
+      "member": "videos/WDA_ChrisCoons1_000.mp4",
+      "original": "original_videos/WDA_ChrisCoons1_000.mp4",
+      "sha256": "b22fced27397e724aa49745d2665908a2de24c8193df5da3175086de920a71bd",
+      "crc32": 470101356,
+      "duration_s": 178.0,
+      "official_url_line": "ChrisCoons1 https://www.youtube.com/watch?v=AlqYSm_Lz-M",
+      "official_time_line": "ChrisCoons1.mp4 00:12-03:10",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "RobPortman",
+      "member": "videos/WRA_RobPortman_000.mp4",
+      "original": "original_videos/WRA_RobPortman_000.mp4",
+      "sha256": "de4744692e9efa00aebafd16a56fac7e93cb989891953e4e6946aae34d591269",
+      "crc32": 1296927762,
+      "duration_s": 223.0,
+      "official_url_line": "RobPortman https://www.youtube.com/watch?v=JHfE_z8I8x8",
+      "official_time_line": "RobPortman.mp4 00:02-03:45",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "DanKildee",
+      "member": "videos/WDA_DanKildee1_000.mp4",
+      "original": "original_videos/WDA_DanKildee1_000.mp4",
+      "sha256": "44899a61b6b1ae721b65f8c37148dbb07525e1a5a4deb8a796678851ebc508ee",
+      "crc32": 1426383816,
+      "duration_s": 250.0,
+      "official_url_line": "DanKildee1 https://www.youtube.com/watch?v=T2VwRzQxLso",
+      "official_time_line": "DanKildee1.mp4 00:05-04:15",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "JohnBarrasso",
+      "member": "videos/WRA_JohnBarrasso0_000.mp4",
+      "original": "original_videos/WRA_JohnBarrasso0_000.mp4",
+      "sha256": "8314e0ced8230aa7d269a270eb0ca11977266987b1daa4895e5e12318aea4983",
+      "crc32": 2157778487,
+      "duration_s": 203.0,
+      "official_url_line": "JohnBarrasso0 https://www.youtube.com/watch?v=MxkBkoBfaQQ",
+      "official_time_line": "JohnBarrasso0.mp4 00:12-03:35",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "JerryNadler",
+      "member": "videos/WDA_JerryNadler_000.mp4",
+      "original": "original_videos/WDA_JerryNadler_000.mp4",
+      "sha256": "81f86e1e11e138819140eb65dff1c5729e2447c4824b75292260187245c613cb",
+      "crc32": 708630770,
+      "duration_s": 335.0,
+      "official_url_line": "JerryNadler https://www.youtube.com/watch?v=3D78afEW2EQ",
+      "official_time_line": "JerryNadler.mp4 00:05-05:40",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "BobbySchilling",
+      "member": "videos/WRA_BobbySchilling_000.mp4",
+      "original": "original_videos/WRA_BobbySchilling_000.mp4",
+      "sha256": "02dbde6ebe62a185b165471e5ea5254bf939b0c6c4bcb06ae11b40fef9a1d8b5",
+      "crc32": 2128383936,
+      "duration_s": 70.0,
+      "official_url_line": "BobbySchilling https://www.youtube.com/watch?v=nSw4tC2CsR4",
+      "official_time_line": "BobbySchilling.mp4 01:05-02:15 02:30-03:10 05:50-06:30",
+      "official_clip_index": 0
+    },
+    {
+      "speaker": "ChrisVanHollen",
+      "member": "videos/WDA_ChrisVanHollen0_000.mp4",
+      "original": "original_videos/WDA_ChrisVanHollen0_000.mp4",
+      "sha256": "18aa6f842e8b2e42474115a0ea43c2a072599f9b782977d35e996945668642a7",
+      "crc32": 439331514,
+      "duration_s": 328.0,
+      "official_url_line": "ChrisVanHollen0 https://www.youtube.com/watch?v=tUQlOFFCeOY",
+      "official_time_line": "ChrisVanHollen0.mp4 00:12-05:40",
+      "official_clip_index": 0
+    }
+  ],
+  "records": [
+    {
+      "id": "WDA_DickDurbin_000_seg1",
+      "speaker": "DickDurbin",
+      "source_member": "videos/WDA_DickDurbin_000.mp4",
+      "start_s": 48.6,
+      "duration_s": 10,
+      "image_size": [
+        816,
+        816
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_DickDurbin_000_seg1.wav",
+          "sha256": "6cf3496e773c1fc9f8b1a60719aaf9cc7b3a257697568d8e4ffab703842f3522",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_DickDurbin_000_seg1.png",
+          "sha256": "867eb609b34d6e014a56acb205537ee0575e5d5b64eea05ee9fcbe301b2f4b91",
+          "bytes": 560240
+        },
+        "video": {
+          "path": "clips/WDA_DickDurbin_000_seg1.mp4",
+          "sha256": "dd3eeb29ad9113c2f01c52b7ef95d571b7b223cdb0bf2b676ab15985557e0bda",
+          "bytes": 1729578
+        }
+      }
+    },
+    {
+      "id": "WDA_DickDurbin_000_seg2",
+      "speaker": "DickDurbin",
+      "source_member": "videos/WDA_DickDurbin_000.mp4",
+      "start_s": 145.76,
+      "duration_s": 10,
+      "image_size": [
+        816,
+        816
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_DickDurbin_000_seg2.wav",
+          "sha256": "81c71ef1bb61ed7bd3d7d918230f8a7f16eefd7851192e4e88977d6dd74091aa",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_DickDurbin_000_seg2.png",
+          "sha256": "f66459c3e6e4d7b88f7e16e0a7e449a8decaa33c1a86acb4238bb35de3d74435",
+          "bytes": 556486
+        },
+        "video": {
+          "path": "clips/WDA_DickDurbin_000_seg2.mp4",
+          "sha256": "faf17a5922f0800070ec91d4504889bb5a74cef4914bebc6911592d1a0770414",
+          "bytes": 1769625
+        }
+      }
+    },
+    {
+      "id": "WRA_PeterRoskam0_000_seg1",
+      "speaker": "PeterRoskam",
+      "source_member": "videos/WRA_PeterRoskam0_000.mp4",
+      "start_s": 6.0,
+      "duration_s": 10,
+      "image_size": [
+        686,
+        686
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_PeterRoskam0_000_seg1.wav",
+          "sha256": "46cb6a9fe7188035e2b79bb444e0f78f09f503313e379371a3a30d559c3dfd06",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_PeterRoskam0_000_seg1.png",
+          "sha256": "6806bd52d95a44ee74c1858fa3cdc2d26c6d3342588bdc76a97451f4c0bdb9ee",
+          "bytes": 511993
+        },
+        "video": {
+          "path": "clips/WRA_PeterRoskam0_000_seg1.mp4",
+          "sha256": "0e9a59dcf2474c0434366c5ae224e360b3cc49119f31b3a9caf3c121a574fcbf",
+          "bytes": 1151929
+        }
+      }
+    },
+    {
+      "id": "WRA_PeterRoskam0_000_seg2",
+      "speaker": "PeterRoskam",
+      "source_member": "videos/WRA_PeterRoskam0_000.mp4",
+      "start_s": 18.0,
+      "duration_s": 10,
+      "image_size": [
+        686,
+        686
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_PeterRoskam0_000_seg2.wav",
+          "sha256": "57ec96c9f107a3971f50feadc88214bbab94f6e22890a67de77ad93977df14eb",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_PeterRoskam0_000_seg2.png",
+          "sha256": "7f9afeb3dcf287d73ac6529d63776c3184943041f7ff6a29db401dc000270dd0",
+          "bytes": 498878
+        },
+        "video": {
+          "path": "clips/WRA_PeterRoskam0_000_seg2.mp4",
+          "sha256": "3fe3c744c3ffebd4cf10f3ed83d6ff656b45a0bebc402ecf23f286d51e8ff7c1",
+          "bytes": 1129251
+        }
+      }
+    },
+    {
+      "id": "WDA_ColinAllred_000_seg1",
+      "speaker": "ColinAllred",
+      "source_member": "videos/WDA_ColinAllred_000.mp4",
+      "start_s": 36.0,
+      "duration_s": 10,
+      "image_size": [
+        522,
+        522
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_ColinAllred_000_seg1.wav",
+          "sha256": "c29b99ab9aa051d816f994baa3fd10810ceb2854766c48afe93d62d267382ca1",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_ColinAllred_000_seg1.png",
+          "sha256": "6f753b84d3cc3eb7d5cfc0d77f1df03a5f92661a0c7d2588009748ea822e3d09",
+          "bytes": 274870
+        },
+        "video": {
+          "path": "clips/WDA_ColinAllred_000_seg1.mp4",
+          "sha256": "943e0d26c1696f2f42de94f9c403c77bc5662f7f8dc3af6bc8412a4d67f21dbb",
+          "bytes": 920631
+        }
+      }
+    },
+    {
+      "id": "WDA_ColinAllred_000_seg2",
+      "speaker": "ColinAllred",
+      "source_member": "videos/WDA_ColinAllred_000.mp4",
+      "start_s": 108.0,
+      "duration_s": 10,
+      "image_size": [
+        522,
+        522
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_ColinAllred_000_seg2.wav",
+          "sha256": "c1da9a9d3e53eab6789b1291dbdc2be9ac98e26ef80c234ebd36b81a79193e9b",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_ColinAllred_000_seg2.png",
+          "sha256": "4bd0f4ac35b26c3338e885ff887e0aedac2e240e237e0330954badaca097b0be",
+          "bytes": 280146
+        },
+        "video": {
+          "path": "clips/WDA_ColinAllred_000_seg2.mp4",
+          "sha256": "c0ce3ef08ec838c77a9200c504149b3fc0b6d1728d8dcfe5066e868f2d913725",
+          "bytes": 981783
+        }
+      }
+    },
+    {
+      "id": "WRA_BobCorker_000_seg1",
+      "speaker": "BobCorker",
+      "source_member": "videos/WRA_BobCorker_000.mp4",
+      "start_s": 7.0,
+      "duration_s": 10,
+      "image_size": [
+        466,
+        466
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_BobCorker_000_seg1.wav",
+          "sha256": "f13439bac5225b824b62e332f797fada554c754fd8c79c5c6872357c9f06945e",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_BobCorker_000_seg1.png",
+          "sha256": "e1a7314d3f6b64163803df9b6e76a7c11d02254cccb4bfcfce7f7951b89874a4",
+          "bytes": 166422
+        },
+        "video": {
+          "path": "clips/WRA_BobCorker_000_seg1.mp4",
+          "sha256": "02252ba727f5a2fed899ef40f50c79b40125e04b56c96657b78848dedacd770b",
+          "bytes": 728727
+        }
+      }
+    },
+    {
+      "id": "WRA_BobCorker_000_seg2",
+      "speaker": "BobCorker",
+      "source_member": "videos/WRA_BobCorker_000.mp4",
+      "start_s": 21.0,
+      "duration_s": 10,
+      "image_size": [
+        466,
+        466
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_BobCorker_000_seg2.wav",
+          "sha256": "89797938226a433dff574b34f979408e2a92157b01896a328991d0c89aa19cb7",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_BobCorker_000_seg2.png",
+          "sha256": "5f530037e902717d08cd99934efecf986bf0d0ac3e917b5f4deb685fc0e59689",
+          "bytes": 175111
+        },
+        "video": {
+          "path": "clips/WRA_BobCorker_000_seg2.mp4",
+          "sha256": "5365a3b483612fa62147deb2605e2c6a6fc9c7eb92cf1697eea8f32933a14938",
+          "bytes": 640610
+        }
+      }
+    },
+    {
+      "id": "WDA_PatrickLeahy0_000_seg1",
+      "speaker": "PatrickLeahy",
+      "source_member": "videos/WDA_PatrickLeahy0_000.mp4",
+      "start_s": 53.6,
+      "duration_s": 10,
+      "image_size": [
+        482,
+        482
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_PatrickLeahy0_000_seg1.wav",
+          "sha256": "d6213be73dac0561125c7b95cb5f9978ae7aa8092fe19dfdec203b5e8b91fe5c",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_PatrickLeahy0_000_seg1.png",
+          "sha256": "39cf9838a390bef8c218bebf36c4b2df434fb62e81914e6580654a39c8e04640",
+          "bytes": 308065
+        },
+        "video": {
+          "path": "clips/WDA_PatrickLeahy0_000_seg1.mp4",
+          "sha256": "d5fe90ae8d304632943dd8957ff6bbab05166603fe9d3c1a1193d7304be3ab20",
+          "bytes": 879467
+        }
+      }
+    },
+    {
+      "id": "WDA_PatrickLeahy0_000_seg2",
+      "speaker": "PatrickLeahy",
+      "source_member": "videos/WDA_PatrickLeahy0_000.mp4",
+      "start_s": 160.76,
+      "duration_s": 10,
+      "image_size": [
+        482,
+        482
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_PatrickLeahy0_000_seg2.wav",
+          "sha256": "f5263e1edc9104adca841df16541a953ebe2eabe1e05eb4e7065f2f680c10d13",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_PatrickLeahy0_000_seg2.png",
+          "sha256": "94af0dc04d51f5322aa2e4aed46af39b8c491a0d2a7e579d2e95dba3052e4117",
+          "bytes": 308880
+        },
+        "video": {
+          "path": "clips/WDA_PatrickLeahy0_000_seg2.mp4",
+          "sha256": "85a44eed39291088f3177ebc1d79a79e0492c4eca099684e6866d4c24055a2af",
+          "bytes": 879726
+        }
+      }
+    },
+    {
+      "id": "WDA_MikeThompson0_000_seg1",
+      "speaker": "MikeThompson",
+      "source_member": "videos/WDA_MikeThompson0_000.mp4",
+      "start_s": 35.0,
+      "duration_s": 10,
+      "image_size": [
+        490,
+        490
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_MikeThompson0_000_seg1.wav",
+          "sha256": "f879b3ef586d41b156737422dec92d2f120238c69ad4b3907776e1453b9103ad",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_MikeThompson0_000_seg1.png",
+          "sha256": "2f6baf5c0c3b856d1a93155aaaca3c1fef39f33e253e87e3a0a27244e9542e24",
+          "bytes": 222929
+        },
+        "video": {
+          "path": "clips/WDA_MikeThompson0_000_seg1.mp4",
+          "sha256": "f8635221fa43d291c462bd23bdfe81e72aa132e7c0300a90ce9cd1faf9bcba82",
+          "bytes": 680894
+        }
+      }
+    },
+    {
+      "id": "WDA_MikeThompson0_000_seg2",
+      "speaker": "MikeThompson",
+      "source_member": "videos/WDA_MikeThompson0_000.mp4",
+      "start_s": 105.0,
+      "duration_s": 10,
+      "image_size": [
+        490,
+        490
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_MikeThompson0_000_seg2.wav",
+          "sha256": "a9952bbf7e28ec6ec1a831f89de22b169e61fbee82d6cc74e7be0d7559d7d163",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_MikeThompson0_000_seg2.png",
+          "sha256": "98bca13eaea2f26a0a2288dd7e5d2d1f698a2a8baf26ba5ee2056cfdfae35425",
+          "bytes": 225215
+        },
+        "video": {
+          "path": "clips/WDA_MikeThompson0_000_seg2.mp4",
+          "sha256": "862dc6c72bde9b22da4051dfa81356ce24965ccfb3b12721386526b76f9d58a7",
+          "bytes": 681247
+        }
+      }
+    },
+    {
+      "id": "WRA_AllenWest_000_seg1",
+      "speaker": "AllenWest",
+      "source_member": "videos/WRA_AllenWest_000.mp4",
+      "start_s": 53.0,
+      "duration_s": 10,
+      "image_size": [
+        656,
+        656
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_AllenWest_000_seg1.wav",
+          "sha256": "71a2f5d91846767b9b6f2a777c603c1f1e3421dc6b15a7d403f2ab777f1665d1",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_AllenWest_000_seg1.png",
+          "sha256": "ded49f0bd39a494eeaaf179d0587186ca64a07271a62f694b7e0db0547cfa707",
+          "bytes": 377413
+        },
+        "video": {
+          "path": "clips/WRA_AllenWest_000_seg1.mp4",
+          "sha256": "c02c1b6aab4d8a82bf17cf8fd5689298b98ece604990618040b9a433247a7afe",
+          "bytes": 819696
+        }
+      }
+    },
+    {
+      "id": "WRA_AllenWest_000_seg2",
+      "speaker": "AllenWest",
+      "source_member": "videos/WRA_AllenWest_000.mp4",
+      "start_s": 159.0,
+      "duration_s": 10,
+      "image_size": [
+        656,
+        656
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_AllenWest_000_seg2.wav",
+          "sha256": "b6e72d0494bb5252cb59d6fd5a1f6fcbfaf64b1bd030d1c8a26b2ec17d559e1b",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_AllenWest_000_seg2.png",
+          "sha256": "fc5d063796a66649b5403ec011a523f913920b1d3ed943e7cab11112c0e88304",
+          "bytes": 396970
+        },
+        "video": {
+          "path": "clips/WRA_AllenWest_000_seg2.mp4",
+          "sha256": "a980d81cf92206878ca1e119f140b984840546cb8e86b5fd68753a6bb0ad289d",
+          "bytes": 822417
+        }
+      }
+    },
+    {
+      "id": "WDA_FrankPallone0_000_seg1",
+      "speaker": "FrankPallone",
+      "source_member": "videos/WDA_FrankPallone0_000.mp4",
+      "start_s": 43.0,
+      "duration_s": 10,
+      "image_size": [
+        770,
+        770
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_FrankPallone0_000_seg1.wav",
+          "sha256": "c38e7fc9c2aa1001820bbe8c29f6a00c28a6e61353515b0fd1839aa290a4f4d0",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_FrankPallone0_000_seg1.png",
+          "sha256": "ab52a3e6880dc571033e620f6d6a6800e46d6a9671d3f69e5eb9e84bfa9a5688",
+          "bytes": 1058878
+        },
+        "video": {
+          "path": "clips/WDA_FrankPallone0_000_seg1.mp4",
+          "sha256": "cebdeb34744d7971dcb9638e03f896d0b87a426f77bf7204bac0311a41f462a0",
+          "bytes": 1912212
+        }
+      }
+    },
+    {
+      "id": "WDA_FrankPallone0_000_seg2",
+      "speaker": "FrankPallone",
+      "source_member": "videos/WDA_FrankPallone0_000.mp4",
+      "start_s": 129.0,
+      "duration_s": 10,
+      "image_size": [
+        770,
+        770
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_FrankPallone0_000_seg2.wav",
+          "sha256": "4d4ce33ff5eee6b7523c219008c57249915feae99980d1a5fa4099e0791954a1",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_FrankPallone0_000_seg2.png",
+          "sha256": "d03511e9fe7596e52a309cd516b89bf0a814f0d75bc986549a0a5173a0fcc829",
+          "bytes": 1080340
+        },
+        "video": {
+          "path": "clips/WDA_FrankPallone0_000_seg2.mp4",
+          "sha256": "6c1f31b348a99725017fd927730bfc4cf653b2ee44ce164c6d30a07629d378d3",
+          "bytes": 2162600
+        }
+      }
+    },
+    {
+      "id": "WRA_JohnBoozman_000_seg1",
+      "speaker": "JohnBoozman",
+      "source_member": "videos/WRA_JohnBoozman_000.mp4",
+      "start_s": 13.0,
+      "duration_s": 10,
+      "image_size": [
+        694,
+        694
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_JohnBoozman_000_seg1.wav",
+          "sha256": "a07b6da392d365790598a683ef180ab08b315b1682919b99d722dfce9f74d78f",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_JohnBoozman_000_seg1.png",
+          "sha256": "59b9984336f0e295327ce363fe12e6e22f367ede89866da3841fc4238ed21835",
+          "bytes": 350463
+        },
+        "video": {
+          "path": "clips/WRA_JohnBoozman_000_seg1.mp4",
+          "sha256": "d6194c30fa8fdeea0c36be792caf53547d2cd148baea4236ab2177da77c3030a",
+          "bytes": 1105489
+        }
+      }
+    },
+    {
+      "id": "WRA_JohnBoozman_000_seg2",
+      "speaker": "JohnBoozman",
+      "source_member": "videos/WRA_JohnBoozman_000.mp4",
+      "start_s": 39.0,
+      "duration_s": 10,
+      "image_size": [
+        694,
+        694
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_JohnBoozman_000_seg2.wav",
+          "sha256": "4cb7f4f19b81967c682e4a0d1b6cefa72f17ad2017e9a30fac018991710d467d",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_JohnBoozman_000_seg2.png",
+          "sha256": "1f821a7508dd262c006219bd43f4736bc87ecf2360dc92005e0cb1f8ffc1f24f",
+          "bytes": 353507
+        },
+        "video": {
+          "path": "clips/WRA_JohnBoozman_000_seg2.mp4",
+          "sha256": "12b5fb94c4fa7475771db13e1d9dcadb29431b5b3fd1ddee35b9880645f491b4",
+          "bytes": 1097637
+        }
+      }
+    },
+    {
+      "id": "WDA_BenCardin1_000_seg1",
+      "speaker": "BenCardin",
+      "source_member": "videos/WDA_BenCardin1_000.mp4",
+      "start_s": 54.8,
+      "duration_s": 10,
+      "image_size": [
+        738,
+        738
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_BenCardin1_000_seg1.wav",
+          "sha256": "ba859a0c0a053d943e264bbffc859c9545a5a47482703561c2cfd9d0332604f5",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_BenCardin1_000_seg1.png",
+          "sha256": "70af829f769679d3bbf6e8d8957997fdda665fd775b986aece8af7a7d38f32cf",
+          "bytes": 477509
+        },
+        "video": {
+          "path": "clips/WDA_BenCardin1_000_seg1.mp4",
+          "sha256": "c265ce54b428c9a683c211778bc73c5b749b76eae7c765f19c8d544ec88266c0",
+          "bytes": 1136962
+        }
+      }
+    },
+    {
+      "id": "WDA_BenCardin1_000_seg2",
+      "speaker": "BenCardin",
+      "source_member": "videos/WDA_BenCardin1_000.mp4",
+      "start_s": 164.4,
+      "duration_s": 10,
+      "image_size": [
+        738,
+        738
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_BenCardin1_000_seg2.wav",
+          "sha256": "c3a83cc7df68c6b68e2eea694109eaa221a6e1056df45e48c24611448eac703c",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_BenCardin1_000_seg2.png",
+          "sha256": "6a11091db137edc279ba98c56c9e0013805c10e12942503b36f86c26e46979f0",
+          "bytes": 463074
+        },
+        "video": {
+          "path": "clips/WDA_BenCardin1_000_seg2.mp4",
+          "sha256": "9cbfc126234932d6eac3f98794a9c5e382f76a32ed116b491e8d9809d19662d4",
+          "bytes": 1281499
+        }
+      }
+    },
+    {
+      "id": "WDA_JoeKennedy_000_seg1",
+      "speaker": "JoeKennedy",
+      "source_member": "videos/WDA_JoeKennedy_000.mp4",
+      "start_s": 8.6,
+      "duration_s": 10,
+      "image_size": [
+        574,
+        574
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_JoeKennedy_000_seg1.wav",
+          "sha256": "a044046e52c6ec601f4a79e97a3c8e8eaee407454379ef02c86085e4a5404d2c",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_JoeKennedy_000_seg1.png",
+          "sha256": "f1991fd5988212529137e1e4937530eec0d1fe9285f53ef4d19d7e36bd623be1",
+          "bytes": 400812
+        },
+        "video": {
+          "path": "clips/WDA_JoeKennedy_000_seg1.mp4",
+          "sha256": "f36eace7b61e6f23114b00d3a173d470681f776509c149ee84ad00917ce15828",
+          "bytes": 959621
+        }
+      }
+    },
+    {
+      "id": "WDA_JoeKennedy_000_seg2",
+      "speaker": "JoeKennedy",
+      "source_member": "videos/WDA_JoeKennedy_000.mp4",
+      "start_s": 25.8,
+      "duration_s": 10,
+      "image_size": [
+        574,
+        574
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_JoeKennedy_000_seg2.wav",
+          "sha256": "661033471f9bcd0b238e78641aa64a6de213e8907758bb02a41a3af01bec6338",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_JoeKennedy_000_seg2.png",
+          "sha256": "13150a20ca23f480f86f8cf5af74f204fe21278db037f83d4db0b85c2094409a",
+          "bytes": 389734
+        },
+        "video": {
+          "path": "clips/WDA_JoeKennedy_000_seg2.mp4",
+          "sha256": "5d7970b6b6db26bb0610bb11225ce36b5031f007fb0386df0598b3be8833c2fa",
+          "bytes": 1060729
+        }
+      }
+    },
+    {
+      "id": "WDA_AndyLevin_000_seg1",
+      "speaker": "AndyLevin",
+      "source_member": "videos/WDA_AndyLevin_000.mp4",
+      "start_s": 37.0,
+      "duration_s": 10,
+      "image_size": [
+        818,
+        818
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_AndyLevin_000_seg1.wav",
+          "sha256": "338fa9e21b58c7f24c54789ab1867d8915a60317a2fd91961979738a56ebd0d5",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_AndyLevin_000_seg1.png",
+          "sha256": "4eb15a37c18803a6be30365c1c67ea0f1dfe9a1cf64ce9b4fe88ee4aff8fe447",
+          "bytes": 994098
+        },
+        "video": {
+          "path": "clips/WDA_AndyLevin_000_seg1.mp4",
+          "sha256": "fcdccd8fc014294b1488148dd18118a9bb2924da0277a1ed4d428a9624f6828a",
+          "bytes": 2116984
+        }
+      }
+    },
+    {
+      "id": "WDA_AndyLevin_000_seg2",
+      "speaker": "AndyLevin",
+      "source_member": "videos/WDA_AndyLevin_000.mp4",
+      "start_s": 111.0,
+      "duration_s": 10,
+      "image_size": [
+        818,
+        818
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_AndyLevin_000_seg2.wav",
+          "sha256": "cad215020e342625974a48e04fa8b6e85106c98c4c209fd92af672d2969ff0f0",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_AndyLevin_000_seg2.png",
+          "sha256": "1f372c3027276e8ef050c09df8abedea2aebd7102b410b012eb89124d71ec363",
+          "bytes": 990432
+        },
+        "video": {
+          "path": "clips/WDA_AndyLevin_000_seg2.mp4",
+          "sha256": "0a95284bd572038bb1ea89643392711967cca08dea49cb222ef6ca9c1f2e1225",
+          "bytes": 2013578
+        }
+      }
+    },
+    {
+      "id": "WRA_ReneeEllmers_000_seg1",
+      "speaker": "ReneeEllmers",
+      "source_member": "videos/WRA_ReneeEllmers_000.mp4",
+      "start_s": 16.8,
+      "duration_s": 10,
+      "image_size": [
+        468,
+        468
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_ReneeEllmers_000_seg1.wav",
+          "sha256": "9839195459ddddc51a09c963dabd2f1ae0854f381a18838b991ffa01e0cdb963",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_ReneeEllmers_000_seg1.png",
+          "sha256": "46fdcb56721b9cd0546aa8fd9bba6359f89d7e87e9d7ca8b5b74fe4d50ebf9d8",
+          "bytes": 271636
+        },
+        "video": {
+          "path": "clips/WRA_ReneeEllmers_000_seg1.mp4",
+          "sha256": "61b800a5747a633a14f92d9e179e1877a104336d4e5a381b4ebeb748892dbe92",
+          "bytes": 858001
+        }
+      }
+    },
+    {
+      "id": "WRA_ReneeEllmers_000_seg2",
+      "speaker": "ReneeEllmers",
+      "source_member": "videos/WRA_ReneeEllmers_000.mp4",
+      "start_s": 50.4,
+      "duration_s": 10,
+      "image_size": [
+        468,
+        468
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_ReneeEllmers_000_seg2.wav",
+          "sha256": "4813d3d2f526204447d20c2571ee8ab4c7eef0a1d4fecc645315d2c14b9614c9",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_ReneeEllmers_000_seg2.png",
+          "sha256": "996aaf438fd21fb265376b56e11f2f17bf4ab556801c77bed0b6fa10cef3df7f",
+          "bytes": 258825
+        },
+        "video": {
+          "path": "clips/WRA_ReneeEllmers_000_seg2.mp4",
+          "sha256": "1aa1ea7e5ae229643c0cb0855ae30d09bd8be62a55ef9f1b977d368408ce97ef",
+          "bytes": 759189
+        }
+      }
+    },
+    {
+      "id": "WDA_ChrisCoons1_000_seg1",
+      "speaker": "ChrisCoons",
+      "source_member": "videos/WDA_ChrisCoons1_000.mp4",
+      "start_s": 33.6,
+      "duration_s": 10,
+      "image_size": [
+        762,
+        762
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_ChrisCoons1_000_seg1.wav",
+          "sha256": "94e942a86298e372d436fe7a17f90398578f54d7420813f7413d18d337fc19e5",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_ChrisCoons1_000_seg1.png",
+          "sha256": "6dfff63fffbf1446cfde090859b9db64dad7d434ebff1165f3697bda241efa94",
+          "bytes": 689428
+        },
+        "video": {
+          "path": "clips/WDA_ChrisCoons1_000_seg1.mp4",
+          "sha256": "56c09adbf2a96039cf906271d2062583116d66274dfae8b6392f0a808135818c",
+          "bytes": 1679079
+        }
+      }
+    },
+    {
+      "id": "WDA_ChrisCoons1_000_seg2",
+      "speaker": "ChrisCoons",
+      "source_member": "videos/WDA_ChrisCoons1_000.mp4",
+      "start_s": 100.8,
+      "duration_s": 10,
+      "image_size": [
+        762,
+        762
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_ChrisCoons1_000_seg2.wav",
+          "sha256": "6729b5b2ee65f30c734fc8d69ac8707bcc8096953ef1f052d5c5dcc37082e8ee",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_ChrisCoons1_000_seg2.png",
+          "sha256": "2c2250579442052f942e312cf1dcc64dad6d7413f287bc774b2a8967ea55f11b",
+          "bytes": 663452
+        },
+        "video": {
+          "path": "clips/WDA_ChrisCoons1_000_seg2.mp4",
+          "sha256": "45e954963866677ff778adeedc4f0453cbf627486d4f5fb7eb414051c76b2450",
+          "bytes": 1532981
+        }
+      }
+    },
+    {
+      "id": "WRA_RobPortman_000_seg1",
+      "speaker": "RobPortman",
+      "source_member": "videos/WRA_RobPortman_000.mp4",
+      "start_s": 42.6,
+      "duration_s": 10,
+      "image_size": [
+        454,
+        454
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_RobPortman_000_seg1.wav",
+          "sha256": "57fbcfa2456e7da0eee8e3ef196aaa3bbf90685665bced3c0f6def9e748739f0",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_RobPortman_000_seg1.png",
+          "sha256": "7f2053b0ee9e31dc7d6109191096f2989f4b661c5b46c0f1080f0e096ad8a5e4",
+          "bytes": 210795
+        },
+        "video": {
+          "path": "clips/WRA_RobPortman_000_seg1.mp4",
+          "sha256": "f145e3dae0324f835f666b2c2dd0c92e94ff6e6a24db7532ae1bc7080bb3cdc2",
+          "bytes": 542371
+        }
+      }
+    },
+    {
+      "id": "WRA_RobPortman_000_seg2",
+      "speaker": "RobPortman",
+      "source_member": "videos/WRA_RobPortman_000.mp4",
+      "start_s": 127.8,
+      "duration_s": 10,
+      "image_size": [
+        454,
+        454
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_RobPortman_000_seg2.wav",
+          "sha256": "749443a229a8360e5bd6278e373bbc354f765219dbd8a09fd5f0e665c3b990fb",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_RobPortman_000_seg2.png",
+          "sha256": "3d9130987c25f7beaeb28e7b9e821a0a4b04d28643dbd9c4f46debc589590eb2",
+          "bytes": 222143
+        },
+        "video": {
+          "path": "clips/WRA_RobPortman_000_seg2.mp4",
+          "sha256": "4d35f624a208b226e4b9e2c8e6f84c5767f7d86f4e7159074f7e8c2ae3359d78",
+          "bytes": 522488
+        }
+      }
+    },
+    {
+      "id": "WDA_DanKildee1_000_seg1",
+      "speaker": "DanKildee",
+      "source_member": "videos/WDA_DanKildee1_000.mp4",
+      "start_s": 48.0,
+      "duration_s": 10,
+      "image_size": [
+        512,
+        512
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_DanKildee1_000_seg1.wav",
+          "sha256": "6675c51025bdfa7248804e6601e05338b22dc5e3e1bf04b468bdbcedb2648d24",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_DanKildee1_000_seg1.png",
+          "sha256": "6879c3c64a93b32f0ab54d749be015e4ea24b2c102cf20039e7218e0b48a8eaa",
+          "bytes": 309298
+        },
+        "video": {
+          "path": "clips/WDA_DanKildee1_000_seg1.mp4",
+          "sha256": "a976ab7ff1d254094bc89252b06e355a0ac0f59dedc65a88f54f2eeb74b6fc68",
+          "bytes": 1031011
+        }
+      }
+    },
+    {
+      "id": "WDA_DanKildee1_000_seg2",
+      "speaker": "DanKildee",
+      "source_member": "videos/WDA_DanKildee1_000.mp4",
+      "start_s": 144.0,
+      "duration_s": 10,
+      "image_size": [
+        512,
+        512
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_DanKildee1_000_seg2.wav",
+          "sha256": "dc1ac8252c00ad46907d968a56a939b41156292d8db588d39b95409ffd5e8193",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_DanKildee1_000_seg2.png",
+          "sha256": "9d9a56e4b6552dc8dc57e09d8760ecf94c8f50412f1b18a647326b8fa67409a0",
+          "bytes": 306086
+        },
+        "video": {
+          "path": "clips/WDA_DanKildee1_000_seg2.mp4",
+          "sha256": "f09026845df5e60e959c9ffcab2fa49c7c91f9e25f96040bd70ed990a665a413",
+          "bytes": 1028102
+        }
+      }
+    },
+    {
+      "id": "WRA_JohnBarrasso0_000_seg1",
+      "speaker": "JohnBarrasso",
+      "source_member": "videos/WRA_JohnBarrasso0_000.mp4",
+      "start_s": 38.6,
+      "duration_s": 10,
+      "image_size": [
+        590,
+        590
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_JohnBarrasso0_000_seg1.wav",
+          "sha256": "74d035f280a7a7a49f756bbcdd3f7c5f2f5d4c4a755b151061bea7b9877f83fe",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_JohnBarrasso0_000_seg1.png",
+          "sha256": "1e66eb5137c173ed036db5eba3d55b75fed74fd8386ce57891066d243aa060c9",
+          "bytes": 243890
+        },
+        "video": {
+          "path": "clips/WRA_JohnBarrasso0_000_seg1.mp4",
+          "sha256": "fed2ac474c17af697bd18665ab1c6a3c3fcc177e63e2cf74ee75dd6290f5fd6d",
+          "bytes": 911791
+        }
+      }
+    },
+    {
+      "id": "WRA_JohnBarrasso0_000_seg2",
+      "speaker": "JohnBarrasso",
+      "source_member": "videos/WRA_JohnBarrasso0_000.mp4",
+      "start_s": 115.8,
+      "duration_s": 10,
+      "image_size": [
+        590,
+        590
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_JohnBarrasso0_000_seg2.wav",
+          "sha256": "c58abe073a1e6bf940669450669b366d3938453bb8bf829444965d1c5c20a666",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_JohnBarrasso0_000_seg2.png",
+          "sha256": "aedac6b1464a89750567c2daeee12c83f5d5c5cab0ff5a17b25d680a8aed1e10",
+          "bytes": 243955
+        },
+        "video": {
+          "path": "clips/WRA_JohnBarrasso0_000_seg2.mp4",
+          "sha256": "267868bc0e20ecc37f07e9cd2f196309b79ae06fc637a17e6ddac41f63e6e524",
+          "bytes": 876341
+        }
+      }
+    },
+    {
+      "id": "WDA_JerryNadler_000_seg1",
+      "speaker": "JerryNadler",
+      "source_member": "videos/WDA_JerryNadler_000.mp4",
+      "start_s": 65.0,
+      "duration_s": 10,
+      "image_size": [
+        434,
+        434
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_JerryNadler_000_seg1.wav",
+          "sha256": "1b1b0f97348c92a7065258d8c2e37d9a5204813d5364ad53bac6ce1dfed3cbba",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_JerryNadler_000_seg1.png",
+          "sha256": "94c7600daf2cf2d96c0c141c4c34f9c29a1ce98cdd4e31cc4089ef1dbae2ac14",
+          "bytes": 326230
+        },
+        "video": {
+          "path": "clips/WDA_JerryNadler_000_seg1.mp4",
+          "sha256": "8332cc4cb575ccf3599c6a80c4de7180cd0e440bedcc5e2765d98bf9642b3856",
+          "bytes": 599292
+        }
+      }
+    },
+    {
+      "id": "WDA_JerryNadler_000_seg2",
+      "speaker": "JerryNadler",
+      "source_member": "videos/WDA_JerryNadler_000.mp4",
+      "start_s": 195.0,
+      "duration_s": 10,
+      "image_size": [
+        434,
+        434
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_JerryNadler_000_seg2.wav",
+          "sha256": "60a753f7c7322217eb5d1cc4407aa5280ddc40d049c352a45ee08d1223b52b9e",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_JerryNadler_000_seg2.png",
+          "sha256": "203b480b97120aef0396de821896f7529b7961fe4eb0736a29e20e226608dd7a",
+          "bytes": 318342
+        },
+        "video": {
+          "path": "clips/WDA_JerryNadler_000_seg2.mp4",
+          "sha256": "836c6c9bf2c995fc9db6199bbb79310e0c529778c8179b95cbe76489e9339050",
+          "bytes": 606535
+        }
+      }
+    },
+    {
+      "id": "WRA_BobbySchilling_000_seg1",
+      "speaker": "BobbySchilling",
+      "source_member": "videos/WRA_BobbySchilling_000.mp4",
+      "start_s": 12.0,
+      "duration_s": 10,
+      "image_size": [
+        966,
+        966
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_BobbySchilling_000_seg1.wav",
+          "sha256": "a712f850373f4a9b8ea32869d8611bc0115057795364be74a5fbceedcef5cc75",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_BobbySchilling_000_seg1.png",
+          "sha256": "c98f04060fff43ac090bfbc2a6429cb2e08ecb24089facae83eb3124124af9fb",
+          "bytes": 843683
+        },
+        "video": {
+          "path": "clips/WRA_BobbySchilling_000_seg1.mp4",
+          "sha256": "e0dd019b5f24a4fed5e0e951d5f4e6a0c7c09d5e92e886bd9e4ef1fe522e4a07",
+          "bytes": 2387443
+        }
+      }
+    },
+    {
+      "id": "WRA_BobbySchilling_000_seg2",
+      "speaker": "BobbySchilling",
+      "source_member": "videos/WRA_BobbySchilling_000.mp4",
+      "start_s": 36.0,
+      "duration_s": 10,
+      "image_size": [
+        966,
+        966
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WRA_BobbySchilling_000_seg2.wav",
+          "sha256": "ca75e6de759237514e3bd064dc6bca7f39478e3a22695c508f330a25274e7afb",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WRA_BobbySchilling_000_seg2.png",
+          "sha256": "cbec9d2826b651d2a2a45fe37e5698a693d9cced6cf3d0f40b138562ec3413d7",
+          "bytes": 885323
+        },
+        "video": {
+          "path": "clips/WRA_BobbySchilling_000_seg2.mp4",
+          "sha256": "21ce7ae4a2044fce7680f19895de48989b4fb844079d0355857edb17a39722af",
+          "bytes": 2504756
+        }
+      }
+    },
+    {
+      "id": "WDA_ChrisVanHollen0_000_seg1",
+      "speaker": "ChrisVanHollen",
+      "source_member": "videos/WDA_ChrisVanHollen0_000.mp4",
+      "start_s": 63.6,
+      "duration_s": 10,
+      "image_size": [
+        718,
+        718
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_ChrisVanHollen0_000_seg1.wav",
+          "sha256": "ce05cd0ec431d04cad705ac5cf23dcbddd3e1c7a449a61c40057b03a7517c2e8",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_ChrisVanHollen0_000_seg1.png",
+          "sha256": "13c434e821d7559cb4a566e4a1ffed68fd955a391c3c57f212128cf9a30c80b2",
+          "bytes": 620000
+        },
+        "video": {
+          "path": "clips/WDA_ChrisVanHollen0_000_seg1.mp4",
+          "sha256": "867ca401e18eecc2af1a7c21523eebe9a81dd2ee7319fdbbdd1f62fa02a07277",
+          "bytes": 1539556
+        }
+      }
+    },
+    {
+      "id": "WDA_ChrisVanHollen0_000_seg2",
+      "speaker": "ChrisVanHollen",
+      "source_member": "videos/WDA_ChrisVanHollen0_000.mp4",
+      "start_s": 190.8,
+      "duration_s": 10,
+      "image_size": [
+        718,
+        718
+      ],
+      "transcript": null,
+      "transcript_status": "NOT_PROVIDED_NOT_ASR",
+      "files": {
+        "audio": {
+          "path": "audio/WDA_ChrisVanHollen0_000_seg2.wav",
+          "sha256": "116957ecdfbe82432da71546f32a5262a4985964bd410440ec8faa025d7ba797",
+          "bytes": 320078
+        },
+        "image": {
+          "path": "images/WDA_ChrisVanHollen0_000_seg2.png",
+          "sha256": "a1d33ae2a038925f4251b7ea04b7eccc2eedabbcfbfb9edc3fd580efecdd1cad",
+          "bytes": 606116
+        },
+        "video": {
+          "path": "clips/WDA_ChrisVanHollen0_000_seg2.mp4",
+          "sha256": "c765b0177304530929dd34e2a98576a5844c88a02f384ffbb8d7c817505d7f22",
+          "bytes": 1438390
+        }
+      }
+    }
+  ],
+  "rejected": [
+    {
+      "member": "videos/WRA_TomPrice_000.mp4",
+      "reason": "duration below 40 seconds",
+      "duration": 32.0
+    },
+    {
+      "member": "videos/WRA_ReincePriebus_000.mp4",
+      "reason": "duration below 40 seconds",
+      "duration": 25.0
+    },
+    {
+      "member": "videos/WRA_OlympiaSnowe_000.mp4",
+      "reason": "duration below 40 seconds",
+      "duration": 18.0
+    }
+  ],
+  "downloaded_range_bytes": 307047720
+}

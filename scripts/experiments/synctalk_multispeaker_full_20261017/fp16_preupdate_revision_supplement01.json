@@ -1,0 +1,13 @@
+{
+  "version": "fp16_preupdate_revision_v1_supplement01",
+  "created_utc": "2026-10-18T02:26:26.6643297Z",
+  "real_model_source_sha256": "7eccc285bd0ec5509543767462361bc5ca099ae677c0d1bc9ad1bddf0e491ec2",
+  "upstream_source_sha256": "7656b3f609259084df478b8619debe296a747ae0b82dec0f88408e1db1fae20f",
+  "already_completed_cases": 24,
+  "next_cases": 8,
+  "total_cap": 32,
+  "optimizer_updates": 0,
+  "scaler_updates": 0,
+  "formal_training_allowed": false,
+  "scope": "Each environment: same single forward graph baseline backward and density logit gradient zeroing; captured nonfinite grid pre-forward rejection; finite full state with synthetic inverse-overflow scale pre-unscale rejection. No historical-state reconstruction claim. Preserve ordinary AMP and original version."
+}

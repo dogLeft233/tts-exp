@@ -1,0 +1,15 @@
+{
+  "version": "fp16_preupdate_revision_v1",
+  "created_utc": "2026-10-18T02:17:08.991359+00:00",
+  "authorization": "保持FP16另立版本修复更新前检查，继续上游诊断，先验证再重训，保留原版本与失败",
+  "formal_training_allowed": false,
+  "formal_optimizer_updates": 0,
+  "fixture_optimizer_update_cap": 32,
+  "upstream_zero_update_model_case_cap": 32,
+  "policy": "preserve original FP16/defaultGradScaler and ordinary AMP skips; fail closed before optimizer on invalid state/inverse/new unscale nonfinite; no clipping/fallback/scaler reset",
+  "upstream": "captured first low-scale state original backward with sigma/logit hooks; exact first density input channel and state interventions; no optimizer or scaler update",
+  "source_sha256": {
+    "scripts\\experiments\\synctalk_multispeaker_full_20261017\\fp16_preupdate_guard_v1.py": "f9d05523686e6fd4272f904762add21e5e4dd0c38fc637f199c19b1c7574eb70",
+    "tests\\test_synctalk_fp16_preupdate_guard_v1.py": "20d133bcb112859842dec6d42b2b69d98eace8f375332534d956b220e0a4994d"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "numpy": "2.5.4",
+    "pillow": "13.0.0",
+    "imageio-ffmpeg": "0.7.0"
+  },
+  "ffmpeg_version": "ffmpeg version 7.1 Copyright (c) 2000-2024 the FFmpeg developers",
+  "ffmpeg_binary_sha256": "6d175a4743ca50256e89a8cdd731100f9cee33bd79aeea46894d209410dc6617"
+}

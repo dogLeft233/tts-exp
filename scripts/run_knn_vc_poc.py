@@ -3,6 +3,11 @@
 
 from __future__ import annotations
 
+try:
+    from .project_paths import resolve_project_path
+except ImportError:
+    from project_paths import resolve_project_path
+
 import argparse
 import json
 import platform
@@ -57,12 +62,7 @@ def _git_commit() -> str:
 
 
 def _legacy_to_local(value: str | Path) -> Path:
-    raw = str(value)
-    path = Path(raw)
-    prefix = "/mnt/e/Documents/tts-audio/tts-exp/"
-    if not path.is_file() and raw.startswith(prefix):
-        path = REPO_ROOT / raw[len(prefix):]
-    path = path.resolve()
+    path = resolve_project_path(value, REPO_ROOT)
     if not path.is_file():
         raise FileNotFoundError(path)
     return path

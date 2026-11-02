@@ -3,6 +3,11 @@
 
 from __future__ import annotations
 
+try:
+    from .project_paths import resolve_project_path
+except ImportError:
+    from project_paths import resolve_project_path
+
 import argparse
 import hashlib
 import json
@@ -16,7 +21,6 @@ SPEAKERS = ("S0765", "S0901", "S0906", "S0912", "S0913")
 HELDOUT_SPEAKERS = ("S0770",)
 PER_SPEAKER = 5
 COUNT = len(SPEAKERS) * PER_SPEAKER
-LEGACY_PREFIX = "/mnt/e/Documents/tts-audio/tts-exp/"
 
 
 def sha256_file(path: Path) -> str:
@@ -33,11 +37,8 @@ def canonical_sha256(value: Any) -> str:
 
 
 def localize_path(value: str | Path, repo: Path = REPO) -> Path:
-    raw = str(value)
-    path = Path(raw)
-    if not path.is_file() and raw.startswith(LEGACY_PREFIX):
-        path = repo / raw[len(LEGACY_PREFIX):]
-    return path.resolve()
+    path = resolve_project_path(value, repo)
+    return path
 
 
 def _record_path(row: Mapping[str, Any], key: str, repo: Path) -> tuple[Path, str]:

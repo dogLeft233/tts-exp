@@ -1,0 +1,29 @@
+{
+  "protocol_id": "qwen_nrt_official_rescore_20261023_analysis_v1",
+  "app_date": "2026-10-23",
+  "scope": "Official full-pipeline rescore of the existing 200 N/R/T1/T2/T3 videos; no training or media generation",
+  "source_run": "qwen_nrt_expansion40_20261022_attempt01",
+  "source_protocol_sha256": "70ee7630c9022258fbf4d97b375a9479294046b51f63ca673f3480a42452e4b1",
+  "source_manifest_sha256": "3c11776340481b0cf0e83a8845b6d6e235dc595747cd9191ae8655d6e8cb4cf2",
+  "design_timing": "Analysis specified before new official scores, after viewing the previous custom scores; this is a post hoc protocol investigation, not an independent confirmatory replication",
+  "cohorts": {"primary": "new30", "secondary": "all40", "bridge": "pilot10"},
+  "unit": "one independent speaker with one source recording; three fixed TTS seeds averaged within speaker",
+  "primary_endpoint": "first printed official Sync-C track, following the historical official adapter; no score/length-based track selection",
+  "primary_contrasts": ["T-N", "T-R"],
+  "auxiliary_contrasts": ["R-N"],
+  "other_metrics": ["Sync-D (lower is better)", "AV offset (descriptive only)"],
+  "bootstrap": {"generator": "numpy PCG64", "seed": 20261023, "replicates": 10000, "method": "paired speaker percentile bootstrap", "intervals": [0.95, 0.975], "primary_family": "Two main new30 Sync-C comparisons; 97.5% intervals for Bonferroni family coverage"},
+  "protocol_comparison": "Within-speaker differences of the official T-N/T-R contrasts minus previous common/native_full/equal_count_spread contrasts; paired bootstrap of the change, never subtract interval endpoints",
+  "reliability_supplement": "EOS=true and duration_ratio in [0.5,2.0], using the previously frozen annotations; average qualifying T draws within speaker. Keep the original all-draw analysis as primary",
+  "coverage": "Report all 200 planned cells and all 40 planned speakers. A missing/failed cell makes its five-role primary speaker tuple incomplete; show identities/reasons and descriptive complete-case results, mark primary coverage incomplete. No score/ASR/EOS/track-boundary exclusions and no imputation",
+  "support_audit": "Retain every printed track and available official pickle/crop/frame metadata, with multi-track incidence and first-track support; do not choose the best scoring track",
+  "inference_limits": [
+    "The full official chain jointly changes tracking, crop, audio processing and temporal support; no attribution to one component",
+    "Sync-C is an evaluator outcome, not human lip accuracy or quality",
+    "T-R does not isolate a pure text-LM effect because reference/decode contexts differ",
+    "A confidence interval crossing zero is not proof of equivalence or no effect",
+    "No effect-size threshold, power claim, sequential stopping or parameter search is introduced",
+    "Historical cohorts/backend/generation differences remain after this same-media protocol bridge"
+  ],
+  "stop": "Score all planned cells once with the fixed official settings, then analyze; stop on the declared engineering hard timeout/resource bound and report incomplete coverage, never stop according to score direction"
+}

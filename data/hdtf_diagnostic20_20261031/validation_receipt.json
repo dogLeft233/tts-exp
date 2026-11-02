@@ -1,0 +1,517 @@
+{
+  "status": "PASS",
+  "speakers": 20,
+  "clips": 40,
+  "total_audio_seconds": 400,
+  "images": 40,
+  "source_videos": 20,
+  "all_selected_media_sha_verified": true,
+  "all_clips_250_frames": true,
+  "all_wavs_mono16k_pcm16_10s": true,
+  "no_within_speaker_window_overlap": true,
+  "minimum_rms_dbfs": -32.51887494493554,
+  "maximum_rms_dbfs": -17.162875232641323,
+  "saturated_samples_total": 0,
+  "manifest_sha256": "d9137f739ca8c166ac95c4eeb45746c6a59ee99a511b474597cfa9ad89805887",
+  "official_source_duration_checks": [
+    {
+      "speaker": "DickDurbin",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "PeterRoskam",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "ColinAllred",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "BobCorker",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "PatrickLeahy",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "MikeThompson",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "AllenWest",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "FrankPallone",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "JohnBoozman",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "BenCardin",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "JoeKennedy",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "AndyLevin",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "ReneeEllmers",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "ChrisCoons",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "RobPortman",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "DanKildee",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "JohnBarrasso",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "JerryNadler",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "BobbySchilling",
+      "mirror_minus_official_duration_s": 0.0
+    },
+    {
+      "speaker": "ChrisVanHollen",
+      "mirror_minus_official_duration_s": 0.0
+    }
+  ],
+  "excluded_candidate_files": [
+    {
+      "path": "original_videos/WRA_ReincePriebus_000.mp4",
+      "sha256": "64d9f0415c5bdeab8d4dc4cf45ba3be759c8b1e50827344c850a8937f8402427",
+      "bytes": 1116114
+    },
+    {
+      "path": "original_videos/WRA_TomPrice_000.mp4",
+      "sha256": "aa889991243db6402726f7cde37acc58c60f289268b641ec42ec291acad6e3c5",
+      "bytes": 1745594
+    },
+    {
+      "path": "original_videos/WRA_OlympiaSnowe_000.mp4",
+      "sha256": "f0234f73a6454b9a458a0cc457e06e0db1c18212e386618b900cf664fb7c593a",
+      "bytes": 1623185
+    }
+  ],
+  "rows": [
+    {
+      "id": "WDA_DickDurbin_000_seg1",
+      "speaker": "DickDurbin",
+      "duration_s": 10,
+      "start_s": 48.6,
+      "frames": 250,
+      "rms_dbfs": -21.630230273947518,
+      "peak": 0.696563720703125,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_DickDurbin_000_seg2",
+      "speaker": "DickDurbin",
+      "duration_s": 10,
+      "start_s": 145.76,
+      "frames": 250,
+      "rms_dbfs": -22.565658568300442,
+      "peak": 0.602325439453125,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_PeterRoskam0_000_seg1",
+      "speaker": "PeterRoskam",
+      "duration_s": 10,
+      "start_s": 6.0,
+      "frames": 250,
+      "rms_dbfs": -18.45962407212893,
+      "peak": 0.934417724609375,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_PeterRoskam0_000_seg2",
+      "speaker": "PeterRoskam",
+      "duration_s": 10,
+      "start_s": 18.0,
+      "frames": 250,
+      "rms_dbfs": -17.162875232641323,
+      "peak": 0.91925048828125,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_ColinAllred_000_seg1",
+      "speaker": "ColinAllred",
+      "duration_s": 10,
+      "start_s": 36.0,
+      "frames": 250,
+      "rms_dbfs": -20.733197656575754,
+      "peak": 0.9654541015625,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_ColinAllred_000_seg2",
+      "speaker": "ColinAllred",
+      "duration_s": 10,
+      "start_s": 108.0,
+      "frames": 250,
+      "rms_dbfs": -20.70849985443619,
+      "peak": 0.805511474609375,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_BobCorker_000_seg1",
+      "speaker": "BobCorker",
+      "duration_s": 10,
+      "start_s": 7.0,
+      "frames": 250,
+      "rms_dbfs": -28.441445958573684,
+      "peak": 0.388641357421875,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_BobCorker_000_seg2",
+      "speaker": "BobCorker",
+      "duration_s": 10,
+      "start_s": 21.0,
+      "frames": 250,
+      "rms_dbfs": -30.156141424070864,
+      "peak": 0.3232421875,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_PatrickLeahy0_000_seg1",
+      "speaker": "PatrickLeahy",
+      "duration_s": 10,
+      "start_s": 53.6,
+      "frames": 250,
+      "rms_dbfs": -19.605763850918592,
+      "peak": 0.90966796875,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_PatrickLeahy0_000_seg2",
+      "speaker": "PatrickLeahy",
+      "duration_s": 10,
+      "start_s": 160.76,
+      "frames": 250,
+      "rms_dbfs": -17.620989182980253,
+      "peak": 0.909027099609375,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_MikeThompson0_000_seg1",
+      "speaker": "MikeThompson",
+      "duration_s": 10,
+      "start_s": 35.0,
+      "frames": 250,
+      "rms_dbfs": -18.449624259476163,
+      "peak": 0.978363037109375,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_MikeThompson0_000_seg2",
+      "speaker": "MikeThompson",
+      "duration_s": 10,
+      "start_s": 105.0,
+      "frames": 250,
+      "rms_dbfs": -18.72246037987236,
+      "peak": 0.99468994140625,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_AllenWest_000_seg1",
+      "speaker": "AllenWest",
+      "duration_s": 10,
+      "start_s": 53.0,
+      "frames": 250,
+      "rms_dbfs": -30.80007099061481,
+      "peak": 0.239654541015625,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_AllenWest_000_seg2",
+      "speaker": "AllenWest",
+      "duration_s": 10,
+      "start_s": 159.0,
+      "frames": 250,
+      "rms_dbfs": -32.51887494493554,
+      "peak": 0.2364501953125,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_FrankPallone0_000_seg1",
+      "speaker": "FrankPallone",
+      "duration_s": 10,
+      "start_s": 43.0,
+      "frames": 250,
+      "rms_dbfs": -19.390896386910203,
+      "peak": 0.9727783203125,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_FrankPallone0_000_seg2",
+      "speaker": "FrankPallone",
+      "duration_s": 10,
+      "start_s": 129.0,
+      "frames": 250,
+      "rms_dbfs": -18.63198854896598,
+      "peak": 0.967926025390625,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_JohnBoozman_000_seg1",
+      "speaker": "JohnBoozman",
+      "duration_s": 10,
+      "start_s": 13.0,
+      "frames": 250,
+      "rms_dbfs": -20.836459259367352,
+      "peak": 0.571136474609375,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_JohnBoozman_000_seg2",
+      "speaker": "JohnBoozman",
+      "duration_s": 10,
+      "start_s": 39.0,
+      "frames": 250,
+      "rms_dbfs": -21.40338571148723,
+      "peak": 0.50518798828125,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_BenCardin1_000_seg1",
+      "speaker": "BenCardin",
+      "duration_s": 10,
+      "start_s": 54.8,
+      "frames": 250,
+      "rms_dbfs": -23.642032826622806,
+      "peak": 0.555694580078125,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_BenCardin1_000_seg2",
+      "speaker": "BenCardin",
+      "duration_s": 10,
+      "start_s": 164.4,
+      "frames": 250,
+      "rms_dbfs": -22.95601323204901,
+      "peak": 0.89239501953125,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_JoeKennedy_000_seg1",
+      "speaker": "JoeKennedy",
+      "duration_s": 10,
+      "start_s": 8.6,
+      "frames": 250,
+      "rms_dbfs": -26.55917881926259,
+      "peak": 0.873291015625,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_JoeKennedy_000_seg2",
+      "speaker": "JoeKennedy",
+      "duration_s": 10,
+      "start_s": 25.8,
+      "frames": 250,
+      "rms_dbfs": -25.94258514940791,
+      "peak": 0.64691162109375,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_AndyLevin_000_seg1",
+      "speaker": "AndyLevin",
+      "duration_s": 10,
+      "start_s": 37.0,
+      "frames": 250,
+      "rms_dbfs": -21.301122458984054,
+      "peak": 0.65087890625,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_AndyLevin_000_seg2",
+      "speaker": "AndyLevin",
+      "duration_s": 10,
+      "start_s": 111.0,
+      "frames": 250,
+      "rms_dbfs": -22.25994215103666,
+      "peak": 0.568603515625,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_ReneeEllmers_000_seg1",
+      "speaker": "ReneeEllmers",
+      "duration_s": 10,
+      "start_s": 16.8,
+      "frames": 250,
+      "rms_dbfs": -20.086182927214104,
+      "peak": 0.6441650390625,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_ReneeEllmers_000_seg2",
+      "speaker": "ReneeEllmers",
+      "duration_s": 10,
+      "start_s": 50.4,
+      "frames": 250,
+      "rms_dbfs": -20.89844231211833,
+      "peak": 0.85028076171875,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_ChrisCoons1_000_seg1",
+      "speaker": "ChrisCoons",
+      "duration_s": 10,
+      "start_s": 33.6,
+      "frames": 250,
+      "rms_dbfs": -27.338227195237288,
+      "peak": 0.36810302734375,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_ChrisCoons1_000_seg2",
+      "speaker": "ChrisCoons",
+      "duration_s": 10,
+      "start_s": 100.8,
+      "frames": 250,
+      "rms_dbfs": -27.79892165316741,
+      "peak": 0.48175048828125,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_RobPortman_000_seg1",
+      "speaker": "RobPortman",
+      "duration_s": 10,
+      "start_s": 42.6,
+      "frames": 250,
+      "rms_dbfs": -23.00521430925428,
+      "peak": 0.616241455078125,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_RobPortman_000_seg2",
+      "speaker": "RobPortman",
+      "duration_s": 10,
+      "start_s": 127.8,
+      "frames": 250,
+      "rms_dbfs": -23.700155076908068,
+      "peak": 0.653656005859375,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_DanKildee1_000_seg1",
+      "speaker": "DanKildee",
+      "duration_s": 10,
+      "start_s": 48.0,
+      "frames": 250,
+      "rms_dbfs": -27.39959737812285,
+      "peak": 0.641448974609375,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_DanKildee1_000_seg2",
+      "speaker": "DanKildee",
+      "duration_s": 10,
+      "start_s": 144.0,
+      "frames": 250,
+      "rms_dbfs": -21.210020320493562,
+      "peak": 0.842864990234375,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_JohnBarrasso0_000_seg1",
+      "speaker": "JohnBarrasso",
+      "duration_s": 10,
+      "start_s": 38.6,
+      "frames": 250,
+      "rms_dbfs": -19.206227771377925,
+      "peak": 0.83465576171875,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_JohnBarrasso0_000_seg2",
+      "speaker": "JohnBarrasso",
+      "duration_s": 10,
+      "start_s": 115.8,
+      "frames": 250,
+      "rms_dbfs": -19.926545269455875,
+      "peak": 0.947052001953125,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_JerryNadler_000_seg1",
+      "speaker": "JerryNadler",
+      "duration_s": 10,
+      "start_s": 65.0,
+      "frames": 250,
+      "rms_dbfs": -22.33067668914751,
+      "peak": 0.501678466796875,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_JerryNadler_000_seg2",
+      "speaker": "JerryNadler",
+      "duration_s": 10,
+      "start_s": 195.0,
+      "frames": 250,
+      "rms_dbfs": -21.52857346187345,
+      "peak": 0.504302978515625,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_BobbySchilling_000_seg1",
+      "speaker": "BobbySchilling",
+      "duration_s": 10,
+      "start_s": 12.0,
+      "frames": 250,
+      "rms_dbfs": -23.317902497439867,
+      "peak": 0.378753662109375,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WRA_BobbySchilling_000_seg2",
+      "speaker": "BobbySchilling",
+      "duration_s": 10,
+      "start_s": 36.0,
+      "frames": 250,
+      "rms_dbfs": -22.74987827908744,
+      "peak": 0.438629150390625,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_ChrisVanHollen0_000_seg1",
+      "speaker": "ChrisVanHollen",
+      "duration_s": 10,
+      "start_s": 63.6,
+      "frames": 250,
+      "rms_dbfs": -23.361463359690955,
+      "peak": 0.61407470703125,
+      "saturated_samples": 0
+    },
+    {
+      "id": "WDA_ChrisVanHollen0_000_seg2",
+      "speaker": "ChrisVanHollen",
+      "duration_s": 10,
+      "start_s": 190.8,
+      "frames": 250,
+      "rms_dbfs": -26.309707090629967,
+      "peak": 0.52142333984375,
+      "saturated_samples": 0
+    }
+  ]
+}

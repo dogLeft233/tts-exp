@@ -1,0 +1,108 @@
+{
+  "schema": "cross_tfg_v3_v4_native_cpu_source_bundle_manifest_attempt01",
+  "status": "PREPARED_NOT_DISPATCHED",
+  "member_count": 19,
+  "members": [
+    {
+      "path": "scripts/audio_enhancement/__init__.py",
+      "bytes": 1503,
+      "sha256": "db520f7b04343682e6df4ba53b22503de806287e70f2b8e41e84f16912d361fc"
+    },
+    {
+      "path": "scripts/audio_enhancement/audio_io.py",
+      "bytes": 14294,
+      "sha256": "7b951990343cf5d68f3f6046e77cd5c40ee736777d196de3723418bca5965004"
+    },
+    {
+      "path": "scripts/audio_enhancement/baselines.py",
+      "bytes": 15123,
+      "sha256": "7d161970381cc7e6770a4a53063f91b2606c05490945b2b86ab41c7de4d0a3e2"
+    },
+    {
+      "path": "scripts/audio_enhancement/differentiable_adapter.py",
+      "bytes": 24851,
+      "sha256": "834cd9b91a119874745a3ca42aa90f53fe7481d99d8202810902af89e563d928"
+    },
+    {
+      "path": "scripts/audio_enhancement/differentiable_native_crop.py",
+      "bytes": 14464,
+      "sha256": "1e89da5bdf2bee83938b717a084b55a699f1902925be3290d23317bfa562fa27"
+    },
+    {
+      "path": "scripts/audio_enhancement/fit_cli_v4_attempt01.py",
+      "bytes": 31640,
+      "sha256": "71c70e0a9dfd9b41710a743268f5b565e1c2e2c28920fe7eaddfd7f41112d234"
+    },
+    {
+      "path": "scripts/audio_enhancement/heads.py",
+      "bytes": 15942,
+      "sha256": "4a738ce96a062b31c50ec136112fe8679e011f01310af450de317884c8041dd7"
+    },
+    {
+      "path": "scripts/audio_enhancement/overdub.py",
+      "bytes": 12002,
+      "sha256": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6"
+    },
+    {
+      "path": "scripts/audio_enhancement/pipeline.py",
+      "bytes": 5975,
+      "sha256": "b40ddce9b09ea42d56945eb66acca3326be6784acb6c1e6ab134b1b2899fb6c3"
+    },
+    {
+      "path": "scripts/audio_enhancement/shared_recipient_transition_head_v3.py",
+      "bytes": 32233,
+      "sha256": "77acdff03cca22261852f48364cbc75263db58a14cb565c08aa0d268afca6e87"
+    },
+    {
+      "path": "scripts/audio_enhancement/training.py",
+      "bytes": 8143,
+      "sha256": "0b39386174bdfacf77abd16e0c2d1506efa6ed9abe06d8b0433776b80af7423a"
+    },
+    {
+      "path": "scripts/audio_enhancement/v3_v4_native_runtime_adapter_attempt03.py",
+      "bytes": 6892,
+      "sha256": "4f4f6f496bd15e073268694673b8df5678404e672aafa625ff9a6abc135248aa"
+    },
+    {
+      "path": "scripts/audio_enhancement/wav2lip_fit_runtime.py",
+      "bytes": 20085,
+      "sha256": "7903fbd9dfebf95bcb388add26a1967bc39ad855d3d995a4730d316dd0e806c4"
+    },
+    {
+      "path": "scripts/audio_enhancement/wav2lip_frontend.py",
+      "bytes": 18570,
+      "sha256": "3480087daecf8dc295f4a3b20703f393bada2690e1f5ce7839ba1dc4fbdec8ef"
+    },
+    {
+      "path": "scripts/audio_enhancement/wav2lip_fullcontext_fit_runtime_v2_attempt02.py",
+      "bytes": 45820,
+      "sha256": "d086c61cdb993bffa5f9ff7a55bf4b66b1b9127028f8b80eb3b5f1be74464d7b"
+    },
+    {
+      "path": "scripts/audio_enhancement/wav2lip_fullcontext_fit_runtime_v4_attempt01.py",
+      "bytes": 59835,
+      "sha256": "dd751132bd3d8dec5abce288c2f765df78d9b7ef9150cdfb0ccff52ba72ee458"
+    },
+    {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/qualify_v3_v4_native_cpu_attempt05.py",
+      "bytes": 51579,
+      "sha256": "6c0f45b909fc21f6c3aeb80b7799a46702b95efc8eca4e7c708c299f3dc2c037"
+    },
+    {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/qualify_v3_v4_native_cpu_attempt06.py",
+      "bytes": 54482,
+      "sha256": "195299402d15e07275309398d2d60b7a292248d57b44695114354b727a3c1c1f"
+    },
+    {
+      "path": "scripts/experiments/cross_tfg_audio_head_20261003/qualify_v3_v4_native_cpu_attempt07.py",
+      "bytes": 56614,
+      "sha256": "39f7535149cedb42eeb30ca4cea5edda2f507362e5065bd81980a3a7bbc8bcbf"
+    }
+  ],
+  "archive_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\cross_tfg_audio_head_20261003\\v3_v4_native_cpu_qualification_attempt05\\stage_attempt01\\v3_v4_native_cpu_source_bundle_attempt01.zip",
+  "archive_bytes": 129617,
+  "archive_sha256": "da9249b85cb46c05a90c6e3d1d5cf21420157485a42e90f08d0e2f0c7db8bb60",
+  "config_path": "E:\\Documents\\tts-exp\\runs\\cross_tfg_audio_head_20261003\\v3_v4_native_cpu_qualification_attempt05\\qualification_config_attempt07.json",
+  "config_bytes": 11467,
+  "config_sha256": "6ed9b441eee67913fd904f881d9a3dc3d85b29d8a1d1048ce1c7e837ad38c1bd"
+}

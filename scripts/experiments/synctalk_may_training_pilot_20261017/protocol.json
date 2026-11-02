@@ -1,0 +1,62 @@
+{
+  "schema": "synctalk_may_training_pilot_v1",
+  "official_commit": "43079fb3f349675f6cb33031bb07262f7566cdd5",
+  "data_root": "/dev/shm/synctalk-gain-training-data-20261017/dataset",
+  "feature_root": "/dev/shm/synctalk-gain-training-data-20261017/features_attempt03",
+  "local_data_delivery_sha256": "900cf9108a12fba087f94771dce1a411c2530e1ca97a34d9d34803d1a9c0b6b6",
+  "data_protocol_sha256": "e3f60b16667b13e6f8a440df39930a72d322a2f9772f9f0a5bca146fd095c81e",
+  "seed": 42,
+  "training_gains_db": [
+    -6,
+    0,
+    6
+  ],
+  "test_gains_db": [
+    -6,
+    0,
+    6
+  ],
+  "steps_per_model": 60000,
+  "num_rays": 4096,
+  "max_steps_per_ray": 16,
+  "fp16_training": false,
+  "optimizer": "official AdamW(model.get_params(lr=.01, lr_net=.001), betas=(0,.99), eps=1e-8)",
+  "criterion": "official L1 plus default uncertainty, ambient, entropy and local regularity terms",
+  "lr_schedule": "official first-stage .5**(step/60000)",
+  "ema_decay": 0.95,
+  "ema_update_interval": 1000,
+  "primary_weights": "EMA at fixed final step, as official validation; preserve raw weights too",
+  "audio_encoder": "official AVE frozen eval, independently verified cache with WAV/feature/source seals",
+  "pretrained_generator": false,
+  "finetune_lips": false,
+  "patch_size": 1,
+  "validation_interval": 2000,
+  "validation_frames": 32,
+  "validation_selection": "rounded linspace over all 550 val rows, fixed before training",
+  "validation_gains_db": [
+    -6,
+    0,
+    6
+  ],
+  "validation_metrics": [
+    "L1",
+    "MSE",
+    "PSNR",
+    "mouth_bbox_L1",
+    "mouth_bbox_MSE"
+  ],
+  "checkpoint_interval": 2000,
+  "log_interval": 100,
+  "primary_checkpoint": "fixed final step 60000; no test-based selection",
+  "convergence_diagnostic": "For each model and input gain, compare median val MSE at 40000/42000/44000/46000/48000 against 52000/54000/56000/58000/60000. Plateau screen: abs(relative change)<=.02; worsening>.02 flags deterioration. Report actual curve and mouth metrics; do not claim statistical convergence from this heuristic.",
+  "order_and_randomness": "one frozen 60000-row frame order shared by all arms; distinct deterministic per-step seeds for occupancy, ray sampling and forward perturbation; verify every ray-index hash across arms",
+  "scoring_audio": "unaltered original source PCM16 for each of four fixed test clips; same bytes for all 9 cells",
+  "scoring": "shared ground-truth-owned ROI; FFV1/PCM; SyncNet V2 FP32; guard20 primary, full secondary; C,Dmin,D0,B,offset",
+  "test_clips": "all four 250-frame clips frozen in prepared dataset manifest",
+  "test_reconstruction": "all 1100 supervised test frames per cell; primary scored clips exclude temporal attention edges",
+  "repeat_control": "final train0/test0 rerender repeat on first test clip; compare float frames, RGB and SyncNet",
+  "scope": "one English identity, one seed, fixed first-stage ray/update budget; engineering pilot, not multi-identity or complete official two-stage replication",
+  "no_automatic_budget_extension": true,
+  "precision_rationale": "FP32 optimization: equal successful optimizer-update budget, no AMP overflow/skipped steps",
+  "validation_precision": "FP32, perturb=False"
+}

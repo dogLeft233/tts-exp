@@ -206,6 +206,7 @@ def validate_random_dose(
     diagnostics: Sequence[Mapping[str, Any]],
     *,
     max_scale: float = 64.0,
+    enforce_dose_tolerance: bool = True,
 ) -> dict[str, Any]:
     """Validate dose from stored float32 artifacts, including capped failures."""
 
@@ -228,7 +229,11 @@ def validate_random_dose(
         raise ValidationError("random-dose diagnostics dropped or added active frames")
 
     tolerance_max = 0.0
+    projection_error_max = 0.0
+    float32_constraint_max = 0.0
+    float32_constraint_bound_max = 0.0
     errors: list[float] = []
+    dose_misses: list[dict[str, Any]] = []
     infeasible_count = 0
     for index, diagnostic in zip(frame_indices, diagnostics, strict=True):
         if int(diagnostic.get("frame_index", -1)) != int(index):
@@ -248,10 +253,41 @@ def validate_random_dose(
                 raise ValidationError("zero-dose row must copy native latent at scale zero")
             continue
         target = z[index].astype(np.float64) + scale * r
-        projected, _lam, _resid, _tol = _independent_projection(z[index], target, u)
+        projected, _lam, residual64, _tol = _independent_projection(z[index], target, u)
+        rounded = rand[index].astype(np.float64)
         expected = projected.astype(np.float32)
-        if not np.array_equal(rand[index], expected):
+        projection_error = float(np.max(np.abs(rounded - expected.astype(np.float64))))
+        projection_tolerance = 2.0 * np.finfo(np.float32).eps * max(
+            1.0, float(np.max(np.abs(projected)))
+        )
+        if projection_error > projection_tolerance:
             raise ValidationError(f"random frame {index} does not match its reported projected multiplier")
+        projection_error_max = max(projection_error_max, projection_error)
+
+        # Check the float32 artifact against the independent float64 KKT root.
+        # The cast error bound is evaluated from the actual stored output, so
+        # this remains a strict equality check despite allowing sub-ULP solver
+        # differences between two independently converged roots.
+        rounding_bound = float(np.sum(np.abs(u) * np.abs(rounded - projected), dtype=np.float64))
+        constraint_abs = abs(float(u @ (rounded - z[index].astype(np.float64))))
+        numerical_slack = 64.0 * np.finfo(np.float64).eps * max(
+            1.0, float(np.linalg.norm(u) * (np.linalg.norm(rounded) + np.linalg.norm(z[index])))
+        )
+        if constraint_abs > abs(residual64) + rounding_bound + numerical_slack:
+            raise ValidationError(f"random frame {index} float32 equality residual exceeds its KKT rounding bound")
+        float32_constraint_max = max(float32_constraint_max, constraint_abs)
+        float32_constraint_bound_max = max(float32_constraint_bound_max, rounding_bound)
+
+        reported_target = float(diagnostic.get("target_norm", float("nan")))
+        reported_actual = float(diagnostic.get("actual_norm", float("nan")))
+        reported_error = float(diagnostic.get("dose_error", float("nan")))
+        independently_projected_norm = float(np.linalg.norm(projected - z[index].astype(np.float64)))
+        metadata_tolerance = 2e-10 * max(1.0, target_norm, independently_projected_norm)
+        if (not np.isfinite(reported_target) or not np.isfinite(reported_actual) or not np.isfinite(reported_error)
+                or abs(reported_target - target_norm) > metadata_tolerance
+                or abs(reported_actual - independently_projected_norm) > metadata_tolerance
+                or abs(reported_error - (reported_actual - reported_target)) > metadata_tolerance):
+            raise ValidationError(f"random frame {index} projection diagnostics do not match independent norms")
         if infeasible:
             infeasible_count += 1
             if scale != max_scale:
@@ -259,7 +295,21 @@ def validate_random_dose(
             if abs(error) <= tolerance:
                 raise ValidationError("random dose marked infeasible despite meeting the post-cast norm tolerance")
         elif abs(error) > tolerance:
-            raise ValidationError("post-cast random displacement misses orth_plus dose tolerance")
+            dose_misses.append({
+                "frame_index": int(index),
+                "target_norm": target_norm,
+                "actual_norm": actual_norm,
+                "absolute_error": abs(error),
+                "tolerance": tolerance,
+                "tolerance_ratio": abs(error) / tolerance,
+                "scale": scale,
+            })
+
+    if dose_misses and enforce_dose_tolerance:
+        raise ValidationError(
+            "post-cast random displacement misses orth_plus dose tolerance "
+            f"in {len(dose_misses)} active frame(s)"
+        )
 
     return {
         "active_frames": int(len(frame_indices)),
@@ -267,6 +317,12 @@ def validate_random_dose(
         "infeasible_frames": int(infeasible_count),
         "postcast_abs_dose_error_max": max((abs(item) for item in errors), default=0.0),
         "dose_tolerance_max": tolerance_max,
+        "dose_match_eligible": not dose_misses and not infeasible_count,
+        "dose_tolerance_miss_count": len(dose_misses),
+        "dose_tolerance_misses": dose_misses,
+        "float32_projection_error_max": projection_error_max,
+        "float32_constraint_abs_max": float32_constraint_max,
+        "float32_constraint_rounding_bound_max": float32_constraint_bound_max,
         "valid": True,
     }
 

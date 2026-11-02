@@ -1,0 +1,26 @@
+[Unit]
+Description=V100 night power policy (23:00-08:00 Asia/Shanghai) with thermal guard
+After=nvidia-persistenced.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 -u /usr/local/sbin/gpu-night-quiet --config /etc/gpu-night-quiet.json
+Restart=on-failure
+RestartSec=15
+TimeoutStopSec=15
+User=root
+UMask=0077
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+RestrictAddressFamilies=AF_UNIX
+
+[Install]
+WantedBy=multi-user.target

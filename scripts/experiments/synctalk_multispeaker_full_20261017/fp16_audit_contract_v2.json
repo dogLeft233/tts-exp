@@ -1,0 +1,13 @@
+{
+  "version": "fp16_adapter_environment_audit_v2",
+  "refines": "fp16_audit_contract_v1",
+  "authorization": "same explicit user adapter audit and original-environment FP16 comparison; no FP32",
+  "reason": "Two qualification runs had identical first loss but different second loss. Full replay was prematurely started because shell did not propagate qualification assertion failure; interrupted and retained after319 completed attempts, count320 conservatively. New zero-update repeats show identical input/loss but non-bit-exact gradients within each implementation, so exact long trajectory replay is not an admissible control.",
+  "evidence": "zero_update_parity/zero_update_parity.json: 3 fixed frames x2 implementations x2 repeats,0optimizer and0scaler updates, each input/loss exact; finite scaled gradients with relative L2 differences 8.07e-5 to2.435e-4. This is observed backward nondeterminism, not a localized NaN root cause.",
+  "total_optimizer_attempt_cap": 12004,
+  "accounting": {"completed_two_qualification_runs":4,"interrupted_replay_conservative":320,"current_environment_replay_v2_max":5680,"official_environment_replay_max":6000},
+  "additional_zero_update_comparisons_cap": 24,
+  "preserve": "all v1 sources/contracts/traces and interrupted replay, all original formal failure records. Separate namespace for replay_v2; no formal resume or combining model updates.",
+  "acceptance": "Input/state/source provenance, same scalar forward loss for raw vs controlled repeated matched cases, record within-implementation gradient variability; long replay is mechanism diagnosis only and cannot prove old loss/step reproduction. Record actual first abnormal operation/state and environment. All v1 precision/rays/defaultscaler/scope limits remain.",
+  "execution": "Use qualified original training math; wrapper captures first nonfinite gradient/scale<1 and stops before updates on nonfinite forward. Max counts are diagnostic budgets, not scientific model budgets."
+}

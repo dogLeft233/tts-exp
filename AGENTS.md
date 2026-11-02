@@ -65,6 +65,26 @@ pytest tests/                         # 或: pytest tests/test_mandarin_alignmen
 
 ## Agent skills
 
+### 当前 macOS 工作入口（2026-10-30）
+
+- 工作区以本仓库根目录为基准，项目记忆位于 `basic-memory/`；Codegraph 使用 `.codegraph/` 索引。
+- 下列 Windows 路径记录用于历史资产定位；在 macOS 上按实际挂载与路径映射访问，保留冻结凭据中的原路径。
+- Basic Memory 当前工具为 `bm_read`、`bm_search(mode="text")`、`bm_context`、`bm_write`、`bm_edit`；下文旧工具名按当前工具 schema 转换。启动先读 `bm_read(identifier="Research/交接/研究交接总览.md", project="tts-exp")`，再按问题读取对应模块。
+
+### Windows 迁移来源（2026-10-23）
+
+- Windows 迁移前工作区为 `E:/Documents/tts-exp/`。历史 `E:/Documents/tts-audio/tts-exp/` 已退役，不能继续当作开发或实验入口。
+- 独有视频评估代码与数据已整合到当前工作区；旧目录因删除策略和文件占用尚未物理清除，入口已写退役提示。
+- 原始完整恢复包、同路径冲突版本、校验凭据与待清理项见 `basic-memory/docs/reference/local-copy-and-video-metrics.md`。
+- C: 恢复包是本机备份，不是百度网盘副本。冻结历史清单中的旧路径不回写；活动脚本通过 `scripts/project_paths.py` 转换旧本地路径。
+
+### 百度网盘统一入口（2026-10-19）
+
+- 项目云端数据统一放在 `B:/tts-exp/`；Ubuntu 同目录为 `/home/wjj/百度网盘/tts-exp/`。新增归档不得再创建旧的网盘根级项目目录。
+- 原 `tts-exp-project`、`tts-exp-archives`、`tts-exp-research-models`、`experiment-archive`、`tts-research-archives`、`tts-exp-archive-transfer`、`tts-exp-audio-head-20261003`、`tts-exp-local-w2l-syncnet-attempt01` 和四个 `fit40_session09_poweroff_archive_attempt*` 目录整体移入该根，内部相对路径不变。
+- 入口与旧新路径映射：`B:/tts-exp/README.md`、`B:/tts-exp/_index/path_mapping.json`。历史脚本、receipt、locator 中的旧绝对路径需要先按映射转换；没有建立旧路径兼容链接。不得修改冻结的历史凭据来伪装原执行位置。
+- 当前存储决策见 `basic-memory/docs/adr/049-unified-baidu-project-root.md`；新位置的可读性核验不代替原归档的完整 SHA 校验。
+
 ### Issue tracker
 
 Issues are tracked in GitHub Issues. See `docs/agents/issue-tracker.md`.
@@ -79,7 +99,7 @@ Default label vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `read
 - **项目记忆** = `tts-exp` (本仓库的 `basic-memory/` 目录)
 - **全局记忆** = `main` (`~/basic-memory/`)
 
-**启动时必读**: 会话开始、任何知识库操作之前,先 `read_note(identifier="Startup Router", project="tts-exp")`(memory://instructions/startup-router,搜不到就按标题搜),按其中的分发表加载对应指令笔记。**在所有读/写操作前加载完,再动手写。**
+**启动时必读**: 会话开始、任何知识库操作之前，先 `bm_read(identifier="Research/交接/研究交接总览.md", project="tts-exp")`，按其中的接手规则与模块导航加载对应资料。**在所有读/写操作前加载完,再动手写。**
 
 **搜索顺序固定**:回答关于过往工作/决策的问题时,先搜项目记忆,再搜全局记忆:
 1. `search_notes(query=..., project="tts-exp")` — 项目内搜索
@@ -87,7 +107,7 @@ Default label vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `read
 3. 命中后用 `build_context(url="memory://...", project=...)` 或 `read_note` 取全文
 
 **搜索配方(找实验/结论时,遵循此顺序)**:
-1. 先读 Startup Router,再按分发表加载指令笔记(实验类 → `memory://instructions/实验指令`)
+1. 先读研究交接总览，再按任务加载专门指令笔记(实验类 → `memory://instructions/实验指令`)
 2. 用 `search_type="text"`(全文搜索)— 默认 hybrid 语义搜索对中文专名/编号不可靠,text 才稳定命中
 3. 多查询变体:中文标题、英文 slug/编号、关键词(如 `"MFA-linear"`、`"ΔSync-C"`、`"增强头"`、`"29"`)
 4. 实验笔记位置:新实验在 `Experiments/`(记忆侧,描述性标题,无编号);旧实验镜像在 `docs/experiments/`(`NN-<slug>` 编号,只读)。**两处都要搜,不能只按编号找**
@@ -95,13 +115,13 @@ Default label vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `read
 6. 命中后 `read_note` 取全文,再按需 `build_context` 展开 relations 找关联实验
 7. 确认命中后再回答;`score` 低或只命中 `tts-exp` 总览页时,换变体重搜,不要直接说"不存在"
 
-写入约定:项目相关笔记一律 `write_note(..., project="tts-exp")`;涉及跨项目/个人通用知识才写 `main`。避免在 `main` 里重复存项目内容。目录规范、命名、changelog、索引规则都在 Startup Router 与各指令笔记中。相关 skill: `memory-notes` (笔记格式), `memory-capture` (捕获工作状态), `memory-continue` (恢复上下文), `memory-tasks` (任务跟踪)。
+写入约定:项目相关笔记一律 `write_note(..., project="tts-exp")`;涉及跨项目/个人通用知识才写 `main`。避免在 `main` 里重复存项目内容。目录规范、命名、changelog、索引规则都在 研究交接总览与各专门指令笔记中。相关 skill: `memory-notes` (笔记格式), `memory-capture` (捕获工作状态), `memory-continue` (恢复上下文), `memory-tasks` (任务跟踪)。
 
 ### Domain docs
 
 Entry point: `CONTEXT.md` — project overview, active/deprecated components, tech stack.
 
-**项目文档由 Basic Memory 管理**(`basic-memory/` 目录,经 MCP 索引)。仓库根不再维护独立 `docs/` — 文档写 `basic-memory/docs/...`,索引路径见 Startup Router 分发表。Architecture decisions: `docs/adr/`(bm 内)。Experiment reports: `docs/experiments/`(bm 内)。Results: `docs/results/`(bm 内)。
+**项目文档由 Basic Memory 管理**(`basic-memory/` 目录,经 MCP 索引)。仓库根不再维护独立 `docs/` — 文档写 `basic-memory/docs/...`,索引路径见 研究交接总览导航。Architecture decisions: `docs/adr/`(bm 内)。Experiment reports: `docs/experiments/`(bm 内)。Results: `docs/results/`(bm 内)。
 
 ### Documentation rules
 
@@ -175,3 +195,9 @@ basic-memory/docs/          ← 项目文档 (由 Basic Memory 索引管理)
 
 - **remote-gpu-deploy** (`.claude/skills/remote-gpu-deploy/SKILL.md`) — GPU 服务器部署工作流：权重下载、conda 环境管理、常见代码修复、多模型兼容性矩阵
 - **doc-system** (`.claude/skills/doc-system/SKILL.md`) — 项目文档系统：目录布局、命名规范、写作约定、内容分配、常见操作和反模式
+
+<!-- F_TRANSFER_20261023_START -->
+### F盘保留资料补迁（2026-10-23）
+
+四处保留资料迁往B:/tts-exp，当前完成状态、路径映射、restore树无压缩TAR恢复方法见`basic-memory/docs/reference/f-drive-baidu-migration.md`及网盘`_index/f_drive_transfer_20261023/receipt.json`。不回写历史凭据。F:/Datasets/tts-exp未在本批迁移，仍是视频评估数据入口。
+<!-- F_TRANSFER_20261023_END -->

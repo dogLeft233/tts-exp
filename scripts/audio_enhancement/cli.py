@@ -151,6 +151,8 @@ def run(
     config_path: Path | None = None,
     natural_reference_path: Path | None = None,
     checkpoint_path: Path | None = None,
+    model_id: str | None = None,
+    routing_config_path: Path | None = None,
     device: str = "cpu",
     generated_video: Path | None = None,
     mux_original_wav: Path | None = None,
@@ -159,6 +161,12 @@ def run(
     ffmpeg: str = "ffmpeg",
     ffprobe: str = "ffprobe",
 ) -> dict[str, Any]:
+    if model_id is not None and (config_path is not None or checkpoint_path is not None):
+        raise ValueError("--model-id cannot be combined with --config or --checkpoint")
+    # Validate the optional container operation before writing either WAV.
+    # Otherwise an invalid pair can leave partial outputs behind.
+    if (generated_video is None) != (mux_output is None):
+        raise ValueError("--generated-video and --mux-output must be supplied together")
     if natural_reference_path is None:
         natural_reference_path = output_path.with_name(f"{output_path.stem}.natural_16k_f32.wav")
     input_resolved = input_path.resolve()
@@ -185,9 +193,10 @@ def run(
         existing = [str(path) for path in planned_outputs if path.exists()]
         if existing:
             raise FileExistsError(f"refusing to replace existing outputs: {existing}")
+    route_receipt = None
     config = _load_config(config_path)
     checkpoint_payload = None
-    if checkpoint_path is not None:
+    if model_id is None and checkpoint_path is not None:
         checkpoint_payload = _load_checkpoint_payload(checkpoint_path, device)
         config = _resolve_checkpoint_config(
             config,
@@ -196,6 +205,30 @@ def run(
         )
     method = str(config.get("method", "identity"))
     source, read_info = read_canonical_wav(input_path)
+    head = None
+    if model_id is not None:
+        from .model_routing import apply_model_route
+
+        enhanced, route_application = apply_model_route(
+            source,
+            model_id,
+            config_path=routing_config_path,
+        )
+        route_receipt = route_application.to_dict()
+        # Keep the top-level method aligned with the waveform that was
+        # actually emitted.  For a candidate failure the route receipt still
+        # preserves ``selected_method_id`` and the fallback reason, while
+        # ``applied_method_id`` reports the RMS output truthfully.
+        method = str(route_receipt["applied_method_id"])
+    elif method == "spectral_head":
+        if checkpoint_payload is None:
+            raise ValueError("spectral_head mode requires --checkpoint")
+        head = _load_head(config, checkpoint_payload, device)
+    if model_id is None:
+        enhanced = transform(source, config, head=head)
+    # Delay all writes until routing/transform has succeeded.  This keeps a
+    # malformed route or checkpoint from leaving only a natural-reference
+    # artifact behind.
     natural_write_info = write_float32_wav(
         natural_reference_path,
         source,
@@ -203,12 +236,6 @@ def run(
         peak_ceiling=None,
         overwrite=overwrite,
     )
-    head = None
-    if method == "spectral_head":
-        if checkpoint_payload is None:
-            raise ValueError("spectral_head mode requires --checkpoint")
-        head = _load_head(config, checkpoint_payload, device)
-    enhanced = transform(source, config, head=head)
     write_info = write_float32_wav(
         output_path,
         enhanced,
@@ -223,6 +250,7 @@ def run(
         "checkpoint_sha256": _sha256_file(checkpoint_path) if checkpoint_path is not None else None,
         "cli_source_sha256": _sha256_file(Path(__file__).resolve()),
         "application_config": config,
+        "route": route_receipt,
         "embedded_checkpoint_training_metadata": config.get("checkpoint_training_metadata"),
         "source_pcm": {
             "path": read_info.path,
@@ -269,8 +297,6 @@ def run(
         },
     }
     if generated_video is not None or mux_output is not None:
-        if generated_video is None or mux_output is None:
-            raise ValueError("--generated-video and --mux-output must be supplied together")
         from .overdub import mux_original_pcm
 
         mux_info = mux_original_pcm(
@@ -309,6 +335,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--config", type=Path)
     parser.add_argument("--natural-reference-wav", type=Path)
     parser.add_argument("--checkpoint", type=Path)
+    parser.add_argument(
+        "--model-id",
+        help="select the frozen model-aware generation route; preserves input PCM for scoring/muxing",
+    )
+    parser.add_argument(
+        "--routing-config",
+        type=Path,
+        help="model-aware route table (defaults to configs/model_aware_routing_v1.json)",
+    )
     parser.add_argument("--device", default="cpu")
     parser.add_argument("--generated-video", type=Path)
     parser.add_argument(
@@ -328,6 +363,8 @@ def main(argv: list[str] | None = None) -> int:
             config_path=args.config,
             natural_reference_path=args.natural_reference_wav,
             checkpoint_path=args.checkpoint,
+            model_id=args.model_id,
+            routing_config_path=args.routing_config,
             device=args.device,
             generated_video=args.generated_video,
             mux_original_wav=args.mux_original_wav,

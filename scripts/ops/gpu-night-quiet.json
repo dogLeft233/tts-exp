@@ -1,0 +1,8 @@
+{
+  "uuid": "GPU-d12b3309-c299-da83-064d-a3cd619bd560",
+  "night_watts": 200,
+  "day_watts": 300,
+  "warm_watts": 150,
+  "emergency_watts": 100,
+  "interval_seconds": 15
+}

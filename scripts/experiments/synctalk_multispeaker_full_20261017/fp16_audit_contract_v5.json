@@ -1,0 +1,14 @@
+{
+  "version": 5,
+  "optimizer_attempt_cap": 12004,
+  "zero_update_case_cap": 24,
+  "completed_zero_update_cases": 22,
+  "remaining_zero_update_cases": 2,
+  "official_replay_max": 6000,
+  "scope": "FP16 only, original forward/backward/AdamW/scaler math unchanged",
+  "observations": "Also capture exact first nonfinite per-point density inputs during original occupancy call; no extra model calls. First_nonfinite_occupancy_grid full state follows the same call before optimizer. Prior two occupancy-position probes were finite and did not explain persistent Inf grid.",
+  "source_sha256": {
+    "diagnose_fp16_failure_v3.py": "766d906fe17fd8bbb0569942b86af67a08e6dca680d3a7853b18de96a24ab022",
+    "run_official_fp16_replay_v2.py": "7cf6a7a9941346dd1ebff0b415d37952e2ffbc8661a8b026e6f3fac7dc7eab22"
+  }
+}

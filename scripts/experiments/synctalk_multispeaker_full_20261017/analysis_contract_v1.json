@@ -1,0 +1,32 @@
+{
+  "status": "frozen_before_any_new_TFG_update",
+  "scientific_unit": "identity",
+  "identity_count": 4,
+  "seeds_within_identity": [42, 2026],
+  "primary_support": "guard20",
+  "secondary_support": "full",
+  "metrics": ["sync_c", "sync_d", "distance_d0", "background_median"],
+  "primary_descriptive_contrasts": {
+    "training": "T=-6/+6 versus T=0 at driver=0, evaluation=0",
+    "driver": "driver=-6/+6 versus driver=0 at training=0, evaluation=0",
+    "scorer": "evaluation=-6/+6 versus evaluation=0 on the fixed training=0, driver=0 video"
+  },
+  "matched_driver_scorer_decomposition": "For each training level and g=-6/+6, total = [C(T,g,0)-C(T,0,0)] + [C(T,g,g)-C(T,g,0)]; also report fixed-baseline-video scorer effect and interaction. Never compute a universal percentage attribution.",
+  "uncertainty_reporting": "Retain all four identity differences and both seed differences, mean/range/direction counts. Exploratory n=4; clips and seeds are not additional independent identities. No population-significance claim.",
+  "plateau_check": {
+    "endpoint": "validation MSE with fixed 0 dB driver",
+    "coarse_previous_epochs": [5, 6, 7],
+    "coarse_tail_epochs": [8, 9, 10],
+    "fine_previous_epochs": [12, 13, 14],
+    "fine_tail_epochs": [15, 16, 17],
+    "relative_absolute_change_max": 0.02,
+    "semantics": "Descriptive finite-budget plateau screen only; no early stopping, checkpoint selection, added epochs or proof of data sufficiency. Report train loss and all three driver validation curves."
+  },
+  "interpretation_limits": [
+    "SyncNet confidence is not perceptual lip-sync accuracy.",
+    "Report C, B, Dmin, D0 and offsets separately; C changes can include background-distance changes.",
+    "Matched drive+score effects include an interaction; fixed-video scorer changes do not measure altered mouth motion.",
+    "Geometry-qualified recording fallback limits generalization; retain all failed attempts.",
+    "Full official budget and a plateau screen do not establish that six minutes or four identities are sufficient for broader generalization."
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema": "synctalk_gain_training_data_v1",
+  "scope": "May single-identity engineering pilot; no training in data preparation",
+  "official_commit": "43079fb3f349675f6cb33031bb07262f7566cdd5",
+  "source_zip_sha256": "008fe3fb46430a92beff334e26f37eab229c717ff5b577dfbba90f46c3848d4b",
+  "source_identity": "May",
+  "language": "English",
+  "confirmation_eligible": false,
+  "sample_rate": 16000,
+  "fps": 25,
+  "samples_per_frame": 640,
+  "image_width": 512,
+  "image_height": 512,
+  "gains_db": [-6, 0, 6],
+  "context_guard_frames_each_side": 25,
+  "splits": [
+    {"name": "train", "source_start_frame": 0, "source_end_frame_exclusive": 4200},
+    {"name": "val", "source_start_frame": 4250, "source_end_frame_exclusive": 4850},
+    {"name": "test", "source_start_frame": 4900, "source_end_frame_exclusive": 6050}
+  ],
+  "eval_clip_frames": 250,
+  "scoring_pcm": "unaltered source PCM16 channel 0; same for all gains and trained models",
+  "driver_format": "mono WAV IEEE_FLOAT64; no resampling, limiting, or per-utterance normalization",
+  "audio_encoder": "official frozen AVE, eval mode, strict original checkpoint",
+  "ave_weight_sha256": "1f75cdb5556938590c64221f6c47a8d20ab3e368d53c166023eedb12279db8c4",
+  "pilot_training_seeds_future": [42, 2026],
+  "pilot_training_gain_db_future": [-6, 0, 6],
+  "training_authorized_in_this_task": false,
+  "provider_contract": {
+    "aud_id": "source_img_id minus split source_start_frame",
+    "self_driven_audio_only": true,
+    "test_must_read_transforms_test": true,
+    "validation_must_not_truncate_100": true,
+    "no_test_train": true,
+    "no_official_generator_warm_start": true,
+    "no_reuse_official_cached_audio_features": true,
+    "boundary_attention": "provider selects supervised rows before temporal attention; first/last 4 rows are flagged as attention-edge and excluded from primary evaluation clips"
+  },
+  "formal_cohort_requirements": {
+    "language": "Mandarin for primary Chinese claim",
+    "minimum_train_seconds": 300,
+    "minimum_validation_seconds": 60,
+    "minimum_test_seconds": 120,
+    "source": "real single-person AV, no dubbing, no music, no clipping, no detected scene cuts inside selected blocks",
+    "split": "recording or contiguous-time blocks before audio encoding; source intervals must not overlap",
+    "selection": "technical/source quality only; never select by TFG or SyncNet improvement",
+    "identity_count": "freeze after multi-identity variance/cost pilot; 6-10 is a budget proposal, not a power guarantee",
+    "upstream_exposure": "record known and unknown pretraining exposure; no automatic clean-domain claim"
+  }
+}

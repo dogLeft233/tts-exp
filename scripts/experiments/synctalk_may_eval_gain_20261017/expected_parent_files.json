@@ -1,0 +1,460 @@
+{
+  "delivery_manifest_sha256": "6d9fce0a458baf5d6e00bc51d86cd237b61c7b6ccbbdcaa08ceaa7a9e119ae19",
+  "files": [
+    {
+      "path": "independent_results_qa.json",
+      "bytes": 479,
+      "sha256": "b546174039efa4038a795a14f17a1912e0ad184dcd946430d20fbf788dc2cdd1"
+    },
+    {
+      "path": "renders/train_gain_0/test_gain_0/original_pcm.mkv",
+      "bytes": 149428492,
+      "sha256": "a9a75628acc5b5ea6cdbc02fc92da94965e18ffd2a0f6500062ba2f9f3ca99f0"
+    },
+    {
+      "path": "renders/train_gain_0/test_gain_m6/original_pcm.mkv",
+      "bytes": 149406456,
+      "sha256": "7e905b3350e7424a0eaaa888eab59731c129889db97106304b153838b1e0c664"
+    },
+    {
+      "path": "renders/train_gain_0/test_gain_p6/original_pcm.mkv",
+      "bytes": 149494803,
+      "sha256": "e7d757e9da079d937d0e580bc9a197dd89195db00b44e65a923d472a5b5f44be"
+    },
+    {
+      "path": "renders/train_gain_m6/test_gain_0/original_pcm.mkv",
+      "bytes": 149516542,
+      "sha256": "c4c92c2b352d8cbed5a7884198e16f82462055bd5b6c55ea0f372e7236ae0a44"
+    },
+    {
+      "path": "renders/train_gain_m6/test_gain_m6/original_pcm.mkv",
+      "bytes": 149418304,
+      "sha256": "a0204d5fd53022892b341d618e935948132c181fb9a441a3aea1c429ca99a427"
+    },
+    {
+      "path": "renders/train_gain_m6/test_gain_p6/original_pcm.mkv",
+      "bytes": 149645218,
+      "sha256": "5c16934c18e131875d034e193b7c0bc11d52a9aecec0c43e02169ce709ea48a7"
+    },
+    {
+      "path": "renders/train_gain_p6/test_gain_0/original_pcm.mkv",
+      "bytes": 149911805,
+      "sha256": "2bfe7639c027841d3c7a321d628c0f1b709094c4213606a063c51307b30b1290"
+    },
+    {
+      "path": "renders/train_gain_p6/test_gain_m6/original_pcm.mkv",
+      "bytes": 149875113,
+      "sha256": "dca04dfa10f5f2a02f24f9177eff75073631339efe5c00536ed565caed667e53"
+    },
+    {
+      "path": "renders/train_gain_p6/test_gain_p6/original_pcm.mkv",
+      "bytes": 149975166,
+      "sha256": "8d8373f4b74515acd66b9aa235dc41b306530edf7e74fef0bf954f1400b5e87a"
+    },
+    {
+      "path": "scores/scores.json",
+      "bytes": 118671,
+      "sha256": "8606029fbeecd23fa69a761af924e556552af03faf05afebd78adac7ec5c626b"
+    },
+    {
+      "path": "scores/test_00/original_audio_features.npy",
+      "bytes": 1003648,
+      "sha256": "a056624735ef2db5dd7df441807e2cb98b2998150b4ef209a729844b76cb52fd"
+    },
+    {
+      "path": "scores/test_00/original_mfcc.npy",
+      "bytes": 104024,
+      "sha256": "e25632a1c66d090819807b83e040cddfcc4fe281f792211198d98120a7b6ea4a"
+    },
+    {
+      "path": "scores/test_00/train_gain_0_test_gain_0/distances.npy",
+      "bytes": 30508,
+      "sha256": "86188a932cd002078edcd2642a13d08b68dfe8fdb00fecd201c6f33a1a0ddff8"
+    },
+    {
+      "path": "scores/test_00/train_gain_0_test_gain_0/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "2a5df7d9c236fb76469fdbf336d1c2e387913a303b3c01ad73352ef4dc7c9fb0"
+    },
+    {
+      "path": "scores/test_00/train_gain_0_test_gain_m6/distances.npy",
+      "bytes": 30508,
+      "sha256": "bcdcb1e732d5cbd174ded7b8b70359eb454fa7bbd2c89a9ff2a4f5c66585e867"
+    },
+    {
+      "path": "scores/test_00/train_gain_0_test_gain_m6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "1216971bf1626a2ee71d38ffea700c7db4d19708d6952a3839c51fc224402794"
+    },
+    {
+      "path": "scores/test_00/train_gain_0_test_gain_p6/distances.npy",
+      "bytes": 30508,
+      "sha256": "74321310dde1b14822733e19948cba2e6246c51052d44c6d73e68290116e96ef"
+    },
+    {
+      "path": "scores/test_00/train_gain_0_test_gain_p6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "43f74396588c24e6436baf908b915bd2b8c1806eec0f5b4cc0be10a4d9389dce"
+    },
+    {
+      "path": "scores/test_00/train_gain_m6_test_gain_0/distances.npy",
+      "bytes": 30508,
+      "sha256": "7afcac8a725ec4661b7fc0534fa4aaaa8b3122294bebbfd6e000a249c2e80ac1"
+    },
+    {
+      "path": "scores/test_00/train_gain_m6_test_gain_0/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "b80a4c91ca55dc67b36d99c7fb4a99911bb483f8d4abeb582312221cc78ce639"
+    },
+    {
+      "path": "scores/test_00/train_gain_m6_test_gain_m6/distances.npy",
+      "bytes": 30508,
+      "sha256": "139083836dd108d8c814d2d80da274feb4f3b76534c860be37c9943f54df6f03"
+    },
+    {
+      "path": "scores/test_00/train_gain_m6_test_gain_m6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "b044480a12e16173abc643c53c98c257ad863064a6f3a916580d13af402066bf"
+    },
+    {
+      "path": "scores/test_00/train_gain_m6_test_gain_p6/distances.npy",
+      "bytes": 30508,
+      "sha256": "ab7b4c4c441adb57955d60ae38a138ad8e782678169c9ea3c51b39040a064d29"
+    },
+    {
+      "path": "scores/test_00/train_gain_m6_test_gain_p6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "6c882f51739af4c89e55b79c29ace3fa297a599914e526264222edd6a7de3c7c"
+    },
+    {
+      "path": "scores/test_00/train_gain_p6_test_gain_0/distances.npy",
+      "bytes": 30508,
+      "sha256": "1c5f3413f1d1d76b8af1c7babf85e8e461e33415657eb14e91cea6b1df232bd4"
+    },
+    {
+      "path": "scores/test_00/train_gain_p6_test_gain_0/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "fb1f19d93ae663f5afc9bae7463160085793d7e0f02c3b3cdb0d86f9ae358aff"
+    },
+    {
+      "path": "scores/test_00/train_gain_p6_test_gain_m6/distances.npy",
+      "bytes": 30508,
+      "sha256": "5b58c715a282c380a7699f9081a7e53da11a8ab1de338da9c278710c9faa6c7b"
+    },
+    {
+      "path": "scores/test_00/train_gain_p6_test_gain_m6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "d6265d7a0c33215aebeed1871d46d043810ee4f5f3160b5ca7a6de7619d9dd9c"
+    },
+    {
+      "path": "scores/test_00/train_gain_p6_test_gain_p6/distances.npy",
+      "bytes": 30508,
+      "sha256": "2a8fb08c4ad09d1aaa957d04f8d55634df64c87f6d69045c831d3064ff92e7ea"
+    },
+    {
+      "path": "scores/test_00/train_gain_p6_test_gain_p6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "4012035dd9bb9f7b91e5d3deec91debf5656efc7cc854249c486878690e6df50"
+    },
+    {
+      "path": "scores/test_01/original_audio_features.npy",
+      "bytes": 1003648,
+      "sha256": "60d4477af670a7ad33c4c9d61b39058a85a4eb0bfe350502293bdc9f0ffbb146"
+    },
+    {
+      "path": "scores/test_01/original_mfcc.npy",
+      "bytes": 104024,
+      "sha256": "f018afd1917c48a86f4ebc92e49ab6a76a079293df9b4446fec5b9268a0c9a2a"
+    },
+    {
+      "path": "scores/test_01/train_gain_0_test_gain_0/distances.npy",
+      "bytes": 30508,
+      "sha256": "64e67f4467643c4e272cbdd5eacecfe03ed307a74e671f21fc76532bc254d9e7"
+    },
+    {
+      "path": "scores/test_01/train_gain_0_test_gain_0/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "351184a0836e77a047251493067feeecd32785384505979dc4e58bc95ff70fde"
+    },
+    {
+      "path": "scores/test_01/train_gain_0_test_gain_m6/distances.npy",
+      "bytes": 30508,
+      "sha256": "42d6887b3bf28a3a2c1bb804eb9ed3be9061a6618063a3a6226357a2bb62472c"
+    },
+    {
+      "path": "scores/test_01/train_gain_0_test_gain_m6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "d491800ca63047e28e819d9103ed3e49bf62b95ebbd09f7d38b045ad08c79aaa"
+    },
+    {
+      "path": "scores/test_01/train_gain_0_test_gain_p6/distances.npy",
+      "bytes": 30508,
+      "sha256": "233a842c93888d4e5dfccc725b98945239dd96224708600da9178d79a4617aaf"
+    },
+    {
+      "path": "scores/test_01/train_gain_0_test_gain_p6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "7cfb060c7f9c06205897bea2c89cb7aa8444e9824a29b48f6cd7667b1aed1b94"
+    },
+    {
+      "path": "scores/test_01/train_gain_m6_test_gain_0/distances.npy",
+      "bytes": 30508,
+      "sha256": "0d95f6d3c320e15a24fad61990bb4375a6b9c5054bfca3745d8f9b53634d538f"
+    },
+    {
+      "path": "scores/test_01/train_gain_m6_test_gain_0/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "63ef3193b5665bc7592fe1af4f1e9efc9d7d895d070beb3835d790b130b531b0"
+    },
+    {
+      "path": "scores/test_01/train_gain_m6_test_gain_m6/distances.npy",
+      "bytes": 30508,
+      "sha256": "f24e6fb82fa7e041ab7ff2d1a8f61ca8a7673c44077761ec43d3e0255e2ba45a"
+    },
+    {
+      "path": "scores/test_01/train_gain_m6_test_gain_m6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "77710e3aa7389618da37405edd7fc0c24eaf80aaff8d4065bd52161a17cd35f5"
+    },
+    {
+      "path": "scores/test_01/train_gain_m6_test_gain_p6/distances.npy",
+      "bytes": 30508,
+      "sha256": "3abee32e502e233c6cf800309f1643cc9c97822c64b29aaa5af46e4edf8c82df"
+    },
+    {
+      "path": "scores/test_01/train_gain_m6_test_gain_p6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "806251d47ea8a10d17b4e2ce7fda6f0a20da1a59524b0de89a1d58adb165b3a8"
+    },
+    {
+      "path": "scores/test_01/train_gain_p6_test_gain_0/distances.npy",
+      "bytes": 30508,
+      "sha256": "76875e1a1b699a64b31652621f023107d41bc966538c93d9512c21d7c96f4064"
+    },
+    {
+      "path": "scores/test_01/train_gain_p6_test_gain_0/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "b6fd7bc97b3d075da1db2e064882a1d3ceee39c92491d31816655a0aa793c39f"
+    },
+    {
+      "path": "scores/test_01/train_gain_p6_test_gain_m6/distances.npy",
+      "bytes": 30508,
+      "sha256": "24a58c04c30dbebae43def186d7d1e211fa504dca31d235d51d7d1b675e5294b"
+    },
+    {
+      "path": "scores/test_01/train_gain_p6_test_gain_m6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "28ed2dc477082f2e7ba0ff646c2a239324d2e3e7edaeff04b7a9401cd1f074b1"
+    },
+    {
+      "path": "scores/test_01/train_gain_p6_test_gain_p6/distances.npy",
+      "bytes": 30508,
+      "sha256": "4327b3e59fc2e0086f3d9f0937710479582d2cdd3d932303bc7c26024299d462"
+    },
+    {
+      "path": "scores/test_01/train_gain_p6_test_gain_p6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "c2ac33ad0e8c53136137fd310c6a8bce4b4bf0a0d4b44aae288059e09c090490"
+    },
+    {
+      "path": "scores/test_02/original_audio_features.npy",
+      "bytes": 1003648,
+      "sha256": "c775f7c8b12a02b830426b32ff3a000fa6067972afa7e3069effc331aae111d2"
+    },
+    {
+      "path": "scores/test_02/original_mfcc.npy",
+      "bytes": 104024,
+      "sha256": "b7a91e546ee61bf6ec1353b417aa62d5ed4bd1a905a22ac852ea0163d048e070"
+    },
+    {
+      "path": "scores/test_02/train_gain_0_test_gain_0/distances.npy",
+      "bytes": 30508,
+      "sha256": "c980d61222ef29d85c7f867e8fd8e408dba18be11baabfdaa2a957c362ba95a5"
+    },
+    {
+      "path": "scores/test_02/train_gain_0_test_gain_0/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "d8eaa49c28324704f279ada3f6581d04d16b62f8ad3cbc1835f5c9b023876310"
+    },
+    {
+      "path": "scores/test_02/train_gain_0_test_gain_m6/distances.npy",
+      "bytes": 30508,
+      "sha256": "12dba4827ad118e76eadf4d38ec02a03dca4263814ed64f2e287db003012d864"
+    },
+    {
+      "path": "scores/test_02/train_gain_0_test_gain_m6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "9452ef6f3b98bfd3ba24b5393966904246d6fbf5bc43391735bc1d979940fa74"
+    },
+    {
+      "path": "scores/test_02/train_gain_0_test_gain_p6/distances.npy",
+      "bytes": 30508,
+      "sha256": "3f6899eabc9bd198625e26a4da826cb5bed53683065d01482d1d5ec27b2c2134"
+    },
+    {
+      "path": "scores/test_02/train_gain_0_test_gain_p6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "fae703f92b4dc77c3f5ec5523ac3e0890c5d3a80cc3fec714080f42cb8cb7da6"
+    },
+    {
+      "path": "scores/test_02/train_gain_m6_test_gain_0/distances.npy",
+      "bytes": 30508,
+      "sha256": "e697ec1acc5f0e7b212b4c31e8b504d84213749825d88c8897a8df286b5aada6"
+    },
+    {
+      "path": "scores/test_02/train_gain_m6_test_gain_0/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "d4e186e3cdb40b9a5d60708037f145f106812234ce987cc89a03565c9d51564b"
+    },
+    {
+      "path": "scores/test_02/train_gain_m6_test_gain_m6/distances.npy",
+      "bytes": 30508,
+      "sha256": "ec0d4a1f6c4b1991e20910700396d97a38b0b6f2b32be7bc3f5375ae52588b06"
+    },
+    {
+      "path": "scores/test_02/train_gain_m6_test_gain_m6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "005d8ffdbde1b530e8a272c8d7f5d7b42b6dbd7631b75ad1b538420c5171b47b"
+    },
+    {
+      "path": "scores/test_02/train_gain_m6_test_gain_p6/distances.npy",
+      "bytes": 30508,
+      "sha256": "20fca56ae3cafb891f05599af1c32b88606b3dffb44ee546a09aa47572069278"
+    },
+    {
+      "path": "scores/test_02/train_gain_m6_test_gain_p6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "36255f1e26f09ccc97d722a3e8eb358cbde34375c119631d433e5d0136eca963"
+    },
+    {
+      "path": "scores/test_02/train_gain_p6_test_gain_0/distances.npy",
+      "bytes": 30508,
+      "sha256": "99902d1ad159eb619a32fd62f229d2b8528c860d6243dfe8d0d819ca09025721"
+    },
+    {
+      "path": "scores/test_02/train_gain_p6_test_gain_0/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "02e1f0a5355fedc0c410f4a8b53f0a335a3914f050a65d8ddb9ff2b4c1d2a4d7"
+    },
+    {
+      "path": "scores/test_02/train_gain_p6_test_gain_m6/distances.npy",
+      "bytes": 30508,
+      "sha256": "cccd5f0ffd63013b031db5355515b3243d5768f433e0410e4edfc90f8e40d29e"
+    },
+    {
+      "path": "scores/test_02/train_gain_p6_test_gain_m6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "16d86445578adc4f15f6a4bf3dc0e57e0405172f84cfa2842b521c64e77f7758"
+    },
+    {
+      "path": "scores/test_02/train_gain_p6_test_gain_p6/distances.npy",
+      "bytes": 30508,
+      "sha256": "76d25824a252a878718da0457afda1f643a53280cc3552c19e2802aaeb344d70"
+    },
+    {
+      "path": "scores/test_02/train_gain_p6_test_gain_p6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "d74827840544cdc015209723b74c243f36b4744815fcdffe980681bc9fa29b49"
+    },
+    {
+      "path": "scores/test_03/original_audio_features.npy",
+      "bytes": 1003648,
+      "sha256": "d6b9460ba4f5b4d4e06f6ce90d0a369da65f88088e984913c028bed3f26cf216"
+    },
+    {
+      "path": "scores/test_03/original_mfcc.npy",
+      "bytes": 104024,
+      "sha256": "2489cfdb983a01480d952a53eaf011f05a45cfd362db1605995143bde61692e0"
+    },
+    {
+      "path": "scores/test_03/train_gain_0_test_gain_0/distances.npy",
+      "bytes": 30508,
+      "sha256": "a795558b235cb5f4b595a3d4475b302a908e099a4183d7dc5ab6742148dc82ee"
+    },
+    {
+      "path": "scores/test_03/train_gain_0_test_gain_0/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "55758e78d683bb433d579a8311739a3c5a91a4129602025bf3cbbc19f5f77d6d"
+    },
+    {
+      "path": "scores/test_03/train_gain_0_test_gain_m6/distances.npy",
+      "bytes": 30508,
+      "sha256": "291b1cc46e17e375d3f899e65caf12cde69d383b86c617d7470a3855ff30f183"
+    },
+    {
+      "path": "scores/test_03/train_gain_0_test_gain_m6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "4a16ec6876ce294b82f4f2134646414b7c3f226ca9248deeefe142718606fd7b"
+    },
+    {
+      "path": "scores/test_03/train_gain_0_test_gain_p6/distances.npy",
+      "bytes": 30508,
+      "sha256": "9b7f04beeda73bfa2e4acab8dd5a3224d8fc377f06e7f2c32df2167be978fc15"
+    },
+    {
+      "path": "scores/test_03/train_gain_0_test_gain_p6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "684b88d20f890968deaece15f51d177d8b025f99b5cffa9f4950157d80e11b4f"
+    },
+    {
+      "path": "scores/test_03/train_gain_m6_test_gain_0/distances.npy",
+      "bytes": 30508,
+      "sha256": "ab7af4b8f1a6930c76a343dfdb46a0566b0ec9108665e13760dcd103bc334c40"
+    },
+    {
+      "path": "scores/test_03/train_gain_m6_test_gain_0/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "52d47bb4f28608fc2a81db73e23dc7abca37fd88658ba6386f9a667413960945"
+    },
+    {
+      "path": "scores/test_03/train_gain_m6_test_gain_m6/distances.npy",
+      "bytes": 30508,
+      "sha256": "66b3351deee8fc772631bb28966e32d5492fcc5f21652abc55b872e367655937"
+    },
+    {
+      "path": "scores/test_03/train_gain_m6_test_gain_m6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "b4110b13b206a46547bdffa52bb37073dbf2e4dda7418b76c755c42b83aabeb3"
+    },
+    {
+      "path": "scores/test_03/train_gain_m6_test_gain_p6/distances.npy",
+      "bytes": 30508,
+      "sha256": "8fb41ce67a5a38319fb700b9772bdb3cc667f80faa7b7e4c5ee68a036b872a16"
+    },
+    {
+      "path": "scores/test_03/train_gain_m6_test_gain_p6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "86033b3ebeb2221abd3f4c0ab74a34e594bad4a8ed71e4cc606a9c9ccddd3eb0"
+    },
+    {
+      "path": "scores/test_03/train_gain_p6_test_gain_0/distances.npy",
+      "bytes": 30508,
+      "sha256": "581c74ac02ff0d4457b56cf6edb69cf4f88fe0f64b52155f62dc0cd69a31e47c"
+    },
+    {
+      "path": "scores/test_03/train_gain_p6_test_gain_0/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "f3d728a096109fecbcdbb28b54adc0687f77ea6cb19d39edeb5cc02f6d5aea94"
+    },
+    {
+      "path": "scores/test_03/train_gain_p6_test_gain_m6/distances.npy",
+      "bytes": 30508,
+      "sha256": "da34d074dd42d17219445b90e8aa4463f9d1cc775d169272113568d1bee2c1b8"
+    },
+    {
+      "path": "scores/test_03/train_gain_p6_test_gain_m6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "f5973a6ea6d91017c9e44e7bbcd9a8396f183a55fc01f3f116832a33a839a4a6"
+    },
+    {
+      "path": "scores/test_03/train_gain_p6_test_gain_p6/distances.npy",
+      "bytes": 30508,
+      "sha256": "c6c4ecacb7abda8f55d886269d0b14aa561844f54ffe41d686b3c9267fa12619"
+    },
+    {
+      "path": "scores/test_03/train_gain_p6_test_gain_p6/visual_features.npy",
+      "bytes": 1003648,
+      "sha256": "af92c8561586316e404db5529b80befaa9d12ef80654c5895c20b4bc09c41f05"
+    }
+  ]
+}

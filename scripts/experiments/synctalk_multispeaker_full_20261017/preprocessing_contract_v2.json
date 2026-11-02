@@ -1,0 +1,52 @@
+{
+  "status": "FROZEN_BEFORE_FULL_SHARED_REFERENCE_HELDOUT_EXECUTION",
+  "training_admitted": false,
+  "identity_and_intrinsics": "Run original official face_tracker.py on 6000 training frames only; freeze its BFM identity and focal for val/test; fit heldout expression and pose with the same official landmark objective and 2000-iteration schedule.",
+  "flow_mask": "Derive three identical uint8 alpha channels as 255 minus G from official parsing/N_face.png. The portrait RGB visualization itself is not a flow mask. Original stage1 face_mask visualization copies are deprecated and never used by flow.",
+  "flow_storage": "Original NeuralNRT/RAFT weights, crop processing and 12 iterations. Store only the reference rigid pixels from the first min(2500,N) frames; execute the verbatim original Laplacian/keypoint selection block; retain exact selected keypoint tracks for all frames, not all dense flow files. Dense/streamed subset parity must pass.",
+  "bundle_training": "Original official bundle_adjustment.py, 500 point fitting plus 8000 joint point/pose iterations.",
+  "bundle_heldout": "Triangulate fixed training-reference rigid points from the original training BA cameras and original training flow tracks. Keep these training points bitwise frozen. Use original NeuralNRT with training frame 2 as source and the identical training selected keypoints for every heldout target frame. Fit only heldout Euler/translation for 8000 iterations using original flow reprojection loss/Adam lr1e-4. No heldout point/shape, focal, identity or training state fitting.",
+  "coordinate_mapping": "All final cameras directly observe the identical fixed training point cloud in original training BA coordinates; there is no final cross-gauge mapping. Training-only BFM-to-BA positive similarity supplies initialization only; record its failed residuals honestly, do not treat them as final coordinate qualification.",
+  "background": "Original background extraction sees training frames only. Share this training background for supervision construction; heldout original images may supply their own portrait composite and torso/eye/pose conditioning, never training fitted state.",
+  "geometry_gates": {
+    "landmark_rms_px_median_max": 5,
+    "landmark_rms_px_p95_max": 10,
+    "flow_reprojection_rms_px_median_max": 2,
+    "flow_reprojection_rms_px_p95_max": 5,
+    "gauge_rotation_error_degrees_p95_max": 2,
+    "gauge_camera_translation_error_m_p95_max": 0.005,
+    "gauge_condition_max": 1000000,
+    "gauge_scale_min": 0.25,
+    "gauge_scale_max": 4,
+    "heldout_projection_invariance_max_px": 0.0001
+  },
+  "loading": "Official --preload 0 is allowed to avoid >44GB float32 preload on a 31GiB host, after exact pixel/ray-input parity against preload 1 on a common subset. Rays, precision, losses, initialization, frame order, epochs and successful-update budget are unchanged. No ray reduction fallback.",
+  "decision_time": "2026-10-17T10:46:34.255826+00:00",
+  "predecessor_sha256": "f472a5a9ef0bf50f2d85bb535407eb83025efe2eca86be2cf294f4e685851e51",
+  "revision_reason": "v1 global BFM-to-BA similarity failed: original BA physically changes each camera and its freely fitted shape. Preserve failed v1 outputs. No TFG training, generated video or SyncNet treatment score informed this repair.",
+  "camera_control": "Freeze frames0:4800 for point triangulation. Independently recover poses for train3600:4800 and4800:6000, initialized from training-only BFM similarity, using fixed points and original heldout pose objective. Compare recovered to original official training BA cameras at unchanged2deg/5mm p95 limits. No control result fits generator/heldout geometry.",
+  "diagnostics_before_revision": {
+    "identity": "SherrodBrown",
+    "fixed_point_control_late_p95_degrees": 0.1502572480728422,
+    "fixed_point_control_late_p95_m": 0.00018543407360099872,
+    "shared_reference_val20_flow_p95_px": 3.0442882878417556,
+    "shared_reference_test20_flow_p95_px": 1.9556849839261816,
+    "manual_correspondence_review": "both 20-frame ordered galleries reviewed; points on face; no dropped frames; diagnostic-only arrays retained"
+  },
+  "flow_storage_heldout": "No new heldout keypoint selection or rigid dense cache. Store all identical training-keypoint tracks, exact dense subset/repeated-forward controls, source image/mask/keys/weights hashes.",
+  "geometry_gates_v2": {
+    "landmark_rms_px_median_max": 5,
+    "landmark_rms_px_p95_max": 10,
+    "flow_reprojection_rms_px_median_max": 2,
+    "flow_reprojection_rms_px_p95_max": 5,
+    "training_control_camera_rotation_p95_degrees_max": 2,
+    "training_control_camera_translation_p95_m_max": 0.005,
+    "triangulation_normal_condition_max": 1000000,
+    "initialization_similarity_condition_max": 1000000,
+    "initialization_similarity_scale_min": 0.25,
+    "initialization_similarity_scale_max": 4,
+    "heldout_fixed_training_points_exact": true,
+    "training_control_dense_flow_exact": true
+  },
+  "admission_version": "v2 replaces the failed v1 coordinate model; never rewrite v1 failure as a pass. Threshold magnitudes remain unchanged; camera recovery controls replace the invalid requirement that refinement be a single global similarity. This is an explicit preprocessing adaptation to independent recordings, not official default free heldout BA."
+}

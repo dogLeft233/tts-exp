@@ -3,6 +3,11 @@
 
 from __future__ import annotations
 
+try:
+    from .project_paths import resolve_project_path
+except ImportError:
+    from project_paths import resolve_project_path
+
 import argparse
 import hashlib
 import json
@@ -21,11 +26,7 @@ def sha256_file(path: Path) -> str:
 
 
 def local_path(repo: Path, value: str) -> Path:
-    path = Path(value)
-    prefix = "/mnt/e/Documents/tts-audio/tts-exp/"
-    if str(path).startswith(prefix):
-        path = repo / str(path)[len(prefix):]
-    path = path.resolve()
+    path = resolve_project_path(value, repo)
     if not path.is_file():
         raise FileNotFoundError(path)
     return path

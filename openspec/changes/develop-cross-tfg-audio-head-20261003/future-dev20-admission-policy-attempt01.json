@@ -1,0 +1,1214 @@
+{
+  "asr_gate": {
+    "all_80_hypotheses_nonempty": true,
+    "baseline_call_schema": "cross_tfg_future_dev20_asr_baseline_call_v1",
+    "baseline_summary_schema": "cross_tfg_future_dev20_asr_baseline_results_v1",
+    "call_matrix": {
+      "cache_or_deduplication": false,
+      "direct_d0_step120_candidate": 20,
+      "natural_repeat_01": 20,
+      "natural_repeat_02": 20,
+      "retry": false,
+      "rms_fixed": 20,
+      "total": 80,
+      "unique_independent_calls": true
+    },
+    "candidate_call_schema": "cross_tfg_future_dev20_asr_candidate_call_v1",
+    "candidate_payload_schema": "cross_tfg_future_dev20_asr_candidate_payloads_v1",
+    "candidate_summary_schema": "cross_tfg_future_dev20_asr_candidate_results_v1",
+    "cer": "character Levenshtein distance divided by normalized first/reference hypothesis length",
+    "enable_itn": false,
+    "excess_per_clip": "CER(natural_repeat_01,candidate) - max(CER(natural_repeat_01,natural_repeat_02), CER(natural_repeat_01,rms_fixed))",
+    "language": "zh",
+    "model": "qwen3-asr-flash-2026-02-10",
+    "normalization": "NFKC then casefold; remove Unicode whitespace, separator and punctuation categories",
+    "payload_binding": [
+      "actual mono 16-kHz PCM16 WAV raw bytes/SHA",
+      "PCM payload SHA",
+      "sample count N",
+      "source/generator canonical float32 PCM SHA"
+    ],
+    "prompt_context_or_ground_truth_sent": false,
+    "speaker_aggregation": "two clips equally within each speaker, then ten speakers equally",
+    "thresholds": {
+      "each_clip_excess_max": 0.1,
+      "equal_speaker_mean_excess_max": 0.02
+    }
+  },
+  "audio_media_and_native_source_gates": {
+    "complete_native_row_gate": "all 540 plan rows and all 540 result rows PASS; exact order/identity; every score/source/media reference hash-valid",
+    "condition_pcm": "transformed generator PCM identity bound to actual input; repeated model/seed rows for each sample/method must carry one identical canonical float32 PCM hash",
+    "final_mux_audio": "sole full original natural PCM_F32LE stream; generated audio stripped",
+    "native_roi": "native official model crop, joined to exact selected crop/frame map",
+    "required_independent_consumer": "pinned consumer.py must independently validate source/generator/mux PCM, media clock, crop map, raw 31-lag arrays and rebuild metrics/supports before any score gate is reported",
+    "scoring_audio": "full original natural waveform for every condition",
+    "source_clock": "actual rational per-frame timestamps bound to original PCM sample clock; no best-offset retiming/time stretch/truncation",
+    "source_pcm": "exact mono 16-kHz PCM16 source, canonical little-endian float32 generator decode, exact N and no resampling"
+  },
+  "cohort": {
+    "all_failures_retained": true,
+    "conditions": [
+      {
+        "condition_id": "identity",
+        "method_id": "identity"
+      },
+      {
+        "condition_id": "rms_fixed",
+        "method_id": "rms_fixed"
+      },
+      {
+        "candidate_id_bound_only_by_pre_effect_freeze_receipt": true,
+        "condition_id": "direct_d0_step120",
+        "method_id": null
+      }
+    ],
+    "face_id": "primary_face_static_portrait_v1",
+    "models": [
+      "wav2lip_gan_bac9a81e",
+      "musetalk_fixed_portrait_attempt16",
+      "ditto_hubert_fixed_portrait_attempt18"
+    ],
+    "no_replacement_or_complete_subset_rescue": true,
+    "protocol_raw_sha256": "73ac37eee2c8c728a7123fa85834dc53104a4b809cbc017593bd86939816eb17",
+    "protocol_schema": "cross_tfg_future_dev20_three_method_protocol_attempt06_v1",
+    "protocol_self_sha256": "e513f565618fed124677cb75a97c2ff8b8d7a517521f60a96a0438f05c840650",
+    "purpose": "new, speaker-disjoint future Dev20 development cohort; it is not a confirmation set",
+    "row_formula": {
+      "conditions": 3,
+      "models": 3,
+      "planned_rows": 540,
+      "samples": 20,
+      "seeds": 3
+    },
+    "samples": [
+      {
+        "canonical_f32_sha256": "5fcd29c680815b54f6d3d43101678b828119d3c371d7b84a7522bef62a66489c",
+        "sample_count_N": 94897,
+        "sample_id": "BAC009S0102W0121",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "2f979b61bea349720905d6e8970f9558311ade1bd6b45ae70c970821d8a82e84",
+        "speaker_id": "S0102"
+      },
+      {
+        "canonical_f32_sha256": "544232369788986a8256f45e5d08924d3edc4bfd6cd897e698de16efb0afcdc3",
+        "sample_count_N": 93136,
+        "sample_id": "BAC009S0102W0122",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "97c8186857c2d0ed0be575a3ae8a38e4e6d420b6645e0285d9684f4e3be5264b",
+        "speaker_id": "S0102"
+      },
+      {
+        "canonical_f32_sha256": "aa6e0fea2822a9c74e335c81184e7d20c423c4783793ccb980526760660132a8",
+        "sample_count_N": 73936,
+        "sample_id": "BAC009S0103W0121",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "ff17f3ffc1cd994fa83c9ebea1840fc92a6fab1958c977fa664664eba08d4e8c",
+        "speaker_id": "S0103"
+      },
+      {
+        "canonical_f32_sha256": "4497877578d640927d406020dd35db6d4d52c46f57003b2bf13f3edbbed56c2d",
+        "sample_count_N": 73568,
+        "sample_id": "BAC009S0103W0122",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "9eecfc78bb0ee33bd3bb04b0e94320488344ff703084a0ce39c8c0c4b373f932",
+        "speaker_id": "S0103"
+      },
+      {
+        "canonical_f32_sha256": "b5b3611d6848456135d532bdec47d98111aa9fe0d31630c25f36128955f6a605",
+        "sample_count_N": 75696,
+        "sample_id": "BAC009S0104W0122",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "0f0a072666beeced03e34f85d23724665838bc09609da0ca57a39763dda1f1a7",
+        "speaker_id": "S0104"
+      },
+      {
+        "canonical_f32_sha256": "9ed974b5693216d876ea809543bd130d8078de77d77d13886094ffb051564d62",
+        "sample_count_N": 78496,
+        "sample_id": "BAC009S0104W0123",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "fd66ce59e9c23ae3521c01e80792ab49ffc5ec4cb39f035fd4b2aa509f5ed684",
+        "speaker_id": "S0104"
+      },
+      {
+        "canonical_f32_sha256": "c25728170c8f998e94dc081705718a65eae13ce3a68fc548907dc1aa5155a857",
+        "sample_count_N": 79280,
+        "sample_id": "BAC009S0105W0121",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "828e182d284498739ec36d0ad9ae6d26e9df66799d971160bf07359c0c7e8530",
+        "speaker_id": "S0105"
+      },
+      {
+        "canonical_f32_sha256": "a684796d221c9d5ff85655d609d78f2e9621cb9a1c2248a15b42f027c7f2290a",
+        "sample_count_N": 117968,
+        "sample_id": "BAC009S0105W0122",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "3b708c293cb8c2ccd82eb63943de82c211a563b1fb8707ea5a583b75dd3f93d8",
+        "speaker_id": "S0105"
+      },
+      {
+        "canonical_f32_sha256": "1ed650884486287ecb67c739e25e109aaa77d2cf557ffd1ffa813953e82ecd31",
+        "sample_count_N": 64640,
+        "sample_id": "BAC009S0106W0121",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "304aca5bd5c28c488257f9adb7b0616dff557368bbe7a26fc794463c66acb6b8",
+        "speaker_id": "S0106"
+      },
+      {
+        "canonical_f32_sha256": "db384b1fa5b1a99d33bf8bd8f799446dc8f92ac7cd5dce39ead64f3478573a77",
+        "sample_count_N": 64848,
+        "sample_id": "BAC009S0106W0123",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "ae52528ce122b6c4ee854321c0c6f4185425214419e3b1933ae8c9370865d938",
+        "speaker_id": "S0106"
+      },
+      {
+        "canonical_f32_sha256": "6d015a97e0135ab649a242781778326b1c0dcb1ca644652d0dd769225dd83734",
+        "sample_count_N": 100480,
+        "sample_id": "BAC009S0107W0121",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "f7ead0e0b1401c0d3623370ad01b0c8693193f61d13b07a58b204eeceaf604f2",
+        "speaker_id": "S0107"
+      },
+      {
+        "canonical_f32_sha256": "94f94a01122376e45a8ace9573dbe10a2e51274776c4d02f93076e416c8f1b54",
+        "sample_count_N": 82384,
+        "sample_id": "BAC009S0107W0122",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "f0584158fceba1d04e7c0d7a1db9611e0f0ea091c5bbc37898cac6632b5b938d",
+        "speaker_id": "S0107"
+      },
+      {
+        "canonical_f32_sha256": "95069821036e29e907ea97f52e266ea97e09801fb9ddb32a321ae7a45d0943b3",
+        "sample_count_N": 65440,
+        "sample_id": "BAC009S0108W0121",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "b90975a822297499cd4f8613264c25cc0f1d74123e4caf3a616c067e26e8b826",
+        "speaker_id": "S0108"
+      },
+      {
+        "canonical_f32_sha256": "c880a9e266ce6dcde3e8626aea1081e68ab57d4a370e1af1b5b61644a66059f6",
+        "sample_count_N": 108049,
+        "sample_id": "BAC009S0108W0122",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "c8b1ce3924943293829f5f370e883d6a80cb8fd7e892131dbdfed4d9b8500d02",
+        "speaker_id": "S0108"
+      },
+      {
+        "canonical_f32_sha256": "58391246396c71cafc9f0516af93565a390e81de12a00d50d9acd637cf573918",
+        "sample_count_N": 64880,
+        "sample_id": "BAC009S0109W0121",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "b2ad6ad2bb1c6822e5ee819a940071e10f179cf4d9bfc5160c3ea949d721532f",
+        "speaker_id": "S0109"
+      },
+      {
+        "canonical_f32_sha256": "6b8cb79b8c4b920e537d5aeb28567599ad5ebb086fa9f44d500819fac8918dc3",
+        "sample_count_N": 67952,
+        "sample_id": "BAC009S0109W0123",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "4cbd786f8ad8598aeeefe588a739f1bd13760b0055a08b7c46f515536ba9e3c3",
+        "speaker_id": "S0109"
+      },
+      {
+        "canonical_f32_sha256": "691e46d2bfb6b31959fbe5c3f2df93d15a0f55b3f832a1d604a0f377306c5a74",
+        "sample_count_N": 104912,
+        "sample_id": "BAC009S0110W0122",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "554d486888a59dbb0076d63b0dbd1acfe54dcdd1714a39451251adb4c901039c",
+        "speaker_id": "S0110"
+      },
+      {
+        "canonical_f32_sha256": "565148c2f1fb7be3c475221079d5968b7b70edfcd3eb460d089240a6f0777764",
+        "sample_count_N": 73712,
+        "sample_id": "BAC009S0110W0127",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "dda4da33d5a8ec7010c1ca810916ccf634a2dafa06c4e05703bf4a4441fd32a0",
+        "speaker_id": "S0110"
+      },
+      {
+        "canonical_f32_sha256": "99afa3c87a23cce24f03095ff53b5b23d6cdde8290283cbabf119de5e4b140cf",
+        "sample_count_N": 74256,
+        "sample_id": "BAC009S0111W0121",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "b060461c258164dacd99e881c01c85bafedbb44e739485b94a1a705a1ae5bb89",
+        "speaker_id": "S0111"
+      },
+      {
+        "canonical_f32_sha256": "5007c2a1e4dce84794962c76ac388d15672076889661a0d80e2a35cf5192d49a",
+        "sample_count_N": 78064,
+        "sample_id": "BAC009S0111W0125",
+        "sample_rate_hz": 16000,
+        "source_wav_sha256": "93c5ebfac856794614bb103e6b9bf07066ed2aca02682852e78ce8495a127f9c",
+        "speaker_id": "S0111"
+      }
+    ],
+    "samples_per_speaker": 2,
+    "seeds": [
+      20261003,
+      20261004,
+      20261005
+    ],
+    "speaker_ids": [
+      "S0102",
+      "S0103",
+      "S0104",
+      "S0105",
+      "S0106",
+      "S0107",
+      "S0108",
+      "S0109",
+      "S0110",
+      "S0111"
+    ]
+  },
+  "endpoint_ids": [
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Cbest|wav2lip_gan_bac9a81e|full",
+      "estimand": "wav2lip_gan_bac9a81e",
+      "metric": "Cbest",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Cbest|wav2lip_gan_bac9a81e|guard20",
+      "estimand": "wav2lip_gan_bac9a81e",
+      "metric": "Cbest",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Cbest|musetalk_fixed_portrait_attempt16|full",
+      "estimand": "musetalk_fixed_portrait_attempt16",
+      "metric": "Cbest",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Cbest|musetalk_fixed_portrait_attempt16|guard20",
+      "estimand": "musetalk_fixed_portrait_attempt16",
+      "metric": "Cbest",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Cbest|ditto_hubert_fixed_portrait_attempt18|full",
+      "estimand": "ditto_hubert_fixed_portrait_attempt18",
+      "metric": "Cbest",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Cbest|ditto_hubert_fixed_portrait_attempt18|guard20",
+      "estimand": "ditto_hubert_fixed_portrait_attempt18",
+      "metric": "Cbest",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Cbest|equal_model_mean|full",
+      "estimand": "equal_model_mean",
+      "metric": "Cbest",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Cbest|equal_model_mean|guard20",
+      "estimand": "equal_model_mean",
+      "metric": "Cbest",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|D0|wav2lip_gan_bac9a81e|full",
+      "estimand": "wav2lip_gan_bac9a81e",
+      "metric": "D0",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|D0|wav2lip_gan_bac9a81e|guard20",
+      "estimand": "wav2lip_gan_bac9a81e",
+      "metric": "D0",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|D0|musetalk_fixed_portrait_attempt16|full",
+      "estimand": "musetalk_fixed_portrait_attempt16",
+      "metric": "D0",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|D0|musetalk_fixed_portrait_attempt16|guard20",
+      "estimand": "musetalk_fixed_portrait_attempt16",
+      "metric": "D0",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|D0|ditto_hubert_fixed_portrait_attempt18|full",
+      "estimand": "ditto_hubert_fixed_portrait_attempt18",
+      "metric": "D0",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|D0|ditto_hubert_fixed_portrait_attempt18|guard20",
+      "estimand": "ditto_hubert_fixed_portrait_attempt18",
+      "metric": "D0",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|D0|equal_model_mean|full",
+      "estimand": "equal_model_mean",
+      "metric": "D0",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|D0|equal_model_mean|guard20",
+      "estimand": "equal_model_mean",
+      "metric": "D0",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Canchor|wav2lip_gan_bac9a81e|full",
+      "estimand": "wav2lip_gan_bac9a81e",
+      "metric": "Canchor",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Canchor|wav2lip_gan_bac9a81e|guard20",
+      "estimand": "wav2lip_gan_bac9a81e",
+      "metric": "Canchor",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Canchor|musetalk_fixed_portrait_attempt16|full",
+      "estimand": "musetalk_fixed_portrait_attempt16",
+      "metric": "Canchor",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Canchor|musetalk_fixed_portrait_attempt16|guard20",
+      "estimand": "musetalk_fixed_portrait_attempt16",
+      "metric": "Canchor",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Canchor|ditto_hubert_fixed_portrait_attempt18|full",
+      "estimand": "ditto_hubert_fixed_portrait_attempt18",
+      "metric": "Canchor",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Canchor|ditto_hubert_fixed_portrait_attempt18|guard20",
+      "estimand": "ditto_hubert_fixed_portrait_attempt18",
+      "metric": "Canchor",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Canchor|equal_model_mean|full",
+      "estimand": "equal_model_mean",
+      "metric": "Canchor",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_rms_fixed",
+      "endpoint_id": "candidate_minus_rms_fixed|Canchor|equal_model_mean|guard20",
+      "estimand": "equal_model_mean",
+      "metric": "Canchor",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Cbest|wav2lip_gan_bac9a81e|full",
+      "estimand": "wav2lip_gan_bac9a81e",
+      "metric": "Cbest",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Cbest|wav2lip_gan_bac9a81e|guard20",
+      "estimand": "wav2lip_gan_bac9a81e",
+      "metric": "Cbest",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Cbest|musetalk_fixed_portrait_attempt16|full",
+      "estimand": "musetalk_fixed_portrait_attempt16",
+      "metric": "Cbest",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Cbest|musetalk_fixed_portrait_attempt16|guard20",
+      "estimand": "musetalk_fixed_portrait_attempt16",
+      "metric": "Cbest",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Cbest|ditto_hubert_fixed_portrait_attempt18|full",
+      "estimand": "ditto_hubert_fixed_portrait_attempt18",
+      "metric": "Cbest",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Cbest|ditto_hubert_fixed_portrait_attempt18|guard20",
+      "estimand": "ditto_hubert_fixed_portrait_attempt18",
+      "metric": "Cbest",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Cbest|equal_model_mean|full",
+      "estimand": "equal_model_mean",
+      "metric": "Cbest",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Cbest|equal_model_mean|guard20",
+      "estimand": "equal_model_mean",
+      "metric": "Cbest",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|D0|wav2lip_gan_bac9a81e|full",
+      "estimand": "wav2lip_gan_bac9a81e",
+      "metric": "D0",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|D0|wav2lip_gan_bac9a81e|guard20",
+      "estimand": "wav2lip_gan_bac9a81e",
+      "metric": "D0",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|D0|musetalk_fixed_portrait_attempt16|full",
+      "estimand": "musetalk_fixed_portrait_attempt16",
+      "metric": "D0",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|D0|musetalk_fixed_portrait_attempt16|guard20",
+      "estimand": "musetalk_fixed_portrait_attempt16",
+      "metric": "D0",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|D0|ditto_hubert_fixed_portrait_attempt18|full",
+      "estimand": "ditto_hubert_fixed_portrait_attempt18",
+      "metric": "D0",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|D0|ditto_hubert_fixed_portrait_attempt18|guard20",
+      "estimand": "ditto_hubert_fixed_portrait_attempt18",
+      "metric": "D0",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|D0|equal_model_mean|full",
+      "estimand": "equal_model_mean",
+      "metric": "D0",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|D0|equal_model_mean|guard20",
+      "estimand": "equal_model_mean",
+      "metric": "D0",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Canchor|wav2lip_gan_bac9a81e|full",
+      "estimand": "wav2lip_gan_bac9a81e",
+      "metric": "Canchor",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Canchor|wav2lip_gan_bac9a81e|guard20",
+      "estimand": "wav2lip_gan_bac9a81e",
+      "metric": "Canchor",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Canchor|musetalk_fixed_portrait_attempt16|full",
+      "estimand": "musetalk_fixed_portrait_attempt16",
+      "metric": "Canchor",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Canchor|musetalk_fixed_portrait_attempt16|guard20",
+      "estimand": "musetalk_fixed_portrait_attempt16",
+      "metric": "Canchor",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Canchor|ditto_hubert_fixed_portrait_attempt18|full",
+      "estimand": "ditto_hubert_fixed_portrait_attempt18",
+      "metric": "Canchor",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Canchor|ditto_hubert_fixed_portrait_attempt18|guard20",
+      "estimand": "ditto_hubert_fixed_portrait_attempt18",
+      "metric": "Canchor",
+      "support": "guard20"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Canchor|equal_model_mean|full",
+      "estimand": "equal_model_mean",
+      "metric": "Canchor",
+      "support": "full"
+    },
+    {
+      "contrast": "candidate_minus_identity",
+      "endpoint_id": "candidate_minus_identity|Canchor|equal_model_mean|guard20",
+      "estimand": "equal_model_mean",
+      "metric": "Canchor",
+      "support": "guard20"
+    }
+  ],
+  "failure_semantics": {
+    "missing_or_failed_rows": "ineligible; retain full denominator and report every failure",
+    "missing_quality_evidence": "not admitted",
+    "no_future_values_backfilled": true,
+    "no_subset_rescue": true,
+    "retained_denominator": 540
+  },
+  "freeze_gate": {
+    "method_and_checkpoint_must_match_plan": true,
+    "no_effects_read_until_gate_passes": true,
+    "required_fields": [
+      "plan_raw_sha256",
+      "candidate_method_id",
+      "method_config_sha256",
+      "checkpoint_sha256",
+      "frozen_commit",
+      "frozen_at_utc",
+      "self_sha256"
+    ],
+    "required_status": "FROZEN_BEFORE_DEV20_SCORE_ACCESS",
+    "schema": "cross_tfg_future_dev20_pre_effect_freeze_v1"
+  },
+  "point_admission": {
+    "admission_requires_all_540_and_every_gate": true,
+    "contrasts": [
+      "candidate_minus_rms_fixed",
+      "candidate_minus_identity"
+    ],
+    "full": {
+      "Cbest_equal_model_candidate_minus_identity": "report; no additional +0.050 practical threshold",
+      "Cbest_equal_model_candidate_minus_rms_fixed": {
+        "operator": ">=",
+        "threshold_sync_c": 0.05
+      },
+      "Cbest_per_model_both_contrasts": "strictly greater than 0"
+    },
+    "guard20": {
+      "Cbest_each_model_and_equal_model_both_contrasts": "strictly greater than 0"
+    },
+    "interpretation": "Development engineering gates only; no claim of human-perceived synchronization.",
+    "nonworsening_guards": {
+      "contrasts": [
+        "candidate_minus_rms_fixed",
+        "candidate_minus_identity"
+      ],
+      "epsilon_slack": false,
+      "estimands": [
+        "wav2lip_gan_bac9a81e",
+        "musetalk_fixed_portrait_attempt16",
+        "ditto_hubert_fixed_portrait_attempt18",
+        "equal_model_mean"
+      ],
+      "metrics": [
+        "D0",
+        "Canchor"
+      ],
+      "operator": ">=",
+      "supports": [
+        "full",
+        "guard20"
+      ],
+      "zero_slack_allowed": true
+    },
+    "positive_oriented_improvements": {
+      "Canchor": "candidate - reference at fixed column 15; higher is better",
+      "Cbest": "candidate - reference; higher is better",
+      "D0": "reference - candidate; lower raw D0 is better"
+    }
+  },
+  "schema": "cross_tfg_future_dev20_admission_policy_attempt01_v1",
+  "scope": {
+    "candidate_selection_after_dev_effects": false,
+    "confirmation_cohort": "disjoint and remains closed",
+    "effects_or_results_read": false,
+    "future_fit_checkpoint": {
+      "bytes": null,
+      "method_id": null,
+      "path": null,
+      "sha256": null,
+      "status": "UNBOUND_BEFORE_FIT40_TERMINAL"
+    },
+    "purpose": "Development-only admission of one candidate method frozen from the qualified Fit40 DirectD0 checkpoint; no Confirm access or confirmatory claim."
+  },
+  "self_sha256": "02d313473c9c3c8dc61811836b504e659001c5b702d489e2b74ac182c9c3a28e",
+  "simultaneous_descriptive_family": {
+    "bootstrap": {
+      "bit_generator": "PCG64",
+      "critical_quantile": {
+        "method": "higher",
+        "probability": 0.95
+      },
+      "draws": 100000,
+      "index_dtype": "int64 little-endian contiguous",
+      "index_shape": [
+        100000,
+        10
+      ],
+      "index_stream_sha": "SHA-256 of C-contiguous little-endian index-matrix bytes",
+      "interval": "observed mean ± max-t critical value × fixed observed SE",
+      "max_statistic": "max over all 48 endpoints of abs((bootstrap_mean - fixed_observed_mean)/fixed_observed_SE)",
+      "seed": 20261009,
+      "zero_se": "all ten speaker values must be bitwise/equality identical; test statistic 0; point interval"
+    },
+    "endpoint_count": 48,
+    "endpoint_order": [
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Cbest|wav2lip_gan_bac9a81e|full",
+        "estimand": "wav2lip_gan_bac9a81e",
+        "metric": "Cbest",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Cbest|wav2lip_gan_bac9a81e|guard20",
+        "estimand": "wav2lip_gan_bac9a81e",
+        "metric": "Cbest",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Cbest|musetalk_fixed_portrait_attempt16|full",
+        "estimand": "musetalk_fixed_portrait_attempt16",
+        "metric": "Cbest",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Cbest|musetalk_fixed_portrait_attempt16|guard20",
+        "estimand": "musetalk_fixed_portrait_attempt16",
+        "metric": "Cbest",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Cbest|ditto_hubert_fixed_portrait_attempt18|full",
+        "estimand": "ditto_hubert_fixed_portrait_attempt18",
+        "metric": "Cbest",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Cbest|ditto_hubert_fixed_portrait_attempt18|guard20",
+        "estimand": "ditto_hubert_fixed_portrait_attempt18",
+        "metric": "Cbest",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Cbest|equal_model_mean|full",
+        "estimand": "equal_model_mean",
+        "metric": "Cbest",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Cbest|equal_model_mean|guard20",
+        "estimand": "equal_model_mean",
+        "metric": "Cbest",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|D0|wav2lip_gan_bac9a81e|full",
+        "estimand": "wav2lip_gan_bac9a81e",
+        "metric": "D0",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|D0|wav2lip_gan_bac9a81e|guard20",
+        "estimand": "wav2lip_gan_bac9a81e",
+        "metric": "D0",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|D0|musetalk_fixed_portrait_attempt16|full",
+        "estimand": "musetalk_fixed_portrait_attempt16",
+        "metric": "D0",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|D0|musetalk_fixed_portrait_attempt16|guard20",
+        "estimand": "musetalk_fixed_portrait_attempt16",
+        "metric": "D0",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|D0|ditto_hubert_fixed_portrait_attempt18|full",
+        "estimand": "ditto_hubert_fixed_portrait_attempt18",
+        "metric": "D0",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|D0|ditto_hubert_fixed_portrait_attempt18|guard20",
+        "estimand": "ditto_hubert_fixed_portrait_attempt18",
+        "metric": "D0",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|D0|equal_model_mean|full",
+        "estimand": "equal_model_mean",
+        "metric": "D0",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|D0|equal_model_mean|guard20",
+        "estimand": "equal_model_mean",
+        "metric": "D0",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Canchor|wav2lip_gan_bac9a81e|full",
+        "estimand": "wav2lip_gan_bac9a81e",
+        "metric": "Canchor",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Canchor|wav2lip_gan_bac9a81e|guard20",
+        "estimand": "wav2lip_gan_bac9a81e",
+        "metric": "Canchor",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Canchor|musetalk_fixed_portrait_attempt16|full",
+        "estimand": "musetalk_fixed_portrait_attempt16",
+        "metric": "Canchor",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Canchor|musetalk_fixed_portrait_attempt16|guard20",
+        "estimand": "musetalk_fixed_portrait_attempt16",
+        "metric": "Canchor",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Canchor|ditto_hubert_fixed_portrait_attempt18|full",
+        "estimand": "ditto_hubert_fixed_portrait_attempt18",
+        "metric": "Canchor",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Canchor|ditto_hubert_fixed_portrait_attempt18|guard20",
+        "estimand": "ditto_hubert_fixed_portrait_attempt18",
+        "metric": "Canchor",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Canchor|equal_model_mean|full",
+        "estimand": "equal_model_mean",
+        "metric": "Canchor",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_rms_fixed",
+        "endpoint_id": "candidate_minus_rms_fixed|Canchor|equal_model_mean|guard20",
+        "estimand": "equal_model_mean",
+        "metric": "Canchor",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Cbest|wav2lip_gan_bac9a81e|full",
+        "estimand": "wav2lip_gan_bac9a81e",
+        "metric": "Cbest",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Cbest|wav2lip_gan_bac9a81e|guard20",
+        "estimand": "wav2lip_gan_bac9a81e",
+        "metric": "Cbest",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Cbest|musetalk_fixed_portrait_attempt16|full",
+        "estimand": "musetalk_fixed_portrait_attempt16",
+        "metric": "Cbest",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Cbest|musetalk_fixed_portrait_attempt16|guard20",
+        "estimand": "musetalk_fixed_portrait_attempt16",
+        "metric": "Cbest",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Cbest|ditto_hubert_fixed_portrait_attempt18|full",
+        "estimand": "ditto_hubert_fixed_portrait_attempt18",
+        "metric": "Cbest",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Cbest|ditto_hubert_fixed_portrait_attempt18|guard20",
+        "estimand": "ditto_hubert_fixed_portrait_attempt18",
+        "metric": "Cbest",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Cbest|equal_model_mean|full",
+        "estimand": "equal_model_mean",
+        "metric": "Cbest",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Cbest|equal_model_mean|guard20",
+        "estimand": "equal_model_mean",
+        "metric": "Cbest",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|D0|wav2lip_gan_bac9a81e|full",
+        "estimand": "wav2lip_gan_bac9a81e",
+        "metric": "D0",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|D0|wav2lip_gan_bac9a81e|guard20",
+        "estimand": "wav2lip_gan_bac9a81e",
+        "metric": "D0",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|D0|musetalk_fixed_portrait_attempt16|full",
+        "estimand": "musetalk_fixed_portrait_attempt16",
+        "metric": "D0",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|D0|musetalk_fixed_portrait_attempt16|guard20",
+        "estimand": "musetalk_fixed_portrait_attempt16",
+        "metric": "D0",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|D0|ditto_hubert_fixed_portrait_attempt18|full",
+        "estimand": "ditto_hubert_fixed_portrait_attempt18",
+        "metric": "D0",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|D0|ditto_hubert_fixed_portrait_attempt18|guard20",
+        "estimand": "ditto_hubert_fixed_portrait_attempt18",
+        "metric": "D0",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|D0|equal_model_mean|full",
+        "estimand": "equal_model_mean",
+        "metric": "D0",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|D0|equal_model_mean|guard20",
+        "estimand": "equal_model_mean",
+        "metric": "D0",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Canchor|wav2lip_gan_bac9a81e|full",
+        "estimand": "wav2lip_gan_bac9a81e",
+        "metric": "Canchor",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Canchor|wav2lip_gan_bac9a81e|guard20",
+        "estimand": "wav2lip_gan_bac9a81e",
+        "metric": "Canchor",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Canchor|musetalk_fixed_portrait_attempt16|full",
+        "estimand": "musetalk_fixed_portrait_attempt16",
+        "metric": "Canchor",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Canchor|musetalk_fixed_portrait_attempt16|guard20",
+        "estimand": "musetalk_fixed_portrait_attempt16",
+        "metric": "Canchor",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Canchor|ditto_hubert_fixed_portrait_attempt18|full",
+        "estimand": "ditto_hubert_fixed_portrait_attempt18",
+        "metric": "Canchor",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Canchor|ditto_hubert_fixed_portrait_attempt18|guard20",
+        "estimand": "ditto_hubert_fixed_portrait_attempt18",
+        "metric": "Canchor",
+        "support": "guard20"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Canchor|equal_model_mean|full",
+        "estimand": "equal_model_mean",
+        "metric": "Canchor",
+        "support": "full"
+      },
+      {
+        "contrast": "candidate_minus_identity",
+        "endpoint_id": "candidate_minus_identity|Canchor|equal_model_mean|guard20",
+        "estimand": "equal_model_mean",
+        "metric": "Canchor",
+        "support": "guard20"
+      }
+    ],
+    "family_definition": "2 contrasts × 3 metrics × 4 model estimands × FULL/GUARD20",
+    "missing_endpoint_behavior": "family incomplete; no smaller-family/subset rescue",
+    "persist": [
+      "48 endpoint order",
+      "10 float64 speaker values per endpoint",
+      "shared draw index raw SHA and persisted matrix",
+      "all failures and complete denominator"
+    ],
+    "report_only": "descriptive development intervals, not confirmatory significance",
+    "speaker_count": 10,
+    "speaker_order": [
+      "S0102",
+      "S0103",
+      "S0104",
+      "S0105",
+      "S0106",
+      "S0107",
+      "S0108",
+      "S0109",
+      "S0110",
+      "S0111"
+    ]
+  },
+  "source_pins": {
+    "future_candidate_asr_source": {
+      "bytes": null,
+      "path": null,
+      "sha256": null,
+      "status": "MUST_BE_FROZEN_AND_PINNED_BEFORE_CANDIDATE_ASR_CALLS"
+    },
+    "future_cohort_protocol": {
+      "bytes": 35244,
+      "path": ".codex/scratch/dev20_future_cohort_protocol_attempt06/future_dev20_three_method_protocol_attempt06.json",
+      "schema": "cross_tfg_future_dev20_three_method_protocol_attempt06_v1",
+      "self_sha256": "e513f565618fed124677cb75a97c2ff8b8d7a517521f60a96a0438f05c840650",
+      "sha256": "73ac37eee2c8c728a7123fa85834dc53104a4b809cbc017593bd86939816eb17"
+    },
+    "independent_native_score_consumer": {
+      "bytes": 143443,
+      "path": "scripts/audio_enhancement_eval/consumer.py",
+      "sha256": "a693b2ab71876396fb3fd73f9dda40a665f8cd43981c31e6e61afadd17b3942e"
+    },
+    "independent_visual_motion_guard": {
+      "bytes": 27583,
+      "path": "scripts/audio_enhancement_eval/visual_motion_guard.py",
+      "sha256": "e154a46aa70e3c434ecc3ae9618e82e072d06fe36126eca19571404f6ca6968f"
+    },
+    "natural_rms_asr_60_call_source": {
+      "bytes": 26931,
+      "path": ".codex/scratch/dev20_asr_repeat_baseline_calibration_attempt01/run_future_dev20_asr_baseline_calibration_attempt01.py",
+      "sha256": "00fc2273d8bcc8b3057f1a25add608a70b57cf83cf8b92ac28786fb0bdbc7efd"
+    },
+    "policy_markdown": {
+      "bytes": 7693,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/future-dev20-admission-policy-attempt01.md",
+      "sha256": "d0b7c983f3ef4b70943e714d009e79128226d182eb1327132b5d21b75052c866"
+    },
+    "scientific_spec": {
+      "bytes": 12037,
+      "path": "openspec/changes/develop-cross-tfg-audio-head-20261003/spec.md",
+      "sha256": "257335d52ec7795e1aeefa70ae9ceb31ba5fdd42a77eae7c6078a9a59887ee18"
+    },
+    "visual_feature_source": {
+      "bytes": 12969,
+      "path": "scripts/experiments/lrs3_tts_visual_advantage/video_features.py",
+      "sha256": "2ce7006030e7f93b139cbbc8f5152c9b39719bea2fe7fbf16fbf18110cce5ff4"
+    },
+    "visual_landmarker_asset": {
+      "bytes": 3758596,
+      "path": "checkpoints/mediapipe/face_landmarker.task",
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff"
+    }
+  },
+  "status": "FROZEN_PROSPECTIVE_NOT_RUN",
+  "support_and_aggregation": {
+    "aggregation_order": [
+      "mean three seeds equally within each clip",
+      "mean two clips equally within speaker",
+      "mean ten speakers equally within each model",
+      "mean three models equally for equal_model_mean"
+    ],
+    "anchor_column": 15,
+    "common_key": "pinned consumer source-clock query key (query_frame_index, reduced rational query timestamp, track_frame_index)",
+    "common_set": "intersection of valid query keys across identity, rms_fixed, direct_d0_step120 within each exact pairing key",
+    "eligibility": "all 180 contexts in both supports; all 20 clips eligible for GUARD20; actual masks/query timestamps determine eligibility",
+    "float_aggregation": "float64; per-query native reduction remains the exact pinned consumer operation",
+    "full": {
+      "minimum_queries": 1,
+      "trim_each_end": 0
+    },
+    "guard20": {
+      "minimum_full_common_queries": 81,
+      "minimum_remaining_queries": 41,
+      "trim_each_end": 20
+    },
+    "lag_axis_frames": [
+      -15,
+      -14,
+      -13,
+      -12,
+      -11,
+      -10,
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "no_query_or_duration_weighting": true,
+    "pairing_key": [
+      "split",
+      "sample_id",
+      "speaker_id",
+      "model_id",
+      "face_id",
+      "seed"
+    ],
+    "zero_lag_column": 15
+  },
+  "unknown_future_artifacts": {
+    "asr_hypothesis_hashes": null,
+    "bootstrap_output_sha256": null,
+    "candidate_checkpoint_sha256": null,
+    "candidate_config_sha256": null,
+    "candidate_method_id": null,
+    "plan_raw_sha256": null,
+    "result_manifest_raw_sha256": null,
+    "results_raw_sha256": null,
+    "status": "UNBOUND_UNTIL_FUTURE_FROZEN_CANDIDATE_AND_COMPLETE_DEV20_TERMINAL",
+    "visual_manifest_sha256": null
+  },
+  "visual_gate": {
+    "feature_source_sha256": "2ce7006030e7f93b139cbbc8f5152c9b39719bea2fe7fbf16fbf18110cce5ff4",
+    "invalid_frames": "retain and report; do not silently remove",
+    "landmarker_asset_sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+    "mouth_aperture_velocity_acceleration_jerk": "descriptive only; no larger-is-better rule",
+    "require_exact": [
+      "plan raw pin",
+      "result manifest raw pin",
+      "row/face identity",
+      "silent render bytes",
+      "decoded frame count",
+      "rational timestamp sidecar/source clock"
+    ],
+    "required_rows": 540,
+    "schema": "cross-tfg-visual-motion-guard-v1",
+    "source_sha256": "e154a46aa70e3c434ecc3ae9618e82e072d06fe36126eca19571404f6ca6968f",
+    "status": "PASS for every planned row",
+    "tracking_valid_fraction_min": 0.95
+  }
+}

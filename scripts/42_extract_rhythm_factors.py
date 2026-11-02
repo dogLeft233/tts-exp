@@ -8,6 +8,11 @@ including silence intervals.
 
 from __future__ import annotations
 
+try:
+    from .project_paths import resolve_project_path
+except ImportError:
+    from project_paths import resolve_project_path
+
 import argparse
 import difflib
 import hashlib
@@ -27,7 +32,6 @@ DEFAULT_ALIGNMENT_MANIFEST = (
 )
 DEFAULT_SYNCNET_SUMMARY = Path("/tmp/wav2lip_valid_full/summary.json")
 DEFAULT_OUTPUT = REPO_ROOT / "runs/rhythm_timing/20260812_factor_audit"
-LEGACY_ROOT = "/mnt/e/Documents/tts-audio/tts-exp"
 SILENCE_LABELS = {"", "sil", "sp", "spn", "<eps>", "h#", "pau", "pause"}
 INCLUDED_SPLITS = {"train", "valid"}
 
@@ -45,16 +49,10 @@ def sha256_file(path: Path) -> str:
 
 
 def resolve_path(raw_path: str | Path) -> Path:
-    raw = str(raw_path)
-    candidates = [Path(raw)]
-    if raw.startswith(LEGACY_ROOT + "/"):
-        candidates.append(REPO_ROOT / raw[len(LEGACY_ROOT) + 1 :])
-    elif not Path(raw).is_absolute():
-        candidates.append(REPO_ROOT / raw)
-    for candidate in candidates:
-        if candidate.exists():
-            return candidate.resolve()
-    raise FileNotFoundError(f"cannot resolve source path: {raw}")
+    path = resolve_project_path(raw_path, REPO_ROOT)
+    if not path.exists():
+        raise FileNotFoundError(path)
+    return path
 
 
 def audio_duration(path: Path) -> float:

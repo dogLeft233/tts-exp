@@ -3,6 +3,11 @@
 
 from __future__ import annotations
 
+try:
+    from .project_paths import is_legacy_project_path, resolve_project_path
+except ImportError:
+    from project_paths import is_legacy_project_path, resolve_project_path
+
 import argparse
 from collections import defaultdict
 import copy
@@ -16,7 +21,6 @@ from prepare_two_stage_hubert_manifest import (
     load_two_stage_manifest,
 )
 
-REMOTE_REPO_ROOT = Path("/mnt/e/Documents/tts-audio/tts-exp")
 PATH_FIELDS = (
     "natural_path",
     "tts_path",
@@ -45,15 +49,9 @@ def _localize_path(
     if not isinstance(value, str) or not value:
         raise ValueError(f"{field} must be a non-empty path")
     candidate = Path(value).expanduser()
-    if not candidate.is_absolute():
+    if not candidate.is_absolute() and not is_legacy_project_path(value):
         candidate = source_manifest.parent / candidate
-    candidate = candidate.resolve()
-    try:
-        relative = candidate.relative_to(REMOTE_REPO_ROOT)
-    except ValueError:
-        localized = candidate
-    else:
-        localized = (repo_root / relative).resolve()
+    localized = resolve_project_path(candidate, repo_root)
     if not localized.is_file():
         raise FileNotFoundError(f"{field} is unavailable after local path mapping: {localized}")
     return str(localized)

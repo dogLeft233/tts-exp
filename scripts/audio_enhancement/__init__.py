@@ -25,6 +25,14 @@ from .baselines import (
 )
 from .pipeline import transform
 from .overdub import MuxInfo, mux_original_pcm
+from .model_routing import (
+    CandidateUnavailable,
+    RouteApplication,
+    RouteResolution,
+    RoutingConfigError,
+    apply_model_route,
+    resolve_model_route,
+)
 
 __all__ = [
     "CANONICAL_SAMPLE_RATE",
@@ -43,6 +51,12 @@ __all__ = [
     "apply_spectral_profile",
     "search_profiles",
     "transform",
+    "CandidateUnavailable",
+    "RouteApplication",
+    "RouteResolution",
+    "RoutingConfigError",
+    "apply_model_route",
+    "resolve_model_route",
     "MuxInfo",
     "mux_original_pcm",
 ]

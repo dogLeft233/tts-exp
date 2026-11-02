@@ -1,0 +1,14 @@
+[
+  {
+    "replaced": "074_20_M_RWLS_061",
+    "replacement": "074_20_M_RWLS_062",
+    "reason": "source_pcm_saturated; alternative has zero saturated samples",
+    "role": "target"
+  },
+  {
+    "replaced": "074_20_M_RWLS_173",
+    "replacement": "074_20_M_RWLS_112",
+    "reason": "source_pcm_saturated; alternative has zero saturated samples",
+    "role": "target"
+  }
+]

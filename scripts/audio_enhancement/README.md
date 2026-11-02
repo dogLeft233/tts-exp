@@ -33,6 +33,9 @@ and compared bit-for-bit before the write call returns.
   log-magnitude mask smooth in time and frequency.
 - `pipeline.py`: stable `transform(audio_16k_mono_f32, config) -> waveform`
   callable for identity, RMS, bounded profile and learned-head methods.
+- `model_routing.py`: frozen model-id/alias dispatch for the MuseTalk
+  explicit11 candidate and the RMS fallback. It returns a receipt and keeps
+  the caller's original natural waveform untouched for scoring and muxing.
 - `overdub.py`: optional MKV/MOV stream-copy mux that drops any generator audio,
   carries the original PCM stream, and compares decoded audio and elementary
   video-stream hashes before publishing the output.
@@ -77,6 +80,28 @@ container mux is a separate, explicitly verified step.
 also writes a canonical 16 kHz natural reference WAV next to the output (or
 to `--natural-reference-wav` when specified). Existing outputs are protected;
 `--overwrite` is required to replace them.
+
+To select the frozen model-aware route directly, use `--model-id` (mutually
+exclusive with `--config` and `--checkpoint`):
+
+```bash
+python -m scripts.audio_enhancement.cli natural.wav generator.wav \
+  --model-id musetalk --natural-reference-wav natural_16k.wav \
+  --generated-video generated.mp4 --mux-output final.mkv
+```
+
+The route writes the generator-control waveform. Pass `generator.wav` to the
+TFG renderer, then pass the resulting `generated.mp4` to the same command for
+the optional final mux; the CLI does not invoke a renderer itself. It keeps
+the untouched input WAV as the default mux source, so the generated video's
+audio is discarded and the natural track is restored. If the MuseTalk provider
+cannot run, the route receipt records the reason, keeps the requested method in
+`selected_method_id`, and records the method that produced the waveform in
+`applied_method_id` (`rms_fixed` for the fail-closed fallback).
+The frozen route table records the main holdout plan SHA256
+`007495aa3b4cf1fc9b20f506c33593da8bb95e54ea1e0914ac56f3d9a21cad3b`; its
+Ditto pin-repair plan is recorded separately with SHA256
+`c71e47e7acc2eb2ec92062b6fc0d4c882c96309af2ff770ef40db7a5144213a5`.
 
 The fit runner's `shared_audio_head.pt` is a self-describing checkpoint: it
 stores the head architecture, complete waveform transform settings (including
@@ -148,3 +173,12 @@ also passed actual CPU CLI application on that input: its finite 8,000-sample
 enhanced waveform was saved, and the original stereo PCM and video stream/frame
 timestamps were preserved exactly. These engineering checks do not establish
 the learned candidate's synchronization benefit.
+
+
+## Trainable head cross-model boundary
+
+A real full-context fit_v4 checkpoint was executed on Wav2Lip, MuseTalk, and Ditto development renders (10 speakers per model, 60 paired seed rows per model, 180/180 producer rows PASS). The checkpoint is
+runs/cross_tfg_audio_head_20261003/fit_v4_native_fullcontext_readback_attempt02/artifacts/output/shared_audio_head.pt
+(SHA256 3b200be269089a1ca8e7afe7d3d5481ad9c45b45c18eb4c94e5d2e4dab7941f4).
+Its full Cbest delta versus RMS was Wav2Lip -0.039777, MuseTalk -0.029347, Ditto -0.063774, equal-model -0.044300; the common nine-speaker subset was -0.022599. This is development evidence with repeat QC not run, but it is sufficient to reject the checkpoint as a drop-in replacement for RMS. The trainable path remains available through the self-describing checkpoint CLI for research, while production uses model-aware routing and RMS fallback.
+
