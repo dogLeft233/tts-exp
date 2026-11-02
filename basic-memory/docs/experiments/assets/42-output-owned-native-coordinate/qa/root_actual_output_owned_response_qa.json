@@ -1,0 +1,487 @@
+{
+  "schema": "root_actual_output_owned_musetalk_response_qa_v1",
+  "status": "PASS_ACTUAL_ARRAY_QA_NOT_EFFICACY",
+  "created_utc": "2026-10-14T22:10:26.558313+00:00",
+  "input_pins": {
+    ".codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_geometry_effect_attempt01.json": "bb5fa06e5fd6b1d8a8f1340752b1fdad4c4d6cc733434cb0ba95a20e06fc4967",
+    ".codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\readout_manifest.json": "1b4f454463a4387b470c744b0f9269b991e2c4e4fd0164132c40a1c87a655c4f",
+    ".codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\local_readback_manifest.json": "49b0b380a2c5da2351fae0c9271bc9b5f0518c37621dcc356dfa793024ffad7d",
+    ".codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\response_readout_protocol.json": "9b4c3f4150e0a4275925304a3a542230896de3dff82ecdb38dd6d89ecdcfe0d9",
+    ".codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_protocol_attempt01.json": "561e81a747b62c02af7a2465eac9457436013ffba45286be15d8c6cf40c9123e",
+    ".codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_stage_attempt02\\render_source_manifest_attempt01.json": "472a0dddde485b5c612646ddf426ff904c1e4bb367e1de4ef0d3bc47f4effa1a",
+    ".codex\\scratch\\functional_lag_response_20261015_attempt01\\s17_support_attempt01.json": "8d7587cadd9f87b3a4134f597f944672411af9cbf7542533cd9479525e20303f",
+    ".codex\\scratch\\functional_lag_response_20261015_attempt01\\lag_effect_attempt01.json": "3055e950cd51820288e04f9f4607256333cf128dca95af18b802543b819ddc22"
+  },
+  "matrix_count": 12,
+  "geometry_rows": 6,
+  "geometry_comparisons": 2884,
+  "max_geometry_error": 0.0,
+  "canonical_curve_check": "Independent float64 column mean versus reported official float32 curve <=5e-6; exact B/min/D0/C fields rebuilt from that verified float32 curve.",
+  "codec_control": {
+    "root_actual_png_body_verification": "PASS_504_ACTUAL_RGB_BODIES_AND_NONOWNED_CONTROL",
+    "png_frame_count": 504,
+    "h264_secondary_geometry_rows": 6,
+    "codec_rows": [
+      {
+        "model": "musetalk",
+        "sample_id": "BAC009S0022W0123",
+        "arm": "native_height_zero",
+        "png_frame_count": 80,
+        "h264_tracking_fraction": 1.0,
+        "h264_minus_precodec_aperture_rms": 0.004374504188294184,
+        "h264_minus_precodec_aperture_max_abs": 0.01130693389886182
+      },
+      {
+        "model": "musetalk",
+        "sample_id": "BAC009S0022W0123",
+        "arm": "native_height_plus",
+        "png_frame_count": 80,
+        "h264_tracking_fraction": 1.0,
+        "h264_minus_precodec_aperture_rms": 0.0037627353536828397,
+        "h264_minus_precodec_aperture_max_abs": 0.011150384747301317
+      },
+      {
+        "model": "musetalk",
+        "sample_id": "BAC009S0022W0123",
+        "arm": "native_height_minus",
+        "png_frame_count": 80,
+        "h264_tracking_fraction": 1.0,
+        "h264_minus_precodec_aperture_rms": 0.0043376436380261965,
+        "h264_minus_precodec_aperture_max_abs": 0.013826329461314346
+      },
+      {
+        "model": "musetalk",
+        "sample_id": "BAC009S0024W0122",
+        "arm": "native_height_zero",
+        "png_frame_count": 88,
+        "h264_tracking_fraction": 1.0,
+        "h264_minus_precodec_aperture_rms": 0.005223953606737701,
+        "h264_minus_precodec_aperture_max_abs": 0.01323096869309709
+      },
+      {
+        "model": "musetalk",
+        "sample_id": "BAC009S0024W0122",
+        "arm": "native_height_plus",
+        "png_frame_count": 88,
+        "h264_tracking_fraction": 1.0,
+        "h264_minus_precodec_aperture_rms": 0.005230292780450081,
+        "h264_minus_precodec_aperture_max_abs": 0.016391053793129776
+      },
+      {
+        "model": "musetalk",
+        "sample_id": "BAC009S0024W0122",
+        "arm": "native_height_minus",
+        "png_frame_count": 88,
+        "h264_tracking_fraction": 1.0,
+        "h264_minus_precodec_aperture_rms": 0.005124811934665721,
+        "h264_minus_precodec_aperture_max_abs": 0.017345254260405424
+      }
+    ],
+    "nonowned_controls": [
+      {
+        "sample_id": "BAC009S0022W0123",
+        "arm": "native_height_plus",
+        "nonowned_original_rgb_bodies_equal": true,
+        "owned_rgb_changed_frame_indices_descriptive": [
+          28,
+          29,
+          44,
+          45,
+          57,
+          58,
+          59
+        ],
+        "nonowned_frames_checked": 73,
+        "precodec_nonowned_aperture_delta_max_abs": 0.0,
+        "h264_nonowned_aperture_delta_max_abs": 0.01148957351566611,
+        "h264_nonowned_aperture_changed_frame_count_descriptive": 73
+      },
+      {
+        "sample_id": "BAC009S0022W0123",
+        "arm": "native_height_minus",
+        "nonowned_original_rgb_bodies_equal": true,
+        "owned_rgb_changed_frame_indices_descriptive": [
+          28,
+          29,
+          44,
+          45,
+          57,
+          58,
+          59
+        ],
+        "nonowned_frames_checked": 73,
+        "precodec_nonowned_aperture_delta_max_abs": 0.0,
+        "h264_nonowned_aperture_delta_max_abs": 0.01155306354863252,
+        "h264_nonowned_aperture_changed_frame_count_descriptive": 64
+      },
+      {
+        "sample_id": "BAC009S0024W0122",
+        "arm": "native_height_plus",
+        "nonowned_original_rgb_bodies_equal": true,
+        "owned_rgb_changed_frame_indices_descriptive": [
+          31,
+          32,
+          42,
+          43,
+          53,
+          54,
+          55
+        ],
+        "nonowned_frames_checked": 81,
+        "precodec_nonowned_aperture_delta_max_abs": 0.0,
+        "h264_nonowned_aperture_delta_max_abs": 0.019379544870368692,
+        "h264_nonowned_aperture_changed_frame_count_descriptive": 81
+      },
+      {
+        "sample_id": "BAC009S0024W0122",
+        "arm": "native_height_minus",
+        "nonowned_original_rgb_bodies_equal": true,
+        "owned_rgb_changed_frame_indices_descriptive": [
+          31,
+          32,
+          42,
+          43,
+          53,
+          54,
+          55
+        ],
+        "nonowned_frames_checked": 81,
+        "precodec_nonowned_aperture_delta_max_abs": 0.0,
+        "h264_nonowned_aperture_delta_max_abs": 0.010343652645943044,
+        "h264_nonowned_aperture_changed_frame_count_descriptive": 68
+      }
+    ],
+    "interpretation": "H264 geometry is a secondary codec contrast; precodec geometry is the frozen primary. No changed support/phase or human accuracy claim."
+  },
+  "max_float32_mean_rounding_error": 2.1513118309002266e-06,
+  "scientific_cells": [
+    {
+      "model": "musetalk",
+      "sample_id": "BAC009S0022W0123",
+      "p": 4,
+      "frame_count": 80,
+      "common_valid_frames": 80,
+      "supported_high": 1,
+      "supported_low": 2,
+      "support_lost_frame_count": 0,
+      "zero_functional_control": true,
+      "bidirectional_ordering": true,
+      "frozen_response_pass": true,
+      "endpoints": {
+        "native_height_zero": {
+          "raw": {
+            "Cp": 0.047695668677601305,
+            "Hp": 0.09259290542969567
+          },
+          "z": {
+            "Cp": 1.3573636563839346,
+            "Hp": 2.6350871715168154
+          }
+        },
+        "native_height_plus": {
+          "raw": {
+            "Cp": 0.06221376408397927,
+            "Hp": 0.10711100083607364
+          },
+          "z": {
+            "Cp": 1.7532443380097322,
+            "Hp": 3.0184921057165264
+          }
+        },
+        "native_height_minus": {
+          "raw": {
+            "Cp": 0.034882170111266195,
+            "Hp": 0.07977940686336055
+          },
+          "z": {
+            "Cp": 0.9977355836070865,
+            "Hp": 2.2819323686783335
+          }
+        }
+      }
+    },
+    {
+      "model": "musetalk",
+      "sample_id": "BAC009S0024W0122",
+      "p": 4,
+      "frame_count": 88,
+      "common_valid_frames": 88,
+      "supported_high": 1,
+      "supported_low": 2,
+      "support_lost_frame_count": 0,
+      "zero_functional_control": true,
+      "bidirectional_ordering": true,
+      "frozen_response_pass": true,
+      "endpoints": {
+        "native_height_zero": {
+          "raw": {
+            "Cp": 0.016221146274899692,
+            "Hp": 0.029592067567062667
+          },
+          "z": {
+            "Cp": 0.4534337071014797,
+            "Hp": 0.8271943714910903
+          }
+        },
+        "native_height_plus": {
+          "raw": {
+            "Cp": 0.025819627640802992,
+            "Hp": 0.03919054893296597
+          },
+          "z": {
+            "Cp": 0.7211595632915256,
+            "Hp": 1.0946183867109374
+          }
+        },
+        "native_height_minus": {
+          "raw": {
+            "Cp": 0.00552219031216912,
+            "Hp": 0.018893111604332095
+          },
+          "z": {
+            "Cp": 0.15386548539090306,
+            "Hp": 0.5264211523349667
+          }
+        }
+      }
+    }
+  ],
+  "score_rows": [
+    {
+      "model": "musetalk",
+      "sample_id": "BAC009S0022W0123",
+      "arm": "native_height_zero",
+      "full": {
+        "B": 11.226383209228516,
+        "Dmin": 7.847906112670898,
+        "D0": 9.585854530334473,
+        "Cbest": 3.378477096557617,
+        "Canchor": 1.640528678894043,
+        "best_lag_frames": -2,
+        "official_av_offset_frames": 2
+      },
+      "guard20": {
+        "B": 11.535517692565918,
+        "Dmin": 8.623625755310059,
+        "D0": 10.921655654907227,
+        "Cbest": 2.9118919372558594,
+        "Canchor": 0.6138620376586914,
+        "best_lag_frames": -2,
+        "official_av_offset_frames": 2
+      },
+      "tracking_fraction": 1.0,
+      "aperture_velocity_rms": 0.491218070879171
+    },
+    {
+      "model": "musetalk",
+      "sample_id": "BAC009S0022W0123",
+      "arm": "native_height_plus",
+      "full": {
+        "B": 11.160884857177734,
+        "Dmin": 7.951552867889404,
+        "D0": 9.695993423461914,
+        "Cbest": 3.20933198928833,
+        "Canchor": 1.4648914337158203,
+        "best_lag_frames": -2,
+        "official_av_offset_frames": 2
+      },
+      "guard20": {
+        "B": 11.580225944519043,
+        "Dmin": 8.55041217803955,
+        "D0": 11.073525428771973,
+        "Cbest": 3.029813766479492,
+        "Canchor": 0.5067005157470703,
+        "best_lag_frames": -2,
+        "official_av_offset_frames": 2
+      },
+      "tracking_fraction": 1.0,
+      "aperture_velocity_rms": 0.5073958383856001
+    },
+    {
+      "model": "musetalk",
+      "sample_id": "BAC009S0022W0123",
+      "arm": "native_height_minus",
+      "full": {
+        "B": 11.23569107055664,
+        "Dmin": 7.929280757904053,
+        "D0": 9.570387840270996,
+        "Cbest": 3.306410312652588,
+        "Canchor": 1.6653032302856445,
+        "best_lag_frames": -2,
+        "official_av_offset_frames": 2
+      },
+      "guard20": {
+        "B": 11.596673965454102,
+        "Dmin": 8.764358520507812,
+        "D0": 11.110396385192871,
+        "Cbest": 2.832315444946289,
+        "Canchor": 0.48627758026123047,
+        "best_lag_frames": -2,
+        "official_av_offset_frames": 2
+      },
+      "tracking_fraction": 1.0,
+      "aperture_velocity_rms": 0.4818362455085459
+    },
+    {
+      "model": "musetalk",
+      "sample_id": "BAC009S0024W0122",
+      "arm": "native_height_zero",
+      "full": {
+        "B": 11.755681037902832,
+        "Dmin": 8.42568588256836,
+        "D0": 9.775680541992188,
+        "Cbest": 3.3299951553344727,
+        "Canchor": 1.9800004959106445,
+        "best_lag_frames": -2,
+        "official_av_offset_frames": 2
+      },
+      "guard20": {
+        "B": 12.717694282531738,
+        "Dmin": 10.098450660705566,
+        "D0": 12.004620552062988,
+        "Cbest": 2.619243621826172,
+        "Canchor": 0.71307373046875,
+        "best_lag_frames": -2,
+        "official_av_offset_frames": 2
+      },
+      "tracking_fraction": 1.0,
+      "aperture_velocity_rms": 0.5132849713690005
+    },
+    {
+      "model": "musetalk",
+      "sample_id": "BAC009S0024W0122",
+      "arm": "native_height_plus",
+      "full": {
+        "B": 11.733132362365723,
+        "Dmin": 8.41529369354248,
+        "D0": 9.791601181030273,
+        "Cbest": 3.317838668823242,
+        "Canchor": 1.9415311813354492,
+        "best_lag_frames": -2,
+        "official_av_offset_frames": 2
+      },
+      "guard20": {
+        "B": 12.929210662841797,
+        "Dmin": 9.912276268005371,
+        "D0": 12.115440368652344,
+        "Cbest": 3.016934394836426,
+        "Canchor": 0.8137702941894531,
+        "best_lag_frames": -2,
+        "official_av_offset_frames": 2
+      },
+      "tracking_fraction": 1.0,
+      "aperture_velocity_rms": 0.5136650987983776
+    },
+    {
+      "model": "musetalk",
+      "sample_id": "BAC009S0024W0122",
+      "arm": "native_height_minus",
+      "full": {
+        "B": 11.741389274597168,
+        "Dmin": 8.379712104797363,
+        "D0": 9.723774909973145,
+        "Cbest": 3.3616771697998047,
+        "Canchor": 2.0176143646240234,
+        "best_lag_frames": -2,
+        "official_av_offset_frames": 2
+      },
+      "guard20": {
+        "B": 12.880858421325684,
+        "Dmin": 10.002850532531738,
+        "D0": 11.939068794250488,
+        "Cbest": 2.8780078887939453,
+        "Canchor": 0.9417896270751953,
+        "best_lag_frames": -1,
+        "official_av_offset_frames": 1
+      },
+      "tracking_fraction": 1.0,
+      "aperture_velocity_rms": 0.5167437908361247
+    }
+  ],
+  "score_pairs": [
+    {
+      "model": "musetalk",
+      "sample_id": "BAC009S0022W0123",
+      "arm": "native_height_plus",
+      "delta_vs_new_zero": {
+        "full": {
+          "B": -0.06549835205078125,
+          "Dmin": 0.10364675521850586,
+          "D0": 0.1101388931274414,
+          "Cbest": -0.1691451072692871
+        },
+        "guard20": {
+          "B": 0.044708251953125,
+          "Dmin": -0.07321357727050781,
+          "D0": 0.1518697738647461,
+          "Cbest": 0.11792182922363281
+        }
+      },
+      "full_joint": false
+    },
+    {
+      "model": "musetalk",
+      "sample_id": "BAC009S0022W0123",
+      "arm": "native_height_minus",
+      "delta_vs_new_zero": {
+        "full": {
+          "B": 0.009307861328125,
+          "Dmin": 0.0813746452331543,
+          "D0": -0.015466690063476562,
+          "Cbest": -0.0720667839050293
+        },
+        "guard20": {
+          "B": 0.061156272888183594,
+          "Dmin": 0.1407327651977539,
+          "D0": 0.18874073028564453,
+          "Cbest": -0.07957649230957031
+        }
+      },
+      "full_joint": false
+    },
+    {
+      "model": "musetalk",
+      "sample_id": "BAC009S0024W0122",
+      "arm": "native_height_plus",
+      "delta_vs_new_zero": {
+        "full": {
+          "B": -0.022548675537109375,
+          "Dmin": -0.010392189025878906,
+          "D0": 0.015920639038085938,
+          "Cbest": -0.012156486511230469
+        },
+        "guard20": {
+          "B": 0.2115163803100586,
+          "Dmin": -0.1861743927001953,
+          "D0": 0.11081981658935547,
+          "Cbest": 0.3976907730102539
+        }
+      },
+      "full_joint": false
+    },
+    {
+      "model": "musetalk",
+      "sample_id": "BAC009S0024W0122",
+      "arm": "native_height_minus",
+      "delta_vs_new_zero": {
+        "full": {
+          "B": -0.014291763305664062,
+          "Dmin": -0.045973777770996094,
+          "D0": -0.05190563201904297,
+          "Cbest": 0.03168201446533203
+        },
+        "guard20": {
+          "B": 0.1631641387939453,
+          "Dmin": -0.09560012817382812,
+          "D0": -0.0655517578125,
+          "Cbest": 0.25876426696777344
+        }
+      },
+      "full_joint": true
+    }
+  ],
+  "model_response_pass": {
+    "musetalk": true
+  },
+  "interpretation": "Seen-DEV two-person screening only; original PCM/clock; no peak retuning, human accuracy claim, or waveform reachability claim."
+}

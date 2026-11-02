@@ -1,0 +1,244 @@
+{
+  "schema": "root_output_owned_musetalk_actual_array_qa_v1",
+  "status": "PASS_ACTUAL_ARRAYS_ONLY_NOT_VIDEO_EFFECT",
+  "created_utc": "2026-10-14T21:28:28.262572+00:00",
+  "source_sha256": "5ee0b12b3d345550b2d230c9359b930497ce392033c641653e174d11f33347e7",
+  "cpu_receipt_sha256": "37ff2a054bb1e4f1dcca1d37de4fe6f292bee433832371886109b879841be705",
+  "admission_sha256": "72dc6ff866d51abcac23f6390d3f1bfad9d07db79edb09b876bb9bde9ff3cc1c",
+  "rotated_token_arm_checks": 12,
+  "directly_exposed_cp_frames": 14,
+  "rows": [
+    {
+      "sample_id": "BAC009S0022W0123",
+      "effective_owned_frame_indices": [
+        28,
+        29,
+        44,
+        45,
+        57,
+        58,
+        59
+      ],
+      "proposal_only_identity_rows": [
+        18,
+        24,
+        35,
+        40
+      ],
+      "rotated_tokens": 3,
+      "arms": {
+        "zero": {
+          "bitwise_identity": true
+        },
+        "plus": {
+          "changed_rows": [
+            28,
+            29,
+            44,
+            45,
+            57,
+            58,
+            59
+          ],
+          "non_effective_bitwise_identity": true,
+          "max_relative_row_norm_error": 1.3524728728429713e-09,
+          "max_unit_intracore_gram_error": 2.8432589616045334e-10,
+          "max_independent_rotation_formula_error": 0.0,
+          "signed_margin_delta_min": 0.024604977015602176,
+          "signed_margin_delta_max": 0.024919428946909298,
+          "tokens": [
+            {
+              "phone_index": 8,
+              "phone": "a",
+              "owned": [
+                28,
+                29
+              ],
+              "signed_margin_delta": 0.024919428946909298
+            },
+            {
+              "phone_index": 16,
+              "phone": "i",
+              "owned": [
+                44,
+                45
+              ],
+              "signed_margin_delta": 0.024604977015602176
+            },
+            {
+              "phone_index": 21,
+              "phone": "u",
+              "owned": [
+                57,
+                58,
+                59
+              ],
+              "signed_margin_delta": 0.02465450267779114
+            }
+          ]
+        },
+        "minus": {
+          "changed_rows": [
+            28,
+            29,
+            44,
+            45,
+            57,
+            58,
+            59
+          ],
+          "non_effective_bitwise_identity": true,
+          "max_relative_row_norm_error": 1.4190251866723317e-09,
+          "max_unit_intracore_gram_error": 3.254616576242597e-10,
+          "max_independent_rotation_formula_error": 0.0,
+          "signed_margin_delta_min": -0.024877740064611558,
+          "signed_margin_delta_max": -0.02477174040045418,
+          "tokens": [
+            {
+              "phone_index": 8,
+              "phone": "a",
+              "owned": [
+                28,
+                29
+              ],
+              "signed_margin_delta": -0.024877740064611558
+            },
+            {
+              "phone_index": 16,
+              "phone": "i",
+              "owned": [
+                44,
+                45
+              ],
+              "signed_margin_delta": -0.02477174040045418
+            },
+            {
+              "phone_index": 21,
+              "phone": "u",
+              "owned": [
+                57,
+                58,
+                59
+              ],
+              "signed_margin_delta": -0.02480512267408862
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample_id": "BAC009S0024W0122",
+      "effective_owned_frame_indices": [
+        31,
+        32,
+        42,
+        43,
+        53,
+        54,
+        55
+      ],
+      "proposal_only_identity_rows": [],
+      "rotated_tokens": 3,
+      "arms": {
+        "zero": {
+          "bitwise_identity": true
+        },
+        "plus": {
+          "changed_rows": [
+            31,
+            32,
+            42,
+            43,
+            53,
+            54,
+            55
+          ],
+          "non_effective_bitwise_identity": true,
+          "max_relative_row_norm_error": 1.3729625490217334e-09,
+          "max_unit_intracore_gram_error": 7.096929710570521e-10,
+          "max_independent_rotation_formula_error": 0.0,
+          "signed_margin_delta_min": 0.024652602212631228,
+          "signed_margin_delta_max": 0.02489708575065071,
+          "tokens": [
+            {
+              "phone_index": 6,
+              "phone": "u",
+              "owned": [
+                31,
+                32
+              ],
+              "signed_margin_delta": 0.024758926639806403
+            },
+            {
+              "phone_index": 9,
+              "phone": "y",
+              "owned": [
+                42,
+                43
+              ],
+              "signed_margin_delta": 0.024652602212631228
+            },
+            {
+              "phone_index": 16,
+              "phone": "a",
+              "owned": [
+                53,
+                54,
+                55
+              ],
+              "signed_margin_delta": 0.02489708575065071
+            }
+          ]
+        },
+        "minus": {
+          "changed_rows": [
+            31,
+            32,
+            42,
+            43,
+            53,
+            54,
+            55
+          ],
+          "non_effective_bitwise_identity": true,
+          "max_relative_row_norm_error": 1.2087402397283081e-09,
+          "max_unit_intracore_gram_error": 5.543803194285601e-10,
+          "max_independent_rotation_formula_error": 0.0,
+          "signed_margin_delta_min": -0.024869505848693962,
+          "signed_margin_delta_max": -0.024803868525331015,
+          "tokens": [
+            {
+              "phone_index": 6,
+              "phone": "u",
+              "owned": [
+                31,
+                32
+              ],
+              "signed_margin_delta": -0.024869505848693962
+            },
+            {
+              "phone_index": 9,
+              "phone": "y",
+              "owned": [
+                42,
+                43
+              ],
+              "signed_margin_delta": -0.024803868525331015
+            },
+            {
+              "phone_index": 16,
+              "phone": "a",
+              "owned": [
+                53,
+                54,
+                55
+              ],
+              "signed_margin_delta": -0.024812196790585515
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "scope": "Two clips, six native f32 arrays and two exact clocks; no model/encoder/MFA/scorer run; no efficacy claim."
+}

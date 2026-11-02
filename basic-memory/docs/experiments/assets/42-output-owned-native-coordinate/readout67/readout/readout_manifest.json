@@ -1,0 +1,65 @@
+{
+  "controller_receipt_path": "/dev/shm/cross_tfg_native_attribute_response_probe_20261015_output_owned_musetalk_render_output_attempt01/controller_receipt.json",
+  "controller_receipt_sha256": "adf7f5caaa06cacb0eabaf5f67e4ceeae382f453eb565ed0704d91692d23b05a",
+  "geometry_source": "primary: retained pre-codec PNG frames via IMAGE detector at frame_index/25; secondary mouth_motion_h264: pinned canonical scorer.visual_row on renderer H.264 silent video; descriptive only",
+  "input_manifest_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/provenance/output_owned_musetalk_input_manifest_attempt01.json",
+  "input_manifest_sha256": "673ee09cdba130ee70698553f6bd52ca4b4633cf85c94e2092de66bbb36b4889",
+  "mouth_interpretation": "MediaPipe geometry and velocity describe observed track motion only; no accuracy ground truth",
+  "operator": {
+    "cpu_input_manifest": {
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_render_stage_attempt01/provenance/cpu6_input_manifest_attempt04.json",
+      "sha256": "85b016147f03649bb610f5f004b86066cfe4781cce7018c730e89871fec65a1d"
+    },
+    "owned_output_frames": {
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_render_stage_attempt01/provenance/output_owned_actual_frame_map_attempt01.json",
+      "sha256": "127f5b8398521766592a73807f0ae5c4a5f81aaefd579f3ce4e83e937ab3b11f"
+    },
+    "root_array_qa": {
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_render_stage_attempt01/provenance/root_actual_output_owned_qa.json",
+      "sha256": "0a77ad77de5801f1c73c686e11c8b55b80e4f24d12a7bc89b52755919621c0fd"
+    }
+  },
+  "precodec_nonowned_rgb_control": {
+    "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/precodec_nonowned_rgb_control.json",
+    "sha256": "f81b17f755c1c6ab67809373d9c7ff39ddaf8dfb8c7c486f80e3f9d4e7c08684",
+    "status": "PASS"
+  },
+  "protocol_sha256": "561e81a747b62c02af7a2465eac9457436013ffba45286be15d8c6cf40c9123e",
+  "renderer_runner_sha256": "484f08bac841513a754eb94910b91b8fbc863bc9ca080d74746f3b221e80eeb0",
+  "row_count": 6,
+  "rows": [
+    {
+      "row_id": "BAC009S0022W0123/musetalk/zero",
+      "row_receipt_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/BAC009S0022W0123/musetalk/native_height_zero/row_receipt.json",
+      "row_receipt_sha256": "354cc8287c56d55c35d1a15e012685eaacc285906f7cbc72c8a79da7e15dfccb"
+    },
+    {
+      "row_id": "BAC009S0022W0123/musetalk/plus",
+      "row_receipt_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/BAC009S0022W0123/musetalk/native_height_plus/row_receipt.json",
+      "row_receipt_sha256": "d2356a1baf24be56429965845b9955fd9d5c11a3fd4317e9e0b2230384a956c5"
+    },
+    {
+      "row_id": "BAC009S0022W0123/musetalk/minus",
+      "row_receipt_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/BAC009S0022W0123/musetalk/native_height_minus/row_receipt.json",
+      "row_receipt_sha256": "077e46943e6532d9650952eee962359a70ecee1e76b7bf09c31dacbe9f47b04f"
+    },
+    {
+      "row_id": "BAC009S0024W0122/musetalk/zero",
+      "row_receipt_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/BAC009S0024W0122/musetalk/native_height_zero/row_receipt.json",
+      "row_receipt_sha256": "06e4152590f80d1897d0819f23080fb579e76be6b113383ba7a1a6df995e5b23"
+    },
+    {
+      "row_id": "BAC009S0024W0122/musetalk/plus",
+      "row_receipt_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/BAC009S0024W0122/musetalk/native_height_plus/row_receipt.json",
+      "row_receipt_sha256": "5b2410f8a5982c4a0b88c95d2f6aeda16a25ed54de6899354f0e9fc8eb271eed"
+    },
+    {
+      "row_id": "BAC009S0024W0122/musetalk/minus",
+      "row_receipt_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/BAC009S0024W0122/musetalk/native_height_minus/row_receipt.json",
+      "row_receipt_sha256": "aeadced3f7cc5850eb6e117522e6945008676573ab78d7550ed671f93436ac2e"
+    }
+  ],
+  "schema": "output_owned_musetalk_readout_manifest_v1",
+  "score_endpoint_rule": "full rows [0:N); guard20 query rows [20:N-20); all 31 lag columns; D0 uses explicit lag_offsets_frames==0 column",
+  "status": "PASS"
+}

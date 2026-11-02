@@ -1,0 +1,25 @@
+{
+  "status": "COMPLETED",
+  "pid": 105884,
+  "process_start_utc": "2026-10-14T21:25:50.0730450Z",
+  "process_start_ticks": 639276099500730450,
+  "outer_start_utc": "2026-10-14T21:25:50.0578039Z",
+  "end_utc": "2026-10-14T21:25:52.1914919Z",
+  "return_code": 0,
+  "output_dir_created": true,
+  "executable": "C:\\Users\\dogle\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "argv": [
+    "-B",
+    ".codex/scratch/native_attribute_response_probe_20261015_attempt01/output_owned_rotation_candidate_source_attempt01.py",
+    "--output-dir",
+    ".codex/scratch/native_attribute_response_probe_20261015_attempt01/output_owned_candidates_attempt01",
+    "--execute"
+  ],
+  "cwd": "E:\\Documents\\tts-exp",
+  "source": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_rotation_candidate_source_attempt01.py",
+  "source_sha256": "f8ab4058292b208363871b2f0f1297c1e3bc8cb05da9d43d81665dfa12a3338d",
+  "output_dir": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01",
+  "stdout": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01.stdout.log",
+  "stderr": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01.stderr.log",
+  "started_receipt": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01.execution_started.json"
+}

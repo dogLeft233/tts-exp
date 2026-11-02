@@ -1,0 +1,104 @@
+---
+title: Codex checkpoint - 2026-10-11T10-30-20Z - K15 raw complete before body qualification
+type: coding_session
+permalink: tts-exp/codex/tts-exp/codex-checkpoint-2026-10-11-t10-30-20-z-k15-raw-complete-before-body-qualification
+status: open
+project: tts-exp
+repository: dogLeft233/tts-exp
+repo_root: E:/Documents/tts-exp
+cwd: E:/Documents/tts-exp
+branch: codex/cross-tfg-audio-head-20261003
+git_sha: 5688784dd5c6c1272074f0c4b6c5ff79f117c907
+started: '2026-10-11T10:30:20Z'
+username: dogle
+hostname: LAPTOP-E133GSLE
+capture: deliberate
+agent: codex
+session_id: 01a0f26b-a3e7-7f91-b1e8-46813543042f
+trigger: compact
+model: gpt-6.1-sol
+tags:
+- codex
+- checkpoint
+---
+
+# Codex checkpoint - 2026-10-11T10-30-20Z - K15 raw complete before body qualification
+
+## Summary
+
+K15离线回收计划已通过独立实际QA，单次raw08已正常完成；下一步验证620个实际body，再做canonical CPU和时间轴科学准入。
+
+## Story
+
+用户要求从TTS增强TFG机制产出可适配多模型、未见说话人超过固定RMS的自然音频增强头。增强PCM只驱动视频，评分与成片使用完整原自然PCM和原时钟。用户最新取消关机并授权恢复四个中心评估。ROOT负责理论、冻结协议、BM与独立产物QA；代码和实验沿用原GPT-6 Luna/max代理，不运行实现测试。
+
+20轮联合SPSA已完成数学核验并封存journal；K05/K10完整科学准入。K15原三模型各40行已经完成，终局与helper14实际证据通过。此次独立计划QA联接真实outer/action进程记录、完整631科学refs与40原WAVrefs、620去重body和容量，实际运行05通过后ROOT释放一次raw08。原raw08进程在10:24:17Z正常结束。这个结果表示数据已回收；原数组、PCM、canonical分数与decoded mask仍要独立核验，K20尚未释放。
+
+## Working State
+
+### Durable protocol and sources
+
+Task仍active/current_step2/execution_phase=fit_center_k15_terminal_qa，tfg ACTIVE，关机/大归档停放。冻结initial720→20jointSPSA→k05/10/15/20 full120→final720→portable→540 NEW sealed Dev→Confirm。完整9门失败继续独立11参数谱形/局部功率方法。20训练、K05/K10/K15模型不得重跑，旧未知AutoDL/session不launch。原PCM、原时钟、cohort/policy01/ADR031/统计准入门不变。
+
+主机wjj@192.168.50.2:22；QUEUE cwd/source_root=/dev/shm/fit40_queue_remote_package_attempt02/project；PY=/home/wjj/.venvs/cross_tfg_muse_ditto_shared_torch251_cu121_attempt01/bin/python；JOB=/home/wjj/tts-audio/tts-exp/runs/cross_tfg_audio_head_20261009_v100_native_deployment_attempt01/job_control；SESSION=JOB/fit40_durable_spsa_session_attempt09；DISPATCH=/dev/shm/fit40_joint_spsa_full_centers_attempt01。package12实际package11 runner08及全部源pin不变。凭据永不文件/argv/BM/log，不修改sudoers/CloudDrive。
+
+sealed journal `.codex/scratch/fit40_full20_math_qa_attempt01/journal_full_readback_attempt01.json`16698298B/raw2dd1c1ac08e439496c1f7753ab4bb8ccdd8727d2fc6a53aebeffd145b2167231/selfb731f233eea49ca533f4f21114eff09e342036b7287f63d172b112fe2f8d3b4d；mathQC7660be339b3ada267901fe9d97bf54a6f71afa29d782d5b5c17f1c4ff53c98c3/sealQC00751d21a67efadc6e4ccc16cb768e0ba6d0c0cf595bc37c48064566084ea809。
+
+K15 terminalQA03 `.codex/scratch/root_k15_terminal_actual_gate_qc_attempt03.json` self979dca8f151061b7615abca3d5784b54e756960c258b4f219e2e9dde2ee958e5；helperQA02 `.codex/scratch/root_k15_helper_actual_receipt_qc_attempt02.json`16026B/raw46d4221b1adeca71ed8622ed7a03745ffcd42ae38280691d113735632ba0414c/self6c83c899556737117f51e32860d883f3f03ca0c31f4cad56a1abc84deaaf0cde均实际0/ASR独立PASS。helper14 stdout2552579B/rawd52b2a931394c4c9020f2cddf8eb3004eb2cc4f311ca2f83b25f85fbfe285978/self60159206665dd6e35e1050eb1936e2543e0721ba5256f8d00972648d275c8739。
+
+### Actual plan and consumed raw release
+
+计划QA来源 `.codex/scratch/root_k15_raw_candidate_plan_actual_qc_attempt05.py`48954B/raw59383861d078f2c4a36a0ac74a0bfbc0f5d1f879eb815dff38bea7ff68a85532，ROOT完整源/delta/AST审阅后pinned Fpython-B实际0。output同stem.json7231B/raw0163da685bd05067743f29371ecf1bd830b9cf02816833907780924dd900685b/selfc1cae57dd8aef962df806352ab454239771b19c8e482846db96d80b75e0cbef5，schema root_k15_offline_candidate_plan_actual_qualification_v1，PASS_ROOT_EXACT_K15_OFFLINE_CANDIDATE_PLAN_NO_RAW_RELEASE。ASR独立source/实际output/所有linkedpin复核PASS，Dev重新构建五fullpins一致。
+
+实际plan `.codex/scratch/fit40_center_payload_readback_attempt01_k15_candidate_plan.json`582571B/raw873a548b1a44abac853aa733c7a020601f4e014089b9e06af99f0ea4330dd037/self1c2d0667626f38c1ab8d741428e99ac2175075635ed4f531ba2ac9327e46e51a；bootstrap1599B/raw27fbafc9e57900af6c9f0240cc11a6ae9bc723cfe0db4e3cc196c28cddfa859f/self95d49fe9c573238cbcd6e210063dfddee376fa840f0635118b3c1d78e2e3d247。计划671refs=631科学refs+40原WAV，620unique=618SSH57338278B+2exactreuse2659045B，总59997323B。实际目标是C:/Users/dogle/.codex/scratch/fit40_center_payload_readback_attempt01_k15/raw，前10:06 immutable误写.cache/codex已在mutable游标明确纠正，前件保留。
+
+ROOT validator `.codex/scratch/root_k15_raw08_single_release_attempt01.py`实际0创建strict12-key `.codex/scratch/root_k15_raw_readback_release_attempt01.json`1511B/raw24afa8481b4621c3efcfa3530feb82e45a0b16905de1831c64ff5c4a0782447a/self378be01d026d4abb7bef655aa0fc5e7d5b62de476cf0e7fb402ccd262d5f7772。独立qualification `.codex/scratch/root_k15_raw08_source_and_single_release_qualification_attempt01.json`2735B/raw62e0c6c9cb3ffd6dc29196be75516e4962a11e4843a048a4f954a581080b95c4/selfb25e3f50e7d78c1ebc7b07b6d371738e04d7ee7f64ccd61baabfcd71780cdc2f。单次release已被raw08消耗，不可重放。
+
+### Actual completed raw08
+
+source `.codex/scratch/fit40_center_payload_readback_attempt08_k15_launch/launch_raw_readback_k15_attempt08.py`40318B/raw6112cc91a446d601ebc7df6f98fdfd2e24dad592f69e02f43368ca1675aea78c。Fit唯一exec96365/PID72816，10:20:59.861203→10:24:17.719362Z，actualreturncode0/statusCAPTURED_PASS/capture_errors[]/spawn_error与validation_error null/retryfalse。capture同source父目录readback_capture_attempt08，process_receipt8456B/raw39f7021df7ce1cf7d9c22de5deba67059e7643f09653ce19f896c729c7df9a40/selfeefa40c514f0c81bd9d367ceaac51f14806ce78663af01d468a899039a3171a2；invocation8110B/raw58d525178ff4141530cf7dae02d015004dd53f3d4b7671530549940abfba3374/self1e8478b0ec9edd456df1fbe1ade986dda0422c3f573f47ffd2e21497d0fe9f2a；stdout561B/raw2777cf310ece6660d826820be4e67a977142541e176ce7b6ce8d59bc083e31c5/stderr0；returncode文件为0换行。
+
+rawmanifest `C:/Users/dogle/.codex/scratch/fit40_center_payload_readback_attempt01_k15/raw/raw_readback_manifest.json`1785514B/raw220c8f60e5b57996831f1c7779154993f3c90094096c4609b543e9ef0e073da6/self5007fd08268b366a7439ffeed4eed9ce750c8c6e97946ad61020e368113539ba。ROOT已直接读取实际process完整body并核字段；全620body/fullSSH proof hash资格尚未执行。ASR正在从K10原QA编写实际raw08绑定source-only successor，先ROOT全文审阅再实际执行。
+
+### Next scientific gates and parked work
+
+canonical10 `.codex/scratch/fit40_center_body_canonical_qa_attempt10/launch_body_canonical_qa_k15_attempt04.py`32979B/rawbddfe342ff060ff4e240074d05a54378f6f56efade7c533af4cc2a145fab4364保持pending/未执行。Dev接下来创建fresh11：加入实际rawmanifest/process raw+self pins、独立ROOT hash-only bodyQA receipt/source及其真实字段。不要发明840数组semantic gate放在consumer前造成循环；hash-only bodyQA先验证传输/内容，consumer之后semantic才验证840实际数组。无需新增canonical授权文件：ROOT单独明确消息只释放审阅过exactfinalsource的一次CPUconsumer，strict12key rawrelease仅保留provenance。genericconsumer03/CPUreader01不改；正常outer stdout只有status/output_dir/receipt/remote_rows四键，没有schema，不套K10错误repair路径。
+
+完整bodyQA→canonical实际CPU→独立semantic/840数组/40PCM/120map+windows/decodedmask→K15fulladmission后，才释放K20 accepted source02 preflight/prepare。K20 execute prototype02未绑定未授权；目录`.codex/scratch/fit40_center_k20_execute_source_only_attempt02`，wrapper14410B/rawc30b40e079673fbb3f2c08a0e786177718c293bdb581022209ec2a3dfd2e272c，shell23907B/raw7921175169efd02e3afa817998258e69b6ebeffc91b42411c12dbf0d4f972b39。早期sentinel阻止运行，但shell仍复制K15packet三rawpins，未来freshboundsource必须替换全部实际K20packet以及实际K15fulladmission，不能只翻状态。ROOT完整diff/manifest/wrapper已读，shell读取曾工具截断，未给予完整source资格。source02 prepare资格self169adab6013dd018546ca289698c4b5eeb1bf3fc872fe1d76ee55f482687f804仍SOURCE_ONLY。
+
+Fit后freshprotocol07 additiveoverlay/builder06/analyzer05/nativeadapter04修draft06和固定旧引用，实际candidate/runtime/newbase360封存后跑540新Dev。policy01原bytes、cohort20clips/10speakers、ADR031和所有门不变；不复用旧360，不提前读Confirm80或LatentSync。独立11仅source，STFT Parseval不等于最终40ms波形局部功率守恒，固定source支持与完整失败分母，必须显式新profile/controller闭包。
+
+### Machine-local fragility
+
+branch codex/cross-tfg-audio-head-20261003，HEAD`5688784dd5c6c1272074f0c4b6c5ff79f117c907`为local/unpushed，canonical仓库和空PR本checkpoint工具只读重核，无commit/push/PR。dirty/untracked/ignored scratch/BM/runs及远端SHM是本机脆弱状态。Fpython无NumPy，bundledNumPyPython无Torch；canonical用原远程QUEUE/noCUDA/单线程CPU。新scratch source和所有失败尝试不覆写。活动执行结束记录不等于新GPU任务授权。
+
+## Changed Files
+
+- 新ROOT planQA02/03/04/05来源及03次失败实际记录完整保留；05实际通过，独立重开输出PASS。
+- 新raw08、ROOT严格12key release与sourcequalification、实际620body回收和capture；旧raw/canonical未执行版本保留。
+- mutableTask/HANDOFF最后状态10:08仍称planQA待做，当前checkpoint提供完成事实，下一次同步必须更新主游标和footer，不能沿用陈旧状态。
+
+## Verification
+
+ROOT实际运行计划QA05及单次release validator均pinned Fpython-B rc0；Fit单次raw08实际rc0，ROOT直接完整读实际process，ASR与Dev独立核实际planQA。没有实现测试/训练重跑/新模型launch。计划QA02实际失败因无self的outer文件未解析JSON，03因UTC格式只接受Z，04因虚构inventory schema；分别fresh修复，05接受真实fit40_k15_payload_inventory_v1与Z/+00:00严格零偏移，旧失败不删除，未修改科学产物。数据回收完成尚未科学准入。
+
+BM Router/实验指令/Task/Coding Session schema已完整读；本checkpoint工具分页检索coding/codex/legacy同chat、按frontmatter started择最新并直接核exact身份，write_note底层overwriteFalse/outputjson只接受created，全文/hostmetadata/Task-HANDOFFpointer读回。
+
+## References
+
+- [Repository](https://github.com/dogLeft233/tts-exp)；local/unpushed SHA保持代码文本，无猜测commit链接。
+- Active Task `tts-exp/codex/tts-exp/开发跨-tfg-的自然音频增强头` 与根HANDOFF当前恢复游标。
+- `.codex/scratch/root_k15_raw_candidate_plan_actual_qc_attempt05.json`、raw08实际process和C盘rawmanifest是此阶段权威证据。
+
+## Observations
+
+- [result] K15实际planQA05联接全部回收来源和671refs/620unique内容计划通过，raw08单次回收actual0完成，未重跑模型。
+- [decision] canonical fresh11必须绑定实际rawmanifest/process与独立hash-only bodyQA receipt/source；semantic840数组核验在consumer后，ROOT另明确单次执行授权，不增加循环前置门。
+- [decision] K15完整科学body准入前不释放K20，原PCM/时钟/完整分母与后续Dev/Confirm门保持冻结。
+- [next_step] ROOT审阅并实际执行ASR新K15全rawbodyQA，重开全部620body与618实际SSH/2reuse来源，通过后绑定并释放freshcanonical11。
+
+## Relations
+
+- continues [[Codex checkpoint - 2026-10-11T10-06-08Z - K15 helper qualified and offline plan captured]]
+- relates_to [[开发跨 TFG 的自然音频增强头]]
+- relates_to [[跨 TFG 自然音频增强头的训练与原音换轨验证]]

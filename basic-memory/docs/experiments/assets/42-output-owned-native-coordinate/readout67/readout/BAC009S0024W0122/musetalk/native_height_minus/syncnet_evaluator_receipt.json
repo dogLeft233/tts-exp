@@ -1,0 +1,30 @@
+{
+  "audio_pcm16_sha256": "ed8d49ca7e22f01c5d735ad1fcf41a5d4c4fd43cc5a98b45d3f9f728b89f9811",
+  "audio_sample_count": 56561,
+  "audio_sample_rate_hz": 16000,
+  "checkpoint_path": "/home/wjj/tts-audio/tts-exp/third_party/syncnet_python/data/syncnet_v2.model",
+  "checkpoint_sha256": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442",
+  "confidence_numpy": 3.3616771697998047,
+  "distance_npz_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/BAC009S0024W0122/musetalk/native_height_minus/distance_by_query_lag.npz",
+  "distance_npz_sha256": "3a84dd3a75e7099a82e0f3ace20e311e222f1194897f7b95f86ce97fc77c5f21",
+  "evaluator": "SyncNetInstance.evaluate",
+  "expected_query_count": 83,
+  "extracted_audio_file_sha256": "eb9206a88539d2d0fbfbc89d1abfe0d65cd805cfbc8401f698aeafa69208eeba",
+  "extracted_audio_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/BAC009S0024W0122/musetalk/native_height_minus/evaluator_tmp/BAC009S0024W0122/musetalk/minus/audio.wav",
+  "input_mkv_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/BAC009S0024W0122/musetalk/native_height_minus/syncnet_input_224.mkv",
+  "input_mkv_sha256": "f785533a5fa4a5129a5ab5324c6259f4ef40bce6ee474b2c31a55404d898eb17",
+  "matrix_dtype": "float32",
+  "matrix_sha256": "e0928d89f6da3758cc6e19f114f03af4f855bdce51bb031859f7da468dfa8b2d",
+  "matrix_shape": [
+    83,
+    31
+  ],
+  "offset_numpy": 2,
+  "schema_version": "cross_tfg_official_syncnet_evaluation_v1",
+  "status": "PASS",
+  "syncnet_root": "/home/wjj/tts-audio/tts-exp/third_party/syncnet_python",
+  "torch_device": "cuda",
+  "torch_num_threads": 1,
+  "torch_version": "2.1.2+cu121",
+  "video_frame_count": 88
+}

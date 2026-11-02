@@ -1,0 +1,53 @@
+{
+  "files": [
+    {
+      "source": "runs\\p1_gain_dose_response_20261016_derived_attempt01\\p1_speaker_effects_and_dose_layout02.svg",
+      "file": "new20_speaker_dose.svg",
+      "bytes": 23259,
+      "sha256": "b70bda663493190367789bfa3f43edd670975e33067889e54d96b926bc0acafd"
+    },
+    {
+      "source": "runs\\p1_gain_dose_response_20261016_derived_attempt01\\p1_speaker_effects_and_dose_layout02.png",
+      "file": "new20_speaker_dose.png",
+      "bytes": 145191,
+      "sha256": "2320ac86567522a47c420d3b098ece8267ee6e6a6261cec149150e5323b66399"
+    },
+    {
+      "source": "runs\\p1_gain_dose_response_20261016_derived_attempt01\\component_decomposition_attempt01\\p1_full_curves_and_component_decomposition_layout02.svg",
+      "file": "new20_components_curves.svg",
+      "bytes": 23281,
+      "sha256": "e12f6c60358a6d80cebd79a49cbce085624f828ec952675827f1453bedc0e1ad"
+    },
+    {
+      "source": "runs\\p1_gain_dose_response_20261016_derived_attempt01\\component_decomposition_attempt01\\p1_full_curves_and_component_decomposition_layout02.png",
+      "file": "new20_components_curves.png",
+      "bytes": 182449,
+      "sha256": "c6c7141d554abbf95e46dd6afd7e13212c9e8b833789abc0288ddf0606182785"
+    },
+    {
+      "source": "runs\\recovered_20260930\\independent_validation\\amplitude_evidence_reconstruction_20261016_attempt03\\figure2_amplitude_mechanism.svg",
+      "file": "old40_internal_paths.svg",
+      "bytes": 22224,
+      "sha256": "233f54729bfc1600f4ffa2d031ae24909c2353a16ffad5fc26feabc25e5ec18a"
+    },
+    {
+      "source": "runs\\recovered_20260930\\independent_validation\\amplitude_evidence_reconstruction_20261016_attempt03\\figure2_amplitude_mechanism.png",
+      "file": "old40_internal_paths.png",
+      "bytes": 153645,
+      "sha256": "a2645f1fe354e3ac71d4c32a54528e569e333cca0ec1447c9200f2310707a621"
+    },
+    {
+      "source": ".codex\\scratch\\native_level_gap_audit_attempt01\\derived_attempt09\\native_gap_control_attempt02.svg",
+      "file": "old_native_level_gap.svg",
+      "bytes": 9687,
+      "sha256": "e4129cb6973f45691ec70847da2af1a6b72ce8521bfd10be354dae3dfbefc7d6"
+    },
+    {
+      "source": ".codex\\scratch\\native_level_gap_audit_attempt01\\derived_attempt09\\native_gap_control_attempt02.png",
+      "file": "old_native_level_gap.png",
+      "bytes": 82871,
+      "sha256": "395dd87f9b55b302f7c93ebd03f54f82d53a8c94afc05173196f906ad0cfdb2a"
+    }
+  ],
+  "all_pngs_root_visually_checked": true
+}

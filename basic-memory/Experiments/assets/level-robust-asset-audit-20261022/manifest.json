@@ -1,0 +1,52 @@
+[
+  {
+    "file": "audit_remote.py",
+    "bytes": 4277,
+    "sha256": "BB702FBABE25205AB3B0E9405C6E3651CD0F5BD611631ECE629F75FA46109446"
+  },
+  {
+    "file": "audit_remote_v2.py",
+    "bytes": 4291,
+    "sha256": "3758C9C492D4FF5FB641B3017184BA790D1B43EB9FAF037B34A917F3FAF00859"
+  },
+  {
+    "file": "candidate_preflight.json",
+    "bytes": 21983,
+    "sha256": "CC9EEF57D33C022F572B694C9F7EED61820E58886D0034CA965933E6372E274C"
+  },
+  {
+    "file": "candidate_preflight_all35.json",
+    "bytes": 53978,
+    "sha256": "B9000CC1E1F7CA731C2F27154DC9A2276739295FDC7B3FF2F10A20738DCCEE35"
+  },
+  {
+    "file": "candidate_qualification_summary.json",
+    "bytes": 404,
+    "sha256": "6A5C00D3A8D88DD339A01B7C1FC965495D5EC5566B85BB658A7C7170F5872EFE"
+  },
+  {
+    "file": "ubuntu_inventory.json",
+    "bytes": 102010,
+    "sha256": "CFD99BC7D417F0426EF662FB7B23C47D5555A902AECF1AC8E90364B0D6BD0581"
+  },
+  {
+    "file": "ubuntu_models_grid.json",
+    "bytes": 5164,
+    "sha256": "76C8915F42F43D5B132D978CBFF81154A232322C9E0BAD49D959F32EED46BCD2"
+  },
+  {
+    "file": "ubuntu_runtime_imports.json",
+    "bytes": 417,
+    "sha256": "1BE85711CE09386A38BAA3B9BC01B31D314B473E0AF473A3901AAA0C96CFDDD5"
+  },
+  {
+    "file": "legacy_geometry_evidence.json",
+    "bytes": 2514,
+    "sha256": "6EA531E6351A82EC1A13B03684EFD307F4C1D56316F42C37C4FAD45195C8C1F2"
+  },
+  {
+    "file": "geometry_array_schema.json",
+    "bytes": 423,
+    "sha256": "A1EDF9E624D85A8076B98C8ACDFC3846C06EC602C0217072B0D690EBEFF5CF19"
+  }
+]

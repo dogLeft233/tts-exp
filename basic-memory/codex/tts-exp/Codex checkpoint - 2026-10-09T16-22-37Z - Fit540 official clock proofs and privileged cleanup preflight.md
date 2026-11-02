@@ -1,0 +1,88 @@
+---
+title: Codex checkpoint - 2026-10-09T16-22-37Z - Fit540 official clock proofs and
+  privileged cleanup preflight
+type: coding_session
+permalink: tts-exp/codex/tts-exp/codex-checkpoint-2026-10-09-t16-22-37-z-fit540-official-clock-proofs-and-privileged-cleanup-preflight
+status: open
+project: tts-exp
+repository: dogLeft233/tts-exp
+repo_root: E:/Documents/tts-exp
+cwd: E:/Documents/tts-exp
+branch: codex/cross-tfg-audio-head-20261003
+git_sha: 5688784dd5c6c1272074f0c4b6c5ff79f117c907
+started: '2026-10-09T16:22:37Z'
+username: dogle
+hostname: LAPTOP-E133GSLE
+capture: deliberate
+agent: codex
+session_id: 01a0f26b-a3e7-7f91-b1e8-46813543042f
+trigger: compact
+model: gpt-6.1-sol
+tags:
+- codex
+- checkpoint
+---
+
+# Codex checkpoint - 2026-10-09T16-22-37Z - Fit540 official clock proofs and privileged cleanup preflight
+
+## Summary
+
+三模型初始Fit实际540/720；原音时钟证据已进入dispatcher04，消费者与耐久会话正在去掉不合理的identity覆盖限制；只读特权进程扫描解决了清理预检的权限阻塞，worker11已通过ROOT27项测试但尚未远端执行。
+
+## Story
+
+用户要求持续完成能适配多个TFG和未见说话人、超过固定RMS的自然音频增强头，并追明TTS效应的局部声学原因。增强PCM仅驱动视频生成，评分与交付恢复完整自然PCM和原始时钟。ROOT负责理论、冻结协议、BM和独立复核；代码实验由GPT-6 Luna/max承担。局域网wjj@192.168.50.2:22已用native Windows key SSH实际登录，V100-SXM2-16GB/UUID GPU-d12b3309-c299-da83-064d-a3cd619bd560；用户授权运行和存储整理持续有效。所有密码/API只经运行时，不进文件、argv或日志。旧AutoDL DirectD0终局未知，禁止重复启动。
+
+机制证据仍指向音素谱形、内部轨迹和受者相容性，分数、嘴部几何与感知分别讨论。当前头为四物理带/第四参照带的三个对比乘static/正负flux，共9参数，FFT512/hop128、common-mode消除、3dB约束及固定RMS0.0376838172675746。旧W2L-only step120在三模型对RMS平均Cbest +0.011149，Ditto -0.035908，并未达成可迁移目标。继续完整初始720、真实20步联合SPSA、tell5/10/15/20四中心最终720和封闭Dev/Confirm；完整但不准入可用冻结least-violation fallback，缺行或CONTROL_FAILED不能初始化。
+
+## Working State
+
+权威最新队列QC是.codex/scratch/root_actual_live_queue_readback_attempt10/root_actual_qc.json，28305B/raw1c92f068d97ef0127b75f1075f97c260fc40cc7d045a4b0b56e4a001c1b41c1a/self5c9b6b04001cae38370a47951b1b85163d9644c03bb9acb7bfefdd284a3ac652：540/720，W240/M156/D144，113events/56newBLOCK_PASS/336newrows；每块6PASS、actual numeric childrc0、0失败或不完整。Ditto claimoffset144；coordinator260683/ticks3113948、entry260692/ticks3113952当时存活。response21747050B/raw9eb55c25986ee016d1ddca5f0c3ee2b20f602e8247ebc9665b431656dce5f2a2。ROOT核验完整事件链/terminal process-status-manifest-result pins/rowIDs/实际PIDticks，没有作新的科学评分解码。额外只读检查336行primary frame-map paths全部存在且唯一。单队列source /dev/shm/fit40_queue_remote_package_attempt02/project、state /dev/shm/fit40_queue_runtime_attempt01/state；仅三offset240且无active/paused/failure完整。保持单队列，不重启；下一observer使用fresh11目录，终局协调器消失时只读terminal。
+
+Family03本地.codex/scratch/fit40_spsa_remote_family_attempt03/actual_readback_attempt01/fit40_three_model_family_plan_attempt03.json，2584596B/raw9f7914033f9e7e89a60ae2618f7d429860d11de902a8400855fe57e37eb216a2/selfb071434696b2c094180473677d484934d7e3d04c808b7915000c8cfc6c6abb0c。正确远端 /dev/shm/cross_tfg_audio_head_20261009_v100_native_deployment_attempt01/fit40_spsa_remote_family_composition_attempt03/fit40_three_model_family_plan_attempt03.json；错误短路径探测与raw/self混淆已纠正并保留。composer05 rawcd5e2b80ab0bdd4f599d863468c687724898b2e6baad451a5acfe2123648bdae、selector06 rawdda610b985026be7f9328c479358e96c983a582c511964e8c6e72a6d398692e2、helper07 raw989b28c6239c2770bee6799afa85f0b0f0b48ec39bdd584cf68c035c464f1ec4，科学目标不变。initial combined index目前没有实际完整720，不伪造。
+
+point04 raw7747052df91393f1cbf1138dc76523b69f888674d0ab6e07c7fa9cfadfcf1e46的immutable child status/manifest及原时间区间继续有效，父actual Popen区间包含子区间、PIDticks/rc一致。Dev dispatcher03（78957B/rawa054d480e600632c164c8afa46b8acd93bed3836a0c4396103eb56f5fa83d8c3）已ROOT8项测试；fresh04已ROOT9项测试，source84187B/raw12aa80ed44913943f76504e1818ff49b83c2be4146474ebebe0e37e0054addae，tests28425B/raw2899fc5a24d3f7220ed199436e1406faba8669ef221455639b3f570800fa7943。04增加每条PASS raw官方frame-map文件的role official_source_frame_map/pin_name=rowID与exact row-to-fileIDs；block及point都覆盖全NPZ行。保留directory fsync、DISPATCH_INTENT绑定、actualwait/timeout/group cleanup、UNKNOWN不重派。dispatcher04只做proposal24行，四中心每点120行还需实际center companion。
+
+官方字段明确为score.primary_syncnet_input.frame_map_path/frame_map_sha256；可选render.selected_track_crop同名字段若出现必须mapping且相等。score.selected_track_crop是错误字段，mutable Task/Experiment/HANDOFF已find-replace精确修正并readback通过。实际producer run_stagea_dev_attempt06._score_direct以候选自身primary.frame_map_payload.frames[i]建立query；query_frame_index=track_frame_index=source_clock_frame_index，timestamp Fraction(sourceframe,25)。不能要求候选覆盖是identity视频成功跟踪帧的子集，否则错拒合法覆盖。Signal正在新consumer04/session03实现共用own-frame-map校验：rawpins/schema/fps25/1/原自然PCM N/rate/原25fps完整grid/PCM16window，缺map/hash/有理时间/out-of-N fail；合法扩展覆盖、mixed/allfalse mask保留给冻结selector共同支持规则。
+
+consumer03实际名fit_only_final_center_stagea_ingest_attempt03.py，91021B/raw111a4b482a4613c593afdab15dbce1dfb95f457927b4417c7f04d9de0157325c；tests13739B/rawb4a7c38e40b8d9cb87eabb03f948b1f20b422d38dfbec9e8b503042a723ba94a。ROOT完整02到03diff、point blocks和WSL6/6 PASS。修nested source_pins/raw全filetable、package self、原child与parent包含时间、model_planned_rows、官方NPZ exact row map和generator绑定。session02为fit40_durable_spsa_session_attempt02.py，89427B/rawb39ffbb691ca043d6a88052a9d801fff828d03e170d6d0de592e17b891fffbd0，tests58786B/raw2e70bfc5a9374f4adb46b6864795c0b5c3df4d6b747def09507386cea6912ee9；ROOT13/13、0skip、rc0，synthetic full720使用真实composer05/selector06及20pair恢复。v2在dispatch前持久intent，intent+ABSENT UNKNOWN不重派，orphan文件fail、PCG64完整状态/hashchain、跨side/iteration registry唯一且与初始720不交、POSIXdirfsync、actualterminal+fullNPZ再tell/replay。上述identity覆盖约束仍需新03去掉；旧02/consumer03封存不改。实际initial receipt必须来自最终冻结03/consumer04，因为sourcepin自绑定。Signal还负责真正完整720 collector、CLI bootstrap及四actual center path。
+
+native适配资格：W2L05已有真实native3.8 constructor/shared48 pre-render144projection及384文件全SHA/PCM/sourceclock/theta ROOT PASS，指针root_native_w2l05_shared48_readback_attempt03。Muse09 raw2301a0817a3f94d5130c221d1141247b502bc14975aa93c89006cc73eedb0b67目前ROOT local_validate_rows48+6negatives/3tests，不能称完整native constructor。Ditto11 61793B/raw474734d9c7d7ec78b97cabbb1fed799254ad21373d66ca0301f5de1779d30fff，ROOT09到11窄diff/6tests PASS；完整native constructor+real8/40 pre-render仍待Dev冻结packet。旧10漂移及object.__new__测试保留，资格不转移。ROOT授权create-only精确helper07及adapter11源安装，persistenthelper /home/wjj/tts-audio/tts-exp/scripts/audio_enhancement/fit40_snapshot_spsa_application_attempt07.py目前不存在；全SHA/absent/no-symlink/containment核实后install，constructor仍需packet审核。common nativechild fit40_spsa_model_child_attempt02.py 18957B agentPy3.8grammar PASS，ROOT尚未完整source/hash/test审核。显式native解释器/profile/env/importroot/package/runtime/sourceclosure还未封存，不能猜。
+
+存储：archive06七闭合leaf的F+B tar355450880B/rawa1005131389943d080c17279b0768a56d22c30c9ab37d171a4eb0a364f44bdc2，11473members/334638160uncompressed，ROOT全tar/member/source PASS，B cloudsync未知。inventory11固定9936媒体候选245861096B，1537keepers/88777064B须保原位全SHA；1453required已含84NPZ，另84excluded media。ROOT keeper baseline root_cleanup11_keeper_preflight_attempt01/root_actual_qc.json raw1d6b3f06722c0798c47cfb9c58fe173728c5ed9f2b81a33a84f0eb6e60ca9421。不删NPZ/audio/clock/control/log/source，不降fixedreserve。未来point boundedarchive<=500MiB草稿未执行；Fcache eviction要求B完整恢复+immutable relocation/精确SHA授权。
+
+verify08缺stdoutpin、09 manifest顶层model_id不存在、10 actualrc2 PROC_SAME_UID_SCAN_INCOMPLETE:4全部零删除并保留。只读细分probe02确认四个live UID1000 stateS在cwd_readlink EACCES，before/after ticks稳定，0leaf refs，sudo-n无ticket。ROOT已审核并实际用SSH PTY stdin隐藏密码执行仅proc只读privilegedscanner02，source14746B/rawdcfc04d37f9f677b7d28885ff6328cf04db6426a4a7cf4daaaf5acfcbd60fce5，5tests PASS。remote exact /dev/shm/fit40_privileged_proc_scan_attempt02/privileged_proc_writer_scan_attempt02.py。actualstdout .codex/scratch/fit40_privileged_proc_scan_attempt02/readback_attempt01/privileged_scan_stdout_attempt02.json，5625B/raw4c1c0592de308578decf17a7fe9a212fec2fc09861c1016c70bdcceed7593882/self75b359d5c50023f7cbe5bb0f864ef1d83d3941daa10a779ee7f1e0b41512f41e：PASS_NO_ACTIVE_WRITERS，EUID0/targetowner1000，504proc/90sameUID/1671FD，0errors/races/refs，七历史PIDticks实际absent；stderr空、实际rc0。ROOT raw/self/source/counters/absence直接核验PASS；不把先前scan当以后有效ticket。
+
+cleanupworker11+policy18最终sealed，ROOT完整10到11diff/policy/builder/tests并实际WSL27/27、0skip、rc0。worker .codex/scratch/fit40_queue_archive_stream_attempt11/media_cleanup_worker_attempt11.py 80563B/raw1729e627ae02cf7870978a83046b9b2cf33aa2da77d2785545cc4330dfd047b8；test51026B/raw69ba25720e09fe515614b91118a312de27dcd757900b74ad286cd882036d647f；policy18 31677B/rawfca651e5c6c901279cff5bf70420a778c3c7f8d1582717e18e1c82ca4e66a0f3/self260968e5d2790bf5795f547f29e3f303b02f219d0810416e8f9dbf15c2a53535。固定9936、七leaf/PIDtick一致且reorder为scanner顺序；worker仍ownerUID1000，只用固定argv sudo-n/usrbinpython-B exacthelper root读取/proc，每preflight/leaf新scan。拒helperticketfail、错误/引用/任何race、非canonicalJSON、非rc0/空stderr/source/rawself/精确七范围不一致，不允许任意shell/路径。local full actual7controls/Ftar9936 fixture mock旧actualscanstdout，不是远端资格。policy状态仍未执行/未授权，NOunlink。ASR已新followup授权仅fresh0700 exact5files stage/readback+准备verify-only PTY命令；ROOT必须同controlling PTY先sudo-v密码stdin，再normalwjjworker。actualverify尚未运行；通过后ROOT精确9936授权、per-file unlink/journal及1537keeper postSHA再验证。不要把全worker作为root运行。
+
+mutable Taskactive/Experimentimplemented/HANDOFF30行已同步540/privscan/dispatcher03/consumer03/session02，并修正官方field；未包含后来dispatcher04/worker11 ROOT资格，待actualverify/新队列读回再同步。当前三个Luna/max active：Dev nativepacket/package，Signal clockfix/bootstrap，ASR新stage。所有SHM/PID/未提交源码/回执是machine-local fragile；fresh核实再恢复。Git codex/cross-tfg-audio-head-20261003/5688784dd5c6c1272074f0c4b6c5ff79f117c907（local/unpushed），既有dirty/untracked/ignored BM/runs/scratch保留，无新commit/push/PR。goal仍active/unlimited，不因工程失败结束。
+
+## Changed Files
+
+- dispatcher04及tests；consumer03/session02及tests已sealed，新的consumer04/session03在实现；原文件封存。
+- worker11/policy18/tests与privilegedscanner02；ROOT真实tests在root_dispatcher04_tests_attempt01、root_consumer03_session02_tests_attempt01、root_cleanup11_tests_attempt01、root_privileged_scanner02_tests_attempt01。
+- root_actual_live_queue_readback_attempt10、privileged_scan_attempt02/readback_attempt01、mutable Task/Experiment/HANDOFF540及官方字段精确修正。
+
+## Verification
+
+ROOT dispatcher03 8、dispatcher04 9、consumer03 6、session02 13、worker11 27、scanner02 5项实际WSL均PASS/0skip/rc0；本脚本逐个重核主要stderr rawpins。真实queue540、336唯一map metadata、只读root proc scan actualrc0直接核验。新consumer04/session03、完整nativeDitto/Muse/package/worker02未ROOT资格；没有新initialselector/SPSA/center/Dev科学执行，没有任何unlink。
+
+## References
+
+- [Repository](https://github.com/dogLeft233/tts-exp)；fresh该branch PR查询为空；HEAD local/unpushed，不构造未验证commit链接。
+- HANDOFF.md、Task《开发跨 TFG 的自然音频增强头》、Experiment《跨 TFG 自然音频增强头的训练与原音换轨验证》与ADR027为持久主线；以上sealed源、QC、实际receipts为权威证据。
+
+## Observations
+
+- [result] 初始Fit实际540/720，W240/M156/D144；336新行全PASS且actualchildrc0，仍无新的跨模型效果结论。
+- [decision] 每候选使用自身官方frame-map绑定原自然PCM时钟；不要求identity追踪覆盖包含候选覆盖；共同支持/guard由冻结selector决定。
+- [decision] root权限仅用于固定只读proc scanner，ownerwjj运行worker与精确媒体删除；每预检重新扫描，密码只走隐藏PTY stdin。
+- [blocker] 未完整720；freshconsumer04/session03、nativeDitto/Muse/package与center路径待资格，cleanup11仅本地验证而未实际verify/delete。
+- [next_step] 执行ROOT审核后的fresh worker11 verify-only并验证完整原音时钟实现，同时保持唯一队列至完整720，再初始化真实耐久联合SPSA。
+
+## Relations
+
+- continues [[Codex checkpoint - 2026-10-09T15-45-04Z - Fit504 durable session and live proc access diagnosis]]
+- relates_to [[开发跨 TFG 的自然音频增强头]]
+- relates_to [[跨 TFG 自然音频增强头的训练与原音换轨验证]]
+- relates_to [[027-durable-spsa-journal-and-final-center-selection]]

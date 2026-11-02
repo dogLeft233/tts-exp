@@ -1,0 +1,30 @@
+{
+  "schema": "root_native_height_same_route_render_control_v1",
+  "status": "FROZEN_SOURCE_PREPARATION_ONLY_NOT_GPU_ADMISSION",
+  "created_utc": "2026-10-14T18:57:10.396032+00:00",
+  "concept_sha256": "c03523d321fc05b767a0c939a8ec5107dc5ebb4f65f493c263ad92086e406253",
+  "baseline6_metadata_sha256": "c59968dcc781c77da931afe19d505b1372594fb74a7cae2cf5edce623de33c74",
+  "rationale": "OldRMS metadata does not prove allhistoricalsource/body routes remain equivalent. NewCPU featurehook sequence/dtype route must have its own zero intervention control so±causalcontrast doesnot include encoder/injection changes.",
+  "cohort": [
+    "BAC009S0022W0123",
+    "BAC009S0024W0122"
+  ],
+  "models": [
+    "Wav2Lip",
+    "MuseTalk",
+    "Ditto"
+  ],
+  "seed": 20261003,
+  "arms": [
+    "native_height_zero",
+    "native_height_plus",
+    "native_height_minus"
+  ],
+  "conditional_render_cap": 18,
+  "budget_change": "Original12±renderproposal assumed6oldRMSbaselinesexactlyreusable. Add6same-routezerocontrols, no newcandidate/dose/clip/seed; oldbaseline6 fordescriptivecontext only. Thisfileisnotlaunchadmission.",
+  "conditioning": "Zero uses actualadmittedCPU6 unmodified features. Plus/minus useexactsame featurehook, dtypecast, decoder/portrait/seed andoutputframe mapping; no originalaudio re-encode fallback in one arm. Norm/Gram/clock/noncore andsignedaxis controls mustpass onCPU beforeanyGPU.",
+  "audio": "SameverifiedRMSdriver hash for3arms ofclip; finalmux/scoring originalnatural PCM N/16k/time unchanged. Nomotion-basedlagselection/remuxshift.",
+  "endpoints": "Primary feature-response raw/z height Cp/Hp, p borrowed onlypriorRMS perclip/model forALL3arms; normalizer on3arm-commonvalid originalduration frames, sameMFAcore/S17 andspeakerhierarchy. Compare± againstnewzero, additionallyzero vsoldRMSdescriptive. OriginalclockSyncNetCbest/Dmin/D0/B/full/guard20 andaperturespeed reported.",
+  "remaining_gates": "SeparateROOT admittedCPUarrays/rotations andexecution source/pinnedportrait/input/source metadata; freshtrueprocesscheckperGPUdispatch. Do notgrowpast18 or launcholdjobs fromthisplan.",
+  "scope": "Sourcepreparationonly; nodeps/API/implementationtests/newtraining/Confirm."
+}

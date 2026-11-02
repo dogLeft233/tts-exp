@@ -1,0 +1,573 @@
+{
+  "schema": "musetalk_whisper_primitive_alias_projection_v1",
+  "status": "COMPLETED_CPU_FEASIBILITY_ONLY",
+  "source_derived_operator": "A has one row per (video frame, flattened prompt feature) and one column per shared (encoder segment, hidden timestep, hidden-state tuple index); AA+ averages each delta over source-identified copies of the same primitive.",
+  "scope_limit": "necessary slice-consistency condition only; not evidence that any projected native tensor is reachable from a waveform or from the frozen Whisper encoder; no waveform, encoder, renderer, score, or GPU executed",
+  "source_mapping": {
+    "audio_processor_path_remote": "/home/wjj/tts-audio/tts-exp/runs/cross_tfg_audio_head_20261009_v100_native_deployment_attempt01/model_sources/musetalk/musetalk/utils/audio_processor.py",
+    "audio_processor_sha256": "b7b62f3daa99678576138bf581a6394a10d346571a2530a760d1299ffd622b81",
+    "transformers_version": "4.39.2",
+    "transformers_whisper_modeling_sha256": "9f8a41810e9508933cc07b96618718701c16ba4e17154bc81db03230284013a6",
+    "whisper_config_sha256": "ffdccec4f3211f4c63310f2b7098f309fe70f3952cedc5e4d11e43f5b2379b98",
+    "config_d_model": 384,
+    "config_encoder_layers": 4,
+    "hidden_states_tuple_count": 5,
+    "fps_ratio": "50/25=2; frame j slices padded indices [2j,2j+10)",
+    "time_mapping": "context c maps q=2j+c; q in [4,4+actual_length) maps hidden timestep q-4; native clock remains j/25",
+    "layers": "hidden-state tuple entries: initial conv+position state; states entering encoder layers 1-3; final post-layernorm state"
+  },
+  "pins": {
+    "candidate_receipt": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01\\receipt.json",
+      "sha256": "37ff2a054bb1e4f1dcca1d37de4fe6f292bee433832371886109b879841be705"
+    },
+    "cpu6_receipt": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\readback_attempt04\\receipt.json",
+      "sha256": "892720030a6e78b109607bda0f447af7faeb9080283f8258a6a1bd0cd2dcf12b"
+    },
+    "cpu6_qa": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_actual_cpu6_qa.json",
+      "sha256": "e9735787aa9d6c33ce591feec104864319e4c51a425ff3beec6ff668b47e5b72"
+    },
+    "audio_processor": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\root_frontend_actual_source_review_attempt01\\08_audio_processor.py",
+      "sha256": "b7b62f3daa99678576138bf581a6394a10d346571a2530a760d1299ffd622b81"
+    },
+    "transformers_whisper_impl": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\root_frontend_actual_source_review_attempt01\\10_modeling_whisper.py",
+      "sha256": "9f8a41810e9508933cc07b96618718701c16ba4e17154bc81db03230284013a6"
+    },
+    "whisper_config": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\root_frontend_actual_source_review_attempt01\\12_config.json",
+      "sha256": "ffdccec4f3211f4c63310f2b7098f309fe70f3952cedc5e4d11e43f5b2379b98"
+    },
+    "source_qc": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\root_frontend_actual_source_review_attempt01\\root_actual_qc.json",
+      "sha256": "f009da64e826f7ae0a1e460c6e9a6f04b4b4f82b856a89c8eaca93b3e152db97"
+    }
+  },
+  "candidate_receipt_sha256": "37ff2a054bb1e4f1dcca1d37de4fe6f292bee433832371886109b879841be705",
+  "cpu6_receipt_sha256": "892720030a6e78b109607bda0f447af7faeb9080283f8258a6a1bd0cd2dcf12b",
+  "cpu6_qa_sha256": "e9735787aa9d6c33ce591feec104864319e4c51a425ff3beec6ff668b47e5b72",
+  "rotation_helper_sha256": "6f782f2f89467914f3e9c70e483c2efd28b160789b3e64f357e0256902acdcd7",
+  "articulatory_anchor_source_sha256": "38fe8b6a7f5d1ccb926b3250feadb2a583448e17057ee8ec41fbbee0c8cb6c3c",
+  "phone_time_parser_sha256": "f138a2088cc8d7ac07c2886ab50569362d39599e9a3e3c9b256251d071d538eb",
+  "rows": [
+    {
+      "sample_id": "BAC009S0022W0123",
+      "status": "PASS_SOURCE_DERIVED_GATHER_RECONSTRUCTS_CPU6_ZERO_EXACTLY",
+      "cpu6_native_npz": {
+        "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\readback_attempt04\\BAC009S0022W0123.musetalk.native.npz",
+        "file_sha256": "957d0a598f3c7630b28517d8002467b173d031cd6acf2bc883d0000dbb3c82fb",
+        "feature_array_sha256": "85350c5c6b991ee3d523a7c4c445ed08c73fb5a9f1f2961abfa53a0addec7722"
+      },
+      "source_pcm": {
+        "path": "/dev/shm/cross_tfg_native_attribute_response_probe_20261015_attempt01/input/BAC009S0022W0123.generator_condition_f32.wav",
+        "file_sha256": "e88265a5aeb58c1c3a44ddca449e16c07dd4b4713b6079eb5933499e00fb38a6",
+        "pcm_float32_sha256": "729be1744e9d6f1dc1b600765acd07bc474e02bdaed73d5e9a4d2a6b1db31b3f",
+        "sample_count": 51376
+      },
+      "candidate_arrays": {
+        "zero": {
+          "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01\\BAC009S0022W0123.musetalk.output_owned_height_zero.npy",
+          "file_sha256": "ee452831f4c82d3913f2d022c62aa88b1230c77b5ee548a8d812713291e65211",
+          "array_sha256": "85350c5c6b991ee3d523a7c4c445ed08c73fb5a9f1f2961abfa53a0addec7722"
+        },
+        "plus": {
+          "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01\\BAC009S0022W0123.musetalk.output_owned_height_plus.npy",
+          "file_sha256": "4f6f71adf10e6ed6c10876ff422ab42886bc36e9aef07f30ac380cb0416ec2b1",
+          "array_sha256": "3d67b1d647af19a4b3299832963fbe7c99ce1315146a8da2c56b6005b54e5299"
+        },
+        "minus": {
+          "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01\\BAC009S0022W0123.musetalk.output_owned_height_minus.npy",
+          "file_sha256": "8057af3e556d96956e0bfed766c897ff7dcd9cbc108c3d4bd17fac43f2617c94",
+          "array_sha256": "358f0eea195fad81e83c89d7c756a42032135a39390e3702de1c381bd98355e1"
+        }
+      },
+      "native_clock": {
+        "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01\\BAC009S0022W0123.musetalk.native_time_s.npy",
+        "file_sha256": "3bedbf855b9b177d5fc2ae443e4c4024285a8599fc5dc4a8058359e1e7c5b370",
+        "exact_unchanged_j_over_25": true
+      },
+      "native_shape": [
+        80,
+        50,
+        384
+      ],
+      "native_dtype": "float32",
+      "sample_count_16k": 51376,
+      "frame_count_25fps": 80,
+      "actual_whisper_length_50hz": 160,
+      "left_pad_tokens": 4,
+      "right_pad_tokens": 12,
+      "hidden_state_count": 5,
+      "flatten_rule": "feature_index = context_index * 5 + hidden_state_index",
+      "source_hidden_key_rule": "(segment=0, hidden_time=q-4, hidden_state_index) for real tokens; side-specific padded-sequence slot keys for zero padding",
+      "primitive_count": 840,
+      "prompt_slot_count": 4000,
+      "primitive_copy_multiplicity_histogram": {
+        "1": 20,
+        "2": 20,
+        "3": 20,
+        "4": 20,
+        "5": 760
+      },
+      "zero_gather_reconstruction": {
+        "exact_bitwise": true,
+        "max_abs_error": 0.0,
+        "mismatch_scalar_count": 0
+      },
+      "effective_owned_output_rows_from_rotated_status_only": [
+        28,
+        29,
+        44,
+        45,
+        57,
+        58,
+        59
+      ],
+      "arms": {
+        "plus": {
+          "candidate_delta_energy": 251.07260797879326,
+          "projected_delta_energy": 97.22170991097838,
+          "residual_energy": 153.8508980678149,
+          "residual_energy_ratio": 0.6127745248928543,
+          "projected_energy_ratio": 0.3872254751071458,
+          "owned_candidate_energy": 251.0726079787933,
+          "owned_projected_energy": 44.128349277786235,
+          "owned_target_retained_energy_ratio": 0.175759313742077,
+          "owned_target_retained_norm_ratio": 0.4192365844509243,
+          "projected_nonowned_energy": 53.09336063319214,
+          "projected_nonowned_energy_fraction_of_projected": 0.5461060156399984,
+          "projected_nonowned_energy_over_original_owned_energy": 0.2114661613650687,
+          "projected_nonowned_affected_frame_indices": [
+            24,
+            25,
+            26,
+            27,
+            30,
+            31,
+            32,
+            33,
+            40,
+            41,
+            42,
+            43,
+            46,
+            47,
+            48,
+            49,
+            53,
+            54,
+            55,
+            56,
+            60,
+            61,
+            62,
+            63
+          ],
+          "projected_nonowned_affected_frame_count": 24,
+          "projected_nonowned_max_abs": 0.4441566467285156,
+          "projected_nonowned_rms": 0.00615471664509782,
+          "candidate_delta_nonzero_frame_indices": [
+            28,
+            29,
+            44,
+            45,
+            57,
+            58,
+            59
+          ]
+        },
+        "minus": {
+          "candidate_delta_energy": 251.07260842437205,
+          "projected_delta_energy": 97.2994562093005,
+          "residual_energy": 153.77315221507155,
+          "residual_energy_ratio": 0.6124648689480239,
+          "projected_energy_ratio": 0.3875351310519761,
+          "owned_candidate_energy": 251.07260842437205,
+          "owned_projected_energy": 44.17023317724522,
+          "owned_target_retained_energy_ratio": 0.1759261332984086,
+          "owned_target_retained_norm_ratio": 0.4194354936082646,
+          "projected_nonowned_energy": 53.12922303205528,
+          "projected_nonowned_energy_fraction_of_projected": 0.546038231886612,
+          "projected_nonowned_energy_over_original_owned_energy": 0.2116089977535675,
+          "projected_nonowned_affected_frame_indices": [
+            24,
+            25,
+            26,
+            27,
+            30,
+            31,
+            32,
+            33,
+            40,
+            41,
+            42,
+            43,
+            46,
+            47,
+            48,
+            49,
+            53,
+            54,
+            55,
+            56,
+            60,
+            61,
+            62,
+            63
+          ],
+          "projected_nonowned_affected_frame_count": 24,
+          "projected_nonowned_max_abs": 0.44745025634765623,
+          "projected_nonowned_rms": 0.006156794924197485,
+          "candidate_delta_nonzero_frame_indices": [
+            28,
+            29,
+            44,
+            45,
+            57,
+            58,
+            59
+          ]
+        }
+      },
+      "projected_token_signed_margins": [
+        {
+          "phone_index": 8,
+          "base_phone": "a",
+          "class": "high",
+          "owned_prompt_rows": [
+            28,
+            29
+          ],
+          "source_candidate_baseline_signed_margin": -0.016679128617541547,
+          "recomputed_zero_signed_margin": -0.016679128617541547,
+          "arms": {
+            "plus": {
+              "candidate_signed_margin": 0.008240300329367758,
+              "candidate_delta_vs_zero": 0.024919428946909305,
+              "projected_signed_margin": -0.008029699511427884,
+              "projected_delta_vs_zero": 0.008649429106113663
+            },
+            "minus": {
+              "candidate_signed_margin": -0.0415568686821531,
+              "candidate_delta_vs_zero": -0.024877740064611555,
+              "projected_signed_margin": -0.02532508010321352,
+              "projected_delta_vs_zero": -0.008645951485671974
+            }
+          }
+        },
+        {
+          "phone_index": 16,
+          "base_phone": "i",
+          "class": "low",
+          "owned_prompt_rows": [
+            44,
+            45
+          ],
+          "source_candidate_baseline_signed_margin": 0.06671920663301797,
+          "recomputed_zero_signed_margin": 0.06671920663301797,
+          "arms": {
+            "plus": {
+              "candidate_signed_margin": 0.09132418364862016,
+              "candidate_delta_vs_zero": 0.024604977015602186,
+              "projected_signed_margin": 0.07525729047890366,
+              "projected_delta_vs_zero": 0.008538083845885683
+            },
+            "minus": {
+              "candidate_signed_margin": 0.041947466232563804,
+              "candidate_delta_vs_zero": -0.02477174040045417,
+              "projected_signed_margin": 0.05815308930855952,
+              "projected_delta_vs_zero": -0.008566117324458451
+            }
+          }
+        },
+        {
+          "phone_index": 21,
+          "base_phone": "u",
+          "class": "low",
+          "owned_prompt_rows": [
+            57,
+            58,
+            59
+          ],
+          "source_candidate_baseline_signed_margin": 0.06026055321349535,
+          "recomputed_zero_signed_margin": 0.06026055321349535,
+          "arms": {
+            "plus": {
+              "candidate_signed_margin": 0.0849150558912865,
+              "candidate_delta_vs_zero": 0.02465450267779116,
+              "projected_signed_margin": 0.07135410916958163,
+              "projected_delta_vs_zero": 0.011093555956086278
+            },
+            "minus": {
+              "candidate_signed_margin": 0.03545543053940673,
+              "candidate_delta_vs_zero": -0.024805122674088617,
+              "projected_signed_margin": 0.049123743043536776,
+              "projected_delta_vs_zero": -0.011136810169958572
+            }
+          }
+        }
+      ]
+    },
+    {
+      "sample_id": "BAC009S0024W0122",
+      "status": "PASS_SOURCE_DERIVED_GATHER_RECONSTRUCTS_CPU6_ZERO_EXACTLY",
+      "cpu6_native_npz": {
+        "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\readback_attempt04\\BAC009S0024W0122.musetalk.native.npz",
+        "file_sha256": "0d294c1604f47c36e9233085447f0371956139da6518fa0541b624d4caf90d6f",
+        "feature_array_sha256": "91a2b42cf9aae8f80125c561d5e6d0b156ac646d97f72458c402010544ecf772"
+      },
+      "source_pcm": {
+        "path": "/dev/shm/cross_tfg_native_attribute_response_probe_20261015_attempt01/input/BAC009S0024W0122.generator_condition_f32.wav",
+        "file_sha256": "95e1bd7bee7c670237f807b0223cf1335c2032e9c410f662e566882bf5ef0e31",
+        "pcm_float32_sha256": "0da10d8317236439a00d9b5c343a550d2b43620fe485bc28d01c31c42fc6ceff",
+        "sample_count": 56561
+      },
+      "candidate_arrays": {
+        "zero": {
+          "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01\\BAC009S0024W0122.musetalk.output_owned_height_zero.npy",
+          "file_sha256": "241e761ae7ce55f421cf047d2fb4b18b00a786cf8a326a620184377d8d931e56",
+          "array_sha256": "91a2b42cf9aae8f80125c561d5e6d0b156ac646d97f72458c402010544ecf772"
+        },
+        "plus": {
+          "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01\\BAC009S0024W0122.musetalk.output_owned_height_plus.npy",
+          "file_sha256": "88f0e0420879004f03e49be51665dd0fe48198b8370e2fdb4e1eaee375f1c516",
+          "array_sha256": "82b02ea72fbee05c4d6bcb40d986eefb8008e5591d2ca4057ffd49878aec9026"
+        },
+        "minus": {
+          "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01\\BAC009S0024W0122.musetalk.output_owned_height_minus.npy",
+          "file_sha256": "a4e677b01b24602d0ab40fd0688dffcf37365270e046d7c918bae724d64e5262",
+          "array_sha256": "4429ac11440adc322c6b49dfd0d4f5a5148a8cd3b54b08026f9ed0067dea58b5"
+        }
+      },
+      "native_clock": {
+        "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01\\BAC009S0024W0122.musetalk.native_time_s.npy",
+        "file_sha256": "6130275bfb373f6441db425d7e47644bde587cfda69223ede132b05ea7202fdc",
+        "exact_unchanged_j_over_25": true
+      },
+      "native_shape": [
+        88,
+        50,
+        384
+      ],
+      "native_dtype": "float32",
+      "sample_count_16k": 56561,
+      "frame_count_25fps": 88,
+      "actual_whisper_length_50hz": 176,
+      "left_pad_tokens": 4,
+      "right_pad_tokens": 12,
+      "hidden_state_count": 5,
+      "flatten_rule": "feature_index = context_index * 5 + hidden_state_index",
+      "source_hidden_key_rule": "(segment=0, hidden_time=q-4, hidden_state_index) for real tokens; side-specific padded-sequence slot keys for zero padding",
+      "primitive_count": 920,
+      "prompt_slot_count": 4400,
+      "primitive_copy_multiplicity_histogram": {
+        "1": 20,
+        "2": 20,
+        "3": 20,
+        "4": 20,
+        "5": 840
+      },
+      "zero_gather_reconstruction": {
+        "exact_bitwise": true,
+        "max_abs_error": 0.0,
+        "mismatch_scalar_count": 0
+      },
+      "effective_owned_output_rows_from_rotated_status_only": [
+        31,
+        32,
+        42,
+        43,
+        53,
+        54,
+        55
+      ],
+      "arms": {
+        "plus": {
+          "candidate_delta_energy": 252.90189029471526,
+          "projected_delta_energy": 97.86581995667288,
+          "residual_energy": 155.03607033804238,
+          "residual_energy_ratio": 0.6130285153557908,
+          "projected_energy_ratio": 0.38697148464420916,
+          "owned_candidate_energy": 252.90189029471526,
+          "owned_projected_energy": 44.25726496196731,
+          "owned_target_retained_energy_ratio": 0.1749977626121845,
+          "owned_target_retained_norm_ratio": 0.418327339068563,
+          "projected_nonowned_energy": 53.60855499470557,
+          "projected_nonowned_energy_fraction_of_projected": 0.547776077679001,
+          "projected_nonowned_energy_over_original_owned_energy": 0.21197372203202466,
+          "projected_nonowned_affected_frame_indices": [
+            27,
+            28,
+            29,
+            30,
+            33,
+            34,
+            35,
+            36,
+            38,
+            39,
+            40,
+            41,
+            44,
+            45,
+            46,
+            47,
+            49,
+            50,
+            51,
+            52,
+            56,
+            57,
+            58,
+            59
+          ],
+          "projected_nonowned_affected_frame_count": 24,
+          "projected_nonowned_max_abs": 0.44640756249427793,
+          "projected_nonowned_rms": 0.0058711601471032205,
+          "candidate_delta_nonzero_frame_indices": [
+            31,
+            32,
+            42,
+            43,
+            53,
+            54,
+            55
+          ]
+        },
+        "minus": {
+          "candidate_delta_energy": 252.90189241497774,
+          "projected_delta_energy": 97.84362515120137,
+          "residual_energy": 155.05826726377634,
+          "residual_energy_ratio": 0.6131162791354157,
+          "projected_energy_ratio": 0.3868837208645843,
+          "owned_candidate_energy": 252.90189241497774,
+          "owned_projected_energy": 44.24169740378548,
+          "owned_target_retained_energy_ratio": 0.17493620542463498,
+          "owned_target_retained_norm_ratio": 0.4182537572152042,
+          "projected_nonowned_energy": 53.601927747415886,
+          "projected_nonowned_energy_fraction_of_projected": 0.5478326019153813,
+          "projected_nonowned_energy_over_original_owned_energy": 0.21194751543994927,
+          "projected_nonowned_affected_frame_indices": [
+            27,
+            28,
+            29,
+            30,
+            33,
+            34,
+            35,
+            36,
+            38,
+            39,
+            40,
+            41,
+            44,
+            45,
+            46,
+            47,
+            49,
+            50,
+            51,
+            52,
+            56,
+            57,
+            58,
+            59
+          ],
+          "projected_nonowned_affected_frame_count": 24,
+          "projected_nonowned_max_abs": 0.4467489004135132,
+          "projected_nonowned_rms": 0.005870797230841244,
+          "candidate_delta_nonzero_frame_indices": [
+            31,
+            32,
+            42,
+            43,
+            53,
+            54,
+            55
+          ]
+        }
+      },
+      "projected_token_signed_margins": [
+        {
+          "phone_index": 6,
+          "base_phone": "u",
+          "class": "low",
+          "owned_prompt_rows": [
+            31,
+            32
+          ],
+          "source_candidate_baseline_signed_margin": 0.04424099177010307,
+          "recomputed_zero_signed_margin": 0.04424099177010307,
+          "arms": {
+            "plus": {
+              "candidate_signed_margin": 0.06899991840990946,
+              "candidate_delta_vs_zero": 0.02475892663980639,
+              "projected_signed_margin": 0.05284910126299117,
+              "projected_delta_vs_zero": 0.008608109492888101
+            },
+            "minus": {
+              "candidate_signed_margin": 0.019371485921409106,
+              "candidate_delta_vs_zero": -0.024869505848693966,
+              "projected_signed_margin": 0.03561882136423571,
+              "projected_delta_vs_zero": -0.008622170405867359
+            }
+          }
+        },
+        {
+          "phone_index": 9,
+          "base_phone": "y",
+          "class": "low",
+          "owned_prompt_rows": [
+            42,
+            43
+          ],
+          "source_candidate_baseline_signed_margin": 0.06051917909388592,
+          "recomputed_zero_signed_margin": 0.06051917909388592,
+          "arms": {
+            "plus": {
+              "candidate_signed_margin": 0.08517178130651713,
+              "candidate_delta_vs_zero": 0.024652602212631214,
+              "projected_signed_margin": 0.06910259985902366,
+              "projected_delta_vs_zero": 0.00858342076513774
+            },
+            "minus": {
+              "candidate_signed_margin": 0.03571531056855489,
+              "candidate_delta_vs_zero": -0.02480386852533103,
+              "projected_signed_margin": 0.05191790045855142,
+              "projected_delta_vs_zero": -0.008601278635334497
+            }
+          }
+        },
+        {
+          "phone_index": 16,
+          "base_phone": "a",
+          "class": "high",
+          "owned_prompt_rows": [
+            53,
+            54,
+            55
+          ],
+          "source_candidate_baseline_signed_margin": -0.033962524854277705,
+          "recomputed_zero_signed_margin": -0.033962524854277705,
+          "arms": {
+            "plus": {
+              "candidate_signed_margin": -0.009065439103626982,
+              "candidate_delta_vs_zero": 0.02489708575065072,
+              "projected_signed_margin": -0.022746387299332083,
+              "projected_delta_vs_zero": 0.011216137554945622
+            },
+            "minus": {
+              "candidate_signed_margin": -0.058774721644863234,
+              "candidate_delta_vs_zero": -0.02481219679058553,
+              "projected_signed_margin": -0.045155097971816216,
+              "projected_delta_vs_zero": -0.011192573117538511
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

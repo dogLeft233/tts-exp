@@ -1,0 +1,21 @@
+{
+  "status": "RUNNING",
+  "pid": 112088,
+  "process_start_utc": "2026-10-14T22:20:58.5212454Z",
+  "process_start_ticks": 639276132585212454,
+  "outer_start_utc": "2026-10-14T22:20:58.5039891Z",
+  "executable": "C:\\Users\\dogle\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "argv": [
+    "-B",
+    "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\whisper_primitive_projection_attempt01.py"
+  ],
+  "cwd": "E:\\Documents\\tts-exp",
+  "source": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\whisper_primitive_projection_attempt01.py",
+  "source_sha256": "4fdd61b1872684283685b841a438fd70480cda7fc61c9e47d2791955c0801cfe",
+  "input_pins": {
+    "cpu6_receipt_sha256": "892720030a6e78b109607bda0f447af7faeb9080283f8258a6a1bd0cd2dcf12b",
+    "candidate_receipt_sha256": "37ff2a054bb1e4f1dcca1d37de4fe6f292bee433832371886109b879841be705",
+    "root_frontend_qc_sha256": "f009da64e826f7ae0a1e460c6e9a6f04b4b4f82b856a89c8eaca93b3e152db97",
+    "output_json": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\whisper_primitive_projection_attempt01.json"
+  }
+}

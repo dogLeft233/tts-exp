@@ -1,0 +1,134 @@
+{
+  "schema": "root_actual_cpu6_feature_qa_v1",
+  "status": "PASS_ACTUAL_SIX_NATIVE_ARRAYS_PCM_CLOCK_AND_RAWMEL_CHUNKS",
+  "created_utc": "2026-10-14T18:59:13.320056+00:00",
+  "source_sha256": "2cf6ee7164498d41dd5aec50017129ba5d84d93154082810b391c7367cd43c8c",
+  "receipt_sha256": "892720030a6e78b109607bda0f447af7faeb9080283f8258a6a1bd0cd2dcf12b",
+  "admission_sha256": "f133fe6b8d0ec18cd8bb3c74994a5ff8a7b8f2fa85796895cf4c432a97fa3f1c",
+  "rows": [
+    {
+      "sample_id": "BAC009S0022W0123",
+      "model": "wav2lip",
+      "file_sha256": "8eaed7898cdadffcf253ad936036888bed0ff5f2380d3ee751802e20edd32fd1",
+      "shape": [
+        257,
+        80
+      ],
+      "dtype": "float64",
+      "dimension": 80,
+      "native_clock_hz": 80,
+      "renderer_frames": 77,
+      "canonical_baseline_frame_count_matches": true,
+      "min_frame_norm": 11.601052085109805,
+      "zero_frame_norms": 0,
+      "feature_min": -4.0,
+      "feature_max": 0.83496872464191,
+      "RMS": 0.03768381642206089,
+      "pcm_sha256": "729be1744e9d6f1dc1b600765acd07bc474e02bdaed73d5e9a4d2a6b1db31b3f"
+    },
+    {
+      "sample_id": "BAC009S0022W0123",
+      "model": "musetalk",
+      "file_sha256": "957d0a598f3c7630b28517d8002467b173d031cd6acf2bc883d0000dbb3c82fb",
+      "shape": [
+        80,
+        50,
+        384
+      ],
+      "dtype": "float32",
+      "dimension": 19200,
+      "native_clock_hz": 25,
+      "renderer_frames": 80,
+      "canonical_baseline_frame_count_matches": true,
+      "min_frame_norm": 90.91513544011075,
+      "zero_frame_norms": 0,
+      "feature_min": -17.480510711669922,
+      "feature_max": 113.69127655029297,
+      "RMS": 0.03768381642206089,
+      "pcm_sha256": "729be1744e9d6f1dc1b600765acd07bc474e02bdaed73d5e9a4d2a6b1db31b3f"
+    },
+    {
+      "sample_id": "BAC009S0022W0123",
+      "model": "ditto",
+      "file_sha256": "92bb8b1dad011c17b3527e9043072f19c7c53b494a31583575fb5e880dd1416b",
+      "shape": [
+        81,
+        1024
+      ],
+      "dtype": "float32",
+      "dimension": 1024,
+      "native_clock_hz": 25,
+      "renderer_frames": 81,
+      "canonical_baseline_frame_count_matches": true,
+      "min_frame_norm": 9.260563653385084,
+      "zero_frame_norms": 0,
+      "feature_min": -2.33062744140625,
+      "feature_max": 1.5826969146728516,
+      "RMS": 0.03768381642206089,
+      "pcm_sha256": "729be1744e9d6f1dc1b600765acd07bc474e02bdaed73d5e9a4d2a6b1db31b3f"
+    },
+    {
+      "sample_id": "BAC009S0024W0122",
+      "model": "wav2lip",
+      "file_sha256": "74e81224a4a8df5587779966dd7a52e49d0e55af10b5866346be580e53c8f562",
+      "shape": [
+        283,
+        80
+      ],
+      "dtype": "float64",
+      "dimension": 80,
+      "native_clock_hz": 80,
+      "renderer_frames": 85,
+      "canonical_baseline_frame_count_matches": true,
+      "min_frame_norm": 11.463539603509968,
+      "zero_frame_norms": 0,
+      "feature_min": -4.0,
+      "feature_max": 1.0863120497031744,
+      "RMS": 0.03768381626738949,
+      "pcm_sha256": "0da10d8317236439a00d9b5c343a550d2b43620fe485bc28d01c31c42fc6ceff"
+    },
+    {
+      "sample_id": "BAC009S0024W0122",
+      "model": "musetalk",
+      "file_sha256": "0d294c1604f47c36e9233085447f0371956139da6518fa0541b624d4caf90d6f",
+      "shape": [
+        88,
+        50,
+        384
+      ],
+      "dtype": "float32",
+      "dimension": 19200,
+      "native_clock_hz": 25,
+      "renderer_frames": 88,
+      "canonical_baseline_frame_count_matches": true,
+      "min_frame_norm": 90.94170338078443,
+      "zero_frame_norms": 0,
+      "feature_min": -26.310611724853516,
+      "feature_max": 226.3553466796875,
+      "RMS": 0.03768381626738949,
+      "pcm_sha256": "0da10d8317236439a00d9b5c343a550d2b43620fe485bc28d01c31c42fc6ceff"
+    },
+    {
+      "sample_id": "BAC009S0024W0122",
+      "model": "ditto",
+      "file_sha256": "7f4631d8738f503b561ec0ae767181df061c912ea4e9ae0559437feafc46c2e4",
+      "shape": [
+        89,
+        1024
+      ],
+      "dtype": "float32",
+      "dimension": 1024,
+      "native_clock_hz": 25,
+      "renderer_frames": 89,
+      "canonical_baseline_frame_count_matches": true,
+      "min_frame_norm": 9.344763592021668,
+      "zero_frame_norms": 0,
+      "feature_min": -2.643420696258545,
+      "feature_max": 1.4905205965042114,
+      "RMS": 0.03768381626738949,
+      "pcm_sha256": "0da10d8317236439a00d9b5c343a550d2b43620fe485bc28d01c31c42fc6ceff"
+    }
+  ],
+  "scope": "Actual6NPZ bodies/arraybytes/shape/dtype/finite/model-specific clock, Wav chunks rebuilt from actual rawmel; source/helper/manifest pins and already qualified PCMdriver bindings. No encoder rerun or implementation tests.",
+  "limits": "Features are CPU-derived baselines for future nativehooks; historicalrenderframecount matches do not prove historicalpixel/runtime equivalence. Same-route zero render controls planned."
+}

@@ -1,0 +1,113 @@
+{
+  "schema": "native_attribute_response_plot_receipt_attempt01_v1",
+  "status": "PLOTTED_FROM_PINNED_ROOT_READOUTS",
+  "scope": {
+    "models": [
+      "wav2lip",
+      "musetalk",
+      "ditto"
+    ],
+    "clips": [
+      "BAC009S0022W0123",
+      "BAC009S0024W0122"
+    ],
+    "arms_display_order": [
+      "native_height_plus",
+      "native_height_zero",
+      "native_height_minus"
+    ],
+    "absolute_lags_frames": [
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "n_seen_dev_screen": 2,
+    "human_mouth_accuracy_claim": false,
+    "score_recomputation": false,
+    "support_or_phase_selection": false
+  },
+  "input_pins": {
+    "root_actual_response_qa": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_actual_response_qa.json",
+      "sha256": "72ef059b13a3a0cfd4f398b2f203224ec104a2072e18635fa5f124a26ad2e538"
+    },
+    "geometry_effect": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\geometry_effect_attempt03.json",
+      "sha256": "1b88218d53f88a73575e3acfbd413fd8870b843748c872b6016a38cc174473b4"
+    }
+  },
+  "source": {
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\plot_response_summary_source_attempt02.py",
+    "sha256": "a644515022a9b31957e571be59dead691dd112c1428f9c1221e6293b4ac0bd8d"
+  },
+  "outputs": [
+    {
+      "path": "response_endpoints_18arm.csv",
+      "sha256": "e1521a38443c910a5c134a7c6b3a082eaee7e70f7b4cf237d2179d1eaf508533",
+      "bytes": 3302
+    },
+    {
+      "path": "score_deltas_12pair.csv",
+      "sha256": "6c25f1b10ab3a62cc9f0a51d009076d5b682db9cd02ab0b12496fa4088dbf298",
+      "bytes": 2844
+    },
+    {
+      "path": "geometry_all17lag_curves.csv",
+      "sha256": "f1919458771d8bab54fa33ea850f18288264ddc21497ed554a4af0ea7cb9f837",
+      "bytes": 47441
+    },
+    {
+      "path": "response_endpoints_6cell.png",
+      "sha256": "7f52bd335bd4f5534dd5036d3609f9a8095afd698ad44d23bfb84770963af0d4",
+      "bytes": 321604
+    },
+    {
+      "path": "response_endpoints_6cell.svg",
+      "sha256": "359f51ebb3410aa9d73bb46c20dcd61d20a6f00f8a9d7f8a0ebf69c9d6ffefdd",
+      "bytes": 178968
+    },
+    {
+      "path": "score_deltas_12pair.png",
+      "sha256": "4811cdd69fc3d7056a94ef6599e842914771caaf613cac742b5a7ed0e51e3a78",
+      "bytes": 188842
+    },
+    {
+      "path": "score_deltas_12pair.svg",
+      "sha256": "72a9cecc91777c315f225661b1d3f37cc8810b040cc1c035348d767374ae2941",
+      "bytes": 143231
+    },
+    {
+      "path": "geometry_all17lag_6cell.png",
+      "sha256": "a1ec6294a547178781630f35f242c9d076147b2ad43bb6b4770daab5a14b52d2",
+      "bytes": 610575
+    },
+    {
+      "path": "geometry_all17lag_6cell.svg",
+      "sha256": "39c535415a0b34fe28dd55689d3fc7a81561a772af850bf411306de801fdbbbb",
+      "bytes": 301718
+    }
+  ],
+  "root_gate_metadata_carried_without_redefinition": {
+    "model_response_pass": {
+      "wav2lip": false,
+      "musetalk": false,
+      "ditto": false
+    },
+    "interpretation": "Seen-DEV two-person screening only; original PCM/clock; no peak retuning, human accuracy claim, or waveform reachability claim."
+  },
+  "caption": "n=2 seen-DEV screen; mouth geometry is descriptive motion, not human accuracy ground truth. A complete joint result still requires the frozen Dmin and other ROOT gate criteria."
+}

@@ -1,0 +1,76 @@
+{
+  "baseline_readout_manifest_sha256": "1b4f454463a4387b470c744b0f9269b991e2c4e4fd0164132c40a1c87a655c4f",
+  "clock": {
+    "fps_den": 1,
+    "fps_num": 25,
+    "frame_pts": "j/25",
+    "time_warp": false
+  },
+  "codec_chain": [
+    {
+      "codec": "ffv1",
+      "pix_fmt": "yuv420p",
+      "stage": "512px"
+    },
+    {
+      "codec": "ffv1",
+      "pix_fmt": "yuv420p",
+      "scale": "scale=224:224:flags=lanczos",
+      "stage": "224px"
+    }
+  ],
+  "formal_h264_artifacts_modified": false,
+  "input_manifest_sha256": "673ee09cdba130ee70698553f6bd52ca4b4633cf85c94e2092de66bbb36b4889",
+  "row_count_completed": 6,
+  "row_count_expected": 6,
+  "rows": [
+    {
+      "row_id": "BAC009S0022W0123/musetalk/minus",
+      "row_receipt_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_minus/codec_diagnostic_row_receipt.json",
+      "row_receipt_sha256": "6595f9f410fcd3834c2a4958d53872628a5fcbd5ae72ab6c6ec09941b349c9b6",
+      "status": "PASS"
+    },
+    {
+      "row_id": "BAC009S0022W0123/musetalk/plus",
+      "row_receipt_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_plus/codec_diagnostic_row_receipt.json",
+      "row_receipt_sha256": "89460b2b4516d4036112fcf8538f78d333f53691d1c1140d7780a631070c89be",
+      "status": "PASS"
+    },
+    {
+      "row_id": "BAC009S0022W0123/musetalk/zero",
+      "row_receipt_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_zero/codec_diagnostic_row_receipt.json",
+      "row_receipt_sha256": "7a440bebc82fe508eedcc081540dfb71b0f88e89ee18026b93be4359649844df",
+      "status": "PASS"
+    },
+    {
+      "row_id": "BAC009S0024W0122/musetalk/minus",
+      "row_receipt_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_minus/codec_diagnostic_row_receipt.json",
+      "row_receipt_sha256": "a763091ba63d969d7f42735e3195c4c3847b83e3bea319b275d6c81f9eeb5014",
+      "status": "PASS"
+    },
+    {
+      "row_id": "BAC009S0024W0122/musetalk/plus",
+      "row_receipt_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_plus/codec_diagnostic_row_receipt.json",
+      "row_receipt_sha256": "c9debe81154a1fb27b9bb0a08c5a57dd101ec7a8c812cfccaf9f18fb63404c57",
+      "status": "PASS"
+    },
+    {
+      "row_id": "BAC009S0024W0122/musetalk/zero",
+      "row_receipt_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_zero/codec_diagnostic_row_receipt.json",
+      "row_receipt_sha256": "82334c483f6ba3d39faacc5c8f372f98afddd5c3b87e87dd838b1887d221a16e",
+      "status": "PASS"
+    }
+  ],
+  "schema": "native_attribute_response_ffv1_codec_diagnostic_v1",
+  "scope": "diagnostic-only; existing formal H.264 full/guard20 artifacts are immutable",
+  "score_contract": "existing Stage-A evaluator; natural original PCM; full and guard20 from the pinned readout summary helper",
+  "score_invocations_completed": 6,
+  "score_invocations_expected": 6,
+  "source_pins": {
+    "full_guard20_summary_source_sha256": "79bb2df7c3f0ccb8642ae778dce84856e887fce86035df6d0057766980e68f44",
+    "stagea_syncnet_evaluator_sha256": "b15762e1837fd28eaba8fe9e261ffb35b164246da555cb3a7e3bbc7c645f818b",
+    "strict_mux_helper_sha256": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6",
+    "syncnet_checkpoint_sha256": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442"
+  },
+  "status": "PASS"
+}

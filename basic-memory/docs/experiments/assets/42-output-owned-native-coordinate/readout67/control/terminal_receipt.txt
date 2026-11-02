@@ -1,0 +1,9 @@
+schema=output_owned_musetalk_readout_terminal_v1
+status=TERMINAL
+worker_pid=2560257
+worker_start_ticks=50011173
+worker_returncode=0
+started_utc=2026-10-14T22:01:45Z
+finished_utc=2026-10-14T22:03:25Z
+stdout=/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/control_attempt02/worker.stdout.log
+stderr=/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/control_attempt02/worker.stderr.log

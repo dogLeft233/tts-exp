@@ -1,0 +1,130 @@
+{
+  "schema": "root_physical_phone_shape_six_endpoint_summary_v1",
+  "status": "CONCLUDED_FROZEN_PHYSICAL_SCREEN_NO_EXPANSION",
+  "candidate_rows": 6,
+  "models": [
+    "Ditto",
+    "MuseTalk",
+    "Wav2Lip"
+  ],
+  "reused_baseline_rows": 6,
+  "rows": [
+    {
+      "model": "MuseTalk",
+      "speaker": "S0044",
+      "factor": "PHYSICAL_PHONE_SPECTRAL_SHAPE",
+      "delta": {
+        "B": 0.032919247945148555,
+        "Dmin": 0.0644736372191339,
+        "D0": 0.0004539708981567969,
+        "Cbest": -0.03155438927398535,
+        "best_lag": 0,
+        "aperture_median": -0.002175728832423132,
+        "velocity_rms": 0.02195012379754724
+      },
+      "joint_gate": false
+    },
+    {
+      "model": "MuseTalk",
+      "speaker": "S0052",
+      "factor": "PHYSICAL_PHONE_SPECTRAL_SHAPE",
+      "delta": {
+        "B": -0.03422596528358035,
+        "Dmin": 0.017598110375944387,
+        "D0": -0.11477963457402574,
+        "Cbest": -0.05182407565952474,
+        "best_lag": 1,
+        "aperture_median": -0.001097411381184521,
+        "velocity_rms": -0.0039849311564499335
+      },
+      "joint_gate": false
+    },
+    {
+      "model": "Ditto",
+      "speaker": "S0044",
+      "factor": "PHYSICAL_PHONE_SPECTRAL_SHAPE",
+      "delta": {
+        "B": 0.08616919627134756,
+        "Dmin": 0.04320087652096838,
+        "D0": 0.04320087652096838,
+        "Cbest": 0.04296831975037918,
+        "best_lag": 0,
+        "aperture_median": 0.00048779039204548125,
+        "velocity_rms": -0.007622859982647834
+      },
+      "joint_gate": false
+    },
+    {
+      "model": "Ditto",
+      "speaker": "S0052",
+      "factor": "PHYSICAL_PHONE_SPECTRAL_SHAPE",
+      "delta": {
+        "B": 0.10773125874627532,
+        "Dmin": 0.14742431321094962,
+        "D0": 0.14742431321094962,
+        "Cbest": -0.039693054464674304,
+        "best_lag": 0,
+        "aperture_median": 0.0011830868212670542,
+        "velocity_rms": -0.01635656666745222
+      },
+      "joint_gate": false
+    },
+    {
+      "model": "Wav2Lip",
+      "speaker": "S0044",
+      "factor": "PHYSICAL_PHONE_SPECTRAL_SHAPE",
+      "delta": {
+        "B": -0.10643890074321227,
+        "Dmin": -0.09083642278398862,
+        "D0": -0.12483274936676025,
+        "Cbest": -0.015602477959223648,
+        "best_lag": 0,
+        "aperture_median": -0.006247721638713032,
+        "velocity_rms": -0.023528000365007018
+      },
+      "joint_gate": false
+    },
+    {
+      "model": "Wav2Lip",
+      "speaker": "S0052",
+      "factor": "PHYSICAL_PHONE_SPECTRAL_SHAPE",
+      "delta": {
+        "B": -0.0296627897965287,
+        "Dmin": -0.1308126073134579,
+        "D0": 0.010785592229742846,
+        "Cbest": 0.1011498175169292,
+        "best_lag": 0,
+        "aperture_median": -0.0028038849135625654,
+        "velocity_rms": -0.0716812591816891
+      },
+      "joint_gate": false
+    }
+  ],
+  "mean_dCbest_equal_model_and_speaker": 0.0009073566516500561,
+  "joint_pass_count": 0,
+  "both_speaker_model_pass": {
+    "Ditto": false,
+    "MuseTalk": false,
+    "Wav2Lip": false
+  },
+  "progression_gate": false,
+  "progression_rule": ">=2models both speakers dC>0/dDmin<=0/dD0<=0 and mean dC across their rows>=0.050",
+  "source_summary_pins": [
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\physical_phone_spectral_shape_render_20261014_attempt01\\root_musetalk_physical_raw_endpoint_summary.json",
+      "sha256": "6e5c7529ccee4c506428e76e3bdb43fc98a050d15911be1790431e0fdd525c06"
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\physical_phone_spectral_shape_render_20261014_attempt03\\root_ditto_physical_raw_endpoint_summary.json",
+      "sha256": "12b05d7470ba0fa737c6deae01d6e1bc8d346bc911a5d7b02181c2a7b9768c66"
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\physical_phone_spectral_shape_wav2lip_attempt02\\root_wav2lip_physical_raw_endpoint_summary.json",
+      "sha256": "c3d6aabe1abdbea4d04327a6c888fffe6bb77bf78b4b202971c1347403c9e56c"
+    }
+  ],
+  "conclusion": "At this frozen dose/2-speaker screen, FIT phone-mean physical spectral shape is not a transferable enhancer. Both C gains worsen zero-lag distance. Six independent mouth tracks change, with no quality ground truth. No larger cohort/dose or GPU followup for this candidate.",
+  "new_gpu_budget": 0,
+  "no_baseline_reruns": true,
+  "tests_run": false
+}

@@ -1,0 +1,102 @@
+---
+title: Codex checkpoint - 2026-10-09T10-23-17Z - Fit174 and verified shared CPU drive
+type: coding_session
+permalink: tts-exp/codex/tts-exp/codex-checkpoint-2026-10-09-t10-23-17-z-fit174-and-verified-shared-cpu-drive
+status: open
+project: tts-exp
+repository: dogLeft233/tts-exp
+repo_root: E:/Documents/tts-exp
+cwd: E:/Documents/tts-exp
+branch: codex/cross-tfg-audio-head-20261003
+git_sha: 5688784dd5c6c1272074f0c4b6c5ff79f117c907
+started: '2026-10-09T10:23:17Z'
+username: dogle
+hostname: LAPTOP-E133GSLE
+capture: deliberate
+agent: codex
+session_id: 01a0f26b-a3e7-7f91-b1e8-46813543042f
+trigger: compact
+model: gpt-6.1-sol
+tags:
+- codex
+- checkpoint
+---
+
+# Codex checkpoint - 2026-10-09T10-23-17Z - Fit174 and verified shared CPU drive
+
+## Summary
+
+三模型正式Fit已完成174/720条有效记录；ROOT复核真实720行组合及共享快照应用，并固定所有后续候选共用同一CPU生成波形。
+
+## Story
+
+用户要求恢复TTS增强TFG的局部声学机制，随后要求产出适配多TFG、在新说话人超过固定RMS的自然音频增强头。增强PCM只驱动生成，交付与SyncNet评分使用完整原自然PCM和源时钟。ROOT维护理论、协议、BM和结论；代码、实验交GPT-6 Luna/max。用户要求失败后持续推进，音量排除不是终点。最新确认wjj@192.168.50.2:22，native Windows ssh.exe公钥可用。网盘、历史数据、下载、云接口与重跑已授权；秘密不进文件、argv或日志。
+
+旧W2L训练step120的三模型FULL相对RMS等模型ΔCbest+0.011149，W2L+0.068454、Muse+0.000900、Ditto−0.035908，D0正向改善−0.033662，尚未达到跨模型目标。ADR022改为同40条/20人Fit三模型真实原音评分联合选择和九参数优化。当前174条是正式数据积累，不是新效应结论；未选择family、未科学初始化、未做SPSA更新。局部谱形/正负flux门控和受者兼容性的既有因果结果继续指导方法，不重跑全局音量族。
+
+## Working State
+
+权威Task《开发跨 TFG 的自然音频增强头》active，Experiment《跨 TFG 自然音频增强头的训练与原音换轨验证》implemented。ADR022/023/024保持完整40×3×6=720分母、六方法共同FULL支持、说话人等权再模型等权、canonical TorchCPU1thread。每模型Cbest对identity/RMS均正，D0/Canchor不恶化，等模型比RMS≥+0.050；缺行/失败阻断初始化，完整但不适格才按冻结违例函数确定初值。新Dev20/Confirm80、LatentSync仍封闭。完整720后20步SPSA（960proposal+四中心480），总2160物理评分行。
+
+✅局域网V100 UUID GPU-d12b3309-c299-da83-064d-a3cd619bd560；持久项目/home/wjj/tts-audio/tts-exp。W2L环境/home/wjj/.venvs/w2l_syncnet_v100_attempt01，Muse/Ditto共享/home/wjj/.venvs/cross_tfg_muse_ditto_shared_torch251_cu121_attempt01。只用native Windows ssh.exe BatchMode、StrictHostKeyChecking=yes；WSL没有同公钥。一次一个六行GPU块，每次实测GPU/RAM/cgroup/SHM/output与余量。旧AutoDL DirectD0终局未知不阻断V100，不绕被拒绝的私有PTY、不重放启动。
+
+正式终端W2L blocks0–21各6PASS=132/240；Muse0–3=24/240；Ditto05 blocks0–2=18/240；合计174。W2L21保留实际foreground SSH退出码0，receipt .codex/scratch/fit40_queue_progress_index_attempt04/w2l_block021_foreground_terminal_receipt_attempt03.json，12085B/raw653a5d6f82ec282570261aca66db453282121bc3864c59c09f8b09443c004ace，PID221026已退。receipt01/02错误runnerpath保留，03实际runner96537B/6969c6e952d46b6753d279b0e2447aa71c7b8e92967cd42ee57dc8122da5616e。更早W2L20 detached未保留parentrc，仍标historical_exit_code_unavailable，不推断0。Muse3 PID215947/ticks2378856已退，manifest rawb71488b5da69b277aa2a1b5396f03411c4fb6e7a4109834cc32da45e43c74575。Ditto2 PID224647/ticks2516319已退，manifest raw130402c2ea2850ddbd2a94ffeadf0d09c7cdfa1a87400c5f8853d44558001938；actual launch8679B/raw2137d8a3b1c09c74ed9545ef5499d3423f13932738a10639b052987500f31714，六PASS/repeat NOT_RUN_SUBRUN。
+
+下一公平块Muse4 offset24，接W2L22 offset132、Ditto3 offset18。截至本checkpoint Muse4明确NOT_DISPATCHED，无PID，正在恢复相同已审launcher的准确路径/argv；不把准备写成运行。Muse reusable launcher .codex/scratch/v100_musetalk_fit40_240_attempt01/launch_musetalk_fit40_block_attempt01.py，13822B/acd5955fafe1c8708bb0358c11d02c38e28b6936365244658bad5d5e45c58b49，--block-start24 --attempt1。输入/project/output维持/dev/shm/musetalk_fit40_240_attempt02；W2Loutput固定/dev/shm/fit40_w2l240_stage_attempt05/blocks；Dittooutput固定/dev/shm/fit40_ditto240_stage_attempt05/output。相同已审launcher后续固定块已授权，不逐块重新审批。
+
+ROOT实际Ditto首组六全1445 regular files/42,041,282B、原F32交付PCM、完整PCM16评分轨、98ceilnativeframes/有理PTS、sevenNPZ 92×31与official two arrays、decodedFULL92/GUARD52/strict renderer通过。QC .codex/scratch/root_ditto_fit40_first_block_actual_qc_attempt02/actual_readback_qc.json raw78e7056fd3d0eb2873e9a32c9809d1852252b8cb6d6ff1d65ba980c11540c91a/self fa12953e400495f6cd402838bdc555f83a6c48527b28a404893d6b6ad54a811d；完整readback F:/codex_scratch/v100_ditto_fit40_block_attempt05/full_readback_attempt01/block_000_attempt01。Muse首1463文件亦先前ROOT实际全核PASS。Ditto2最新仅元数据/launch readback已agent核，未冒称全媒体ROOT审。
+
+真实消费器fit_only_stagea_ingest_attempt03.py 53184B/22cd7f983b22babcae0d9c120f4720cb84a218ec4d2b84551d5e1668d23aeb95，ROOT此前10tests及Muse/W2L各6真实行运输helper独立run()逐byte相同PASS。Dev接着做Ditto首6→同consumer的实际transport，禁止提前family选择。模型descriptor.generator与protocol.generator是不同冻结对象，分别验证源descriptor/scienceprotocol/runtime，不要求两字典相等。Ditto原protocol有W2Lmodel_id来源标签仍保留为provenance，实际renderer由Ditto descriptor决定。
+
+ROOT独立实际composer04新执行已完成：.codex/scratch/root_actual_packet04_composition_replay_attempt04/actual_readback_qc.json 6076B/rawcc934871ef8c6352e7cca9d30daf115479640bccce32fde7019593c2822e0373/self454f227bd4a907f8598c5bca10d6e2b229778c6b41bff2998b728d9964adbdee。17source fullbyte pins通过，实际720metadata JSON与agentWSL输出逐byte相同，各模型descriptor/sourceprotocol/sourceexecution保持独立。Composer prepare_fit40_spsa_stagea_packets_attempt04.py 47581B/fb8f4ddb7c314320bcdee1db886d9ea4669e111f5e2c2a2fff4cb07afa2d8a21；原组合 .codex/scratch/fit40_spsa_stagea_packets_attempt04/composition_attempt01/fit40_three_model_composed_plan_attempt01.json 2584958B/rawb3983aeb0136f227bc3618603d1e66475ba496aac592cb381fa63838a59baa97/self5a35c5506c2ef9411b37438af1fbc60fc3b4b72be5e5c9900083f55d52e91811。来源manifest在上一层目录。失败01缺NumPy、02Windows路径域不同、03E满Errno5保留；04同WSL路径域实际PASS，没有科学选择/视频/评分。
+
+ROOT发现公共helper04三个真实全流程问题：source_head_pin未绑定、Python-int flux被当Tensor调用detach、错误要求derived单方法plan仍保留legacy seed。Signal fresh05已修；ROOT本次完整04→05diff审核并实际7/7CPU unittest PASS（真实builder _execution_plan只有诊断point一方法，实际apply→receipt→lineage及θ/config/receipt/PCM/N/projection反例）。Helper05 scripts/audio_enhancement/fit40_snapshot_spsa_application_attempt05.py 56593B/3a33cf6f148de36d0433074c2efadb98167880ed5b7f1f66138a797a047afc5b；test当前17015B/38c070e222f990bc8c930cc1d82b801d5d3c4c4629d64b10a3994f2bcf93956f，agentlog3505B/9b819160c28766dbfebce94b634ad8f8971915d43c5aed6a23b7e19c04e56a65。API validate_snapshot_point、apply_snapshot_theta、validate_application_lineage。Seed实际v3 implementation32233B/77acdff03cca22261852f48364cbc75263db58a14cb565c08aa0d268afca6e87，ctor eaf51303012125c2de40dc102fc04a983c130b6d2aac31cd96b6e5648c3e27b8，3×3九θ/n_fft512/hop128/3dB/targetRMS0.0376838172675746。Source snapshotstep30/60/90/120不同于新centerstep5/10/15/20，recordcanonical snapshot_sha256，状态NOT_SELECTED_FIT_NATIVE_SCORING_NOT_RUN。
+
+ROOT实际wholehelper localCPU1/1 seed120输出62639样本，PCM424695fe8a811a85725f461a997374091a363546e370fc7fba420f10c3d5bcc5，比原RTX4060 CUDA PCM0e07c318bec33830428ddb5453682a85c8ed5e1733e56febbedde60a19b33a3d maxabs1.1920928955078125e−7，非逐bit相同。原application04 Py3.11.15/Torch2.7.1cu118 GPU16/32threads；新localtest同Py/Torch CPU1/1。Originalreceipt canonical字段receipt_sha256，测试打印self_sha256=null是诊断字段误取，已告知后续receipt准确记录，不改原科学文件。Agent durablelocal seedreceipt .codex/scratch/fit40_snapshot_spsa_application_attempt05/seed_replay_evidence_attempt01.json 4670B/rawc0c9eb5c2cc57cea68d943f04778be53efb89d8fcf52fa58461233969cd75177/selfd029c3dfdd5cdd31aa437e24ee4511b14bb2dd971de69a51d4958283e41474dc；只test，无init/update。
+
+ADR025已实际created/directreadback：tts-exp/docs/adr/025-shared-cpu-waveform-for-cross-tfg-proposals，type decision/statusopen。固定后续所有新候选由remote共享Py3.10/Torch2.5.1+cu121 CPU、CUDA_VISIBLE_DEVICES空、1/1threads生成一次，同WAV交三模型；旧GPU缓存保留，原基线分数不改。需要真实remote同seedθ两次wholeapply→receipt→lineage、withinruntime PCM逐bit一致/N/RMS/3dB，通过后才production。Dev已create-only hardlink/O_EXCL补四缺source：head、extractor68545B/7fe041e078d1f03c10c1735b572f13202315ed17c312918a52b4939863850d66、pipeline5975B/b40ddce9b09ea42d56945eb66acca3326be6784acb6c1e6ab134b1b2899fb6c3、overdub12002B/0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6，以及helper05到W2L SHM源码tree，chmod0444/actualstatSHA。Closure receipts .codex/scratch/fit40_snapshot_spsa_source_closure_attempt01/...receipt_attempt01.json 1933B/70be3ca970b4eaf140c450050d72ed10ea000aeb71716424efd2fbb8a7412166；attempt02/helper receipt1199B/ab9579c9097e79fa303cdf5a3b94a0ee30201636bf1890ce5c110667c534b7a6。Agent报告，remoteCPU实际重复尚待。
+
+Dev adapter05 ditto_spsa_stagea_adapter_attempt05.py 44401B/5c945fc5b47e2b9e5f6cf2bf86a17eeceeb84d7db1b367971bee03a8d1de6127，六tests为agentPASS，ROOT完整04/05职责审查待。只用sharedvalidator/实际_render_and_score，core.run固定240不能塞24/120。Signal Musehook也需freshpinhelper05和不同descriptor/protocol正确绑定。Private precomputed marker只伴实际candidate generator_condition_input与applicationreceipt，科学config SHA保持；完整原音换轨与nativefloor/ceil preserved。
+
+公平queue controller03 80513B/dafe417e42cd7660b3b0c41731b30e10272f45ab4ead6911ea75c9f1fce1667a此前ROOT完整02→03diff/13testsPASS。Entry04 run_fit40_fixed_queue_attempt04.py18346B/1eb1bee8967f9dbd884c9645d3a0a3f9c9182f3967b972807ed77f41c53b4094 ROOT本次完整368lines读过，agent5testsPASS、ROOT未重跑。ROOT发现终态把全部paused_models当complete以及有任意失败event也标PASS，已要求fresh05修语义：complete仅全3offset240无active/paused。还要求terminal exactrun_id/plan_path/rows_path/canonicalmanifest/每行speaker split source config checkpoint，argv/env完整固定，并freshhistory04 actualprefix/已退PID/launch自hash/source/runtime绑定。W21实际rc0与历史detachunavailable分别保存，不能把recipe当actualargv证据。Queue尚未stage/启用；最终ROOT source/tests/index/readback/verify/GPUidle审过再启，单GPU固定W2L→Muse→Ditto，失败leaf不retry/delete，失败模型暂停其他继续。固定初始reserve可能后期保守停，保留NO_READY证据再归档，不绕阈值。
+
+E满已安全解决：旧唯一world-v5 tar复制F、源与目标完整SHA均匹配旧receipt才删除E单文件。新path F:/codex_scratch/storage_relocation_20261009_attempt01/world_v5_attempt06.tar 4043694080B/bd9135e36274e0f723b5ac13b0252816587ec87b8f118808d4b58eacb614a708，relocation_receipt.json及原folder archive_relocation_20261009_attempt01.json记录，旧receipt不改。E释放4.04GB/F剩3.10GB；B是CloudDrive网络挂载约3.75TBfree，远端SHM和WSL/tmp可用，大产物先实测。AISHELL.partial未动，无递归删除。
+
+Git codex/cross-tfg-audio-head-20261003、HEAD 5688784dd5c6c1272074f0c4b6c5ff79f117c907，local/unpushed，不构造GitHubcommit链接；原五tracked dirty保留。新experiments未tracked，BM/runs/scratch/env/SHM为machine-local或fragile，无commit/push/PR。最近mutableTask/Experiment/HANDOFF由root_sync_fit162_and_actual_composer_attempt01.ps1读回更新为162+actualcomposer/storage/helperCPU决策pending，当时有效；本checkpoint最新174/ADR025created/helper05ROOT7PASS需下一materialmilestone同步。此前immutablecheckpoint不改。
+
+## Changed Files
+
+- shared helper05修真实wholeAPI三故障；agent及ROOT七检查实跑PASS，未新科学分数。
+- ROOT actualcomposer replay04与single-file storage relocation产生真实readback/evidence。
+- Dev sourceclosure create-only、adapter05与Ditto2metadata属于新machine-local产物；sourceclosure/adapter实际remote资格仍待ROOT完成。
+- ADR025写入新typeddecision，freshcheckpoint不编辑旧checkpoint。
+
+## Verification
+
+ROOT实际17sourcepins/full720metadata组合逐byte相同PASS；helper05实际wholeAPI7/7CPUtests及完整窄diffPASS。此前Ditto1445/Muse1463全文件媒体矩阵和consumer10tests/12真实行运输PASS继续有效。当前最新174终端由actualreceipts和agentreadback支撑，未完整720、未family/init/update。Agentadapter05六tests/queueentry04五tests尚不算ROOT实跑；remoteTorch2.5.1双seedwholeAPI尚未执行。
+
+Checkpoint重新加载bm-checkpoint/bm-writing、StartupRouter→实验指令/CodingSession及projectconfig，freshGit/GitHubcanonical/PR[]和samechatcoding/codex/legacy分页检索，directprioridentity；CLI实际write_note(overwrite=False,output_format=json)，仅created后exactmetadata directreadback。
+
+## References
+
+- [Repository](https://github.com/dogLeft233/tts-exp)；branch实际PR[]，localSHA保持code。
+- `tts-exp/docs/adr/025-shared-cpu-waveform-for-cross-tfg-proposals`；ADR022/023/024和上述QC/receipt路径为恢复入口。
+- `tts-exp/docs/reference/server-access`保存无凭据机器地址；秘密只运行时使用。
+
+## Observations
+
+- [result] 正式Fit已174/720有效：W2L132、Muse24、Ditto18；新candidate科学选择与优化尚未开始。
+- [verification] ROOT实际composer720metadata/17sourcepins逐bytePASS，sharedhelper05真实builder单方法plan全应用/receipt/lineage七testsPASS。
+- [decision] ADR025固定新proposal用同remoteCPU runtime生成同一WAV供三TFG；原GPU缓存与分数保留，runtime差异显式记录。
+- [blocker] 完整720待公平执行；queue终态/terminal强校验及fresh历史index审查、remoteCPU双重复资格与modelhooks仍待完成。
+- [next_step] 继续Muse4→W22→Ditto3固定块，复核freshqueue后自动完成720，同时完成共享remoteCPU全应用重复和hooks；再按ADR022联合SPSA及独立Dev/Confirm产出可用方法。
+
+## Relations
+
+- continues [[Codex checkpoint - 2026-10-09T09-43-56Z - Native Fit156 and shared generator contracts]]
+- relates_to [[开发跨 TFG 的自然音频增强头]]
+- relates_to [[跨 TFG 自然音频增强头的训练与原音换轨验证]]
+- relates_to [[022-fit-only-cross-tfg-native-score-refinement]]
+- relates_to [[023-decoded-video-window-support-for-native-syncnet]]
+- relates_to [[024-live-process-resource-capacity]]
+- relates_to [[025-shared-cpu-waveform-for-cross-tfg-proposals]]

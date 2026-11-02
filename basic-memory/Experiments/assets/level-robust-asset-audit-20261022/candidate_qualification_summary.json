@@ -1,0 +1,19 @@
+{
+  "screened_source_groups": 35,
+  "eligible_waveform_only": 16,
+  "threshold": 0.99,
+  "proposed_development_groups": [
+    "6ORDQFh0Byw",
+    "6SdtkXAQq3k",
+    "6VnKV1sr5VQ",
+    "6XNrzmh0EVs",
+    "6XS8TA4RBog",
+    "6ZiN9ZJT294",
+    "6qTfX4U6CS0",
+    "6tSlMoMNSlY",
+    "6tpsSu5O0Ws",
+    "6vLrreR6YOE"
+  ],
+  "no_model_output_used": true,
+  "speaker_identity_verified": false
+}

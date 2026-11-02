@@ -1,0 +1,184 @@
+---
+title: 准备并核验四个新身份的 SyncTalk 完整训练数据
+type: task
+permalink: tts-exp/tasks/准备并核验四个新身份的-sync-talk-完整训练数据
+status: blocked
+priority: high
+started: October 17, 2026
+current_step: 4
+tags:
+- synctalk
+- task
+- data
+---
+
+# 准备并核验四个新身份的 SyncTalk 完整训练数据
+
+四人独立资格/fresh统一准入保持通过，但正式训练已数值失败并停止：Brown/seed42/coarse ep5/+6在非有限loss门退出rc1。已记录4636attempts/4484成功/152 AMP skips，最后global28636/累计28480，scale最低2.938735877055719e-39；断言先于trace写入，失败步精确loss种类和实际更新未知。无中途checkpoint，不能从旧state盲重跑或改FP16/scaler掩盖。0/−6 ep5已各6000attempts/5998成功完成，但ep5块、coarse阶段和24模型/27格均未完成。105372及133984已退出，不能重启。失败现场20文件F整包55855cf8b3f28e088df0d8a056336a34ce6bb4acfaef4420feb9de97eab21e72逐成员SHA通过，原路径保留。controller_qualification/nonfinite_partial_epoch_failure_attempt01为权威。原训练合同与失败记录保留。用户已明确授权先核查适配并在官方原环境做FP16对照，先不改FP32；独立审计见 [[核查 SyncTalk FP16 适配与官方环境]]：旧环境已复现NaN并定位scaler反缩放溢出机制，证据与边界见 [[SyncTalk FP16 非有限训练失败的适配与官方环境核查]]；新诊断不计入旧attempt。 用户进一步授权独立FP16保护修订，已通过双环境资格；密度分支上游核查见 [[SyncTalk FP16 更新前保护资格与密度溢出因果核查]]，原正式状态仍失败，未重训。
+
+## Historical gate before explicit identity replacement authorization — 2026-10-17T13:52:03Z
+
+Debbie角色反转ROOT/dataset_revisions/DebbieDingell_recording_roles_v2已实际完成素材/stage1/原训练tracker/flow及BA、两个训练恢复控制，但冻结v2 validation750帧flow median=2.0101095402098133px超过固定2px；p95=3.938487529220711px通过5px仍整体失败。test1500 landmark前置通过，但test shared-reference flow尚未执行，不把未跑项目标为pass。geometry_resume_worker_receipt.json passed=false，post_geometry_worker_attempt02_receipt.json也按门失败并停止；0TFG。保留原v1、两方向失败、原数值政策，不以只超0.010px放宽门。官方WDA/WRA/RD元数据仅Debbie0/1两个原录制，不能再反转或把同录制另一chunk当独立test。下一轮应先冻结替代身份的非评分选择规则、候选及spec修订，再获取/核验第四合格身份；未选择第三Debbie条件，也未启动替代身份训练。
+
+Cathy replacement2已获得GPU并实际运行：remotePID470446/session52906素材独立QA已通过，当前stage1；GPU flock435526是其父启动器，不再是排队状态。原295秒main/新110秒test合同及36来源SHA保持不变，post WindowsPID128476/session85058继续等待。必须读真实receipt后续阶段；不重复worker/复制。Debbie失败完整新namespace现已实际F封存并完成48108成员/2142144023原B逐成员SHA、33000派生stage1字节等价alias核验：failed_preparation_preservation_attempt01/verification.json passed=true，archive SHA da2695fcabf7e6408530759b8be24427a3e3bd5f309d2e79834d64db133e4f45。只有完整archive全验后才再次检查两canonical每个字节与无人读取，再退休本失败namespace的main/test.mkv共881988635B，canonical_cache_retirement.json通过；原视频字节、PCM、JSON、失败数组、全部preprocessed完整保存在F或原目录。进程session78798已完成，不重复归档。Flow单独Fgzip1340711203B/原1516380128B已独立通过并退休原dense，SHA db2554c9e91d2d53e84d07f4577ff5098fc3e27e0aa998bb568a2a05a29292ed。
+
+统一版本的代码已实现，实际准入尚未运行：新增cohort_binding.py/restore_cohort_supervision.py/qualify_cohort_version.py/cohort_requalification.py/cohort_reference_requalification.py/versioned_experiment_supervisor.py。registry固定四身份、双平台namespace和成员完整输入SHA；训练每epoch、render/score/独立矩阵QA/像素QA/媒体封存/退休均解析同一通过版本，原失败目录不移动、不alias替换、不改旧false总receipt。full/test监督恢复按各版本原archive和原receiver，异常finally还原模块globals。新准入会fresh重验F全部三个档/来源下载SHA、完整实际输入pin、原PCM/上下文/新测试参考，再通过BASE实际入口重跑每人loader90+65536ray资源18并对旧pixel/ray/full-input行及完整初始化tensor SHA精确；72新audio forwards和GT距离QA在独立view重做且旧reference不覆盖。随后才写新的data_qualification.json，phase-end成功optimizer预算仍由原paired_budget严格拒绝不等更新。版本化媒体交付包含真实selected reference与初始化路径；源代码存在不是通过证据。当前registry的Debbie版本已知失败，故versioned supervisor没有启动；先修订第四身份方案和全部源pin，不能启动旧supervisor强行绕过。
+
+实际新控制：Windows cohort binding5测试通过0.205s；Ubuntu同5通过0.056s/0skip；更新后的原完整训练20控制attempt08通过10.104s/0skip，含原FP16/AMP/全state/EMA及408模拟epochs重连。attempt07仅runtime_exec切cwd后relative unittest discovery失败，完整日志保留，修为绝对测试目录attempt08；不是实验模型训练失败。F controller_qualification/cohort_execution_controls_attempt02.json和qualification_state/execution_unit_tests_attempt08.log记录实测与source/log SHA。14个执行依赖本地/Ubuntu BASE及测试副本SHA精确，候选自己的已冻结副本与六个live Windows helper未改。
+
+F四failed-v1 canonical与Brown stream零payload读回均已通过的状态继续有效；本轮当前F约7.3GB、SHM约2.6GiB（真实df优先）。新失败namespace备份进程是本轮新增，不混称之前四段云备份。最新全部源码/Task/spec/ADR038–041/十一testfiles封存F execution_sources/cohort_binding_failed_reversal_attempt14；更早attempt13及两旧全局监督失败原件保留。无commit/PR。synctalk-27保持ACTIVE；第四人资格缺口解决前不允许TFG更新。
+
+## Current metadata replacement execution — 2026-10-17T14:31:31.499045+00:00
+
+已记录[[042-synctalk-metadata-ordered-identity-replacement]]并更新spec/读回。policy_v1 SHA180603ad4e9d2a5d92edfb6e74a68fb824d1a10c9fe7746e966f1f7440391efd固定官方HDTF commit、WDA→WRA→RD annotation次序/首次身份与录制出现顺序、首连续段/首_000，不按分数/字母/下载速度排序。metadata有15候选。BenCardin缺固定镜像原录制0，CarolynMaloney缺原录制2，均SOURCE_UNAVAILABLE_IN_FIXED_MIRROR、0预处理/几何/TFG；完整ZIP目录SHA5fdcd80d087214ec385c3817d2965ee7a448ed77f29c71d1496c32adae9f268f及availability audit保留。第三ChrisVanHollen两首chunk齐备，按原队列选定；HTTP大range中断attempt02保留，attempt03仅4MiB分段/有界重试，最终ZIP CRC和原SHA完整通过，不更换条件。
+
+Chris源0/1实际328/293秒，计划首300/120=420秒、25fps；SHA18aa6f842e8b2e42474115a0ea43c2a072599f9b782977d35e996945668642a7 / 30b00b54bdfbe73aaa81b474b6bf0cdc30e72b97bf9771ad94308e6d966c36b0，CRC1a2faaba/479e55ed。直接原YouTube/oEmbed/Senate Democrats标题与dateText发布日2019/06/24、2018/01/19，原HTML SHA和样本十帧检查留在F identity_replacement_policy_v1/ChrisVanHollen_source_probe；不是拍摄日或生物识别结论。同木背景/相似衣服如实保留，全文PCM/RGB重复/自然监督资格仍需实际通过。
+
+独立ROOT/F dataset_revisions/ChrisVanHollen_metadata_order_v1 contract SHAade2b500c2c254800ebba115a33b62996a83f84db7315d8dd92ef37fc4c59541、selection86050b50da540ca1d32a438ce55f81e1d649c0882525a0f0276ce7c84bb62b4c在任何预处理前固定。36个remote源/合同SHA精确，六个本地helper独立namespace复制，未改Cathy live六模块或其冻结远端数学源码。primary PID486668已detach，preparation_worker_receipt.json phase=waiting_gpu_and_workspace；不持有GPU锁等待空间，≥3.5GiB才尝试非阻塞GPU锁，其他准备/归档可继续。早期train-only flow observer session13921运行，以实际flow_cache_persistence_receipt.json pid为准。Chris后续原attempt02仅wait0checks安全停止以修旧decoder ID allowlist，原decoder/源cap保留；attempt03仍wait0checks时安全版本化为全局隔离运行环境resume，旧记录保留，未重跑数值。当前resume_revision_qualification.py --identity ChrisVanHollen --revision ... --attempt4，WindowsPID28404，post_geometry_worker_attempt04_receipt.json等待其几何；canonical恢复observer PID15524读取post04，旧watcher/一次import路径失败日志保留，不混作数据失败。
+
+Cathy primary PID470446已全量冻结v2 geometry通过（固定2/5px、2°/5mm及训练原state不变等门）；其post02在生成监督之前import官方process.py时因缺face_alignment失败，原因是bare interpreter未经过既定runtime_exec依赖路径。material15文件879260459原B/ stage1全41251文件744223516原B F archive逐成员SHA已通过，完整来源/几何保留；监督receipt/bc/GT均未产生，不能称数值阶段重放。旧post02与canonical01失败完整保留。新resume03 PID21792复用两完整archive和训练flow，Audit jobs通过原BASE/runtime_exec.sh，SyncNet jobs只显式owned TORCH_HOME/PYTHONPATH，不改venv、loss或数值方法；当前supervision_and_AVE真实执行中。new source capsule post_geometry_source_capsule_attempt03.json固定原namespace全部source和新六local helper。canonical恢复observer PID130972仅在post03全资格/原archivefresh SHA和两canonical逐字节/无人读后退休缓存。不要再启动旧C post02，也不要将启动环境失败当几何失败/再换Cathy。
+
+统一活动cohort_binding版本metadata_identity_replacement_v3，ID顺序Brown/Patrick/Chris/Cathy，POST_RECEIPTS=Cathy03/Chris04。训练/remote jobs/render/scoring/像素与距离QA/封存/退休/汇总/分析全部活动ID已一致；旧原helper与失败源码/attempt14–15封存。新增persist_cohort_runtime_qualification及persist_cohort_prepared只变identity allowlist，原六helper保持byte SHA，resume控制器精确复用已完成阶段及归档，不覆盖旧false。fresh四人准入会重验源下载、全实际不变输入pin/原PCM/整录制上下文、F所有archive、BASE实际loader90和65536ray资源18、完整初始化tensor/原输入/rays精确、72 fresh scorer audio与GT矩阵；旧global false worker不沿用为pass。
+
+实际更新后的活动四身份执行控制：Ubuntu20原控制attempt09通过8.947s/0skip；Ubuntu新binding5 attempt03通过0.036s/0skip，Windows同5通过0.294s；metadata顺序/不拼断续段/同原ID拒绝3控制、四身份等权与原矩阵aggregation3、seed内平均/scorer交互/平台描述3均通过。F controller_qualification/cohort_execution_controls_attempt03.json固定日志和源码SHA；21个BASE执行依赖和测试副本本地/远端SHA精确。25核心控制是toy/工程证据，不是24模型或真实27格。
+
+空间新增动作仅对本任务已失败反转namespace：F完整48108 archive/33000 alias和所有74250当前stage1/派生文件SHA、无人读都核对后退休九个明确旧stage1缓存目录，逻辑1523292366B、唯一inode payload862913027B；stage1 receipt、几何、PCM、JSON和全部原始字节F archive保留。failure bundle当前仍F。新的failed-revision flow/bundle冷备份attempt01被Windows C盘整包缓存guard阻止，0云验证/0删除，旧失败保留。attempt02改逐256MiB写入、每片Ubuntu独立读回和C盘backpressure，最终仍整包有序全SHA再回收F重复副本；cold_backup_rejected_revision_attempt02.json/session15783在跑，当前仅部分片验证，未完成前不得称完整云备份或删除源。旧四v1 canonical和Brown597MB stream备份成功事实不变，不动CloudDrive配置。C盘约1.1GB、F约5.37GB、SHM随C监督写入变化，真实df/receipts优先。
+
+下一步复用Cathy03/Chris primary+post04/早期flow与两个canonical恢复observer，完成实际数据资格；确认有界上传整包通过后接入正式媒体后端、封存新最终源码/Task/spec/ADR042及单位控制，启动版本化完整监督器等待四人fresh准入，门通过即自动24模型/27格。原FP16/65536rays、60000粗/102000累计完整epochs、两seed/原loss/optimizer/scaler/EMA和实际成功更新控制不变，不补步或调scaler。尚无新全局data_qualification.json，不启动旧失效总监督器或训练3人。新用户授权持久有效，无需一般性再次确认。
+
+## Versioned automatic execution handoff — 2026-10-17T14:41:57.092009+00:00
+
+最新执行补充（2026-10-17T16:53:38.849877+00:00）：首组三档coarse ep1的完整初始化state_before_epoch SHA、6000个逐步frame/audioID/pixel/rays/rect/LR和sampling SHA完全一致，各6000成功更新/0 skips；独立stdlib从3个持久trace重建18000行通过，controller_qualification/first_three_gain_epoch_independent_review_attempt01保留原block与review，phase-end仍待原10/17epoch验收。coordinator已进入ep2/gain-6，不重启105372。
+
+旧Debbie stage1整包755426549B/3片云独立fullSHA39fdb63ab24ee4c2107a852b8ba5267aabb70672402e91933ec7aeffd55421ef及F receipt SHA f818a72c942e3653747254011651174c0ee25a36b2d24f198a8d19cc848463ee通过，独占无reader与最后F SHA后已退休F重复tar；preprocessed_packages/DebbieDingell_stage1_cold_storage_locator.json和worker/DebbieDingell_retirement.json为准，原manifest/verification/所有失败几何/PCM保留，原F tar已不在，使用先restore。Cathy旧stage1仍由125192串行处理，全worker完成1/2，不能把未通过的队列项称云备份。133984缓存observer已资格4个完成epoch，live loaded源仍精确；之后按真实receipts观察，不把硬链接逻辑bytes重复算释放。
+
+首轮完整epoch与存储资格（2026-10-17T16:47:38.826926+00:00）：Brown/seed42训练0及−6dB ep1已实际各6000成功更新/0AMP skips、F全state/23 artifacts成员SHA验证通过；+6仍按原调度运行，尚非完整coarse phase或24模型。原0dB全state20995755B，artifacts8370630B，固定selection33039178B/trace3634293B。见[[043-synctalk-byte-exact-epoch-cache]]：已完成epoch的F/SHM selection共享同完整字节inode，关闭trace/stdout透明NTFS压缩、原verify_persisted前后通过；observer PID133984真实运行，当前完成缓存3个。Linux无reader由kernel独占lease证明；F先独占handle及全SHA、持久intent/finally恢复后重绑，不能用于活文件。首次读者枚举/Windows替换及symlink/junction探针失败均留source/false，未重跑训练或改变数值门。
+
+冷备份PID125192正在将原失败Debbie/Cathy stage1两完整档上传并逐片/整包Ubuntu读回，当前完整交付0个；wholeSHA/F receipt/no-reader未全过不得退休F源。原PCM/几何/旧false/manifest/verification保留，任何退休原路径须显式恢复，不动当前训练的derived/qualification/runtime archives。当前只做缓存精确字节优化，训练PID105372及loaded sourcecaps不变，不按缓存资格推科学结论。
+
+首个正式TFG更新已观察（2026-10-17T16:26:38.686429+00:00）：Brown全监督16500文件独立校验、16428恢复+72精确复用通过，PID573724实际train_epoch.py --identity SherrodBrown --seed42 --gain0 --phase coarse --epoch1运行。原formal attempts prefix 1806行/1088565B/SHA677ba767c5eab7cae4a210e10d3931349930d904aafff981cfd2948c84d8601c已只读截取到完整换行并F保存，global_step连续1..1806，累积成功更新1806、AMP skips0，每行实际65536rays/原FP16 scale65536，没有改policy或补步。controller_qualification/first_formal_training_update_observation_attempt01保留原prefix、完整恢复proof和观察源码；它不是完整训练、epoch验收、三档预算通过或科学结果。当前已不再是0正式TFG更新。
+
+首epoch冻结cohort_selection.json实际33039178B，后续每epoch冻结源/trace及F artifacts有存储增长，需要按真实首个完成epoch大小持续检查F/SHM，而不能仅按模型state大小估容量。F是NTFS；若出现实际空间需要，只在相同字节SHA与无人读/当前任务窄范围及F或云完整持久验证后处理重复缓存，不编辑任何活controller或正在执行的冻结源，不影响原data pins/实际预算。该段为首个更新观察时的历史状态，随后已按ADR043资格执行完成epoch metadata去重；未退休实际epoch归档。
+
+统一全四人准入通过并自动训练（2026-10-17T16:23:16.710043+00:00）：cohort_versions/metadata_identity_replacement_v3/receipt.json passed=true/training_ready=true，FROOT/data_qualification.json与Ubuntu同名文件SHA fc437965bbf097a771f2d952508b688d981c52b65a99e266dadaa68290040a84精确；selection SHA cc27679ed33817158f138d33864d9f6ccea16279fb85482f70ae5a78235792c7，四身份/各revision与冻结policy一致。所有source/原PCM/整录制上下文/F档/不可变pins已fresh全验；BASE实际每人90loader/18资源、完整共同初始化及原pixels/rays精确全部通过，合计360加载/72资源案例，0optimizer更新的资格检查不冒充预算控制结果。
+
+统一72fresh audio/GT矩阵全部通过，四身份matrix最大abs分别4.118803307306962e-06 / 3.9223793386611305e-06 / 4.240466012106481e-06 / 3.930623481807061e-06，均原3e-05门内；18audio features逐人fresh exact、原PCM16/±6float64原PCM单位/source-owned ROI保持。F controller_qualification/unified_admission_independent_receipt_review_attempt01再次独立核对准入/selection/remote SHA/loaded sources/四人binding与reference原数值门，旧两全局false receipts SHA未变；该review不冒称重复跑数组或训练。
+
+总监督器105372已自动state official_24_model_training/training_started=true，training_coordinator receipt实际phase=full_supervision_restore、current_identity=SherrodBrown。16:22UTC真实receive_supervision_restore.py --identity SherrodBrown --mode full PID572990正在从原验证F档恢复全量监督；此时尚未观察正式optimizer更新，不能把流程启动当已训练模型。继续原四人×两seed×三gain24模型、FP16/65536rays/maxsteps16/60000粗至累计102000尝试，原loss/AdamW/defaultGradScaler/EMA、逐AMPskip/phase-end成功更新等预算门不变；不需再确认或重复启动控制器。后续实际epoch曲线、trace与全state逐F SHA交付，三轴27格/独立QA/报告尚未完成。
+
+四身份独立资格完成（2026-10-17T16:10:56.039504+00:00）：Chris post_geometry_worker_attempt04_receipt passed=true/state revision_independently_qualified_pending_cohort_version_admission，Windows28404已完成退出；所有原素材/几何/监督/六AVE/新ROI三评分参考/18矩阵独立QA、F material/stage1/derived/qualification/runtime档、dataset与独立preflight实际通过。runtime49-member archive SHA49602c2a9728cbecd5734abd06ae8f3cd2c4e5a156b23c562adaa781a201d129，qualification103-member SHA d772c007df35e335fa9453b6c254171336550bcc5f816c9a0545e585f7c9836e；全成员原SHA验证保留。
+
+90加载案例的原pixels/rays/conditions、跨增益非音频输入和整录制attention边界逐值精确，0生成forward/0optimizer更新。18资源案例含12个coarse/patch实际65536rays与6个原官方lip全矩形案例（其actual rays6724，num_rays参数仍65536、maxsteps16），两seed三gain完整初始化和参数不变。峰值allocated2414594560/reserved3204448256B。6个冷初始化lip资源probe在default GradScaler65536下unscaled gradient非finite如实记录，未执行optimizer step、未改scaler/FP16或放宽原资源门；不能将此probe当作正式fine训练或未来AMP成功预算证明，正式训练仍按原逐步skip及phase-end成对成功更新门判定。F qualification_state/independent_completed_revision_receipt_review_attempt01重新核对原receipt门与runtime tar-member/Ubuntu当下SHA一致；不冒称fresh array重算。
+
+Chris canonical observer02已passed并退出，只有完整独立资格及fresh material tar/两视频SHA/no-reader后退休main/test共912170245B，原字节material.tar.gz、PCM/RGB manifest/新参考仍在；15524不是活等待worker，不重启。四人现在均全独立资格，105372自动进入fresh_versioned_four_identity_admission，16:09UTC实际BASE cohort_requalification.py --identity SherrodBrown PID568651运行；Brown/Patrick监督仍需正式训练前full恢复。新的cohort_versions/metadata_identity_replacement_v3/receipt.json passed=false/training_ready=false是进行中状态，不覆盖旧failed receipts；cohort_selection已经选择冻结四人版本，尚无passed统一data_qualification，当前0正式TFG更新/视频。
+
+继续复用已运行统一准入，重验全部来源/原PCM/整录制上下文/F档/不变pins、BASE每人90loader和18资源/共同完整初始化及原pixels/rays精确、72fresh audio/GT矩阵。通过后原监督器自动24完整训练与三driver三scorer27格，不再次人工启动或修改loaded sourcecaps。
+
+Chris监督及新测试参考完成（2026-10-17T16:00:39.802417+00:00）：post04实际state=persist_derived，原官方GT/torso与train/val/test共8250眼部条件全部完成，训练帧独占背景拟合、PNG/array输入maxerror0；六main/test×−6/0/+6整录制AVE全部通过，4800000/1920000采样及7501/3001×512缓存、两个0档原PCM mel和完整重复逐位一致、冻结encoder不变。高于1的+6float32输入如实保留而非削波/归一化。
+
+六固定测试clip source-owned ROI和三评分音频已完成，18新参考矩阵独立复核通过：所有18audio features fresh exact，FP32 MFCC输入逐值精确，float64 MFCC重复error0，matrix maxabs4.240466012106481e-06、endpoint maxabs1.9154462496118185e-06，原tolerance3e-05未改。0评分原PCM16、±6float64原PCM单位、原source-owned ROI保持，未按分数排除或换条件；这些是真人参考，不是本轮TFG生成结果。F qualification_state/early_supervision_AVE_reference_attempt01完整四receipt逐字节与Ubuntu SHA一致，并独立重读全部原数值/来源/帧数/时钟门；该gate review不冒称重新计算数组，原producer的fresh矩阵QA和后续统一准入各自保留。
+
+素材15文件/raw1087234294B与stage141251文件/raw843329053B两个F档已全member SHA通过，archive SHA3036755aa95d5b55b8165c5c34c08abd9ae997bcf462cfbe85de8dee1a213b6d / 35f67042d5a238e5073b52b6dbd8d03e52416dc871a46e9ef704e182836f1ad4。当前derived/qualification归档、监督退休/控制恢复、dataset/loader90/资源18/runtime档和独立preflight仍待全完成。总监督器105372复用等待候选全资格，仍0正式TFG更新/视频/无统一准入；不得以参考评分完成提前开训。
+
+当前Chris全量几何通过（2026-10-17T15:42:23.360778+00:00）：primary486668已passed/geometry_qualified_pending_independent_persistence_and_remaining_gates；原geometry receipt SHA d747c317c14a58d501ca9067f1c10b474647be76b0e1a5efa00e52ec16acedb3已F保存并新取Ubuntu SHA精确，early_complete_geometry_independent_gate_review_attempt01以原保护函数再查所有冻结门、condition≤1e6、原BA保留、heldout identity/focal/点冻结、原dense与repeated flow及NumPy projection误差门。没有重拟合/改原阈值/删帧。
+
+原train6000 flow median/p95=0.6805738726437918/1.4044356811654604px；val750=0.6388439941457801/1.1557820658687024px；test1500=1.0194198952621327/2.0015721947009335px，均在原median≤2/p95≤5px门内。两训练内恢复p95角度0.04837010313986232/0.06738756868230167°、平移0.1870767626292723/0.21312132085819438mm（原≤2°/5mm），三角化condition50.635252598760616。两控制及750/1500全部帧通过才称全几何通过，不能用局部控制或p95通过替代median。
+
+原Windows resume04 PID28404已从等待进入supervision_and_AVE，复用原worker/flow complete与全部frozen source，开始material/stage1完整F档的逐member SHA持久；后续官方监督、六整录制AVE、source-owned新ROI/三评分音频参考/独立18GT矩阵、完整F档、dataset/loader90/65536ray资源18及独立preflight仍须全过。此刻仅三人全独立资格、第四几何通过，尚无全四人data_qualification和正式TFG更新/视频。105372总监督器继续等待post04全资格后自动fresh全四人准入再24模型/27格，15524 canonical observer仅全资格与fresh archive/视频字节/无人读后可回收，不能提前删输入。
+
+当前原版预处理与flow持久（2026-10-17T15:31:48.836162+00:00）：Chris原版6000帧BFM、val750/test1500冻结identity/focal tracker、train6000原NeuralNRT flow及原版500+8000 BA全部实际完成，primary486668 phase geometry，子prepare_geometry_v2 PID555525（真实ps优先）。这只是数据拟合/几何资格，不是TFG优化。全部两训练内恢复控制、750/1500全量heldout及固定2/5px、2°/5mm门仍须完整通过，当前没有全四人准入。
+
+早期train-only flowobserver109152/session13921已completed/passed，禁止再启动/等待不存在的val/test dense flow。F flow_caches/ChrisVanHollen/train/rigid_flow.npy.gz实际900210625B、SHA6029f7c5aeb374fbfc687208a4acb2a41390eb6b4f779139974ad507e46fad12；完整解压1039780128B与原flow SHA02ef7391f676256817d3ea32802ac4b153ab4c0c1d661f068b673830bb003516逐值通过，缓存只在持久/F解压SHA与Ubuntu原字节/无人读检查后退休，tracks/pose/dense控制保留。本轮再独立fresh gzip SHA与完整解压SHA通过，early_train_flow_persistence_independent_QA_attempt01保存proof。SHM回至约2.4GiB、F约6GB，以实时df为准；未放宽监督2GiB或其它门。总监督器105372和resume04/observer02复用，已完成旧cold worker和flowobserver不重启，仍0正式TFG更新/0视频。
+
+当前stage1与完整冷交付（2026-10-17T15:11:07.070889+00:00）：Chris官方JPEG/FAN/BiSeNet全8250帧已passed，6000/750/1500全landmark/主脸/parse覆盖、0 failed frame；review_required=false，两训练帧微小secondary检测记录保留，不删帧/改门。F own qualification_state/early_stage1_qualification_attempt01与Ubuntu原receipt SHA精确。原版face_tracker.py --frame_num6000子进程540741实际运行，primary486668 phase train_tracker；这是BFM预处理，不是TFG生成器训练。后续val/test frozen tracker、原flow、原训练BA、冻结v2几何及全部资格仍未通过，不能写四人数据准备完成。
+
+失败反转档完整云冷交付已全部通过而非部分分片：flow1340711203B/5片SHA db2554c9e91d2d53e84d07f4577ff5098fc3e27e0aa998bb568a2a05a29292ed；bundle1781143937B/7片SHA da2695fcabf7e6408530759b8be24427a3e3bd5f309d2e79834d64db133e4f45，整包Ubuntu有序fullSHA210.839秒、payload暂存0。cold_backup_rejected_revision_attempt02已completed/passed，两完整receipt重新取Ubuntu SHA与F精确，bundle receipt dc4b326b21b6d613776a2113028d1e84f58d9d6aa798c84d48d123d47baf1f7f。locator持久/全校验后才退休对应F重复gz/tar；失败全部原数仍云完整档，完整像素需显式restore。F本地thin15102文件409460992B全部重新对原48108-member manifest SHA/size再验通过，原main/test PCM/所有失败几何/旧false receipt留存；independent_completed_cold_delivery_qualification_attempt01及source.py是本轮独立proof。F当前约6.88GB空闲，C约9.33GB为实际观测，不把C变化归因手工删除或改CloudDrive配置。总监督器105372已加载源再验精确、仍0正式TFG更新/0视频，继续复用原worker与控制器，不重启旧false或编辑加载源。
+
+当前资源与素材资格（2026-10-17T14:54:24.732466+00:00）：Chris7500-frame main/3000-frame test完整RGB/PTS/PCM和三增益逐值一致实际通过；跨录制精确重复RGB=0，所有非静音4秒probe/全target lag waveform搜索最大绝对相关0.21941381950111874<冻结0.90，未发现此重复标记。F qualification_state/early_material_independent_QA_attempt01与Ubuntu原receipt逐SHA精确。phase stage1/官方preprocess_images_landmarks PID526182实际在跑；素材QA不是全部人脸/几何或训练准入。
+
+为保障后续dense flow与监督2GiB门，另对原Debbie失败版本旧stage1回收缓存，不动Cathy/Brown/Patrick/Chris或原source：F preprocessed_packages/DebbieDingell_stage1.tar.gz fresh全包SHA39fdb63ab24ee4c2107a852b8ba5267aabb70672402e91933ec7aeffd55421ef和全部41251 tar member原SHA重新通过；Ubuntu三个preprocessed split共41250文件与六prepared ori_imgs/parsing目录33000同字节alias，均逐文件SHA/size、完整support和inode级无人读取核验后才退休。两阶段唯一payload分别196688487/740679065B，合计937367552B，非把硬链接重复算作释放；实际SHM已约3.2GiB。原main/test PCM、stage1 receipt、原geometry test failed/全geometry数组及旧stage2 false receipt SHA精确保留，完整stage1所有原数仍F tar。若要重新加载此已拒绝版本的图像须先从原F档显式恢复，不能沿用旧像素目录。首次cache清理因旧partial geometry没有顶层passed在任何remote mutation前KeyError停止，failed_original_stage1_cache_retirement/failure.json/source/proof保留；attempt02只按实际test false和旧stage2 false判读，不改原阈值/数据或几何。F failed_original_stage1_cache_retirement_attempt02和failed_original_prepared_images_cache_retirement_attempt01保存源码/全校验/retirement。现有总监督器105372及所有已加载执行源未改，仍0正式TFG更新/视频；failed-role bundle cloud尚在逐片独立读回，未称全包完成。
+
+补充实际完成（2026-10-17T14:46:33.704186+00:00）：Cathy post03现passed=true/state revision_independently_qualified_pending_cohort_version_admission，完整loader90/65536ray资源18和F独立preflight都通过，canonical恢复observer02也passed，两个视频full archive fresh SHA/逐字节/无人读后才退休；三人全部独立合格。真实SHM仍3609423872B<3.5GiB，未改启动门槛。仅对已失败Debbie反转namespace六个派生driver WAV操作：完整F原archive fresh SHA、六个F thin WAV逐个原SHA与Ubuntu逐字节、无active-reader全通过后退休161280480B，原main/test PCM和geometry failure receipt SHA不变，释放至3770716160B。F gain_audio_cache_retirement_attempt01及源副本已留存，六文件全部原数仍F thin/fullarchive，不动活跃三人/Chris原数。Chris primary PID486668随后实际phase material，子进程521257 prepare_materials.py运行，后续仍须完整PCM/RGB独立QA、官方stage1/几何、全部资格；没有调低guard或直接启动训练。总监督器105372保持waiting_unique_candidate_qualification/training_started=false、来源源码caps精确，心跳已同步三人通过/Chris开始/新cloud整包和实际自动控制器，状态不变保持安静。
+
+实际执行核验（2026-10-17T14:44:09.920702+00:00）：新有界flow整包1340711203B/5片Ubuntu顺序fullSHA db2554c9e91d2d53e84d07f4577ff5098fc3e27e0aa998bb568a2a05a29292ed已通过（233.103秒、payload暂存0），F fresh receipt SHA7b5a714d46ef28f0b797297b1c54ef3ded284dc4aec677596336a99cd062697b和locator已落盘，随后才退休F重复flow。失败bundle正在thin留存/后续上传，尚未整包云完成，原bundleF仍保留。执行源码222文件全部SHA/AST封存attempt16/manifest71a92773cca04ec3a68c93c49c2f0f0212a57ed9301e899d5ee85f605fd1d3d3；21BASE依赖再次SHA一致。版本化总监督器已实际隐藏启动，PID105372、versioned_experiment_supervisor_launcher_attempt01和receipt相互核验，state waiting_unique_candidate_qualification/training_started=false。旧renderer/full失败receipt SHA e98ac6d14630f1a5fcbce7bee439e809e080383a66d8fdf38996f9b7f61ff955 / e7c469a07dd1f9fb36056aebca57b37305ed367407090e9c449a9cf98590736f启动前后完全保留。后续心跳复用105372及Cathy03/Chris04，不编辑已加载执行源；等待候选全资格→fresh全四人准入→24完整模型→27格自动路径已实际排队，仍0训练更新/视频。
+
+用户“固定官方元数据顺序换人、失败保留、不放宽门，更新spec继续准备，四人全门后自动训练27格”的授权持续有效。已选首可获取ChrisVanHollen420秒而非历史Ben候选，来源不可用两例/HTTP中断/所有几何失败均留存；详见ADR042。Cathy新test完整几何、官方监督/整录制AVE、新source-owned ROI/三档评分参考/独立GT矩阵和F material/stage1/derived/qualification完整档已实际通过，loader90已通过并在完整65536ray资源18资格中；仍未全数据独立资格。Chrisprimary和resume04/两个canonical恢复observer/早期train-only flow继续复用，不启动重复worker。
+
+正式render_delivery_supervisor已接入cloud_archive_bounded（每片256MiB、每片Ubuntu完整SHA/C backpressure、最后全包有序SHA才回收），仍须本次真实failed-role flow整包校验通过后才允许启动新的总监督器；不得将五片已过称整包已过。新的renderer状态路径为render_delivery_supervisor_metadata_identity_replacement_v3_receipt.json，旧render_delivery_supervisor_receipt.json和full_experiment_supervisor_receipt.json保持原false及SHA。执行源将封存F execution_sources/metadata_replacement_automatic_execution_attempt16；版本化总监督器实际启动与否一律读取versioned_experiment_supervisor_launcher_attempt01.json和versioned_experiment_supervisor_receipt.json，不能把本段意图当实际启动。
+
+总监督器启动后先等待Cathy post_geometry_worker_attempt03_receipt和Chris post_geometry_worker_attempt04_receipt全独立资格，再fresh全四人准入，随后自动training_coordinator和三driver三scorer27格持久交付。源码capsule加载后不可编辑其源；出现故障保留原receipt并核实已发生更新，禁止重放训练。当前仍0正式TFG optimizer更新、0正式视频、无新的data_qualification.json。25核心执行控制attempt09/attempt03及metadata/等权/分析控制结论不变；最新媒体修改只涉及I/O/状态隔离，没有改模型或数值政策。
+
+## Requirements
+### Requirement: 系统 SHALL 保存可复现的官方完整训练与27格合同
+#### Scenario: 开始准备
+- **WHEN** 获取候选素材
+- **THEN** 固定官方commit、两阶段epoch预算语义、两个共同seed、初始化/更新预算约束、六固定clip、27条目与评价PCM单位合同已保存，SPEC_ONLY不冒充结果。
+### Requirement: 系统 SHALL 准备并独立核验四个新身份的自然素材
+#### Scenario: 数据准入
+- **WHEN** 宣称数据准备完成
+- **THEN** 每人360–480秒、6000/750/1500监督帧、test独立原录制身份匹配与无重合、音画/ROI/增益、官方预处理与跨录制坐标、持久SHA全部通过，有data_qualification.json。
+### Requirement: 系统 SHALL 在数据门通过后完成同初始化同预算完整训练与27格
+#### Scenario: 训练准入与交付
+- **WHEN** 四人数据门全部通过
+- **THEN** 24训练的完整initial/frame/ray/actual-update合同和官方两阶段验收；每身份/seed及四身份汇总27条目、原数组、曲线、独立QA与持久交付齐备，否则不标done。
+
+## Steps
+1. [x] 保存官方完整训练spec和机器protocol。
+2. [x] 获取四身份、多原录制、每人6–8分钟自然素材并验来源。
+3. [x] 官方预处理、独立split、音画/身份/预算/持久空间全量核验。
+4. [ ] 数据门通过后执行两seed×三档完整训练及验证。
+5. [ ] 三档驱动×三档评价、独立QA、27条目报告及持久交付。
+
+## Context
+机器协议和来源下载代码scripts/experiments/synctalk_multispeaker_full_20261017；数据F:/Datasets/tts-exp/synctalk_multispeaker_full_20261017；HDTF候选经固定HF镜像ZIP Range选择性传输，必须再对官方URL/原录制作资格，不能仅凭名字拼接。原May50/51封存不改。Ubuntu root空间不足1GB，当前新增数据只写F和独立SHM。用户授权核验后训练，不意味着跳过资格门。
+
+## 当前可恢复状态
+0本轮实验TFG optimizer更新、0正式生成视频，没有全四人训练准入，原主stage2及训练/媒体监督器的failed receipts保留。BFM/相机预处理优化和toy训练控制不算TFG训练。用户已授权门后24完整模型和27格，不需重复一般训练许可，也不能跳过门。
+
+Brown/Patrick完整v2/监督/六整录制AVE/F三归档fresh数值preflight、90loader和18完整65536ray零更新capacity通过。各SHM只恢复72监督控制，full加载前必须恢复16500。官方commit43079fb3、AVE、FP16/原GradScaler/loss/AdamW/EMA、upper7维、fine flip、原lip矩形/coarse与patch65536/steps16、60000后累计102000 attempts完整epochs、两seed/三增益同完整初始化及阶段末实际成功更新相等合同不变。原lip默认scale非有限梯度诊断保留，正式AMP skips和预算仍须实际测，不补步/改政策。
+
+原四人各420秒自然HDTF材料/42000帧RGB/PTS/PCM/三DOUBLE增益/上下文、原stage1每人8250帧/F41251成员、原72GT参考矩阵和实际FP32音频forward已历史独立通过。它们不是新候选或生成视频的通过证据。旧版本素材/原选择/来源不覆盖；F原视频若转云冷存储，按failed_pair_cold_storage_locator.json显式恢复，不能假设文件仍本地。镜像非raw字节、Patrick482上采样、上游AVE/SyncNet暴露未知等限制保留；旧Cathy test0的4满幅样本属于旧版本，不能套到新test2。
+
+冻结ADR038/v1坐标失败保留；ADR039/v2 SHA37f0714cecd41cca0f531bb062b6029bad2e96fe5bc19bd3ad0827d61f3dd005和训练2°/5mm、landmark5/10px、flow2/5px、condition1e6不放宽。Debbie原配对全test flow median4.48346127047664/p956.69030642173168px失败，独立NumPy投影复现；Cathy原配对median2.372264813512586/p953.936536358146548px因median>2也失败，train controls/val通过不替代test门。F geometry_diagnostics下完整失败包：Debbie61成员29944792B SHA796861f6aaedeabcf168c9d41a262cd22857093b7b2e7a86e47d657518f72734；Cathy60成员26443101B SHA624a46a0f1135e819b7238f1c8282f4f004bdea40b37b8d7b481de475227b9e5。Cathy manifest外部依赖标签曾误写Debbie，原封存不改，dependency_labels_correction_attempt01.json仅纠正标签并固定原manifest SHA，不改数值/归档字节。
+
+Debbie候选见[[040-synctalk-recording-role-fallback]]：独立ROOT/dataset_revisions/DebbieDingell_recording_roles_v2，main录制1=290秒/test录制0=130秒，仍420秒/6000/750/1500。全10500帧新材料QA已实际通过：原PCM/RGB/PTS/三增益逐值、无重复、固定六clip，audio maxcorr0.2494，无场景切换。原候选worker在材料QA后因误依赖Cathy失败停于GPU等待，没有跑候选stage1/几何；旧false/source/log保留。resume_role_trial_geometry.py验证这个特定依赖失败与材料QA后，只从尚未开始的stage1继续，独立geometry_resume_worker_receipt.json（PID429102/session44647，真实ps优先），stage1全8250帧已通过且0 review flags，当前train_tracker；不重放数值阶段。早期train-only flow observer PID41952/session85456在F候选flow_cache_persistence_receipt.json等待，先F完整gzip读回才退役dense cache。后续complete_role_trial_qualification.py --attempt2 --worker-receipt geometry_resume_worker_receipt.json（session62179）独立等待，F post_geometry_worker_attempt02_receipt.json为权威；原post attempt1 failed保留。
+
+Cathy候选见[[041-synctalk-eligible-recording-fallback]]：原test录制0实长243秒，达不到固定main至少278秒，不能强行反转。按此前已下载、同官方身份标签、元数据编号的唯一下一独立录制2（21mNN49Pp34，官方00:05–01:55，110秒），保持main录制1（yDi_pmbanwc，295秒），实际405秒=6分45秒满足原360–480秒，不称420。四身份原料合计1665秒，监督仍每人240/30/60秒。五帧source2 contact只审单人清晰自然讲话/场景，身份来源是官方元数据；新source SHA与URL已冻结，完整重复/音画/脸部资格未完成，不按SyncNet选素材。
+
+ROOT/dataset_revisions/CathyMcMorrisRodgers_recording2_v2 的prepare_cathy_test_replacement.py通过共享preparation_GPU.lock排队，session52906，flock PID435526（真实ps优先）；等待时还没有preparation_worker_receipt.json是正常，不能当数据失败。它完整准备/独立验405秒材料，main来源/全RGB/PCM相同且重生成全部6750 JPEG字节精确才复用原train/val JPEG/FAN；parser真实重算并逐SHA同原件，BFM/BA/flow每个复用文件也须匹配F封存失败包里的原SHA。新test重跑FAN/parser/frozen tracker，全部冻结v2训练恢复/750val/1500test实际重算，train poses与原训练字节相同；不重复估计训练状态制造额外自由度。后续complete_cathy_test_qualification.py --attempt2（PID128476/session85058）在F post_geometry_worker_attempt02_receipt.json等待；attempt1误把尚未启动的worker缺receipt当失败已保留，attempt2只修等待，不改数据门。36远端源码/合同SHA和6本地控制模块已封存，原训练dense flow借用已有Cathy v1完全验证gzip（同main，不声称创建/退休第二份）。
+
+两个候选的后续controller只准备，不能训练：几何通过后F全material/stage1 tar逐成员SHA、flow验证、supervision/六整录制AVE、新test source-owned ROI/三评价音频forward/独立18GT矩阵、derived/qualification归档、仅在F全成员验证后监督退休与72恢复、dataset绑定、90loader/18capacity和独立三档案数值preflight。只能看各自当前receipt，不能将旧worker false改成pass。不要编辑已加载的6个本地模块（含qualify_all_data/persist/restore）或已复制远端源码；若修复须先封存失败/源码并新attempt。原全局runtime worker110572在等待失败旧Debbie、无活动子进程时已停，原receipt和runtime_qualification_failed_pair_transition.json保留；原Cathy observers随旧几何失败结束，不复活它们。
+
+全四人最终版本统一准入仍待实现：显式选择Brown/Patrick原版与两个合格候选版本，独立fresh SHA/来源/材料/每种预处理/runtime/archive、主录制整音频与新test评分参考全部核验，固定全cohort版本合同。训练provider、监督恢复、render的原PCM/landmarks、score的ROI/audio以及持久/退休都必须绑定同一版本，不能只改metadata或混用旧ROOT/prepared/Cathy与旧test参考。现有global qualifier仍要求旧4人总worker，不能直接启动或伪造它；适配应版本化并验证后才恢复24训练/媒体队列。
+
+训练锁定/断线接回/完整状态与RNG/renderer counter恢复、真实optimizer posthook、每epochF读回和幂等cache轮换已实际20Ubuntu tests零skip、Windows锁/408模拟epoch两控制、io_state_rotation_attempt02通过。此后新增namespace控制Linux3项0.009s零skip（Windows2过/1因symlink权限跳过）、failed cache3项0.106s、Cathy main复用3项、factorial分解/身份内seed/平台3项通过。所有这些是工程控制，不是实验模型结果。
+
+分析合同analysis_contract_v1.json在0TFG时冻结并入spec：主guard20/full次，六个train/driver/scorer±6相对0描述性对照，四身份差值/两seed保留，精确同档drive+score加法分解/交互，不给统一百分比。固定0dB val MSE粗5–7vs8–10/fine12–14vs15–17绝对相对变化≤2%只是描述性平台，不早停/选test checkpoint/改预算/证明数据充分。qualify_aggregate_delivery独立重算8seed/4身份/总27和408曲线、analyze_factorial_gains及其receipt已接入媒体监督尾部，但真实模型仍0；最终科学解释、独立总交付和正式报告尚未发生，不能把Sync-C提高叫感知更准。
+
+两个候选补齐了先前未复制的decode_canonical_rgb.py依赖（score_reference调用原OpenCV4.10权威RGB解码）：远端/本地SHA精确、复制为只读、F qualification_sources保留字节与decoder_dependency_completion_attempt01.json；未改已加载源码或数值方法，原source capsules保留。评分参考receipt还会记录decoder SHA并逐帧验原material RGB digest。
+
+为后续大media归档新增cloud_archive_stream.py/cloud_archive_readback_stream.py，不修改正在完成小文件备份的旧reader/writer。新Linux reader按顺序4MiB块独立读各云分片、每片SHA和整包SHA全验，不在SHM保存payload，只有metadata；F原完整tar仍先逐成员验证。2个真实控制通过（跨4MiB块完整顺序SHA/零payload暂存、同长度篡改失败无成功receipt）。另对已上传Brown stage1实际独立readback attempt03重验597734675B/三片/全SHA通过，85.55s，SHM free before/after均3026432000B；F新proof exact SHA通过，原attempt02成功canonical凭据未覆盖。媒体监督已接入stream后端，大归档无需同时保留整包SHM副本；这不是正式media结果完成。源码/新proof见F cloud_delivery/.../readback_attempt03。
+
+空间：F四人重复stage1 loose缓存已完整tar/member/loose SHA后退休3257085264B，原tar/manifest/JSON与Brown五人审图保留。两失败配对SHM canonical在F原视频fresh SHA和完整失败包证明后退休Debbie969485947B+Cathy792271120B=1761757067B，原PCM/增益/元数据/几何/来源保留；只删两ordinary owned copies，不碰候选。Debbie首次F回执误用stdout JSON格式导致byte SHA不同，旧stdout另存，后直接读远端原回执，exact SHAa97fdfe1d2c06d152bb654fe1ffeb86a342fe4028f81852a1c6e28ffd4404fdd通过，不把失败复制写成通过。source helper已修正。
+
+Brown stage1百度试备份597734675B三片与全SHA386dc634955dbaab6eaeeeab8535bfce617d27150b9178928f667c5bb5429862在Ubuntu独立读回attempt02通过，F凭据验证后ROOT新暂存安全退休；旧临时名冲突/failed attempt01分片保留。cold_backup_failed_material.py已实际完成：两失败对4个F canonical合计1761757067B均在Ubuntu挂载独立完整分片/全SHA读回及F凭据验证后转云冷存储并退休本地副本；failed_material_cold_backup_receipt.json passed=true/verified4。原素材和失败数组仍保留，不丢失原视频字节，未来原文件解码需按locator显式恢复。仅独立完整读回及F凭据/SHA后才退休已备份F副本，先写failed_pair_cold_storage_locator；见failed_material_cold_backup_receipt.json。此项不碰CloudDrive配置/历史唯一副本；active候选原PCM及全部数组须持久F/云校验后才回收。
+
+ROOT=/dev/shm/synctalk-multispeaker-data-20261017，SSH wjj@192.168.50.2；audit Python /home/wjj/tts-audio/synctalk-amplitude-audit-20261016/env/bin/python，SyncNet /home/wjj/.venvs/syncnet/bin/python。最近SHM约2.9GiB/F约10.11GB，实际df与receipts优先。共享GPU准备flock串行候选，F归档/云读回独立运行，监测资源守卫；不要重复worker或盲重放失败数值阶段。完整监督曾退休者必须明确恢复，缺任一full文件即拒绝加载。
+
+心跳synctalk-27仍原10分钟ACTIVE，prompt已更新ADR041/两个独立候选和云备份已通过事实。只通知关键完成/真实故障/需输入；四人全资格后24完整模型+27格真实执行、全部独立QA与持久交付完成后才停用并保留聊天。最新源/生成namespace副本/协议/spec/ADR038–041/十testfiles需F execution_sources/independent_candidates_attempt13封存，旧全部snapshots保留；还未commit/PR。
+
+## Observations
+- [status] blocked
+- [description] 四人准入通过，但Brown ep5/+6非有限loss导致部分epoch失败；失败现场已全SHA封存，无中途state，禁止盲重跑/精度或scaler回退，需明确新稳定性方案。
+- [blocker] 数据准入门已解除；24模型实际训练、phase-end成功更新等预算控制及三轴27格/QA/持久交付尚未完成。
+- [location] scripts/experiments/synctalk_multispeaker_full_20261017；F:/Datasets/tts-exp/synctalk_multispeaker_full_20261017。
+
+## Relations
+- governed_by [[043-synctalk-byte-exact-epoch-cache]]
+- implements [[042-synctalk-metadata-ordered-identity-replacement]]
+- implements [[041-synctalk-eligible-recording-fallback]]
+- implements [[040-synctalk-recording-role-fallback]]
+- project [[SyncTalk 四新身份官方完整训练电平实验 Spec]]
+- implements [[038-synctalk-training-owned-geometry-and-lazy-loading]]
+- implements [[039-synctalk-shared-training-flow-geometry]]
+- follows [[51-synctalk-may-eval-gain]]

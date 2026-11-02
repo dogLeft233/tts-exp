@@ -1,0 +1,98 @@
+{
+  "schema": "root_actual_functional_effect_qa_v1",
+  "status": "PASS_ACTUAL_144_TRAJECTORY_GEOMETRY_AND_CANONICAL_SCALARS",
+  "created_utc": "2026-10-14T18:09:31.734757+00:00",
+  "effect_sha256": "7c66fbe592c53888196a6862b3a3354b3707ae04a80f2dc994938a86cec6cdae",
+  "qa_source_sha256": "7755a21b99af6f0c6383a659cca479c2d4e9c8cbdf9de5fe97c07ac43ea8a543",
+  "consumer_source_sha256": "2d0677a85f31c132358f8927226ced439a6ace181c593c9f8fca5086bf3aeaea",
+  "actual_trajectory_bodies_read": 144,
+  "row_standardizations_checked": 288,
+  "token_metric_observations_reduced": 6678,
+  "numeric_checks": 3717,
+  "max_abs_error": 0.0,
+  "verified": [
+    "actual raw/z/token/phone/class/seed/utterance/speaker reductions",
+    "fixed shared-support ±4frame H and speed contrasts",
+    "all baseline gates",
+    "all full/guard20 supported-subset and full8 canonical scalar reductions"
+  ],
+  "limits": [
+    "Existing support/Grid body QA and144 NPZ body pins were reused; no repeated environment audit.",
+    "Existing generation RMS metadata binding, no new generation WAV measurements.",
+    "Exploratory seen DEV, proxy geometry, not human mouth accuracy."
+  ],
+  "six_cell_summary": [
+    {
+      "model": "Wav2Lip",
+      "attribute": "vowel_height_aperture_proxy",
+      "n_speakers": 3,
+      "rms_C0_median": 0.8526999412681208,
+      "rms_H_median": 0.6502996585399726,
+      "C0_gate": true,
+      "H_gate": true,
+      "head_delta_C0_mean": 0.015443699316336231,
+      "head_delta_H_mean": 0.04176991226628102,
+      "head_both_C0_H_positive_speakers": 0
+    },
+    {
+      "model": "Wav2Lip",
+      "attribute": "vowel_rounding_proxy",
+      "n_speakers": 4,
+      "rms_C0_median": 0.23622607179482413,
+      "rms_H_median": 0.06771025174347517,
+      "C0_gate": false,
+      "H_gate": true,
+      "head_delta_C0_mean": -0.05305793647667137,
+      "head_delta_H_mean": -0.03882363591637733,
+      "head_both_C0_H_positive_speakers": 1
+    },
+    {
+      "model": "MuseTalk",
+      "attribute": "vowel_height_aperture_proxy",
+      "n_speakers": 3,
+      "rms_C0_median": -0.5575023714833165,
+      "rms_H_median": -0.9933624931115911,
+      "C0_gate": false,
+      "H_gate": false,
+      "head_delta_C0_mean": -0.026963822317846293,
+      "head_delta_H_mean": -0.006643049783795818,
+      "head_both_C0_H_positive_speakers": 2
+    },
+    {
+      "model": "MuseTalk",
+      "attribute": "vowel_rounding_proxy",
+      "n_speakers": 4,
+      "rms_C0_median": 1.1442754897044023,
+      "rms_H_median": 0.006434301403857812,
+      "C0_gate": true,
+      "H_gate": false,
+      "head_delta_C0_mean": -0.029155369037609263,
+      "head_delta_H_mean": 0.014648931114316394,
+      "head_both_C0_H_positive_speakers": 2
+    },
+    {
+      "model": "Ditto",
+      "attribute": "vowel_height_aperture_proxy",
+      "n_speakers": 3,
+      "rms_C0_median": 1.5477042370943337,
+      "rms_H_median": 1.6752930331981861,
+      "C0_gate": true,
+      "H_gate": true,
+      "head_delta_C0_mean": 0.025650373463284026,
+      "head_delta_H_mean": 0.005992861890348496,
+      "head_both_C0_H_positive_speakers": 2
+    },
+    {
+      "model": "Ditto",
+      "attribute": "vowel_rounding_proxy",
+      "n_speakers": 4,
+      "rms_C0_median": 0.8421176612474581,
+      "rms_H_median": 0.4511896145255515,
+      "C0_gate": true,
+      "H_gate": true,
+      "head_delta_C0_mean": -0.07679599048672375,
+      "head_delta_H_mean": 0.05724623171501446,
+      "head_both_C0_H_positive_speakers": 1
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "schema": "report40_frozen_input_copy_v1",
+  "created_utc": "2026-10-14T18:36:09.247042+00:00",
+  "status": "EXACT_CREATE_ONLY_COMPACT_SCIENTIFIC_INPUT_COPIES",
+  "items": [
+    {
+      "source": ".codex/scratch/phone_conditioned_visual_response_20261015_attempt03/functional_endpoint_protocol.json",
+      "path": "basic-memory/docs/experiments/assets/40-functional-response-coordinate/inputs/zero_clock_protocol.json",
+      "bytes": 7555,
+      "sha256": "8d530afb62bc035517a6a4e724f74ea18e18d7bb1ce6a0184797d357df99de68"
+    },
+    {
+      "source": ".codex/scratch/phone_conditioned_visual_response_20261015_attempt03/functional_endpoint_effect_attempt03/effect_summary.json",
+      "path": "basic-memory/docs/experiments/assets/40-functional-response-coordinate/inputs/zero_clock_effect.json",
+      "bytes": 620946,
+      "sha256": "7c66fbe592c53888196a6862b3a3354b3707ae04a80f2dc994938a86cec6cdae"
+    },
+    {
+      "source": ".codex/scratch/phone_conditioned_visual_response_20261015_attempt03/root_actual_effect_qa.json",
+      "path": "basic-memory/docs/experiments/assets/40-functional-response-coordinate/inputs/zero_clock_ROOT_QA.json",
+      "bytes": 3583,
+      "sha256": "9debfb496f4cbe4b1ec208690294df7e1814e10921088e3f418e963f43c25443"
+    },
+    {
+      "source": ".codex/scratch/functional_lag_response_20261015_attempt01/protocol.json",
+      "path": "basic-memory/docs/experiments/assets/40-functional-response-coordinate/inputs/lag_protocol.json",
+      "bytes": 5370,
+      "sha256": "0ed732ada47d0110403978514f2828d1ba8caf919e4461571d727befcc43551b"
+    },
+    {
+      "source": ".codex/scratch/functional_lag_response_20261015_attempt01/s17_support_attempt01.json",
+      "path": "basic-memory/docs/experiments/assets/40-functional-response-coordinate/inputs/lag_support.json",
+      "bytes": 151577,
+      "sha256": "8d7587cadd9f87b3a4134f597f944672411af9cbf7542533cd9479525e20303f"
+    },
+    {
+      "source": ".codex/scratch/functional_lag_response_20261015_attempt01/lag_effect_attempt01.json",
+      "path": "basic-memory/docs/experiments/assets/40-functional-response-coordinate/inputs/lag_effect.json",
+      "bytes": 848850,
+      "sha256": "3055e950cd51820288e04f9f4607256333cf128dca95af18b802543b819ddc22"
+    },
+    {
+      "source": ".codex/scratch/functional_lag_response_20261015_attempt01/root_actual_lag_qa.json",
+      "path": "basic-memory/docs/experiments/assets/40-functional-response-coordinate/inputs/lag_ROOT_QA.json",
+      "bytes": 3049,
+      "sha256": "4dd93b5e56a24c7b4998904aeeebf5d1e59534a11d38dbfc54702286610e894c"
+    }
+  ],
+  "scope": "Frozen summaries/protocols/ROOT QA only; raw trajectories/media/native caches remain in original locations. Not a complete experiment backup."
+}

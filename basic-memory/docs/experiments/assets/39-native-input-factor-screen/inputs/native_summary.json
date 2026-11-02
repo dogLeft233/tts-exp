@@ -1,0 +1,343 @@
+{
+  "schema": "root_complete_native_coordinate_grid_v1",
+  "status": "COMPLETE_9_MODEL_FACTOR_CELLS_NO_TWO_SPEAKER_REPLICATION",
+  "cohort": [
+    "S0044",
+    "S0052"
+  ],
+  "factor_endpoint_count": 18,
+  "reused_baseline_count": 6,
+  "rows": [
+    {
+      "model": "Wav2Lip",
+      "speaker": "S0044",
+      "factor": "SEP_ANG_ACTIVE05",
+      "delta": {
+        "Cbest": 0.006329059600830078,
+        "Dmin": -0.15912103652954102,
+        "D0": -0.14156341552734375,
+        "aperture_median": -0.011124085255065662,
+        "velocity_rms": -0.014491156580094311
+      },
+      "gate": true,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_angular_radial_cpu_20261014_attempt01\\sep_ang_active05\\root_four_row_summary.json"
+    },
+    {
+      "model": "Wav2Lip",
+      "speaker": "S0052",
+      "factor": "SEP_ANG_ACTIVE05",
+      "delta": {
+        "Cbest": -0.17002248764038086,
+        "Dmin": 0.08329916000366211,
+        "D0": -0.0940847396850586,
+        "aperture_median": -0.004405200962553833,
+        "velocity_rms": -0.02765990544835062
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_angular_radial_cpu_20261014_attempt01\\sep_ang_active05\\root_four_row_summary.json"
+    },
+    {
+      "model": "Ditto",
+      "speaker": "S0044",
+      "factor": "SEP_ANG_ACTIVE05",
+      "delta": {
+        "Cbest": 0.00627899169921875,
+        "Dmin": -0.015013694763183594,
+        "D0": -0.015013694763183594,
+        "aperture_median": 0.0006803720566339877,
+        "velocity_rms": 0.006023029989500717
+      },
+      "gate": true,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_angular_radial_cpu_20261014_attempt01\\sep_ang_active05\\root_four_row_summary.json"
+    },
+    {
+      "model": "Ditto",
+      "speaker": "S0052",
+      "factor": "SEP_ANG_ACTIVE05",
+      "delta": {
+        "Cbest": -0.08004951477050781,
+        "Dmin": 0.16064453125,
+        "D0": 0.16064453125,
+        "aperture_median": -0.0026316851354305087,
+        "velocity_rms": -0.013442470891637415
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_angular_radial_cpu_20261014_attempt01\\sep_ang_active05\\root_four_row_summary.json"
+    },
+    {
+      "model": "Wav2Lip",
+      "speaker": "S0044",
+      "factor": "STAB_ANG_FIT",
+      "delta": {
+        "Cbest": -0.03832244873046875,
+        "Dmin": -0.08081531524658203,
+        "D0": -0.23849201202392578,
+        "aperture_median": -0.004310989142705848,
+        "velocity_rms": -0.014628330515282784
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_stab_ang_fit_20261014_attempt01\\root_four_row_stability_summary.json"
+    },
+    {
+      "model": "Wav2Lip",
+      "speaker": "S0052",
+      "factor": "STAB_ANG_FIT",
+      "delta": {
+        "Cbest": 0.027740955352783203,
+        "Dmin": -0.07137537002563477,
+        "D0": 0.04566383361816406,
+        "aperture_median": -0.002649088417065182,
+        "velocity_rms": -0.08253957695997383
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_stab_ang_fit_20261014_attempt01\\root_four_row_stability_summary.json"
+    },
+    {
+      "model": "MuseTalk",
+      "speaker": "S0044",
+      "factor": "STAB_ANG_FIT",
+      "delta": {
+        "Cbest": -0.04575538635253906,
+        "Dmin": 0.07073974609375,
+        "D0": -0.06686973571777344,
+        "aperture_median": 0.0005266328894666661,
+        "velocity_rms": 0.02507029490560081
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_stab_ang_fit_20261014_attempt01\\root_four_row_stability_summary.json"
+    },
+    {
+      "model": "MuseTalk",
+      "speaker": "S0052",
+      "factor": "STAB_ANG_FIT",
+      "delta": {
+        "Cbest": -0.07924938201904297,
+        "Dmin": 0.09078311920166016,
+        "D0": -0.00141143798828125,
+        "aperture_median": 0.0018752472153830413,
+        "velocity_rms": -0.010691436671367294
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_stab_ang_fit_20261014_attempt01\\root_four_row_stability_summary.json"
+    },
+    {
+      "model": "Ditto",
+      "speaker": "S0044",
+      "factor": "ENV_RADIAL_V2",
+      "delta": {
+        "Cbest": 0.130939,
+        "Dmin": -0.119575,
+        "D0": -0.119575,
+        "aperture_median": -0.00134,
+        "velocity_rms": -0.013178
+      },
+      "gate": true,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_canonical_factor_summary_20261014_attempt02.json",
+      "radial_purity_root_qa": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_pilot_mask_audit_20261014_attempt02\\root_env_radial_readback_qa.json"
+    },
+    {
+      "model": "Ditto",
+      "speaker": "S0052",
+      "factor": "ENV_RADIAL_V2",
+      "delta": {
+        "Cbest": -0.0584,
+        "Dmin": 0.133211,
+        "D0": 0.133211,
+        "aperture_median": -7e-06,
+        "velocity_rms": 0.007447
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_canonical_factor_summary_20261014_attempt02.json",
+      "radial_purity_root_qa": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_pilot_mask_audit_20261014_attempt02\\root_env_radial_readback_qa.json"
+    },
+    {
+      "model": "MuseTalk",
+      "speaker": "S0044",
+      "factor": "ENV_RADIAL_V2",
+      "delta": {
+        "Cbest": 0.082645,
+        "Dmin": -0.085314,
+        "D0": 0.059996,
+        "aperture_median": -0.000583,
+        "velocity_rms": 0.0073
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_canonical_factor_summary_20261014_attempt02.json",
+      "radial_purity_root_qa": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_pilot_mask_audit_20261014_attempt02\\root_env_radial_readback_qa.json"
+    },
+    {
+      "model": "MuseTalk",
+      "speaker": "S0052",
+      "factor": "ENV_RADIAL_V2",
+      "delta": {
+        "Cbest": -0.065056,
+        "Dmin": 0.037503,
+        "D0": -0.002996,
+        "aperture_median": 0.000333,
+        "velocity_rms": -0.002917
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_canonical_factor_summary_20261014_attempt02.json",
+      "radial_purity_root_qa": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_pilot_mask_audit_20261014_attempt02\\root_env_radial_readback_qa.json"
+    },
+    {
+      "model": "MuseTalk",
+      "speaker": "S0044",
+      "factor": "SEP_ANG_ACTIVE05",
+      "delta": {
+        "Cbest": -0.012250053471534628,
+        "B": 0.08844839293381135,
+        "Dmin": 0.10069844640534598,
+        "D0": 0.07268193672443246,
+        "best_lag": 0,
+        "aperture_median": -0.0004784471334833007,
+        "velocity_rms": -0.004409698604490697
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_model_factor_scope_render_20261014_attempt02\\root_musetalk_sep_raw_endpoint_summary.json"
+    },
+    {
+      "model": "MuseTalk",
+      "speaker": "S0052",
+      "factor": "SEP_ANG_ACTIVE05",
+      "delta": {
+        "Cbest": -0.03624123027644188,
+        "B": 0.09893597278398403,
+        "Dmin": 0.1351772030604259,
+        "D0": 0.0653061817601781,
+        "best_lag": 0,
+        "aperture_median": -0.0006871991010916345,
+        "velocity_rms": -0.009494562370034931
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_model_factor_scope_render_20261014_attempt02\\root_musetalk_sep_raw_endpoint_summary.json"
+    },
+    {
+      "model": "Ditto",
+      "speaker": "S0044",
+      "factor": "STAB_ANG_FIT",
+      "delta": {
+        "Cbest": 0.028526744623293965,
+        "Dmin": -0.12297920248974314,
+        "D0": -0.12297920248974314,
+        "lag": 0,
+        "aperture_median": 0.001689181194013567,
+        "velocity_rms": 0.0023139772153614735
+      },
+      "gate": true,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_model_factor_scope_render_20261014_attempt02\\root_remaining_four_raw_endpoint_summary.json"
+    },
+    {
+      "model": "Ditto",
+      "speaker": "S0052",
+      "factor": "STAB_ANG_FIT",
+      "delta": {
+        "Cbest": -0.06379604093807423,
+        "Dmin": 0.11931946105563895,
+        "D0": 0.11931946105563895,
+        "lag": 0,
+        "aperture_median": 0.005369159914844782,
+        "velocity_rms": -0.01037498882042548
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_model_factor_scope_render_20261014_attempt02\\root_remaining_four_raw_endpoint_summary.json"
+    },
+    {
+      "model": "Wav2Lip",
+      "speaker": "S0044",
+      "factor": "ENV_RADIAL_V2",
+      "delta": {
+        "Cbest": -0.04308792806807027,
+        "Dmin": -0.1403009295463562,
+        "D0": -0.17148562556221414,
+        "lag": 0,
+        "aperture_median": -0.0021405619102343384,
+        "velocity_rms": -0.012534978769145833
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_model_factor_scope_render_20261014_attempt02\\root_remaining_four_raw_endpoint_summary.json"
+    },
+    {
+      "model": "Wav2Lip",
+      "speaker": "S0052",
+      "factor": "ENV_RADIAL_V2",
+      "delta": {
+        "Cbest": 0.03365745795400521,
+        "Dmin": -0.055878865091424146,
+        "D0": 0.07038915533768453,
+        "lag": 0,
+        "aperture_median": 0.002721859993030304,
+        "velocity_rms": -0.08451073404604814
+      },
+      "gate": false,
+      "source_summary": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_model_factor_scope_render_20261014_attempt02\\root_remaining_four_raw_endpoint_summary.json"
+    }
+  ],
+  "replication": [
+    {
+      "factor": "SEP_ANG_ACTIVE05",
+      "model": "Wav2Lip",
+      "two_speaker_gate": false,
+      "joint_pass_count": 1
+    },
+    {
+      "factor": "SEP_ANG_ACTIVE05",
+      "model": "MuseTalk",
+      "two_speaker_gate": false,
+      "joint_pass_count": 0
+    },
+    {
+      "factor": "SEP_ANG_ACTIVE05",
+      "model": "Ditto",
+      "two_speaker_gate": false,
+      "joint_pass_count": 1
+    },
+    {
+      "factor": "STAB_ANG_FIT",
+      "model": "Wav2Lip",
+      "two_speaker_gate": false,
+      "joint_pass_count": 0
+    },
+    {
+      "factor": "STAB_ANG_FIT",
+      "model": "MuseTalk",
+      "two_speaker_gate": false,
+      "joint_pass_count": 0
+    },
+    {
+      "factor": "STAB_ANG_FIT",
+      "model": "Ditto",
+      "two_speaker_gate": false,
+      "joint_pass_count": 1
+    },
+    {
+      "factor": "ENV_RADIAL_V2",
+      "model": "Wav2Lip",
+      "two_speaker_gate": false,
+      "joint_pass_count": 0
+    },
+    {
+      "factor": "ENV_RADIAL_V2",
+      "model": "MuseTalk",
+      "two_speaker_gate": false,
+      "joint_pass_count": 0
+    },
+    {
+      "factor": "ENV_RADIAL_V2",
+      "model": "Ditto",
+      "two_speaker_gate": false,
+      "joint_pass_count": 1
+    }
+  ],
+  "joint_pass_count": 4,
+  "response_gate": "dCbest>0 && dDmin<=0 && dD0<=0",
+  "interpretation": "At these frozen doses, isolated angular separation, increased stability and native radial trajectories each fail to produce two-speaker replicated benefit in every tested model. Mouth metrics change but have no universal quality ordering. Exploratory reused2speaker evidence; physical spectral-envelope waveform axis remains a separate next question.",
+  "source_summary_pins": {
+    "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_angular_radial_cpu_20261014_attempt01\\sep_ang_active05\\root_four_row_summary.json": "357b987e1ab83380aaf0a556d4b4ecba2be475b98f9d38e78bdcc0c448bb7235",
+    "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_stab_ang_fit_20261014_attempt01\\root_four_row_stability_summary.json": "e56f5aa1106457716ae1bc79508005a65dd2fef8cb057dc36e0e71bdf4c42f2c",
+    "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_canonical_factor_summary_20261014_attempt02.json": "1cb0b55f32543f33d606b108a971a984446acabeac10e3b6080cb59afe506814",
+    "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_model_factor_scope_render_20261014_attempt02\\root_musetalk_sep_raw_endpoint_summary.json": "85c4a6d51b45866852a598017cbc5e7feaa413fe6970d851edf520bebfaec8c8",
+    "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_model_factor_scope_render_20261014_attempt02\\root_remaining_four_raw_endpoint_summary.json": "0bf45888812ff16c61ae1cbdcc04c7c967da4d5e2bb0e50168746c84463539ba"
+  },
+  "no_new_baselines_or_repeated_runs": true
+}

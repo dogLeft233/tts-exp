@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="1115" viewBox="0 0 1280 1115">
+<rect width="100%" height="100%" fill="white"/>
+<text x="640.0" y="34.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="23" fill="#222" font-weight="bold">New-speaker amplitude response: speaker effects and dose family</text>
+<text x="640.0" y="59.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="13" fill="#555" font-weight="normal">C = SyncNet Sync-C; positive ΔC is a higher-score direction, not a speaker-level significance test.</text>
+<text x="42.0" y="83.0" text-anchor="start" font-family="Arial,sans-serif" font-size="17" fill="#222" font-weight="bold">1 · Per-speaker primary effect</text>
+<text x="42.0" y="105.0" text-anchor="start" font-family="Arial,sans-serif" font-size="12" fill="#555" font-weight="normal">ΔC = mean(FIXED_R1, FIXED_R2) − mean(RAW_R1, RAW_R2)</text>
+<text x="1035.0" y="105.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#555" font-weight="normal">ΔC</text>
+<line x1="580.8" y1="126.0" x2="580.8" y2="485.0" stroke="#4b5563" stroke-width="1.5" stroke-dasharray="5,4"/>
+<line x1="300.0" y1="127.0" x2="300.0" y2="485.0" stroke="#edf0f2" stroke-width="0.8"/>
+<text x="300.0" y="120.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#666" font-weight="normal">-0.29</text>
+<line x1="443.0" y1="127.0" x2="443.0" y2="485.0" stroke="#edf0f2" stroke-width="0.8"/>
+<text x="443.0" y="120.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#666" font-weight="normal">-0.14</text>
+<line x1="586.0" y1="127.0" x2="586.0" y2="485.0" stroke="#edf0f2" stroke-width="0.8"/>
+<text x="586.0" y="120.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#666" font-weight="normal">0.01</text>
+<line x1="729.0" y1="127.0" x2="729.0" y2="485.0" stroke="#edf0f2" stroke-width="0.8"/>
+<text x="729.0" y="120.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#666" font-weight="normal">0.15</text>
+<line x1="872.0" y1="127.0" x2="872.0" y2="485.0" stroke="#edf0f2" stroke-width="0.8"/>
+<text x="872.0" y="120.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#666" font-weight="normal">0.30</text>
+<line x1="1015.0" y1="127.0" x2="1015.0" y2="485.0" stroke="#edf0f2" stroke-width="0.8"/>
+<text x="1015.0" y="120.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#666" font-weight="normal">0.44</text>
+<text x="42.0" y="139.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0102</text>
+<circle cx="684.4" cy="135.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="139.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.106</text>
+<text x="42.0" y="157.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0103</text>
+<circle cx="742.4" cy="153.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="157.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.165</text>
+<text x="42.0" y="175.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0104</text>
+<circle cx="577.5" cy="171.0" r="4.3" fill="#bb5a48" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="175.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#bb5a48" font-weight="normal">-0.003</text>
+<text x="42.0" y="193.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0105</text>
+<circle cx="682.8" cy="189.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="193.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.104</text>
+<text x="42.0" y="211.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0106</text>
+<circle cx="768.0" cy="207.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="211.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.191</text>
+<text x="42.0" y="229.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0107</text>
+<circle cx="589.2" cy="225.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="229.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.009</text>
+<text x="42.0" y="247.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0108</text>
+<circle cx="484.7" cy="243.0" r="4.3" fill="#bb5a48" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="247.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#bb5a48" font-weight="normal">-0.098</text>
+<text x="42.0" y="265.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0109</text>
+<circle cx="675.4" cy="261.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="265.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.096</text>
+<text x="42.0" y="283.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0110</text>
+<circle cx="596.4" cy="279.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="283.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.016</text>
+<text x="42.0" y="301.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0111</text>
+<circle cx="845.1" cy="297.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="301.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.269</text>
+<text x="42.0" y="319.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0144</text>
+<circle cx="497.4" cy="315.0" r="4.3" fill="#bb5a48" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="319.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#bb5a48" font-weight="normal">-0.085</text>
+<text x="42.0" y="337.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0145</text>
+<circle cx="606.4" cy="333.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="337.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.026</text>
+<text x="42.0" y="355.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0146</text>
+<circle cx="598.2" cy="351.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="355.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.018</text>
+<text x="42.0" y="373.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0147</text>
+<circle cx="524.9" cy="369.0" r="4.3" fill="#bb5a48" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="373.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#bb5a48" font-weight="normal">-0.057</text>
+<text x="42.0" y="391.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0148</text>
+<circle cx="610.6" cy="387.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="391.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.030</text>
+<text x="42.0" y="409.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0149</text>
+<circle cx="386.7" cy="405.0" r="4.3" fill="#bb5a48" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="409.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#bb5a48" font-weight="normal">-0.198</text>
+<text x="42.0" y="427.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0150</text>
+<circle cx="619.3" cy="423.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="427.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.039</text>
+<text x="42.0" y="445.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0151</text>
+<circle cx="928.3" cy="441.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="445.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.354</text>
+<text x="42.0" y="463.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0152</text>
+<circle cx="654.1" cy="459.0" r="4.3" fill="#2b7a78" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="463.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#2b7a78" font-weight="normal">+0.075</text>
+<text x="42.0" y="481.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#39434c" font-weight="normal">S0153</text>
+<circle cx="503.2" cy="477.0" r="4.3" fill="#bb5a48" stroke="white" stroke-width="1.1"/>
+<text x="1035.0" y="481.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#bb5a48" font-weight="normal">-0.079</text>
+<text x="42.0" y="509.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#303942" font-weight="normal">Direction counts among complete pairs (n=20/20 planned): ΔC&gt;0 14/20 (70.0%), ΔC&lt;0 6/20 (30.0%), exact ΔC=0 0/20 (0.0%); missing 0/20 planned. Direction only.</text>
+<text x="42.0" y="531.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#303942" font-weight="normal">Speaker-bootstrap percentile 95% CI for mean ΔC: +0.049 [-0.005, +0.106] · n=20/20</text>
+<text x="42.0" y="572.0" text-anchor="start" font-family="Arial,sans-serif" font-size="17" fill="#222" font-weight="bold">2 · Five planned evaluation levels relative to RAW_R1</text>
+<text x="42.0" y="594.0" text-anchor="start" font-family="Arial,sans-serif" font-size="12" fill="#555" font-weight="normal">Four nonzero-dose simultaneous 95% CIs are reused from the frozen analyzer; gray dots are speaker contrasts.</text>
+<text x="1035.0" y="594.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#555" font-weight="normal">mean [simultaneous CI]</text>
+<line x1="791.1" y1="624.0" x2="791.1" y2="835.0" stroke="#4b5563" stroke-width="1.5" stroke-dasharray="5,4"/>
+<line x1="300.0" y1="625.0" x2="300.0" y2="834.0" stroke="#edf0f2" stroke-width="0.8"/>
+<text x="300.0" y="620.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#666" font-weight="normal">-1.09</text>
+<line x1="443.0" y1="625.0" x2="443.0" y2="834.0" stroke="#edf0f2" stroke-width="0.8"/>
+<text x="443.0" y="620.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#666" font-weight="normal">-0.77</text>
+<line x1="586.0" y1="625.0" x2="586.0" y2="834.0" stroke="#edf0f2" stroke-width="0.8"/>
+<text x="586.0" y="620.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#666" font-weight="normal">-0.45</text>
+<line x1="729.0" y1="625.0" x2="729.0" y2="834.0" stroke="#edf0f2" stroke-width="0.8"/>
+<text x="729.0" y="620.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#666" font-weight="normal">-0.14</text>
+<line x1="872.0" y1="625.0" x2="872.0" y2="834.0" stroke="#edf0f2" stroke-width="0.8"/>
+<text x="872.0" y="620.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#666" font-weight="normal">+0.18</text>
+<line x1="1015.0" y1="625.0" x2="1015.0" y2="834.0" stroke="#edf0f2" stroke-width="0.8"/>
+<text x="1015.0" y="620.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#666" font-weight="normal">+0.50</text>
+<text x="42.0" y="639.0" text-anchor="start" font-family="Arial,sans-serif" font-size="12" fill="#39434c" font-weight="normal">−6 dB</text>
+<circle cx="657.9" cy="624.1" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="674.5" cy="625.2" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="521.5" cy="626.4" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="386.7" cy="627.5" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="591.2" cy="628.7" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="692.1" cy="629.8" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="713.4" cy="631.0" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="651.9" cy="632.1" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="765.4" cy="633.3" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="436.6" cy="634.4" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="815.9" cy="635.6" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="783.9" cy="636.7" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="728.8" cy="637.9" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="695.2" cy="639.0" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="731.9" cy="640.2" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="669.1" cy="641.3" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="627.8" cy="642.5" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="634.6" cy="643.6" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="762.2" cy="644.8" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="722.4" cy="645.9" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<line x1="606.2" y1="635.0" x2="720.1" y2="635.0" stroke="#397f64" stroke-width="2.4"/>
+<line x1="606.2" y1="629.0" x2="606.2" y2="641.0" stroke="#397f64" stroke-width="1.4"/>
+<line x1="720.1" y1="629.0" x2="720.1" y2="641.0" stroke="#397f64" stroke-width="1.4"/>
+<path d="M 663.2 630.0 L 668.2 635.0 L 663.2 640.0 L 658.2 635.0 Z" fill="#397f64" stroke="white" stroke-width="1"/>
+<text x="1035.0" y="639.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#397f64" font-weight="normal">-0.283 [-0.409, -0.157] · n=20/20</text>
+<text x="42.0" y="686.0" text-anchor="start" font-family="Arial,sans-serif" font-size="12" fill="#39434c" font-weight="normal">−3 dB</text>
+<circle cx="726.3" cy="671.1" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="741.5" cy="672.2" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="689.1" cy="673.4" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="622.8" cy="674.5" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="723.9" cy="675.7" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="736.4" cy="676.8" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="734.0" cy="678.0" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="788.3" cy="679.1" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="752.1" cy="680.3" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="679.8" cy="681.4" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="816.9" cy="682.6" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="794.8" cy="683.7" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="787.0" cy="684.9" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="755.1" cy="686.0" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="818.7" cy="687.2" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="746.7" cy="688.3" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="694.4" cy="689.5" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="720.0" cy="690.6" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="793.7" cy="691.8" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="789.2" cy="692.9" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<line x1="719.6" y1="682.0" x2="771.4" y2="682.0" stroke="#a77b25" stroke-width="2.4"/>
+<line x1="719.6" y1="676.0" x2="719.6" y2="688.0" stroke="#a77b25" stroke-width="1.4"/>
+<line x1="771.4" y1="676.0" x2="771.4" y2="688.0" stroke="#a77b25" stroke-width="1.4"/>
+<path d="M 745.5 677.0 L 750.5 682.0 L 745.5 687.0 L 740.5 682.0 Z" fill="#a77b25" stroke="white" stroke-width="1"/>
+<text x="1035.0" y="686.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#a77b25" font-weight="normal">-0.101 [-0.158, -0.044] · n=20/20</text>
+<text x="42.0" y="733.0" text-anchor="start" font-family="Arial,sans-serif" font-size="12" fill="#39434c" font-weight="normal">RAW_R1 · 0 dB reference</text>
+<circle cx="791.1" cy="729.0" r="5.0" fill="#222" stroke="white" stroke-width="1.2"/>
+<text x="1035.0" y="733.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#555" font-weight="normal">exact zero reference · no CI</text>
+<text x="42.0" y="780.0" text-anchor="start" font-family="Arial,sans-serif" font-size="12" fill="#39434c" font-weight="normal">+3 dB</text>
+<circle cx="866.8" cy="765.1" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="863.2" cy="766.2" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="808.0" cy="767.4" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="843.2" cy="768.5" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="897.2" cy="769.7" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="813.0" cy="770.8" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="777.4" cy="772.0" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="866.0" cy="773.1" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="716.8" cy="774.3" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="844.2" cy="775.4" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="755.5" cy="776.6" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="825.5" cy="777.7" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="869.3" cy="778.9" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="804.2" cy="780.0" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="775.2" cy="781.2" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="813.7" cy="782.3" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="803.4" cy="783.5" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="889.8" cy="784.6" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="824.0" cy="785.8" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="769.1" cy="786.9" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<line x1="796.8" y1="776.0" x2="845.7" y2="776.0" stroke="#9f4e62" stroke-width="2.4"/>
+<line x1="796.8" y1="770.0" x2="796.8" y2="782.0" stroke="#9f4e62" stroke-width="1.4"/>
+<line x1="845.7" y1="770.0" x2="845.7" y2="782.0" stroke="#9f4e62" stroke-width="1.4"/>
+<path d="M 821.3 771.0 L 826.3 776.0 L 821.3 781.0 L 816.3 776.0 Z" fill="#9f4e62" stroke="white" stroke-width="1"/>
+<text x="1035.0" y="780.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#9f4e62" font-weight="normal">+0.067 [+0.013, +0.121] · n=20/20</text>
+<text x="42.0" y="827.0" text-anchor="start" font-family="Arial,sans-serif" font-size="12" fill="#39434c" font-weight="normal">+6 dB</text>
+<circle cx="873.2" cy="812.1" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="849.5" cy="813.2" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="765.6" cy="814.4" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="861.6" cy="815.5" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="907.8" cy="816.7" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="825.0" cy="817.8" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="728.5" cy="819.0" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="826.8" cy="820.1" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="692.8" cy="821.3" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="908.1" cy="822.4" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="713.7" cy="823.6" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="828.7" cy="824.7" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="872.6" cy="825.9" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="811.5" cy="827.0" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="828.0" cy="828.2" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="827.1" cy="829.3" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="812.8" cy="830.5" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="928.3" cy="831.6" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="824.1" cy="832.8" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<circle cx="721.7" cy="833.9" r="2.4" fill="#8b949c" fill-opacity="0.65"/>
+<line x1="786.0" y1="823.0" x2="854.8" y2="823.0" stroke="#573e8f" stroke-width="2.4"/>
+<line x1="786.0" y1="817.0" x2="786.0" y2="829.0" stroke="#573e8f" stroke-width="1.4"/>
+<line x1="854.8" y1="817.0" x2="854.8" y2="829.0" stroke="#573e8f" stroke-width="1.4"/>
+<path d="M 820.4 818.0 L 825.4 823.0 L 820.4 828.0 L 815.4 823.0 Z" fill="#573e8f" stroke="white" stroke-width="1"/>
+<text x="1035.0" y="827.0" text-anchor="start" font-family="Arial,sans-serif" font-size="10" fill="#573e8f" font-weight="normal">+0.065 [-0.011, +0.141] · n=20/20</text>
+<text x="657.5" y="858.0" text-anchor="middle" font-family="Arial,sans-serif" font-size="11" fill="#444" font-weight="normal">ΔC = C(dose) − C(RAW_R1); positive values indicate higher Sync-C</text>
+<text x="42.0" y="1008.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#303942" font-weight="normal">Evaluation baseline: per frozen protocol, each condition uses the same speaker’s original natural PCM as the evaluation audio.</text>
+<text x="42.0" y="1030.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#555" font-weight="normal">FIXED’s measured per-sentence RMS dBFS is reported separately in p1_measured_audio_levels.svg / descriptive_metrics.csv.</text>
+<text x="42.0" y="1052.0" text-anchor="start" font-family="Arial,sans-serif" font-size="11" fill="#555" font-weight="normal">All planned levels are shown; RAW_R1 is the zero reference, not a fifth contrast. No best dose is selected; the response is not forced to be monotonic.</text>
+<text x="42.0" y="1086.0" text-anchor="start" font-family="Arial,sans-serif" font-size="9" fill="#7a8289" font-weight="normal">Frozen protocol SHA-256: cc3b293f1d04c1fb343a88bf3fd3aace1283ab3a20ddeca2e4c074b604a1239e   ·   Analyzer input SHA-256: 285661d5101555d63e8685fdc3a2dbe3970aa6a90c9715c7d407f22d41359a06</text>
+</svg>

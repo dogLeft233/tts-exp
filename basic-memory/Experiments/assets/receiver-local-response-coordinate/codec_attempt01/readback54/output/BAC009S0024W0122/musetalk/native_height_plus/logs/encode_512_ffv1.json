@@ -1,0 +1,30 @@
+{
+  "argv": [
+    "/usr/bin/ffmpeg",
+    "-hide_banner",
+    "-v",
+    "error",
+    "-nostdin",
+    "-n",
+    "-framerate",
+    "25",
+    "-start_number",
+    "0",
+    "-i",
+    "/dev/shm/cross_tfg_native_attribute_response_probe_20261015_output_owned_musetalk_render_output_attempt01/BAC009S0024W0122/musetalk/plus/silent_precodec_frames/%08d.png",
+    "-frames:v",
+    "88",
+    "-an",
+    "-fps_mode",
+    "passthrough",
+    "-c:v",
+    "ffv1",
+    "-pix_fmt",
+    "yuv420p",
+    "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_plus/codec_diagnostic_512_ffv1_yuv420p.mkv"
+  ],
+  "label": "encode_512_ffv1",
+  "returncode": 0,
+  "stderr": "",
+  "stdout": ""
+}

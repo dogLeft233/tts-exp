@@ -1,0 +1,27 @@
+{
+  "actual_output_frame_map_sha256": "127f5b8398521766592a73807f0ae5c4a5f81aaefd579f3ce4e83e937ab3b11f",
+  "argv": [
+    "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_h264_rgb_pixel_diagnostic_attempt01.py",
+    "--execute",
+    "--source-sha256",
+    "386d988de75e90f67d350bac089eec034d76a8bd35ce4b95463bfec04789a82a"
+  ],
+  "controller_receipt_sha256": "adf7f5caaa06cacb0eabaf5f67e4ceeae382f453eb565ed0704d91692d23b05a",
+  "cwd": "/home/wjj/tts-audio/tts-exp",
+  "ffmpeg_decode_process_count": 6,
+  "ffmpeg_decode_returncodes": [
+    0
+  ],
+  "finished_utc": "2026-10-14T22:19:29.748542+00:00",
+  "python_executable": "/home/wjj/.venvs/cross_tfg_muse_ditto_shared_torch251_cu121_attempt01/bin/python",
+  "python_pid": 2564392,
+  "python_start_ticks": "50117275",
+  "result_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_h264_rgb_pixel_diagnostic_attempt01/h264_rgb_pixel_diagnostic_attempt01.json",
+  "result_sha256": "d33b68df7cfacd84bbd46df74b1845ca6f6c25e3869e80a5851da726ea533d08",
+  "returncode": 0,
+  "schema": "musetalk_h264_decoded_rgb24_execution_receipt_v1",
+  "source_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_h264_rgb_pixel_diagnostic_attempt01.py",
+  "source_sha256": "386d988de75e90f67d350bac089eec034d76a8bd35ce4b95463bfec04789a82a",
+  "started_utc": "2026-10-14T22:19:27.140612+00:00",
+  "status": "PASS"
+}

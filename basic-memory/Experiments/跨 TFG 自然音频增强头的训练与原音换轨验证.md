@@ -1,0 +1,231 @@
+---
+title: 跨 TFG 自然音频增强头的训练与原音换轨验证
+type: experiment
+permalink: tts-exp/experiments/跨-tfg-自然音频增强头的训练与原音换轨验证
+project: tts-exp
+execution_phase: explicit11_method_preparation
+status: implemented
+repository: dogLeft233/tts-exp
+started: '2026-10-03T10:18:59.5639185+08:00'
+scope: model-portable waveform; original natural PCM scoring; fresh speaker and generator
+  transfer
+git_sha: 5688784dd5c6c1272074f0c4b6c5ff79f117c907
+scientific_status: nine_parameter_full_fit_not_admitted_explicit11_preparation
+---
+
+# 跨 TFG 自然音频增强头的训练与原音换轨验证
+
+## 当前主线
+🔄 目标：交付在多个TFG与未见说话人上超过固定RMS的自然音频增强头。增强PCM只驱动生成，完整原自然PCM与原时钟用于评分/交付。ROOT维护理论/协议/BM/独立QA；原GPT-6 Luna/max子代理额度重置后已恢复，负责实验和代码。
+
+### 9参数完整Fit路线的科学结论
+
+✅ CONCLUDED：initial720、20次joint SPSA/121链式events/全原数组20tell数学、单次journal seal、k5/10/15/20四个full120中心、final720统一选择均实际完成。2026-10-11T17:59:40Z finalizer06自然结束；ROOT完整产物与19门算术QA02通过，独立GPT-6 Luna只读复算一致。四候选均NOT_ADMITTED，各失败9/19门；selected_method_id=null，没有跨TFG超过RMS的候选。K15仅为冻结fallback规则下最小违例seed，不是均值最高或准入候选。
+
+范围为Fit40/20说话人、每人2片×Wav2Lip/MuseTalk/Ditto共120contexts。六方法在原自然PCM/原时钟的共同12537queries评分；full720=480中心候选+240共享参考，0failed/missing/unexpected。先clip再speaker等权、最后三模型等权。Cbest/Canchor为candidate−reference；D0改善为reference−candidate。评分支持SHA b0d5e64542359ad2d03235031d2efb41bbefa5879130b1b9bfb678c1e6e7ec1d。
+
+| 中心 | Wav2Lip ΔCbest-RMS | MuseTalk | Ditto | 等模型均值 | 最差模型 | fallback违例 |
+|---|---:|---:|---:|---:|---:|---:|
+| K05 | +0.058 | +0.010 | −0.041 | +0.009 | −0.041 | 0.069335494 |
+| K10 | +0.052 | +0.031 | −0.032 | +0.017 | −0.032 | 0.064527418 |
+| K15 | +0.056 | +0.011 | −0.018 | +0.016 | −0.018 | 0.057962259 |
+| K20 | +0.048 | +0.015 | −0.025 | +0.013 | −0.025 | 0.063702308 |
+
+共同失败集合是Ditto两参考D0、Ditto对RMS的Cbest/Canchor，MuseTalk两参考D0/Canchor，及等模型Cbest-RMS低于预设+0.050。Wav2Lip各门通过。K15对RMS的D0改善W/M/D=+0.030420/−0.009534/−0.125115，Canchor=+0.119594/−0.011155/−0.029025。最佳lag峰值与原时刻匹配的取舍实际仍存在，不能以Wav2Lip单模型或少数片段替代全门。
+
+权威完整receipt：.codex/scratch/fit40_final_selection_capture_attempt06/finalizer_capture_attempt06/selector_receipt.bin，20948B/raw d06d787fbacad292afd7e1859f6c2cfae753c7e28c4c7c954416fdfe57296513/self12bbddf49eef2b4a1fa0d1c8a334de6c829d18869066c37a94c6fd92ce9fe961。ROOT .codex/scratch/root_finalizer06_actual_transport_and_gate_qa_attempt02.json，13702B/raw52941b0aaf70d1e350fc80b43ad8e6f7ffb61853a2e5484092bba527b7aa0b00/self32243fa388ea6d4b162c7b7cc19a7318db3d77bb675774b0f0fb2c28a5cb2438，涵盖实际source/process/raw+self/frame三body/六来源链/exact sealed journal中心/19门/hinge/排序。localSSH311204/FILETIME134362151573315286、remote1904944/ticks22636351均实际0，stderr0/无retry。ROOT QA01仅stdout.center_specs的整数4/列表断言误读，fresh02修此断言；无模型或数组重跑。原QUEUE/package12与所有科学原件保留。
+
+### 显式11参数方法的下一项研究
+
+🔄 SPEC_ONLY执行协议/已有signal IMPLEMENTED：使用现有SharedRecipientLocalPowerSpectralHeadV1，保留9谱形系数并加入正/负源相对flux驱动的2包络系数，common-kappa同时约束四cell剂量，STFT Parseval补偿将谱形-induced power与独立包络分开。K15按journal.entries[14]精确取原θ，env=0；由明确scale逆tanh构造新坐标。common-kappa及功率补偿改变函数，所以这是COORDINATE_SEED_ONLY_NOT_WAVEFORM_EQUIVALENCE。尺度/直接u域/共同扰动缩步与整体dyadic回溯/实际constructor继承及新STFT floor已按[[显式11参数方法采用有界dB系数与共同回溯]]冻结并全文读回EXACT_PASS；新profile/helper/native闭包及实际480cell资格源码仍SOURCE_ONLY准备，未运行。不得沿用engineering fixture默认或把源码准备称为科学受益。
+
+最终640样本/40ms waveform功率在iSTFT和全句RMS后重算，不能用STFT系数功率代替；全部floor(N/640)原source窗口、tail、低功率/invalid计数与位置必须保留，output低功率不得删行改善分母。现8源/160cell CPU诊断证明信号接口与有限连接，未评估11模型收益或V100容量。新11初始full120+严格240原参考闭包、20pair与四中心拟采用独立schema/source/profile/controller；不覆盖9原件。
+
+当前9不进入portable/Dev。11完整Fit准入后再绑定真实候选/runtime/新base360、修Dev旧固定引用并生成540新行；cohort/policy01/ADR031/原自然PCM-clock和统计门不变，Confirm80/40人及LatentSync保持封闭。用户取消关机；停机/不完整归档支线停放，tfg ACTIVE。最新同chatcheckpoint=tts-exp/codex/tts-exp/codex-checkpoint-2026-10-11-t18-12-09-z-final720-nine-parameter-route-concluded-and-explicit11-preparation。
+
+### 历史工程与恢复证据（非当前游标）
+
+✅ 实际attempt05失败保全：coordinator12于2026-10-10T01:57:54.471169Z启动PID715929/t8228020、child716000/t8229008，首W2L行在renderer spawn前缺generator_child而FAILED；runner07 child receipt还漏initial_selector_receipt_pin，外层严格拒收。session04 events0/1/2、UNKNOWN/rc2、iteration0/0tell；8shared+首行2WAV、0video/NPZ，PIDgone。ROOT84files3984070B完整独立proof .codex/scratch/root_session04_pair01_pre_render_failure_review_attempt01/root_actual_qc.json self8278d0c19ebccd4d8e5f01ab33e744ce2f3fc62144b6ba63a2c25d9aa8b7ca70。旧session02 binding、03 import、CRLF CLI失败及全部UNKNOWN保留，不重放。
+
+✅ 最小修复已资格：child06从真实package roles补W2L generator_child及全部profile的ffmpeg_sha256/pcm16_lineage_sha256；runner08补exact initial_selector_receipt_pin与initial_ingest_index_pin。ROOT完整narrow diff接受，科学算法与验证强度不变。Package11 rawb6aa703f2ec882bc3c96bb1cdde270a882315c7dafd07e4a731b13e37d145461/self623f8d8d2566db4b518990dd48957386afd118bfe4985175c8fa111fd642697c；ROOT actual66files9250115B全来源PASS，.codex/scratch/root_package11_actual_sources_qc_attempt01/root_actual_qc.json self27e1d3b574af12a5bbc01a6a43c248ccdedef936e78bdb8d5586f51a368d7d59。Dev真实clean Py3.10 audit04 rc0、三profile缺失/null=[]、实际evaluator字节相同，.codex/scratch/fit40_spsa_execution_package_attempt11/audit_readback_attempt04/stdout.json。Signal独立call-path审查通过；AST审计早期block_start等CLI误报保留，不添加无关运行字段。
+
+✅ Fresh session05初始actual event0-only资格已完成：IDfit40_spsa_recovery05_package11，manifest raw e58055cc0bee8d1164d96c449da3ad64bc0365f4ae6feaa62994756c3a6841a8；ROOT1612698B实际完整读回 .codex/scratch/root_session05_event0_actual_qc_attempt02/root_actual_qc.json self26a467a01f2b27d14b5d953e3088a029877728bfc40bfdc9436a021f1648fab1，原θ/RNG/history完全一致。Lineage05/coordinator14 preflightPASS后，attempt07于2026-10-10T02:35:22.080158Z实际启动PID720156/t8452781、child720199/t8453743。首plus W2L完成8/8视频/官方SyncNet PASS，COMPLETE8/failed0/incomplete0；随后dispatcher11误要求ledger raw_matrix_npz中不存在的bytes，02:38:19.520892Z bootstrap rc2/UNKNOWN，0tell，未启动Muse/Ditto/minus，旧PID均gone。旧UNKNOWN不重放。
+
+✅ ROOT actual部分科学产物资格：.codex/scratch/root_session05_partial_native_actual_qc_attempt02/root_actual_qc.json self9f36290560334280d71571c50409a08327d89e8c79ae0446faca99a20677e9ce；实际SSH2152文件metadata/raw64,437,169B、nonmedia bodies14,994,651B，8行×7array=56元数据/实际数组、raw官方距离矩阵一致、原PCM评分/换轨/原N时钟、shared增强PCM、全部manifest/status/child/event hashes PASS。非新的联合效果归约，不把8行单块用作收益结论。✅ package12/session07完整首pair双符号三模型48/48 official PASS，ROOT336数组/原PCM/clock及全12877文件B归档通过，旧coordinator20 rc2/UNKNOWN与六events保持。ADR034显式native支持派生闭包helper02→finalconsumer07→durable08→replay04实际stage/读回通过；严格initial720/科学门/package12不变。诚实initial04及fresh session09首ask同θ/15字段/PCG64已ROOT核验。06:52:19Z一次driver04实际消费旧48，session09已存七events、唯一PAIR_TOLD UPDATED、iteration1/nopending/nohalt。driver随后因SPSATellResult无pair_id在完成凭据写入前rc2；READY04存在，completion04不存在，禁止重跑driver/ask/tell/native。ROOT06:54:46Z实际读回七事件、全部hash/链/old六事件不变、48数组/frame-map来源、16producer/32derived凭据及实际更新数学PASS：Lplus .11204426507887727，Lminus .15492162381717417，更新幅度 .016272267769119907，supportSHA0c1c0d10ac938cbfccb6b11e9fbf65cd20c4617acf634d47f4e186f380fe338a；QC .codex/scratch/root_first_tell_after_driver04_failure_actual_qc_attempt01/root_actual_qc.json selfb0b83cd8b9fe0549fe58c7301f4dc9865010b1161e112e8fea3f3ef8c48be02f。Dev bootstrap17只读resume-verify rc0。当前1/20真实更新；finalizer03只读恢复已真实rc0，completion05 947256B/raw19d55ebd2b65af77c0bff26670020ce337822ed881d926a456945a4b15f612cd/self5a69b9e6143425721d91c17f66c80f920928b6b59654d9885f0675839dad45f5，诚实typed RECOVERED_POST_TELL保留driver04 rc2/source/capture。ROOT07:12:55Z完整读回恢复凭据、48NPZ/frame-maps/336数组/逐行支持/六childrc0/四manifestlinks/原始96行数学通过，七事件及old六事件/manifest恢复前后字节一致；QC .codex/scratch/root_recovered_first_tell_actual_qc_attempt02/root_actual_qc.json selfaf7fa2eda868d12b1708cfbd4ad8a9ff0f4fd0c3324742e382beb1748829afdb。coordinator25首次start在任何manifest/intent/dispatch写入前因old_events/old_manifest读取顺序rc2，实际七事件/05receipt不变、目标/PID均不存在。coordinator26仅修读取顺序及prior-event1硬pin绑定真正old session07（10014B/raw9036c1566c3dbc5fa61d9061ae2982671a52b801d7524bd19ad1849b83f4dd58）。26 source97564B/93dddaf8e6e760f0c5e3c689657bff74a0296792ee1e5268f7fe66d0701f34cc三方审阅与实际0444 stage读回通过；实时容量门SHM18.729GB、GPU16140MiB及freshleaf/PIDabsence通过后仅一次start实际SSHrc0/STARTED，coordinator ID fit40_twenty_pair_a2438432284847ada11020287e82f2b4 PID785358/ticks10166461。startreceipt3026B/rawaead2e0a9e1bbd00f1554cfb694d605ad4e7143b9d647f9574d452c8d994f6c4/self0a41aadeb99fcf3e4e526e33381c7502e2e7b9dee31d5bcc16030f0ee1e8f01a。ROOT07:22:14Z独立实际QA .codex/scratch/root_coordinator26_actual_start_qc_attempt01/root_actual_qc.json selfd2b944dd5376c85cb1874ce2252425ec31843217af55ae55cd64e5b09a6da03d，正确QUEUE/SHM03/session09/05prefix，原七事件字节不变，实际9events/1tell，pair02 plus已native dispatch，子PID785403/ticks10167688；Dev只读监控，不重启未知进程。bootstrap17/center12及finalizer03→portable06→Dev plan05/analyzer04/nativeadapter03 source闭包接受，F64 controller声明hash与F32实际tensorhash分别验证无需修改。剩余19pair已单次真实启动，当前pair02 plus；四full120中心、final720与sealed Dev/Confirm尚未运行，NOT_ADMITTED初值不升级为完整Fit准入。所有后续bootstrap/center/finalizer/portable source_root与cwd必须原QUEUE；HOME只存控制/会话/日志。ASR准备additive下游源码stage，活动package12不变。
+
+✅ Namespace/source closure此前已ROOT实际资格：dispatcher11/center09/bootstrap12只允许scripts.__path__首次[queue]或后续[queue,pinnedW2L]，±同进程幂等、严格来源。QC .codex/scratch/root_namespace_two_side_actual_qc_attempt02/root_actual_qc.json self5ff875dcb87b9d77a252e515912f662a7bc6f34e6026bef2d033f4f61c5d8c21。Outer闭包另pin；包绑定runner/helper/三model-child，不因外层版本号改包。
+
+✅ 可迁移接口源码接受：portable_selected_fit_center_attempt05.py 58811B/29bc744d250924221373a9244a735f3f7c3b2285d1b0d97357e6eda7a965f987，finalizer02 12936B/c71384af219aaa61a92305796ff6319b61c8ea83ce6e84fdbc76f6aaefb1f253。实际kind=fit40_spsa_center、selected θ与seed step独立，config theta hash+真实selector binding API、完整index/terminal/plan/seed谱系；repo-relative wrapper pin可迁移。ROOT/Signal读审无阻断，旧01–04保留，04错误要求不存在SnapshotSpec.theta_sha256不可用。仍无admitted center/portable artifact/新音频应用或Dev效果，实际CLI需保留wrapper/invocation/index/receipt pins。
+
+✅ ADR031 typed/create/fullreadback：tts-exp/docs/adr/031-selected-spsa-center-dev20-provenance。Additive selected_spsa_center builder/analyzer实现进行中，保留旧attempt06/step120代码。20段10人S0102–S0111×3模型×3seeds×3conditions=540行、FULL/GUARD20/31lags/anchor15、原PCM/clock、全部speaker bootstrap/数值内容视觉门槛不变；真实admitted k5/10/15/20中心与selector/index/terminal/plan/portable/application/cohort/policy pins在candidate effects生成/读取前冻结，checkpoint_sha256=null。ASR source-only builder04 74982B/36a84af3da6c92c54dc4a8456d50fc804cbbaa6d828dfc10250bb05073554b7c、analyzer03 32444B/5435efe54cd15ea4ded5477b9b76b567daa2b88d5b1c21c86e21e6d6e1a58a25已实现：修Signal具体缺口，共享helper从冻结360原base rows和20应用重构全部540行/顺序，build/freeze/analyzer effects前精确比较，ROOT与Signal独立源码审查PASS，ROOT .codex/scratch/root_dev20_selected_sources_review_attempt01/root_source_review.json self072f9f4b34e5eeb4281ddb64af4e30cf83342ae56d93d6b503736f6a92112714。Dev20 native adapter02已完成99624B/87f3cff2c8726db335f71e98b05adff9149347611be1030f3185676f84d664c9，ROOT/Signal源码审核通过；真实新S0102–S0111 cohort完整identity180+rms_fixed180+selected180=540行执行路径已齐，exact6-row native调用、独立完整原PCM/clock换轨评分，Muse/Ditto均使用实际model.generator descriptor。portable05/finalizer02/builder04/analyzer03已source接受，所有实际新Dev/Confirm效果保持封闭，等待Fit final720 admitted center；旧cohort360 controls不能复用。
+
+✅ 机制CONCLUDED描述性：8Fit/4说话人×三前端32条件=96真实项已ROOT逐数组核验；原PCM24WAV/886个40ms窗/192标量独立重算PASS。同整体RMS，local gain段内SD均值.455143dB，q05/q95−.391333/+.949170dB，低频份额与gain平均相关−.950450；full/DC相对RMS特征方向cos W/M/D=.995/.970/.992。近静态谱形作用于变化的频带功率可产生局部增益和时变conditioning，不代替跨TFG科学收益或TTS全效应。BM《近静态谱形通过局部谱成分改变三类TFG的时变条件特征》已全文读回，并补实际23源码前端归一化/上下文解释；没有新增forward/分数。V3已有relative-flux gates，历史11参数local-power构造有CPU资格但无跨TFG收益，不重复造类；冻结20不改。
+
+✅ B linked-chain备份218唯一文件288084325B全raw/self/crosspin读回PASS，.codex/scratch/root_step060_b_archive_chain_actual_qc_attempt01/root_actual_qc.json selfd857f388cc2bc38d05136f8c98ebcaf907ca91f4859f7a36cfacbb9f395c1c69。B:/tts-exp-archives/provisional_step060_native_feature_evidence_attempt03/archive_supplement_inventory.json 引用01/02/03，不是单目录完整包或已确认云同步，所有原件/失败manifest保留，其余19chunks不新删移。 另外actual partial-native W2L8已完整备份到B:/tts-exp-archives/partial_native_spsa_w2l8_20261010_attempt01/partial_native_actual_tree.tar.gz，55,879,044B/SHA4419abade67e9e3265663d5419052bbfafc29de0b6449452a7021c473a0c88d7；2152文件64,437,169B全读回，receipt self3af87042105d4e89d953635bff16a6d63e22f8251aae533f476e7ff925e4063e，服务器原件保留，未确认云同步。
+
+执行机✅ publickey wjj@192.168.50.2:22/V100 GPU-d12b3309-c299-da83-064d-a3cd619bd560；lexical /home/wjj/.venvs/cross_tfg_muse_ditto_shared_torch251_cu121_attempt01/bin/python，勿resolve到MFA。JOB=/home/wjj/tts-audio/tts-exp/runs/cross_tfg_audio_head_20261009_v100_native_deployment_attempt01/job_control；QUEUE=/dev/shm/fit40_queue_remote_package_attempt02/project；package11root=/dev/shm/fit40_spsa_execution_package_attempt11/project。SHM24GiB/5GiBstorage/8GiBeffectiveRAM gates；旧AutoDL DirectD0未知不重放、westc/WSLaliases陈旧，secret只runtime。
+
+Git codex/cross-tfg-audio-head-20261003/5688784dd5c6c1272074f0c4b6c5ff79f117c907 local/unpushed/PR[]；旧dirty/untracked保留，无ROOT新增tests/commit/push。CONTEXT已更新当前V100/方法状态并实际读回97行。CodeGraph无index已实查，不重试；SHM/ignoredscratch/unpushed源均本机脆弱状态。
+
+最新immutable checkpoint：tts-exp/codex/tts-exp/codex-checkpoint-2026-10-10-t02-45-11-z-qualified-package11-and-partial-native-wav2-lip-recovery；本次BM实际actioncreated/exact host metadata/fullreadbackPASS。其后ROOT首W2L8/56数组实际完整资格完成，Dev正实现partial-native继承，ASR/Signal完成Dev20实际候选音频行投影绑定。
+
+主动作：执行冻结20联合SPSA/四full120中心/final720选择，绑定portable并进行封闭Dev+Confirm；实际失败则保留证据、修复并持续方法迭代到可用结论。
+## 已执行与证据
+
+training11/v7完整Adam120链和固定末步checkpoint独立PASS，checkpointSHA8d5eb607f77963291372b33245f13f9b9578ebf71657acf1b43243746c538eb8。候选五metadata/theta/constructor/七源码与单Fit CLI保留62639样本、float WAV读回PASS。rescore13实际40/40、20人、固定step120、零更新/unselected；七原始文件全部下载/SHA并独立NumPy重算PASS，receiptSHAa128c293773e94c836ad03f2b608135545c4c0f1f0ddb61f55104ef5142faa41。
+
+Fit ΔCbest+0.058（精确0.057816875，28/40条、15/20人正，speaker cluster99%[0.019059472,0.101961554]）；ΔCanchor+0.148，Δfar+0.141，均37/40条、20/20人正。ΔD0−0.047（28改善、12恶化，99%[−0.095645860,0.007447784]）；B+0.102、Dmin+0.044，39/40最佳lag未变。Vnormratio1.0050164、cosine+0.0037657，D0重构最大差1.2647e−6。此为冻结Wav2Lip神经前向与原生裁剪几何的可微代理端点，不是最终编码视频官方评分；正式Dev仍待，不称跨模型或感知收益。
+
+producer05持久tar263629735B/SHA c35092a0478e0cc9a4738f9918596465d00944ab17a8322171faae08f1d92b1a，全部4979成员287367187逻辑字节独立全SHA PASS。rawdecode04实际40完整自然轨+40精确源ROI/120NPZ/120AVI/12965帧/80音视频时钟PASS，本地独立ROI区间与全源PCM SHA核验receipt15f0686ca5f6c1a92d07e95a93ec3f6ff8d4f4b722e964ec4d2e1e32873a76a3；远端逐样本比较ROI，本地未复制切片媒体。只读fresh status05实际PASS，无worker或tar重跑。ADR016保持完整交付契约。
+
+训练11与rescore13已实际持久快照：39payload/37137342B，readonly+fsync；root独立重读全部目标字节/SHA PASS，receiptSHA1ce69e22c08120943ff0b1dd190447115333c5b77d8b107ec446c38936c06660，root读回responseSHA4bb36be1792369ec9b9b98b5a40d7161ef76568f925ebb2f2a3544d2c364c661。首次不存在RMS别名在创建目标前失败；index02只删该别名，原copier01实际执行并保留真实RMS。快照不重复已有263MB归档/40源WAV，不覆盖重跑。
+
+## 原生重复与后续
+
+严格repeat09实际6/6终止：MuseTalk2与Ditto2均PASS_EXACT_MATCH；Wav2Lip2虽然exit0但缺temp/result.avi输出，失败保留。原始最终manifest287148B/SHA4053e74430e900037ca2f528e3678ad4375241e8e9c653367ea3de31ca94c86d、两qualification、四W2L日志与固定推理源已root下载SHA核验。新runner11仅建隔离cwd/temp，bootstrap03/seed/GPU/确定性策略不变；strict10实际W2L两条生成/评分均PASS，但qualification为NONDETERMINISTIC_DIFFERENCE，进程已退出，manifest82763B/SHA5003c9f754b6e7e4be2cc0d0bcb299bca8854c2b7f240b6bf6d64b130685cdee，须逐阶段定位差异。保留旧6条分母，允许每模型引用其真实成功manifest，不伪造共用runid。此为历史失败；后续strict12 W2L已完成两条PASS，独立原始复核已完成。
+
+Muse/Ditto16原始8startup/4adapter/4official NPZ已全部root下载并实际独立verifier03 PASS：完整SHA/selfhash、实际GPU/python/策略和两模型各141×31成对矩阵、31点曲线均核验。verifier02曾误用Ditto face键；03只改为source_face并强化输入路径/SHA，未放宽分数容差。receipt rawSHA d53f8ecb7b1472132265f64e1bf2476f4367fcb6cfe29841857e8071ea22637a，canonical13ca6669c1d17403af9fd70d5d6dbc865658ae5d3cb7f451bf7c318a3a453dbe。standalone逐模型lineage verifier与binder02/template05准备中，三模型receipt refs尚未实际准入。控制链为builder09/controls08→rebinder05/candidate04→joiner04/rawmedia03/readback02，不使用旧direct-StageA包执行最终评估。
+
+Dev180 metadata03实际完成：恢复全部20源依赖，冻结180条20clip/10说话人×3模型×3种子，无Dev媒体或model读取。旧18784301B归档上传因bridge8MiB限制在传输前失败；3×不超过6MiB分块及整体SHA349c5b62f09c1a775013039d2abb3bd72d7c6b6233531fb7f87e6398fff981d4实际PASS，q4..10全部PASS。计划rawSHA c37a87374f58b5bfa61a85a55027c591a099c50e3d529a90a7ed799c5d4bb00d，rowsSHA c61fc0f5a9e475672e67e22c3ef154343fdfb259fd56a60d1be1e94ef2231291；旧baseline只作metadata来源，fresh360必须运行。
+
+Fit-only诊断02实际160/160，四臂均40条/20人，78.041s；原门控/同权重动态全零/正负门共同±64帧512ms错位，固定step120，零训练/Dev/Confirm/选择。根审查33读回请求，下载16原metadata+12块并重组四NPZ34385900B，全部整SHA、精确roll/零门/几何/完整PCM和时钟/27×31query支持PASS；实际臂曲线与视觉/原音嵌入逐元素等于rescore13。root独立numeric SHA5d169ba0bc35321bcc77e7f187a1f4b5c87af395ff93df4b5a9786cc410fcdd4，angular SHA5d7ab0843a6aceeeb15f85e22801faed8ac8562c6fa272c5663879b8b9e02f85。
+
+实际Cbest相对RMS+0.058，static+0.049，两错位均+0.058，实际对错位精确差+.000235665/+.000305188；大部分Cbest在错位下保留。正确时序门控对两错位D0−.009903300/−.009763873，覆盖三对比×四端点的12项描述性99%同时区间分别[−.017618920,−.002187680]/[−.017014146,−.002513599]。精确逐query平方距离径向/角度分解PASS，角度项改善与单位余弦+.000604627/+.000565106，次级边际99%方向一致；不是只有范数。门控有.502/.480均值，置零同时改变平均频谱与投影；static不是重训最优基线，错位是更干净时序对照。本结论限Fit冻结原生几何可微代理，不升级为官方视频、跨模型或感知收益。完整笔记[[冻结增强头的门控时序与频谱贡献]]已创建/读回concluded。
+
+诊断41payload/39432642B已实际fresh持久readonly+fsync快照，根独立重读全部41目标SHA PASS。目标NS/durability_snapshots/fit40_gate_diagnostic_attempt02_snapshot_attempt01；receiptSHA1d2dfead35be6131c0ed986828cf17101a4d6b9a2e54d78aa70f6806b8b10e6b，root全目标responseSHAdc68906871f83fa0ee1ac46b40438f044896337b8db992bd94275941d6a125c4。15请求均PASS；最小三字面量retarget copier01保留正确index_copy，未用有bug的copier02，不复制263MBproducer。
+
+W2L10原manifest与qualification已实际下载；原qualification rawSHA7bae8b1a00c4686316cf5033f01ff139ebe66f62002174feb05d4dd0a7727bb5、canonical1026ba2fae830531bff2f245b1d3005e7a3317427dfc00f96d9e8542004387dc。CPU frameprobe实际141帧/25fps完整时钟PASS：两中间AVI15帧不同（39–47及102–107），MP4131帧不同（10–140）；差异在最终编码前存在，尚需pre-VideoWriter像素区分前向与DIVX。实际部署face_detection/api.py构造器与detection/sfd/detect.py的detect/batch_detect均重设benchmark=True；仅startup收据或postconstructor恢复不足。bounded源码inventory实际11源42975B PASS，responseSHA55cb92290a87baa513c8a3537d1be3dcdf26aafc6d4783595344ab1d96b4569a；SFD构造无forward。最小修复W2L专用sitecustomize先显式加载common bootstrap03，在实际SFD forward前恢复/核验全部策略、W2L forward核验、pre-write逐帧hash，保持原推理和DIVX/FFmpeg。实际SFD本地权重89843225B SHA619a31681264d3f7f7fc7a16a42cbbe8b23f31a256f75a366e5a1bcd59b33543与models/__init__.py 82B d6883f7d5c41623280c9cbce4963ad719347b9d4cdac614cadfff7b544535215均PASS；load_url回退禁止。wrapper03/runner12已实际派发，根修复writer缩进/models origin及str.parent错误，补prewrite成对完全相同gate与receipt计数/hash；五源码上传与template05精确部署PASS。CPU实际预检PASS，NoUserSite/实际origin/SFD权重身份与CUDA初始化FALSE均核验；预检responseSHA4f31ea152b5d7ecf9115848172f9a9d1a8166f395f199123e4f9b1707fad0a09。strict11实际两条生成后记录资格FAILED，PID93956已退出/GPU空闲；finalmanifest42968B SHAe00ca910e74a134f86c2a44f57496005d3c675772229e80a458984a0d5c99bf5及四原日志已根下载/整SHA，缺构造器记录。实际stderr明确shared bootstrap policy does not match the frozen strict policy。根AST独立复算bootstrap03 POLICY与runner12 STRICT_POLICY逐字段完全相同，canonical运行时payload SHA54d853a6b6ce09cc8c757297f9617b5ecf4e0d01458a0b2e33dcf0316a4417f5；wrapper03误拿冻结QC06协议标识196f6b3654f0bf69eed74dbadd6f4948272d52edfcc5101945ba61044ea6f7cc当字典hash，Python吞sitecustomize异常后继续原推理，钩子未安装。fresh wrapper04/runner13/run12已实际分离内容hash与协议ID、AST预检、启动失败立即退出，保持原bootstrap/M-D/native inference/编码及旧失败。Root与signal独立全源/diff/Bash/pins审查PASS，CPU q7 PASS（response0fe11305a001283d33695eec69ec2734c6af982799fd92f2ab8d570f8a08540a1）；实际GPU PID96199完成两条PASS_EXACT_MATCH、零失败，进程已退出。原finalmanifest146401B c55b390b6d5189983a4a3e2d181d5ff7606cc191817f125a859800c3e09508d9已根下载整SHA；6规划/2请求，M-D本次NOT_RUN、另引strict09，原startup/构造/forward/prewrite/official NPZ独立复核已完成。Dev20 CPUprobe03首次缺原路径PCM，完整保留；根从349c5b62整SHA历史归档独立比较20 WAV与2.368MB恢复bundle，全部原字节及计划pin相同。实际create-only恢复20条5465536B，receipt768181bf10546faac9b546b70d9184d5ec1cb4463e88610834684bedaefc9c0d。fresh重预检/CPU原生Librosa load/mel/源ASTchunk/status均PASS，原完整receipt72121B ca1ec73328a2c22eee4260d3890a29d87d394dae6a3d97bba61482993d302223已根下载并独立全SHA/selfhash/20曲线chunkstart/count核对PASS；预期77–159帧，6条末窗重复start属原生行为。此为源推导帧数，不是视频观测。正式Dev绑定同wrapper/全依赖、三种子/逐clip该map；全链源已封存安装，候选未改。
+
+
+### 原始准入核验已完成
+
+strict12全部11原始文件已实际root下载整SHA/bytes通过。root完整审查verifier02与04差异、corrected index02 helper后，独立运行verifier04至fresh independent_readback_attempt05.json，实际PASS。report32066B rawSHA0b927619e8bc99e5631c79eeb95232c8a241ca289a0d063e950d69276df89bc2，canonical59779090a5d650588c2fff8a8f62905da2587f22f619c856a8ba5c530b68faf8。原生PID96600/98216各1次SFD+2次W2L forward，全部策略/source/row/seed实际核对；两141帧写入前逐帧hash完全一致，两官方NPZ整SHA a389c83d95f616efacba82d404e34bd8e179dfae24176858b6f6e3777bf70e4a、138×31原矩阵及NumPy曲线逐元素完全一致，NumPy/torch均值最大差4.768e−6，未改既有5e−5跨实现复算界限。whole-file与canonical self-hash独立验证；修正qualification原raw d1b778…与canonical ee942…混用，旧索引/失败verifier保留。M/D本轮NOT_RUN，各引用原strict09独立PASS，不伪造共同成功run。正式Dev无需再重复资格实验。
+
+两新增科学receipt已实际作为独立analysis_annex_attempt02持久备份，共3400B，逐字节下载与readonly全目标复查PASS，不改原41文件快照。copy receiptSHA1a414e3fb33aa8d3f9cad990985a644461bc57ec8fd55e871de33bef2c3341c3；最终responseSHA574387423b99676bf941ccb4a36bdd5f51fadbc1a1e1de6ff9d0afee950ddd67a。confidence分解为B+.101554346/Dmin+.043737471；另原曲线D0−Dmin由.711810207降至.621206892（−.090603316，27/40缩小），描述性支持固定时钟与最佳lag端点分别解释，无新训练/推理/选型。
+
+### 实际当前容量与输出绑定
+
+root完整审查只读容量worker/config/5请求/Bash/pins并实际执行，另下载原完整receipt，全部PASS。回执57746B，rawSHA164bff9e05094428af4de0901e4d38e1139754cbfcfa7e693a80251be5479bf7；本地.codex/scratch/dev360_resource_footprint_probe_attempt01/downloads/resource_footprint_receipt_attempt01.json。六个成功pilot完整retained树含JPEG/AVI：各模型行最大allocated Wav2Lip8830976/MuseTalk9826304/Ditto9048064 B。最新正式Stage-A增量已计入：allocated pilot基数4986961920B，新增两F32WAV/PCM16/裁剪等879246792B，enriched base5866208712B；加2×显式场景余量及单份原PCM=17604091672B，另留5GiB/5368709120B，共22972800792B。SHM26444845056B可承载，probe时margin3472044264B；overlay7021514752B不足。19,072B分析receipt SHA0e8de8f39ff72ada8e61ebab6950604020c6674a5bb9c61e0ede221fe0745315的13source pins与全部算术已root独立PASS。这是实测pilot和有来源的增量代理外推，不是未来540实际字节或临时峰值硬上界。ADR017已创建并直接读回：capacity状态MEASURED_PILOT_WITH_EXPLICIT_SCENARIO_AND_LIVE_GATES/media_bytes_estimated=true，初始540/阶段剩余/逐行资源检查分开，保留5GiB余量、全部失败分母和最终完整可恢复归档门槛。dev采用fresh SHM根的controls360/candidate180分离叶目录，实际CPU绑定/正式GPU运行尚未开始。
+
+root重新核对ADR016：最终交付是完整自然float32 PCM，评分selected-track采用全源FFmpeg PCM16转换后的明确ROI和absolute source clock，记录requested/actual stop和tail-clipped标志。W2L原生141帧/SyncNet143帧、末窗重复及nominal outside-render maps是既有边界，不能修改支持集制造增益。GUARD20不足保留预定不适格及全十speaker endpoint null，不降到九人。最终新链已修复并封存cross-adapter旧SHA、relative source路径、helper/self来源残留和generator PCM equality；候选及评分协议保持冻结。
+
+### 正式启动前接口修复与实际安装
+
+冻结三模型源码链已实际安装并本地提交6126c7d1aeba5498f1f61042a49afe8f1e9ff59f，未推送；root19脚本原始byte与Git staged blob逐项一致。core06/binder06/controls13/candidate08/source_snapshot13237B raw0e58475eeef4b46d095220118e891e8774e39220fa26acdbb0fa243d1b14c3ec；仅.gitattributes两项保留精确core CRLF和snapshot字节。phase1实际33目标pin核对/20新文件安装、recovery03共37请求PASS，原template07实际58833B raw0ece646bf5a0341af44543671f85b694c8c186e7e6a41cfb66dad5751900efa4。工程修复保持候选/资格/评分/时钟不变。
+
+source-only seed01丢失generator资格hook，root完整diff发现，未执行。corrected seed02保持template全部backend语义，phase2 q00–02实际PASS且seal-seed成功：70742B raw016429a4dc6c74c8809bd834d07447931cec217332739b6443f9d92f68d476f2，READY_FOR_COLLECTION，NS/job_control/dev360_phase2_bind_plan_preflight_attempt01/output/runtime_binding_seed_sealed_attempt02.json；不得重放旧phase2/seal。
+
+phase2 q03因缺evaluator失败。readonly inventory03实际43路径/40匹配/3缺失/0冲突，root下载原29902B rawd183c19cf1d0d2b40f506620eaed2892e42f128ae1feeb5594eee32b2116a221并完整独立核验。installer02实际只补evaluator/PCM16 lineage/heads.py，另6依赖精确相同；原receipt3526B raw458f7b2cf3e8f12900d062d08b8be1ab216b616ea0bdcc1459bfe2f0b9a92a4a，root独立9项/selfhash PASS。
+
+CPU recovery02 q00/q01 PASS，q02 collector又缺迁移后SHM固定参考视频而失败；原521B响应SHA4cb08ca2f5d54780beea24f87043db3144f94590cb1fd6e79dd3c1d7b3d219cc保留。root/fit在本地portable_archive_attempt02/restored_root_attempt03找到精确原视频175827B rawc76617141188acfea5f4c122513b982997ec45ebaa35a2b6ed9f67101e9c40de；input_restore_probe02已实际create-only恢复，不生成替代视频。20 Dev原WAV+face/video共22项全原SHA匹配，0缺失/冲突；实际report12117B raw5f162dc906d614b72037592ae4707a3808b7c88d94f3e1489d21ebf8fccb91de，self9451e856d4f3780e4f7285beab340d85009f2b8af92b84cb32974ca16ff93090。原始源/响应分别在.codex/scratch/dev360_input_restore_probe_attempt02/及dev360_phase2_recovery_attempt02/。
+
+当前仍无正式Dev GPU结果。fresh recovery03复用实际sealed seed和恢复回执，写binding04/plan04/preflight04/summary03；root与signal审查后执行。Fit负责launcher02关闭动态加载bytecode和Popen后失败收尾，dev负责状态/请求；终态compact03和最终完整媒体归档仍待实际终态绑定。ASR/视觉源仅封存，未执行API。先完成360控制再180冻结候选，不改方法/阈值/Confirm封存。
+### 当前资格接口修复与运行
+
+原step120候选已实际完成180/180 PASS（三模型各60、九model/seed各20）。7个完整终局文件实际下载和整SHA/字节数核验；ROOT、Signal和另一独立agent全量metadata复核PASS。完整ledger7020686B SHA dd56720648c500b27328b3fa6f02028970a74699c18697de92e48b5550a664f9，位于.codex/scratch/dev360_candidate180_terminal_transfer_planner_attempt03/prepared_packet_attempt02/downloads_attempt03/。ROOT/Signal QC raw98e81213b1ae2fcd4b2880457c4fc7f1c4aa800f689c6f2437b20b79f684da94；独立另版QC rawde9c96de37bf9a50d6f5d4be65462c42928493ce209349378ff9c212110751f0。尚待实际raw NPZ/视频/原音换轨联合540效果，候选repeat为空NOT_RUN_SUBRUN。
+
+实际inventory05 raw05df79447a2c500f280446b653e41a73306b86b193ca6f6f967af62eb02e7b2a，唯一strict FAIL来自reader把producer schema cross-tfg-audio-eval-v1误写为cross_tfg-audio-eval-v1；旧失败保留，实际producer由全文source和manifest核验。planner03仅错误诊断label q03→q01改动，dispatch源码0a805...b2f40与当前9a46...f374分别留immutable snapshot，全部7已完成下载不重放。
+
+DirectD0 q12实际preGPU code2失败并在旧control root留下launch_failure.json，训练/optimizer仍0。ROOT随后实际执行all40只读inventory：正确parent root /root/tts-research-system-20261001/cross_tfg_audio_head_20261003/v5_fit40_input_stage_attempt03/fit40_source_inputs 下40/40 exact MATCH，旧source_root/source_wav再join frozen source_wav/...为0MATCH。证据actual_remote_inventory_attempt01.json raw16f0036d1da969e3f0c1a3f48d9719775e36ff1bde5c047bf5617940257d3a6c。此为目录深度错误，不是音频数据缺失。新manifest03仅改source_root/self，88既有pins保持逐字节相同；新control attempt03隔离旧失败并复用23科学源码和geometry。ROOT核对实际源码最小diff及全部pins，实际7请求全部PASS：GPU/SHM/旧run不存在预检PASS，随后唯一新launch STARTED_DETACHED，supervisorPID573383/start_ticks334637264。actual launch receipt13526B/rawc4344c0a8bdb6a92c8880ebabf27909c40002a7c8f00111fa13fbf95b55c9e99/self3602470c816a42b362c095ae1e98ed23ccaa5ad640f1546940172a0a0bbc1cf8，尚待首次status/40样本等价和梯度gate/Adam终局，启动不代表训练完成。
+
+缺失readback05单源码create-only installer02已实际5请求全部PASS；74212B/c01fbb025cba4234e8251a0017a2e4c8e77eccdd199374a0609e7aec29afc1cf安装CREATED_EXCLUSIVE。实际receipt1645B/raw14ce54b4621f83d17f86db0dd72ba33dfdc5c0e035ff2973b3762e0b6ea9390c/self7f65b4fa5b2838b95a6f55770623d07be36f3880b31a333e646bb7aa61509845，未执行该科学脚本、未改变candidate/controls产物。Dev发现candidate缺content-addressed NPZ资产目录，正准备按180原ledger/plan/整SHA绑定create-only materializer，随后执行原collectors→joiner08→readback05联合540。
+
+未来独立Dev20 ASR PhaseA05已实际生成20自然byte-exact PCM16和20固定RMS PCM16、保持N/16kHz/mono。payload manifest45979B/raw8d030956e4be1d157f8ff6ae97ee3284edbad7596e1b2715e9e1ec5be523383b/self7de69d9044326f586d9db24b8c4fd81b8d56f271123cb31edd2734d59cd49a8f。ROOT全文审阅builder06/QC15072B，实际40请求全部下载PASS至F:/tts-exp-archive-transfer/dev20_asr_payloads_attempt05，独立full40 PCM/源码ZIP对照QC实际PASS，receipt40283B/raw90ebfd07c6252112a0124afe8000536177a2dc3df3bf182473c328d3217cbdad/self60ecf59912b925d67b9e2327ce41a55200a41ab9377d1cd2cccc9780ed5bf060。ROOT实际私有client05一次启动PID99512并成功完成60/60 HTTP200、child exit0、0失败/重试；plain summary799B/raw255d7cea1d53394775a1d86cec5a9d2a325f7d5470a20b40b45f44c87f7ad6ec，results57716B/raw0ac8092c4fde0438d314fc5466a9a6f0a69b01d1d7c5a31735cdc4d496239834，F:/tts-exp-archive-transfer/future_dev20_asr_baseline_calibration_attempt01。summarizer实际执行且独立QC PASS，ASR descriptive summary实际已由ROOT/独立QC source执行：natural1与natural2、natural1与RMS fixed normalized character-Levenshtein两项20/20均为0，60/60HTTP200、全hypothesis非空、unique request IDs、摘要不含文本。aggregate属于描述性ASR一致性校准，不含ground-truth准确率。summary11996B/raw e0178f57602731b85ebbba0dd453ef98d3951a5441eef09949b349e6281f7c18；独立QC2147B/raw c5428b35fdfcea28cc8c05089b9390872531c8bdde75af2c50222b8cd97d5493。 candidate ASR20仍0。阿里官方ASR模型及API文档本次重查列出固定snapshot，兼容旧域名仍有效，HTTPS请求结构一致。密钥仅私有运行时。
+
+### 新独立Dev政策与局部机制
+
+ADR021和future-dev20-admission-policy-attempt01.md已在未来candidate效果前冻结并提交5688784。FULL每模型candidate比RMS/identity Cbest正、等模型比RMS至少+0.050；GUARD20每模型及等模型两比较均正。D0/Canchor两支持两参考每模型与等模型均非负，完整20clips/10sp/540分母。GUARD20三臂公共查询裁两端20后≥41。48端点100000次共享PCG64(20261009)、固定SE max统计higher95区间仅描述开发。
+
+ASR qwen3-asr-flash-2026-02-10、zh/ITN=false/无prompt/真值，独立自然两次+RMS一次60基线，后candidate20次，excess距离说话人均值≤.020/每片≤.100/全部非空；这是文本一致性工程门槛。全部540视频tracking fraction≥.950仅可用性，嘴部运动描述性。Confirm80/40sp和LatentSync封闭。
+
+DirectD0科学目标/40 Fit/9参数/32ms窗8ms步长/3dB全局投影/RMS/N/时钟均不改。全部40 zero/RMS等价及完整有限非零梯度先于Adam120。CLI04维持relative checkpoint和absolute staged源码的严格字节身份。ADR020投影后320 Fit-only package02 source-only：240时序均值/±64帧roll加80同theta参考、完整27×31矩阵、接缝披露，未来theta/weights/output pins仍NULL。
+
+### 持久证据
+
+HEAD5688784dd5c6c1272074f0c4b6c5ff79f117c907本地unpushed，无PR/pytest/deps/cleanup，旧5 unrelated tracked dirty保留。原187Git proof/F-B190文件双读PASS。新增candidate28文件10,610,303B在F:/tts-exp-archive-transfer/candidate180_full7_terminal_attempt02和B:/tts-exp-archives/candidate180_full7_terminal_attempt02均两次完整读回PASS，receipt candidate180_full7_actual_archive_receipt_attempt02.json；未含媒体且不证明云同步。旧archive01深路径失败及B部分文件保留。
+
+最新immutable checkpointGR：tts-exp/codex/tts-exp/codex-checkpoint-2026-10-08-t20-20-34-z-verified-candidate-and-corrected-source-root-recovery。服务器root@connect.westd.seetacloud.com:18625；private PTY57588/bridge07，密码与API key永不入文件。SHM约20.4GB可用，persistent约6.2GB且保留5GB，原始媒体用SHM/F/B。
+
+
+
+## 工作位置
+✅ 当前执行机 wjj@192.168.50.2:22，publickey，V100 GPU-d12b3309-c299-da83-064d-a3cd619bd560。项目 /home/wjj/tts-audio/tts-exp，工作根 runs/cross_tfg_audio_head_20261009_v100_native_deployment_attempt01，job_control持久控制、/dev/shm暂存运行。三模型实际runtime/family03绑定，必须保留共享lexicalvenv。密码/API不记文件。
+
+旧AutoDL root@connect.westd.seetacloud.com:18625 DirectD0状态未知，保留既有启动证据、不重复launch。历史结果与readonly证据仍见上文“已执行与证据/原生重复与后续”，不能当作当前新实验状态。
+## Observations
+- [status] implemented
+- [result] Session05 attempt07 completed 8 native W2L official PASS rows before optional NPZ bytes consumer mismatch; partial-native UNKNOWN/rc2, all old PIDs gone, zero tells; ROOT actual raw/56 arrays/PCM/clock verification PASS.
+- [result] ROOT package11 full66 sources and fresh05 event0-only state qualified; original theta/RNG exact; source audit and Signal actual call-path review accepted.
+- [result] All96 frontend/886 local frames and B linked218 chain qualified; source-only frontend explanation saved with descriptive scope.
+- [decision] Portable05/finalizer02 source accepted; ADR031 additive Dev20 keeps full540 denominator, original PCM/clock and all scientific thresholds; real selected center late-bound before effects.
+- [result] 9参数完整final720科学未准入：四中心各失败9/19门、selected=null；K15仅按最小违例规则作为后续11种子。ROOT及独立Luna完整门算术一致。
+- [next_step] 冻结显式11谱形/局部包络方法profile与优化域，原Luna代理实现独立native闭包并实际Fit资格；旧9不重跑、Dev/Confirm保持封闭。
+- [result] ROOT2026-10-10T19:05:28.586360Z fresh终局独立资格PASS：121events/20UPDATED/40pointterminals/120实际childrc0/19实际nativepairrc0，原7events未变、无pending/halt/writer.lock/coordinator/modelchildren。QC .codex/scratch/root_coordinator26_terminal20_eventchain_actual_qc_attempt02/root_actual_qc.json 28359902B/raw30295a8cf123e573267b74305610b3fb93041052e2d4248292c4294a92ed667a/self058f01825b34541860d4da26d3607aa5786dacfaa55bf6e3cbebecee4faba484；不是全tell数学或Fit准入。
+- [result] 全20原数组/tell数学实际通过：snapshot03→reader05 max20 rc0/stderr0，1200unique NPZ/1920logical row uses/240baseline pins，20pair MATH_AND_EVENT_CHAIN_MATCH，numeric/schedule误差0；ROOT独立20gradient/θstep误差0。完整capture .codex/scratch/fit40_full20_math_qa_attempt01/，ROOTQC .codex/scratch/root_fit40_full20_math_actual_qc_attempt01.json self7660be339b3ada267901fe9d97bf54a6f71afa29d782d5b5c17f1c4ff53c98c3。未主张Fit准入/跨TFG超过RMS。
+- [result] 历史Ditto重复归档迁移07实际rc0：C原目录junction→既有F完整副本，五个retired05重复文件仅在全部原件/保留副本rawhash与身份门通过后逐个literal删除，空目录非递归删除，F原restore树保留。05/06失败各0unlink证据保留；06默认ISO DateTime解析导致旧self失配，07只改-DateKind String并绑定06失败。实际receipt46381B/raw9e3d6e4db571dd8e2b532e94c055692cbc505d5961db1fa90fa051b164f1d748/self35c02310ab5dd448c9ce585bb7b5471b836fcdc6f454ca157d6e771980ef067d；self按PowerShell递归排序/JSON serializer核验，不能混用Python serializer。原ASR fresh全C/F10body/身份读回通过，C约2GB，B逻辑容量仍不等于云同步。
+- [result] 原QUEUE bootstrap17单次seal-journal实际rc0/stderr0，完整journal16698298B/raw2dd1c1ac08e439496c1f7753ab4bb8ccdd8727d2fc6a53aebeffd145b2167231/selfb731f233eea49ca533f4f21114eff09e342036b7287f63d172b112fe2f8d3b4d已全body读回。ROOT全20entry raw/self/链逐条等于121事件中已独立资格的journal_entry，QC .codex/scratch/root_fit40_sealed_journal_actual_qc_attempt02.json self00751d21a67efadc6e4ccc16cb768e0ba6d0c0cf595bc37c48064566084ea809。entry iteration0..19/tell iteration1..20；ROOThelper01错按entry1based失败保留，02按真实schema通过，科学原件未变。
+- [result] 停机归档initial全UID实际扫描已通过ROOT完整五文件/source/raw/self/rc资格：497可见进程、多UID/hidepid0/stable两次观察/0refs-races-incomplete，QC .codex/scratch/root_session09_initial_all_uid_actual_qc_attempt01.json self810ac74b208388493f6e92ba139633fbdbf45c4340eb897ce978007634fba33d。仅为initial时点/PID namespace，不声称持续无引用。ROOT authv2 selfd0351254045e9d612f9195d65a07b6ef72046aa683001ed17caee155b5cf19b2已绑定全20数学和封journal。
+- [result] worker09首次preflight实际本地rc2/stdout0/stderr103，在SSH和B输出前误拒绝B解析后的唯一UNC；完整失败capture保留在archive packet/preflight_capture_attempt01/，不盲重跑。后继worker10 162819B/rawa3c3dcf47cc3ca21ef803ef35f54254319b63c7dbc4803fff3d1a7b027ee8b4b经ROOT全09→10diff/AST及原ASR独立源码接受；logical_drive B与resolved_drive UNC分离，固定映射/每write包含关系/全部来源容量restore门保留，09失败五文件/source/auth绑定。ROOT源QCself761f4a10100f470b6cad8911ae312869938b69a12bfa90b29229d8bb36c33acb。仅释放原Luna一次准确B:\fit40_session09_poweroff_archive_attempt10 preflight，archive-once仍待实际预检ROOT审阅；未宣称归档/关机通过。
+- [result] 停机备份11实际单次preflight localrc2/SSHrc2在owner scan门中止，无inventory或归档；09/10本地UNC失败、11完整capture及B三个叶均保留。后续diagnostic01两时点各85 UID1000进程/0refs-races/141 EACCES incomplete，ROOT全部capture/source/raw/self/实际rc0/七helper字节/19scope复核PASS，QC .codex/scratch/root_writer_diagnostic01_actual_qc_attempt01.json self4e9f1c0bc96c5e21f5aaa9f6c4c7722832f212137919b20e96b82b48ba5b9e51。诊断被资格，但scans仍FAIL_CLOSED；非11早先细分原因的直接capture。
+- [decision] 不能将普通用户权限不完整视为无writer通过，也不能将旧root initial当持续观测；保留所有source/body/restore门，原Luna设计fresh privileged全UID与实际inventory封存结合方式，ROOT审阅后才执行新预检。未决定/执行方案，不改安全配置、不杀用户daemon、不启动GPU。
+- [result] stage05唯一SSHrc2返回值解包失败发生在launcher写入前，失败capture保留；fresh stage06单次local/SSHrc0、两源完整body/uid-gid1000/mode0600/nlink1独立资格通过，ROOTQC .codex/scratch/root_prestream_stage06_actual_capture_qc_attempt01.json self368d880a054b7d373a4988cbc383f57920b3aea05812ca17befbdff76067ab06。scanner06与launcher05固定/tmp已就位但没有扫描，worker12仍准备中，无inventory/archive/restore/off。
+- [decision] ADR035已typed创建并全文读回：UNADMITTED完整inventory→ROOT资格→fresh privileged全UID scan→独立ROOT seal→300秒内actual archive SSH启动，重做inventory精确一致且全部body/stat/hash/restore/sourcepins门保持；content仍pending-final，reserved final04后ROOT最终admission才正常off。旧initial仅谱系，owner EACCES仍FAIL_CLOSED，refs/races硬阻断，范围为两个时点而非连续观测。
+
+## Relations
+- relates_to [[开发跨 TFG 的自然音频增强头]]
+- relates_to [[015-same-gpu-deterministic-controls]]
+- relates_to [[016-source-clock-roi-and-full-delivery-pcm]]
+- relates_to [[017-measured-pilot-scenario-and-live-capacity-gates]]
+- relates_to [[031-selected-spsa-center-dev20-provenance]]
+- relates_to [[近静态谱形通过局部谱成分改变三类TFG的时变条件特征]]
+
+## 首轮共同支持上的评分曲线诊断
+
+这是第一对SPSA候选plus−minus的描述性分析：同8个Fit片段/4说话人×3模型，共24contexts，全部四方法共同原时钟支持；9参数同时扰动，不能拆作单个声学特征因果归因。它不等于更新后中心效果、完整Fit准入或未见说话人结果。
+
+- [result] 24contexts中23个plus/minus最佳lag相同；W2L 8/8、Muse7/8、Ditto8/8。Muse仅1条−4→−3，变化主要不是大幅移动最佳偏移。
+- [result] W/M/D的plus−minus ΔCbest为+0.036/+0.058/−0.005；原零偏移D0改善为−0.010/−0.031/+0.001，Canchor为−0.013/−0.023/+0.007。最佳峰值与原时刻匹配有明确取舍，仍按冻结双护栏训练。
+- [result] 从真实curve的B/Dmin/D0直接分解，W/M的Dmin改善+0.038695216/+0.050100803，B变化−0.002859592/+0.007465601；两者的最佳分数提升不只是median背景抬高。原始float32指标存在舍入，分解恒等式按2e−6容差核对。
+- [verification] .codex/scratch/root_first_pair_lag_decomposition_actual_qc_attempt01/root_actual_qc.json self6406f2dad4c534ad5459c159e9f7f241584b9f5383a1b59d70f935b763473c27；引用已独立核验96行原始共同支持曲线QC selfe879d08136590038b3c2d4726c3a5cf3d7283d4aaa4ab40497e76fc92c751090，无新模型或评分运行。
+## 首pair原生输入的局部声学描述与独立复核
+
+本子分析已实际执行一次且ROOT独立复核通过。范围是首个联合SPSA的8条Fit音频/4说话人、同一9参数耦合方向的plus/minus（theta0 ± 0.25*direction）；对照为历史官方ledger精确匹配的8条RMS波形和完整自然音频。三模型每个方向的生成波形先逐raw/PCM/N核验，再去重；不使用模型/SyncNet/ASR分数，不据此选择或训练参数。
+
+定义固定为25Hz左对齐640样本帧，尾帧保留，symmetric Hann前缀/FFT640，P=|FFT|²/实际窗平方和、不乘单边2。4频带为[0,500)、[500,1500)、[1500,3500)、[3500,8000]Hz；RMS使用实际有效样本。相对power flux除以共同自然音频的前帧总P；归一化频谱shape L1 flux另算。activity只标记不删帧；首帧transition为null。实际3544帧行（4arm×886源时钟帧）、886 plus/minus行、64 NPZ数组、8clip每arm各一尾帧，无零power/inactive帧，32个arm首帧外transition全部有效。聚合先clip、再每sp两clip、最后4sp等权。
+
+四说话人等权plus-minus：局部RMS均值差+2.303481e-5，局部dB差均值+0.021117dB；低至高4频带占比差依次+0.779749、−0.551473、−0.237619、+0.009343个百分点。centroid −7.912732Hz，flatness −0.000411408；相对positive/negative power flux −0.140007/−0.006004；shape positive/negative L1 flux均−0.001880896。ROOT另从整段全部N样本核验plus/minus/RMS均约0.037683817 RMS，plus-minus全局RMS最大差仅1.024342e-6dB；局部变化发生在整段能量已对齐的条件下。
+
+分布诊断是pooled帧描述，不替代4sp估计或增加推断单位：局部dB差q05/median/q95为−0.167710/+0.031385/+0.192588dB；低频占比差q05/median/q95为+0.000070/+0.004554/+0.025747（比例单位），centroid为−26.477753/−4.615450/−0.031366Hz。相对positive-flux差的median接近0（+0.000078），10个最大绝对差帧贡献54.152%的绝对差总和，它们的自然前帧P均处于全transition的36百分位以下。因此不能将负的平均relative flux概括成所有起音均匀变缓；更准确的描述是频谱比例普遍小幅改变，而部分较低前帧能量后的上升段产生较大的相对flux差。
+
+机制解释保持具体：整段RMS对齐仍允许局部谱比例和局部功率轨迹变化；近静态滤波与随时间变化的频谱成分相乘，会产生时变条件特征。当前描述细化了既有“近静态谱形→局部谱成分→三类TFG时变条件”的路径，尚未把单个声学量当作独立中介，也不将此方向等同更新后的中心或完整Fit/未见说话人方法结果。后续仍由冻结的完整Fit中心与Dev门判断方法效果。
+
+权威产物：`.codex/scratch/root_first_pair_acoustic_description_attempt03/`，source 80273B/raw1d28d6c5e6c5032f554712faaab8f4129f3a9d722edc4b8bad9ad4befc9d2212；manifest 326476B/rawb1e63560fdd92097bbac895a19446df1a35ed5b7e34dda28d23c3b51aab7a593/selfccfeffac29388b33b8f2d404aa78b5417c30cc11876cad2ef1266444e2464e27。results_attempt03/summary.json raw77143e193326641f49d4180f9150694e48bbe615a99fcbdffd06a9a57343525e/self5f2d0411274561c4f36a536043323683f2ba6547ad6add8f3264ff71faa59def；run_receipt rawd0ae77527258b9e1bdad6276cbf616d5b4dfe56e12d2f04f7ae4f8559dc12d26/selfcf8fe5ce9b7290fe005f0fe2accddaeda36cd625f863f1c1e6dc46c6840bb28d。
+
+ROOT独立从128个实际WAV解码PCM、重算全帧FFT/64数组/两CSV与四sp等权summary：`.codex/scratch/root_first_pair_acoustics_actual_qc_attempt02.json`，selfd2fc402bbc8c95b8e8f3d8b33672b0f1d7cd9424f76d21bec957c6a6b7d55ac5。FFT最大绝对误差3.109e-15，centroid2.615e-12Hz、flux4.548e-13；数值判定rtol1e-10/atol1e-12。整段RMS诊断self9c75ee4ac76e0c7f59ac6fc57f241f39b93d4f3ca65133aa14df5a95acab0bcd；分布诊断selfd51ec390504993b1b096aaad97ad70d47120e0280cb60493fdca19fa8e61d652。标准Matplotlib两图已有全文件SHA核对，频带图ROOT目视可读。源/manifest未改、原音时钟/完整N未改，无tests/TFG重跑/评分读取。ROOT初版reader误把outputs dict作list在计算前失败，additive02只修reader；ASR曾将attempt02 manifest self误报为attempt03，实际raw文件未改，已纠正为ccfe…。
+
+## 已执行的前两次SPSA更新独立数学重放
+
+对既有不可变session09前缀（17事件、2次UPDATED）执行冻结reader05，单次CPU1、CUDA空、-B，cwd与repo-root均为原QUEUE，真实rc0。结果为PARTIAL_N_TELLS_QC，192个唯一NPZ及192次逻辑数学行使用；共同支持、原PCM/clock、F32距离曲线及lower median/min/D0/anchor、固定initial-theta正则、目标、PCG64 asks、梯度、更新和持久化参数全部一致，最大数值/步长误差均0.0。未读后续ask/dispatch事件；不是20步或最终Fit准入。
+
+实际receipt .codex/scratch/fit40_session_math_qa_snapshot_run_attempt05/stdout.txt，39077B/rawf38fbd628bab200d81661102fe6dcdb8f42be0a26d28c85ecc84d01c7e384c9d/self931339d86c0034a3230c4e39d8ab3cea0e9cf3526ac018797e6d1cb60755947b；stderr空。reader05 113414B/SHA366b2fa59ad610421e8b09f65d9f0ad5d2a202b0b6ed15a9f2413baa3c13ac7a，远端create-only/fullreadback/mode0444。ROOT独立核对完整输出self/源码/调用/快照pin，并逐项与event6/event12的梯度、更新、前后θ、support和既有目标结果比较通过；QC .codex/scratch/root_two_tell_math_reader05_actual_qc_attempt01.json，receiptdef9c922cbf94e580896c8e7d5e3db53b78e3012e951915a0ef946a877fbfe32。ROOT此步资格审查不是第三次原数组重算。
+
+pair01 support0c1c0d10ac938cbfccb6b11e9fbf65cd20c4617acf634d47f4e186f380fe338a/2502共同queries，Lplus .11204426507887727、Lminus .15492162381717417；pair02 support69980179d911c3771084c99a587000a8c5e750eab78d94269f22f23dfa386fbe/2498共同queries，Lplus .11984678299327661、Lminus .09608628632978836。各pair轮转4完整说话人，不能把跨批损失当全Fit单调效果。
+
+历史reader拒绝保留：原native writer.lock是正常跨pair活锁，以create-only稳定前缀核验；receipt schema修正仅把四rolepins放child、四counts放status/manifest并要求另一侧缺省，完整分母和raw/self/process/source检查保留。reader03单次rc1暴露np_module漏传，reader05只显式thread既有NumPy，静态AST/symtable/360直接调用参数检查通过。reader04与05实际逐字节相同；ROOT一度混用Windows默认文本解码和UTF8误判诊断字符串漂移，rawbytes/显式UTF8复查已纠正，原错误disposition及纠正QC均保留。另一次manifest文件名预检误写manifest.json，真实为session_manifest.json，未启动reader；这些都不是实验阴性或科学协议改变。
+
+## 完整数学验证与Dev候选ASR输入准备
+
+本项为已执行的源码审计，尚未执行未来验证或读取Dev/Confirm效果。ROOT独立09:45:54.999393Z真实读回唯一coordinator26 PID785358/ticks10166461、原source/QUEUE/session09/SHM03，33events/5UPDATED；原7events字节不变，event30 iteration5/no pending/no halt。第5轮双向三模型48官方PASS，现pair06 plus。QC .codex/scratch/root_coordinator26_fifth_tell_eventchain_actual_qc_attempt01/root_actual_qc.json，self990ba791c96bdd0ca2bc36410d8ddda618e5be81c074c764d0d023c235bca8cd；event30 800463B/raw1cea2bf758de5168fc313088082d56ca7e2f6d2c7078a7a14f6480a690556e3d/self333df40b622d0896b59c0bca159fa7043070f32deb06bd8bd703efb46d7eeb4c。此步是事件链/启动身份QA；数学资格仍只有冻结reader05已真实重放的前两tell。
+
+Signal full20快照源码 .codex/scratch/fit40_session_event_snapshot_attempt03.py（20194B/rawc4c62e09cc3a419f898ec9dd5d056fc6b3b617d4a136873fba066a286892a94f）经ROOT完整源码/diff/AST及ASR独立审阅。全部前置门包括121连续v2events/20完整六event周期、COMPLETE双terminal/20UPDATED、journal raw/self链、末态iteration20/no pending/no halt、原completion05 manifest/前7events绑定、writer.lock缺席；之后才create-only fresh JOB/fit40_session09_math_snapshot_attempt02，O_EXCL/O_NOFOLLOW/fsync/逐byte读回/原源前后不变。当前SOURCE_ONLY_READY_UNSTAGED_UNRUN，只复制manifest/events，point/NPZ继续按原pins读取，不是完整产物归档。待真实20结束后stage/readback/单次capture，在原QUEUE cwd/source_root以reader05 max20全数学重放，再seal journal/四full120中心/final720。
+
+新定位Dev候选ASR缺少生产链。analyzer04→legacy analyze_future_dev20_admission_attempt01.py.verify_asr要求cross_tfg_future_dev20_asr_candidate_payloads_v1/PASS_20_CANDIDATE_PCM16_PAYLOADS、exact20源cohort、mono16k/PCM16/N和generator F32 SHA逐条匹配真实540ledger；候选20调用/summary必须COMPLETE_20_CALLS_PASS。analyzer04仅在内存把selected_spsa_center映射legacy direct_d0_step120，原candidate调用字节与method来源不改。scoped scripts及ASR attempt05精确schema搜索只有verifier，没有对应producer；attempt05 worker/client只生产自然/RMS和60基线调用。后续需additive payload→20call→summary，绑定实际ADMITTED候选及真实PCM来源，保持policy01全部阈值/模型/zh/ITNfalse/无prompt/无重试去重。不修改旧验证器或伪造实际pins。既有60基线结果保留；使用前与新540来源逐PCM复核，匹配即可复用确证结果，旧路径不可读本身不触发重复API调用。
+
+ROOT源审计9文件raw/bytes和相关契约、AST静态审阅QC .codex/scratch/root_full20_snapshot_and_candidate_asr_source_actual_qc_attempt01.json，self598eaa0ba66739276cd0fe2908edf8359b6c682563d99ba1ba733d28f38b3926，含verifier及ASR packet/worker/client/summarizer/manifest/request index完整pins。旧/root runtime/controls-plan路径在未来使用前须重核。已知draft protocol06与builder05/analyzer04/nativeadapter03硬pin状态冲突仍需Fit准入后以真实输入派生后继闭包；540/Confirm、原PCM/clock、统计门和package12不变。源准备/输入阻塞不作为科学阴性或新候选效果。
+## 今晚完整归档工具的独立源码资格
+
+ROOT已读archive05全源码、06/07/09各窄diff、scanner04全文与04→06窄diff、launcher01全文与01→04窄diff、runbook04全文；原Luna Signal另独立复核PASS。新源均位于.codex/scratch/fit40_session09_poweroff_archive_attempt07/：worker09 148534B/raw70c60df6d7dea781bc4fd8350123d436ba8b9c6397a7e30e80777756e8ede120；scanner06 24154B/rawf81742747c23af339135e615642d5ea40f88eb8003cee0d539e9df13a67e3896；launcher04 11526B/raw36b30f6550797546ffc255f9d5a4e3c268c740df1ddfeea2e994032f20fb17bf；runbook04 9371B/raw62a9fe4335ae0591cb8b8e044ea1e425c017e3a689e83c2b4f8099c7b2735e2b。ROOT实际hash/QC .codex/scratch/root_archive09_scanner06_launcher04_source_actual_qc_attempt01.json self92b27f59a31bd058b25bc7602a99da87042294b5186cabdaedb7aaffe8124506/raw e199ccca31cf4149c7117c62159c2535ec55f29969920bcf2b9ddccc1b6a20a5，SOURCE_ONLY_ACCEPTED_NOT_EXECUTION_RELEASED。取代先前05/06/07/08和scanner02/03/04/05的未解决源码阻塞；历史失败原件保留。
+
+scanner06逐entry即时readlink后才推进scandir，避免listdir关闭或排序耗尽引入自身FD竞态；所有真实ENOENT仍failclosed，PF_KTHREAD唯一typed exe ENOENT合同不变。launcher04无论stdout是否有效都保存已启动sudo子进程实际numeric rc及raw pin，scanner rc只有schema/self/source资格通过才赋值。runbook准确区分5文件与无spawn时4文件，明天保留HOME/系统原件，仅在fresh容量/模式/链接/sourcepins资格后重建缺失原绝对SHM roots；24GiB临时mountsize重启后需重测，不能blind覆盖所有alias。
+
+没有stage、特权扫描、preflight、archive、restore或shutdown执行，也没有implementation tests。真实20终局、全原数组/tell数学与seal仍先行，随后ROOT流前/关机前fresh ALL_UID时点资格、B全body归档/fresh完整restore/sourcepins实际门不变。完整停机决策已写入并全文读回PASS：[[研究服务器安全停机与完整可恢复归档]]。

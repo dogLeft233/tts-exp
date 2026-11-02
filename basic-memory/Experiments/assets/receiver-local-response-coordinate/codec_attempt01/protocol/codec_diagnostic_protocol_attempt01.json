@@ -1,0 +1,63 @@
+{
+  "schema": "root_matched_codec_chain_diagnostic_v1",
+  "status": "FROZEN_SIX_SCORES_ONLY",
+  "created_utc": "2026-10-14T22:25:52.468601+00:00",
+  "question": "How much does the fixed two-stage compression chain change the natural-audio SyncNet response of the already generated output-owned native videos?",
+  "cohort": [
+    "BAC009S0022W0123",
+    "BAC009S0024W0122"
+  ],
+  "arms": [
+    "zero",
+    "plus",
+    "minus"
+  ],
+  "inputs": {
+    "existing_png_count": 504,
+    "input_manifest_sha256": "673ee09cdba130ee70698553f6bd52ca4b4633cf85c94e2092de66bbb36b4889",
+    "formal_h264_readout_manifest_sha256": "1b4f454463a4387b470c744b0f9269b991e2c4e4fd0164132c40a1c87a655c4f",
+    "source_sha256": "4befcb7705790fd732aab7dead62cadd2ebc597d95845e0a851e2cb290d9cf29"
+  },
+  "chain": {
+    "formal_immutable": "existing PNG -> 512 H264/yuv420p -> 224 Lanczos H264/yuv420p -> original natural PCM",
+    "diagnostic": "same PNG -> 512 FFV1/yuv420p -> 224 same Lanczos FFV1/yuv420p -> same original natural PCM",
+    "scope": "codec-chain comparison; RGB/YUV conversion and 420 chroma remain; not RGB-lossless"
+  },
+  "controls": [
+    "same retained frame bodies/order",
+    "25fps original j/25 clock, 80/88 frames",
+    "original full natural PCM, prior PCM16 SHA/N",
+    "same strict mux, scorer, checkpoint, batch20, vshift15",
+    "same full and guard20 query-support definitions",
+    "no landmark or TFG re-execution"
+  ],
+  "endpoints": [
+    "all six full/guard20 B,Dmin,D0,C",
+    "within each codec, plus-zero and minus-zero",
+    "paired codec differences in those arm deltas, with no sign/lag/dose/sample reselection"
+  ],
+  "interpretation": {
+    "if_responses_change": "compression chain contributes to score response; retain all formal H264 endpoints",
+    "if_responses_persist": "compression does not account for this response; functional control and score objective remain different",
+    "not_claimed": [
+      "formal head beats RMS",
+      "human mouth accuracy",
+      "waveform reachability",
+      "universality from n2"
+    ]
+  },
+  "budget": {
+    "new_TFG_forwards": 0,
+    "new_encoder_or_training": 0,
+    "syncnet_invocations_max": 6,
+    "sequential": true,
+    "no_automatic_retry": true
+  },
+  "launch_gate": [
+    "read-only fresh process/GPU snapshot and unique absent output",
+    "exact six input/source pins",
+    "FFV1 encoder/decoder availability from ffmpeg capability listing",
+    "record actual PID/startticks and terminal returncodes",
+    "new output only; stop and retain failure if any control fails"
+  ]
+}

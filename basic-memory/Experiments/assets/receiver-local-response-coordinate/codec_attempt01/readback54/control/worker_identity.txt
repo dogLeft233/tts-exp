@@ -1,0 +1,10 @@
+schema=native_attribute_response_codec_diagnostic_worker_identity_v1
+started_utc=2026-10-14T22:31:26Z
+worker_pid=2578355
+worker_start_ticks=50189231
+supervisor_pid=2578350
+cwd=/home/wjj/tts-audio/tts-exp
+python=/home/wjj/.venvs/w2l_syncnet_v100_attempt01/bin/python
+argv=/home/wjj/.venvs/w2l_syncnet_v100_attempt01/bin/python -B /home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/source/codec_diagnostic_attempt01.py --input-manifest /home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/provenance/output_owned_musetalk_input_manifest_attempt01.json --baseline-readout-manifest /home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/readout_manifest.json --output-root /home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01 --overdub-source /home/wjj/tts-audio/tts-exp/runs/cross_tfg_audio_head_20261009_v100_native_deployment_attempt01/code/scripts/audio_enhancement/overdub.py --stagea-evaluator /home/wjj/tts-audio/tts-exp/scripts/experiments/cross_tfg_audio_head_20261003/stagea_syncnet_evaluator.py --summary-source /home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/source/output_owned_musetalk_readout_executor_attempt03.py --syncnet-python /home/wjj/.venvs/w2l_syncnet_v100_attempt01/bin/python --syncnet-root /dev/shm/cross_tfg_native_axis_injection_pilot_20261013_attempt01/clock_contract_syncnet_root_attempt05 --checkpoint /dev/shm/cross_tfg_native_axis_injection_pilot_20261013_attempt01/clock_contract_syncnet_root_attempt05/data/syncnet_v2.model --ffmpeg /usr/bin/ffmpeg --ffprobe /usr/bin/ffprobe
+pythonpath_effective=/home/wjj/tts-audio/tts-exp
+execution_scope=six serial SyncNet scores only; FFV1 codec diagnostic; no TFG forward
