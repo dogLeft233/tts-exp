@@ -1,0 +1,164 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-kerning:normal} .tick{font-size:12px;fill:#4a5863}</style>
+<text x="52.0" y="48.0" font-family="Arial, sans-serif" font-size="27px" font-weight="700" fill="#17212b" text-anchor="start" >Native-coordinate vs physical spectral-shape endpoint screen</text>
+<text x="53.0" y="76.0" font-family="Arial, sans-serif" font-size="15px" font-weight="400" fill="#53616c" text-anchor="start" >Per-endpoint changes from frozen ROOT summaries; both panels use identical axes</text>
+<rect x="45" y="104" width="740" height="718" rx="10" fill="#fbfcfd" stroke="#d3dbe1"/>
+<text x="63.0" y="136.0" font-family="Arial, sans-serif" font-size="17px" font-weight="700" fill="#17212b" text-anchor="start" >Native-coordinate interventions · 18 endpoints</text>
+<line x1="145.80" y1="165" x2="145.80" y2="710" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="145.8" y="731.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="middle" >-0.25</text>
+<line x1="289.80" y1="165" x2="289.80" y2="710" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="289.8" y="731.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="middle" >-0.15</text>
+<line x1="433.80" y1="165" x2="433.80" y2="710" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="433.8" y="731.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="middle" >-0.05</text>
+<line x1="505.80" y1="165" x2="505.80" y2="710" stroke="#7b8790" stroke-width="1.7"/>
+<text x="505.8" y="731.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="middle" >0</text>
+<line x1="577.80" y1="165" x2="577.80" y2="710" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="577.8" y="731.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="middle" >0.05</text>
+<line x1="721.80" y1="165" x2="721.80" y2="710" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="721.8" y="731.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="middle" >0.15</text>
+<line x1="117" y1="645.88" x2="765" y2="645.88" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="107.0" y="649.9" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >-0.15</text>
+<line x1="117" y1="565.74" x2="765" y2="565.74" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="107.0" y="569.7" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >-0.10</text>
+<line x1="117" y1="485.59" x2="765" y2="485.59" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="107.0" y="489.6" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >-0.05</text>
+<line x1="117" y1="405.44" x2="765" y2="405.44" stroke="#7b8790" stroke-width="1.7"/>
+<text x="107.0" y="409.4" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >0</text>
+<line x1="117" y1="325.29" x2="765" y2="325.29" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="107.0" y="329.3" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >0.05</text>
+<line x1="117" y1="245.15" x2="765" y2="245.15" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="107.0" y="249.1" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >0.10</text>
+<line x1="117" y1="165.00" x2="765" y2="165.00" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="107.0" y="169.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >0.15</text>
+<rect x="117" y="165" width="648" height="545" fill="none" stroke="#9ba6ae" stroke-width="1"/>
+<text x="441.0" y="758.0" font-family="Arial, sans-serif" font-size="14px" font-weight="600" fill="#26343e" text-anchor="middle" >ΔD₀  (better ←)</text>
+<text x="65.0" y="437.5" font-family="Arial, sans-serif" font-size="14px" font-weight="600" fill="#26343e" text-anchor="middle" transform="rotate(-90 65 437.5)">ΔCbest  (higher ↑)</text>
+<circle cx="301.95" cy="395.30" r="6.00" fill="#2774AE" stroke="#17212b" stroke-width="1.2"/>
+<rect x="309.9" y="378.3" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#2774AE" stroke-width="0.85"/>
+<text x="323.9" y="388.8" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >W44</text>
+<circle cx="370.32" cy="677.98" r="6.00" fill="#2774AE" stroke="#17212b" stroke-width="1.2"/>
+<rect x="378.3" y="661.0" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#2774AE" stroke-width="0.85"/>
+<text x="392.3" y="671.5" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >W52</text>
+<rect x="478.18" y="389.38" width="12.00" height="12.00" rx="0.8" fill="#2774AE" stroke="#17212b" stroke-width="1.2"/>
+<rect x="492.2" y="378.4" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#2774AE" stroke-width="0.85"/>
+<text x="506.2" y="388.9" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >D44</text>
+<rect x="731.13" y="527.76" width="12.00" height="12.00" rx="0.8" fill="#2774AE" stroke="#17212b" stroke-width="1.2"/>
+<rect x="736.0" y="516.8" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#2774AE" stroke-width="0.85"/>
+<text x="750.0" y="527.3" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >D52</text>
+<circle cx="162.37" cy="466.87" r="6.00" fill="#D57A12" stroke="#17212b" stroke-width="1.2"/>
+<rect x="170.4" y="449.9" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#D57A12" stroke-width="0.85"/>
+<text x="184.4" y="460.4" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >W44</text>
+<circle cx="571.56" cy="360.97" r="6.00" fill="#D57A12" stroke="#17212b" stroke-width="1.2"/>
+<rect x="579.6" y="344.0" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#D57A12" stroke-width="0.85"/>
+<text x="593.6" y="354.5" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >W52</text>
+<path d="M 409.51 471.98 L 416.31 484.78 L 402.71 484.78 Z" fill="#D57A12" stroke="#17212b" stroke-width="1.2"/>
+<rect x="417.5" y="461.8" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#D57A12" stroke-width="0.85"/>
+<text x="431.5" y="472.3" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >M44</text>
+<path d="M 503.77 525.67 L 510.57 538.47 L 496.97 538.47 Z" fill="#D57A12" stroke="#17212b" stroke-width="1.2"/>
+<rect x="511.8" y="515.5" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#D57A12" stroke-width="0.85"/>
+<text x="525.8" y="526.0" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >M52</text>
+<rect x="327.61" y="189.55" width="12.00" height="12.00" rx="0.8" fill="#19866B" stroke="#17212b" stroke-width="1.2"/>
+<rect x="341.6" y="178.6" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#19866B" stroke-width="0.85"/>
+<text x="355.6" y="189.1" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >D44</text>
+<rect x="691.62" y="493.05" width="12.00" height="12.00" rx="0.8" fill="#19866B" stroke="#17212b" stroke-width="1.2"/>
+<rect x="705.6" y="482.1" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#19866B" stroke-width="0.85"/>
+<text x="719.6" y="492.6" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >D52</text>
+<path d="M 592.19 266.17 L 598.99 278.97 L 585.39 278.97 Z" fill="#19866B" stroke="#17212b" stroke-width="1.2"/>
+<rect x="600.2" y="256.0" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#19866B" stroke-width="0.85"/>
+<text x="614.2" y="266.5" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >M44</text>
+<path d="M 501.49 502.92 L 508.29 515.72 L 494.69 515.72 Z" fill="#19866B" stroke="#17212b" stroke-width="1.2"/>
+<rect x="509.5" y="492.7" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#19866B" stroke-width="0.85"/>
+<text x="523.5" y="503.2" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >M52</text>
+<path d="M 610.46 418.28 L 617.26 431.08 L 603.66 431.08 Z" fill="#2774AE" stroke="#17212b" stroke-width="1.2"/>
+<rect x="618.5" y="408.1" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#2774AE" stroke-width="0.85"/>
+<text x="632.5" y="418.6" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >M44</text>
+<path d="M 599.84 456.73 L 606.64 469.53 L 593.04 469.53 Z" fill="#2774AE" stroke="#17212b" stroke-width="1.2"/>
+<rect x="607.8" y="446.5" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#2774AE" stroke-width="0.85"/>
+<text x="621.8" y="457.0" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >M52</text>
+<rect x="322.71" y="353.71" width="12.00" height="12.00" rx="0.8" fill="#D57A12" stroke="#17212b" stroke-width="1.2"/>
+<rect x="336.7" y="342.7" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#D57A12" stroke-width="0.85"/>
+<text x="350.7" y="353.2" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >D44</text>
+<rect x="671.62" y="501.70" width="12.00" height="12.00" rx="0.8" fill="#D57A12" stroke="#17212b" stroke-width="1.2"/>
+<rect x="685.6" y="506.7" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#D57A12" stroke-width="0.85"/>
+<text x="699.6" y="517.2" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >D52</text>
+<circle cx="258.86" cy="474.51" r="6.00" fill="#19866B" stroke="#17212b" stroke-width="1.2"/>
+<rect x="266.9" y="457.5" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#19866B" stroke-width="0.85"/>
+<text x="280.9" y="468.0" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >W44</text>
+<circle cx="607.16" cy="351.49" r="6.00" fill="#19866B" stroke="#17212b" stroke-width="1.2"/>
+<rect x="615.2" y="334.5" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#19866B" stroke-width="0.85"/>
+<text x="629.2" y="345.0" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >W52</text>
+<text x="63.0" y="786.0" font-family="Arial, sans-serif" font-size="13px" font-weight="700" fill="#26343e" text-anchor="start" >Joint rows: 4/18  ·  both-speaker model×factor pairs: 0/9</text>
+<text x="63.0" y="806.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#53616c" text-anchor="start" >Colors: factor; marker/label: model and speaker (44/52)</text>
+<rect x="815" y="104" width="740" height="718" rx="10" fill="#fbfcfd" stroke="#d3dbe1"/>
+<text x="833.0" y="136.0" font-family="Arial, sans-serif" font-size="17px" font-weight="700" fill="#17212b" text-anchor="start" >Physical phone spectral shape · 6 endpoints</text>
+<line x1="915.80" y1="165" x2="915.80" y2="710" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="915.8" y="731.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="middle" >-0.25</text>
+<line x1="1059.80" y1="165" x2="1059.80" y2="710" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="1059.8" y="731.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="middle" >-0.15</text>
+<line x1="1203.80" y1="165" x2="1203.80" y2="710" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="1203.8" y="731.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="middle" >-0.05</text>
+<line x1="1275.80" y1="165" x2="1275.80" y2="710" stroke="#7b8790" stroke-width="1.7"/>
+<text x="1275.8" y="731.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="middle" >0</text>
+<line x1="1347.80" y1="165" x2="1347.80" y2="710" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="1347.8" y="731.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="middle" >0.05</text>
+<line x1="1491.80" y1="165" x2="1491.80" y2="710" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="1491.8" y="731.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="middle" >0.15</text>
+<line x1="887" y1="645.88" x2="1535" y2="645.88" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="877.0" y="649.9" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >-0.15</text>
+<line x1="887" y1="565.74" x2="1535" y2="565.74" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="877.0" y="569.7" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >-0.10</text>
+<line x1="887" y1="485.59" x2="1535" y2="485.59" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="877.0" y="489.6" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >-0.05</text>
+<line x1="887" y1="405.44" x2="1535" y2="405.44" stroke="#7b8790" stroke-width="1.7"/>
+<text x="877.0" y="409.4" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >0</text>
+<line x1="887" y1="325.29" x2="1535" y2="325.29" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="877.0" y="329.3" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >0.05</text>
+<line x1="887" y1="245.15" x2="1535" y2="245.15" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="877.0" y="249.1" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >0.10</text>
+<line x1="887" y1="165.00" x2="1535" y2="165.00" stroke="#e5e9ec" stroke-width="0.9"/>
+<text x="877.0" y="169.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#4a5863" text-anchor="end" >0.15</text>
+<rect x="887" y="165" width="648" height="545" fill="none" stroke="#9ba6ae" stroke-width="1"/>
+<text x="1211.0" y="758.0" font-family="Arial, sans-serif" font-size="14px" font-weight="600" fill="#26343e" text-anchor="middle" >ΔD₀  (better ←)</text>
+<text x="835.0" y="437.5" font-family="Arial, sans-serif" font-size="14px" font-weight="600" fill="#26343e" text-anchor="middle" transform="rotate(-90 835 437.5)">ΔCbest  (higher ↑)</text>
+<path d="M 1276.45 449.22 L 1283.25 462.02 L 1269.65 462.02 Z" fill="#7656A7" stroke="#17212b" stroke-width="1.2"/>
+<rect x="1284.5" y="439.0" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#7656A7" stroke-width="0.85"/>
+<text x="1298.5" y="449.5" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >M44</text>
+<path d="M 1110.52 481.71 L 1117.32 494.51 L 1103.72 494.51 Z" fill="#7656A7" stroke="#17212b" stroke-width="1.2"/>
+<rect x="1118.5" y="471.5" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#7656A7" stroke-width="0.85"/>
+<text x="1132.5" y="482.0" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >M52</text>
+<rect x="1332.01" y="330.57" width="12.00" height="12.00" rx="0.8" fill="#7656A7" stroke="#17212b" stroke-width="1.2"/>
+<rect x="1346.0" y="319.6" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#7656A7" stroke-width="0.85"/>
+<text x="1360.0" y="330.1" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >D44</text>
+<rect x="1482.09" y="463.07" width="12.00" height="12.00" rx="0.8" fill="#7656A7" stroke="#17212b" stroke-width="1.2"/>
+<rect x="1496.1" y="452.1" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#7656A7" stroke-width="0.85"/>
+<text x="1510.1" y="462.6" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >D52</text>
+<circle cx="1096.04" cy="430.45" r="6.00" fill="#7656A7" stroke="#17212b" stroke-width="1.2"/>
+<rect x="1104.0" y="413.5" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#7656A7" stroke-width="0.85"/>
+<text x="1118.0" y="424.0" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >W44</text>
+<circle cx="1291.33" cy="243.30" r="6.00" fill="#7656A7" stroke="#17212b" stroke-width="1.2"/>
+<rect x="1299.3" y="226.3" width="28" height="14" rx="3" fill="#ffffff" fill-opacity="0.92" stroke="#7656A7" stroke-width="0.85"/>
+<text x="1313.3" y="236.8" font-family="Arial, sans-serif" font-size="9px" font-weight="700" fill="#202a32" text-anchor="middle" >W52</text>
+<text x="833.0" y="786.0" font-family="Arial, sans-serif" font-size="13px" font-weight="700" fill="#26343e" text-anchor="start" >Joint rows: 0/6</text>
+<text x="833.0" y="806.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#53616c" text-anchor="start" >Both ΔCbest gains coincide with worse ΔD₀ (Ditto 44; Wav2Lip 52)</text>
+<text x="52.0" y="858.0" font-family="Arial, sans-serif" font-size="13px" font-weight="700" fill="#26343e" text-anchor="start" >Factor</text>
+<rect x="108" y="846" width="12" height="12" rx="2" fill="#2774AE"/>
+<text x="126.0" y="857.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#34424c" text-anchor="start" >SEP_ANG_ACTIVE05</text>
+<rect x="292" y="846" width="12" height="12" rx="2" fill="#D57A12"/>
+<text x="310.0" y="857.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#34424c" text-anchor="start" >STAB_ANG_FIT</text>
+<rect x="476" y="846" width="12" height="12" rx="2" fill="#19866B"/>
+<text x="494.0" y="857.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#34424c" text-anchor="start" >ENV_RADIAL_V2</text>
+<rect x="660" y="846" width="12" height="12" rx="2" fill="#7656A7"/>
+<text x="678.0" y="857.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#34424c" text-anchor="start" >Physical phone spectral shape</text>
+<text x="52.0" y="891.0" font-family="Arial, sans-serif" font-size="13px" font-weight="700" fill="#26343e" text-anchor="start" >Model markers</text>
+<circle cx="170.00" cy="886.00" r="5.30" fill="#c8d0d6" stroke="#17212b" stroke-width="1.2"/>
+<text x="184.0" y="891.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#34424c" text-anchor="start" >Wav2Lip (W)</text>
+<rect x="324.70" y="880.70" width="10.60" height="10.60" rx="0.8" fill="#c8d0d6" stroke="#17212b" stroke-width="1.2"/>
+<text x="344.0" y="891.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#34424c" text-anchor="start" >Ditto (D)</text>
+<path d="M 490.00 879.90 L 496.10 891.30 L 483.90 891.30 Z" fill="#c8d0d6" stroke="#17212b" stroke-width="1.2"/>
+<text x="504.0" y="891.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#34424c" text-anchor="start" >MuseTalk (M)</text>
+<text x="52.0" y="931.0" font-family="Arial, sans-serif" font-size="14px" font-weight="600" fill="#26343e" text-anchor="start" >Joint screen requires ΔCbest &gt; 0, ΔDmin ≤ 0, and ΔD₀ ≤ 0; the scatter shows only ΔD₀ and ΔCbest.</text>
+<text x="52.0" y="960.0" font-family="Arial, sans-serif" font-size="13px" font-weight="400" fill="#53616c" text-anchor="start" >n=2 speakers (S0044, S0052) per endpoint; exploratory screen. Mouth aperture/velocity are movement descriptions, not accuracy against a ground truth.</text>
+<text x="52.0" y="1002.0" font-family="Arial, sans-serif" font-size="12px" font-weight="400" fill="#6b7780" text-anchor="start" >Interpretation is limited to these frozen doses and endpoints; no inferential tests were run for this figure.</text>
+<text x="1548.0" y="1068.0" font-family="Arial, sans-serif" font-size="11px" font-weight="400" fill="#7b8790" text-anchor="end" >Source: frozen ROOT summary JSONs · 24 endpoints</text>
+</svg>

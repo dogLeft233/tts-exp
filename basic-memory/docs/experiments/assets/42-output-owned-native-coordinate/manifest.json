@@ -1,0 +1,1022 @@
+{
+  "schema": "report42_output_owned_native_coordinate_assets_v1",
+  "created_utc": "2026-10-14T22:27:31.365665+00:00",
+  "package_path": "E:\\Documents\\tts-exp\\basic-memory\\docs\\experiments\\assets\\42-output-owned-native-coordinate",
+  "scope": "Canonical compact science assets and faithful CSV field extractions for report 42; no MP4/PNG/WAV media bodies copied.",
+  "readout67": {
+    "source_root": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback",
+    "copied_file_count": 67,
+    "copied_bytes": 887654,
+    "excluded_sidecar": "local_readback_manifest.json copied separately to provenance/."
+  },
+  "files": [
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\concept_protocol.json",
+      "source_bytes": 4911,
+      "source_sha256": "c03523d321fc05b767a0c939a8ec5107dc5ebb4f65f493c263ad92086e406253",
+      "package_path": "protocols/concept_protocol.json",
+      "package_bytes": 4911,
+      "package_sha256": "c03523d321fc05b767a0c939a8ec5107dc5ebb4f65f493c263ad92086e406253"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_protocol_attempt01.json",
+      "source_bytes": 4834,
+      "source_sha256": "561e81a747b62c02af7a2465eac9457436013ffba45286be15d8c6cf40c9123e",
+      "package_path": "protocols/output_owned_musetalk_protocol_attempt01.json",
+      "package_bytes": 4834,
+      "package_sha256": "561e81a747b62c02af7a2465eac9457436013ffba45286be15d8c6cf40c9123e"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\response_readout_protocol.json",
+      "source_bytes": 4502,
+      "source_sha256": "9b4c3f4150e0a4275925304a3a542230896de3dff82ecdb38dd6d89ecdcfe0d9",
+      "package_path": "protocols/response_readout_protocol.json",
+      "package_bytes": 4502,
+      "package_sha256": "9b4c3f4150e0a4275925304a3a542230896de3dff82ecdb38dd6d89ecdcfe0d9"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\render_control_protocol.json",
+      "source_bytes": 2229,
+      "source_sha256": "9bded99d10ad7a15d125d44325a71ef07facc89131c376ba38821696a581f18e",
+      "package_path": "protocols/render_control_protocol.json",
+      "package_bytes": 2229,
+      "package_sha256": "9bded99d10ad7a15d125d44325a71ef07facc89131c376ba38821696a581f18e"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\functional_lag_response_20261015_attempt01\\protocol.json",
+      "source_bytes": 5370,
+      "source_sha256": "0ed732ada47d0110403978514f2828d1ba8caf919e4461571d727befcc43551b",
+      "package_path": "protocols/functional_lag_response_protocol.json",
+      "package_bytes": 5370,
+      "package_sha256": "0ed732ada47d0110403978514f2828d1ba8caf919e4461571d727befcc43551b"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\functional_lag_response_20261015_attempt01\\s17_support_attempt01.json",
+      "source_bytes": 151577,
+      "source_sha256": "8d7587cadd9f87b3a4134f597f944672411af9cbf7542533cd9479525e20303f",
+      "package_path": "protocols/functional_lag_s17_support_attempt01.json",
+      "package_bytes": 151577,
+      "package_sha256": "8d7587cadd9f87b3a4134f597f944672411af9cbf7542533cd9479525e20303f"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_actual_cpu6_qa.json",
+      "source_bytes": 4949,
+      "source_sha256": "e9735787aa9d6c33ce591feec104864319e4c51a425ff3beec6ff668b47e5b72",
+      "package_path": "qa/root_actual_cpu6_qa.json",
+      "package_bytes": 4949,
+      "package_sha256": "e9735787aa9d6c33ce591feec104864319e4c51a425ff3beec6ff668b47e5b72"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_actual_cpu6_qa.py",
+      "source_bytes": 5419,
+      "source_sha256": "2cf6ee7164498d41dd5aec50017129ba5d84d93154082810b391c7367cd43c8c",
+      "package_path": "qa/root_actual_cpu6_qa.py",
+      "package_bytes": 5419,
+      "package_sha256": "2cf6ee7164498d41dd5aec50017129ba5d84d93154082810b391c7367cd43c8c"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_actual_output_owned_qa.json",
+      "source_bytes": 6736,
+      "source_sha256": "0a77ad77de5801f1c73c686e11c8b55b80e4f24d12a7bc89b52755919621c0fd",
+      "package_path": "qa/root_actual_output_owned_qa.json",
+      "package_bytes": 6736,
+      "package_sha256": "0a77ad77de5801f1c73c686e11c8b55b80e4f24d12a7bc89b52755919621c0fd"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_actual_output_owned_qa.py",
+      "source_bytes": 9750,
+      "source_sha256": "5ee0b12b3d345550b2d230c9359b930497ce392033c641653e174d11f33347e7",
+      "package_path": "qa/root_actual_output_owned_qa.py",
+      "package_bytes": 9750,
+      "package_sha256": "5ee0b12b3d345550b2d230c9359b930497ce392033c641653e174d11f33347e7"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_actual_output_owned_response_qa.json",
+      "source_bytes": 16338,
+      "source_sha256": "f470d1aa4a926cafb65f73555e6957797bf3b7176b7bbaf8a30348593d3f32d9",
+      "package_path": "qa/root_actual_output_owned_response_qa.json",
+      "package_bytes": 16338,
+      "package_sha256": "f470d1aa4a926cafb65f73555e6957797bf3b7176b7bbaf8a30348593d3f32d9"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_actual_output_owned_response_qa.py",
+      "source_bytes": 19529,
+      "source_sha256": "3f3fdc60b534e56f05d5954769d2e208292b2708842862935bd678e3b53ac761",
+      "package_path": "qa/root_actual_output_owned_response_qa.py",
+      "package_bytes": 19529,
+      "package_sha256": "3f3fdc60b534e56f05d5954769d2e208292b2708842862935bd678e3b53ac761"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_actual_output_owned_pcm_clock_qa.json",
+      "source_bytes": 3463,
+      "source_sha256": "563e81724232c35cb4e52e6957d2177ed2b701549a06a1f3b6f7ce897645a3e7",
+      "package_path": "qa/root_actual_output_owned_pcm_clock_qa.json",
+      "package_bytes": 3463,
+      "package_sha256": "563e81724232c35cb4e52e6957d2177ed2b701549a06a1f3b6f7ce897645a3e7"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_primitive_projection_qa.json",
+      "source_bytes": 1370,
+      "source_sha256": "44e4eb5ecbf7fa6d0553231c10e02e2638e19430c0e74376db090e3aa3dbd551",
+      "package_path": "qa/root_primitive_projection_qa.json",
+      "package_bytes": 1370,
+      "package_sha256": "44e4eb5ecbf7fa6d0553231c10e02e2638e19430c0e74376db090e3aa3dbd551"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_primitive_projection_qa.py",
+      "source_bytes": 3821,
+      "source_sha256": "84666a44d757043f67ac63d875828fa37f4ed0bf47e7121039734d1546f9dd31",
+      "package_path": "qa/root_primitive_projection_qa.py",
+      "package_bytes": 3821,
+      "package_sha256": "84666a44d757043f67ac63d875828fa37f4ed0bf47e7121039734d1546f9dd31"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_geometry_effect_attempt01.json",
+      "source_bytes": 108108,
+      "source_sha256": "bb5fa06e5fd6b1d8a8f1340752b1fdad4c4d6cc733434cb0ba95a20e06fc4967",
+      "package_path": "effects/output_owned_geometry_effect_attempt01.json",
+      "package_bytes": 108108,
+      "package_sha256": "bb5fa06e5fd6b1d8a8f1340752b1fdad4c4d6cc733434cb0ba95a20e06fc4967"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_geometry_effect_attempt01.execution_receipt_retry01.json",
+      "source_bytes": 3883,
+      "source_sha256": "722b332d2b568b9822e4129a49dc8d893b7f1b8b75c45ff6f353a522068e42b1",
+      "package_path": "effects/output_owned_geometry_effect_attempt01.execution_receipt_retry01.json",
+      "package_bytes": 3883,
+      "package_sha256": "722b332d2b568b9822e4129a49dc8d893b7f1b8b75c45ff6f353a522068e42b1"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_geometry_consumer_attempt02.py",
+      "source_bytes": 13414,
+      "source_sha256": "370cba06d6e8e3ec190ed44e5f6a2e132af91ccb9a91d1af67c197edc534d2a5",
+      "package_path": "effects/output_owned_musetalk_geometry_consumer_attempt02.py",
+      "package_bytes": 13414,
+      "package_sha256": "370cba06d6e8e3ec190ed44e5f6a2e132af91ccb9a91d1af67c197edc534d2a5"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_h264_functional_comparison.json",
+      "source_bytes": 14022,
+      "source_sha256": "39703dfebf283ce098186a031354ebf4003ac4c31f6036b212f28e7e86e7d159",
+      "package_path": "effects/root_h264_functional_comparison.json",
+      "package_bytes": 14022,
+      "package_sha256": "39703dfebf283ce098186a031354ebf4003ac4c31f6036b212f28e7e86e7d159"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_h264_functional_comparison.py",
+      "source_bytes": 4733,
+      "source_sha256": "00995d1127b54cb4e12b60bdaf7b60678a93ccfceaf5e657a059982a97dc6f9b",
+      "package_path": "effects/root_h264_functional_comparison.py",
+      "package_bytes": 4733,
+      "package_sha256": "00995d1127b54cb4e12b60bdaf7b60678a93ccfceaf5e657a059982a97dc6f9b"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_actual_frame_map_attempt01.json",
+      "source_bytes": 684,
+      "source_sha256": "127f5b8398521766592a73807f0ae5c4a5f81aaefd579f3ce4e83e937ab3b11f",
+      "package_path": "effects/output_owned_actual_frame_map_attempt01.json",
+      "package_bytes": 684,
+      "package_sha256": "127f5b8398521766592a73807f0ae5c4a5f81aaefd579f3ce4e83e937ab3b11f"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_candidates_attempt01.execution_receipt.json",
+      "source_bytes": 1638,
+      "source_sha256": "03db923154bbd6ffd33b8e9f8d41e288026e24b6b8732ef4f2233f599b59d622",
+      "package_path": "effects/output_owned_candidates_attempt01.execution_receipt.json",
+      "package_bytes": 1638,
+      "package_sha256": "03db923154bbd6ffd33b8e9f8d41e288026e24b6b8732ef4f2233f599b59d622"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_render_readback_attempt01\\output\\controller_receipt.json",
+      "source_bytes": 250987,
+      "source_sha256": "adf7f5caaa06cacb0eabaf5f67e4ceeae382f453eb565ed0704d91692d23b05a",
+      "package_path": "effects/output_owned_musetalk_render_controller_receipt.json",
+      "package_bytes": 250987,
+      "package_sha256": "adf7f5caaa06cacb0eabaf5f67e4ceeae382f453eb565ed0704d91692d23b05a"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\h264_rgb_pixel_diagnostic_attempt01\\h264_rgb_pixel_diagnostic_attempt01.py",
+      "source_bytes": 15531,
+      "source_sha256": "386d988de75e90f67d350bac089eec034d76a8bd35ce4b95463bfec04789a82a",
+      "package_path": "pixel_diagnostic/h264_rgb_pixel_diagnostic_attempt01.py",
+      "package_bytes": 15531,
+      "package_sha256": "386d988de75e90f67d350bac089eec034d76a8bd35ce4b95463bfec04789a82a"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\h264_rgb_pixel_diagnostic_attempt01\\results\\h264_rgb_pixel_diagnostic_attempt01.json",
+      "source_bytes": 82061,
+      "source_sha256": "d33b68df7cfacd84bbd46df74b1845ca6f6c25e3869e80a5851da726ea533d08",
+      "package_path": "pixel_diagnostic/h264_rgb_pixel_diagnostic_attempt01.json",
+      "package_bytes": 82061,
+      "package_sha256": "d33b68df7cfacd84bbd46df74b1845ca6f6c25e3869e80a5851da726ea533d08"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\h264_rgb_pixel_diagnostic_attempt01\\results\\h264_rgb_pixel_execution_receipt_attempt01.json",
+      "source_bytes": 1460,
+      "source_sha256": "39178f3a2763602c291fb640a823e28bce15daccc8dcb9de90167f536d899dea",
+      "package_path": "pixel_diagnostic/h264_rgb_pixel_execution_receipt_attempt01.json",
+      "package_bytes": 1460,
+      "package_sha256": "39178f3a2763602c291fb640a823e28bce15daccc8dcb9de90167f536d899dea"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\h264_rgb_pixel_diagnostic_attempt01\\results\\h264_rgb_pixel_summary_attempt01.json",
+      "source_bytes": 3439,
+      "source_sha256": "79dc6ff06cb0dd890453e29a926e3c81bb8f4c1754daf79c63910c73e400dfee",
+      "package_path": "pixel_diagnostic/h264_rgb_pixel_summary_attempt01.json",
+      "package_bytes": 3439,
+      "package_sha256": "79dc6ff06cb0dd890453e29a926e3c81bb8f4c1754daf79c63910c73e400dfee"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\whisper_primitive_projection_attempt01.py",
+      "source_bytes": 23659,
+      "source_sha256": "4fdd61b1872684283685b841a438fd70480cda7fc61c9e47d2791955c0801cfe",
+      "package_path": "whisper_primitive_projection/whisper_primitive_projection_attempt01.py",
+      "package_bytes": 23659,
+      "package_sha256": "4fdd61b1872684283685b841a438fd70480cda7fc61c9e47d2791955c0801cfe"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\whisper_primitive_projection_attempt01.json",
+      "source_bytes": 23183,
+      "source_sha256": "0ee1129a7201932ee1b99ab8ea0dcdb6cc4fb44660c442c56e8ccdce1121e6d4",
+      "package_path": "whisper_primitive_projection/whisper_primitive_projection_attempt01.json",
+      "package_bytes": 23183,
+      "package_sha256": "0ee1129a7201932ee1b99ab8ea0dcdb6cc4fb44660c442c56e8ccdce1121e6d4"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\whisper_primitive_projection_attempt01.execution_receipt.json",
+      "source_bytes": 1887,
+      "source_sha256": "c4c3ae3b35f1ad3d3f4ea43d632dae2746b73a0ceb2cf977132244b34ef009dd",
+      "package_path": "whisper_primitive_projection/whisper_primitive_projection_attempt01.execution_receipt.json",
+      "package_bytes": 1887,
+      "package_sha256": "c4c3ae3b35f1ad3d3f4ea43d632dae2746b73a0ceb2cf977132244b34ef009dd"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\whisper_primitive_projection_attempt01.execution_started.json",
+      "source_bytes": 1249,
+      "source_sha256": "79921ae0e4b857b1c1950323df26b00dda2b1d9b961fe6d361f7aa1af8488316",
+      "package_path": "whisper_primitive_projection/whisper_primitive_projection_attempt01.execution_started.json",
+      "package_bytes": 1249,
+      "package_sha256": "79921ae0e4b857b1c1950323df26b00dda2b1d9b961fe6d361f7aa1af8488316"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\local_readback_manifest.json",
+      "source_bytes": 47216,
+      "source_sha256": "49b0b380a2c5da2351fae0c9271bc9b5f0518c37621dcc356dfa793024ffad7d",
+      "package_path": "provenance/output_owned_musetalk_local_readback_manifest.json",
+      "package_bytes": 47216,
+      "package_sha256": "49b0b380a2c5da2351fae0c9271bc9b5f0518c37621dcc356dfa793024ffad7d"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\build_report42_assets_attempt01.py",
+      "source_bytes": 19477,
+      "source_sha256": "aefb5707a5a9e8d4677c1c7efd1a7a732a53bfa18704b8f7445be800d37668b5",
+      "package_path": "provenance/build_report42_assets_attempt01.py",
+      "package_bytes": 19477,
+      "package_sha256": "aefb5707a5a9e8d4677c1c7efd1a7a732a53bfa18704b8f7445be800d37668b5"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\build_report42_assets_attempt02.py",
+      "source_bytes": 20079,
+      "source_sha256": "a097bd2164d2c559ce36536c1b965a49f3a462a46ab29077044914cd14bccd00",
+      "package_path": "provenance/build_report42_assets_attempt02.py",
+      "package_bytes": 20079,
+      "package_sha256": "a097bd2164d2c559ce36536c1b965a49f3a462a46ab29077044914cd14bccd00"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\control\\launch_receipt.txt",
+      "source_bytes": 1727,
+      "source_sha256": "b1783bc923c04f27b0300cf52a7cef65496c865487f08182a6851c0b57aa0b4c",
+      "package_path": "readout67/control/launch_receipt.txt",
+      "package_bytes": 1727,
+      "package_sha256": "b1783bc923c04f27b0300cf52a7cef65496c865487f08182a6851c0b57aa0b4c"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\control\\supervisor.log",
+      "source_bytes": 0,
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "package_path": "readout67/control/supervisor.log",
+      "package_bytes": 0,
+      "package_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\control\\terminal_receipt.txt",
+      "source_bytes": 517,
+      "source_sha256": "5014a5afba7b27eb0a97ceb9f2bfcbdd016bead51f1b48de97b7a90a68c5b034",
+      "package_path": "readout67/control/terminal_receipt.txt",
+      "package_bytes": 517,
+      "package_sha256": "5014a5afba7b27eb0a97ceb9f2bfcbdd016bead51f1b48de97b7a90a68c5b034"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\control\\worker.stderr.log",
+      "source_bytes": 2859,
+      "source_sha256": "b28ffa47d413ca42567697d84670a9183fd73a1123faa87f9bdc9415ed1b2b19",
+      "package_path": "readout67/control/worker.stderr.log",
+      "package_bytes": 2859,
+      "package_sha256": "b28ffa47d413ca42567697d84670a9183fd73a1123faa87f9bdc9415ed1b2b19"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\control\\worker.stdout.log",
+      "source_bytes": 196,
+      "source_sha256": "b0c53ba59dd1ec4825f5e01c632574ab216b2434ee4a464243b79212350d4d9f",
+      "package_path": "readout67/control/worker.stdout.log",
+      "package_bytes": 196,
+      "package_sha256": "b0c53ba59dd1ec4825f5e01c632574ab216b2434ee4a464243b79212350d4d9f"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\control\\worker_identity.txt",
+      "source_bytes": 960,
+      "source_sha256": "f68e34d796b848d4e977abad77a8efa38825f88d696b3f0ef46d7ce460f836a0",
+      "package_path": "readout67/control/worker_identity.txt",
+      "package_bytes": 960,
+      "package_sha256": "f68e34d796b848d4e977abad77a8efa38825f88d696b3f0ef46d7ce460f836a0"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\provenance\\output_owned_musetalk_input_manifest_attempt01.json",
+      "source_bytes": 188726,
+      "source_sha256": "673ee09cdba130ee70698553f6bd52ca4b4633cf85c94e2092de66bbb36b4889",
+      "package_path": "readout67/provenance/output_owned_musetalk_input_manifest_attempt01.json",
+      "package_bytes": 188726,
+      "package_sha256": "673ee09cdba130ee70698553f6bd52ca4b4633cf85c94e2092de66bbb36b4889"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\provenance\\root_output_owned_readout_admission_attempt02.json",
+      "source_bytes": 3084,
+      "source_sha256": "53608ef4d471995a1404e8f1af870096b619fcad83535c7177eb265686f1f2b7",
+      "package_path": "readout67/provenance/root_output_owned_readout_admission_attempt02.json",
+      "package_bytes": 3084,
+      "package_sha256": "53608ef4d471995a1404e8f1af870096b619fcad83535c7177eb265686f1f2b7"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_minus\\crop_mux_receipt.json",
+      "source_bytes": 3577,
+      "source_sha256": "ea2205986c37566528e101b6d1ef4b26b92697f257e85b9403ee4274d8f0eb52",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_minus/crop_mux_receipt.json",
+      "package_bytes": 3577,
+      "package_sha256": "ea2205986c37566528e101b6d1ef4b26b92697f257e85b9403ee4274d8f0eb52"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_minus\\distance_by_query_lag.npz",
+      "source_bytes": 7999,
+      "source_sha256": "9bcc1cf7247a09676f89d9d2c8e551d9fc55c6ada0b31a85f164d035e20ca6d9",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_minus/distance_by_query_lag.npz",
+      "package_bytes": 7999,
+      "package_sha256": "9bcc1cf7247a09676f89d9d2c8e551d9fc55c6ada0b31a85f164d035e20ca6d9"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_minus\\distance_by_query_lag_guard20.npz",
+      "source_bytes": 4622,
+      "source_sha256": "9653287ac5e2cbeab25550f348d419b8f054755cd6bc03f4c6d65be440e48f4b",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_minus/distance_by_query_lag_guard20.npz",
+      "package_bytes": 4622,
+      "package_sha256": "9653287ac5e2cbeab25550f348d419b8f054755cd6bc03f4c6d65be440e48f4b"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_minus\\h264_geometry\\mouth_geometry_aperture_velocity.json",
+      "source_bytes": 6867,
+      "source_sha256": "97461a2068cf36a8594f84afa536a99c7296243fb72dbfbf2cc455d29ed11dd3",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_minus/h264_geometry/mouth_geometry_aperture_velocity.json",
+      "package_bytes": 6867,
+      "package_sha256": "97461a2068cf36a8594f84afa536a99c7296243fb72dbfbf2cc455d29ed11dd3"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_minus\\h264_geometry\\mouth_geometry_aperture_velocity.npz",
+      "source_bytes": 8214,
+      "source_sha256": "d1603e71da4ec59055b1ce82ad33372762e0375213b49f46f62bbf47edd7f230",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_minus/h264_geometry/mouth_geometry_aperture_velocity.npz",
+      "package_bytes": 8214,
+      "package_sha256": "d1603e71da4ec59055b1ce82ad33372762e0375213b49f46f62bbf47edd7f230"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_minus\\mouth_geometry_aperture_velocity_precodec.json",
+      "source_bytes": 50619,
+      "source_sha256": "e5966f631866626901fb3cb13850b219a9a2e57adc923ac311403f787374d2b1",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_minus/mouth_geometry_aperture_velocity_precodec.json",
+      "package_bytes": 50619,
+      "package_sha256": "e5966f631866626901fb3cb13850b219a9a2e57adc923ac311403f787374d2b1"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_minus\\mouth_geometry_aperture_velocity_precodec.npz",
+      "source_bytes": 8214,
+      "source_sha256": "447f6cb34eef3ccf98eed5165799a146b16e03da2ce1276dcaf26d529b419d60",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_minus/mouth_geometry_aperture_velocity_precodec.npz",
+      "package_bytes": 8214,
+      "package_sha256": "447f6cb34eef3ccf98eed5165799a146b16e03da2ce1276dcaf26d529b419d60"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_minus\\row_receipt.json",
+      "source_bytes": 11057,
+      "source_sha256": "077e46943e6532d9650952eee962359a70ecee1e76b7bf09c31dacbe9f47b04f",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_minus/row_receipt.json",
+      "package_bytes": 11057,
+      "package_sha256": "077e46943e6532d9650952eee962359a70ecee1e76b7bf09c31dacbe9f47b04f"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_minus\\syncnet_evaluator_receipt.json",
+      "source_bytes": 1921,
+      "source_sha256": "8210ad5f5926b075026f6b81c425b4adfc1d30f4cdb7d7ed91ed99f7ccc14e70",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_minus/syncnet_evaluator_receipt.json",
+      "package_bytes": 1921,
+      "package_sha256": "8210ad5f5926b075026f6b81c425b4adfc1d30f4cdb7d7ed91ed99f7ccc14e70"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_plus\\crop_mux_receipt.json",
+      "source_bytes": 3569,
+      "source_sha256": "1e3c9a588385293148bd6673a87ef540830f00a7334c01b9a049ec79b8b52413",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_plus/crop_mux_receipt.json",
+      "package_bytes": 3569,
+      "package_sha256": "1e3c9a588385293148bd6673a87ef540830f00a7334c01b9a049ec79b8b52413"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_plus\\distance_by_query_lag.npz",
+      "source_bytes": 7993,
+      "source_sha256": "d009d0257f7eddb04c6ff96212a62d9940b55113418444fcbd51fd928ca8dd66",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_plus/distance_by_query_lag.npz",
+      "package_bytes": 7993,
+      "package_sha256": "d009d0257f7eddb04c6ff96212a62d9940b55113418444fcbd51fd928ca8dd66"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_plus\\distance_by_query_lag_guard20.npz",
+      "source_bytes": 4617,
+      "source_sha256": "ba9b3d51ed6a493d0e8e8b3bb8f025b90aa59a732b73dc396c5f54e65a73dd68",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_plus/distance_by_query_lag_guard20.npz",
+      "package_bytes": 4617,
+      "package_sha256": "ba9b3d51ed6a493d0e8e8b3bb8f025b90aa59a732b73dc396c5f54e65a73dd68"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_plus\\h264_geometry\\mouth_geometry_aperture_velocity.json",
+      "source_bytes": 6861,
+      "source_sha256": "e03ce1ffd26a993c079af55ed93b90e8f3c2b142536195b5cbd96f8ac3df0ae3",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_plus/h264_geometry/mouth_geometry_aperture_velocity.json",
+      "package_bytes": 6861,
+      "package_sha256": "e03ce1ffd26a993c079af55ed93b90e8f3c2b142536195b5cbd96f8ac3df0ae3"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_plus\\h264_geometry\\mouth_geometry_aperture_velocity.npz",
+      "source_bytes": 8215,
+      "source_sha256": "ece0b5a92fc4694cd0d762a0a4dfdb1b8b70a79411d22a3dc02d5dcc489127f5",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_plus/h264_geometry/mouth_geometry_aperture_velocity.npz",
+      "package_bytes": 8215,
+      "package_sha256": "ece0b5a92fc4694cd0d762a0a4dfdb1b8b70a79411d22a3dc02d5dcc489127f5"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_plus\\mouth_geometry_aperture_velocity_precodec.json",
+      "source_bytes": 50534,
+      "source_sha256": "72a064e509b66fae916cca66ad4a7f9cb43a11bf0fcc9d28d62ccb5350a3b806",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_plus/mouth_geometry_aperture_velocity_precodec.json",
+      "package_bytes": 50534,
+      "package_sha256": "72a064e509b66fae916cca66ad4a7f9cb43a11bf0fcc9d28d62ccb5350a3b806"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_plus\\mouth_geometry_aperture_velocity_precodec.npz",
+      "source_bytes": 8217,
+      "source_sha256": "0349a2127c970cab48b7ef0f5ee282b8349d2f91315763df57669b838fb13f4e",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_plus/mouth_geometry_aperture_velocity_precodec.npz",
+      "package_bytes": 8217,
+      "package_sha256": "0349a2127c970cab48b7ef0f5ee282b8349d2f91315763df57669b838fb13f4e"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_plus\\row_receipt.json",
+      "source_bytes": 11023,
+      "source_sha256": "d2356a1baf24be56429965845b9955fd9d5c11a3fd4317e9e0b2230384a956c5",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_plus/row_receipt.json",
+      "package_bytes": 11023,
+      "package_sha256": "d2356a1baf24be56429965845b9955fd9d5c11a3fd4317e9e0b2230384a956c5"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_plus\\syncnet_evaluator_receipt.json",
+      "source_bytes": 1916,
+      "source_sha256": "6818caf2d7de281bc2e74a2014d63260f71baec89393a45487acc2661fdc40fb",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_plus/syncnet_evaluator_receipt.json",
+      "package_bytes": 1916,
+      "package_sha256": "6818caf2d7de281bc2e74a2014d63260f71baec89393a45487acc2661fdc40fb"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_zero\\crop_mux_receipt.json",
+      "source_bytes": 3569,
+      "source_sha256": "c4f9683ec18f7fc23d664796a67f3775d90a3ba06ec5c5a77312a5938683070b",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_zero/crop_mux_receipt.json",
+      "package_bytes": 3569,
+      "package_sha256": "c4f9683ec18f7fc23d664796a67f3775d90a3ba06ec5c5a77312a5938683070b"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_zero\\distance_by_query_lag.npz",
+      "source_bytes": 7998,
+      "source_sha256": "cd9771016fdecb48c3a5cabddfc469f21dd70ad2d7ada720f60339da6e972684",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_zero/distance_by_query_lag.npz",
+      "package_bytes": 7998,
+      "package_sha256": "cd9771016fdecb48c3a5cabddfc469f21dd70ad2d7ada720f60339da6e972684"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_zero\\distance_by_query_lag_guard20.npz",
+      "source_bytes": 4618,
+      "source_sha256": "28a8b3f8b0e4f1e855a096b29af62bc58f83a1f443cae7abee30dc4cdd31894f",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_zero/distance_by_query_lag_guard20.npz",
+      "package_bytes": 4618,
+      "package_sha256": "28a8b3f8b0e4f1e855a096b29af62bc58f83a1f443cae7abee30dc4cdd31894f"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_zero\\h264_geometry\\mouth_geometry_aperture_velocity.json",
+      "source_bytes": 6860,
+      "source_sha256": "262d7a51ca284f5c13fdb075cae7b32dc9ffc9cbfde5ce85cd79888280e7a824",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_zero/h264_geometry/mouth_geometry_aperture_velocity.json",
+      "package_bytes": 6860,
+      "package_sha256": "262d7a51ca284f5c13fdb075cae7b32dc9ffc9cbfde5ce85cd79888280e7a824"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_zero\\h264_geometry\\mouth_geometry_aperture_velocity.npz",
+      "source_bytes": 8219,
+      "source_sha256": "439e244cb85331930eeb1a3c56da68ff746c2c2b7aa84c71ffad1846dbfa4f9b",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_zero/h264_geometry/mouth_geometry_aperture_velocity.npz",
+      "package_bytes": 8219,
+      "package_sha256": "439e244cb85331930eeb1a3c56da68ff746c2c2b7aa84c71ffad1846dbfa4f9b"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_zero\\mouth_geometry_aperture_velocity_precodec.json",
+      "source_bytes": 50534,
+      "source_sha256": "8b9b67e1065b1693c2ba73e2fd4e1e6c4ce776a7556be14930d83d2708e2074d",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_zero/mouth_geometry_aperture_velocity_precodec.json",
+      "package_bytes": 50534,
+      "package_sha256": "8b9b67e1065b1693c2ba73e2fd4e1e6c4ce776a7556be14930d83d2708e2074d"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_zero\\mouth_geometry_aperture_velocity_precodec.npz",
+      "source_bytes": 8214,
+      "source_sha256": "4c0ae9fa9946e5ac90286d2736e6b0252056743f8f178f7fd0ef9c8063d53dfb",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_zero/mouth_geometry_aperture_velocity_precodec.npz",
+      "package_bytes": 8214,
+      "package_sha256": "4c0ae9fa9946e5ac90286d2736e6b0252056743f8f178f7fd0ef9c8063d53dfb"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_zero\\row_receipt.json",
+      "source_bytes": 11034,
+      "source_sha256": "354cc8287c56d55c35d1a15e012685eaacc285906f7cbc72c8a79da7e15dfccb",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_zero/row_receipt.json",
+      "package_bytes": 11034,
+      "package_sha256": "354cc8287c56d55c35d1a15e012685eaacc285906f7cbc72c8a79da7e15dfccb"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0022W0123\\musetalk\\native_height_zero\\syncnet_evaluator_receipt.json",
+      "source_bytes": 1917,
+      "source_sha256": "3fe00d8f14ed6a7ce52ce883bef48768d512604a058d3b8784fcfd504a889bbb",
+      "package_path": "readout67/readout/BAC009S0022W0123/musetalk/native_height_zero/syncnet_evaluator_receipt.json",
+      "package_bytes": 1917,
+      "package_sha256": "3fe00d8f14ed6a7ce52ce883bef48768d512604a058d3b8784fcfd504a889bbb"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_minus\\crop_mux_receipt.json",
+      "source_bytes": 3577,
+      "source_sha256": "92d527dddb04d639db0d0c1057f66e612a73cdc09448c732c7e646dbb2da5281",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_minus/crop_mux_receipt.json",
+      "package_bytes": 3577,
+      "package_sha256": "92d527dddb04d639db0d0c1057f66e612a73cdc09448c732c7e646dbb2da5281"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_minus\\distance_by_query_lag.npz",
+      "source_bytes": 8888,
+      "source_sha256": "3a84dd3a75e7099a82e0f3ace20e311e222f1194897f7b95f86ce97fc77c5f21",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_minus/distance_by_query_lag.npz",
+      "package_bytes": 8888,
+      "package_sha256": "3a84dd3a75e7099a82e0f3ace20e311e222f1194897f7b95f86ce97fc77c5f21"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_minus\\distance_by_query_lag_guard20.npz",
+      "source_bytes": 5489,
+      "source_sha256": "a9b050327c3fc4d40dcbe69126656370e29f087b3aafb537892593e8267eea2e",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_minus/distance_by_query_lag_guard20.npz",
+      "package_bytes": 5489,
+      "package_sha256": "a9b050327c3fc4d40dcbe69126656370e29f087b3aafb537892593e8267eea2e"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_minus\\h264_geometry\\mouth_geometry_aperture_velocity.json",
+      "source_bytes": 6866,
+      "source_sha256": "b3eff9d1a4effcc667efcf177b3cab2e61626243477652b3908d4c0f61dc5a68",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_minus/h264_geometry/mouth_geometry_aperture_velocity.json",
+      "package_bytes": 6866,
+      "package_sha256": "b3eff9d1a4effcc667efcf177b3cab2e61626243477652b3908d4c0f61dc5a68"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_minus\\h264_geometry\\mouth_geometry_aperture_velocity.npz",
+      "source_bytes": 8684,
+      "source_sha256": "11c6d34a80b51a5944714c55f361dc04c28b512d79c788fb503a5eb4d80f2dda",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_minus/h264_geometry/mouth_geometry_aperture_velocity.npz",
+      "package_bytes": 8684,
+      "package_sha256": "11c6d34a80b51a5944714c55f361dc04c28b512d79c788fb503a5eb4d80f2dda"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_minus\\mouth_geometry_aperture_velocity_precodec.json",
+      "source_bytes": 55000,
+      "source_sha256": "865135d47c7eedad4bce4d8bdeecdd113e7924031110480fc8a4143796dd3959",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_minus/mouth_geometry_aperture_velocity_precodec.json",
+      "package_bytes": 55000,
+      "package_sha256": "865135d47c7eedad4bce4d8bdeecdd113e7924031110480fc8a4143796dd3959"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_minus\\mouth_geometry_aperture_velocity_precodec.npz",
+      "source_bytes": 8681,
+      "source_sha256": "e9a509a5ab4b6aa9ec6de5bfe603bbe04f7ebb2559f39815ed368e162b94d930",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_minus/mouth_geometry_aperture_velocity_precodec.npz",
+      "package_bytes": 8681,
+      "package_sha256": "e9a509a5ab4b6aa9ec6de5bfe603bbe04f7ebb2559f39815ed368e162b94d930"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_minus\\row_receipt.json",
+      "source_bytes": 11054,
+      "source_sha256": "aeadced3f7cc5850eb6e117522e6945008676573ab78d7550ed671f93436ac2e",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_minus/row_receipt.json",
+      "package_bytes": 11054,
+      "package_sha256": "aeadced3f7cc5850eb6e117522e6945008676573ab78d7550ed671f93436ac2e"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_minus\\syncnet_evaluator_receipt.json",
+      "source_bytes": 1922,
+      "source_sha256": "d7b955dc729d3ac170eca7d55e541cff169f18b8db9937c4d277ae095d6198b5",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_minus/syncnet_evaluator_receipt.json",
+      "package_bytes": 1922,
+      "package_sha256": "d7b955dc729d3ac170eca7d55e541cff169f18b8db9937c4d277ae095d6198b5"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_plus\\crop_mux_receipt.json",
+      "source_bytes": 3569,
+      "source_sha256": "a865f0efc0743df443d06b9103c046b49005c706567035d50a0364b711a60805",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_plus/crop_mux_receipt.json",
+      "package_bytes": 3569,
+      "package_sha256": "a865f0efc0743df443d06b9103c046b49005c706567035d50a0364b711a60805"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_plus\\distance_by_query_lag.npz",
+      "source_bytes": 8904,
+      "source_sha256": "4a8a3d56151d61f8756c7533880b80cb4a88175ea7ef928fc74111cbf8075351",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_plus/distance_by_query_lag.npz",
+      "package_bytes": 8904,
+      "package_sha256": "4a8a3d56151d61f8756c7533880b80cb4a88175ea7ef928fc74111cbf8075351"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_plus\\distance_by_query_lag_guard20.npz",
+      "source_bytes": 5499,
+      "source_sha256": "c78812bee58f5a15a27ef8efdbd108dd4238e029aaf50240dfa716375470b864",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_plus/distance_by_query_lag_guard20.npz",
+      "package_bytes": 5499,
+      "package_sha256": "c78812bee58f5a15a27ef8efdbd108dd4238e029aaf50240dfa716375470b864"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_plus\\h264_geometry\\mouth_geometry_aperture_velocity.json",
+      "source_bytes": 6858,
+      "source_sha256": "56fdbe60664bf50d25013224241d9eaa78bd833196bb8ac0892b7525494bfcaf",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_plus/h264_geometry/mouth_geometry_aperture_velocity.json",
+      "package_bytes": 6858,
+      "package_sha256": "56fdbe60664bf50d25013224241d9eaa78bd833196bb8ac0892b7525494bfcaf"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_plus\\h264_geometry\\mouth_geometry_aperture_velocity.npz",
+      "source_bytes": 8664,
+      "source_sha256": "ca0b356fec39401ea54f80d82bbf1a219e380b8fe1adbda4e3bebca515eefd13",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_plus/h264_geometry/mouth_geometry_aperture_velocity.npz",
+      "package_bytes": 8664,
+      "package_sha256": "ca0b356fec39401ea54f80d82bbf1a219e380b8fe1adbda4e3bebca515eefd13"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_plus\\mouth_geometry_aperture_velocity_precodec.json",
+      "source_bytes": 54910,
+      "source_sha256": "a014b1866ecbbd13ee59e0e52f386843dbebd4f1f085974f5992f2894d8525c1",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_plus/mouth_geometry_aperture_velocity_precodec.json",
+      "package_bytes": 54910,
+      "package_sha256": "a014b1866ecbbd13ee59e0e52f386843dbebd4f1f085974f5992f2894d8525c1"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_plus\\mouth_geometry_aperture_velocity_precodec.npz",
+      "source_bytes": 8676,
+      "source_sha256": "e860e63b80308124bdcd2248c0976f91f7f83f7b9a371ae6c9816d490ca5d68b",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_plus/mouth_geometry_aperture_velocity_precodec.npz",
+      "package_bytes": 8676,
+      "package_sha256": "e860e63b80308124bdcd2248c0976f91f7f83f7b9a371ae6c9816d490ca5d68b"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_plus\\row_receipt.json",
+      "source_bytes": 11030,
+      "source_sha256": "5b2410f8a5982c4a0b88c95d2f6aeda16a25ed54de6899354f0e9fc8eb271eed",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_plus/row_receipt.json",
+      "package_bytes": 11030,
+      "package_sha256": "5b2410f8a5982c4a0b88c95d2f6aeda16a25ed54de6899354f0e9fc8eb271eed"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_plus\\syncnet_evaluator_receipt.json",
+      "source_bytes": 1917,
+      "source_sha256": "7aecd745a645fca76765175d62495047d297e64f835574532b3a9d246d27443e",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_plus/syncnet_evaluator_receipt.json",
+      "package_bytes": 1917,
+      "package_sha256": "7aecd745a645fca76765175d62495047d297e64f835574532b3a9d246d27443e"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_zero\\crop_mux_receipt.json",
+      "source_bytes": 3569,
+      "source_sha256": "06ab25d56bad8d4d170e05b469c0c223cc135cadf4a85e93519ef93b6fce2cae",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_zero/crop_mux_receipt.json",
+      "package_bytes": 3569,
+      "package_sha256": "06ab25d56bad8d4d170e05b469c0c223cc135cadf4a85e93519ef93b6fce2cae"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_zero\\distance_by_query_lag.npz",
+      "source_bytes": 8911,
+      "source_sha256": "4aebdd7fde28aebcf5ce8547834f741f17484f4bdf1e97be2d19a3c782561011",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_zero/distance_by_query_lag.npz",
+      "package_bytes": 8911,
+      "package_sha256": "4aebdd7fde28aebcf5ce8547834f741f17484f4bdf1e97be2d19a3c782561011"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_zero\\distance_by_query_lag_guard20.npz",
+      "source_bytes": 5493,
+      "source_sha256": "f9591acc672c4aaf8bf953691903aea158956eaa48520946d96e075486a3358f",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_zero/distance_by_query_lag_guard20.npz",
+      "package_bytes": 5493,
+      "package_sha256": "f9591acc672c4aaf8bf953691903aea158956eaa48520946d96e075486a3358f"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_zero\\h264_geometry\\mouth_geometry_aperture_velocity.json",
+      "source_bytes": 6864,
+      "source_sha256": "284f64c0ea647241729c9179278aef45a45e78dd1d6ef845033a74c6c4709a42",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_zero/h264_geometry/mouth_geometry_aperture_velocity.json",
+      "package_bytes": 6864,
+      "package_sha256": "284f64c0ea647241729c9179278aef45a45e78dd1d6ef845033a74c6c4709a42"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_zero\\h264_geometry\\mouth_geometry_aperture_velocity.npz",
+      "source_bytes": 8668,
+      "source_sha256": "ca8a6a8bf3c771bb564b61a5941995823ebc1a0b80f11ca55e6635af1f5a77e0",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_zero/h264_geometry/mouth_geometry_aperture_velocity.npz",
+      "package_bytes": 8668,
+      "package_sha256": "ca8a6a8bf3c771bb564b61a5941995823ebc1a0b80f11ca55e6635af1f5a77e0"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_zero\\mouth_geometry_aperture_velocity_precodec.json",
+      "source_bytes": 54911,
+      "source_sha256": "c3489d964876eb9264224eec8a5422ae85ce630049b2fb72012632d540b38525",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_zero/mouth_geometry_aperture_velocity_precodec.json",
+      "package_bytes": 54911,
+      "package_sha256": "c3489d964876eb9264224eec8a5422ae85ce630049b2fb72012632d540b38525"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_zero\\mouth_geometry_aperture_velocity_precodec.npz",
+      "source_bytes": 8677,
+      "source_sha256": "4277d974f76d4276ccbdc0751e16584deea46383821a3e293aaa4fe19b6deff0",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_zero/mouth_geometry_aperture_velocity_precodec.npz",
+      "package_bytes": 8677,
+      "package_sha256": "4277d974f76d4276ccbdc0751e16584deea46383821a3e293aaa4fe19b6deff0"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_zero\\row_receipt.json",
+      "source_bytes": 11043,
+      "source_sha256": "06e4152590f80d1897d0819f23080fb579e76be6b113383ba7a1a6df995e5b23",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_zero/row_receipt.json",
+      "package_bytes": 11043,
+      "package_sha256": "06e4152590f80d1897d0819f23080fb579e76be6b113383ba7a1a6df995e5b23"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\BAC009S0024W0122\\musetalk\\native_height_zero\\syncnet_evaluator_receipt.json",
+      "source_bytes": 1918,
+      "source_sha256": "6f33660cb7bfcb2171aacb19b29dad6d671d05713e595220097330d778d319ef",
+      "package_path": "readout67/readout/BAC009S0024W0122/musetalk/native_height_zero/syncnet_evaluator_receipt.json",
+      "package_bytes": 1918,
+      "package_sha256": "6f33660cb7bfcb2171aacb19b29dad6d671d05713e595220097330d778d319ef"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\precodec_nonowned_rgb_control.json",
+      "source_bytes": 986,
+      "source_sha256": "f81b17f755c1c6ab67809373d9c7ff39ddaf8dfb8c7c486f80e3f9d4e7c08684",
+      "package_path": "readout67/readout/precodec_nonowned_rgb_control.json",
+      "package_bytes": 986,
+      "package_sha256": "f81b17f755c1c6ab67809373d9c7ff39ddaf8dfb8c7c486f80e3f9d4e7c08684"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\readout_manifest.json",
+      "source_bytes": 4925,
+      "source_sha256": "1b4f454463a4387b470c744b0f9269b991e2c4e4fd0164132c40a1c87a655c4f",
+      "package_path": "readout67/readout/readout_manifest.json",
+      "package_bytes": 4925,
+      "package_sha256": "1b4f454463a4387b470c744b0f9269b991e2c4e4fd0164132c40a1c87a655c4f"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\readout_started.json",
+      "source_bytes": 4582,
+      "source_sha256": "24fdffddf26ff3166e58dae4750c5fb9e6c730c9676ebccef62018d60524ece1",
+      "package_path": "readout67/readout/readout_started.json",
+      "package_bytes": 4582,
+      "package_sha256": "24fdffddf26ff3166e58dae4750c5fb9e6c730c9676ebccef62018d60524ece1"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\source\\launch_output_owned_readout_attempt03.sh",
+      "source_bytes": 5507,
+      "source_sha256": "632c09c8e97886ef7ee0b1e29d9f598393e0c635a65d7beec9a61424bb8c3dc8",
+      "package_path": "readout67/source/launch_output_owned_readout_attempt03.sh",
+      "package_bytes": 5507,
+      "package_sha256": "632c09c8e97886ef7ee0b1e29d9f598393e0c635a65d7beec9a61424bb8c3dc8"
+    },
+    {
+      "kind": "exact_copy",
+      "source_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\source\\output_owned_musetalk_readout_executor_attempt03.py",
+      "source_bytes": 34345,
+      "source_sha256": "79bb2df7c3f0ccb8642ae778dce84856e887fce86035df6d0057766980e68f44",
+      "package_path": "readout67/source/output_owned_musetalk_readout_executor_attempt03.py",
+      "package_bytes": 34345,
+      "package_sha256": "79bb2df7c3f0ccb8642ae778dce84856e887fce86035df6d0057766980e68f44"
+    },
+    {
+      "kind": "json_field_extraction_csv",
+      "source_path": [
+        "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_actual_output_owned_response_qa.json",
+        "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_geometry_effect_attempt01.json"
+      ],
+      "source_bytes": [
+        16338,
+        108108
+      ],
+      "source_sha256": [
+        "f470d1aa4a926cafb65f73555e6957797bf3b7176b7bbaf8a30348593d3f32d9",
+        "bb5fa06e5fd6b1d8a8f1340752b1fdad4c4d6cc733434cb0ba95a20e06fc4967"
+      ],
+      "extraction_note": "Direct field extraction: root response QA primary PNG endpoints plus existing effect/support and precodec geometry validity fields; no calculations.",
+      "package_path": "tables/primary_raw_z_Cp_Hp_support.csv",
+      "package_bytes": 1663,
+      "package_sha256": "ce87204dacf44256e15d3a56700367754b30a756e946e1da7c4734bcce1c5f20"
+    },
+    {
+      "kind": "json_field_extraction_csv",
+      "source_path": [
+        "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_actual_output_owned_response_qa.json"
+      ],
+      "source_bytes": [
+        16338
+      ],
+      "source_sha256": [
+        "f470d1aa4a926cafb65f73555e6957797bf3b7176b7bbaf8a30348593d3f32d9"
+      ],
+      "extraction_note": "Direct field extraction from six frozen score_rows; Cbest and Canchor both retained as present in schema.",
+      "package_path": "tables/full_guard20_scores.csv",
+      "package_bytes": 1888,
+      "package_sha256": "4cb3ff600cd20fd52b58f88a4e623f1d4e9075cc8c019320a0a184d92fd637ad"
+    },
+    {
+      "kind": "json_field_extraction_csv",
+      "source_path": [
+        "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_geometry_effect_attempt01.json"
+      ],
+      "source_bytes": [
+        108108
+      ],
+      "source_sha256": [
+        "bb5fa06e5fd6b1d8a8f1340752b1fdad4c4d6cc733434cb0ba95a20e06fc4967"
+      ],
+      "extraction_note": "Direct field extraction from existing token velocity/support and precodec valid-support JSON; no velocity recomputation.",
+      "package_path": "tables/token_velocity_and_valid_support.csv",
+      "package_bytes": 5230,
+      "package_sha256": "edafee53cdb27a57cfc5c7a0f213873d386cf22414c69b590457bd3cb595f8d8"
+    },
+    {
+      "kind": "json_field_extraction_csv",
+      "source_path": [
+        "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\precodec_nonowned_rgb_control.json"
+      ],
+      "source_bytes": [
+        986
+      ],
+      "source_sha256": [
+        "f81b17f755c1c6ab67809373d9c7ff39ddaf8dfb8c7c486f80e3f9d4e7c08684"
+      ],
+      "extraction_note": "Direct field extraction from retained PNG RGB8 control; row counts are the source aggregate across plus/minus.",
+      "package_path": "tables/precodec_nonowned_rgb_exact_control.csv",
+      "package_bytes": 644,
+      "package_sha256": "faff59904cbc33087a56c634196515adec85bfa29c06f17d91b0f048de3b6cdf"
+    },
+    {
+      "kind": "json_field_extraction_csv",
+      "source_path": [
+        "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\h264_rgb_pixel_diagnostic_attempt01\\results\\h264_rgb_pixel_diagnostic_attempt01.json"
+      ],
+      "source_bytes": [
+        82061
+      ],
+      "source_sha256": [
+        "d33b68df7cfacd84bbd46df74b1845ca6f6c25e3869e80a5851da726ea533d08"
+      ],
+      "extraction_note": "Direct field extraction from the one-pass six-video RGB24 diagnostic; difference metrics are source values, not recomputed.",
+      "package_path": "tables/h264_decoded_rgb24_nonowned_differences.csv",
+      "package_bytes": 1567,
+      "package_sha256": "4d0e8891ee6281f9721baaf3b1df4eb637aa9fb24dcd8f2453891b2fb41ad972"
+    },
+    {
+      "kind": "json_field_extraction_csv",
+      "source_path": [
+        "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\root_h264_functional_comparison.json"
+      ],
+      "source_bytes": [
+        14022
+      ],
+      "source_sha256": [
+        "39703dfebf283ce098186a031354ebf4003ac4c31f6036b212f28e7e86e7d159"
+      ],
+      "extraction_note": "Direct extraction of H.264 geometry endpoints; retained as a secondary observer and not substituted for primary PNG endpoints.",
+      "package_path": "tables/h264_functional_endpoints_secondary.csv",
+      "package_bytes": 1183,
+      "package_sha256": "7b01640112094bbbb43f121b5a450ba0f1924a686927c6424c3f64a13d2a71e8"
+    }
+  ]
+}

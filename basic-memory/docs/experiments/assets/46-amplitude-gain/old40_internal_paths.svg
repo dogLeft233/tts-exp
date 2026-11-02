@@ -1,0 +1,296 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="1090" viewBox="0 0 1240 1090">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<style>text{font-family:Arial,Helvetica,sans-serif;fill:#1f2937}.small{font-size:12px}.axis{stroke:#9ca3af;stroke-width:1}.grid{stroke:#e5e7eb;stroke-width:1}.title{font-size:18px;font-weight:700}.sub{font-size:13px;fill:#4b5563}.legend{font-size:12px}</style>
+<text x="42" y="38" font-size="24" font-weight="700">Figure 2. Amplitude mechanism evidence</text>
+<text x="42" y="61" class="sub">Accepted reports; 40 speakers / 80 clips; means use equal speaker weights (two clips each) where available</text>
+<rect x="35" y="82" width="570" height="320" rx="8" fill="#fff" stroke="#cbd5e1"/>
+<text x="53" y="108" class="title">A. MEL partition · intervention ΔC</text>
+<line x1="260.00" y1="140" x2="260.00" y2="347" class="grid"/>
+<text x="260.00" y="365" text-anchor="middle" class="small">-0.07</text>
+<line x1="340.00" y1="140" x2="340.00" y2="347" class="grid"/>
+<text x="340.00" y="365" text-anchor="middle" class="small">0.03</text>
+<line x1="420.00" y1="140" x2="420.00" y2="347" class="grid"/>
+<text x="420.00" y="365" text-anchor="middle" class="small">0.12</text>
+<line x1="500.00" y1="140" x2="500.00" y2="347" class="grid"/>
+<text x="500.00" y="365" text-anchor="middle" class="small">0.21</text>
+<line x1="580.00" y1="140" x2="580.00" y2="347" class="grid"/>
+<text x="580.00" y="365" text-anchor="middle" class="small">0.30</text>
+<line x1="318.10" y1="135" x2="318.10" y2="349" stroke="#111827" stroke-width="1.8" stroke-dasharray="5 4"/>
+<line x1="260" y1="347" x2="580" y2="347" class="axis"/>
+<text x="51" y="178.50" class="small">Interior-only (q10−q00)</text>
+<line x1="405.07" y1="174.50" x2="528.83" y2="174.50" stroke="#2f7ea8" stroke-width="3"/>
+<line x1="405.07" y1="169.50" x2="405.07" y2="179.50" stroke="#2f7ea8" stroke-width="1.5"/>
+<line x1="528.83" y1="169.50" x2="528.83" y2="179.50" stroke="#2f7ea8" stroke-width="1.5"/>
+<circle cx="465.09" cy="174.50" r="5" fill="#2f7ea8"/>
+<text x="51" y="247.50" class="small">Boundary-only (q01−q00)</text>
+<line x1="286.67" y1="243.50" x2="334.56" y2="243.50" stroke="#2f7ea8" stroke-width="3"/>
+<line x1="286.67" y1="238.50" x2="286.67" y2="248.50" stroke="#2f7ea8" stroke-width="1.5"/>
+<line x1="334.56" y1="238.50" x2="334.56" y2="248.50" stroke="#2f7ea8" stroke-width="1.5"/>
+<circle cx="310.62" cy="243.50" r="5" fill="#2f7ea8"/>
+<text x="51" y="316.50" class="small">Joint (q11−q00)</text>
+<line x1="418.17" y1="312.50" x2="553.33" y2="312.50" stroke="#64748b" stroke-width="3"/>
+<line x1="418.17" y1="307.50" x2="418.17" y2="317.50" stroke="#64748b" stroke-width="1.5"/>
+<line x1="553.33" y1="307.50" x2="553.33" y2="317.50" stroke="#64748b" stroke-width="1.5"/>
+<circle cx="481.15" cy="312.50" r="5" fill="#64748b"/>
+<text x="420.00" y="385" text-anchor="middle" class="small">ΔC (raw, guard20; accepted 99% CI)</text>
+<rect x="635" y="82" width="570" height="320" rx="8" fill="#fff" stroke="#cbd5e1"/>
+<text x="653" y="108" class="title">B. RMS factorization · intervention ΔC</text>
+<line x1="860.00" y1="140" x2="860.00" y2="347" class="grid"/>
+<text x="860.00" y="365" text-anchor="middle" class="small">-0.03</text>
+<line x1="940.00" y1="140" x2="940.00" y2="347" class="grid"/>
+<text x="940.00" y="365" text-anchor="middle" class="small">0.05</text>
+<line x1="1020.00" y1="140" x2="1020.00" y2="347" class="grid"/>
+<text x="1020.00" y="365" text-anchor="middle" class="small">0.13</text>
+<line x1="1100.00" y1="140" x2="1100.00" y2="347" class="grid"/>
+<text x="1100.00" y="365" text-anchor="middle" class="small">0.22</text>
+<line x1="1180.00" y1="140" x2="1180.00" y2="347" class="grid"/>
+<text x="1180.00" y="365" text-anchor="middle" class="small">0.30</text>
+<line x1="891.96" y1="135" x2="891.96" y2="349" stroke="#111827" stroke-width="1.8" stroke-dasharray="5 4"/>
+<line x1="860" y1="347" x2="1180" y2="347" class="axis"/>
+<text x="651" y="178.50" class="small">Direction-only (q10−q00)</text>
+<line x1="981.95" y1="174.50" x2="1113.80" y2="174.50" stroke="#7b61a8" stroke-width="3"/>
+<line x1="981.95" y1="169.50" x2="981.95" y2="179.50" stroke="#7b61a8" stroke-width="1.5"/>
+<line x1="1113.80" y1="169.50" x2="1113.80" y2="179.50" stroke="#7b61a8" stroke-width="1.5"/>
+<circle cx="1046.05" cy="174.50" r="5" fill="#7b61a8"/>
+<text x="651" y="247.50" class="small">Radius-only (q01−q00)</text>
+<line x1="886.67" y1="243.50" x2="936.05" y2="243.50" stroke="#7b61a8" stroke-width="3"/>
+<line x1="886.67" y1="238.50" x2="886.67" y2="248.50" stroke="#7b61a8" stroke-width="1.5"/>
+<line x1="936.05" y1="238.50" x2="936.05" y2="248.50" stroke="#7b61a8" stroke-width="1.5"/>
+<circle cx="910.89" cy="243.50" r="5" fill="#7b61a8"/>
+<text x="651" y="316.50" class="small">Joint (q11−q00)</text>
+<line x1="1003.16" y1="312.50" x2="1153.33" y2="312.50" stroke="#64748b" stroke-width="3"/>
+<line x1="1003.16" y1="307.50" x2="1003.16" y2="317.50" stroke="#64748b" stroke-width="1.5"/>
+<line x1="1153.33" y1="307.50" x2="1153.33" y2="317.50" stroke="#64748b" stroke-width="1.5"/>
+<circle cx="1073.13" cy="312.50" r="5" fill="#64748b"/>
+<text x="1020.00" y="385" text-anchor="middle" class="small">ΔC (raw, guard20; accepted 99% CI)</text>
+<rect x="35" y="424" width="1170" height="300" rx="8" fill="#fff" stroke="#cbd5e1"/>
+<text x="53" y="450" class="title">C. RMS factorization · 40-speaker mean distance curves</text>
+<line x1="91" y1="482.00" x2="1179" y2="482.00" class="grid"/>
+<text x="83" y="486.00" text-anchor="end" class="small">13.2</text>
+<line x1="91" y1="529.00" x2="1179" y2="529.00" class="grid"/>
+<text x="83" y="533.00" text-anchor="end" class="small">12.1</text>
+<line x1="91" y1="576.00" x2="1179" y2="576.00" class="grid"/>
+<text x="83" y="580.00" text-anchor="end" class="small">10.9</text>
+<line x1="91" y1="623.00" x2="1179" y2="623.00" class="grid"/>
+<text x="83" y="627.00" text-anchor="end" class="small">9.82</text>
+<line x1="91" y1="670.00" x2="1179" y2="670.00" class="grid"/>
+<text x="83" y="674.00" text-anchor="end" class="small">8.69</text>
+<line x1="91.00" y1="482" x2="91.00" y2="670" class="grid"/>
+<text x="91.00" y="688" text-anchor="middle" class="small">−15</text>
+<line x1="272.33" y1="482" x2="272.33" y2="670" class="grid"/>
+<text x="272.33" y="688" text-anchor="middle" class="small">−10</text>
+<line x1="453.67" y1="482" x2="453.67" y2="670" class="grid"/>
+<text x="453.67" y="688" text-anchor="middle" class="small">−5</text>
+<line x1="635.00" y1="482" x2="635.00" y2="670" class="grid"/>
+<text x="635.00" y="688" text-anchor="middle" class="small">0</text>
+<line x1="743.80" y1="482" x2="743.80" y2="670" class="grid"/>
+<text x="743.80" y="688" text-anchor="middle" class="small">+3</text>
+<line x1="816.33" y1="482" x2="816.33" y2="670" class="grid"/>
+<text x="816.33" y="688" text-anchor="middle" class="small">+5</text>
+<line x1="997.67" y1="482" x2="997.67" y2="670" class="grid"/>
+<text x="997.67" y="688" text-anchor="middle" class="small">+10</text>
+<line x1="1179.00" y1="482" x2="1179.00" y2="670" class="grid"/>
+<text x="1179.00" y="688" text-anchor="middle" class="small">+15</text>
+<line x1="91" y1="670" x2="1179" y2="670" class="axis"/>
+<line x1="91" y1="482" x2="91" y2="670" class="axis"/>
+<polyline points="91.00,526.81 127.27,523.40 163.53,519.76 199.80,518.51 236.07,521.59 272.33,527.06 308.60,529.84 344.87,526.67 381.13,520.23 417.40,516.66 453.67,520.89 489.93,529.91 526.20,530.26 562.47,515.76 598.73,500.50 635.00,510.56 671.27,559.40 707.53,625.02 743.80,643.43 780.07,589.39 816.33,527.61 852.60,505.84 888.87,517.02 925.13,532.13 961.40,534.97 997.67,530.03 1033.93,526.94 1070.20,530.82 1106.47,538.64 1142.73,545.99 1179.00,548.34" fill="none" stroke="#334155" stroke-width="2.7"/>
+<circle cx="91.00" cy="526.81" r="3.3" fill="#334155"/>
+<circle cx="127.27" cy="523.40" r="3.3" fill="#334155"/>
+<circle cx="163.53" cy="519.76" r="3.3" fill="#334155"/>
+<circle cx="199.80" cy="518.51" r="3.3" fill="#334155"/>
+<circle cx="236.07" cy="521.59" r="3.3" fill="#334155"/>
+<circle cx="272.33" cy="527.06" r="3.3" fill="#334155"/>
+<circle cx="308.60" cy="529.84" r="3.3" fill="#334155"/>
+<circle cx="344.87" cy="526.67" r="3.3" fill="#334155"/>
+<circle cx="381.13" cy="520.23" r="3.3" fill="#334155"/>
+<circle cx="417.40" cy="516.66" r="3.3" fill="#334155"/>
+<circle cx="453.67" cy="520.89" r="3.3" fill="#334155"/>
+<circle cx="489.93" cy="529.91" r="3.3" fill="#334155"/>
+<circle cx="526.20" cy="530.26" r="3.3" fill="#334155"/>
+<circle cx="562.47" cy="515.76" r="3.3" fill="#334155"/>
+<circle cx="598.73" cy="500.50" r="3.3" fill="#334155"/>
+<circle cx="635.00" cy="510.56" r="3.3" fill="#334155"/>
+<circle cx="671.27" cy="559.40" r="3.3" fill="#334155"/>
+<circle cx="707.53" cy="625.02" r="3.3" fill="#334155"/>
+<circle cx="743.80" cy="643.43" r="3.3" fill="#334155"/>
+<circle cx="780.07" cy="589.39" r="3.3" fill="#334155"/>
+<circle cx="816.33" cy="527.61" r="3.3" fill="#334155"/>
+<circle cx="852.60" cy="505.84" r="3.3" fill="#334155"/>
+<circle cx="888.87" cy="517.02" r="3.3" fill="#334155"/>
+<circle cx="925.13" cy="532.13" r="3.3" fill="#334155"/>
+<circle cx="961.40" cy="534.97" r="3.3" fill="#334155"/>
+<circle cx="997.67" cy="530.03" r="3.3" fill="#334155"/>
+<circle cx="1033.93" cy="526.94" r="3.3" fill="#334155"/>
+<circle cx="1070.20" cy="530.82" r="3.3" fill="#334155"/>
+<circle cx="1106.47" cy="538.64" r="3.3" fill="#334155"/>
+<circle cx="1142.73" cy="545.99" r="3.3" fill="#334155"/>
+<circle cx="1179.00" cy="548.34" r="3.3" fill="#334155"/>
+<line x1="57" y1="468" x2="75" y2="468" stroke="#334155" stroke-width="3"/>
+<text x="81" y="472" class="legend">q00 RAW endpoint</text>
+<polyline points="91.00,527.68 127.27,524.43 163.53,520.75 199.80,519.82 236.07,522.96 272.33,528.52 308.60,531.43 344.87,528.21 381.13,521.29 417.40,517.40 453.67,521.91 489.93,531.45 526.20,531.57 562.47,516.47 598.73,501.14 635.00,512.70 671.27,564.62 707.53,633.19 743.80,650.69 780.07,592.52 816.33,527.94 852.60,505.74 888.87,517.68 925.13,533.09 961.40,535.28 997.67,529.87 1033.93,527.05 1070.20,531.43 1106.47,539.43 1142.73,546.57 1179.00,548.28" fill="none" stroke="#2f7ea8" stroke-width="2.7"/>
+<circle cx="91.00" cy="527.68" r="3.3" fill="#2f7ea8"/>
+<circle cx="127.27" cy="524.43" r="3.3" fill="#2f7ea8"/>
+<circle cx="163.53" cy="520.75" r="3.3" fill="#2f7ea8"/>
+<circle cx="199.80" cy="519.82" r="3.3" fill="#2f7ea8"/>
+<circle cx="236.07" cy="522.96" r="3.3" fill="#2f7ea8"/>
+<circle cx="272.33" cy="528.52" r="3.3" fill="#2f7ea8"/>
+<circle cx="308.60" cy="531.43" r="3.3" fill="#2f7ea8"/>
+<circle cx="344.87" cy="528.21" r="3.3" fill="#2f7ea8"/>
+<circle cx="381.13" cy="521.29" r="3.3" fill="#2f7ea8"/>
+<circle cx="417.40" cy="517.40" r="3.3" fill="#2f7ea8"/>
+<circle cx="453.67" cy="521.91" r="3.3" fill="#2f7ea8"/>
+<circle cx="489.93" cy="531.45" r="3.3" fill="#2f7ea8"/>
+<circle cx="526.20" cy="531.57" r="3.3" fill="#2f7ea8"/>
+<circle cx="562.47" cy="516.47" r="3.3" fill="#2f7ea8"/>
+<circle cx="598.73" cy="501.14" r="3.3" fill="#2f7ea8"/>
+<circle cx="635.00" cy="512.70" r="3.3" fill="#2f7ea8"/>
+<circle cx="671.27" cy="564.62" r="3.3" fill="#2f7ea8"/>
+<circle cx="707.53" cy="633.19" r="3.3" fill="#2f7ea8"/>
+<circle cx="743.80" cy="650.69" r="3.3" fill="#2f7ea8"/>
+<circle cx="780.07" cy="592.52" r="3.3" fill="#2f7ea8"/>
+<circle cx="816.33" cy="527.94" r="3.3" fill="#2f7ea8"/>
+<circle cx="852.60" cy="505.74" r="3.3" fill="#2f7ea8"/>
+<circle cx="888.87" cy="517.68" r="3.3" fill="#2f7ea8"/>
+<circle cx="925.13" cy="533.09" r="3.3" fill="#2f7ea8"/>
+<circle cx="961.40" cy="535.28" r="3.3" fill="#2f7ea8"/>
+<circle cx="997.67" cy="529.87" r="3.3" fill="#2f7ea8"/>
+<circle cx="1033.93" cy="527.05" r="3.3" fill="#2f7ea8"/>
+<circle cx="1070.20" cy="531.43" r="3.3" fill="#2f7ea8"/>
+<circle cx="1106.47" cy="539.43" r="3.3" fill="#2f7ea8"/>
+<circle cx="1142.73" cy="546.57" r="3.3" fill="#2f7ea8"/>
+<circle cx="1179.00" cy="548.28" r="3.3" fill="#2f7ea8"/>
+<line x1="349" y1="468" x2="367" y2="468" stroke="#2f7ea8" stroke-width="3"/>
+<text x="373" y="472" class="legend">q10 direction-only</text>
+<polyline points="91.00,526.61 127.27,523.28 163.53,519.36 199.80,518.05 236.07,521.25 272.33,526.88 308.60,529.73 344.87,526.54 381.13,520.18 417.40,516.51 453.67,520.57 489.93,529.41 526.20,529.69 562.47,515.14 598.73,500.19 635.00,510.74 671.27,559.87 707.53,625.69 743.80,643.97 780.07,589.49 816.33,527.41 852.60,505.67 888.87,517.06 925.13,532.20 961.40,534.67 997.67,529.56 1033.93,526.60 1070.20,530.81 1106.47,538.93 1142.73,546.19 1179.00,548.41" fill="none" stroke="#d17a22" stroke-width="2.7"/>
+<circle cx="91.00" cy="526.61" r="3.3" fill="#d17a22"/>
+<circle cx="127.27" cy="523.28" r="3.3" fill="#d17a22"/>
+<circle cx="163.53" cy="519.36" r="3.3" fill="#d17a22"/>
+<circle cx="199.80" cy="518.05" r="3.3" fill="#d17a22"/>
+<circle cx="236.07" cy="521.25" r="3.3" fill="#d17a22"/>
+<circle cx="272.33" cy="526.88" r="3.3" fill="#d17a22"/>
+<circle cx="308.60" cy="529.73" r="3.3" fill="#d17a22"/>
+<circle cx="344.87" cy="526.54" r="3.3" fill="#d17a22"/>
+<circle cx="381.13" cy="520.18" r="3.3" fill="#d17a22"/>
+<circle cx="417.40" cy="516.51" r="3.3" fill="#d17a22"/>
+<circle cx="453.67" cy="520.57" r="3.3" fill="#d17a22"/>
+<circle cx="489.93" cy="529.41" r="3.3" fill="#d17a22"/>
+<circle cx="526.20" cy="529.69" r="3.3" fill="#d17a22"/>
+<circle cx="562.47" cy="515.14" r="3.3" fill="#d17a22"/>
+<circle cx="598.73" cy="500.19" r="3.3" fill="#d17a22"/>
+<circle cx="635.00" cy="510.74" r="3.3" fill="#d17a22"/>
+<circle cx="671.27" cy="559.87" r="3.3" fill="#d17a22"/>
+<circle cx="707.53" cy="625.69" r="3.3" fill="#d17a22"/>
+<circle cx="743.80" cy="643.97" r="3.3" fill="#d17a22"/>
+<circle cx="780.07" cy="589.49" r="3.3" fill="#d17a22"/>
+<circle cx="816.33" cy="527.41" r="3.3" fill="#d17a22"/>
+<circle cx="852.60" cy="505.67" r="3.3" fill="#d17a22"/>
+<circle cx="888.87" cy="517.06" r="3.3" fill="#d17a22"/>
+<circle cx="925.13" cy="532.20" r="3.3" fill="#d17a22"/>
+<circle cx="961.40" cy="534.67" r="3.3" fill="#d17a22"/>
+<circle cx="997.67" cy="529.56" r="3.3" fill="#d17a22"/>
+<circle cx="1033.93" cy="526.60" r="3.3" fill="#d17a22"/>
+<circle cx="1070.20" cy="530.81" r="3.3" fill="#d17a22"/>
+<circle cx="1106.47" cy="538.93" r="3.3" fill="#d17a22"/>
+<circle cx="1142.73" cy="546.19" r="3.3" fill="#d17a22"/>
+<circle cx="1179.00" cy="548.41" r="3.3" fill="#d17a22"/>
+<line x1="641" y1="468" x2="659" y2="468" stroke="#d17a22" stroke-width="3"/>
+<text x="665" y="472" class="legend">q01 radius-only</text>
+<polyline points="91.00,527.66 127.27,524.69 163.53,521.11 199.80,519.92 236.07,522.94 272.33,528.66 308.60,531.57 344.87,528.20 381.13,521.50 417.40,517.88 453.67,522.48 489.93,531.58 526.20,531.47 562.47,516.32 598.73,501.08 635.00,512.77 671.27,564.92 707.53,633.91 743.80,651.81 780.07,593.33 816.33,528.10 852.60,505.30 888.87,517.13 925.13,532.58 961.40,534.74 997.67,529.36 1033.93,526.50 1070.20,531.00 1106.47,539.23 1142.73,546.47 1179.00,548.13" fill="none" stroke="#7b61a8" stroke-width="2.7"/>
+<circle cx="91.00" cy="527.66" r="3.3" fill="#7b61a8"/>
+<circle cx="127.27" cy="524.69" r="3.3" fill="#7b61a8"/>
+<circle cx="163.53" cy="521.11" r="3.3" fill="#7b61a8"/>
+<circle cx="199.80" cy="519.92" r="3.3" fill="#7b61a8"/>
+<circle cx="236.07" cy="522.94" r="3.3" fill="#7b61a8"/>
+<circle cx="272.33" cy="528.66" r="3.3" fill="#7b61a8"/>
+<circle cx="308.60" cy="531.57" r="3.3" fill="#7b61a8"/>
+<circle cx="344.87" cy="528.20" r="3.3" fill="#7b61a8"/>
+<circle cx="381.13" cy="521.50" r="3.3" fill="#7b61a8"/>
+<circle cx="417.40" cy="517.88" r="3.3" fill="#7b61a8"/>
+<circle cx="453.67" cy="522.48" r="3.3" fill="#7b61a8"/>
+<circle cx="489.93" cy="531.58" r="3.3" fill="#7b61a8"/>
+<circle cx="526.20" cy="531.47" r="3.3" fill="#7b61a8"/>
+<circle cx="562.47" cy="516.32" r="3.3" fill="#7b61a8"/>
+<circle cx="598.73" cy="501.08" r="3.3" fill="#7b61a8"/>
+<circle cx="635.00" cy="512.77" r="3.3" fill="#7b61a8"/>
+<circle cx="671.27" cy="564.92" r="3.3" fill="#7b61a8"/>
+<circle cx="707.53" cy="633.91" r="3.3" fill="#7b61a8"/>
+<circle cx="743.80" cy="651.81" r="3.3" fill="#7b61a8"/>
+<circle cx="780.07" cy="593.33" r="3.3" fill="#7b61a8"/>
+<circle cx="816.33" cy="528.10" r="3.3" fill="#7b61a8"/>
+<circle cx="852.60" cy="505.30" r="3.3" fill="#7b61a8"/>
+<circle cx="888.87" cy="517.13" r="3.3" fill="#7b61a8"/>
+<circle cx="925.13" cy="532.58" r="3.3" fill="#7b61a8"/>
+<circle cx="961.40" cy="534.74" r="3.3" fill="#7b61a8"/>
+<circle cx="997.67" cy="529.36" r="3.3" fill="#7b61a8"/>
+<circle cx="1033.93" cy="526.50" r="3.3" fill="#7b61a8"/>
+<circle cx="1070.20" cy="531.00" r="3.3" fill="#7b61a8"/>
+<circle cx="1106.47" cy="539.23" r="3.3" fill="#7b61a8"/>
+<circle cx="1142.73" cy="546.47" r="3.3" fill="#7b61a8"/>
+<circle cx="1179.00" cy="548.13" r="3.3" fill="#7b61a8"/>
+<line x1="933" y1="468" x2="951" y2="468" stroke="#7b61a8" stroke-width="3"/>
+<text x="957" y="472" class="legend">q11 FIXED endpoint</text>
+<text x="635.00" y="707" text-anchor="middle" class="small">Lag offset from zero (frames; fixed anchor at +3)</text>
+<text x="51" y="576.00" transform="rotate(-90 51 576.00)" text-anchor="middle" class="small">Mean distance per lag (report units)</text>
+<rect x="35" y="750" width="570" height="260" rx="8" fill="#fff" stroke="#cbd5e1"/>
+<text x="53" y="776" class="title">D1. Mean mouth aperture</text>
+<line x1="91" y1="808.00" x2="579" y2="808.00" class="grid"/>
+<text x="83" y="812.00" text-anchor="end" class="small">0.0643</text>
+<line x1="91" y1="845.00" x2="579" y2="845.00" class="grid"/>
+<text x="83" y="849.00" text-anchor="end" class="small">0.0609</text>
+<line x1="91" y1="882.00" x2="579" y2="882.00" class="grid"/>
+<text x="83" y="886.00" text-anchor="end" class="small">0.0576</text>
+<line x1="91" y1="919.00" x2="579" y2="919.00" class="grid"/>
+<text x="83" y="923.00" text-anchor="end" class="small">0.0542</text>
+<line x1="91" y1="956.00" x2="579" y2="956.00" class="grid"/>
+<text x="83" y="960.00" text-anchor="end" class="small">0.0509</text>
+<line x1="91.00" y1="808" x2="91.00" y2="956" class="grid"/>
+<text x="91.00" y="974" text-anchor="middle" class="small">raw</text>
+<line x1="579.00" y1="808" x2="579.00" y2="956" class="grid"/>
+<text x="579.00" y="974" text-anchor="middle" class="small">fixed</text>
+<line x1="91" y1="956" x2="579" y2="956" class="axis"/>
+<line x1="91" y1="808" x2="91" y2="956" class="axis"/>
+<polyline points="91.00,941.68 579.00,909.71" fill="none" stroke="#2f7ea8" stroke-width="2.7"/>
+<circle cx="91.00" cy="941.68" r="3.3" fill="#2f7ea8"/>
+<circle cx="579.00" cy="909.71" r="3.3" fill="#2f7ea8"/>
+<line x1="57" y1="794" x2="75" y2="794" stroke="#2f7ea8" stroke-width="3"/>
+<text x="81" y="798" class="legend">Natural aperture: raw→fixed</text>
+<polyline points="91.00,822.32 579.00,836.15" fill="none" stroke="#d17a22" stroke-width="2.7"/>
+<circle cx="91.00" cy="822.32" r="3.3" fill="#d17a22"/>
+<circle cx="579.00" cy="836.15" r="3.3" fill="#d17a22"/>
+<line x1="342" y1="794" x2="360" y2="794" stroke="#d17a22" stroke-width="3"/>
+<text x="366" y="798" class="legend">TTS aperture: raw→fixed</text>
+<text x="335.00" y="993" text-anchor="middle" class="small">Pair arm</text>
+<text x="51" y="882.00" transform="rotate(-90 51 882.00)" text-anchor="middle" class="small">Normalized aperture</text>
+<rect x="635" y="750" width="570" height="260" rx="8" fill="#fff" stroke="#cbd5e1"/>
+<text x="653" y="776" class="title">D2. Mean absolute aperture speed</text>
+<line x1="691" y1="808.00" x2="1179" y2="808.00" class="grid"/>
+<text x="683" y="812.00" text-anchor="end" class="small">0.394</text>
+<line x1="691" y1="845.00" x2="1179" y2="845.00" class="grid"/>
+<text x="683" y="849.00" text-anchor="end" class="small">0.37</text>
+<line x1="691" y1="882.00" x2="1179" y2="882.00" class="grid"/>
+<text x="683" y="886.00" text-anchor="end" class="small">0.347</text>
+<line x1="691" y1="919.00" x2="1179" y2="919.00" class="grid"/>
+<text x="683" y="923.00" text-anchor="end" class="small">0.324</text>
+<line x1="691" y1="956.00" x2="1179" y2="956.00" class="grid"/>
+<text x="683" y="960.00" text-anchor="end" class="small">0.301</text>
+<line x1="691.00" y1="808" x2="691.00" y2="956" class="grid"/>
+<text x="691.00" y="974" text-anchor="middle" class="small">raw</text>
+<line x1="1179.00" y1="808" x2="1179.00" y2="956" class="grid"/>
+<text x="1179.00" y="974" text-anchor="middle" class="small">fixed</text>
+<line x1="691" y1="956" x2="1179" y2="956" class="axis"/>
+<line x1="691" y1="808" x2="691" y2="956" class="axis"/>
+<polyline points="691.00,941.68 1179.00,905.60" fill="none" stroke="#74a9cf" stroke-width="2.7"/>
+<circle cx="691.00" cy="941.68" r="3.3" fill="#74a9cf"/>
+<circle cx="1179.00" cy="905.60" r="3.3" fill="#74a9cf"/>
+<line x1="657" y1="794" x2="675" y2="794" stroke="#74a9cf" stroke-width="3"/>
+<text x="681" y="798" class="legend">Natural velocity: raw→fixed</text>
+<polyline points="691.00,822.32 1179.00,833.66" fill="none" stroke="#e7a866" stroke-width="2.7"/>
+<circle cx="691.00" cy="822.32" r="3.3" fill="#e7a866"/>
+<circle cx="1179.00" cy="833.66" r="3.3" fill="#e7a866"/>
+<line x1="942" y1="794" x2="960" y2="794" stroke="#e7a866" stroke-width="3"/>
+<text x="966" y="798" class="legend">TTS velocity: raw→fixed</text>
+<text x="935.00" y="993" text-anchor="middle" class="small">Pair arm</text>
+<text x="651" y="882.00" transform="rotate(-90 651 882.00)" text-anchor="middle" class="small">Aperture units / second</text>
+<text x="42" y="1045" class="small">Panels A/B: four primary intervention ΔC estimates with accepted 99% CIs; gray joint contrasts are secondary. Curve panel: equal-speaker mean at each lag; C is not recalculated from the mean curve.</text>
+<text x="42" y="1064" class="small">MEL q10/q01 = interior/boundary; RMS q10/q01 = direction/radius. Mouth aperture and speed have separate axes; tracks are observational and no physical overlay was applied.</text>
+</svg>

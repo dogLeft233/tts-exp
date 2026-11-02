@@ -1,0 +1,52 @@
+{
+  "schema": "root_native_height_response_readout_v1",
+  "status": "FROZEN_BEFORE_GPU_RESPONSE",
+  "created_utc": "2026-10-14T19:30:05.443862+00:00",
+  "render_control_sha256": "9bded99d10ad7a15d125d44325a71ef07facc89131c376ba38821696a581f18e",
+  "cpu_actual_qa_sha256": "0e73e3b59a695c967fe0f290587b6e76843f504157d0c50056cfb6d389abcdf2",
+  "cohort": [
+    "BAC009S0022W0123",
+    "BAC009S0024W0122"
+  ],
+  "models": [
+    "wav2lip",
+    "musetalk",
+    "ditto"
+  ],
+  "seed": 20261003,
+  "arms": [
+    "native_height_zero",
+    "native_height_plus",
+    "native_height_minus"
+  ],
+  "measurement": "Use actual generated visual geometry, and keep original natural PCM and j/25 output clock. Height/aperture only is the primary semantic response; width and speed are descriptive collateral. No human accuracy claim.",
+  "support": {
+    "reference_s17_path": ".codex/scratch/functional_lag_response_20261015_attempt01/s17_support_attempt01.json",
+    "reference_s17_sha256": "8d7587cadd9f87b3a4134f597f944672411af9cbf7542533cd9479525e20303f",
+    "membership": "Keep original natural MFA exact high[a]/low[i,y,u], 20-80% cores and original S17 central timestamps for the selected clips. Require all17 new j+lag samples valid for all3arms and within original duration; any loss explicitly reported, no token replacement or support tuning.",
+    "minimum": "Per clip/model require at least one high and one low supported token, each with >=2 shared central timestamps. If unmet, functional endpoint UNMEASURABLE; do not expand cohort."
+  },
+  "phase": {
+    "rule": "Reuse previous canonical RMS-only officialoffset median across its3seeds per model/clip, identically for zero/plus/minus; read visual_j+p against natural audio phone at j; do not select new peaks or move output clock.",
+    "source_effect_path": ".codex/scratch/functional_lag_response_20261015_attempt01/lag_effect_attempt01.json",
+    "source_effect_sha256": "3055e950cd51820288e04f9f4607256333cf128dca95af18b802543b819ddc22",
+    "new_zero_phase": "Report newzero officialoffset vs oldRMS descriptively; if the frozen-phase control fails, classify that model response unresolved rather than retuning p."
+  },
+  "normalization": "Per row mean/population SD from original-duration, tracking-valid timestamp intersection across the new3arms; keep raw measurements too. Zero and candidates each retain their own mean/SD on the identical mask. No pooling frame observations as independent speakers.",
+  "aggregation": "Mean central frames per token -> equal tokens per exact base phone -> equal base phones per high/low class -> high-minus-low contrast per clip/model/arm. Cp=C(p). Hp=C(p)-mean(C(p-4),C(p+4)); compute within clip before speaker reduction. Report all17points descriptively, no peak-selected primary.",
+  "response_screen": {
+    "unit": "One clip/person, paired signs within each model; n2 is screening, no p-value, confidence or efficacy confirmation.",
+    "zero_functional_control": "Each model must have positive raw and z Cp and Hp at the frozen p for bothclips to support an interpretable positive class response.",
+    "primary_prediction": "For bothclips in a model, raw and z Cp_plus>Cp_zero>Cp_minus and Hp_plus>Hp_zero>Hp_minus. Strict signs use zero numerical tolerance 1e-9 for reported endpoint comparisons; show the actual deltas including near-zero values.",
+    "cross_model_progression": "Only if all3 models pass the above bounded response criterion may a new separately budgeted waveform reachability hypothesis be proposed. Mixed results stop expansion of this direction/dose and inform a distinct coordinate hypothesis; never enlarge cohort or flip sign posthoc."
+  },
+  "score_endpoints": "Canonical original-clock full/guard20 float32 raw matrices, Cbest=B-Dmin, B,Dmin,D0, officialoffset for all18; +/- minus same-route zero. Score changes and mouth response are separate results. No score tuning, shifted mux, candidate-audio scoring or reuse of oldRMS as the causalzero.",
+  "limits": "Nativehook edits preserve per-frame norm and intratoken Gram, but core-boundary transitions and other semantic projections may change. Wav normalizer excursions are descriptive and no clipping is allowed. A controllable native output direction is not a physically reachable waveform head.",
+  "forbidden": [
+    "newdose/cohort/seed",
+    "baseline or encoder rerun",
+    "training/Confirm",
+    "human accuracy inference",
+    "implementation tests"
+  ]
+}

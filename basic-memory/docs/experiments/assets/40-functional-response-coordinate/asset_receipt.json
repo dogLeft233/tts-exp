@@ -1,0 +1,83 @@
+{
+  "schema": "functional_lag_response_report40_assets_v1",
+  "status": "CREATED_FROM_FROZEN_JSON_SUMMARIES_ONLY",
+  "created_utc": "2026-10-14T18:33:32.190844+00:00",
+  "source": {
+    "path": "E:\\Documents\\tts-exp\\basic-memory\\docs\\experiments\\assets\\40-functional-response-coordinate\\make_figure.py",
+    "sha256": "518744d182a3a0b278306a122c8433b142485f1af89285a8a8e88f9ce20c8030"
+  },
+  "inputs": [
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\functional_lag_response_20261015_attempt01\\lag_effect_attempt01.json",
+      "sha256": "3055e950cd51820288e04f9f4607256333cf128dca95af18b802543b819ddc22",
+      "expected_sha256": "3055e950cd51820288e04f9f4607256333cf128dca95af18b802543b819ddc22",
+      "schema": "fixed_functional_lag_effect_v1",
+      "status": "COMPLETE_SEEN_DEV_EXPLORATORY_NOT_HUMAN_ACCURACY"
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\functional_lag_response_20261015_attempt01\\root_actual_lag_qa.json",
+      "sha256": "4dd93b5e56a24c7b4998904aeeebf5d1e59534a11d38dbfc54702286610e894c",
+      "expected_sha256": "4dd93b5e56a24c7b4998904aeeebf5d1e59534a11d38dbfc54702286610e894c",
+      "schema": "root_actual_fixed_lag_qa_v1",
+      "status": "PASS_ACTUAL_S17_ALL17_CURVES_REFERENCE_OFFSETS_AND_ENDPOINTS"
+    }
+  ],
+  "plot_runtime": {
+    "python": "3.12.14",
+    "python_executable": "C:\\Users\\dogle\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "matplotlib": "3.11.2",
+    "matplotlib_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\report25_plotdeps_attempt01\\matplotlib\\__init__.py",
+    "numpy": "2.5.3",
+    "numpy_path": "E:\\Documents\\tts-exp\\.codex\\scratch\\cross_tfg_audio_head_20261003\\v4_logmask_plot_runtime_attempt01\\numpy\\__init__.py",
+    "no_install": true
+  },
+  "figure": {
+    "panels": "2x3; rows are vowel-height/aperture and vowel-rounding proxies; columns are Wav2Lip, MuseTalk, Ditto",
+    "curve_source": "saved z-scale lag rows; speaker median RMS/v4 head plus faint saved individual RMS speaker curves",
+    "lag_grid": "-8..8 inclusive from frozen source",
+    "original_clock_marker": 0,
+    "per_utterance_p": "varies; no common p or selected peak",
+    "baseline_rms_cp_hp_descriptive_gates_passed": true,
+    "claim_boundary": "No best-lag, causal-accuracy, or real-mouth accuracy claim."
+  },
+  "rows": {
+    "endpoint_summary": 36,
+    "aggregate_lag_curve_points": 102,
+    "speaker_rms_curve_points": 357,
+    "cells": 6
+  },
+  "outputs": {
+    "endpoint_summary.csv": {
+      "path": "E:\\Documents\\tts-exp\\basic-memory\\docs\\experiments\\assets\\40-functional-response-coordinate\\endpoint_summary.csv",
+      "sha256": "68093a3e358db15245d2db2bcaf7f69a3a989e4af963050dcc2258eed042297a",
+      "bytes": 12056
+    },
+    "lag_response_curves.csv": {
+      "path": "E:\\Documents\\tts-exp\\basic-memory\\docs\\experiments\\assets\\40-functional-response-coordinate\\lag_response_curves.csv",
+      "sha256": "821f0313b92aed748ca212a0550faa775b2a91f682a75f3b6e556c9d25435f63",
+      "bytes": 16818
+    },
+    "lag_response_speaker_rms.csv": {
+      "path": "E:\\Documents\\tts-exp\\basic-memory\\docs\\experiments\\assets\\40-functional-response-coordinate\\lag_response_speaker_rms.csv",
+      "sha256": "28066b80ab5dd8b4c07a978473bf72cf33ddf969b9ac1a2870d50cc775d1415d",
+      "bytes": 22586
+    },
+    "functional_lag_response.png": {
+      "path": "E:\\Documents\\tts-exp\\basic-memory\\docs\\experiments\\assets\\40-functional-response-coordinate\\functional_lag_response.png",
+      "sha256": "9f088063f1638f10f7b604cf738810a64e7a756e437bef9038acbb3a5fe6c28f",
+      "bytes": 370014
+    },
+    "functional_lag_response.svg": {
+      "path": "E:\\Documents\\tts-exp\\basic-memory\\docs\\experiments\\assets\\40-functional-response-coordinate\\functional_lag_response.svg",
+      "sha256": "4f82dca0b0977d995fa21417c280f15d680dbb2c90d20f685aabbb25fcaca094",
+      "bytes": 93099
+    }
+  },
+  "work_scope": {
+    "model_scoring_or_source_effect_rerun": false,
+    "new_analysis": false,
+    "gpu": false,
+    "tests": false,
+    "dependency_install": false
+  }
+}

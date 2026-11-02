@@ -1,0 +1,34 @@
+{
+  "schema": "existing_json_fixed_lag_extraction_receipt_v1",
+  "status": "COMPLETED",
+  "purpose": "ORIGINAL_EVENT_ALIGNMENT_DIAGNOSTIC_ONLY",
+  "process": {
+    "pid": 112088,
+    "start_utc": "2026-10-14T22:36:45.120322Z",
+    "end_utc": "2026-10-14T22:36:45.124921Z",
+    "return_code": 0,
+    "executable": "C:/Users/dogle/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "argv": [
+      "-B",
+      ".codex/scratch/native_attribute_response_probe_20261015_attempt01/original_event_alignment_diagnostic_attempt01.py"
+    ],
+    "cwd": "E:/Documents/tts-exp"
+  },
+  "source": {
+    "path": ".codex/scratch/native_attribute_response_probe_20261015_attempt01/original_event_alignment_diagnostic_attempt01.py",
+    "bytes": 5997,
+    "sha256": "f155020976ac6c45c46834c9e6b8740fd1db4ac482cfeb1d3f1851e97bd9eef5"
+  },
+  "output": {
+    "path": ".codex/scratch/native_attribute_response_probe_20261015_attempt01/original_event_alignment_diagnostic_attempt01.json",
+    "bytes": 13734,
+    "sha256": "8dcb86becbcee4d5eef0efab6a292c3df1551ffbb9d85da293a6000f1e593ea6"
+  },
+  "inputs": {
+    "report41_old_I_effect": "1b88218d53f88a73575e3acfbd413fd8870b843748c872b6016a38cc174473b4",
+    "report42_I_plus_4_effect": "bb5fa06e5fd6b1d8a8f1340752b1fdad4c4d6cc733434cb0ba95a20e06fc4967",
+    "report41_existing_score_QA": "72ef059b13a3a0cfd4f398b2f203224ec104a2072e18635fa5f124a26ad2e538",
+    "report42_existing_score_QA": "f470d1aa4a926cafb65f73555e6957797bf3b7176b7bbaf8a30348593d3f32d9"
+  },
+  "operation": "Read fixed absolute S17 indices lag=-4,0,+4; derive H0=C(0)-mean(C(-4),C(+4)); use existing full/guard20 score deltas. No lag search or curve rebuild."
+}

@@ -1,0 +1,76 @@
+{
+  "schema": "root_output_owned_musetalk_readout_admission_v1",
+  "status": "ADMITTED_OUTPUT_OWNED_MUSETALK_READOUT",
+  "created_utc": "2026-10-14T22:00:31.611774+00:00",
+  "input_manifest_sha256": "673ee09cdba130ee70698553f6bd52ca4b4633cf85c94e2092de66bbb36b4889",
+  "executor_sha256": "79bb2df7c3f0ccb8642ae778dce84856e887fce86035df6d0057766980e68f44",
+  "protocol_sha256": "561e81a747b62c02af7a2465eac9457436013ffba45286be15d8c6cf40c9123e",
+  "controller_receipt_sha256": "adf7f5caaa06cacb0eabaf5f67e4ceeae382f453eb565ed0704d91692d23b05a",
+  "root_media_pcm_clock_qa_sha256": "563e81724232c35cb4e52e6957d2177ed2b701549a06a1f3b6f7ce897645a3e7",
+  "output_root": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02",
+  "scope": {
+    "rows": 6,
+    "model": "musetalk",
+    "arms": [
+      "zero",
+      "plus",
+      "minus"
+    ],
+    "seed": 20261003,
+    "primary_geometry": "retained precodec PNG + pinned IMAGE observer",
+    "secondary_geometry": "H264 codec contrast",
+    "score_audio": "original natural PCM",
+    "score_endpoints": [
+      "full",
+      "guard20"
+    ],
+    "lag_offsets": [
+      -15,
+      -14,
+      -13,
+      -12,
+      -11,
+      -10,
+      -9,
+      -8,
+      -7,
+      -6,
+      -5,
+      -4,
+      -3,
+      -2,
+      -1,
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ]
+  },
+  "required_before_launch": [
+    "fresh targeted readout/controller process check and empty GPU compute owners",
+    "renderer six PASS terminal and old controller/supervisor/subprocesses exited",
+    "Final launcher substitutes reviewed template WAIT hashes, executor03/path and admission02 plus fresh control_attempt02/readout_attempt02. Use --launch once; old control intact.",
+    "output/control absent; no duplicate/retry unknown process"
+  ],
+  "verification": "ROOT reviewed executor02 and six-row consumer01 source. Actual input roster, all 504 frame references, process receipts, source pins and original PCM binds match completed renderer. ROOT independently decoded all six complete mux PCM and original j/25 PTS.",
+  "limits": [
+    "No new renderer/encoder/MFA/API/implementation test or training",
+    "No phase/dose/symbol/support/peak selection",
+    "Compact readback preserves actual receipt bodies and relative paths; local_readback_manifest.json required"
+  ],
+  "control_root": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/control_attempt02",
+  "supersedes_execution_attempt": "worker2559533/49991991 rc1 at frozen protocol field lookup, 0processed/no output; original control retained. No renderer/scientific rerun.",
+  "source_repair": "Executor03 only protocol.get(arms) -> protocol.future_gpu_cap.arms. ROOT directly read actual protocol and reviewed exact diff; six-row source/input/PCM QA unchanged."
+}

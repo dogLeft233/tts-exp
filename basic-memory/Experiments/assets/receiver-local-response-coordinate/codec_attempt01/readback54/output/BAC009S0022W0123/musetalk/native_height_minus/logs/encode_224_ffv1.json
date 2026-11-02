@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "/usr/bin/ffmpeg",
+    "-hide_banner",
+    "-v",
+    "error",
+    "-nostdin",
+    "-n",
+    "-i",
+    "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_minus/codec_diagnostic_512_ffv1_yuv420p.mkv",
+    "-vf",
+    "scale=224:224:flags=lanczos",
+    "-an",
+    "-fps_mode",
+    "passthrough",
+    "-c:v",
+    "ffv1",
+    "-pix_fmt",
+    "yuv420p",
+    "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_minus/codec_diagnostic_224_lanczos_ffv1_yuv420p.mkv"
+  ],
+  "label": "encode_224_ffv1",
+  "returncode": 0,
+  "stderr": "",
+  "stdout": ""
+}

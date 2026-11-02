@@ -1,0 +1,79 @@
+{
+  "compute_apps": {
+    "output": "",
+    "returncode": 0
+  },
+  "control_absent": true,
+  "existing_task_processes": [],
+  "ffmpeg": "/usr/bin/ffmpeg",
+  "ffv1_decoder": [
+    " VFS..D ffv1                 FFmpeg video codec #1"
+  ],
+  "ffv1_encoder": [
+    " V.S..D ffv1                 FFmpeg video codec #1"
+  ],
+  "gpu": {
+    "output": "0, Tesla V100-SXM2-16GB, 0 %, 5 MiB",
+    "returncode": 0
+  },
+  "output_absent": true,
+  "pass": true,
+  "pins": {
+    "checkpoint": {
+      "actual": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442",
+      "expected": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442",
+      "pass": true,
+      "path": "/dev/shm/cross_tfg_native_axis_injection_pilot_20261013_attempt01/clock_contract_syncnet_root_attempt05/data/syncnet_v2.model"
+    },
+    "evaluator": {
+      "actual": "b15762e1837fd28eaba8fe9e261ffb35b164246da555cb3a7e3bbc7c645f818b",
+      "expected": "b15762e1837fd28eaba8fe9e261ffb35b164246da555cb3a7e3bbc7c645f818b",
+      "pass": true,
+      "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/cross_tfg_audio_head_20261003/stagea_syncnet_evaluator.py"
+    },
+    "formal_h264_manifest": {
+      "actual": "1b4f454463a4387b470c744b0f9269b991e2c4e4fd0164132c40a1c87a655c4f",
+      "expected": "1b4f454463a4387b470c744b0f9269b991e2c4e4fd0164132c40a1c87a655c4f",
+      "pass": true,
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/readout_manifest.json"
+    },
+    "helper": {
+      "actual": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6",
+      "expected": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6",
+      "pass": true,
+      "path": "/home/wjj/tts-audio/tts-exp/runs/cross_tfg_audio_head_20261009_v100_native_deployment_attempt01/code/scripts/audio_enhancement/overdub.py"
+    },
+    "input_manifest": {
+      "actual": "673ee09cdba130ee70698553f6bd52ca4b4633cf85c94e2092de66bbb36b4889",
+      "expected": "673ee09cdba130ee70698553f6bd52ca4b4633cf85c94e2092de66bbb36b4889",
+      "pass": true,
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/provenance/output_owned_musetalk_input_manifest_attempt01.json"
+    },
+    "protocol": {
+      "actual": "062d01aae34493ea82bb781672b7a6d6a18f7cf0fa3a2b549e8df82b3ab932ee",
+      "expected": "062d01aae34493ea82bb781672b7a6d6a18f7cf0fa3a2b549e8df82b3ab932ee",
+      "pass": true,
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/provenance/codec_diagnostic_protocol_attempt01.json"
+    },
+    "runner": {
+      "actual": "4befcb7705790fd732aab7dead62cadd2ebc597d95845e0a851e2cb290d9cf29",
+      "expected": "4befcb7705790fd732aab7dead62cadd2ebc597d95845e0a851e2cb290d9cf29",
+      "pass": true,
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/source/codec_diagnostic_attempt01.py"
+    },
+    "summary": {
+      "actual": "79bb2df7c3f0ccb8642ae778dce84856e887fce86035df6d0057766980e68f44",
+      "expected": "79bb2df7c3f0ccb8642ae778dce84856e887fce86035df6d0057766980e68f44",
+      "pass": true,
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/source/output_owned_musetalk_readout_executor_attempt03.py"
+    },
+    "syncnet_instance": {
+      "actual": "bd722bf844700d6a923dec2f10d7cacd65c0c6b22d09aa5d44d2509660e900d6",
+      "expected": "bd722bf844700d6a923dec2f10d7cacd65c0c6b22d09aa5d44d2509660e900d6",
+      "pass": true,
+      "path": "/dev/shm/cross_tfg_native_axis_injection_pilot_20261013_attempt01/clock_contract_syncnet_root_attempt05/SyncNetInstance.py"
+    }
+  },
+  "schema": "native_attribute_response_codec_diag_launch_gate_v1",
+  "utc": "2026-10-14T22:31:25.946493+00:00"
+}\n

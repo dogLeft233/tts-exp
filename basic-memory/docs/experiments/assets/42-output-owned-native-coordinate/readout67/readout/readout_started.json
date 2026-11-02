@@ -1,0 +1,90 @@
+{
+  "arms": [
+    "zero",
+    "plus",
+    "minus"
+  ],
+  "feature_extractor_sha256": "483f361f571feee56eb714b4b15c9cc778eaafbf21041418400257e233cae1da",
+  "h264_secondary_geometry": true,
+  "models": [
+    "musetalk"
+  ],
+  "operator_inputs": {
+    "cpu_input_manifest": {
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_render_stage_attempt01/provenance/cpu6_input_manifest_attempt04.json",
+      "sha256": "85b016147f03649bb610f5f004b86066cfe4781cce7018c730e89871fec65a1d"
+    },
+    "owned_output_frames": {
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_render_stage_attempt01/provenance/output_owned_actual_frame_map_attempt01.json",
+      "sha256": "127f5b8398521766592a73807f0ae5c4a5f81aaefd579f3ce4e83e937ab3b11f"
+    },
+    "root_array_qa": {
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_render_stage_attempt01/provenance/root_actual_output_owned_qa.json",
+      "sha256": "0a77ad77de5801f1c73c686e11c8b55b80e4f24d12a7bc89b52755919621c0fd"
+    }
+  },
+  "original_natural_pcm_syncnet": true,
+  "precodec_geometry": true,
+  "protocol_sha256": "561e81a747b62c02af7a2465eac9457436013ffba45286be15d8c6cf40c9123e",
+  "renderer_inputs": {
+    "controller_receipt": {
+      "path": "/dev/shm/cross_tfg_native_attribute_response_probe_20261015_output_owned_musetalk_render_output_attempt01/controller_receipt.json",
+      "sha256": "adf7f5caaa06cacb0eabaf5f67e4ceeae382f453eb565ed0704d91692d23b05a"
+    },
+    "input_manifest": {
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_render_stage_attempt01/render_input_manifest_attempt01.json",
+      "sha256": "53500a63301f1400874200e2a32c5b504ae19244468df51cc005bd3a03da0a05"
+    },
+    "runner": {
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_render_stage_attempt01/source/native_height_musetalk_runner_attempt02_precodec.py",
+      "sha256": "484f08bac841513a754eb94910b91b8fbc863bc9ca080d74746f3b221e80eeb0"
+    },
+    "source_manifest": {
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_render_stage_attempt01/render_source_manifest_attempt01.json",
+      "sha256": "472a0dddde485b5c612646ddf426ff904c1e4bb367e1de4ef0d3bc47f4effa1a"
+    }
+  },
+  "renderer_runner_sha256": "484f08bac841513a754eb94910b91b8fbc863bc9ca080d74746f3b221e80eeb0",
+  "row_count": 6,
+  "samples": [
+    "BAC009S0022W0123",
+    "BAC009S0024W0122"
+  ],
+  "schema": "output_owned_musetalk_readout_attempt01_start_v1",
+  "seed": 20261003,
+  "source_pins": {
+    "canonical_scorer": {
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_axis_pilot_musetalk_canonical_score_20261014_attempt01.py",
+      "sha256": "c8753e5d3a89b39dfbc90732bf233e30d86d6c2206d9327c222706f8c6a059f8"
+    },
+    "evaluator": {
+      "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/cross_tfg_audio_head_20261003/stagea_syncnet_evaluator.py",
+      "sha256": "b15762e1837fd28eaba8fe9e261ffb35b164246da555cb3a7e3bbc7c645f818b"
+    },
+    "features": {
+      "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/lrs3_tts_visual_advantage/video_features.py",
+      "sha256": "483f361f571feee56eb714b4b15c9cc778eaafbf21041418400257e233cae1da"
+    },
+    "landmarker": {
+      "path": "/home/wjj/tts-audio/tts-exp/checkpoints/mediapipe/face_landmarker.task",
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff"
+    },
+    "overdub": {
+      "path": "/home/wjj/tts-audio/tts-exp/runs/cross_tfg_audio_head_20261009_v100_native_deployment_attempt01/code/scripts/audio_enhancement/overdub.py",
+      "sha256": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6"
+    },
+    "syncnet_checkpoint": {
+      "path": "/home/wjj/tts-audio/tts-exp/third_party/syncnet_python/data/syncnet_v2.model",
+      "sha256": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442"
+    },
+    "syncnet_instance": {
+      "path": "/home/wjj/tts-audio/tts-exp/third_party/syncnet_python/SyncNetInstance.py",
+      "sha256": "bd722bf844700d6a923dec2f10d7cacd65c0c6b22d09aa5d44d2509660e900d6"
+    },
+    "visual_guard": {
+      "path": "/dev/shm/visual_motion_guard.py",
+      "sha256": "e154a46aa70e3c434ecc3ae9618e82e072d06fe36126eca19571404f6ca6968f"
+    }
+  },
+  "status": "RUNNING"
+}

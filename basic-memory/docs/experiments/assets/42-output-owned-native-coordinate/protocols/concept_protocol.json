@@ -1,0 +1,51 @@
+{
+  "schema": "root_native_height_response_probe_concept_v1",
+  "status": "SOURCE_AND_ASSET_PREPARATION_ONLY_NOT_EXECUTION_ADMISSION",
+  "created_utc": "2026-10-14T18:30:29.806844+00:00",
+  "question": "Can an explicitly height-aligned native direction causally change the shared phonetic mouth response, with model timing treated as an evaluation coordinate and without changing natural audio or time?",
+  "evidence": {
+    "lag_effect": {
+      "path": ".codex/scratch/functional_lag_response_20261015_attempt01/lag_effect_attempt01.json",
+      "sha256": "3055e950cd51820288e04f9f4607256333cf128dca95af18b802543b819ddc22"
+    },
+    "ROOT_QA": {
+      "path": ".codex/scratch/functional_lag_response_20261015_attempt01/root_actual_lag_qa.json",
+      "sha256": "4dd93b5e56a24c7b4998904aeeebf5d1e59534a11d38dbfc54702286610e894c"
+    },
+    "time_label_support": {
+      "path": ".codex/scratch/functional_lag_response_20261015_attempt01/s17_support_attempt01.json",
+      "sha256": "8d7587cadd9f87b3a4134f597f944672411af9cbf7542533cd9479525e20303f"
+    }
+  },
+  "selection": "Using time/label support only: among original4speakers retain utterances with both height classes; within person maximize min(high,low) central valid frame count, tielexID; rank people by that support descending thenlexspeaker, select2. No effect/score ranking.",
+  "sample_ids": [
+    "BAC009S0022W0123",
+    "BAC009S0024W0122"
+  ],
+  "speakers": [
+    "S0022",
+    "S0024"
+  ],
+  "seed": 20261003,
+  "models": [
+    "Wav2Lip",
+    "MuseTalk",
+    "Ditto"
+  ],
+  "support": "Same natural MFA exact height map high[a]/low[i,y,u], same20-80% token cores. Native row membership must use actual per-model feature timestamps/frame maps. No phone/time remapping. Other phones/boundary rows untouched. Original S17 visual support/referencep reused, no reselection.",
+  "anchors": "Reproduce accepted9FIT natural-only speaker/phone/class balanced anchors; exclude target speaker for each target if present, >=3 other speakers per class. Reuse original saved native arrays, never TTS anchors/target output optimization. Axis v=unit(anchor_high-anchor_low); missing/unmeasurable axis remains blocked.",
+  "rotation": "Per supported token, m=unit(mean(unit native frame vectors)), s=+1 for high and-1 for low; tangent w=unit(s*v-dot(m,s*v)*m). Apply single orthogonal plane rotation R(m,w,±theta_eff) to EVERY original native row in that core. theta_eff=min(0.05rad,0.5*acos(clamp(dot(m,s*v),-1,1))) guarantees no positive-direction overshoot; same dose for ±. Degenerate tangent/zero norm/token mean markunmeasurable and report, no inventedaxis. Preserve per-row r, within-token Gram/local stability and featureclock; out-of-core exact unchanged. No clipping that silently breaks constraints.",
+  "CPU_readout": "Before GPU, verify actual signed class-axis token margin moves± as designed and per-row norm/intracore Gram/clock/unchangedoutside/domain/finite conditions. Describe collateral other-phone margins honestly. Fixed RMS input waveform unchanged; featurehook intervention is not a physical waveform enhancement head.",
+  "visual_endpoints": "Height raw/z Cp and Hp, using existing RMS-only p permodel/clip and original natural-clock normalizer recipe frozen before these probes. Compare + and- versus cachedRMS at SAME support. Exact normalization for new outputs uses all-row-common original-duration masks across3arms; report raw too. Mouth speed descriptive. Original-clock canonical Cbest,Dmin,D0/B/full/guard20 also reported, unchanged naturalPCM; no bestfunctional lag/zero-clock edit/remux delay.",
+  "causal_prediction": "Positive rotation should increase class phonetic mouthcontrast and specificity, negative should decrease; estimate direction/gain permodel on paired clips, report mismatches. Two clips support screening only, no frame/seed pseudoreplication or efficacy confirmation.",
+  "conditional_budget": "Only source/asset pointers now. If exact6 target nativefeatures absent, prepare minimal6 CPU encoding recipe; no execution before separateROOTsource/inputadmission. Maximum later GPU proposal12 ±renders, reuse6 qualifiedRMS baselines only if exactruntime/portrait/PCM/clock bindings truly match; no automatic extra baseline/candidate/cohort/seed/dose expansion. Newmodel or unchangedsource dispatch requires freshprocesscheck. No implementationtests.",
+  "head_path": "A positive crossmodel native response would justify recipient-specific small adapters and a later waveform reachability study. It does not establish a usable waveform enhancement head or currentperformanceaboveRMS.",
+  "forbidden": [
+    "execution from this concept",
+    "newtraining/oldcenters/Dev/Confirm or shutdown/backup branch",
+    "choose signs/doses/targets from output effects",
+    "warp content or naturalclock",
+    "secret persistence",
+    "implementationtests"
+  ]
+}

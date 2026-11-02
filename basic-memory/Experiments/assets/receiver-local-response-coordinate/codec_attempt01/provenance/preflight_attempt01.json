@@ -1,0 +1,149 @@
+{
+  "baseline_h264_chain": {
+    "crop_224_ffprobe": {
+      "argv": [
+        "/usr/bin/ffprobe",
+        "-v",
+        "error",
+        "-select_streams",
+        "v:0",
+        "-count_frames",
+        "-show_entries",
+        "stream=codec_name,width,height,pix_fmt,r_frame_rate,avg_frame_rate,start_time,nb_read_frames",
+        "-of",
+        "json",
+        "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/BAC009S0022W0123/musetalk/native_height_zero/syncnet_crop_224.mp4"
+      ],
+      "output": "{\n    \"programs\": [\n\n    ],\n    \"streams\": [\n        {\n            \"codec_name\": \"h264\",\n            \"width\": 224,\n            \"height\": 224,\n            \"pix_fmt\": \"yuv420p\",\n            \"r_frame_rate\": \"25/1\",\n            \"avg_frame_rate\": \"25/1\",\n            \"start_time\": \"0.000000\",\n            \"nb_read_frames\": \"80\"\n        }\n    ]\n}",
+      "returncode": 0
+    },
+    "source_512_ffprobe": {
+      "argv": [
+        "/usr/bin/ffprobe",
+        "-v",
+        "error",
+        "-select_streams",
+        "v:0",
+        "-count_frames",
+        "-show_entries",
+        "stream=codec_name,width,height,pix_fmt,r_frame_rate,avg_frame_rate,start_time,nb_read_frames",
+        "-of",
+        "json",
+        "/dev/shm/cross_tfg_native_attribute_response_probe_20261015_output_owned_musetalk_render_output_attempt01/BAC009S0022W0123/musetalk/zero/silent.mp4"
+      ],
+      "output": "{\n    \"programs\": [\n\n    ],\n    \"streams\": [\n        {\n            \"codec_name\": \"h264\",\n            \"width\": 512,\n            \"height\": 512,\n            \"pix_fmt\": \"yuv420p\",\n            \"r_frame_rate\": \"25/1\",\n            \"avg_frame_rate\": \"25/1\",\n            \"start_time\": \"0.000000\",\n            \"nb_read_frames\": \"80\"\n        }\n    ]\n}",
+      "returncode": 0
+    },
+    "source_png_shape": [
+      512,
+      512,
+      3
+    ],
+    "source_render_receipt_path": "/dev/shm/cross_tfg_native_attribute_response_probe_20261015_output_owned_musetalk_render_output_attempt01/BAC009S0022W0123/musetalk/zero/render_receipt.json",
+    "source_silent_path": "/dev/shm/cross_tfg_native_attribute_response_probe_20261015_output_owned_musetalk_render_output_attempt01/BAC009S0022W0123/musetalk/zero/silent.mp4",
+    "source_silent_sha256": "982b1849d73fc02eef387490ec0d51dc55176c60920415a9ed655c329637f6d7",
+    "syncnet_crop_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/BAC009S0022W0123/musetalk/native_height_zero/syncnet_crop_224.mp4",
+    "syncnet_crop_receipt_path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/BAC009S0022W0123/musetalk/native_height_zero/crop_mux_receipt.json",
+    "syncnet_crop_recipe": "native_axis_gpu_make_syncnet_crops_attempt01.py:scale=224:224:flags=lanczos;libx264;pix_fmt=yuv420p;preset=medium;crf=18"
+  },
+  "compute_apps": {
+    "argv": [
+      "nvidia-smi",
+      "--query-compute-apps=pid,process_name",
+      "--format=csv,noheader"
+    ],
+    "output": "",
+    "returncode": 0
+  },
+  "expected_syncnet_python": "/home/wjj/.venvs/w2l_syncnet_v100_attempt01/bin/python",
+  "expected_syncnet_root": "/dev/shm/cross_tfg_native_axis_injection_pilot_20261013_attempt01/clock_contract_syncnet_root_attempt05",
+  "ffmpeg": "/usr/bin/ffmpeg",
+  "ffmpeg_decoders_returncode": 0,
+  "ffmpeg_encoders_returncode": 0,
+  "ffprobe": "/usr/bin/ffprobe",
+  "ffv1_decoder_lines": [
+    " VFS..D ffv1                 FFmpeg video codec #1"
+  ],
+  "ffv1_encoder_lines": [
+    " V.S..D ffv1                 FFmpeg video codec #1"
+  ],
+  "gpu": {
+    "argv": [
+      "nvidia-smi",
+      "--query-gpu=index,name,utilization.gpu,memory.used",
+      "--format=csv,noheader"
+    ],
+    "output": "0, Tesla V100-SXM2-16GB, 0 %, 5 MiB",
+    "returncode": 0
+  },
+  "matching_task_processes": [],
+  "pins": {
+    "checkpoint": {
+      "actual_sha256": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442",
+      "exists": true,
+      "expected_sha256": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442",
+      "match": true,
+      "path": "/dev/shm/cross_tfg_native_axis_injection_pilot_20261013_attempt01/clock_contract_syncnet_root_attempt05/data/syncnet_v2.model"
+    },
+    "formal_h264_manifest": {
+      "actual_sha256": "1b4f454463a4387b470c744b0f9269b991e2c4e4fd0164132c40a1c87a655c4f",
+      "exists": true,
+      "expected_sha256": "1b4f454463a4387b470c744b0f9269b991e2c4e4fd0164132c40a1c87a655c4f",
+      "match": true,
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/readout_manifest.json"
+    },
+    "input_manifest": {
+      "actual_sha256": "673ee09cdba130ee70698553f6bd52ca4b4633cf85c94e2092de66bbb36b4889",
+      "exists": true,
+      "expected_sha256": "673ee09cdba130ee70698553f6bd52ca4b4633cf85c94e2092de66bbb36b4889",
+      "match": true,
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/provenance/output_owned_musetalk_input_manifest_attempt01.json"
+    },
+    "protocol": {
+      "actual_sha256": "062d01aae34493ea82bb781672b7a6d6a18f7cf0fa3a2b549e8df82b3ab932ee",
+      "exists": true,
+      "expected_sha256": "062d01aae34493ea82bb781672b7a6d6a18f7cf0fa3a2b549e8df82b3ab932ee",
+      "match": true,
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/provenance/codec_diagnostic_protocol_attempt01.json"
+    },
+    "runner": {
+      "actual_sha256": "4befcb7705790fd732aab7dead62cadd2ebc597d95845e0a851e2cb290d9cf29",
+      "exists": true,
+      "expected_sha256": "4befcb7705790fd732aab7dead62cadd2ebc597d95845e0a851e2cb290d9cf29",
+      "match": true,
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/source/codec_diagnostic_attempt01.py"
+    },
+    "stagea_evaluator": {
+      "actual_sha256": "b15762e1837fd28eaba8fe9e261ffb35b164246da555cb3a7e3bbc7c645f818b",
+      "exists": true,
+      "expected_sha256": "b15762e1837fd28eaba8fe9e261ffb35b164246da555cb3a7e3bbc7c645f818b",
+      "match": true,
+      "path": "/home/wjj/tts-audio/tts-exp/scripts/experiments/cross_tfg_audio_head_20261003/stagea_syncnet_evaluator.py"
+    },
+    "strict_mux_helper": {
+      "actual_sha256": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6",
+      "exists": true,
+      "expected_sha256": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6",
+      "match": true,
+      "path": "/home/wjj/tts-audio/tts-exp/runs/cross_tfg_audio_head_20261009_v100_native_deployment_attempt01/code/scripts/audio_enhancement/overdub.py"
+    },
+    "summary_source": {
+      "actual_sha256": "79bb2df7c3f0ccb8642ae778dce84856e887fce86035df6d0057766980e68f44",
+      "exists": true,
+      "expected_sha256": "79bb2df7c3f0ccb8642ae778dce84856e887fce86035df6d0057766980e68f44",
+      "match": true,
+      "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/source/output_owned_musetalk_readout_executor_attempt03.py"
+    },
+    "syncnet_instance": {
+      "actual_sha256": "bd722bf844700d6a923dec2f10d7cacd65c0c6b22d09aa5d44d2509660e900d6",
+      "exists": true,
+      "expected_sha256": "bd722bf844700d6a923dec2f10d7cacd65c0c6b22d09aa5d44d2509660e900d6",
+      "match": true,
+      "path": "/dev/shm/cross_tfg_native_axis_injection_pilot_20261013_attempt01/clock_contract_syncnet_root_attempt05/SyncNetInstance.py"
+    }
+  },
+  "schema": "native_attribute_response_codec_diag_preflight_v1",
+  "task_control_absent": true,
+  "task_output_absent": true,
+  "utc_epoch": 1792017000.8774168
+}

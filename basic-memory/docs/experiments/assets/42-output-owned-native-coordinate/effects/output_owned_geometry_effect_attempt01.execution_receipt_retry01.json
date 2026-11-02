@@ -1,0 +1,56 @@
+{
+  "status": "COMPLETED",
+  "pid": 93696,
+  "process_start_utc": "2026-10-14T22:09:22.7454493Z",
+  "process_start_ticks": 639276125627454493,
+  "outer_start_utc": "2026-10-14T22:09:22.7300709Z",
+  "end_utc": "2026-10-14T22:09:23.0498282Z",
+  "return_code": 0,
+  "executable": "C:\\Users\\dogle\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "argv": [
+    "-B",
+    "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_geometry_consumer_attempt02.py",
+    "--readout-manifest",
+    "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\readout_manifest.json",
+    "--remote-readout-root",
+    "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02",
+    "--readback-root",
+    "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout",
+    "--render-source-manifest",
+    "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_stage_attempt02\\render_source_manifest_attempt01.json",
+    "--output-json",
+    "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_geometry_effect_attempt01.json",
+    "--execute"
+  ],
+  "cwd": "E:\\Documents\\tts-exp",
+  "source": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_geometry_consumer_attempt02.py",
+  "source_sha256": "370cba06d6e8e3ec190ed44e5f6a2e132af91ccb9a91d1af67c197edc534d2a5",
+  "output_json": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_geometry_effect_attempt01.json",
+  "output_json_sha256": "bb5fa06e5fd6b1d8a8f1340752b1fdad4c4d6cc733434cb0ba95a20e06fc4967",
+  "input_pins": {
+    "readout_manifest": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\readout_manifest.json",
+      "sha256": "1b4f454463a4387b470c744b0f9269b991e2c4e4fd0164132c40a1c87a655c4f",
+      "status": "PASS",
+      "row_count": 6
+    },
+    "local_readback_manifest": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\local_readback_manifest.json",
+      "sha256": "49b0b380a2c5da2351fae0c9271bc9b5f0518c37621dcc356dfa793024ffad7d",
+      "status": "PASS_BODY_HASH_VERIFIED",
+      "selected_file_count": 67
+    },
+    "precodec_nonowned_rgb_control": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_readout_attempt02_readback\\readout\\precodec_nonowned_rgb_control.json",
+      "sha256": "f81b17f755c1c6ab67809373d9c7ff39ddaf8dfb8c7c486f80e3f9d4e7c08684",
+      "status": "PASS",
+      "mismatch_count": 0
+    },
+    "render_source_manifest": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_musetalk_stage_attempt02\\render_source_manifest_attempt01.json",
+      "sha256": "472a0dddde485b5c612646ddf426ff904c1e4bb367e1de4ef0d3bc47f4effa1a"
+    }
+  },
+  "stdout": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_geometry_effect_attempt01.retry01.stdout.log",
+  "stderr": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\output_owned_geometry_effect_attempt01.retry01.stderr.log"
+}

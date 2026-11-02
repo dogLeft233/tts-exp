@@ -1,0 +1,65 @@
+{
+  "schema": "native_physical_endpoint_joint_figure_v1",
+  "status": "COMPLETE",
+  "created_utc": "2026-10-14T16:39:24.373427+00:00",
+  "source": {
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_physical_endpoint_joint_plot_20261015_attempt01\\make_endpoint_joint_figure.py",
+    "sha256": "1680880a1ea4d33a5fd8b8194bc49901e4e1145095da4cb814e2d216c8bfcdc2"
+  },
+  "inputs": [
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_axis_model_factor_scope_render_20261014_attempt02\\root_complete_native_coordinate_grid_summary.json",
+      "sha256": "9e03f9c50dee1bb5300952572a3b88f9ac84fe97b7fc6c9679fa5bcb6449cc4f",
+      "schema": "root_complete_native_coordinate_grid_v1",
+      "row_count": 18
+    },
+    {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\physical_phone_spectral_shape_fit_20261014_attempt04\\root_physical_six_endpoint_summary.json",
+      "sha256": "46fc88944e09af05ef0b73b733fda0e09c79efa1db34034b68e8edc3d0cadf12",
+      "schema": "root_physical_phone_shape_six_endpoint_summary_v1",
+      "row_count": 6
+    }
+  ],
+  "row_count": 24,
+  "outputs": {
+    "csv": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_physical_endpoint_joint_plot_20261015_attempt01\\native_physical_endpoint_rows.csv",
+      "sha256": "8a9752818a986a0b61cfd576f954559b5ed89fb6bda26371a16139e0cf928449",
+      "bytes": 5943
+    },
+    "svg": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_physical_endpoint_joint_plot_20261015_attempt01\\native_physical_endpoint_joint_figure.svg",
+      "sha256": "2a32b27aee9be001a85f831a8c9fc31a3fe91b32bab4ceb8735c65ad16d0c63c",
+      "bytes": 20906
+    },
+    "png": {
+      "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_physical_endpoint_joint_plot_20261015_attempt01\\native_physical_endpoint_joint_figure.png",
+      "status": "RENDERED",
+      "sha256": "c5b3c6cff82e911fc1557b205e56f2df2080cd515532b9eb4c38983a2da4d1ea",
+      "bytes": 84880,
+      "width": 1600,
+      "height": 1120,
+      "renderer": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+      "returncode": 0
+    }
+  },
+  "rendering": {
+    "method": "direct SVG from Python standard library; PNG companion from installed Edge headless renderer when available",
+    "python": "3.13.5",
+    "no_dependency_install": true
+  },
+  "derivation": "Copied precomputed delta.D0, delta.Cbest, delta.Dmin, delta.aperture_median, delta.velocity_rms and gate fields directly from the frozen ROOT summaries; no model scores or statistical tests recomputed.",
+  "displayed_frozen_counts": {
+    "native_joint_rows": 4,
+    "native_two_speaker_model_factor_passes": 0,
+    "native_model_factor_pairs": 9,
+    "physical_joint_rows": 0,
+    "physical_c_gain_rows": 2,
+    "physical_c_gain_rows_with_worse_D0": 2
+  },
+  "caveats": [
+    "Joint screen requires ΔCbest>0, ΔDmin<=0, and ΔD0<=0; the plot shows only ΔD0 and ΔCbest.",
+    "Two-speaker results are exploratory n=2 endpoint screens.",
+    "Mouth aperture and velocity are descriptive movement metrics with no ground-truth accuracy label."
+  ]
+}

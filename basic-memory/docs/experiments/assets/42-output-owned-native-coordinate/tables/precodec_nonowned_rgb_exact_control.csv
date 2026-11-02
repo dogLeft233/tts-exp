@@ -1,0 +1,3 @@
+observer,sample_id,candidate_arms_compared,candidate_frames_compared,nonowned_frame_count_checked_per_candidate,mismatch_count,status,owned_output_frame_indices,comparison
+precodec_png_rgb8,BAC009S0022W0123,plus;minus,146,73,0,PASS,"[28,29,44,45,57,58,59]",RGB8 arrays decoded from retained pre-codec PNGs; each plus/minus frame compared with same-index zero frame only outside frozen owned-output-frame map
+precodec_png_rgb8,BAC009S0024W0122,plus;minus,162,81,0,PASS,"[31,32,42,43,53,54,55]",RGB8 arrays decoded from retained pre-codec PNGs; each plus/minus frame compared with same-index zero frame only outside frozen owned-output-frame map

@@ -1,0 +1,209 @@
+{
+  "arrays_npz": {
+    "arrays": {
+      "aperture_acceleration_eye_normalized_per_s2_float64": {
+        "array_sha256": "568c60599f9059d0c2bc4efbba94bc36a13a14f688f27206fe0b2fef04966bbe",
+        "dtype": "<f8",
+        "shape": [
+          86
+        ]
+      },
+      "aperture_acceleration_valid_bool": {
+        "array_sha256": "dfceb0fe3f638aed87d77cecf3b7e29af1a6f1465342595325b347934483b24c",
+        "dtype": "|b1",
+        "shape": [
+          86
+        ]
+      },
+      "aperture_jerk_eye_normalized_per_s3_float64": {
+        "array_sha256": "72531a04fb3d07d88d5964e88b59d1bfcb85cc52e360142c23974fcdd9eb1418",
+        "dtype": "<f8",
+        "shape": [
+          85
+        ]
+      },
+      "aperture_jerk_valid_bool": {
+        "array_sha256": "862ab177ce950621517f02390d726827bc8b2ed09e653e7a73e24efe69b6bc5b",
+        "dtype": "|b1",
+        "shape": [
+          85
+        ]
+      },
+      "aperture_velocity_eye_normalized_per_s_float64": {
+        "array_sha256": "d11c35575e3e4f8a01a0156b75b1c50dfc566784175f3b60e9192399566a8345",
+        "dtype": "<f8",
+        "shape": [
+          87
+        ]
+      },
+      "aperture_velocity_valid_bool": {
+        "array_sha256": "fb9d10a6313f47e61cdc916eb04b1311aa8076756bbe4d2f113af77aef0199b8",
+        "dtype": "|b1",
+        "shape": [
+          87
+        ]
+      },
+      "frame_index_int32": {
+        "array_sha256": "70101fac76306ebfec3201326e8af21278d47b4ec78ed394baa4ba9dfaadaa5e",
+        "dtype": "<i4",
+        "shape": [
+          88
+        ]
+      },
+      "mouth_aperture_eye_normalized_float64": {
+        "array_sha256": "7c927a60ec05810bc5c50cddc92a35c359c565d1dd2482500c3e2d3c28426679",
+        "dtype": "<f8",
+        "shape": [
+          88
+        ]
+      },
+      "mouth_area_eye_normalized_squared_float64": {
+        "array_sha256": "75287d522d5af0c879707f37307f5a0479cfec711237906f2e17824cb0979f09",
+        "dtype": "<f8",
+        "shape": [
+          88
+        ]
+      },
+      "mouth_height_eye_normalized_float64": {
+        "array_sha256": "ab2e73938d54a6d71ea159d4c58a3d9c684bb6210f1c31f3532c2e1441ff2924",
+        "dtype": "<f8",
+        "shape": [
+          88
+        ]
+      },
+      "mouth_width_eye_normalized_float64": {
+        "array_sha256": "1ec6202d893a5b04cbbd74e5ed93d8bb330529a29b217e7dd971038a32759e38",
+        "dtype": "<f8",
+        "shape": [
+          88
+        ]
+      },
+      "timestamp_den_int64": {
+        "array_sha256": "39e5b3da48acc8b6de3121f3cbfa8c773613a9dda864f41c8c993acce64ce2b7",
+        "dtype": "<i8",
+        "shape": [
+          88
+        ]
+      },
+      "timestamp_num_int64": {
+        "array_sha256": "d273bf0acf926b549e2a48172c2861b26c08c405326f01f23e79044bfd67d297",
+        "dtype": "<i8",
+        "shape": [
+          88
+        ]
+      },
+      "tracking_valid_bool": {
+        "array_sha256": "bb204e6d8aa7b46276d619cd6dcb7e1f0bacbaaa4f453d006950cb560f38b245",
+        "dtype": "|b1",
+        "shape": [
+          88
+        ]
+      }
+    },
+    "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02/BAC009S0024W0122/musetalk/native_height_zero/h264_geometry/mouth_geometry_aperture_velocity.npz",
+    "sha256": "ca8a6a8bf3c771bb564b61a5941995823ebc1a0b80f11ca55e6635af1f5a77e0"
+  },
+  "condition": "native_height_zero",
+  "declared_frame_count": 88,
+  "decoded_frame_count": 88,
+  "extractor": "video_features.py::extract_video_features",
+  "extractor_source_sha256": "483f361f571feee56eb714b4b15c9cc778eaafbf21041418400257e233cae1da",
+  "feature_metadata": {
+    "coordinate_system": "mediapipe_normalized_xy_then_eye_similarity_canonical",
+    "declared_frame_count": 88,
+    "decode_errors": 0,
+    "decoded_frame_count": 88,
+    "fourcc": "h264",
+    "fps": 25.0,
+    "height": 512,
+    "landmark_confidence": "unavailable_from_face_landmarker_tasks_api",
+    "landmarker_asset": "/home/wjj/tts-audio/tts-exp/checkpoints/mediapipe/face_landmarker.task",
+    "mouth_indices": [
+      61,
+      146,
+      91,
+      181,
+      84,
+      17,
+      314,
+      405,
+      321,
+      375,
+      291,
+      308,
+      324,
+      318,
+      402,
+      317,
+      14,
+      87,
+      178,
+      88,
+      95,
+      185,
+      40,
+      39,
+      37,
+      0,
+      267,
+      269,
+      270,
+      409,
+      287
+    ],
+    "read_frame_count": 88,
+    "schema_version": 1,
+    "timestamps_monotonic": true,
+    "valid_fraction": 1.0,
+    "video_path": "/dev/shm/cross_tfg_native_attribute_response_probe_20261015_output_owned_musetalk_render_output_attempt01/BAC009S0024W0122/musetalk/zero/silent.mp4",
+    "width": 512
+  },
+  "fps": 25.0,
+  "frame_count": 88,
+  "guard_source_sha256": "e154a46aa70e3c434ecc3ae9618e82e072d06fe36126eca19571404f6ca6968f",
+  "height": 512,
+  "landmarker_asset": "/home/wjj/tts-audio/tts-exp/checkpoints/mediapipe/face_landmarker.task",
+  "landmarker_sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+  "metrics": {
+    "aperture_acceleration_abs_median_ipd_per_s2": 5.609705981748373,
+    "aperture_acceleration_transition_count": 86,
+    "aperture_jerk_abs_median_ipd_per_s3": 195.86302425250275,
+    "aperture_jerk_transition_count": 85,
+    "aperture_median_ipd": 0.06816005619616974,
+    "aperture_p05_ipd": 0.009055817479939382,
+    "aperture_p95_ipd": 0.11178179987115422,
+    "aperture_range_p95_p05_ipd": 0.10272598239121483,
+    "aperture_velocity_mean_ipd_per_s": -0.023948367544241622,
+    "aperture_velocity_p05_ipd_per_s": -0.7263274132838601,
+    "aperture_velocity_p95_ipd_per_s": 0.7882606498995274,
+    "aperture_velocity_rms_ipd_per_s": 0.47731768821855763,
+    "aperture_velocity_transition_count": 87,
+    "closing_speed_median_ipd_per_s": 0.21226521633602288,
+    "closing_transition_fraction": 0.5402298850574713,
+    "interpretation": "descriptive movement and tracking guard; larger aperture or velocity is not inherently better",
+    "mouth_area_median_ipd2": 0.18117677241240548,
+    "mouth_height_median_ipd": 0.2679513602698444,
+    "mouth_width_median_ipd": 0.6850203129860697,
+    "render_frame_count": 88,
+    "tracking_valid_fraction": 1.0,
+    "valid_frame_count": 88
+  },
+  "model_id": "musetalk",
+  "row_id": "BAC009S0024W0122/musetalk/zero",
+  "sample_id": "BAC009S0024W0122",
+  "schema": "native_axis_pilot_visual_motion_receipt_v1",
+  "speaker_id": "S0024",
+  "status": "PASS",
+  "timestamps": {
+    "clock": "index/25",
+    "count": 88,
+    "first_s": 0.0,
+    "last_s": 3.48,
+    "strictly_increasing": true
+  },
+  "valid_fraction": 1.0,
+  "valid_frame_count": 88,
+  "video": "/dev/shm/cross_tfg_native_attribute_response_probe_20261015_output_owned_musetalk_render_output_attempt01/BAC009S0024W0122/musetalk/zero/silent.mp4",
+  "video_sha256": "8ae9c7f2331a0e6d25f4560d620a889806d9a2facdc079463cd0eee5d1cfe5f9",
+  "width": 512
+}

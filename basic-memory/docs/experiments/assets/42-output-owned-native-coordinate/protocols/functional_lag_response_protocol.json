@@ -1,0 +1,64 @@
+{
+  "schema": "root_fixed_functional_lag_response_protocol_v1",
+  "status": "FROZEN_SOURCE_PREPARATION_ONLY",
+  "created_utc": "2026-10-14T18:11:08.203996+00:00",
+  "question": "Does a model-specific fixed timing response explain the zero-natural-clock aperture reversal, and do cached head functional changes remain after a baseline-score-derived reference shift?",
+  "rationale": "03 primary MuseTalk baseline C0/H negative on all3 support speakers while canonical baseline best lag is near-4; Wav/Ditto primary gates pass. Exploratory diagnosis follows those observations, not preregistered confirmation.",
+  "inputs": {
+    "consumer03": {
+      "path": ".codex/scratch/phone_conditioned_visual_response_20261015_attempt03/functional_endpoint_effect_consumer_attempt03.py",
+      "sha256": "2d0677a85f31c132358f8927226ced439a6ace181c593c9f8fca5086bf3aeaea"
+    },
+    "functional_protocol": {
+      "path": ".codex/scratch/phone_conditioned_visual_response_20261015_attempt03/functional_endpoint_protocol.json",
+      "sha256": "8d530afb62bc035517a6a4e724f74ea18e18d7bb1ce6a0184797d357df99de68"
+    },
+    "effect03": {
+      "path": ".codex/scratch/phone_conditioned_visual_response_20261015_attempt03/functional_endpoint_effect_attempt03/effect_summary.json",
+      "sha256": "7c66fbe592c53888196a6862b3a3354b3707ae04a80f2dc994938a86cec6cdae"
+    },
+    "ROOT_effect_QA": {
+      "path": ".codex/scratch/phone_conditioned_visual_response_20261015_attempt03/root_actual_effect_qa.json",
+      "sha256": "9debfb496f4cbe4b1ec208690294df7e1814e10921088e3f418e963f43c25443"
+    }
+  },
+  "reused_inputs": "Use03 frozen protocol pins for actual144 visual NPZ+support inventory+canonical scores+original natural manifest. Reuse prior support/PCM/RMS/clock QA; no repeated MFA/NPZ/source/environment audit.",
+  "cohort_and_attributes": "Exactly same8 seen DEV utterances/4speakers/3models/2arms/3seeds; height primary originally supported S0022/S0024/S0037, rounding-width secondary S0005/S0022/S0024/S0037, closure unsupported.",
+  "lag_frames": [
+    -8,
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "fps": 25,
+  "lag_definition": "C(l) samples generated visual geometry at j+l for original phone-core time j/25; positive l reads a later video frame. No clock edit, wrap, warp, interpolation, or new video.",
+  "shared_support": "S17 is subset of previously supported S0 token indices j for which ALL17 offsets j-8..j+8 are shared valid across all6 arm/seed rows and inside original [0,N/16000); >=2 surviving original core indices per token. Same S17 across all lags/arms/seeds. Original exactIPA maps unchanged. Pure clock/mask-only support pass first, no amplitude reading; report original/S17 tokens/frames/class/speakers and boundary losses.",
+  "support_decision": "Only original supported speakers may enter each attribute; at least3 speakers with both classes after S17 needed for model-attribute summaries. Otherwise UNSUPPORTED; preserve per-speaker data, do not expandcohort or relaxsupport.",
+  "normalization": "Reuse03 per-row raw mean/popSD across6-row-common valid original-duration frames, NOT recalculate using lag-specific subsets. Report raw and z values; sd<=1e-8 unavailable.",
+  "hierarchy": "Use frozen03 reduction token→basephone equal→class;3seeds mean within utterance/method/class;utterance equal within speaker/class. Height contrast high-low, rounding contrast low-high. Speaker unit; no seed/frame pseudoreplication.",
+  "reference_shift": "For each model/utterance, take integer median of3 existing RMS full-support official_av_offset_frames. Bind to SAME RMS key across head/seeds. Require each |p|<=4 so p±4 inside[-8,8]; otherwise mark anchored H unavailable, no clipping or alternate. NEVER choose shift from functional curve maximum or head score. Also report original3 RMS lag/offset values and guard20 values without usingguard toselect.",
+  "sign_basis": "Official calc_pdist(video_i,audio_{i+lag}), official offset=-lag, so video j+official_offset is the baseline-score-predicted match for original audio j. Prediction is a diagnostic, not a change to evaluation clock.",
+  "endpoints": "Save all17 raw/z per-speaker C(l) curves RMS/head and paired difference; report C(0) vs C(p) on SAME S17 and H(p)=C(p)-.5[C(p-4)+C(p+4)] using per-utterance frozen p before speaker reduction. Report shifted centers outside original phone fractions. Curves median/mean and baseline-rule checks at0 andp descriptive only. No best-functionallag selection or inferentialpvalues.",
+  "head_interpretation": "Head-RMS at identicalS17, p borrowed onlyRMS, matched canonical full/guard20 scalars reuse03; no selecting oldhead, no efficacy/admission claim. All3model values/positive/negative/unsupported reported.",
+  "forbidden": [
+    "new GPU/render/nativeencode/SyncNet score/MFA/trajectory extraction/API/training/dependency install",
+    "implementation tests",
+    "flipcontrast signs or modify IPA map",
+    "tune delay/dose or remux outputs",
+    "revive oldtraining/centers/Dev/Confirm or shutdown/backup branch"
+  ],
+  "next_admission": "Original Luna/max source only; ROOT localmath review once, then clock-mask-only support run; effect execution only after ROOT accepts actual support."
+}

@@ -1,0 +1,611 @@
+{
+  "schema": "native_attribute_response_codec_diagnostic_local_readback_v1",
+  "status": "PASS",
+  "classification": "CODEC_DIAGNOSTIC_ONLY",
+  "remote_task_root": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01",
+  "remote_output_root": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01",
+  "source_protocol_sha256": "062d01aae34493ea82bb781672b7a6d6a18f7cf0fa3a2b549e8df82b3ab932ee",
+  "runner_sha256": "4befcb7705790fd732aab7dead62cadd2ebc597d95845e0a851e2cb290d9cf29",
+  "remote_selected_readback_manifest_sha256": "7269c8285cd86645b421def8278a78e912da5b784c39a9ffcd9edd93e69127f5",
+  "output_manifest_status": "PASS",
+  "row_count": 6,
+  "score_invocations": 6,
+  "formal_h264_artifacts_modified": false,
+  "media_copied": false,
+  "selected_artifact_count": 54,
+  "selected_artifact_bytes": 260964.0,
+  "selected_artifact_hashes": [
+    {
+      "path": "output/attempt_started.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/attempt_started.json",
+      "bytes": 1375,
+      "expected_sha256": "404892e1e0ab1902adb1ab1f21d092cc8fb7e9349a8093f6d6db0f25a67f33e2",
+      "local_sha256": "404892e1e0ab1902adb1ab1f21d092cc8fb7e9349a8093f6d6db0f25a67f33e2",
+      "match": true
+    },
+    {
+      "path": "output/codec_diagnostic_manifest.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/codec_diagnostic_manifest.json",
+      "bytes": 3993,
+      "expected_sha256": "c24b245de73ab4edd52d2e4281fda9a8c9c0813eb80f7781d569addceaeae51b",
+      "local_sha256": "c24b245de73ab4edd52d2e4281fda9a8c9c0813eb80f7781d569addceaeae51b",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_zero/codec_diagnostic_distance_by_query_lag.npz",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_zero/codec_diagnostic_distance_by_query_lag.npz",
+      "bytes": 7990,
+      "expected_sha256": "7e4ced013679382c3f19703b9ee4e3231d9042b26c36d2353aa61cd7e2c5ede9",
+      "local_sha256": "7e4ced013679382c3f19703b9ee4e3231d9042b26c36d2353aa61cd7e2c5ede9",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_zero/distance_by_query_lag_guard20.npz",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_zero/distance_by_query_lag_guard20.npz",
+      "bytes": 4617,
+      "expected_sha256": "97307775e55a7ae5c8ecb9b956d3d086313d3b242ef70ff0f96f5650302283ac",
+      "local_sha256": "97307775e55a7ae5c8ecb9b956d3d086313d3b242ef70ff0f96f5650302283ac",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_zero/codec_diagnostic_row_receipt.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_zero/codec_diagnostic_row_receipt.json",
+      "bytes": 15338,
+      "expected_sha256": "7a440bebc82fe508eedcc081540dfb71b0f88e89ee18026b93be4359649844df",
+      "local_sha256": "7a440bebc82fe508eedcc081540dfb71b0f88e89ee18026b93be4359649844df",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_zero/codec_diagnostic_syncnet_evaluator_receipt.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_zero/codec_diagnostic_syncnet_evaluator_receipt.json",
+      "bytes": 1976,
+      "expected_sha256": "88ef90a292526b7b01f1f953e67bab4e8cf8cce16f1e83571af917c2da7c9334",
+      "local_sha256": "88ef90a292526b7b01f1f953e67bab4e8cf8cce16f1e83571af917c2da7c9334",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_zero/logs/encode_512_ffv1.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_zero/logs/encode_512_ffv1.json",
+      "bytes": 783,
+      "expected_sha256": "6dde1ae7da58fa5b728cdb861c5e4d71ea368af427efd9e983dd34bf7b1b496a",
+      "local_sha256": "6dde1ae7da58fa5b728cdb861c5e4d71ea368af427efd9e983dd34bf7b1b496a",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_zero/logs/encode_224_ffv1.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_zero/logs/encode_224_ffv1.json",
+      "bytes": 794,
+      "expected_sha256": "dbbc2a5cf9a33dcb1779459a109be141db5b0697734d359bf0a406940c77cb1f",
+      "local_sha256": "dbbc2a5cf9a33dcb1779459a109be141db5b0697734d359bf0a406940c77cb1f",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_zero/logs/stagea_syncnet_score.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_zero/logs/stagea_syncnet_score.json",
+      "bytes": 4242,
+      "expected_sha256": "2cd4a90c7c53752a22bae9433ba1dd0871b3b5325ada9d33da45a2463e4e331a",
+      "local_sha256": "2cd4a90c7c53752a22bae9433ba1dd0871b3b5325ada9d33da45a2463e4e331a",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_plus/codec_diagnostic_distance_by_query_lag.npz",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_plus/codec_diagnostic_distance_by_query_lag.npz",
+      "bytes": 7985,
+      "expected_sha256": "740f45c1f3147a243e18c6224c6821711dfa07704fa15dc76e1d8adf645063a2",
+      "local_sha256": "740f45c1f3147a243e18c6224c6821711dfa07704fa15dc76e1d8adf645063a2",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_plus/distance_by_query_lag_guard20.npz",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_plus/distance_by_query_lag_guard20.npz",
+      "bytes": 4616,
+      "expected_sha256": "d5db2effc49bf5d27c3aa390d59e04f4ca2074994897c800c6d9ce30ef58be5d",
+      "local_sha256": "d5db2effc49bf5d27c3aa390d59e04f4ca2074994897c800c6d9ce30ef58be5d",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_plus/codec_diagnostic_row_receipt.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_plus/codec_diagnostic_row_receipt.json",
+      "bytes": 15336,
+      "expected_sha256": "89460b2b4516d4036112fcf8538f78d333f53691d1c1140d7780a631070c89be",
+      "local_sha256": "89460b2b4516d4036112fcf8538f78d333f53691d1c1140d7780a631070c89be",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_plus/codec_diagnostic_syncnet_evaluator_receipt.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_plus/codec_diagnostic_syncnet_evaluator_receipt.json",
+      "bytes": 1976,
+      "expected_sha256": "ab5c18a54488891e4303653bb8eedbc212317b477818f7f6746582e7c69abdc4",
+      "local_sha256": "ab5c18a54488891e4303653bb8eedbc212317b477818f7f6746582e7c69abdc4",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_plus/logs/encode_512_ffv1.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_plus/logs/encode_512_ffv1.json",
+      "bytes": 783,
+      "expected_sha256": "67dc8f8541037bcfb7aaa0a3c682e944e95bc6054f8b48ca66310b6b349f6fe3",
+      "local_sha256": "67dc8f8541037bcfb7aaa0a3c682e944e95bc6054f8b48ca66310b6b349f6fe3",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_plus/logs/encode_224_ffv1.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_plus/logs/encode_224_ffv1.json",
+      "bytes": 794,
+      "expected_sha256": "5fd1148fd7ccae137ecc69935a25107cb20e95851d0439f13c907d8a4abd7845",
+      "local_sha256": "5fd1148fd7ccae137ecc69935a25107cb20e95851d0439f13c907d8a4abd7845",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_plus/logs/stagea_syncnet_score.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_plus/logs/stagea_syncnet_score.json",
+      "bytes": 4242,
+      "expected_sha256": "d13973703f4e4b16e9f1e7815bfc7c0c4d6c1eb6a28ddd8d05ebcc2cd962cb2f",
+      "local_sha256": "d13973703f4e4b16e9f1e7815bfc7c0c4d6c1eb6a28ddd8d05ebcc2cd962cb2f",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_minus/codec_diagnostic_distance_by_query_lag.npz",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_minus/codec_diagnostic_distance_by_query_lag.npz",
+      "bytes": 7984,
+      "expected_sha256": "2f708bdb2328393d21e67f0b731b685729424b03d9ffdb113dcfaa5c09b0e946",
+      "local_sha256": "2f708bdb2328393d21e67f0b731b685729424b03d9ffdb113dcfaa5c09b0e946",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_minus/distance_by_query_lag_guard20.npz",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_minus/distance_by_query_lag_guard20.npz",
+      "bytes": 4618,
+      "expected_sha256": "6e2accdbba4303b15fc8a347ca925cbd0b472b8518074a62ec3fdeb1aab749e1",
+      "local_sha256": "6e2accdbba4303b15fc8a347ca925cbd0b472b8518074a62ec3fdeb1aab749e1",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_minus/codec_diagnostic_row_receipt.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_minus/codec_diagnostic_row_receipt.json",
+      "bytes": 15368,
+      "expected_sha256": "6595f9f410fcd3834c2a4958d53872628a5fcbd5ae72ab6c6ec09941b349c9b6",
+      "local_sha256": "6595f9f410fcd3834c2a4958d53872628a5fcbd5ae72ab6c6ec09941b349c9b6",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_minus/codec_diagnostic_syncnet_evaluator_receipt.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_minus/codec_diagnostic_syncnet_evaluator_receipt.json",
+      "bytes": 1981,
+      "expected_sha256": "803b909cedd5d5debffd31f17ad0ede0b0f6f63c0aa11419cc7d73a60416be30",
+      "local_sha256": "803b909cedd5d5debffd31f17ad0ede0b0f6f63c0aa11419cc7d73a60416be30",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_minus/logs/encode_512_ffv1.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_minus/logs/encode_512_ffv1.json",
+      "bytes": 785,
+      "expected_sha256": "e91c33d643995a18b9bc2a7d4f97738b9d6a725155791fd8a95c2dfc4073827b",
+      "local_sha256": "e91c33d643995a18b9bc2a7d4f97738b9d6a725155791fd8a95c2dfc4073827b",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_minus/logs/encode_224_ffv1.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_minus/logs/encode_224_ffv1.json",
+      "bytes": 796,
+      "expected_sha256": "00cb6d8c19833b20274a7b6a38176416331d32bb2eed9a1ca877b2036227d72b",
+      "local_sha256": "00cb6d8c19833b20274a7b6a38176416331d32bb2eed9a1ca877b2036227d72b",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0022W0123/musetalk/native_height_minus/logs/stagea_syncnet_score.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0022W0123/musetalk/native_height_minus/logs/stagea_syncnet_score.json",
+      "bytes": 4252,
+      "expected_sha256": "dc1fa9d050b3ea30ae744aa8a7d3237f9a433c7aae481b54d005c0ae3f90caf8",
+      "local_sha256": "dc1fa9d050b3ea30ae744aa8a7d3237f9a433c7aae481b54d005c0ae3f90caf8",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_zero/codec_diagnostic_distance_by_query_lag.npz",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_zero/codec_diagnostic_distance_by_query_lag.npz",
+      "bytes": 8906,
+      "expected_sha256": "16f7dc35adcd89fe9233a4160a0f2d2e5de49fdd3c2952a72da349ea6f9b1f5e",
+      "local_sha256": "16f7dc35adcd89fe9233a4160a0f2d2e5de49fdd3c2952a72da349ea6f9b1f5e",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_zero/distance_by_query_lag_guard20.npz",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_zero/distance_by_query_lag_guard20.npz",
+      "bytes": 5499,
+      "expected_sha256": "7871db17d528b42492ee8428cd5a0481fe73c0dbd88e6f57653131fbd7899dbd",
+      "local_sha256": "7871db17d528b42492ee8428cd5a0481fe73c0dbd88e6f57653131fbd7899dbd",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_zero/codec_diagnostic_row_receipt.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_zero/codec_diagnostic_row_receipt.json",
+      "bytes": 15348,
+      "expected_sha256": "82334c483f6ba3d39faacc5c8f372f98afddd5c3b87e87dd838b1887d221a16e",
+      "local_sha256": "82334c483f6ba3d39faacc5c8f372f98afddd5c3b87e87dd838b1887d221a16e",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_zero/codec_diagnostic_syncnet_evaluator_receipt.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_zero/codec_diagnostic_syncnet_evaluator_receipt.json",
+      "bytes": 1977,
+      "expected_sha256": "c2d6c35b3fdb36f4909ef5330d79def81332bdd1d524c2fb590eb04f579ce992",
+      "local_sha256": "c2d6c35b3fdb36f4909ef5330d79def81332bdd1d524c2fb590eb04f579ce992",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_zero/logs/encode_512_ffv1.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_zero/logs/encode_512_ffv1.json",
+      "bytes": 783,
+      "expected_sha256": "37fc7618954e984153bd48a00d4b1cdd26b71cc9ba35d678d9ca592b775d3229",
+      "local_sha256": "37fc7618954e984153bd48a00d4b1cdd26b71cc9ba35d678d9ca592b775d3229",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_zero/logs/encode_224_ffv1.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_zero/logs/encode_224_ffv1.json",
+      "bytes": 794,
+      "expected_sha256": "78958b536ea3e5c8cde4417308ba2db5497848de1c1c7a87f9406cbbeaf883cd",
+      "local_sha256": "78958b536ea3e5c8cde4417308ba2db5497848de1c1c7a87f9406cbbeaf883cd",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_zero/logs/stagea_syncnet_score.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_zero/logs/stagea_syncnet_score.json",
+      "bytes": 4243,
+      "expected_sha256": "4131b796e142e8b9c1efb42c4a87526fcb65a6e19e2182c16984fc2b1c4faa3b",
+      "local_sha256": "4131b796e142e8b9c1efb42c4a87526fcb65a6e19e2182c16984fc2b1c4faa3b",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_plus/codec_diagnostic_distance_by_query_lag.npz",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_plus/codec_diagnostic_distance_by_query_lag.npz",
+      "bytes": 8899,
+      "expected_sha256": "6581570288d43583022bb5cfaa35ef0135162623580e0aa60bf7c0bf16b96075",
+      "local_sha256": "6581570288d43583022bb5cfaa35ef0135162623580e0aa60bf7c0bf16b96075",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_plus/distance_by_query_lag_guard20.npz",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_plus/distance_by_query_lag_guard20.npz",
+      "bytes": 5499,
+      "expected_sha256": "f96349101925a2e5d287702f89f5ca578c64cdf47a6a692bf073e2777df91843",
+      "local_sha256": "f96349101925a2e5d287702f89f5ca578c64cdf47a6a692bf073e2777df91843",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_plus/codec_diagnostic_row_receipt.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_plus/codec_diagnostic_row_receipt.json",
+      "bytes": 15339,
+      "expected_sha256": "c9debe81154a1fb27b9bb0a08c5a57dd101ec7a8c812cfccaf9f18fb63404c57",
+      "local_sha256": "c9debe81154a1fb27b9bb0a08c5a57dd101ec7a8c812cfccaf9f18fb63404c57",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_plus/codec_diagnostic_syncnet_evaluator_receipt.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_plus/codec_diagnostic_syncnet_evaluator_receipt.json",
+      "bytes": 1976,
+      "expected_sha256": "d2d07c8068669a80478e150b5b9d87bcd179de7002d54a7f6bda26fbbdb9a9c2",
+      "local_sha256": "d2d07c8068669a80478e150b5b9d87bcd179de7002d54a7f6bda26fbbdb9a9c2",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_plus/logs/encode_512_ffv1.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_plus/logs/encode_512_ffv1.json",
+      "bytes": 783,
+      "expected_sha256": "996ef2a4aab2abcbc2bb616652b749df97c847442715861759f40b7dd0265881",
+      "local_sha256": "996ef2a4aab2abcbc2bb616652b749df97c847442715861759f40b7dd0265881",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_plus/logs/encode_224_ffv1.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_plus/logs/encode_224_ffv1.json",
+      "bytes": 794,
+      "expected_sha256": "6014a6ccc086c0aced674bbe009eccdd7c64994561aed2823d50c8226846daef",
+      "local_sha256": "6014a6ccc086c0aced674bbe009eccdd7c64994561aed2823d50c8226846daef",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_plus/logs/stagea_syncnet_score.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_plus/logs/stagea_syncnet_score.json",
+      "bytes": 4242,
+      "expected_sha256": "f71be518f99dbe89b7c8bc22d5b316e040fe5c1549926e5c98cf5797943f75e9",
+      "local_sha256": "f71be518f99dbe89b7c8bc22d5b316e040fe5c1549926e5c98cf5797943f75e9",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_minus/codec_diagnostic_distance_by_query_lag.npz",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_minus/codec_diagnostic_distance_by_query_lag.npz",
+      "bytes": 8904,
+      "expected_sha256": "a2789ab1276f8e8a0df7588ce514b50d148ca6d222e293b0e22f8e67ff461516",
+      "local_sha256": "a2789ab1276f8e8a0df7588ce514b50d148ca6d222e293b0e22f8e67ff461516",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_minus/distance_by_query_lag_guard20.npz",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_minus/distance_by_query_lag_guard20.npz",
+      "bytes": 5496,
+      "expected_sha256": "dd79432586c47aa02674b0f8fc8d3dabb6e3100b4c9aee3e86acc5bd412be94f",
+      "local_sha256": "dd79432586c47aa02674b0f8fc8d3dabb6e3100b4c9aee3e86acc5bd412be94f",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_minus/codec_diagnostic_row_receipt.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_minus/codec_diagnostic_row_receipt.json",
+      "bytes": 15371,
+      "expected_sha256": "a763091ba63d969d7f42735e3195c4c3847b83e3bea319b275d6c81f9eeb5014",
+      "local_sha256": "a763091ba63d969d7f42735e3195c4c3847b83e3bea319b275d6c81f9eeb5014",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_minus/codec_diagnostic_syncnet_evaluator_receipt.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_minus/codec_diagnostic_syncnet_evaluator_receipt.json",
+      "bytes": 1981,
+      "expected_sha256": "b95704056bfbbb5492a3addad9656e08a8033aae2a744c2bdccb3599d76a506a",
+      "local_sha256": "b95704056bfbbb5492a3addad9656e08a8033aae2a744c2bdccb3599d76a506a",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_minus/logs/encode_512_ffv1.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_minus/logs/encode_512_ffv1.json",
+      "bytes": 785,
+      "expected_sha256": "feab5c4ae4258617ed984148009b1c6f75d78d4d213b0bfc98db1e3ec1b8651d",
+      "local_sha256": "feab5c4ae4258617ed984148009b1c6f75d78d4d213b0bfc98db1e3ec1b8651d",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_minus/logs/encode_224_ffv1.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_minus/logs/encode_224_ffv1.json",
+      "bytes": 796,
+      "expected_sha256": "2aef705cc085b0688b90a8b3a515cf29c27935a6ce24951331c686b2bd8b0621",
+      "local_sha256": "2aef705cc085b0688b90a8b3a515cf29c27935a6ce24951331c686b2bd8b0621",
+      "match": true
+    },
+    {
+      "path": "output/BAC009S0024W0122/musetalk/native_height_minus/logs/stagea_syncnet_score.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01/BAC009S0024W0122/musetalk/native_height_minus/logs/stagea_syncnet_score.json",
+      "bytes": 4252,
+      "expected_sha256": "cc106bfbc00125b8f9004e96fa9f0f59d510680e69bea12e0dcc899a437eda58",
+      "local_sha256": "cc106bfbc00125b8f9004e96fa9f0f59d510680e69bea12e0dcc899a437eda58",
+      "match": true
+    },
+    {
+      "path": "control/launch_receipt.txt",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/control_attempt01/launch_receipt.txt",
+      "bytes": 1176,
+      "expected_sha256": "c5f7b4bd1d1b558777788d18d81dbfc47f051f70558ca066d9e4224fe7196931",
+      "local_sha256": "c5f7b4bd1d1b558777788d18d81dbfc47f051f70558ca066d9e4224fe7196931",
+      "match": true
+    },
+    {
+      "path": "control/worker_identity.txt",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/control_attempt01/worker_identity.txt",
+      "bytes": 1988,
+      "expected_sha256": "7df6921115bb7d94763b38776b78636db261e3c66d2ba27bae7f33556359d662",
+      "local_sha256": "7df6921115bb7d94763b38776b78636db261e3c66d2ba27bae7f33556359d662",
+      "match": true
+    },
+    {
+      "path": "control/terminal_receipt.txt",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/control_attempt01/terminal_receipt.txt",
+      "bytes": 520,
+      "expected_sha256": "40353f5c33fa0ecfcf184cd8696f8125e709ad4c5f3629194b674c51e577338e",
+      "local_sha256": "40353f5c33fa0ecfcf184cd8696f8125e709ad4c5f3629194b674c51e577338e",
+      "match": true
+    },
+    {
+      "path": "control/worker.stdout.log",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/control_attempt01/worker.stdout.log",
+      "bytes": 0,
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "control/worker.stderr.log",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/control_attempt01/worker.stderr.log",
+      "bytes": 0,
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "control/supervisor.log",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/control_attempt01/supervisor.log",
+      "bytes": 0,
+      "expected_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "match": true
+    },
+    {
+      "path": "source/codec_diagnostic_attempt01.py",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/source/codec_diagnostic_attempt01.py",
+      "bytes": 18154,
+      "expected_sha256": "4befcb7705790fd732aab7dead62cadd2ebc597d95845e0a851e2cb290d9cf29",
+      "local_sha256": "4befcb7705790fd732aab7dead62cadd2ebc597d95845e0a851e2cb290d9cf29",
+      "match": true
+    },
+    {
+      "path": "source/launch_codec_diagnostic_attempt01.sh",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/source/launch_codec_diagnostic_attempt01.sh",
+      "bytes": 7281,
+      "expected_sha256": "9914b7c7f8afd13d343f752ec8535f24fcba37255a965eebb419eec028273e0d",
+      "local_sha256": "9914b7c7f8afd13d343f752ec8535f24fcba37255a965eebb419eec028273e0d",
+      "match": true
+    },
+    {
+      "path": "provenance/codec_diagnostic_protocol_attempt01.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/provenance/codec_diagnostic_protocol_attempt01.json",
+      "bytes": 2558,
+      "expected_sha256": "062d01aae34493ea82bb781672b7a6d6a18f7cf0fa3a2b549e8df82b3ab932ee",
+      "local_sha256": "062d01aae34493ea82bb781672b7a6d6a18f7cf0fa3a2b549e8df82b3ab932ee",
+      "match": true
+    },
+    {
+      "path": "provenance/launch_gate_attempt01.json",
+      "remote_source": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/provenance/launch_gate_attempt01.json",
+      "bytes": 3996,
+      "expected_sha256": "d0109cd33e8a8a486b90d1a4366215f21a71742b63248eafccbdf586ee80cc54",
+      "local_sha256": "d0109cd33e8a8a486b90d1a4366215f21a71742b63248eafccbdf586ee80cc54",
+      "match": true
+    }
+  ],
+  "row_checks": [
+    {
+      "row_id": "BAC009S0022W0123/musetalk/minus",
+      "row_status": "PASS",
+      "evaluator_status": "PASS",
+      "full_matrix_bytes": 7984,
+      "guard20_bytes": 4618,
+      "row_receipt_sha256": "6595f9f410fcd3834c2a4958d53872628a5fcbd5ae72ab6c6ec09941b349c9b6",
+      "pass": true
+    },
+    {
+      "row_id": "BAC009S0022W0123/musetalk/plus",
+      "row_status": "PASS",
+      "evaluator_status": "PASS",
+      "full_matrix_bytes": 7985,
+      "guard20_bytes": 4616,
+      "row_receipt_sha256": "89460b2b4516d4036112fcf8538f78d333f53691d1c1140d7780a631070c89be",
+      "pass": true
+    },
+    {
+      "row_id": "BAC009S0022W0123/musetalk/zero",
+      "row_status": "PASS",
+      "evaluator_status": "PASS",
+      "full_matrix_bytes": 7990,
+      "guard20_bytes": 4617,
+      "row_receipt_sha256": "7a440bebc82fe508eedcc081540dfb71b0f88e89ee18026b93be4359649844df",
+      "pass": true
+    },
+    {
+      "row_id": "BAC009S0024W0122/musetalk/minus",
+      "row_status": "PASS",
+      "evaluator_status": "PASS",
+      "full_matrix_bytes": 8904,
+      "guard20_bytes": 5496,
+      "row_receipt_sha256": "a763091ba63d969d7f42735e3195c4c3847b83e3bea319b275d6c81f9eeb5014",
+      "pass": true
+    },
+    {
+      "row_id": "BAC009S0024W0122/musetalk/plus",
+      "row_status": "PASS",
+      "evaluator_status": "PASS",
+      "full_matrix_bytes": 8899,
+      "guard20_bytes": 5499,
+      "row_receipt_sha256": "c9debe81154a1fb27b9bb0a08c5a57dd101ec7a8c812cfccaf9f18fb63404c57",
+      "pass": true
+    },
+    {
+      "row_id": "BAC009S0024W0122/musetalk/zero",
+      "row_status": "PASS",
+      "evaluator_status": "PASS",
+      "full_matrix_bytes": 8906,
+      "guard20_bytes": 5499,
+      "row_receipt_sha256": "82334c483f6ba3d39faacc5c8f372f98afddd5c3b87e87dd838b1887d221a16e",
+      "pass": true
+    }
+  ],
+  "command_log_checks": [
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0022W0123\\musetalk\\native_height_minus\\logs\\encode_224_ffv1.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0022W0123\\musetalk\\native_height_minus\\logs\\encode_512_ffv1.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0022W0123\\musetalk\\native_height_minus\\logs\\stagea_syncnet_score.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0022W0123\\musetalk\\native_height_plus\\logs\\encode_224_ffv1.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0022W0123\\musetalk\\native_height_plus\\logs\\encode_512_ffv1.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0022W0123\\musetalk\\native_height_plus\\logs\\stagea_syncnet_score.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0022W0123\\musetalk\\native_height_zero\\logs\\encode_224_ffv1.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0022W0123\\musetalk\\native_height_zero\\logs\\encode_512_ffv1.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0022W0123\\musetalk\\native_height_zero\\logs\\stagea_syncnet_score.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0024W0122\\musetalk\\native_height_minus\\logs\\encode_224_ffv1.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0024W0122\\musetalk\\native_height_minus\\logs\\encode_512_ffv1.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0024W0122\\musetalk\\native_height_minus\\logs\\stagea_syncnet_score.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0024W0122\\musetalk\\native_height_plus\\logs\\encode_224_ffv1.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0024W0122\\musetalk\\native_height_plus\\logs\\encode_512_ffv1.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0024W0122\\musetalk\\native_height_plus\\logs\\stagea_syncnet_score.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0024W0122\\musetalk\\native_height_zero\\logs\\encode_224_ffv1.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0024W0122\\musetalk\\native_height_zero\\logs\\encode_512_ffv1.json",
+      "returncode": 0,
+      "pass": true
+    },
+    {
+      "path": "e_readback_attempt01\\output\\BAC009S0024W0122\\musetalk\\native_height_zero\\logs\\stagea_syncnet_score.json",
+      "returncode": 0,
+      "pass": true
+    }
+  ],
+  "local_gate_receipts": [
+    {
+      "path": "_attribute_response_probe_20261015_codec_diagnostic_attempt01\\compact_readback_attempt01\\provenance\\preflight_attempt01.json",
+      "bytes": 8015,
+      "sha256": "d42903bce601e1a1566fdaf152b1d776f0f1c48a9cefdd6674db1e7ff9c168ea"
+    },
+    {
+      "path": "_attribute_response_probe_20261015_codec_diagnostic_attempt01\\compact_readback_attempt01\\provenance\\postrun_snapshot_attempt01.json",
+      "bytes": 815,
+      "sha256": "e3fbbc421815d95d661faf6c0b11fe7a330f45d7ceeb707ea97ee83a1630eac7"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+schema=native_attribute_response_codec_diagnostic_launch_v1
+started_utc=2026-10-14T22:31:26Z
+launcher_script_sha256=9914b7c7f8afd13d343f752ec8535f24fcba37255a965eebb419eec028273e0d
+launcher_pid=2578309
+launcher_start_ticks=50189195
+supervisor_pid=2578350
+supervisor_start_ticks=50189231
+cwd=/home/wjj/tts-audio/tts-exp
+python=/home/wjj/.venvs/w2l_syncnet_v100_attempt01/bin/python
+runner_sha256=4befcb7705790fd732aab7dead62cadd2ebc597d95845e0a851e2cb290d9cf29
+protocol_sha256=062d01aae34493ea82bb781672b7a6d6a18f7cf0fa3a2b549e8df82b3ab932ee
+input_manifest_sha256=673ee09cdba130ee70698553f6bd52ca4b4633cf85c94e2092de66bbb36b4889
+formal_h264_manifest_sha256=1b4f454463a4387b470c744b0f9269b991e2c4e4fd0164132c40a1c87a655c4f
+pythonpath_original=
+pythonpath_effective=/home/wjj/tts-audio/tts-exp
+pythonpath_policy=prepend repo root; preserve inherited value
+output_root=/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/output_attempt01
+control_root=/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/control_attempt01
+score_invocations_max=6; sequential=true

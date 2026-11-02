@@ -1,0 +1,11 @@
+schema=output_owned_musetalk_readout_worker_identity_v1
+started_utc=2026-10-14T22:01:45Z
+worker_pid=2560257
+worker_start_ticks=50011173
+supervisor_pid=2560251
+cwd=/home/wjj/tts-audio/tts-exp
+python=/home/wjj/.venvs/w2l_syncnet_v100_attempt01/bin/python
+argv=/home/wjj/.venvs/w2l_syncnet_v100_attempt01/bin/python -B /home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/source/output_owned_musetalk_readout_executor_attempt03.py --input-manifest /home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/provenance/output_owned_musetalk_input_manifest_attempt01.json --output-root /home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_attempt01/readout_attempt02 --execute
+pythonpath_original=
+pythonpath_effective=/home/wjj/tts-audio/tts-exp
+syncnet_subprocess_env=inherited from worker

@@ -1,0 +1,81 @@
+{
+  "schema": "root_actual_fixed_lag_qa_v1",
+  "status": "PASS_ACTUAL_S17_ALL17_CURVES_REFERENCE_OFFSETS_AND_ENDPOINTS",
+  "created_utc": "2026-10-14T18:24:36.541513+00:00",
+  "effect_sha256": "3055e950cd51820288e04f9f4607256333cf128dca95af18b802543b819ddc22",
+  "support_sha256": "8d7587cadd9f87b3a4134f597f944672411af9cbf7542533cd9479525e20303f",
+  "source_sha256": "4316695abcc1397600c9dd089b157411dfd251dcd9f0e0b6c2370d152c393ec2",
+  "actual_trajectories": 144,
+  "S17_token_records_checked": 132,
+  "numeric_checks": 7926,
+  "max_abs_error": 0.0,
+  "limits": "Seen DEV exploratory, baseline-score-referenced coordinates do not change original clock or establish human accuracy; original scalar comparison reused, no new scoring.",
+  "six_cell_summary": [
+    {
+      "model": "Wav2Lip",
+      "attribute": "vowel_height_aperture_proxy",
+      "RMS_C0_median": 0.8526999412681208,
+      "RMS_Cp_median": 0.6631758360216304,
+      "RMS_Hp_median": 0.8778106593403301,
+      "RMS_Cp_gate": true,
+      "RMS_Hp_gate": true,
+      "head_delta_Cp_mean": 0.05654942217870951,
+      "head_delta_Hp_mean": 0.09872180295771811
+    },
+    {
+      "model": "Wav2Lip",
+      "attribute": "vowel_rounding_proxy",
+      "RMS_C0_median": 0.23622607179482413,
+      "RMS_Cp_median": 0.5156636278700764,
+      "RMS_Hp_median": 0.353748228069234,
+      "RMS_Cp_gate": true,
+      "RMS_Hp_gate": true,
+      "head_delta_Cp_mean": -0.01931362378152071,
+      "head_delta_Hp_mean": -0.003822168573189358
+    },
+    {
+      "model": "MuseTalk",
+      "attribute": "vowel_height_aperture_proxy",
+      "RMS_C0_median": -0.5575023714833165,
+      "RMS_Cp_median": 0.9169261464152338,
+      "RMS_Hp_median": 1.2539726781614144,
+      "RMS_Cp_gate": true,
+      "RMS_Hp_gate": true,
+      "head_delta_Cp_mean": -0.057032865248667984,
+      "head_delta_Hp_mean": -0.051865499530671176
+    },
+    {
+      "model": "MuseTalk",
+      "attribute": "vowel_rounding_proxy",
+      "RMS_C0_median": 1.1442754897044023,
+      "RMS_Cp_median": 0.7106769529815349,
+      "RMS_Hp_median": 0.7026817556574758,
+      "RMS_Cp_gate": true,
+      "RMS_Hp_gate": true,
+      "head_delta_Cp_mean": -0.08462984784390687,
+      "head_delta_Hp_mean": -0.07272011642442712
+    },
+    {
+      "model": "Ditto",
+      "attribute": "vowel_height_aperture_proxy",
+      "RMS_C0_median": 1.5477042370943337,
+      "RMS_Cp_median": 0.4810681529207742,
+      "RMS_Hp_median": 0.7338588665330998,
+      "RMS_Cp_gate": true,
+      "RMS_Hp_gate": true,
+      "head_delta_Cp_mean": 0.01969991992436985,
+      "head_delta_Hp_mean": -0.05983829126206097
+    },
+    {
+      "model": "Ditto",
+      "attribute": "vowel_rounding_proxy",
+      "RMS_C0_median": 0.8421176612474581,
+      "RMS_Cp_median": 0.5634896822424936,
+      "RMS_Hp_median": 0.4672543004185564,
+      "RMS_Cp_gate": true,
+      "RMS_Hp_gate": true,
+      "head_delta_Cp_mean": -0.12785469826657012,
+      "head_delta_Hp_mean": 0.02862652449070173
+    }
+  ]
+}

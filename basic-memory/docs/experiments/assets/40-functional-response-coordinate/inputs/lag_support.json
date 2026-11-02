@@ -1,0 +1,6925 @@
+{
+  "amplitude_keys_read": false,
+  "attempt03_helper_sha256": "2d0677a85f31c132358f8927226ced439a6ace181c593c9f8fca5086bf3aeaea",
+  "cell_summaries": [
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 3,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 2,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 5,
+            "tokens": 2
+          }
+        },
+        "frames": 5,
+        "tokens": 2
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 5,
+            "tokens": 2
+          }
+        },
+        "frames": 5,
+        "tokens": 2
+      },
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 1,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 3,
+        "tokens": 1
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 3,
+        "tokens": 1
+      },
+      "sample_id": "BAC009S0005W0123",
+      "speaker": "S0005"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 1,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 3,
+        "tokens": 1
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 3,
+        "tokens": 1
+      },
+      "sample_id": "BAC009S0005W0123",
+      "speaker": "S0005"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 0,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 0,
+            "tokens": 0
+          }
+        },
+        "frames": 0,
+        "tokens": 0
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 0,
+            "tokens": 0
+          }
+        },
+        "frames": 0,
+        "tokens": 0
+      },
+      "sample_id": "BAC009S0022W0122",
+      "speaker": "S0022"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 0,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 0,
+            "tokens": 0
+          }
+        },
+        "frames": 0,
+        "tokens": 0
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 0,
+            "tokens": 0
+          }
+        },
+        "frames": 0,
+        "tokens": 0
+      },
+      "sample_id": "BAC009S0022W0122",
+      "speaker": "S0022"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 4,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 3
+          }
+        },
+        "frames": 9,
+        "tokens": 4
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 3
+          }
+        },
+        "frames": 9,
+        "tokens": 4
+      },
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 3,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 5,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 5,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 3,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 3
+          }
+        },
+        "frames": 6,
+        "tokens": 3
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 3
+          }
+        },
+        "frames": 6,
+        "tokens": 3
+      },
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 2,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 2,
+            "tokens": 1
+          }
+        },
+        "frames": 4,
+        "tokens": 2
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 2,
+            "tokens": 1
+          }
+        },
+        "frames": 4,
+        "tokens": 2
+      },
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 4,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 7,
+            "tokens": 3
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 10,
+        "tokens": 4
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 7,
+            "tokens": 3
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 10,
+        "tokens": 4
+      },
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 3,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 4,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 6,
+            "tokens": 2
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 10,
+        "tokens": 4
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 6,
+            "tokens": 2
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 10,
+        "tokens": 4
+      },
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 2,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 2
+          }
+        },
+        "frames": 6,
+        "tokens": 2
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 2
+          }
+        },
+        "frames": 6,
+        "tokens": 2
+      },
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 6,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 8,
+            "tokens": 3
+          },
+          "low": {
+            "frames": 7,
+            "tokens": 3
+          }
+        },
+        "frames": 15,
+        "tokens": 6
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 8,
+            "tokens": 3
+          },
+          "low": {
+            "frames": 7,
+            "tokens": 3
+          }
+        },
+        "frames": 15,
+        "tokens": 6
+      },
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 6,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Wav2Lip",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 13,
+            "tokens": 5
+          }
+        },
+        "frames": 15,
+        "tokens": 6
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 13,
+            "tokens": 5
+          }
+        },
+        "frames": 15,
+        "tokens": 6
+      },
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 3,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 2,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 5,
+            "tokens": 2
+          }
+        },
+        "frames": 5,
+        "tokens": 2
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 5,
+            "tokens": 2
+          }
+        },
+        "frames": 5,
+        "tokens": 2
+      },
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 1,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 3,
+        "tokens": 1
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 3,
+        "tokens": 1
+      },
+      "sample_id": "BAC009S0005W0123",
+      "speaker": "S0005"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 1,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 3,
+        "tokens": 1
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 3,
+        "tokens": 1
+      },
+      "sample_id": "BAC009S0005W0123",
+      "speaker": "S0005"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 0,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 0,
+            "tokens": 0
+          }
+        },
+        "frames": 0,
+        "tokens": 0
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 0,
+            "tokens": 0
+          }
+        },
+        "frames": 0,
+        "tokens": 0
+      },
+      "sample_id": "BAC009S0022W0122",
+      "speaker": "S0022"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 0,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 0,
+            "tokens": 0
+          }
+        },
+        "frames": 0,
+        "tokens": 0
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 0,
+            "tokens": 0
+          }
+        },
+        "frames": 0,
+        "tokens": 0
+      },
+      "sample_id": "BAC009S0022W0122",
+      "speaker": "S0022"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 4,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 3
+          }
+        },
+        "frames": 9,
+        "tokens": 4
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 3
+          }
+        },
+        "frames": 9,
+        "tokens": 4
+      },
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 3,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 5,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 5,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 3,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 3
+          }
+        },
+        "frames": 6,
+        "tokens": 3
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 3
+          }
+        },
+        "frames": 6,
+        "tokens": 3
+      },
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 2,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 2,
+            "tokens": 1
+          }
+        },
+        "frames": 4,
+        "tokens": 2
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 2,
+            "tokens": 1
+          }
+        },
+        "frames": 4,
+        "tokens": 2
+      },
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 4,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 7,
+            "tokens": 3
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 10,
+        "tokens": 4
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 7,
+            "tokens": 3
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 10,
+        "tokens": 4
+      },
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 3,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 4,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 6,
+            "tokens": 2
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 10,
+        "tokens": 4
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 6,
+            "tokens": 2
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 10,
+        "tokens": 4
+      },
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 2,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 2
+          }
+        },
+        "frames": 6,
+        "tokens": 2
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 2
+          }
+        },
+        "frames": 6,
+        "tokens": 2
+      },
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 6,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 8,
+            "tokens": 3
+          },
+          "low": {
+            "frames": 7,
+            "tokens": 3
+          }
+        },
+        "frames": 15,
+        "tokens": 6
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 8,
+            "tokens": 3
+          },
+          "low": {
+            "frames": 7,
+            "tokens": 3
+          }
+        },
+        "frames": 15,
+        "tokens": 6
+      },
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 6,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "MuseTalk",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 13,
+            "tokens": 5
+          }
+        },
+        "frames": 15,
+        "tokens": 6
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 13,
+            "tokens": 5
+          }
+        },
+        "frames": 15,
+        "tokens": 6
+      },
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 3,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 2,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 5,
+            "tokens": 2
+          }
+        },
+        "frames": 5,
+        "tokens": 2
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 5,
+            "tokens": 2
+          }
+        },
+        "frames": 5,
+        "tokens": 2
+      },
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 1,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 3,
+        "tokens": 1
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 3,
+        "tokens": 1
+      },
+      "sample_id": "BAC009S0005W0123",
+      "speaker": "S0005"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 1,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 3,
+        "tokens": 1
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 3,
+        "tokens": 1
+      },
+      "sample_id": "BAC009S0005W0123",
+      "speaker": "S0005"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 0,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 0,
+            "tokens": 0
+          }
+        },
+        "frames": 0,
+        "tokens": 0
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 0,
+            "tokens": 0
+          }
+        },
+        "frames": 0,
+        "tokens": 0
+      },
+      "sample_id": "BAC009S0022W0122",
+      "speaker": "S0022"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 0,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 0,
+            "tokens": 0
+          }
+        },
+        "frames": 0,
+        "tokens": 0
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 0,
+            "tokens": 0
+          }
+        },
+        "frames": 0,
+        "tokens": 0
+      },
+      "sample_id": "BAC009S0022W0122",
+      "speaker": "S0022"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 4,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 3
+          }
+        },
+        "frames": 9,
+        "tokens": 4
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 3
+          }
+        },
+        "frames": 9,
+        "tokens": 4
+      },
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 3,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 5,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 5,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 3,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 3
+          }
+        },
+        "frames": 6,
+        "tokens": 3
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 3
+          }
+        },
+        "frames": 6,
+        "tokens": 3
+      },
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 2,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 2,
+            "tokens": 1
+          }
+        },
+        "frames": 4,
+        "tokens": 2
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 2,
+            "tokens": 1
+          }
+        },
+        "frames": 4,
+        "tokens": 2
+      },
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 4,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 7,
+            "tokens": 3
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 10,
+        "tokens": 4
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 7,
+            "tokens": 3
+          },
+          "low": {
+            "frames": 3,
+            "tokens": 1
+          }
+        },
+        "frames": 10,
+        "tokens": 4
+      },
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 3,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 3,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 7,
+        "tokens": 3
+      },
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 4,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 6,
+            "tokens": 2
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 10,
+        "tokens": 4
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 6,
+            "tokens": 2
+          },
+          "low": {
+            "frames": 4,
+            "tokens": 2
+          }
+        },
+        "frames": 10,
+        "tokens": 4
+      },
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 2,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 2
+          }
+        },
+        "frames": 6,
+        "tokens": 2
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 0,
+            "tokens": 0
+          },
+          "low": {
+            "frames": 6,
+            "tokens": 2
+          }
+        },
+        "frames": 6,
+        "tokens": 2
+      },
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 6,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 8,
+            "tokens": 3
+          },
+          "low": {
+            "frames": 7,
+            "tokens": 3
+          }
+        },
+        "frames": 15,
+        "tokens": 6
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 8,
+            "tokens": 3
+          },
+          "low": {
+            "frames": 7,
+            "tokens": 3
+          }
+        },
+        "frames": 15,
+        "tokens": 6
+      },
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "loss": {
+        "boundary_or_shared_mask_frames": 0,
+        "candidate_frames_removed_by_token_minimum": 0,
+        "s0_tokens_removed_by_token_minimum": 0,
+        "s0_tokens_with_any_candidate": 6,
+        "total_s0_to_s17_frames": 0
+      },
+      "model": "Ditto",
+      "s0": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 13,
+            "tokens": 5
+          }
+        },
+        "frames": 15,
+        "tokens": 6
+      },
+      "s17": {
+        "by_class": {
+          "high": {
+            "frames": 2,
+            "tokens": 1
+          },
+          "low": {
+            "frames": 13,
+            "tokens": 5
+          }
+        },
+        "frames": 15,
+        "tokens": 6
+      },
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037"
+    }
+  ],
+  "effect03_sha256": "7c66fbe592c53888196a6862b3a3354b3707ae04a80f2dc994938a86cec6cdae",
+  "fps": 25,
+  "lag_definition": "At original core time j/25, read geometry at j+lag; no clock edit or interpolation.",
+  "lags": [
+    -8,
+    -7,
+    -6,
+    -5,
+    -4,
+    -3,
+    -2,
+    -1,
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "model_attribute_summaries": {
+    "Ditto": {
+      "vowel_height_aperture_proxy": {
+        "allowed_speakers": [
+          "S0022",
+          "S0024",
+          "S0037"
+        ],
+        "n_speakers_with_both_classes": 3,
+        "outside_phone_by_lag": [
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": -8,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": -7,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": -6,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": -5,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 0.9361702127659575,
+            "lag": -4,
+            "outside_phone_centers": 44
+          },
+          {
+            "centers": 47,
+            "fraction": 0.8085106382978723,
+            "lag": -3,
+            "outside_phone_centers": 38
+          },
+          {
+            "centers": 47,
+            "fraction": 0.5106382978723404,
+            "lag": -2,
+            "outside_phone_centers": 24
+          },
+          {
+            "centers": 47,
+            "fraction": 0.1276595744680851,
+            "lag": -1,
+            "outside_phone_centers": 6
+          },
+          {
+            "centers": 47,
+            "fraction": 0.0,
+            "lag": 0,
+            "outside_phone_centers": 0
+          },
+          {
+            "centers": 47,
+            "fraction": 0.2553191489361702,
+            "lag": 1,
+            "outside_phone_centers": 12
+          },
+          {
+            "centers": 47,
+            "fraction": 0.6595744680851063,
+            "lag": 2,
+            "outside_phone_centers": 31
+          },
+          {
+            "centers": 47,
+            "fraction": 0.8723404255319149,
+            "lag": 3,
+            "outside_phone_centers": 41
+          },
+          {
+            "centers": 47,
+            "fraction": 0.9574468085106383,
+            "lag": 4,
+            "outside_phone_centers": 45
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": 5,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": 6,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": 7,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": 8,
+            "outside_phone_centers": 47
+          }
+        ],
+        "required_speakers": 3,
+        "speaker_class_counts": {
+          "S0022": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 2,
+              "s0_tokens": 1,
+              "s17_frames": 2,
+              "s17_tokens": 1
+            },
+            "low": {
+              "s0_frames": 5,
+              "s0_tokens": 2,
+              "s17_frames": 5,
+              "s17_tokens": 2
+            }
+          },
+          "S0024": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 5,
+              "s0_tokens": 2,
+              "s17_frames": 5,
+              "s17_tokens": 2
+            },
+            "low": {
+              "s0_frames": 6,
+              "s0_tokens": 3,
+              "s17_frames": 6,
+              "s17_tokens": 3
+            }
+          },
+          "S0037": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 2,
+              "s0_tokens": 1,
+              "s17_frames": 2,
+              "s17_tokens": 1
+            },
+            "low": {
+              "s0_frames": 19,
+              "s0_tokens": 7,
+              "s17_frames": 19,
+              "s17_tokens": 7
+            }
+          }
+        },
+        "speakers_with_both_classes": [
+          "S0022",
+          "S0024",
+          "S0037"
+        ],
+        "status": "SUPPORTED"
+      },
+      "vowel_rounding_proxy": {
+        "allowed_speakers": [
+          "S0005",
+          "S0022",
+          "S0024",
+          "S0037"
+        ],
+        "n_speakers_with_both_classes": 4,
+        "outside_phone_by_lag": [
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": -8,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": -7,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": -6,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": -5,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 0.95,
+            "lag": -4,
+            "outside_phone_centers": 57
+          },
+          {
+            "centers": 60,
+            "fraction": 0.8333333333333334,
+            "lag": -3,
+            "outside_phone_centers": 50
+          },
+          {
+            "centers": 60,
+            "fraction": 0.5666666666666667,
+            "lag": -2,
+            "outside_phone_centers": 34
+          },
+          {
+            "centers": 60,
+            "fraction": 0.16666666666666666,
+            "lag": -1,
+            "outside_phone_centers": 10
+          },
+          {
+            "centers": 60,
+            "fraction": 0.0,
+            "lag": 0,
+            "outside_phone_centers": 0
+          },
+          {
+            "centers": 60,
+            "fraction": 0.26666666666666666,
+            "lag": 1,
+            "outside_phone_centers": 16
+          },
+          {
+            "centers": 60,
+            "fraction": 0.6833333333333333,
+            "lag": 2,
+            "outside_phone_centers": 41
+          },
+          {
+            "centers": 60,
+            "fraction": 0.8833333333333333,
+            "lag": 3,
+            "outside_phone_centers": 53
+          },
+          {
+            "centers": 60,
+            "fraction": 0.9666666666666667,
+            "lag": 4,
+            "outside_phone_centers": 58
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": 5,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": 6,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": 7,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": 8,
+            "outside_phone_centers": 60
+          }
+        ],
+        "required_speakers": 3,
+        "speaker_class_counts": {
+          "S0005": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 3,
+              "s0_tokens": 1,
+              "s17_frames": 3,
+              "s17_tokens": 1
+            },
+            "low": {
+              "s0_frames": 7,
+              "s0_tokens": 3,
+              "s17_frames": 7,
+              "s17_tokens": 3
+            }
+          },
+          "S0022": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 3,
+              "s0_tokens": 1,
+              "s17_frames": 3,
+              "s17_tokens": 1
+            },
+            "low": {
+              "s0_frames": 6,
+              "s0_tokens": 3,
+              "s17_frames": 6,
+              "s17_tokens": 3
+            }
+          },
+          "S0024": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 7,
+              "s0_tokens": 3,
+              "s17_frames": 7,
+              "s17_tokens": 3
+            },
+            "low": {
+              "s0_frames": 9,
+              "s0_tokens": 4,
+              "s17_frames": 9,
+              "s17_tokens": 4
+            }
+          },
+          "S0037": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 14,
+              "s0_tokens": 5,
+              "s17_frames": 14,
+              "s17_tokens": 5
+            },
+            "low": {
+              "s0_frames": 11,
+              "s0_tokens": 5,
+              "s17_frames": 11,
+              "s17_tokens": 5
+            }
+          }
+        },
+        "speakers_with_both_classes": [
+          "S0005",
+          "S0022",
+          "S0024",
+          "S0037"
+        ],
+        "status": "SUPPORTED"
+      }
+    },
+    "MuseTalk": {
+      "vowel_height_aperture_proxy": {
+        "allowed_speakers": [
+          "S0022",
+          "S0024",
+          "S0037"
+        ],
+        "n_speakers_with_both_classes": 3,
+        "outside_phone_by_lag": [
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": -8,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": -7,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": -6,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": -5,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 0.9361702127659575,
+            "lag": -4,
+            "outside_phone_centers": 44
+          },
+          {
+            "centers": 47,
+            "fraction": 0.8085106382978723,
+            "lag": -3,
+            "outside_phone_centers": 38
+          },
+          {
+            "centers": 47,
+            "fraction": 0.5106382978723404,
+            "lag": -2,
+            "outside_phone_centers": 24
+          },
+          {
+            "centers": 47,
+            "fraction": 0.1276595744680851,
+            "lag": -1,
+            "outside_phone_centers": 6
+          },
+          {
+            "centers": 47,
+            "fraction": 0.0,
+            "lag": 0,
+            "outside_phone_centers": 0
+          },
+          {
+            "centers": 47,
+            "fraction": 0.2553191489361702,
+            "lag": 1,
+            "outside_phone_centers": 12
+          },
+          {
+            "centers": 47,
+            "fraction": 0.6595744680851063,
+            "lag": 2,
+            "outside_phone_centers": 31
+          },
+          {
+            "centers": 47,
+            "fraction": 0.8723404255319149,
+            "lag": 3,
+            "outside_phone_centers": 41
+          },
+          {
+            "centers": 47,
+            "fraction": 0.9574468085106383,
+            "lag": 4,
+            "outside_phone_centers": 45
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": 5,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": 6,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": 7,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": 8,
+            "outside_phone_centers": 47
+          }
+        ],
+        "required_speakers": 3,
+        "speaker_class_counts": {
+          "S0022": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 2,
+              "s0_tokens": 1,
+              "s17_frames": 2,
+              "s17_tokens": 1
+            },
+            "low": {
+              "s0_frames": 5,
+              "s0_tokens": 2,
+              "s17_frames": 5,
+              "s17_tokens": 2
+            }
+          },
+          "S0024": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 5,
+              "s0_tokens": 2,
+              "s17_frames": 5,
+              "s17_tokens": 2
+            },
+            "low": {
+              "s0_frames": 6,
+              "s0_tokens": 3,
+              "s17_frames": 6,
+              "s17_tokens": 3
+            }
+          },
+          "S0037": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 2,
+              "s0_tokens": 1,
+              "s17_frames": 2,
+              "s17_tokens": 1
+            },
+            "low": {
+              "s0_frames": 19,
+              "s0_tokens": 7,
+              "s17_frames": 19,
+              "s17_tokens": 7
+            }
+          }
+        },
+        "speakers_with_both_classes": [
+          "S0022",
+          "S0024",
+          "S0037"
+        ],
+        "status": "SUPPORTED"
+      },
+      "vowel_rounding_proxy": {
+        "allowed_speakers": [
+          "S0005",
+          "S0022",
+          "S0024",
+          "S0037"
+        ],
+        "n_speakers_with_both_classes": 4,
+        "outside_phone_by_lag": [
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": -8,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": -7,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": -6,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": -5,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 0.95,
+            "lag": -4,
+            "outside_phone_centers": 57
+          },
+          {
+            "centers": 60,
+            "fraction": 0.8333333333333334,
+            "lag": -3,
+            "outside_phone_centers": 50
+          },
+          {
+            "centers": 60,
+            "fraction": 0.5666666666666667,
+            "lag": -2,
+            "outside_phone_centers": 34
+          },
+          {
+            "centers": 60,
+            "fraction": 0.16666666666666666,
+            "lag": -1,
+            "outside_phone_centers": 10
+          },
+          {
+            "centers": 60,
+            "fraction": 0.0,
+            "lag": 0,
+            "outside_phone_centers": 0
+          },
+          {
+            "centers": 60,
+            "fraction": 0.26666666666666666,
+            "lag": 1,
+            "outside_phone_centers": 16
+          },
+          {
+            "centers": 60,
+            "fraction": 0.6833333333333333,
+            "lag": 2,
+            "outside_phone_centers": 41
+          },
+          {
+            "centers": 60,
+            "fraction": 0.8833333333333333,
+            "lag": 3,
+            "outside_phone_centers": 53
+          },
+          {
+            "centers": 60,
+            "fraction": 0.9666666666666667,
+            "lag": 4,
+            "outside_phone_centers": 58
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": 5,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": 6,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": 7,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": 8,
+            "outside_phone_centers": 60
+          }
+        ],
+        "required_speakers": 3,
+        "speaker_class_counts": {
+          "S0005": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 3,
+              "s0_tokens": 1,
+              "s17_frames": 3,
+              "s17_tokens": 1
+            },
+            "low": {
+              "s0_frames": 7,
+              "s0_tokens": 3,
+              "s17_frames": 7,
+              "s17_tokens": 3
+            }
+          },
+          "S0022": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 3,
+              "s0_tokens": 1,
+              "s17_frames": 3,
+              "s17_tokens": 1
+            },
+            "low": {
+              "s0_frames": 6,
+              "s0_tokens": 3,
+              "s17_frames": 6,
+              "s17_tokens": 3
+            }
+          },
+          "S0024": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 7,
+              "s0_tokens": 3,
+              "s17_frames": 7,
+              "s17_tokens": 3
+            },
+            "low": {
+              "s0_frames": 9,
+              "s0_tokens": 4,
+              "s17_frames": 9,
+              "s17_tokens": 4
+            }
+          },
+          "S0037": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 14,
+              "s0_tokens": 5,
+              "s17_frames": 14,
+              "s17_tokens": 5
+            },
+            "low": {
+              "s0_frames": 11,
+              "s0_tokens": 5,
+              "s17_frames": 11,
+              "s17_tokens": 5
+            }
+          }
+        },
+        "speakers_with_both_classes": [
+          "S0005",
+          "S0022",
+          "S0024",
+          "S0037"
+        ],
+        "status": "SUPPORTED"
+      }
+    },
+    "Wav2Lip": {
+      "vowel_height_aperture_proxy": {
+        "allowed_speakers": [
+          "S0022",
+          "S0024",
+          "S0037"
+        ],
+        "n_speakers_with_both_classes": 3,
+        "outside_phone_by_lag": [
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": -8,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": -7,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": -6,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": -5,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 0.9361702127659575,
+            "lag": -4,
+            "outside_phone_centers": 44
+          },
+          {
+            "centers": 47,
+            "fraction": 0.8085106382978723,
+            "lag": -3,
+            "outside_phone_centers": 38
+          },
+          {
+            "centers": 47,
+            "fraction": 0.5106382978723404,
+            "lag": -2,
+            "outside_phone_centers": 24
+          },
+          {
+            "centers": 47,
+            "fraction": 0.1276595744680851,
+            "lag": -1,
+            "outside_phone_centers": 6
+          },
+          {
+            "centers": 47,
+            "fraction": 0.0,
+            "lag": 0,
+            "outside_phone_centers": 0
+          },
+          {
+            "centers": 47,
+            "fraction": 0.2553191489361702,
+            "lag": 1,
+            "outside_phone_centers": 12
+          },
+          {
+            "centers": 47,
+            "fraction": 0.6595744680851063,
+            "lag": 2,
+            "outside_phone_centers": 31
+          },
+          {
+            "centers": 47,
+            "fraction": 0.8723404255319149,
+            "lag": 3,
+            "outside_phone_centers": 41
+          },
+          {
+            "centers": 47,
+            "fraction": 0.9574468085106383,
+            "lag": 4,
+            "outside_phone_centers": 45
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": 5,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": 6,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": 7,
+            "outside_phone_centers": 47
+          },
+          {
+            "centers": 47,
+            "fraction": 1.0,
+            "lag": 8,
+            "outside_phone_centers": 47
+          }
+        ],
+        "required_speakers": 3,
+        "speaker_class_counts": {
+          "S0022": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 2,
+              "s0_tokens": 1,
+              "s17_frames": 2,
+              "s17_tokens": 1
+            },
+            "low": {
+              "s0_frames": 5,
+              "s0_tokens": 2,
+              "s17_frames": 5,
+              "s17_tokens": 2
+            }
+          },
+          "S0024": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 5,
+              "s0_tokens": 2,
+              "s17_frames": 5,
+              "s17_tokens": 2
+            },
+            "low": {
+              "s0_frames": 6,
+              "s0_tokens": 3,
+              "s17_frames": 6,
+              "s17_tokens": 3
+            }
+          },
+          "S0037": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 2,
+              "s0_tokens": 1,
+              "s17_frames": 2,
+              "s17_tokens": 1
+            },
+            "low": {
+              "s0_frames": 19,
+              "s0_tokens": 7,
+              "s17_frames": 19,
+              "s17_tokens": 7
+            }
+          }
+        },
+        "speakers_with_both_classes": [
+          "S0022",
+          "S0024",
+          "S0037"
+        ],
+        "status": "SUPPORTED"
+      },
+      "vowel_rounding_proxy": {
+        "allowed_speakers": [
+          "S0005",
+          "S0022",
+          "S0024",
+          "S0037"
+        ],
+        "n_speakers_with_both_classes": 4,
+        "outside_phone_by_lag": [
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": -8,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": -7,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": -6,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": -5,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 0.95,
+            "lag": -4,
+            "outside_phone_centers": 57
+          },
+          {
+            "centers": 60,
+            "fraction": 0.8333333333333334,
+            "lag": -3,
+            "outside_phone_centers": 50
+          },
+          {
+            "centers": 60,
+            "fraction": 0.5666666666666667,
+            "lag": -2,
+            "outside_phone_centers": 34
+          },
+          {
+            "centers": 60,
+            "fraction": 0.16666666666666666,
+            "lag": -1,
+            "outside_phone_centers": 10
+          },
+          {
+            "centers": 60,
+            "fraction": 0.0,
+            "lag": 0,
+            "outside_phone_centers": 0
+          },
+          {
+            "centers": 60,
+            "fraction": 0.26666666666666666,
+            "lag": 1,
+            "outside_phone_centers": 16
+          },
+          {
+            "centers": 60,
+            "fraction": 0.6833333333333333,
+            "lag": 2,
+            "outside_phone_centers": 41
+          },
+          {
+            "centers": 60,
+            "fraction": 0.8833333333333333,
+            "lag": 3,
+            "outside_phone_centers": 53
+          },
+          {
+            "centers": 60,
+            "fraction": 0.9666666666666667,
+            "lag": 4,
+            "outside_phone_centers": 58
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": 5,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": 6,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": 7,
+            "outside_phone_centers": 60
+          },
+          {
+            "centers": 60,
+            "fraction": 1.0,
+            "lag": 8,
+            "outside_phone_centers": 60
+          }
+        ],
+        "required_speakers": 3,
+        "speaker_class_counts": {
+          "S0005": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 3,
+              "s0_tokens": 1,
+              "s17_frames": 3,
+              "s17_tokens": 1
+            },
+            "low": {
+              "s0_frames": 7,
+              "s0_tokens": 3,
+              "s17_frames": 7,
+              "s17_tokens": 3
+            }
+          },
+          "S0022": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 3,
+              "s0_tokens": 1,
+              "s17_frames": 3,
+              "s17_tokens": 1
+            },
+            "low": {
+              "s0_frames": 6,
+              "s0_tokens": 3,
+              "s17_frames": 6,
+              "s17_tokens": 3
+            }
+          },
+          "S0024": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 7,
+              "s0_tokens": 3,
+              "s17_frames": 7,
+              "s17_tokens": 3
+            },
+            "low": {
+              "s0_frames": 9,
+              "s0_tokens": 4,
+              "s17_frames": 9,
+              "s17_tokens": 4
+            }
+          },
+          "S0037": {
+            "has_both_classes": true,
+            "high": {
+              "s0_frames": 14,
+              "s0_tokens": 5,
+              "s17_frames": 14,
+              "s17_tokens": 5
+            },
+            "low": {
+              "s0_frames": 11,
+              "s0_tokens": 5,
+              "s17_frames": 11,
+              "s17_tokens": 5
+            }
+          }
+        },
+        "speakers_with_both_classes": [
+          "S0005",
+          "S0022",
+          "S0024",
+          "S0037"
+        ],
+        "status": "SUPPORTED"
+      }
+    }
+  },
+  "protocol_sha256": "0ed732ada47d0110403978514f2828d1ba8caf919e4461571d727befcc43551b",
+  "schema": "fixed_functional_lag_s17_support_v1",
+  "status": "S17_CLOCK_MASK_SUPPORT_READY_FOR_ROOT_REVIEW_NO_AMPLITUDES_READ",
+  "support_inventory_sha256": "296c2064b77cb74b3b3da63f575a635f618eed13cd88ba5e0d3e041aa1dc0887",
+  "token_records": [
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        50,
+        51,
+        52
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "u˨˩˦",
+      "phone_index": 16,
+      "raw_end_s": 2.15,
+      "raw_start_s": 1.92,
+      "s0_frames": 3,
+      "s0_indices": [
+        50,
+        51,
+        52
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        50,
+        51,
+        52
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        66,
+        67
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˥˩",
+      "phone_index": 21,
+      "raw_end_s": 2.71,
+      "raw_start_s": 2.59,
+      "s0_frames": 2,
+      "s0_indices": [
+        66,
+        67
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        66,
+        67
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        42,
+        43,
+        44
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˥",
+      "phone_index": 18,
+      "raw_end_s": 1.8,
+      "raw_start_s": 1.64,
+      "s0_frames": 3,
+      "s0_indices": [
+        42,
+        43,
+        44
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        42,
+        43,
+        44
+      ],
+      "sample_id": "BAC009S0005W0123",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        24,
+        25
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "a˨˩˦",
+      "phone_index": 8,
+      "raw_end_s": 1.02,
+      "raw_start_s": 0.93,
+      "s0_frames": 2,
+      "s0_indices": [
+        24,
+        25
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        24,
+        25
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        40,
+        41
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˥",
+      "phone_index": 16,
+      "raw_end_s": 1.67,
+      "raw_start_s": 1.55,
+      "s0_frames": 2,
+      "s0_indices": [
+        40,
+        41
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        40,
+        41
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        53,
+        54,
+        55
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "u˨˩˦",
+      "phone_index": 21,
+      "raw_end_s": 2.24,
+      "raw_start_s": 2.07,
+      "s0_frames": 3,
+      "s0_indices": [
+        53,
+        54,
+        55
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        53,
+        54,
+        55
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        25,
+        26
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "a˥",
+      "phone_index": 8,
+      "raw_end_s": 1.07,
+      "raw_start_s": 0.98,
+      "s0_frames": 2,
+      "s0_indices": [
+        25,
+        26
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        25,
+        26
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        61,
+        62
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˧˥",
+      "phone_index": 26,
+      "raw_end_s": 2.52,
+      "raw_start_s": 2.4,
+      "s0_frames": 2,
+      "s0_indices": [
+        61,
+        62
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        61,
+        62
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        27,
+        28
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "u˨˩˦",
+      "phone_index": 6,
+      "raw_end_s": 1.18,
+      "raw_start_s": 1.01,
+      "s0_frames": 2,
+      "s0_indices": [
+        27,
+        28
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        27,
+        28
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        38,
+        39
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "y˧˥",
+      "phone_index": 9,
+      "raw_end_s": 1.62,
+      "raw_start_s": 1.48,
+      "s0_frames": 2,
+      "s0_indices": [
+        38,
+        39
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        38,
+        39
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        49,
+        50,
+        51
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "a˥˩",
+      "phone_index": 16,
+      "raw_end_s": 2.07,
+      "raw_start_s": 1.93,
+      "s0_frames": 3,
+      "s0_indices": [
+        49,
+        50,
+        51
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        49,
+        50,
+        51
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 4,
+      "candidate_s17_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "y˧˥",
+      "phone_index": 1,
+      "raw_end_s": 0.71,
+      "raw_start_s": 0.46,
+      "s0_frames": 4,
+      "s0_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "s17_frames": 4,
+      "s17_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        79,
+        80
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˨˩˦",
+      "phone_index": 25,
+      "raw_end_s": 3.24,
+      "raw_start_s": 3.1,
+      "s0_frames": 2,
+      "s0_indices": [
+        79,
+        80
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        79,
+        80
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 4,
+      "candidate_s17_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "u˥˩",
+      "phone_index": 13,
+      "raw_end_s": 1.59,
+      "raw_start_s": 1.35,
+      "s0_frames": 4,
+      "s0_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "s17_frames": 4,
+      "s17_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        49,
+        50
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˥˩",
+      "phone_index": 16,
+      "raw_end_s": 2.04,
+      "raw_start_s": 1.94,
+      "s0_frames": 2,
+      "s0_indices": [
+        49,
+        50
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        49,
+        50
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        53,
+        54
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "u˨˩˦",
+      "phone_index": 18,
+      "raw_end_s": 2.19,
+      "raw_start_s": 2.1,
+      "s0_frames": 2,
+      "s0_indices": [
+        53,
+        54
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        53,
+        54
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        58,
+        59
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "a˥˩",
+      "phone_index": 21,
+      "raw_end_s": 2.38,
+      "raw_start_s": 2.3,
+      "s0_frames": 2,
+      "s0_indices": [
+        58,
+        59
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        58,
+        59
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        81,
+        82
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "y˥˩",
+      "phone_index": 33,
+      "raw_end_s": 3.33,
+      "raw_start_s": 3.2,
+      "s0_frames": 2,
+      "s0_indices": [
+        81,
+        82
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        81,
+        82
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        87,
+        88,
+        89
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˥˩",
+      "phone_index": 35,
+      "raw_end_s": 3.61,
+      "raw_start_s": 3.44,
+      "s0_frames": 3,
+      "s0_indices": [
+        87,
+        88,
+        89
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        87,
+        88,
+        89
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        50,
+        51,
+        52
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "u˨˩˦",
+      "phone_index": 16,
+      "raw_end_s": 2.15,
+      "raw_start_s": 1.92,
+      "s0_frames": 3,
+      "s0_indices": [
+        50,
+        51,
+        52
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        50,
+        51,
+        52
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        66,
+        67
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˥˩",
+      "phone_index": 21,
+      "raw_end_s": 2.71,
+      "raw_start_s": 2.59,
+      "s0_frames": 2,
+      "s0_indices": [
+        66,
+        67
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        66,
+        67
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "e",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        71,
+        72
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "e˧˥",
+      "phone_index": 23,
+      "raw_end_s": 2.93,
+      "raw_start_s": 2.81,
+      "s0_frames": 2,
+      "s0_indices": [
+        71,
+        72
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        71,
+        72
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        42,
+        43,
+        44
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˥",
+      "phone_index": 18,
+      "raw_end_s": 1.8,
+      "raw_start_s": 1.64,
+      "s0_frames": 3,
+      "s0_indices": [
+        42,
+        43,
+        44
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        42,
+        43,
+        44
+      ],
+      "sample_id": "BAC009S0005W0123",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        24,
+        25
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "a˨˩˦",
+      "phone_index": 8,
+      "raw_end_s": 1.02,
+      "raw_start_s": 0.93,
+      "s0_frames": 2,
+      "s0_indices": [
+        24,
+        25
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        24,
+        25
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        40,
+        41
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˥",
+      "phone_index": 16,
+      "raw_end_s": 1.67,
+      "raw_start_s": 1.55,
+      "s0_frames": 2,
+      "s0_indices": [
+        40,
+        41
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        40,
+        41
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "e",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        45,
+        46
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "e˥˩",
+      "phone_index": 18,
+      "raw_end_s": 1.86,
+      "raw_start_s": 1.77,
+      "s0_frames": 2,
+      "s0_indices": [
+        45,
+        46
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        45,
+        46
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        53,
+        54,
+        55
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "u˨˩˦",
+      "phone_index": 21,
+      "raw_end_s": 2.24,
+      "raw_start_s": 2.07,
+      "s0_frames": 3,
+      "s0_indices": [
+        53,
+        54,
+        55
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        53,
+        54,
+        55
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        25,
+        26
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "a˥",
+      "phone_index": 8,
+      "raw_end_s": 1.07,
+      "raw_start_s": 0.98,
+      "s0_frames": 2,
+      "s0_indices": [
+        25,
+        26
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        25,
+        26
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "ə",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        51,
+        52
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "ə",
+      "phone_index": 21,
+      "raw_end_s": 2.11,
+      "raw_start_s": 2.0,
+      "s0_frames": 2,
+      "s0_indices": [
+        51,
+        52
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        51,
+        52
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        61,
+        62
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˧˥",
+      "phone_index": 26,
+      "raw_end_s": 2.52,
+      "raw_start_s": 2.4,
+      "s0_frames": 2,
+      "s0_indices": [
+        61,
+        62
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        61,
+        62
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        27,
+        28
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "u˨˩˦",
+      "phone_index": 6,
+      "raw_end_s": 1.18,
+      "raw_start_s": 1.01,
+      "s0_frames": 2,
+      "s0_indices": [
+        27,
+        28
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        27,
+        28
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        38,
+        39
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "y˧˥",
+      "phone_index": 9,
+      "raw_end_s": 1.62,
+      "raw_start_s": 1.48,
+      "s0_frames": 2,
+      "s0_indices": [
+        38,
+        39
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        38,
+        39
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        49,
+        50,
+        51
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "a˥˩",
+      "phone_index": 16,
+      "raw_end_s": 2.07,
+      "raw_start_s": 1.93,
+      "s0_frames": 3,
+      "s0_indices": [
+        49,
+        50,
+        51
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        49,
+        50,
+        51
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "o",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        71,
+        72,
+        73
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "o˥˩",
+      "phone_index": 27,
+      "raw_end_s": 2.98,
+      "raw_start_s": 2.8,
+      "s0_frames": 3,
+      "s0_indices": [
+        71,
+        72,
+        73
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        71,
+        72,
+        73
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 4,
+      "candidate_s17_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "y˧˥",
+      "phone_index": 1,
+      "raw_end_s": 0.71,
+      "raw_start_s": 0.46,
+      "s0_frames": 4,
+      "s0_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "s17_frames": 4,
+      "s17_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "o",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        60,
+        61
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "o˧˥",
+      "phone_index": 18,
+      "raw_end_s": 2.46,
+      "raw_start_s": 2.37,
+      "s0_frames": 2,
+      "s0_indices": [
+        60,
+        61
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        60,
+        61
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        79,
+        80
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˨˩˦",
+      "phone_index": 25,
+      "raw_end_s": 3.24,
+      "raw_start_s": 3.1,
+      "s0_frames": 2,
+      "s0_indices": [
+        79,
+        80
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        79,
+        80
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "e",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        87,
+        88
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "e˥˩",
+      "phone_index": 29,
+      "raw_end_s": 3.55,
+      "raw_start_s": 3.46,
+      "s0_frames": 2,
+      "s0_indices": [
+        87,
+        88
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        87,
+        88
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 4,
+      "candidate_s17_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "u˥˩",
+      "phone_index": 13,
+      "raw_end_s": 1.59,
+      "raw_start_s": 1.35,
+      "s0_frames": 4,
+      "s0_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "s17_frames": 4,
+      "s17_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        49,
+        50
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˥˩",
+      "phone_index": 16,
+      "raw_end_s": 2.04,
+      "raw_start_s": 1.94,
+      "s0_frames": 2,
+      "s0_indices": [
+        49,
+        50
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        49,
+        50
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        53,
+        54
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "u˨˩˦",
+      "phone_index": 18,
+      "raw_end_s": 2.19,
+      "raw_start_s": 2.1,
+      "s0_frames": 2,
+      "s0_indices": [
+        53,
+        54
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        53,
+        54
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        58,
+        59
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "a˥˩",
+      "phone_index": 21,
+      "raw_end_s": 2.38,
+      "raw_start_s": 2.3,
+      "s0_frames": 2,
+      "s0_indices": [
+        58,
+        59
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        58,
+        59
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        81,
+        82
+      ],
+      "class": "high",
+      "model": "Ditto",
+      "phone": "y˥˩",
+      "phone_index": 33,
+      "raw_end_s": 3.33,
+      "raw_start_s": 3.2,
+      "s0_frames": 2,
+      "s0_indices": [
+        81,
+        82
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        81,
+        82
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        87,
+        88,
+        89
+      ],
+      "class": "low",
+      "model": "Ditto",
+      "phone": "i˥˩",
+      "phone_index": 35,
+      "raw_end_s": 3.61,
+      "raw_start_s": 3.44,
+      "s0_frames": 3,
+      "s0_indices": [
+        87,
+        88,
+        89
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        87,
+        88,
+        89
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        50,
+        51,
+        52
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "u˨˩˦",
+      "phone_index": 16,
+      "raw_end_s": 2.15,
+      "raw_start_s": 1.92,
+      "s0_frames": 3,
+      "s0_indices": [
+        50,
+        51,
+        52
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        50,
+        51,
+        52
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        66,
+        67
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˥˩",
+      "phone_index": 21,
+      "raw_end_s": 2.71,
+      "raw_start_s": 2.59,
+      "s0_frames": 2,
+      "s0_indices": [
+        66,
+        67
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        66,
+        67
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        42,
+        43,
+        44
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˥",
+      "phone_index": 18,
+      "raw_end_s": 1.8,
+      "raw_start_s": 1.64,
+      "s0_frames": 3,
+      "s0_indices": [
+        42,
+        43,
+        44
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        42,
+        43,
+        44
+      ],
+      "sample_id": "BAC009S0005W0123",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        24,
+        25
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "a˨˩˦",
+      "phone_index": 8,
+      "raw_end_s": 1.02,
+      "raw_start_s": 0.93,
+      "s0_frames": 2,
+      "s0_indices": [
+        24,
+        25
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        24,
+        25
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        40,
+        41
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˥",
+      "phone_index": 16,
+      "raw_end_s": 1.67,
+      "raw_start_s": 1.55,
+      "s0_frames": 2,
+      "s0_indices": [
+        40,
+        41
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        40,
+        41
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        53,
+        54,
+        55
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "u˨˩˦",
+      "phone_index": 21,
+      "raw_end_s": 2.24,
+      "raw_start_s": 2.07,
+      "s0_frames": 3,
+      "s0_indices": [
+        53,
+        54,
+        55
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        53,
+        54,
+        55
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        25,
+        26
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "a˥",
+      "phone_index": 8,
+      "raw_end_s": 1.07,
+      "raw_start_s": 0.98,
+      "s0_frames": 2,
+      "s0_indices": [
+        25,
+        26
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        25,
+        26
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        61,
+        62
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˧˥",
+      "phone_index": 26,
+      "raw_end_s": 2.52,
+      "raw_start_s": 2.4,
+      "s0_frames": 2,
+      "s0_indices": [
+        61,
+        62
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        61,
+        62
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        27,
+        28
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "u˨˩˦",
+      "phone_index": 6,
+      "raw_end_s": 1.18,
+      "raw_start_s": 1.01,
+      "s0_frames": 2,
+      "s0_indices": [
+        27,
+        28
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        27,
+        28
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        38,
+        39
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "y˧˥",
+      "phone_index": 9,
+      "raw_end_s": 1.62,
+      "raw_start_s": 1.48,
+      "s0_frames": 2,
+      "s0_indices": [
+        38,
+        39
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        38,
+        39
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        49,
+        50,
+        51
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "a˥˩",
+      "phone_index": 16,
+      "raw_end_s": 2.07,
+      "raw_start_s": 1.93,
+      "s0_frames": 3,
+      "s0_indices": [
+        49,
+        50,
+        51
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        49,
+        50,
+        51
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 4,
+      "candidate_s17_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "y˧˥",
+      "phone_index": 1,
+      "raw_end_s": 0.71,
+      "raw_start_s": 0.46,
+      "s0_frames": 4,
+      "s0_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "s17_frames": 4,
+      "s17_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        79,
+        80
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˨˩˦",
+      "phone_index": 25,
+      "raw_end_s": 3.24,
+      "raw_start_s": 3.1,
+      "s0_frames": 2,
+      "s0_indices": [
+        79,
+        80
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        79,
+        80
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 4,
+      "candidate_s17_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "u˥˩",
+      "phone_index": 13,
+      "raw_end_s": 1.59,
+      "raw_start_s": 1.35,
+      "s0_frames": 4,
+      "s0_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "s17_frames": 4,
+      "s17_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        49,
+        50
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˥˩",
+      "phone_index": 16,
+      "raw_end_s": 2.04,
+      "raw_start_s": 1.94,
+      "s0_frames": 2,
+      "s0_indices": [
+        49,
+        50
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        49,
+        50
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        53,
+        54
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "u˨˩˦",
+      "phone_index": 18,
+      "raw_end_s": 2.19,
+      "raw_start_s": 2.1,
+      "s0_frames": 2,
+      "s0_indices": [
+        53,
+        54
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        53,
+        54
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        58,
+        59
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "a˥˩",
+      "phone_index": 21,
+      "raw_end_s": 2.38,
+      "raw_start_s": 2.3,
+      "s0_frames": 2,
+      "s0_indices": [
+        58,
+        59
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        58,
+        59
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        81,
+        82
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "y˥˩",
+      "phone_index": 33,
+      "raw_end_s": 3.33,
+      "raw_start_s": 3.2,
+      "s0_frames": 2,
+      "s0_indices": [
+        81,
+        82
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        81,
+        82
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        87,
+        88,
+        89
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˥˩",
+      "phone_index": 35,
+      "raw_end_s": 3.61,
+      "raw_start_s": 3.44,
+      "s0_frames": 3,
+      "s0_indices": [
+        87,
+        88,
+        89
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        87,
+        88,
+        89
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        50,
+        51,
+        52
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "u˨˩˦",
+      "phone_index": 16,
+      "raw_end_s": 2.15,
+      "raw_start_s": 1.92,
+      "s0_frames": 3,
+      "s0_indices": [
+        50,
+        51,
+        52
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        50,
+        51,
+        52
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        66,
+        67
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˥˩",
+      "phone_index": 21,
+      "raw_end_s": 2.71,
+      "raw_start_s": 2.59,
+      "s0_frames": 2,
+      "s0_indices": [
+        66,
+        67
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        66,
+        67
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "e",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        71,
+        72
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "e˧˥",
+      "phone_index": 23,
+      "raw_end_s": 2.93,
+      "raw_start_s": 2.81,
+      "s0_frames": 2,
+      "s0_indices": [
+        71,
+        72
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        71,
+        72
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        42,
+        43,
+        44
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˥",
+      "phone_index": 18,
+      "raw_end_s": 1.8,
+      "raw_start_s": 1.64,
+      "s0_frames": 3,
+      "s0_indices": [
+        42,
+        43,
+        44
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        42,
+        43,
+        44
+      ],
+      "sample_id": "BAC009S0005W0123",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        24,
+        25
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "a˨˩˦",
+      "phone_index": 8,
+      "raw_end_s": 1.02,
+      "raw_start_s": 0.93,
+      "s0_frames": 2,
+      "s0_indices": [
+        24,
+        25
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        24,
+        25
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        40,
+        41
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˥",
+      "phone_index": 16,
+      "raw_end_s": 1.67,
+      "raw_start_s": 1.55,
+      "s0_frames": 2,
+      "s0_indices": [
+        40,
+        41
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        40,
+        41
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "e",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        45,
+        46
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "e˥˩",
+      "phone_index": 18,
+      "raw_end_s": 1.86,
+      "raw_start_s": 1.77,
+      "s0_frames": 2,
+      "s0_indices": [
+        45,
+        46
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        45,
+        46
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        53,
+        54,
+        55
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "u˨˩˦",
+      "phone_index": 21,
+      "raw_end_s": 2.24,
+      "raw_start_s": 2.07,
+      "s0_frames": 3,
+      "s0_indices": [
+        53,
+        54,
+        55
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        53,
+        54,
+        55
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        25,
+        26
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "a˥",
+      "phone_index": 8,
+      "raw_end_s": 1.07,
+      "raw_start_s": 0.98,
+      "s0_frames": 2,
+      "s0_indices": [
+        25,
+        26
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        25,
+        26
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "ə",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        51,
+        52
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "ə",
+      "phone_index": 21,
+      "raw_end_s": 2.11,
+      "raw_start_s": 2.0,
+      "s0_frames": 2,
+      "s0_indices": [
+        51,
+        52
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        51,
+        52
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        61,
+        62
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˧˥",
+      "phone_index": 26,
+      "raw_end_s": 2.52,
+      "raw_start_s": 2.4,
+      "s0_frames": 2,
+      "s0_indices": [
+        61,
+        62
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        61,
+        62
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        27,
+        28
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "u˨˩˦",
+      "phone_index": 6,
+      "raw_end_s": 1.18,
+      "raw_start_s": 1.01,
+      "s0_frames": 2,
+      "s0_indices": [
+        27,
+        28
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        27,
+        28
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        38,
+        39
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "y˧˥",
+      "phone_index": 9,
+      "raw_end_s": 1.62,
+      "raw_start_s": 1.48,
+      "s0_frames": 2,
+      "s0_indices": [
+        38,
+        39
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        38,
+        39
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        49,
+        50,
+        51
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "a˥˩",
+      "phone_index": 16,
+      "raw_end_s": 2.07,
+      "raw_start_s": 1.93,
+      "s0_frames": 3,
+      "s0_indices": [
+        49,
+        50,
+        51
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        49,
+        50,
+        51
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "o",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        71,
+        72,
+        73
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "o˥˩",
+      "phone_index": 27,
+      "raw_end_s": 2.98,
+      "raw_start_s": 2.8,
+      "s0_frames": 3,
+      "s0_indices": [
+        71,
+        72,
+        73
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        71,
+        72,
+        73
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 4,
+      "candidate_s17_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "y˧˥",
+      "phone_index": 1,
+      "raw_end_s": 0.71,
+      "raw_start_s": 0.46,
+      "s0_frames": 4,
+      "s0_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "s17_frames": 4,
+      "s17_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "o",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        60,
+        61
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "o˧˥",
+      "phone_index": 18,
+      "raw_end_s": 2.46,
+      "raw_start_s": 2.37,
+      "s0_frames": 2,
+      "s0_indices": [
+        60,
+        61
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        60,
+        61
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        79,
+        80
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˨˩˦",
+      "phone_index": 25,
+      "raw_end_s": 3.24,
+      "raw_start_s": 3.1,
+      "s0_frames": 2,
+      "s0_indices": [
+        79,
+        80
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        79,
+        80
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "e",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        87,
+        88
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "e˥˩",
+      "phone_index": 29,
+      "raw_end_s": 3.55,
+      "raw_start_s": 3.46,
+      "s0_frames": 2,
+      "s0_indices": [
+        87,
+        88
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        87,
+        88
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 4,
+      "candidate_s17_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "u˥˩",
+      "phone_index": 13,
+      "raw_end_s": 1.59,
+      "raw_start_s": 1.35,
+      "s0_frames": 4,
+      "s0_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "s17_frames": 4,
+      "s17_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        49,
+        50
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˥˩",
+      "phone_index": 16,
+      "raw_end_s": 2.04,
+      "raw_start_s": 1.94,
+      "s0_frames": 2,
+      "s0_indices": [
+        49,
+        50
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        49,
+        50
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        53,
+        54
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "u˨˩˦",
+      "phone_index": 18,
+      "raw_end_s": 2.19,
+      "raw_start_s": 2.1,
+      "s0_frames": 2,
+      "s0_indices": [
+        53,
+        54
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        53,
+        54
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        58,
+        59
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "a˥˩",
+      "phone_index": 21,
+      "raw_end_s": 2.38,
+      "raw_start_s": 2.3,
+      "s0_frames": 2,
+      "s0_indices": [
+        58,
+        59
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        58,
+        59
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        81,
+        82
+      ],
+      "class": "high",
+      "model": "MuseTalk",
+      "phone": "y˥˩",
+      "phone_index": 33,
+      "raw_end_s": 3.33,
+      "raw_start_s": 3.2,
+      "s0_frames": 2,
+      "s0_indices": [
+        81,
+        82
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        81,
+        82
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        87,
+        88,
+        89
+      ],
+      "class": "low",
+      "model": "MuseTalk",
+      "phone": "i˥˩",
+      "phone_index": 35,
+      "raw_end_s": 3.61,
+      "raw_start_s": 3.44,
+      "s0_frames": 3,
+      "s0_indices": [
+        87,
+        88,
+        89
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        87,
+        88,
+        89
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        50,
+        51,
+        52
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "u˨˩˦",
+      "phone_index": 16,
+      "raw_end_s": 2.15,
+      "raw_start_s": 1.92,
+      "s0_frames": 3,
+      "s0_indices": [
+        50,
+        51,
+        52
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        50,
+        51,
+        52
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        66,
+        67
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˥˩",
+      "phone_index": 21,
+      "raw_end_s": 2.71,
+      "raw_start_s": 2.59,
+      "s0_frames": 2,
+      "s0_indices": [
+        66,
+        67
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        66,
+        67
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        42,
+        43,
+        44
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˥",
+      "phone_index": 18,
+      "raw_end_s": 1.8,
+      "raw_start_s": 1.64,
+      "s0_frames": 3,
+      "s0_indices": [
+        42,
+        43,
+        44
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        42,
+        43,
+        44
+      ],
+      "sample_id": "BAC009S0005W0123",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        24,
+        25
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "a˨˩˦",
+      "phone_index": 8,
+      "raw_end_s": 1.02,
+      "raw_start_s": 0.93,
+      "s0_frames": 2,
+      "s0_indices": [
+        24,
+        25
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        24,
+        25
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        40,
+        41
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˥",
+      "phone_index": 16,
+      "raw_end_s": 1.67,
+      "raw_start_s": 1.55,
+      "s0_frames": 2,
+      "s0_indices": [
+        40,
+        41
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        40,
+        41
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        53,
+        54,
+        55
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "u˨˩˦",
+      "phone_index": 21,
+      "raw_end_s": 2.24,
+      "raw_start_s": 2.07,
+      "s0_frames": 3,
+      "s0_indices": [
+        53,
+        54,
+        55
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        53,
+        54,
+        55
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        25,
+        26
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "a˥",
+      "phone_index": 8,
+      "raw_end_s": 1.07,
+      "raw_start_s": 0.98,
+      "s0_frames": 2,
+      "s0_indices": [
+        25,
+        26
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        25,
+        26
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        61,
+        62
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˧˥",
+      "phone_index": 26,
+      "raw_end_s": 2.52,
+      "raw_start_s": 2.4,
+      "s0_frames": 2,
+      "s0_indices": [
+        61,
+        62
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        61,
+        62
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        27,
+        28
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "u˨˩˦",
+      "phone_index": 6,
+      "raw_end_s": 1.18,
+      "raw_start_s": 1.01,
+      "s0_frames": 2,
+      "s0_indices": [
+        27,
+        28
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        27,
+        28
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        38,
+        39
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "y˧˥",
+      "phone_index": 9,
+      "raw_end_s": 1.62,
+      "raw_start_s": 1.48,
+      "s0_frames": 2,
+      "s0_indices": [
+        38,
+        39
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        38,
+        39
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        49,
+        50,
+        51
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "a˥˩",
+      "phone_index": 16,
+      "raw_end_s": 2.07,
+      "raw_start_s": 1.93,
+      "s0_frames": 3,
+      "s0_indices": [
+        49,
+        50,
+        51
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        49,
+        50,
+        51
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 4,
+      "candidate_s17_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "y˧˥",
+      "phone_index": 1,
+      "raw_end_s": 0.71,
+      "raw_start_s": 0.46,
+      "s0_frames": 4,
+      "s0_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "s17_frames": 4,
+      "s17_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        79,
+        80
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˨˩˦",
+      "phone_index": 25,
+      "raw_end_s": 3.24,
+      "raw_start_s": 3.1,
+      "s0_frames": 2,
+      "s0_indices": [
+        79,
+        80
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        79,
+        80
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 4,
+      "candidate_s17_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "u˥˩",
+      "phone_index": 13,
+      "raw_end_s": 1.59,
+      "raw_start_s": 1.35,
+      "s0_frames": 4,
+      "s0_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "s17_frames": 4,
+      "s17_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        49,
+        50
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˥˩",
+      "phone_index": 16,
+      "raw_end_s": 2.04,
+      "raw_start_s": 1.94,
+      "s0_frames": 2,
+      "s0_indices": [
+        49,
+        50
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        49,
+        50
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        53,
+        54
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "u˨˩˦",
+      "phone_index": 18,
+      "raw_end_s": 2.19,
+      "raw_start_s": 2.1,
+      "s0_frames": 2,
+      "s0_indices": [
+        53,
+        54
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        53,
+        54
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        58,
+        59
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "a˥˩",
+      "phone_index": 21,
+      "raw_end_s": 2.38,
+      "raw_start_s": 2.3,
+      "s0_frames": 2,
+      "s0_indices": [
+        58,
+        59
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        58,
+        59
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        81,
+        82
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "y˥˩",
+      "phone_index": 33,
+      "raw_end_s": 3.33,
+      "raw_start_s": 3.2,
+      "s0_frames": 2,
+      "s0_indices": [
+        81,
+        82
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        81,
+        82
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_height_aperture_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        87,
+        88,
+        89
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˥˩",
+      "phone_index": 35,
+      "raw_end_s": 3.61,
+      "raw_start_s": 3.44,
+      "s0_frames": 3,
+      "s0_indices": [
+        87,
+        88,
+        89
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        87,
+        88,
+        89
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        50,
+        51,
+        52
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "u˨˩˦",
+      "phone_index": 16,
+      "raw_end_s": 2.15,
+      "raw_start_s": 1.92,
+      "s0_frames": 3,
+      "s0_indices": [
+        50,
+        51,
+        52
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        50,
+        51,
+        52
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        66,
+        67
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˥˩",
+      "phone_index": 21,
+      "raw_end_s": 2.71,
+      "raw_start_s": 2.59,
+      "s0_frames": 2,
+      "s0_indices": [
+        66,
+        67
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        66,
+        67
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "e",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        71,
+        72
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "e˧˥",
+      "phone_index": 23,
+      "raw_end_s": 2.93,
+      "raw_start_s": 2.81,
+      "s0_frames": 2,
+      "s0_indices": [
+        71,
+        72
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        71,
+        72
+      ],
+      "sample_id": "BAC009S0005W0121",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        42,
+        43,
+        44
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˥",
+      "phone_index": 18,
+      "raw_end_s": 1.8,
+      "raw_start_s": 1.64,
+      "s0_frames": 3,
+      "s0_indices": [
+        42,
+        43,
+        44
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        42,
+        43,
+        44
+      ],
+      "sample_id": "BAC009S0005W0123",
+      "speaker": "S0005",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        24,
+        25
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "a˨˩˦",
+      "phone_index": 8,
+      "raw_end_s": 1.02,
+      "raw_start_s": 0.93,
+      "s0_frames": 2,
+      "s0_indices": [
+        24,
+        25
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        24,
+        25
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        40,
+        41
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˥",
+      "phone_index": 16,
+      "raw_end_s": 1.67,
+      "raw_start_s": 1.55,
+      "s0_frames": 2,
+      "s0_indices": [
+        40,
+        41
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        40,
+        41
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "e",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        45,
+        46
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "e˥˩",
+      "phone_index": 18,
+      "raw_end_s": 1.86,
+      "raw_start_s": 1.77,
+      "s0_frames": 2,
+      "s0_indices": [
+        45,
+        46
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        45,
+        46
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        53,
+        54,
+        55
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "u˨˩˦",
+      "phone_index": 21,
+      "raw_end_s": 2.24,
+      "raw_start_s": 2.07,
+      "s0_frames": 3,
+      "s0_indices": [
+        53,
+        54,
+        55
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        53,
+        54,
+        55
+      ],
+      "sample_id": "BAC009S0022W0123",
+      "speaker": "S0022",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        25,
+        26
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "a˥",
+      "phone_index": 8,
+      "raw_end_s": 1.07,
+      "raw_start_s": 0.98,
+      "s0_frames": 2,
+      "s0_indices": [
+        25,
+        26
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        25,
+        26
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "ə",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        51,
+        52
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "ə",
+      "phone_index": 21,
+      "raw_end_s": 2.11,
+      "raw_start_s": 2.0,
+      "s0_frames": 2,
+      "s0_indices": [
+        51,
+        52
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        51,
+        52
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        61,
+        62
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˧˥",
+      "phone_index": 26,
+      "raw_end_s": 2.52,
+      "raw_start_s": 2.4,
+      "s0_frames": 2,
+      "s0_indices": [
+        61,
+        62
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        61,
+        62
+      ],
+      "sample_id": "BAC009S0024W0121",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        27,
+        28
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "u˨˩˦",
+      "phone_index": 6,
+      "raw_end_s": 1.18,
+      "raw_start_s": 1.01,
+      "s0_frames": 2,
+      "s0_indices": [
+        27,
+        28
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        27,
+        28
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        38,
+        39
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "y˧˥",
+      "phone_index": 9,
+      "raw_end_s": 1.62,
+      "raw_start_s": 1.48,
+      "s0_frames": 2,
+      "s0_indices": [
+        38,
+        39
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        38,
+        39
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        49,
+        50,
+        51
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "a˥˩",
+      "phone_index": 16,
+      "raw_end_s": 2.07,
+      "raw_start_s": 1.93,
+      "s0_frames": 3,
+      "s0_indices": [
+        49,
+        50,
+        51
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        49,
+        50,
+        51
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "o",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        71,
+        72,
+        73
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "o˥˩",
+      "phone_index": 27,
+      "raw_end_s": 2.98,
+      "raw_start_s": 2.8,
+      "s0_frames": 3,
+      "s0_indices": [
+        71,
+        72,
+        73
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        71,
+        72,
+        73
+      ],
+      "sample_id": "BAC009S0024W0122",
+      "speaker": "S0024",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 4,
+      "candidate_s17_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "y˧˥",
+      "phone_index": 1,
+      "raw_end_s": 0.71,
+      "raw_start_s": 0.46,
+      "s0_frames": 4,
+      "s0_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "s17_frames": 4,
+      "s17_indices": [
+        13,
+        14,
+        15,
+        16
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "o",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        60,
+        61
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "o˧˥",
+      "phone_index": 18,
+      "raw_end_s": 2.46,
+      "raw_start_s": 2.37,
+      "s0_frames": 2,
+      "s0_indices": [
+        60,
+        61
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        60,
+        61
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        79,
+        80
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˨˩˦",
+      "phone_index": 25,
+      "raw_end_s": 3.24,
+      "raw_start_s": 3.1,
+      "s0_frames": 2,
+      "s0_indices": [
+        79,
+        80
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        79,
+        80
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "e",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        87,
+        88
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "e˥˩",
+      "phone_index": 29,
+      "raw_end_s": 3.55,
+      "raw_start_s": 3.46,
+      "s0_frames": 2,
+      "s0_indices": [
+        87,
+        88
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        87,
+        88
+      ],
+      "sample_id": "BAC009S0037W0121",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 4,
+      "candidate_s17_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "u˥˩",
+      "phone_index": 13,
+      "raw_end_s": 1.59,
+      "raw_start_s": 1.35,
+      "s0_frames": 4,
+      "s0_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "s17_frames": 4,
+      "s17_indices": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        49,
+        50
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˥˩",
+      "phone_index": 16,
+      "raw_end_s": 2.04,
+      "raw_start_s": 1.94,
+      "s0_frames": 2,
+      "s0_indices": [
+        49,
+        50
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        49,
+        50
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "u",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        53,
+        54
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "u˨˩˦",
+      "phone_index": 18,
+      "raw_end_s": 2.19,
+      "raw_start_s": 2.1,
+      "s0_frames": 2,
+      "s0_indices": [
+        53,
+        54
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        53,
+        54
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "a",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        58,
+        59
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "a˥˩",
+      "phone_index": 21,
+      "raw_end_s": 2.38,
+      "raw_start_s": 2.3,
+      "s0_frames": 2,
+      "s0_indices": [
+        58,
+        59
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        58,
+        59
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "y",
+      "candidate_s17_frames": 2,
+      "candidate_s17_indices": [
+        81,
+        82
+      ],
+      "class": "high",
+      "model": "Wav2Lip",
+      "phone": "y˥˩",
+      "phone_index": 33,
+      "raw_end_s": 3.33,
+      "raw_start_s": 3.2,
+      "s0_frames": 2,
+      "s0_indices": [
+        81,
+        82
+      ],
+      "s17_frames": 2,
+      "s17_indices": [
+        81,
+        82
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    },
+    {
+      "attribute_id": "vowel_rounding_proxy",
+      "basephone": "i",
+      "candidate_s17_frames": 3,
+      "candidate_s17_indices": [
+        87,
+        88,
+        89
+      ],
+      "class": "low",
+      "model": "Wav2Lip",
+      "phone": "i˥˩",
+      "phone_index": 35,
+      "raw_end_s": 3.61,
+      "raw_start_s": 3.44,
+      "s0_frames": 3,
+      "s0_indices": [
+        87,
+        88,
+        89
+      ],
+      "s17_frames": 3,
+      "s17_indices": [
+        87,
+        88,
+        89
+      ],
+      "sample_id": "BAC009S0037W0122",
+      "speaker": "S0037",
+      "status": "SUPPORTED_S17_TOKEN"
+    }
+  ],
+  "visual_results_sha256": "552d6b839f7e659206f8a76d840fff8b3a3150ce560fa3486b806e4cc7af2ece"
+}

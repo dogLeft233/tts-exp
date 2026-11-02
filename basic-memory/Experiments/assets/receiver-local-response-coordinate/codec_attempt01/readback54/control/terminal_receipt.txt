@@ -1,0 +1,9 @@
+schema=native_attribute_response_codec_diagnostic_terminal_v1
+status=TERMINAL
+worker_pid=2578355
+worker_start_ticks=50189231
+worker_returncode=0
+started_utc=2026-10-14T22:31:26Z
+finished_utc=2026-10-14T22:32:17Z
+stdout=/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/control_attempt01/worker.stdout.log
+stderr=/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_codec_diagnostic_attempt01/control_attempt01/worker.stderr.log

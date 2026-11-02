@@ -1,0 +1,33 @@
+{
+  "schema": "native_factor_screen_report_assets_v1",
+  "source_root": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_physical_endpoint_joint_plot_20261015_attempt01",
+  "files": [
+    {
+      "name": "native_physical_endpoint_joint_figure.png",
+      "bytes": 84880,
+      "sha256": "c5b3c6cff82e911fc1557b205e56f2df2080cd515532b9eb4c38983a2da4d1ea"
+    },
+    {
+      "name": "native_physical_endpoint_joint_figure.svg",
+      "bytes": 20906,
+      "sha256": "2a32b27aee9be001a85f831a8c9fc31a3fe91b32bab4ceb8735c65ad16d0c63c"
+    },
+    {
+      "name": "native_physical_endpoint_rows.csv",
+      "bytes": 5943,
+      "sha256": "8a9752818a986a0b61cfd576f954559b5ed89fb6bda26371a16139e0cf928449"
+    },
+    {
+      "name": "figure_receipt.json",
+      "bytes": 3168,
+      "sha256": "ec77e7c10f1240758fe911ae8e1402536a49f9a6183cfbe1e33fd06debd6c8c6"
+    },
+    {
+      "name": "make_endpoint_joint_figure.py",
+      "bytes": 16678,
+      "sha256": "1680880a1ea4d33a5fd8b8194bc49901e4e1145095da4cb814e2d216c8bfcdc2"
+    }
+  ],
+  "root_visual_review": "PNG read with view_image; both panels, labels, axes and footer readable; source counts18+6 match frozen summaries",
+  "no_scientific_recomputation": true
+}

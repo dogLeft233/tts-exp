@@ -1,0 +1,80 @@
+{
+  "schema": "musetalk_h264_decoded_rgb24_pixel_summary_v1",
+  "status": "PASS_CPU_DECODED_PIXELS_ONLY",
+  "source_sha256": "386d988de75e90f67d350bac089eec034d76a8bd35ce4b95463bfec04789a82a",
+  "actual_cpu_frame_map": {
+    "path": "/home/wjj/tts-audio/tts-exp/.codex/scratch/native_attribute_response_probe_20261015_output_owned_musetalk_render_stage_attempt01/provenance/output_owned_actual_frame_map_attempt01.json",
+    "sha256": "127f5b8398521766592a73807f0ae5c4a5f81aaefd579f3ce4e83e937ab3b11f"
+  },
+  "controller_receipt": {
+    "path": "/dev/shm/cross_tfg_native_attribute_response_probe_20261015_output_owned_musetalk_render_output_attempt01/controller_receipt.json",
+    "sha256": "adf7f5caaa06cacb0eabaf5f67e4ceeae382f453eb565ed0704d91692d23b05a"
+  },
+  "execution": {
+    "python_pid": 2564392,
+    "python_start_ticks": "50117275",
+    "started_utc": "2026-10-15T06:19:27.140612+08:00",
+    "finished_utc": "2026-10-15T06:19:29.748542+08:00",
+    "returncode": 0,
+    "ffmpeg_decodes": 6,
+    "all_ffmpeg_returncodes": [
+      0
+    ]
+  },
+  "decode": {
+    "pixel_format": "rgb24",
+    "software_only": true,
+    "frame_count_clock_source": "accepted controller receipt only; no ffprobe or PTS recomputation in this diagnostic",
+    "per_video_decode_count": 1
+  },
+  "comparisons_vs_zero": [
+    {
+      "sample_id": "BAC009S0022W0123",
+      "candidate_arm": "plus",
+      "owned_frame_count": 7,
+      "changed_frame_count_owned": 7,
+      "nonowned_frame_count": 73,
+      "changed_frame_count_nonowned": 73,
+      "nonowned_mean_absolute_rgb_byte_difference": 0.3240430823199825,
+      "nonowned_max_absolute_rgb_byte_difference": 16
+    },
+    {
+      "sample_id": "BAC009S0022W0123",
+      "candidate_arm": "minus",
+      "owned_frame_count": 7,
+      "changed_frame_count_owned": 7,
+      "nonowned_frame_count": 73,
+      "changed_frame_count_nonowned": 64,
+      "nonowned_mean_absolute_rgb_byte_difference": 0.09531141307255993,
+      "nonowned_max_absolute_rgb_byte_difference": 16
+    },
+    {
+      "sample_id": "BAC009S0024W0122",
+      "candidate_arm": "plus",
+      "owned_frame_count": 7,
+      "changed_frame_count_owned": 7,
+      "nonowned_frame_count": 81,
+      "changed_frame_count_nonowned": 81,
+      "nonowned_mean_absolute_rgb_byte_difference": 0.31787831498762215,
+      "nonowned_max_absolute_rgb_byte_difference": 16
+    },
+    {
+      "sample_id": "BAC009S0024W0122",
+      "candidate_arm": "minus",
+      "owned_frame_count": 7,
+      "changed_frame_count_owned": 7,
+      "nonowned_frame_count": 81,
+      "changed_frame_count_nonowned": 68,
+      "nonowned_mean_absolute_rgb_byte_difference": 0.08651165118433321,
+      "nonowned_max_absolute_rgb_byte_difference": 17
+    }
+  ],
+  "per_frame_rgb_sha256_result": {
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\h264_rgb_pixel_diagnostic_attempt01\\results\\h264_rgb_pixel_diagnostic_attempt01.json",
+    "sha256": "d33b68df7cfacd84bbd46df74b1845ca6f6c25e3869e80a5851da726ea533d08"
+  },
+  "execution_receipt": {
+    "path": "E:\\Documents\\tts-exp\\.codex\\scratch\\native_attribute_response_probe_20261015_attempt01\\h264_rgb_pixel_diagnostic_attempt01\\results\\h264_rgb_pixel_execution_receipt_attempt01.json",
+    "sha256": "39178f3a2763602c291fb640a823e28bce15daccc8dcb9de90167f536d899dea"
+  }
+}

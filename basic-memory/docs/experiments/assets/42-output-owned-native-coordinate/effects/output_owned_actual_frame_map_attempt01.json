@@ -1,0 +1,27 @@
+{
+  "schema": "output_owned_musetalk_edit_frame_map_v1",
+  "status": "PASS_ACTUAL_CHANGED_ROWS",
+  "cpu_receipt_sha256": "37ff2a054bb1e4f1dcca1d37de4fe6f292bee433832371886109b879841be705",
+  "root_array_qa_sha256": "0a77ad77de5801f1c73c686e11c8b55b80e4f24d12a7bc89b52755919621c0fd",
+  "mapping": "original eligible MFA core I + fixed p4, unchanged clock; union only of actually rotated eligible tokens",
+  "owned_output_frame_indices_by_sample": {
+    "BAC009S0022W0123": [
+      28,
+      29,
+      44,
+      45,
+      57,
+      58,
+      59
+    ],
+    "BAC009S0024W0122": [
+      31,
+      32,
+      42,
+      43,
+      53,
+      54,
+      55
+    ]
+  }
+}

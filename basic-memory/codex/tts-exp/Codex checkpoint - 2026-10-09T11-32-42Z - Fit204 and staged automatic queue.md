@@ -1,0 +1,95 @@
+---
+title: Codex checkpoint - 2026-10-09T11-32-42Z - Fit204 and staged automatic queue
+type: coding_session
+permalink: tts-exp/codex/tts-exp/codex-checkpoint-2026-10-09-t11-32-42-z-fit204-and-staged-automatic-queue
+status: open
+project: tts-exp
+repository: dogLeft233/tts-exp
+repo_root: E:/Documents/tts-exp
+cwd: E:/Documents/tts-exp
+branch: codex/cross-tfg-audio-head-20261003
+git_sha: 5688784dd5c6c1272074f0c4b6c5ff79f117c907
+started: '2026-10-09T11:32:42Z'
+username: dogle
+hostname: LAPTOP-E133GSLE
+capture: deliberate
+agent: codex
+session_id: 01a0f26b-a3e7-7f91-b1e8-46813543042f
+trigger: compact
+model: gpt-6.1-sol
+tags:
+- codex
+- checkpoint
+---
+
+# Codex checkpoint - 2026-10-09T11-32-42Z - Fit204 and staged automatic queue
+
+## Summary
+
+三模型正式固定对照已204/720有效评分；自动队列源码和历史前缀已在V100分别create-only暂存，新的提案及中心计划接口已通过ROOT真实生产形状检查，下一步启用队列完成Fit对照。
+
+## Story
+
+用户最初要求恢复TTS增强TFG的局部声学机制，现目标是交付适配多个TFG、在未见说话人超过固定RMS的自然音频增强头。增强PCM只驱动视频生成，交付与SyncNet使用完整原自然PCM和源时钟。ROOT负责机制、冻结协议、BM和独立复核，代码及实验交GPT-6 Luna/max。用户授权重跑、数据下载、云API和网盘，要求失败后继续推进。局域网入口已确认wjj@192.168.50.2:22，native Windows ssh.exe公钥可用；秘密永不进入文件、argv或日志。
+
+旧仅W2L训练step120跨三模型相对RMS等模型ΔCbest+0.011149：W2L+0.068454、Muse+0.000900、Ditto−0.035908，D0正向改善−0.033662，未达到移植目标。新方法先完成同40条/20人、三模型六方法720行正式原生视频与原音评分，再联合选择九参数初值并按ADR022执行20步SPSA及四完整中心。新Dev20、Confirm80和LatentSync保持封闭。局部平均谱形、正负flux及受者兼容性继续指导方法；不重复已做全局音量排除。204条尚未形成family选择、SPSA初始化或新的泛化结论。
+
+## Working State
+
+持久Task《开发跨 TFG 的自然音频增强头》active，Experiment《跨 TFG 自然音频增强头的训练与原音换轨验证》implemented。ADR022/023/024/025要求六方法共同FULL支持、说话人等权再模型等权、每模型Cbest超过identity和RMS、D0/Canchor不恶化、等模型RMS增益至少+0.050。缺行阻断初始化；完整但不适格使用冻结违例排名确定初值。随后960提案评分+480中心评分，连同720对照合计2160物理评分。SyncNet分数不直接等同人类感知嘴型质量。
+
+正式终端W2L blocks0–22=138/240，Muse0–5=36/240，Ditto05 blocks0–4=30/240，总204。最新Ditto4六PASS且PID252122/ticks2895738已退，slot已释放，GPU闲置。输出/dev/shm/fit40_ditto240_stage_attempt05/output/block_004_attempt01；status1008B/rawf888a78c434da3951e031b35f40b124f5fa5a2a13d50256d0b5624162a230a94，ledger289464B/raw2174e6aade26c74628ffb755ae8c9c85950c707fc802ea575739aa89419b84f0，manifest3203B/rawd32a53ef20349383534f3e5096076f0fd49e62e31fba0d69c517fb5d3c334284，launch8679B/raw45df865db0eaa3dd805a086a9417cb777405afe4ee095cc0bc231dfbc3bce9de。没有detached child数值rc，不从PID缺失推断。当前204边界暂停manualnext以接通queue；下一轮W2L23 offset138、Muse6 offset36、Ditto5 offset30。
+
+自动queue controller03为80513B/dafe417e42cd7660b3b0c41731b30e10272f45ab4ead6911ea75c9f1fce1667a，entry05为25969B/38e924bbccb54c04e9c7618502bdc57b38a71595babc71f3d9c51b646165de67。ROOT完整source/diff及实际13+10tests PASS。Entry complete仅三offset240且无active/paused/failure，actualterminal严格绑定run/plan/rows/rawpins/canonicalmanifest及六speaker/source/config/checkpoint/seed/frontend。需在真实最新W22/Muse5/Ditto4记录执行entry严格验证，而非仅inspector。
+
+真实inspector08 response128290B/rawa7070e09f6301f48f0efc8b25860c97f08eb6ec2b522c023e641b74bffd9818e，self27850e47a4b8cd8240ce37336df090a1f1882346e147bc828e8cdaae0cde1f08，SSHrc0/PASS_ALL_PREFIXES，W23/M6/D5共34块204唯一行。Final builder09为23763B/raw9424ab59c4163b1c7d7e2eb0a49563546bb6d57240f7d9e2aa93ad1d15d3f188；ROOT完整源码/diff+actual main重放逐byte等于index09。Index09 `.codex/scratch/fit40_queue_progress_index_attempt09/fit40_historical_terminal_prefix_index_attempt09.json`153666B/raw6949e516070ab7d1613f06c4521263f2f390ba6bbae306b37caedc699cb575dc，self0b9002b855ef07562de40b0e722e8eb3689d5ebe98d076a2b99f264900824364。Producer真实差异必须保留：Muse binding+intent.cpu_probe，Muse0缺outer launcher provenance；Ditto runtime_binding+toppreflight。历史live同PIDticks/unreadable拒绝导入；无rc记录不补造。
+
+W22原foregroundreceipt的status SHA有一逻辑文件两别名的抄写错误。原receipt保持不可变；fresh reconciliation0414478B/rawfc322ea94397c88e9adb86d5ad2b0ce19a6fce8f17d19a3b29a89dc9022ae326/self2996e0de1738c861e9839d5303d6ced2e01a68021b3238cb5f3afdc308bbdcb0，在 `.codex/scratch/fit40_queue_progress_index_attempt08/`。ROOT fullsource/receipt、实际remote sixfile observation及独立原字段投影PASS，仅纠正两处同status rawSHA为088ddb2280d8bc833e234d2032d1f0225b319adce39f00e4d7185b7ede37593e；实际foregroundrc0/构造argv/env保持。status.schema_version是cross_tfg_audio_head_stagea_v1；plan canonical与raw不同，禁止猜schema或把canonical当raw。
+
+Source包18文件/5099164B，archive346914B/e4b19a316e822dfa4f23d15ff211b378df485991f25aa5b88bedeea89b90096a，manifest24116B/rawbdb1bb90c2b7dabded10bde70d270cf55aefa129131d08458dac13d0c0f14d3b/self21157a64c0764079a56ff91d1035b6dc6ffc51fa9be067c2b7c99d86b2d49d30。ROOT已完整packagebuilder及actual全archive/18pins qualification PASS。Extractor01曾嵌自身预期hash而无法封闭；fresh02改CLI sideband pin，ROOT已完整读源码。Signal实际create-only stage为 `/dev/shm/fit40_queue_remote_package_attempt02/project`，helper16793B/680c046a5b98e6cfe8f0f769d6aa9fdd979cdbe41f84a5b767d4af572a918cf0；stage receipt6836B/rawb1c0c810fe4274d7d24c1536abafdc6a613202ec72c7a4340f825def08c415d7/selfb5aceadcff20f7845ee71300dbd00aa47a98a0529a2c3eb3a226fc3037cb4cbb。Signal独立actualremote exact-tree18/18/fullbytepin/nonlink核PASS，ROOT本checkpoint读了完整回执但尚未自己重新remote walk。没有queue state/model import/init/launch。
+
+ASR单独create-only安装index09到 `/dev/shm/fit40_queue_runtime_attempt01/fit40_historical_terminal_prefix_index_attempt09.json`，actualremote fullbyte回读逐byte等于index09，receipt `.codex/scratch/fit40_queue_runtime_attempt01/index_install_receipt_attempt01.json`rawc9d1bb5df6609520eafff31273d7e5c97caf651ac571335b80a864338e158930/self30650c9fe76031fb0c384a45353c42d696ad4a70fef59314e28eec544699fe81。源码包和index独立封装，禁止重打包18源码。最新strictinspector再次PASS但localwrapper未处理W2L additional_foreground_ssh_terminal_evidence嵌套而失败，失败保留、准备freshwrapper；entry verify-only和三个真实terminal最终proof尚待。ROOT已授权这些routine checks，init/run待最终proof短审，不再多轮无必要确认。
+
+新方法接口必须分别绑定legacy family身份和一方法derivedpoint成员。ROOT实际独立重放Muse/Ditto八真实WAV诊断QC，wholebody逐byte相同PASS；源PCM/原N/receiptθ/raw/self/finite/RMS/3dBclosure合格，诊断没有render/score/optimizer。Muse最新adapter07为69136B/d2586bc0580b461aab2ade0484869245c90c2e9334b0eb2c72610377926e95ad，ROOT完整06→07diff、八focused实际functions和两个actualcomposer production-shaped tests08 PASS。Ditto adapter08为59738B/53f6e8fe3d626f83db653ff835a4f8792863eee561ee7f6d6c88a98a440f2d00，ROOT完整06→08diff及actualcomposer24提案/120中心验证PASS，fresh resealed wrongc_k拒绝PASS。真正producer提案scope没有c_k，中心config没有sample_ids；更早手工fixture镜像掩盖错误。现在c_k按config及冻结0.25/(iteration+1)^.101核验，center roster从真实scope绑定。Receipt6254B/rawec60b4adb8a39aca4af40dd0851316eab6470af607288d3022f76eb30ed1a434/self31a7de68c3c79030bd6cb87c97c4f238ac03408ba02fbcf46579e0a384cc4f3a，在 `.codex/scratch/ditto_spsa_stagea_adapter_attempt07/actual_composer_scope_validation_attempt04/`，旧schema标签07但actualsource08pin明确。
+
+共同CPU helper05为56593B/3a33cf6f148de36d0433074c2efadb98167880ed5b7f1f66138a797a047afc5b，ROOT七actualtests及realpoint apply/receipt/lineage PASS。固定remote共享Py3.10.20/Torch2.5.1cu121/NumPy1.26.4 CPU1/1，CUDA空/uninitialized，所有TFG使用同physicalWAV。Seed120两次actual输出逐bit相同WAV7f6ad91d3682f06bede8a16d8fd1794384ffd6d692944b7796f5f0801fcf0c59/PCM81829a4e755d3a48467343d460f1dbc693b0b9bdba2cfd4aaea82ea3f92332b3，N62639/RMS.03768381826347004/mask2.7262537479400635dB；ROOT独立wholePCM/receipt/sourceθ/runtime核PASS。旧GPU缓存/分数来源保留。
+
+Dev并行准备真实remotefamilycomposer worker02和commondispatcher。ROOT实际SSH确认三源SHM plan/rows exactpins都在；旧localfamily source_model_plans refs是/mnt/e路径，V100不存在。四新module在persistentrepo均absent，因此worker01假设代码存在而不可执行；已停且不改旧文件。Fresh SHM codeclosure作为PROJECT_ROOT，W2L SHM项目作为snapshot_project_root，实际worker文件stage以绑定__file__；worker02仍待codeclosure/readback。所有新family/point create-only，720完整前不科学init，不调用hard240 legacyrun处理24/120，实际模型hook须带共享WAV applicationreceipt。
+
+Machine-local/fragile：codex/cross-tfg-audio-head-20261003，HEAD 5688784dd5c6c1272074f0c4b6c5ff79f117c907 local/unpushed，原五tracked dirty保留、新实验untracked，BM/runs/scratch ignored，无commit/push/PR。MutableTask/Experiment/HANDOFF最新actualsynced198，尚待204及queue启用milestone同步。E约4.04GB/F约3.10GB，SHM有限需每次reserve；4GB worldv5tar已doublefullSHA安全搬F:/codex_scratch/storage_relocation_20261009_attempt01/world_v5_attempt06.tar，AISHELL.partial不动。Queue固定reserve可能晚期NO_READY，保留证据后完整核验归档，不能绕过容量门槛。失败leaf不自动重试/删除，暂停失败模型但其他模型继续。
+
+## Changed Files
+
+- scripts/experiments/cross_tfg_audio_head_20261003/musetalk_spsa_stagea_adapter_attempt07.py 与 ditto_spsa_stagea_adapter_attempt08.py：真实family/point及producer scope/config契约修复。
+- .codex/scratch/fit40_queue_progress_index_attempt09/：已封历史204前缀和builder；source-only remote包在fit40_queue_remote_package_attempt02，独立index在fit40_queue_runtime_attempt01。
+- .codex/scratch/root_adapter06_eight_wave_readback_attempt01/：ROOT actual八WAV双模型独立QC；remote实际composer codeclosure待Dev。
+
+## Verification
+
+ROOT实际：queue controller13/entry10tests、finalindex actualbuilder重放BYTE_IDENTICAL、W22 onefile erratum独立sourceprojection及sixfile实际SSH核、18sourcearchive fullpins核、Muse07八focused+两个productionplanchecks、Ditto08真实24/120计划与resealedbadc_k拒绝、Muse/Ditto各八真实WAV独立QC逐byte重复均PASS。旧composer720/consumer三后端transport/sharedCPU两重复ROOT核亦PASS。新增source/index remote安装及walk是agentactualPASS，ROOT完整读回执；queue三个actualentry严格terminal proof、实际PID/argv/env仍未完成。没有新的科学效果或跨说话人验证结论。
+
+本checkpoint先加载bm-checkpoint/bm-writing、Startup Router→实验指令/CodingSession、localconfig；freshGit/GitHubcanonical/PR[]，same-chat coding/codex/legacy分页检索并directprior exactidentity。CLI已验证调用write_note(overwrite=False,output_format=json)，只接受created后directreadback精确host metadata。
+
+## References
+
+- [Repository](https://github.com/dogLeft233/tts-exp)；实际branch PR[]，local/unpushed SHA不构造GitHub链接。
+- ADR022/023/024/025；HANDOFF.md和上述receipt/sourcepin是恢复入口。
+- tts-exp/docs/reference/server-access：无秘密连接资料；当前nativeWindowsSSH公钥入口。
+
+## Observations
+
+- [result] 正式对照204/720：W2L138、Muse36、Ditto30，尚无联合初值或优化更新。
+- [verification] 新Muse07和Ditto08均通过ROOT真实composer24/120生产计划检查，双模型各八真实波形QC逐bytePASS；source/index已由agent实际远端create-only staging核验。
+- [decision] family与point成员分别绑定，共同CPU单physicalWAV供三模型；旧缓存/错误receipt保持不可变，fresh明确更正来源。
+- [blocker] Queue entry真实三终端proof和init/run未完成；remotefamily需fresh代码closure，persistentrepo不能假设有新module。
+- [next_step] 完成实际latest W22/Muse5/Ditto4 entry严格验证并启用204历史前缀自动queue至720，同时完成真实SHM family/common dispatcher，继而按ADR022执行SPSA及封闭Dev/Confirm交付。
+
+## Relations
+
+- continues [[Codex checkpoint - 2026-10-09T10-56-22Z - Fit198 and real point-plan integration]]
+- relates_to [[开发跨 TFG 的自然音频增强头]]
+- relates_to [[跨 TFG 自然音频增强头的训练与原音换轨验证]]
+- relates_to [[022-fit-only-cross-tfg-native-score-refinement]]
+- relates_to [[023-decoded-video-window-support-for-native-syncnet]]
+- relates_to [[024-live-process-resource-capacity]]
+- relates_to [[025-shared-cpu-waveform-for-cross-tfg-proposals]]

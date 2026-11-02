@@ -1,0 +1,41 @@
+{
+  "schema": "root_whisper_primitive_projection_actual_array_qa_v1",
+  "status": "PASS",
+  "result_sha256": "0ee1129a7201932ee1b99ab8ea0dcdb6cc4fb44660c442c56e8ccdce1121e6d4",
+  "qa_source_sha256": "84666a44d757043f67ac63d875828fa37f4ed0bf47e7121039734d1546f9dd31",
+  "checked_rows": [
+    {
+      "sample_id": "BAC009S0022W0123",
+      "arm": "plus",
+      "zero_alias_bitwise": true,
+      "metrics_max_abs_error": 0.0,
+      "nonowned_frames": 24,
+      "projection_pythagorean_relative_error": 1.1320115586963845e-16
+    },
+    {
+      "sample_id": "BAC009S0022W0123",
+      "arm": "minus",
+      "zero_alias_bitwise": true,
+      "metrics_max_abs_error": 0.0,
+      "nonowned_frames": 24,
+      "projection_pythagorean_relative_error": 0.0
+    },
+    {
+      "sample_id": "BAC009S0024W0122",
+      "arm": "plus",
+      "zero_alias_bitwise": true,
+      "metrics_max_abs_error": 0.0,
+      "nonowned_frames": 24,
+      "projection_pythagorean_relative_error": 0.0
+    },
+    {
+      "sample_id": "BAC009S0024W0122",
+      "arm": "minus",
+      "zero_alias_bitwise": true,
+      "metrics_max_abs_error": 0.0,
+      "nonowned_frames": 24,
+      "projection_pythagorean_relative_error": 1.1238235174518913e-16
+    }
+  ],
+  "scope": "Existing actual native arrays; independent vectorized gather and projection. No encoder, renderer, scorer, or implementation tests."
+}

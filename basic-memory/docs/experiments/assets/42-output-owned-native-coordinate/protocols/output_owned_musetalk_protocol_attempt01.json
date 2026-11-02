@@ -1,0 +1,59 @@
+{
+  "schema": "output_owned_musetalk_articulatory_probe_v1",
+  "status": "FROZEN_SOURCE_AND_CPU_PREPARATION_ONLY",
+  "created_utc": "2026-10-14T21:08:28.009713+00:00",
+  "question": "Does native height direction control the fixed functional endpoint when conditioning-row ownership directly covers the output event?",
+  "motivation": "Accepted Muse2D runner maps each prompt row to same output row. Old audio-core-j masks directly covered 0/14 fixed j+p Cp output frames; p=4 remains frozen. This is an operator-coordinate correction, not phase retuning.",
+  "reference_pins": {
+    ".codex/scratch/native_attribute_response_probe_20261015_attempt01/response_readout_protocol.json": "9b4c3f4150e0a4275925304a3a542230896de3dff82ecdb38dd6d89ecdcfe0d9",
+    ".codex/scratch/native_attribute_response_probe_20261015_attempt01/rotation_candidates_attempt02/rotation_receipt.json": "76d3b6a521b8a77c034ce64748773d08c046a5d9b1650231f2546dc87082267e",
+    ".codex/scratch/native_attribute_response_probe_20261015_attempt01/root_actual_rotation_qa.json": "0e73e3b59a695c967fe0f290587b6e76843f504157d0c50056cfb6d389abcdf2",
+    ".codex/scratch/native_attribute_response_probe_20261015_attempt01/root_actual_response_qa.json": "72ef059b13a3a0cfd4f398b2f203224ec104a2072e18635fa5f124a26ad2e538",
+    ".codex/scratch/native_attribute_response_probe_20261015_attempt01/temporal_ownership_boundary_attempt01.md": "6f69b668e1ab47ded5f378424ff77588fd5e748c21f66615279094873ebf5062"
+  },
+  "cohort": [
+    "BAC009S0022W0123",
+    "BAC009S0024W0122"
+  ],
+  "model": "musetalk",
+  "seed": 20261003,
+  "p_by_sample": {
+    "BAC009S0022W0123": 4,
+    "BAC009S0024W0122": 4
+  },
+  "operator": {
+    "ownership": "For each original audio phone core I at25Hz, apply the same class-labeled low-rank rotation to baseline prompt rows I+p. Labels remain attached to original audio token. Recompute baseline m on owned rows.",
+    "axis_and_dose": "Same accepted natural9FIT balanced height anchors, class sign and matched +/- theta cap0.05rad/half target angle. No new fitted direction, sign, dose or phone selection.",
+    "unchanged": "Original CPU6 zero prompts/native_time_s/dtype, original generation WAV/RMS, portrait/latent/seed, original naturalPCM and j/25 video clock. Non-owned rows byte exact.",
+    "reject": "Owned-row overlap, out-of-native-range/duration, degenerate direction, or missing label/support; no clipping/fallback.",
+    "cpu_checks": "Reuse accepted anchor pins; actual candidate norm/within-owned-core Gram, signed margin, exact zero/non-owned/clock; directly owned Cp positions must cover all14 original retained centers."
+  },
+  "future_gpu_cap": {
+    "status": "NOT_LAUNCHED_OR_ADMITTED",
+    "rows": 6,
+    "arms": [
+      "zero",
+      "plus",
+      "minus"
+    ],
+    "samples": 2,
+    "reason_for_new_zeros": "Pre-codec primary observer needs retained zero originals; prior zero PNGs were deleted. No other model, seed, cohort, dose or training."
+  },
+  "artifact_observer": {
+    "retain": "All six rows retain pre-codec RGB8 frames as PNG/NPZ or lossless FFV1; record each decoded RGB body SHA and j/25. Any video proxy must decode byte-exact to retained RGB.",
+    "primary_geometry": "Same accepted MediaPipe asset/extractor using per-frame IMAGE detect on lossless frames/video; no VIDEO tracker exists. All-frame raw/z normalizers and full17 curves retained.",
+    "secondary": "Original H264 render/crop path for standard originalPCM SyncNet full/guard20; H264 geometry only codec contrast, not the primary actuator endpoint.",
+    "direct_control": "Pre-codec output frames outside mapped prompt rows are expected equal acrosszero/+/minus in this frame-local fixed-latent path. Record all exceptions and treat non-equality as control dependence to resolve, not decoder temporal evidence."
+  },
+  "readout": "Reuse originalS17, exacthigha/lowi,y,u, raw+z Cp/Hp at fixedp4, absolute17lags[-8,8], originalcommon-valid durationmask and token→phone→class weights. No new peak selection or supportreplacement.",
+  "screen": "Both clips must pass original zero raw/z Cp/Hp positivity and plus>zero>minus in allraw/z Cp/Hp. n2 exploratory only. Score B/Dmin/D0/Cbest/officialoffset and aperturevelocity reported separately; no efficacy/humanaccuracy claim.",
+  "progression": "CPU controls and source/runtime bindings first; ROOT decides a single six-row execution after review. A failed corrected operator will not expand dose/cohort/training; use the correctly exposed raw response to choose a genuinely different recipient coordinate.",
+  "forbidden": [
+    "implementation tests",
+    "new encoders/MFA/API/dependencies",
+    "phase/clock/PCM shifts",
+    "old unknown process relaunch",
+    "Wav/Ditto GPU expansion",
+    "posthoc sign/dose selection"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "root_phone_conditioned_visual_functional_endpoint_v1",
+  "status": "FROZEN_EFFECT_SOURCE_PREPARATION_ONLY",
+  "created_utc": "2026-10-14T17:41:41.896030+00:00",
+  "question": "Do generated mouths encode the natural phonetic categories at the original time, and do historical head-minus-RMS SyncNet changes coincide with that functional response? This is seen-DEV exploratory measurement, not human accuracy or candidate tuning.",
+  "scope": "Exactly the8 fixed utterances/4 speakers/3models/2arms/3seeds/144 existing trajectories. No new alignments, cohort expansion, renders, extraction, native encoder, score, API, training, dependencies or implementation tests.",
+  "inputs": {
+    "support": {
+      "path": ".codex\\scratch\\phone_conditioned_visual_response_20261015_attempt01\\support_inventory.json",
+      "sha256": "296c2064b77cb74b3b3da63f575a635f618eed13cd88ba5e0d3e041aa1dc0887"
+    },
+    "support_ROOT_QA": {
+      "path": ".codex\\scratch\\phone_conditioned_visual_response_20261015_attempt01\\root_support_qa.json",
+      "sha256": "39a0d0d79c2d80c482b163bb5c889ec515206bd3bfebe06132a33197364ed840"
+    },
+    "stage1_protocol": {
+      "path": ".codex\\scratch\\phone_conditioned_visual_response_20261015_attempt01\\protocol.json",
+      "sha256": "a7623d39a78330b5f90a3dbac5a9615c93dbf9d6c59c5b0ab30feacd21dad503"
+    },
+    "input_manifest": {
+      "path": ".codex\\scratch\\phone_conditioned_visual_response_20261015_attempt01\\input_manifest.json",
+      "sha256": "d52736c0b421ab3087a20ba9914afcf7e33bc45f060525a204cd060206be2ddd"
+    },
+    "input_body_admission": {
+      "path": ".codex\\scratch\\phone_conditioned_visual_response_20261015_attempt01\\root_support_admission.json",
+      "sha256": "cb6481de85a830ae4d191c5df45091235a7d8f955ecfc4f90845d5079ab47433"
+    },
+    "scores": {
+      "path": "runs\\cross_tfg_audio_head_20261003\\visual_speech_motion_join_attempt01\\results.jsonl",
+      "sha256": "dcf3fb6b2997398c939a0ee239e3bfadb7468fff617fef9388d5bd39537e977e"
+    },
+    "geometry_source": {
+      "path": "scripts\\experiments\\lrs3_tts_visual_advantage\\video_features.py",
+      "sha256": "2ce7006030e7f93b139cbbc8f5152c9b39719bea2fe7fbf16fbf18110cce5ff4"
+    }
+  },
+  "support_decision": {
+    "vowel_height_aperture_proxy": {
+      "status": "SUPPORTED_PRIMARY",
+      "speakers": [
+        "S0022",
+        "S0024",
+        "S0037"
+      ],
+      "variable": "mouth_aperture_eye_normalized_float64",
+      "expected_contrast": "high(a) minus low(i,y,u)"
+    },
+    "vowel_rounding_proxy": {
+      "status": "SUPPORTED_SECONDARY",
+      "speakers": [
+        "S0005",
+        "S0022",
+        "S0024",
+        "S0037"
+      ],
+      "variable": "mouth_width_eye_normalized_float64",
+      "expected_contrast": "low(unrounded a,e,i,schwa) minus high(rounded u,y,o)",
+      "boundary": "width is an indirect narrowing proxy and correlated with vowel height; never label it exact lip roundness or accuracy"
+    },
+    "bilabial_place_closure_proxy": {
+      "status": "UNSUPPORTED_NO_EFFECT_ESTIMATE",
+      "supported_speakers": [
+        "S0037"
+      ],
+      "reason": "Only1 speaker has both classes under frozen >=2 core frames; retain failed support, no threshold/map/cohort adjustment"
+    }
+  },
+  "geometry_definition": "IPD = distance between eye landmarks33/263; similarity-normalized aperture is distance13/14; width is bbox x extent over pinned31 mouth points. Area is width*height, not lip contour; no raw landmarks or real video GT.",
+  "time_and_support": {
+    "primary": "Use all frozen SUPPORTED_TOKEN core indices from support inventory and its6-row common valid timestamps per model/utterance. Keep exact original j/25. Restrict any normalization/control timestamps to [0, original natural sample_count/16000).",
+    "standardization": "Per row and variable, calculate arithmetic mean and population SD (ddof0) over all6-row-common valid original-natural-time frames; z=(value-mean)/SD. SD<=1e-8 IPD marks standardized metric UNMEASURABLE, never alternate normalization. Preserve raw-unit contrast and SD to show scale.",
+    "time_controls": "Secondary fixed offsets -4 and+4 frames (-/+160ms), no wrap/warp/reindexing. Build a single Sshift subset of original token core centers having zero/negative/positive-shift valid frames in ALL6 rows and original natural audio duration. Require>=2 remaining centers/token. Recompute zero and shifted contrasts on that SAME Sshift support. Do not substitute primary S0 with Sshift. Report shifted frames outside original phone fraction and all support losses.",
+    "specificity": "H = contrast_zero_on_Sshift - (contrast_minus4 + contrast_plus4)/2. Positive H is correct-time specificity in this proxy; absence does not assert human inaccuracy.",
+    "shift_support": "Require>=3 speakers with both classes on Sshift to summarize a model/attribute temporal-specificity result; otherwise label it UNSUPPORTED and retain per-speaker descriptive values."
+  },
+  "reduction": "For each row: mean core values per token; token-equal within exact tone-stripped base phone per utterance; basephone-equal within high/low class. Average3 seeds within utterance/method/class, then utterance-equal within speaker/method/class (only utterances with that class), then signed high/low contrast. Use exactly identical supports for the two methods. Report class utterance/token/frame counts and row IDs. Candidate delta=head-RMS. Speaker is unit, never seed/token/frame.",
+  "motion_secondary": "Within each selected primary token core compute raw aperture speed RMS from differences of adjacent consecutive valid frames/0.04s; if no adjacent pair mark unavailable. Reduce by same token/phone/utterance/seed/speaker class hierarchy. Report change descriptively, without a larger/smaller-is-better gate. Do not read raw video or redo trajectory extraction.",
+  "baseline_coordinate_checks": "For each supported attribute/model, report RMS baseline signed standardized contrast and Sshift specificity speaker values. A descriptive task-related baseline coordinate requires>=3 speakers,>=ceil(2n/3) positive speaker values and positive median, independently for contrast and specificity. Do not change sign/map/normalizer after outcomes. This check is independent of head benefit and admits no GPU candidate.",
+  "score_comparison": "After motion definitions are frozen, read only existing hash-bound canonical scalar scores by matching row_id. Verify original natural PCM/mux equality and25fps clock fields from existing records; no raw SyncNet recalculation. For each model/attribute use the union of utterances contributing supported high/low primary tokens, average seeds then utterances then speaker. Report full Cbest/B/Dmin/D0/lag and head-RMS alongside motion; guard20 secondary. Show per-speaker sign table, no pooled-token/seed p-values, no correlation significance or model pooling. Full8-utterance cohort scores may be separately labelled descriptive.",
+  "progression": "No automatic next GPU/head admission. All models/attributes/statuses and both positive/negative outcomes must be reported. Preserve old v4 head failure on full DEV, all prior native/physical stop gates and sealed confirmation boundaries. Root chooses a new bounded hypothesis after one actual-artifact QA.",
+  "execution_gate": "Original Luna prepares one small NumPy source using existing pinned support/records and explicit UTF-8. ROOT reads source once before effect execution. Do not read motion magnitudes or score values during source preparation/selection."
+}

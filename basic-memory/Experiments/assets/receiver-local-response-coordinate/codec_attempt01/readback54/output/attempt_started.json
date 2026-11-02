@@ -1,0 +1,36 @@
+{
+  "baseline_readout_manifest_sha256": "1b4f454463a4387b470c744b0f9269b991e2c4e4fd0164132c40a1c87a655c4f",
+  "clock": {
+    "fps_den": 1,
+    "fps_num": 25,
+    "frame_pts": "j/25",
+    "time_warp": false
+  },
+  "codec_chain": [
+    {
+      "codec": "ffv1",
+      "pix_fmt": "yuv420p",
+      "stage": "512px"
+    },
+    {
+      "codec": "ffv1",
+      "pix_fmt": "yuv420p",
+      "scale": "scale=224:224:flags=lanczos",
+      "stage": "224px"
+    }
+  ],
+  "input_manifest_sha256": "673ee09cdba130ee70698553f6bd52ca4b4633cf85c94e2092de66bbb36b4889",
+  "row_count_expected": 6,
+  "rows": [],
+  "schema": "native_attribute_response_ffv1_codec_diagnostic_v1",
+  "scope": "diagnostic-only; existing formal H.264 full/guard20 artifacts are immutable",
+  "score_contract": "existing Stage-A evaluator; natural original PCM; full and guard20 from the pinned readout summary helper",
+  "score_invocations_expected": 6,
+  "source_pins": {
+    "full_guard20_summary_source_sha256": "79bb2df7c3f0ccb8642ae778dce84856e887fce86035df6d0057766980e68f44",
+    "stagea_syncnet_evaluator_sha256": "b15762e1837fd28eaba8fe9e261ffb35b164246da555cb3a7e3bbc7c645f818b",
+    "strict_mux_helper_sha256": "0febe6f2b43ed4fb089bdf36e2e208cc1cd61681d8e0ebfd7f59cd56dd00b4b6",
+    "syncnet_checkpoint_sha256": "961e8696f888fce4f3f3a6c3d5b3267cf5b343100b238e79b2659bff2c605442"
+  },
+  "status": "RUNNING"
+}
